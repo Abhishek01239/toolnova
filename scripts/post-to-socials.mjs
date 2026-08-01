@@ -85,11 +85,59 @@ server.listen(PORT, async () => {
       });
       await page.waitForTimeout(1000); // Let layout transition finish
       
-      const screenshotPaths = [];
+      const fbScreenshotPaths = [];
+      const igScreenshotPaths = [];
       const screenshotDir = path.join(ROOT, 'public', 'assets', 'tools');
       if (!fs.existsSync(screenshotDir)) {
         fs.mkdirSync(screenshotDir, { recursive: true });
       }
+
+      // Helper function to pad a captured element screenshot into a 1:1 square image for Instagram
+      const captureSquare = async (element, outPath) => {
+        const box = await element.boundingBox();
+        if (!box) {
+          await element.screenshot({ path: outPath });
+          return;
+        }
+        
+        // Take a raw screenshot of the element first
+        const rawPath = outPath.replace('.png', '-raw.png');
+        await element.screenshot({ path: rawPath });
+        
+        // Use Playwright page evaluate to generate a square canvas loading the raw image,
+        // center it vertically, and paint it on a dark theme backdrop background (#07060C)
+        const size = Math.max(Math.ceil(box.width), Math.ceil(box.height), 600);
+        const rawBase64 = fs.readFileSync(rawPath).toString('base64');
+        fs.unlinkSync(rawPath);
+
+        const canvasPage = await browser.newPage();
+        await canvasPage.setContent(`
+          <style>
+            body {
+              margin: 0;
+              background-color: #07060C;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: ${size}px;
+              height: ${size}px;
+              overflow: hidden;
+            }
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              object-fit: contain;
+            }
+          </style>
+          <body>
+            <img src="data:image/png;base64,${rawBase64}" />
+          </body>
+        `);
+        
+        await canvasPage.setViewportSize({ width: size, height: size });
+        await canvasPage.screenshot({ path: outPath });
+        await canvasPage.close();
+      };
 
       // --- SCREENSHOT 1: Header + Workspace ---
       await page.evaluate(() => {
@@ -97,10 +145,14 @@ server.listen(PORT, async () => {
         document.querySelector('.tool-page > .section').style.display = 'none';
         document.querySelector('footer').style.display = 'none';
       });
-      const p1Path = path.join(screenshotDir, `${toolId}-social-1.png`);
+      const p1PathFb = path.join(screenshotDir, `${toolId}-social-1.png`);
+      const p1PathIg = path.join(screenshotDir, `${toolId}-social-1-ig.png`);
       const toolPageEl = await page.$('.tool-page');
-      await toolPageEl.screenshot({ path: p1Path });
-      screenshotPaths.push(p1Path);
+      
+      await toolPageEl.screenshot({ path: p1PathFb });
+      await captureSquare(toolPageEl, p1PathIg);
+      fbScreenshotPaths.push(p1PathFb);
+      igScreenshotPaths.push(p1PathIg);
 
       // --- SCREENSHOT 2: How it works + Examples ---
       await page.evaluate(() => {
@@ -114,10 +166,14 @@ server.listen(PORT, async () => {
         const faq = document.querySelector('.faq');
         if (faq) faq.style.display = 'none';
       });
-      const p2Path = path.join(screenshotDir, `${toolId}-social-2.png`);
+      const p2PathFb = path.join(screenshotDir, `${toolId}-social-2.png`);
+      const p2PathIg = path.join(screenshotDir, `${toolId}-social-2-ig.png`);
       const proseEl = await page.$('.prose');
-      await proseEl.screenshot({ path: p2Path });
-      screenshotPaths.push(p2Path);
+      
+      await proseEl.screenshot({ path: p2PathFb });
+      await captureSquare(proseEl, p2PathIg);
+      fbScreenshotPaths.push(p2PathFb);
+      igScreenshotPaths.push(p2PathIg);
 
       // --- SCREENSHOT 3: FAQ ---
       await page.evaluate(() => {
@@ -133,35 +189,48 @@ server.listen(PORT, async () => {
         const faq = document.querySelector('.faq');
         if (faq) faq.style.display = 'block';
       });
-      const p3Path = path.join(screenshotDir, `${toolId}-social-3.png`);
-      await proseEl.screenshot({ path: p3Path });
-      screenshotPaths.push(p3Path);
+      const p3PathFb = path.join(screenshotDir, `${toolId}-social-3.png`);
+      const p3PathIg = path.join(screenshotDir, `${toolId}-social-3-ig.png`);
+      
+      await proseEl.screenshot({ path: p3PathFb });
+      await captureSquare(proseEl, p3PathIg);
+      fbScreenshotPaths.push(p3PathFb);
+      igScreenshotPaths.push(p3PathIg);
 
       // --- SCREENSHOT 4: Related Tools ---
       await page.evaluate(() => {
         document.querySelector('.tool-page > .section').style.display = 'block';
       });
-      const p4Path = path.join(screenshotDir, `${toolId}-social-4.png`);
+      const p4PathFb = path.join(screenshotDir, `${toolId}-social-4.png`);
+      const p4PathIg = path.join(screenshotDir, `${toolId}-social-4-ig.png`);
       const relatedEl = await page.$('.tool-page > .section');
-      await relatedEl.screenshot({ path: p4Path });
-      screenshotPaths.push(p4Path);
+      
+      await relatedEl.screenshot({ path: p4PathFb });
+      await captureSquare(relatedEl, p4PathIg);
+      fbScreenshotPaths.push(p4PathFb);
+      igScreenshotPaths.push(p4PathIg);
 
       // --- SCREENSHOT 5: Footer ---
       await page.evaluate(() => {
         document.querySelector('footer').style.display = 'block';
       });
-      const p5Path = path.join(screenshotDir, `${toolId}-social-5.png`);
+      const p5PathFb = path.join(screenshotDir, `${toolId}-social-5.png`);
+      const p5PathIg = path.join(screenshotDir, `${toolId}-social-5-ig.png`);
       const footerEl = await page.$('footer');
-      await footerEl.screenshot({ path: p5Path });
-      screenshotPaths.push(p5Path);
+      
+      await footerEl.screenshot({ path: p5PathFb });
+      await captureSquare(footerEl, p5PathIg);
+      fbScreenshotPaths.push(p5PathFb);
+      igScreenshotPaths.push(p5PathIg);
 
       await browser.close();
       
-      // --- UPLOAD ALL 5 IMAGES TO LITTERBOX ---
-      const rawImageUrls = [];
-      for (let i = 0; i < screenshotPaths.length; i++) {
-        console.log(`📤 Uploading screenshot ${i+1}/5 to Litterbox...`);
-        const fileBuffer = fs.readFileSync(screenshotPaths[i]);
+      // --- UPLOAD IMAGES TO LITTERBOX ---
+      // Upload Facebook images (natural aspect ratios)
+      const fbImageUrls = [];
+      for (let i = 0; i < fbScreenshotPaths.length; i++) {
+        console.log(`📤 Uploading Facebook screenshot ${i+1}/5 to Litterbox...`);
+        const fileBuffer = fs.readFileSync(fbScreenshotPaths[i]);
         const fileBlob = new Blob([fileBuffer], { type: 'image/png' });
         const formData = new FormData();
         formData.append('reqtype', 'fileupload');
@@ -172,14 +241,31 @@ server.listen(PORT, async () => {
           method: 'POST',
           body: formData
         });
-        
-        if (!uploadRes.ok) {
-          throw new Error(`Upload failed: ${uploadRes.statusText}`);
-        }
-        
+        if (!uploadRes.ok) throw new Error(`FB Upload failed: ${uploadRes.statusText}`);
         const rawImageUrl = await uploadRes.text();
-        console.log(`🔗 Photo ${i+1} URL: ${rawImageUrl}`);
-        rawImageUrls.push(rawImageUrl.trim());
+        console.log(`🔗 FB Photo ${i+1} URL: ${rawImageUrl}`);
+        fbImageUrls.push(rawImageUrl.trim());
+      }
+
+      // Upload Instagram images (1:1 padded square aspect ratios)
+      const igImageUrls = [];
+      for (let i = 0; i < igScreenshotPaths.length; i++) {
+        console.log(`📤 Uploading Instagram screenshot ${i+1}/5 to Litterbox...`);
+        const fileBuffer = fs.readFileSync(igScreenshotPaths[i]);
+        const fileBlob = new Blob([fileBuffer], { type: 'image/png' });
+        const formData = new FormData();
+        formData.append('reqtype', 'fileupload');
+        formData.append('time', '1h');
+        formData.append('fileToUpload', fileBlob, `${toolId}-social-${i+1}-ig.png`);
+        
+        const uploadRes = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {
+          method: 'POST',
+          body: formData
+        });
+        if (!uploadRes.ok) throw new Error(`IG Upload failed: ${uploadRes.statusText}`);
+        const rawImageUrl = await uploadRes.text();
+        console.log(`🔗 IG Photo ${i+1} URL: ${rawImageUrl}`);
+        igImageUrls.push(rawImageUrl.trim());
       }
       
       // Prepare templates
@@ -192,12 +278,12 @@ server.listen(PORT, async () => {
       // --- 1. PUBLISH TO FACEBOOK AS A MULTI-PHOTO CAROUSEL ---
       console.log(`📣 Uploading carousel images to Facebook Page...`);
       const fbPhotoIds = [];
-      for (const url of rawImageUrls) {
+      for (const url of fbImageUrls) {
         const fbPhotoRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/photos`, {
           method: 'POST',
           body: new URLSearchParams({
             url: url,
-            published: 'false', // Keep unpublished until feed post is made
+            published: 'false',
             access_token: process.env.FB_PAGE_ACCESS_TOKEN
           })
         });
@@ -231,7 +317,7 @@ server.listen(PORT, async () => {
       // --- 2. PUBLISH TO INSTAGRAM AS A CAROUSEL ---
       console.log(`📸 Creating Instagram carousel item containers...`);
       const igItemIds = [];
-      for (const url of rawImageUrls) {
+      for (const url of igImageUrls) {
         const igItemRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -249,7 +335,7 @@ server.listen(PORT, async () => {
         }
       }
 
-      if (igItemIds.length === rawImageUrls.length) {
+      if (igItemIds.length === igImageUrls.length) {
         console.log(`📣 Creating Instagram carousel parent container...`);
         const igParentRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media`, {
           method: 'POST',
@@ -281,6 +367,15 @@ server.listen(PORT, async () => {
           } else {
             console.log(`✅ Instagram carousel post published! ID: ${igPublishJson.id}`);
           }
+        }
+      }
+      
+      // Cleanup IG-specific padded image files from local disk to prevent repo bloat
+      for (const igPath of igScreenshotPaths) {
+        try {
+          fs.unlinkSync(igPath);
+        } catch (err) {
+          // ignore
         }
       }
       
