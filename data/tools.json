@@ -1616,5 +1616,77 @@
       "extract email addresses",
       "email scraper"
     ]
+  },
+  {
+    "id": "url-extractor",
+    "title": "URL Extractor",
+    "h1": "URL Extractor — pull links out of text",
+    "intro": "Extract all http and https links from any document, log or page source, deduplicated into a tidy list.",
+    "blurb": "Extract all http and https links from any document, log or page source, deduplicated into a tidy list.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "extract-urls",
+          "label": "Extract URLs",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Extract URLs) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"See https://example.com and http://test.org/docs?page=2. https://example.com rocks.\" → click \"Extract URLs\" → output \"https://example.com ⏎ http://test.org/docs?page=2.\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the URL Extractor do?",
+        "a": "Extract all http and https links from any document, log or page source, deduplicated into a tidy list."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The URL Extractor runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. URL Extractor is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Extract all http and https links from any document, log or page source, deduplicated into a tidy list. Free, fast and private — runs entirely in your browser with no u…",
+    "seoTitle": "URL Extractor — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "url extractor",
+      "find links in text",
+      "extract urls",
+      "link extractor"
+    ]
   }
 ]
