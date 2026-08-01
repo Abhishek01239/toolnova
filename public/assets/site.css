@@ -1,63 +1,65 @@
 /* ==========================================================================
-   ToolNova Design System — Inspired by GoDaylight.com
+   ToolNova Design System — Premium Rocket Theme
    ========================================================================== */
 
 :root {
-  /* GoDaylight Warm Light Theme Palette */
-  --bg: #FFF8EB;
-  --surface: #FFFDF9;
-  --surface-2: #F7EED9;
-  --text: #111111;
-  --muted: #6F6A60;
-  --border: #DACAB6;
-  --border-light: #F7EED9;
-  --accent: #F66F00;
-  --accent-hover: #D35F00;
-  --accent-2: #8a70d6;
+  /* Premium Rocket Theme Palette (Light) */
+  --bg: #FCFAFF;
+  --surface: #FFFFFF;
+  --surface-2: #F1EBFB;
+  --text: #080510;
+  --muted: #685C7A;
+  --border: #DCD5E8;
+  --border-light: #F1EBFB;
+  --accent: #7000FF;
+  --accent-hover: #FF00A0;
+  --accent-2: #FF6C00;
   --accent-contrast: #ffffff;
-  --accent-soft: rgba(246, 111, 0, 0.08);
+  --accent-soft: rgba(112, 0, 255, 0.08);
   
-  --ok: #1D3E86;
-  --ok-soft: rgba(189, 213, 255, 0.22);
+  --ok: #00A2FF;
+  --ok-soft: rgba(0, 162, 255, 0.12);
   --err: #B91C1C;
   --err-soft: rgba(185, 28, 28, 0.08);
   
   --radius: 12px;
-  --radius-md: 6px;
-  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
   
-  --shadow: 0 4px 20px rgba(111, 106, 96, 0.08);
-  --shadow-sm: 0 1px 2px rgba(111, 106, 96, 0.04);
+  --shadow: 0 10px 30px rgba(112, 0, 255, 0.06);
+  --shadow-sm: 0 1px 3px rgba(112, 0, 255, 0.03);
   
   --display: 'Fraunces', 'Georgia', serif;
   --sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --mono: 'Space Mono', 'Courier New', monospace;
   
   --header-h: 64px;
+  
+  --gradient-premium: linear-gradient(135deg, #00A2FF 0%, #7000FF 35%, #FF00A0 65%, #FF6C00 100%);
 }
 
 [data-theme="dark"] {
-  /* GoDaylight Obsidian Dark Theme Palette */
-  --bg: #121212;
-  --surface: #1C1C1E;
-  --surface-2: #272729;
-  --text: #FFF8EB;
-  --muted: #A09B93;
-  --border: #3A3A3C;
-  --border-light: #2D2D30;
-  --accent: #FF7E15;
-  --accent-hover: #FF9A3C;
-  --accent-2: #A78BFA;
-  --accent-contrast: #121212;
-  --accent-soft: rgba(255, 126, 21, 0.15);
+  /* Premium Rocket Theme Palette (Dark) */
+  --bg: #07060C;
+  --surface: #100E1B;
+  --surface-2: #191629;
+  --text: #FCFAFF;
+  --muted: #9E95B0;
+  --border: #2C2747;
+  --border-light: #191629;
+  --accent: #FF00A0;
+  --accent-hover: #FF6C00;
+  --accent-2: #00A2FF;
+  --accent-contrast: #faf8ff;
+  --accent-soft: rgba(255, 0, 160, 0.15);
   
-  --ok: #8ED5FF;
-  --ok-soft: rgba(142, 213, 255, 0.15);
+  --ok: #00E5FF;
+  --ok-soft: rgba(0, 229, 255, 0.15);
   --err: #F87171;
   --err-soft: rgba(248, 113, 113, 0.12);
   
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* ---------- Ambient Glow & Reset ---------- */
@@ -85,12 +87,14 @@ body {
   height: 100vh;
   z-index: -2;
   pointer-events: none;
-  background: radial-gradient(circle at 15% 15%, rgba(246, 111, 0, 0.05) 0%, transparent 45%),
-              radial-gradient(circle at 85% 85%, rgba(138, 112, 214, 0.04) 0%, transparent 55%);
+  background: radial-gradient(circle at 15% 15%, rgba(0, 162, 255, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 85% 85%, rgba(255, 0, 160, 0.06) 0%, transparent 55%),
+              radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.04) 0%, transparent 60%);
 }
 [data-theme="dark"] .site-glow {
-  background: radial-gradient(circle at 15% 15%, rgba(255, 126, 21, 0.04) 0%, transparent 45%),
-              radial-gradient(circle at 85% 85%, rgba(167, 139, 250, 0.03) 0%, transparent 55%);
+  background: radial-gradient(circle at 15% 15%, rgba(0, 162, 255, 0.09) 0%, transparent 45%),
+              radial-gradient(circle at 85% 85%, rgba(255, 0, 160, 0.08) 0%, transparent 55%),
+              radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.04) 0%, transparent 60%);
 }
 
 h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; font-weight: 700; color: var(--text); }
@@ -188,7 +192,7 @@ main.container { padding-top: 36px; padding-bottom: 80px; }
 }
 .hero .lead { font-size: 1.15rem; color: var(--muted); max-width: 720px; margin: 0 auto 32px; font-weight: 400; }
 .hero-grad {
-  background: linear-gradient(135deg, var(--accent) 30%, var(--accent-2) 90%);
+  background: var(--gradient-premium);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   font-style: italic;
 }
@@ -255,7 +259,7 @@ main.container { padding-top: 36px; padding-bottom: 80px; }
   text-decoration: none;
   transform: translateY(-3px);
   border-color: var(--accent);
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 30px rgba(112, 0, 255, 0.08);
   background: color-mix(in srgb, var(--surface) 95%, var(--accent-soft));
 }
 .tool-card-emoji {
@@ -282,8 +286,17 @@ main.container { padding-top: 36px; padding-bottom: 80px; }
 }
 .btn:hover { background: var(--surface-2); border-color: var(--text); }
 .btn:active { transform: translateY(1px); }
-.btn-primary { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
-.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--accent-contrast); }
+.btn-primary { 
+  background: var(--gradient-premium); 
+  color: #ffffff; 
+  border: 0; 
+  box-shadow: 0 4px 15px rgba(112, 0, 255, 0.18); 
+}
+.btn-primary:hover { 
+  opacity: 0.92; 
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(112, 0, 255, 0.28); 
+}
 .btn-ghost { background: transparent; border-color: var(--border); }
 .btn-ghost:hover { background: var(--surface-2); }
 .btn-small { padding: 6px 12px; font-size: 0.72rem; }
