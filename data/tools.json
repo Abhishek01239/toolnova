@@ -1781,5 +1781,82 @@
       "kebab case",
       "variable name converter"
     ]
+  },
+  {
+    "id": "url-encoder-decoder",
+    "title": "URL Encoder / Decoder",
+    "h1": "URL Encode & Decode — percent-encoding",
+    "intro": "Percent-encode and decode URL components so special characters never break your links or query strings.",
+    "blurb": "Percent-encode and decode URL components so special characters never break your links or query strings.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to URL (percent-encoding)",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from URL (percent-encoding)"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to URL (percent-encoding)\" or \"Decode from URL (percent-encoding)\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"Hello World! 100% free & simple = true\" produces \"Hello%20World!%20100%25%20free%20%26%20simple%20%3D%20true\".",
+      "Decoding \"Hello%20World!%20100%25%20free%20%26%20simple%20%3D%20true\" returns the original \"Hello World! 100% free & simple = true\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is URL (percent-encoding) encoding?",
+        "a": "URL encoding (percent-encoding) escapes characters that are not safe inside a URL — spaces, ampersands, non-ASCII characters and reserved symbols — so links and query strings never break."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The URL Encoder / Decoder runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. URL Encoder / Decoder is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Percent-encode and decode URL components so special characters never break your links or query strings. Free, fast and private — runs entirely in your browser with no…",
+    "seoTitle": "URL Encoder / Decoder — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "url encode",
+      "url decode",
+      "percent encoding",
+      "encode url online"
+    ]
   }
 ]
