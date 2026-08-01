@@ -142,7 +142,7 @@ main.container { padding-top: 36px; padding-bottom: 80px; }
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 800; font-size: 1.25rem; font-family: var(--display); font-style: italic; }
 .brand:hover { text-decoration: none; }
-.brand svg { fill: var(--accent); }
+.logo-img { border-radius: 6px; object-fit: cover; }
 .brand-name { letter-spacing: -0.02em; }
 .main-nav { display: flex; gap: 6px; flex-wrap: wrap; }
 .main-nav a {

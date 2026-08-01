@@ -1,5 +1,4 @@
 import { esc, escAttr } from '../lib/html.js';
-import { logoSvg } from './logo.js';
 
 const NAV_LINKS = [
   { name: 'Categories', href: '/categories' },
@@ -17,7 +16,7 @@ export function navbar(site, currentPath) {
   return `<header class="site-header">
   <div class="container nav-inner">
     <a class="brand" href="/" aria-label="${escAttr(site.name)} home">
-      ${logoSvg(30)}<span class="brand-name">${esc(site.name)}</span>
+      <img src="/assets/logo.png" alt="Logo" width="30" height="30" class="logo-img"><span class="brand-name">${esc(site.name)}</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">${links}</nav>
     <form class="nav-search" action="/search" method="get" role="search">
