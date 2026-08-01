@@ -99,7 +99,7 @@ server.listen(PORT, async () => {
       formData.append('time', '1h');
       formData.append('fileToUpload', fileBlob, `${toolId}-social.png`);
       
-      const uploadRes = await fetch('https://litterbox.catbox.moe/resources/api.php', {
+      const uploadRes = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {
         method: 'POST',
         body: formData
       });
