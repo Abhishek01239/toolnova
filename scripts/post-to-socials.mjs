@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 const TOOLS_JSON = path.join(ROOT, 'data', 'tools.json');
+const SITE_JSON = path.join(ROOT, 'data', 'site.json');
 
 // Graceful check for credentials
 if (!process.env.FB_PAGE_ID || !process.env.FB_PAGE_ACCESS_TOKEN || !process.env.IG_BUSINESS_ID) {
@@ -110,7 +111,8 @@ server.listen(PORT, async () => {
       console.log(`🔗 Public temporary image URL: ${rawImageUrl}`);
       
       // Prepare templates
-      const siteUrl = process.env.SITE_URL || 'https://toolnova.vercel.app';
+      const site = JSON.parse(fs.readFileSync(SITE_JSON, 'utf8'));
+      const siteUrl = site.url.replace(/\/$/, ''); // Remove trailing slash
       const toolLink = `${siteUrl}/tools/${toolId}`;
       const captionText = `🚀 New Tool Release: [ ${tool.title.toUpperCase()} ]! 🚀\n\nCheck out our brand new utility, live now and 100% free!\n\n👉 Try it here: ${toolLink}\n\n${tool.blurb || tool.description}\n\n🔒 Private by design: runs entirely in your browser — your data never leaves your device.\n\n#toolnova #freewebtools #productivity #developer #utilities #freeapps`;
       const igCaption = `🚀 NEW TOOL RELEASE: [ ${tool.title.toUpperCase()} ]! 🚀\n\nWe just added a brand-new tool to ToolNova!\n\n${tool.blurb || tool.description}\n\n👉 Try it now! Link in bio: @toolnova_home\n\n🔒 100% Private: runs entirely in your browser. No sign-up, no cost.\n\n#toolnova #developer #productivity #webapps #designer #usefulwebsites #freeonlineapps #coder`;
