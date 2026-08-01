@@ -129,16 +129,15 @@ server.listen(PORT, async () => {
         process.env.FB_PAGE_ACCESS_TOKEN?.substring(0, 20)
       );
 
-      console.log("📣 Posting to Facebook Page...");
+      console.log("📣 Uploading photo to Facebook Page...");
       const params = new URLSearchParams({
-        message: captionText,
-        link: toolLink,
-        picture: rawImageUrl,
+        url: rawImageUrl,
+        caption: captionText,
         access_token: process.env.FB_PAGE_ACCESS_TOKEN,
       });
 
       const fbRes = await fetch(
-        `https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/feed`,
+        `https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/photos`,
         {
           method: "POST",
           body: params,
