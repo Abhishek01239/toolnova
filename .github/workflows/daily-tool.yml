@@ -71,6 +71,7 @@ jobs:
           git add -A
           git diff --cached --quiet && exit 0
           git commit -m "feat(tools): add ${{ steps.add.outputs.ADDED_TOOLS }} [daily]"
+          git pull --rebase origin main
           git push
 
 
