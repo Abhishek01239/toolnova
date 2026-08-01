@@ -1544,5 +1544,77 @@
       "remove html",
       "convert html to plain text"
     ]
+  },
+  {
+    "id": "email-extractor",
+    "title": "Email Extractor",
+    "h1": "Email Extractor — find addresses in text",
+    "intro": "Pull every email address out of any pasted text, deduplicated and ready to copy as a clean list. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Pull every email address out of any pasted text, deduplicated and ready to copy as a clean list.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "extract-emails",
+          "label": "Extract email addresses",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Extract email addresses) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"Reach ada@example.com or bob.smith@test.org; ada@example.com again.\" → click \"Extract email addresses\" → output \"ada@example.com ⏎ bob.smith@test.org\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Email Extractor do?",
+        "a": "Pull every email address out of any pasted text, deduplicated and ready to copy as a clean list."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Email Extractor runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Email Extractor is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Pull every email address out of any pasted text, deduplicated and ready to copy as a clean list. Free, fast and private — runs entirely in your browser with no uploads…",
+    "seoTitle": "Email Extractor — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "email extractor",
+      "find emails in text",
+      "extract email addresses",
+      "email scraper"
+    ]
   }
 ]
