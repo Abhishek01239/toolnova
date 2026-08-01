@@ -91,13 +91,15 @@ server.listen(PORT, async () => {
       
       await browser.close();
       
-      console.log(`📤 Uploading screenshot to tmpfiles.org...`);
+      console.log(`📤 Uploading screenshot to Litterbox...`);
       const fileBuffer = fs.readFileSync(screenshotPath);
       const fileBlob = new Blob([fileBuffer], { type: 'image/png' });
       const formData = new FormData();
-      formData.append('file', fileBlob, `${toolId}-social.png`);
+      formData.append('reqtype', 'fileupload');
+      formData.append('time', '1h');
+      formData.append('fileToUpload', fileBlob, `${toolId}-social.png`);
       
-      const uploadRes = await fetch('https://tmpfiles.org/api/v1/upload', {
+      const uploadRes = await fetch('https://litterbox.catbox.moe/resources/api.php', {
         method: 'POST',
         body: formData
       });
@@ -106,8 +108,7 @@ server.listen(PORT, async () => {
         throw new Error(`Upload failed: ${uploadRes.statusText}`);
       }
       
-      const uploadJson = await uploadRes.json();
-      const rawImageUrl = uploadJson.data.url.replace('https://tmpfiles.org/', 'https://tmpfiles.org/dl/');
+      const rawImageUrl = await uploadRes.text();
       console.log(`🔗 Public temporary image URL: ${rawImageUrl}`);
       
       // Prepare templates
