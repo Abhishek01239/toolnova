@@ -81,7 +81,11 @@ server.listen(PORT, async () => {
       // Wait for layout rendering and fonts
       await page.waitForTimeout(1000);
       
-      const screenshotPath = path.join(ROOT, `${toolId}-social.png`);
+      const screenshotDir = path.join(ROOT, 'public', 'assets', 'tools');
+      if (!fs.existsSync(screenshotDir)) {
+        fs.mkdirSync(screenshotDir, { recursive: true });
+      }
+      const screenshotPath = path.join(screenshotDir, `${toolId}-social.png`);
       const appEl = await page.$('#tool-app');
       if (appEl) {
         await appEl.screenshot({ path: screenshotPath });
@@ -129,6 +133,7 @@ server.listen(PORT, async () => {
       const params = new URLSearchParams({
         message: captionText,
         link: toolLink,
+        picture: rawImageUrl,
         access_token: process.env.FB_PAGE_ACCESS_TOKEN,
       });
 
@@ -181,12 +186,7 @@ server.listen(PORT, async () => {
         }
       }
       
-      // Cleanup local temp screenshot file
-      try {
-        fs.unlinkSync(screenshotPath);
-      } catch (err) {
-        // ignore
-      }
+      // Keep screenshot in repo assets for static page og:image tagging
     }
   } catch (err) {
     console.error("❌ Social media post automation failed:", err);
