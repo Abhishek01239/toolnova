@@ -1688,5 +1688,98 @@
       "extract urls",
       "link extractor"
     ]
+  },
+  {
+    "id": "variable-case-converter",
+    "title": "Variable Case Converter",
+    "h1": "Variable Case Converter — camel, snake, kebab",
+    "intro": "Convert identifier names between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE for any programming language.",
+    "blurb": "Convert identifier names between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE for any programming language.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 6,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "camel-case",
+          "label": "camelCase",
+          "primary": true
+        },
+        {
+          "id": "pascal-case",
+          "label": "PascalCase",
+          "primary": false
+        },
+        {
+          "id": "snake-case",
+          "label": "snake_case",
+          "primary": false
+        },
+        {
+          "id": "kebab-case",
+          "label": "kebab-case",
+          "primary": false
+        },
+        {
+          "id": "constant-case",
+          "label": "CONSTANT_CASE",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 6
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox\" → click \"camelCase\" → output \"theQuickBrownFox\".",
+      "Input \"the quick brown fox\" → click \"PascalCase\" → output \"TheQuickBrownFox\".",
+      "Input \"the quick brown fox\" → click \"snake_case\" → output \"the_quick_brown_fox\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Variable Case Converter do?",
+        "a": "Convert identifier names between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE for any programming language."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Variable Case Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Variable Case Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert identifier names between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE for any programming language.",
+    "seoTitle": "Variable Case Converter — Free Online Tool | ToolNova",
+    "category": "Developer",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "camelcase converter",
+      "snake case converter",
+      "kebab case",
+      "variable name converter"
+    ]
   }
 ]
