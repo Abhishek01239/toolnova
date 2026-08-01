@@ -1395,5 +1395,82 @@
       "clean up text",
       "remove blank rows"
     ]
+  },
+  {
+    "id": "remove-extra-whitespace",
+    "title": "Remove Extra Whitespace",
+    "h1": "Remove Extra Spaces & Whitespace",
+    "intro": "Collapse runs of spaces and tabs into single spaces and trim line ends — instant cleanup after copy-pasting from PDFs.",
+    "blurb": "Collapse runs of spaces and tabs into single spaces and trim line ends — instant cleanup after copy-pasting from PDFs.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "remove-extra-spaces",
+          "label": "Collapse extra spaces",
+          "primary": true
+        },
+        {
+          "id": "trim-lines",
+          "label": "Trim line ends",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Collapse extra spaces, Trim line ends) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"too     many      spaces    in   here\" → click \"Collapse extra spaces\" → output \"too many spaces in here\".",
+      "Input \"   padded left and right    ⏎ \talso padded\t\" → click \"Trim line ends\" → output \"padded left and right ⏎ also padded\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Remove Extra Whitespace do?",
+        "a": "Collapse runs of spaces and tabs into single spaces and trim line ends — instant cleanup after copy-pasting from PDFs."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Remove Extra Whitespace runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Remove Extra Whitespace is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Collapse runs of spaces and tabs into single spaces and trim line ends — instant cleanup after copy-pasting from PDFs.",
+    "seoTitle": "Remove Extra Whitespace — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "remove extra spaces",
+      "collapse whitespace",
+      "trim spaces",
+      "fix double spaces"
+    ]
   }
 ]
