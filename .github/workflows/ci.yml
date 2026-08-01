@@ -20,7 +20,7 @@ jobs:
 
       # Zero dependencies: nothing to install.
       - name: Unit tests
-        run: node --test tests/
+        run: node --test
 
       - name: Build site
         run: node scripts/build.mjs

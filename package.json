@@ -11,8 +11,8 @@
     "add": "node scripts/add-daily-tool.mjs",
     "build": "node scripts/build.mjs",
     "verify": "node scripts/verify.mjs",
-    "test": "node --test tests/",
-    "all": "node --test tests/ && node scripts/build.mjs && node scripts/verify.mjs",
+    "test": "node --test",
+    "all": "node --test && node scripts/build.mjs && node scripts/verify.mjs",
     "dev": "node scripts/build.mjs && cd dist && python3 -m http.server 4173"
   },
   "license": "MIT"

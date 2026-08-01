@@ -1164,5 +1164,82 @@
       "dedupe list",
       "unique lines"
     ]
+  },
+  {
+    "id": "sort-lines-alphabetically",
+    "title": "Sort Lines Alphabetically",
+    "h1": "Sort Lines A→Z / Z→A — alphabetize lists",
+    "intro": "Alphabetize any list A→Z or Z→A with natural number handling, so item2 sorts before item10. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Alphabetize any list A→Z or Z→A with natural number handling, so item2 sorts before item10.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your list (one item per line)",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "sort-lines",
+          "label": "Sort lines A → Z",
+          "primary": true
+        },
+        {
+          "id": "sort-lines-reverse",
+          "label": "Sort lines Z → A",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Sort lines A → Z, Sort lines Z → A) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"pear ⏎ apple ⏎ orange ⏎ banana\" → click \"Sort lines A → Z\" → output \"apple ⏎ banana ⏎ orange ⏎ pear\".",
+      "Input \"apple ⏎ pear ⏎ orange ⏎ banana\" → click \"Sort lines Z → A\" → output \"pear ⏎ orange ⏎ banana ⏎ apple\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Sort Lines Alphabetically do?",
+        "a": "Alphabetize any list A→Z or Z→A with natural number handling, so item2 sorts before item10."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Sort Lines Alphabetically runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Sort Lines Alphabetically is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Alphabetize any list A→Z or Z→A with natural number handling, so item2 sorts before item10. Free, fast and private — runs entirely in your browser with no uploads or s…",
+    "seoTitle": "Sort Lines Alphabetically — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "sort lines alphabetically",
+      "alphabetize list",
+      "sort text lines",
+      "a to z sorter"
+    ]
   }
 ]
