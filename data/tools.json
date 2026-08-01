@@ -1935,5 +1935,82 @@
       "escape html",
       "html encode"
     ]
+  },
+  {
+    "id": "text-to-hex-converter",
+    "title": "Text to Hex Converter",
+    "h1": "Text ⇄ Hex — hexadecimal converter",
+    "intro": "Convert text to its hexadecimal byte representation and back, with full UTF-8 support for any language.",
+    "blurb": "Convert text to its hexadecimal byte representation and back, with full UTF-8 support for any language.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to hexadecimal",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from hexadecimal"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to hexadecimal\" or \"Decode from hexadecimal\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"Hi there!\" produces \"486920746865726521\".",
+      "Decoding \"486920746865726521\" returns the original \"Hi there!\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is hexadecimal encoding?",
+        "a": "Hexadecimal encoding represents each byte of (UTF-8) text as two hex digits, 0–9 and a–f — the format used everywhere from color codes to cryptographic hashes."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Text to Hex Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Text to Hex Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert text to its hexadecimal byte representation and back, with full UTF-8 support for any language. Free, fast and private — runs entirely in your browser with no…",
+    "seoTitle": "Text to Hex Converter — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "text to hex",
+      "hex to text",
+      "hexadecimal converter",
+      "string to hex"
+    ]
   }
 ]
