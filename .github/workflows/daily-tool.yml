@@ -46,6 +46,23 @@ jobs:
           node scripts/add-daily-tool.mjs --count "$COUNT" | tee add.log
           grep -E '^ADDED_TOOLS=' add.log >> "$GITHUB_OUTPUT" || echo 'ADDED_TOOLS=' >> "$GITHUB_OUTPUT"
 
+      - name: Install Playwright and dependencies
+        if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Post to Instagram & Facebook
+        if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_BUSINESS_ID: ${{ secrets.IG_BUSINESS_ID }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://toolnova.vercel.app' }}
+          ADDED_TOOLS: ${{ steps.add.outputs.ADDED_TOOLS }}
+        run: |
+          node scripts/post-to-socials.mjs
+
       - name: Commit and push
         if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
         run: |
@@ -55,6 +72,7 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "feat(tools): add ${{ steps.add.outputs.ADDED_TOOLS }} [daily]"
           git push
+
 
 # Vercel deploys the push automatically via its Git integration
 # (vercel.json: buildCommand "node scripts/build.mjs", outputDirectory "dist").
