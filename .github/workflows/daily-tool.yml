@@ -1,10 +1,10 @@
 name: Daily Tool
 
-# Every morning at 02:30 UTC = 08:00 IST. Also runnable manually with a
+# Run every 30 minutes. Also runnable manually with a
 # custom tool count (Actions → Daily Tool → Run workflow).
 on:
   schedule:
-    - cron: '30 2 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       count:
