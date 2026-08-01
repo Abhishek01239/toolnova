@@ -147,14 +147,21 @@ async function main() {
     }
   }
 
-  // Sitemap & robots & search index
+  // Sitemap & robots & search index & RSS
   const sitemap = await readFile(path.join(DIST, 'sitemap.xml'), 'utf8');
   const sitemapCount = (sitemap.match(/<url>/g) || []).length;
   const expectedPages = routes.size - (routes.has('/404') ? 1 : 0);
   if (sitemapCount !== expectedPages) err(`sitemap has ${sitemapCount} urls but ${expectedPages} pages were built`);
   const robots = await readFile(path.join(DIST, 'robots.txt'), 'utf8');
   if (!robots.includes(`Sitemap: ${site.url}/sitemap.xml`)) err('robots.txt missing correct Sitemap line');
+  if (!robots.includes(`Sitemap: ${site.url}/rss.xml`)) err('robots.txt missing correct RSS Sitemap line');
   if (robots.includes('Disallow: /')) err('robots.txt blocks crawling');
+
+  const rss = await readFile(path.join(DIST, 'rss.xml'), 'utf8');
+  if (!rss.includes('<rss version="2.0"')) err('rss.xml missing correct version or format');
+  const rssCount = (rss.match(/<item>/g) || []).length;
+  const expectedRssCount = Math.min(tools.length, 20);
+  if (rssCount !== expectedRssCount) err(`rss.xml has ${rssCount} items, expected ${expectedRssCount}`);
 
   const searchIndex = JSON.parse(await readFile(path.join(DIST, 'search.json'), 'utf8'));
   if (searchIndex.length !== tools.length) err(`search.json has ${searchIndex.length} entries for ${tools.length} tools`);

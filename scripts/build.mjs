@@ -11,7 +11,7 @@ import { page } from '../lib/layout.js';
 import { renderToolPage } from '../lib/render.js';
 import { categorySlug } from '../lib/categories.js';
 import { categoryEmoji } from '../lib/categories.js';
-import { truncate } from '../lib/html.js';
+import { truncate, esc } from '../lib/html.js';
 
 import homePage from '../pages/home.js';
 import searchPage from '../pages/search.js';
@@ -63,6 +63,40 @@ function buildSitemap(site, tools, byCategory, extraPages) {
   add('/privacy', { changefreq: 'yearly', priority: '0.3' });
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
 }
+
+function buildRss(site, tools) {
+  const items = [];
+  const latestTools = [...tools]
+    .sort((a, b) => (a.added < b.added ? 1 : -1) || a.id.localeCompare(b.id))
+    .slice(0, 20);
+
+  for (const tool of latestTools) {
+    const link = `${site.url}/tools/${tool.id}`;
+    const pubDate = new Date(tool.added).toUTCString();
+    items.push(`    <item>
+      <title>${esc(tool.title)}</title>
+      <link>${link}</link>
+      <guid isPermaLink="true">${link}</guid>
+      <pubDate>${pubDate}</pubDate>
+      <description>${esc(tool.blurb || tool.description)}</description>
+      <category>${esc(tool.category)}</category>
+    </item>`);
+  }
+
+  return `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>${esc(site.name)}</title>
+  <link>${site.url}</link>
+  <description>${esc(site.description)}</description>
+  <language>en-us</language>
+  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+  <atom:link href="${site.url}/rss.xml" rel="self" type="application/rss+xml" />
+${items.join('\n')}
+</channel>
+</rss>`;
+}
+
 
 async function main() {
   const site = await readJson(path.join(ROOT, 'data', 'site.json'));
@@ -123,9 +157,13 @@ async function main() {
 
   const sitemap = buildSitemap(site, tools, byCategory, ['/search', '/categories', '/latest', '/popular']);
   await writeFile(path.join(DIST, 'sitemap.xml'), sitemap, 'utf8');
+
+  const rss = buildRss(site, tools);
+  await writeFile(path.join(DIST, 'rss.xml'), rss, 'utf8');
+
   await writeFile(
     path.join(DIST, 'robots.txt'),
-    `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`,
+    `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\nSitemap: ${site.url}/rss.xml\n`,
     'utf8'
   );
 
