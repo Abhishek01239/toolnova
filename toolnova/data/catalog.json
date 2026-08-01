@@ -1,0 +1,349 @@
+[
+  { "id": "word-counter", "factory": "custom", "category": "Text", "keywords": ["word counter", "character counter"] },
+  { "id": "json-formatter", "factory": "custom", "category": "JSON", "keywords": ["json formatter", "json validator"] },
+  { "id": "password-generator", "factory": "custom", "category": "Password", "keywords": ["password generator", "strong password"] },
+  { "id": "uuid-generator", "factory": "custom", "category": "Developer", "keywords": ["uuid generator", "uuid v4"] },
+  { "id": "unit-converter", "factory": "custom", "category": "Unit Converter", "keywords": ["unit converter", "convert units"] },
+  { "id": "age-calculator", "factory": "custom", "category": "Date & Time", "keywords": ["age calculator", "how old am i"] },
+  { "id": "slug-generator", "factory": "custom", "category": "SEO", "keywords": ["slug generator", "url slug"] },
+  { "id": "lorem-ipsum-generator", "factory": "custom", "category": "Generators", "keywords": ["lorem ipsum", "placeholder text"] },
+  {
+    "id": "case-converter",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["case converter", "uppercase to lowercase", "title case converter", "capitalization tool"],
+    "blurb": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE with one click.",
+    "params": {
+      "title": "Case Converter",
+      "h1": "Case Converter — UPPER, lower, Title & more",
+      "transforms": ["uppercase", "lowercase", "title-case", "sentence-case", "camel-case", "pascal-case", "snake-case", "kebab-case", "constant-case"],
+      "rows": 8
+    },
+    "popularity": 84
+  },
+  {
+    "id": "base64-encoder-decoder",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": ["base64 encode", "base64 decode", "base64 converter", "base64 online"],
+    "blurb": "Encode and decode Base64 text online with full Unicode and emoji support. Safe copy-paste for tokens, data URIs and API payloads.",
+    "params": { "title": "Base64 Encoder / Decoder", "h1": "Base64 Encode & Decode — Unicode-safe", "codec": "base64" },
+    "popularity": 86
+  },
+
+  { "id": "bmi-calculator", "factory": "custom", "category": "Calculators", "keywords": ["bmi calculator", "body mass index", "bmi chart"], "blurb": "Calculate Body Mass Index from height and weight, with metric and imperial units, category ranges and healthy-weight guidance." },
+  { "id": "percentage-calculator", "factory": "custom", "category": "Math", "keywords": ["percentage calculator", "percent of", "percentage increase", "percentage change"], "blurb": "Every percentage question in one place: X% of Y, what percent X is of Y, percentage increase/decrease and reverse percentages." },
+  { "id": "tip-calculator", "factory": "custom", "category": "Calculators", "keywords": ["tip calculator", "gratuity calculator", "split bill"], "blurb": "Work out the tip and split the total between any number of people, with quick presets and rounding options." },
+  { "id": "emi-calculator", "factory": "custom", "category": "Finance", "keywords": ["emi calculator", "loan emi", "home loan emi", "monthly installment"], "blurb": "Calculate equated monthly installments for any loan from amount, interest rate and tenure, with total interest and payoff breakdown." },
+  { "id": "simple-interest-calculator", "factory": "custom", "category": "Finance", "keywords": ["simple interest", "interest calculator", "si formula"], "blurb": "Compute simple interest on any principal over days, months or years and see the exact formula applied step by step." },
+  { "id": "compound-interest-calculator", "factory": "custom", "category": "Finance", "keywords": ["compound interest", "compounding calculator", "investment growth"], "blurb": "See how money grows with compounding — yearly, half-yearly, quarterly or monthly — including a year-by-year schedule." },
+  { "id": "sip-calculator", "factory": "custom", "category": "Finance", "keywords": ["sip calculator", "mutual fund sip", "investment calculator"], "blurb": "Estimate the future value of monthly systematic investments from amount, expected return and time period." },
+  { "id": "cagr-calculator", "factory": "custom", "category": "Finance", "keywords": ["cagr calculator", "compound annual growth rate", "investment returns"], "blurb": "Calculate the compound annual growth rate of an investment between two values and time periods." },
+  { "id": "gst-calculator", "factory": "custom", "category": "Finance", "keywords": ["gst calculator", "gst inclusive", "gst exclusive", "tax calculator"], "blurb": "Add or remove GST from any amount at any rate, showing net price, tax component and gross total." },
+  { "id": "discount-calculator", "factory": "custom", "category": "Calculators", "keywords": ["discount calculator", "sale price", "percent off"], "blurb": "Find the sale price after one or two stacked discounts and see exactly how much you save." },
+  { "id": "margin-calculator", "factory": "custom", "category": "Finance", "keywords": ["margin calculator", "markup calculator", "profit margin"], "blurb": "Convert between cost, price, margin and markup in any direction with the formulas shown." },
+  { "id": "date-difference-calculator", "factory": "custom", "category": "Date & Time", "keywords": ["days between dates", "date difference", "date calculator"], "blurb": "Count the exact years, months, weeks and days between two dates, with inclusive/exclusive options." },
+  { "id": "working-days-calculator", "factory": "custom", "category": "Date & Time", "keywords": ["working days", "business days calculator", "weekdays between dates"], "blurb": "Count business days between two dates excluding weekends, with optional public-holiday exclusion list." },
+  { "id": "countdown-timer", "factory": "custom", "category": "Date & Time", "keywords": ["countdown timer", "days until", "event countdown"], "blurb": "Live countdown to any date and time with days, hours, minutes and seconds, shareable via URL parameters." },
+  { "id": "online-stopwatch", "factory": "custom", "category": "Productivity", "keywords": ["stopwatch", "online stopwatch", "lap timer"], "blurb": "A precise start/stop stopwatch with lap times and millisecond display that runs in your browser." },
+  { "id": "online-timer", "factory": "custom", "category": "Productivity", "keywords": ["online timer", "countdown alarm", "timer with sound"], "blurb": "Count down any duration with an audible alarm, keyboard shortcuts and fullscreen-friendly large digits." },
+  { "id": "pomodoro-timer", "factory": "custom", "category": "Productivity", "keywords": ["pomodoro timer", "focus timer", "25 minute timer"], "blurb": "Classic Pomodoro focus timer with configurable work and break lengths, cycle counting and gentle alerts." },
+  { "id": "timezone-converter", "factory": "custom", "category": "Date & Time", "keywords": ["timezone converter", "time zone difference", "world clock", "ist to est"], "blurb": "Convert a date and time between IANA time zones using the browser's built-in tz database — no server lookups." },
+  { "id": "markdown-to-html", "factory": "custom", "category": "Markdown", "keywords": ["markdown preview", "markdown to html", "md converter"], "blurb": "Write Markdown and see a live preview plus the generated, sanitized HTML. Supports headings, lists, code, tables and more." },
+  { "id": "csv-to-json", "factory": "custom", "category": "CSV", "keywords": ["csv to json", "convert csv", "csv parser"], "blurb": "Paste CSV and get structured JSON with correct quoting, delimiter detection and header handling." },
+  { "id": "json-to-csv", "factory": "custom", "category": "CSV", "keywords": ["json to csv", "json array to csv", "export csv"], "blurb": "Flatten an array of JSON objects into a proper RFC-4180 CSV with header row and correct escaping." },
+  { "id": "yaml-to-json", "factory": "custom", "category": "Developer", "keywords": ["yaml to json", "yml converter", "yaml parser"], "blurb": "Convert YAML configuration into validated JSON with clear error messages for common YAML mistakes." },
+  { "id": "json-to-yaml", "factory": "custom", "category": "Developer", "keywords": ["json to yaml", "yaml generator", "yml from json"], "blurb": "Emit clean, standards-compliant YAML from any JSON document with correct quoting and indentation." },
+  { "id": "regex-tester", "factory": "custom", "category": "Regex", "keywords": ["regex tester", "regular expression tester", "regex online"], "blurb": "Test regular expressions with live highlighting, capture groups, flags and replace-preview, plus a quick syntax reference." },
+  { "id": "text-diff-checker", "factory": "custom", "category": "Text", "keywords": ["diff checker", "compare text", "text difference", "online diff"], "blurb": "Compare two texts line by line and see exactly what was added, removed and changed in a clear inline diff." },
+  { "id": "character-counter", "factory": "custom", "category": "Text", "keywords": ["character counter", "letter counter", "character limit", "twitter character count"], "blurb": "Count characters live with guides for common limits: X/Twitter 280, SMS 160, SEO titles 60 and meta descriptions 160." },
+  { "id": "hash-generator", "factory": "custom", "category": "Hash", "keywords": ["hash generator", "sha256 online", "sha1", "sha512", "checksum"], "blurb": "Compute SHA-1, SHA-256, SHA-384 and SHA-512 digests of any text using the browser's crypto API." },
+  { "id": "hmac-generator", "factory": "custom", "category": "Hash", "keywords": ["hmac generator", "hmac sha256", "message authentication"], "blurb": "Generate HMAC signatures with SHA-256 or SHA-512 from a message and secret key, entirely in the browser." },
+  { "id": "password-strength-checker", "factory": "custom", "category": "Password", "keywords": ["password strength", "password checker", "password entropy"], "blurb": "Estimate password strength from entropy, character variety and common-pattern penalties, with plain-language advice." },
+  { "id": "jwt-decoder", "factory": "custom", "category": "Developer", "keywords": ["jwt decoder", "decode jwt", "jwt debugger"], "blurb": "Decode JSON Web Tokens locally: header, payload, readable timestamps and expiry status — no signature uploads, ever." },
+  { "id": "qr-code-generator", "factory": "custom", "category": "QR Code", "keywords": ["qr code generator", "qr code online", "create qr code"], "blurb": "Generate downloadable QR codes for URLs, text, Wi-Fi and contact details, rendered locally with an open-source encoder." },
+  { "id": "meta-tag-generator", "factory": "custom", "category": "SEO", "keywords": ["meta tag generator", "seo meta tags", "open graph generator"], "blurb": "Build complete SEO, Open Graph and Twitter Card meta tags from a simple form and copy the ready-to-paste HTML block." },
+  { "id": "robots-txt-generator", "factory": "custom", "category": "SEO", "keywords": ["robots.txt generator", "robots file", "disallow rules"], "blurb": "Create a valid robots.txt with allow/disallow paths, user-agent groups, crawl-delay and sitemap reference." },
+  { "id": "sitemap-xml-generator", "factory": "custom", "category": "SEO", "keywords": ["sitemap generator", "xml sitemap", "sitemap creator"], "blurb": "Paste a list of URLs and get a valid XML sitemap with lastmod, changefreq and priority controls." },
+  { "id": "open-graph-preview", "factory": "custom", "category": "Social Media", "keywords": ["open graph preview", "og preview", "link preview"], "blurb": "Preview how your page looks when shared: fill in the OG tags and see Facebook, X and chat-style card mockups." },
+  { "id": "color-converter", "factory": "custom", "category": "Color", "keywords": ["hex to rgb", "rgb to hsl", "color converter", "color picker"], "blurb": "Convert colors between HEX, RGB and HSL with a visual picker, alpha support and one-click copy of every format." },
+  { "id": "contrast-checker", "factory": "custom", "category": "Color", "keywords": ["contrast checker", "wcag contrast", "color accessibility"], "blurb": "Check text/background color pairs against WCAG AA and AAA contrast ratios for normal and large text." },
+  { "id": "gradient-generator", "factory": "custom", "category": "Design", "keywords": ["gradient generator", "css gradient", "linear gradient maker"], "blurb": "Design linear and radial CSS gradients visually with color stops, angles and presets, then copy the CSS." },
+  { "id": "box-shadow-generator", "factory": "custom", "category": "Design", "keywords": ["box shadow generator", "css shadow", "shadow maker"], "blurb": "Compose layered CSS box-shadows with live preview and presets from subtle card lifts to dramatic elevation." },
+  { "id": "border-radius-generator", "factory": "custom", "category": "Design", "keywords": ["border radius generator", "css rounded corners", "blob generator"], "blurb": "Tweak each corner radius independently — or go organic with blob shapes — and copy the resulting CSS." },
+  { "id": "invoice-generator", "factory": "custom", "category": "Productivity", "keywords": ["invoice generator", "free invoice", "invoice maker"], "blurb": "Create clean printable invoices with line items, tax and totals — saved only in your browser until you print or export." },
+  { "id": "username-generator", "factory": "custom", "category": "Generators", "keywords": ["username generator", "random username", "gamer tag generator"], "blurb": "Generate memorable usernames from curated word lists with style options for gaming, social and professional profiles." },
+  { "id": "fake-data-generator", "factory": "custom", "category": "Generators", "keywords": ["fake data generator", "test data", "mock data generator", "dummy data"], "blurb": "Generate realistic test data — names, emails, phone numbers, addresses — as JSON, CSV or SQL inserts for your fixtures." },
+  { "id": "number-to-words", "factory": "custom", "category": "Utilities", "keywords": ["number to words", "amount in words", "spell number"], "blurb": "Spell out any number in English words, including decimals and currency-style formatting for cheques and invoices." },
+  { "id": "roman-numeral-converter", "factory": "custom", "category": "Math", "keywords": ["roman numerals", "roman numeral converter", "numbers to roman"], "blurb": "Convert between numbers (1–3999) and Roman numerals with validation and a quick reference chart." },
+  { "id": "number-base-converter", "factory": "custom", "category": "Developer", "keywords": ["binary converter", "hex converter", "decimal to binary", "base converter"], "blurb": "Convert integers between binary, octal, decimal and hexadecimal instantly, with grouping for readability." },
+  { "id": "ratio-calculator", "factory": "custom", "category": "Math", "keywords": ["ratio calculator", "aspect ratio", "simplify ratio", "proportion"], "blurb": "Simplify ratios, solve proportions A:B = C:D and compute aspect-ratio dimensions for images and video." },
+  { "id": "gcd-lcm-calculator", "factory": "custom", "category": "Math", "keywords": ["gcd calculator", "lcm calculator", "greatest common divisor", "hcf"], "blurb": "Find the greatest common divisor and least common multiple of any set of numbers with the Euclidean steps shown." },
+  { "id": "prime-checker", "factory": "custom", "category": "Math", "keywords": ["prime checker", "is prime", "prime factors", "factorization"], "blurb": "Check whether any number is prime and get its full prime factorization with exponents, instantly." },
+  { "id": "chmod-calculator", "factory": "custom", "category": "Developer", "keywords": ["chmod calculator", "file permissions", "chmod 755", "unix permissions"], "blurb": "Build Unix file permissions visually with rwx checkboxes and get octal (755) and symbolic (rwxr-xr-x) forms plus the chmod command." },
+  { "id": "key-code-checker", "factory": "custom", "category": "Developer", "keywords": ["key code", "event.key", "keyboard tester", "javascript keycode"], "blurb": "Press any key to see event.key, event.code, keyCode and modifiers — the modern reference for keyboard handling." },
+  { "id": "list-shuffler", "factory": "custom", "category": "Random Generators", "keywords": ["shuffle list", "randomize list", "list randomizer"], "blurb": "Paste a list and shuffle it fairly with a Fisher–Yates algorithm — for raffles, draft orders and random picks." },
+  { "id": "team-generator", "factory": "custom", "category": "Random Generators", "keywords": ["team generator", "random teams", "group maker"], "blurb": "Split a pasted list of names into balanced random teams or fixed-size groups for classes and games." },
+  { "id": "morse-code-converter", "factory": "custom", "category": "Encoding", "keywords": ["morse code translator", "morse code converter", "text to morse"], "blurb": "Translate text to International Morse code and back, with proper letter and word spacing." },
+  { "id": "upside-down-text", "factory": "custom", "category": "Generators", "keywords": ["upside down text", "flip text", "inverted text"], "blurb": "Flip text upside down with Unicode look-alike characters for playful messages and profile names." },
+  { "id": "fancy-text-generator", "factory": "custom", "category": "Generators", "keywords": ["fancy text generator", "stylish fonts", "unicode text", "bold text generator"], "blurb": "Convert plain text into mathematical Unicode styles — bold, italic, script, monospace, small caps and more." },
+  { "id": "text-to-speech", "factory": "custom", "category": "Utilities", "keywords": ["text to speech", "read text aloud", "tts online"], "blurb": "Read any text aloud with the browser's speech synthesis: voice, rate and pitch controls, no server processing." },
+  { "id": "image-resizer", "factory": "custom", "category": "Image", "keywords": ["resize image", "image resizer", "resize photo online"], "blurb": "Resize images to exact pixel dimensions or percentages directly in the browser — no uploads, quality preserved." },
+  { "id": "image-compressor", "factory": "custom", "category": "Image", "keywords": ["compress image", "image compressor", "reduce image size"], "blurb": "Compress JPEG, PNG and WebP images with a quality slider and before/after size comparison, all client-side." },
+  { "id": "image-format-converter", "factory": "custom", "category": "Image", "keywords": ["png to jpg", "webp converter", "image format converter"], "blurb": "Convert images between PNG, JPEG and WebP locally, with background fill for transparency and quality control." },
+  { "id": "base64-image-encoder", "factory": "custom", "category": "Image", "keywords": ["image to base64", "base64 image", "data uri generator"], "blurb": "Turn images into Base64 data URIs for embedding in HTML, CSS and JSON — processed fully offline." },
+  { "id": "pdf-merger", "factory": "custom", "category": "PDF", "keywords": ["merge pdf", "combine pdf", "pdf joiner"], "blurb": "Combine multiple PDFs into one file in your chosen order, rendered entirely in the browser with pdf-lib." },
+  { "id": "pdf-splitter", "factory": "custom", "category": "PDF", "keywords": ["split pdf", "extract pdf pages", "pdf page extractor"], "blurb": "Extract page ranges from a PDF into new documents without uploading anything." },
+  { "id": "css-minifier", "factory": "custom", "category": "Developer", "keywords": ["css minifier", "minify css", "css compressor"], "blurb": "Minify CSS safely with a tokenizer that respects strings, comments and calc() — with byte-savings report." },
+  { "id": "html-minifier", "factory": "custom", "category": "Developer", "keywords": ["html minifier", "minify html", "html compressor"], "blurb": "Minify HTML by collapsing inter-tag whitespace and removing comments without touching pre/textarea/script content." },
+  { "id": "json-to-typescript", "factory": "custom", "category": "Developer", "keywords": ["json to typescript", "typescript interface generator", "json to interface"], "blurb": "Generate TypeScript interfaces from sample JSON, with union types for mixed arrays and optional-field detection." },
+  { "id": "cron-expression-explainer", "factory": "custom", "category": "Developer", "keywords": ["cron expression", "crontab generator", "cron schedule"], "blurb": "Decode five-field cron expressions into plain English and see the next scheduled run times." },
+  { "id": "checklist-maker", "factory": "custom", "category": "Productivity", "keywords": ["checklist maker", "to do list", "printable checklist"], "blurb": "Build a checklist from pasted items, tick things off, and export as text, Markdown or a printable page." },
+  { "id": "browser-info-tool", "factory": "custom", "category": "Utilities", "keywords": ["browser info", "my user agent", "screen resolution", "what is my browser"], "blurb": "See everything your browser reveals: user agent, screen size, language, timezone, cores, cookies and more." },
+  { "id": "random-word-generator", "factory": "custom", "category": "Random Generators", "keywords": ["random word generator", "random words", "pictionary words"], "blurb": "Draw random English words from a curated list for prompts, pictionary, writing exercises and brainstorms." },
+
+  {
+    "id": "remove-duplicate-lines",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["remove duplicate lines", "delete duplicate lines", "dedupe list", "unique lines"],
+    "blurb": "Delete duplicate lines from any list while keeping the original order. Perfect for cleaning exports, email lists and keyword lists.",
+    "params": { "title": "Remove Duplicate Lines", "h1": "Remove Duplicate Lines — keep unique lines only", "transforms": ["dedupe-lines"], "inputLabel": "Your list (one item per line)" }
+  },
+  {
+    "id": "sort-lines-alphabetically",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["sort lines alphabetically", "alphabetize list", "sort text lines", "a to z sorter"],
+    "blurb": "Alphabetize any list A→Z or Z→A with natural number handling, so item2 sorts before item10.",
+    "params": { "title": "Sort Lines Alphabetically", "h1": "Sort Lines A→Z / Z→A — alphabetize lists", "transforms": ["sort-lines", "sort-lines-reverse"], "inputLabel": "Your list (one item per line)" }
+  },
+  {
+    "id": "reverse-text-generator",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["reverse text", "backwards text", "flip text backwards", "reverse string"],
+    "blurb": "Reverse text character by character or flip the order of lines — Unicode-aware so emoji and accents survive intact.",
+    "params": { "title": "Reverse Text Generator", "h1": "Reverse Text — characters & line order", "transforms": ["reverse-text", "reverse-lines"] }
+  },
+  {
+    "id": "remove-empty-lines",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["remove empty lines", "delete blank lines", "clean up text", "remove blank rows"],
+    "blurb": "Strip blank and whitespace-only lines from pasted text and optionally trim line ends, for compact clean lists.",
+    "params": { "title": "Remove Empty Lines", "h1": "Remove Empty & Blank Lines from text", "transforms": ["remove-empty-lines", "trim-lines"] }
+  },
+  {
+    "id": "remove-extra-whitespace",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["remove extra spaces", "collapse whitespace", "trim spaces", "fix double spaces"],
+    "blurb": "Collapse runs of spaces and tabs into single spaces and trim line ends — instant cleanup after copy-pasting from PDFs.",
+    "params": { "title": "Remove Extra Whitespace", "h1": "Remove Extra Spaces & Whitespace", "transforms": ["remove-extra-spaces", "trim-lines"] }
+  },
+  {
+    "id": "html-to-text-converter",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["html to text", "strip html tags", "remove html", "convert html to plain text"],
+    "blurb": "Strip HTML tags and decode entities to recover clean readable text, with paragraphs and line breaks preserved sensibly.",
+    "params": { "title": "HTML to Text Converter", "h1": "HTML to Text — strip tags instantly", "transforms": ["strip-html"], "rows": 10 }
+  },
+  {
+    "id": "email-extractor",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["email extractor", "find emails in text", "extract email addresses", "email scraper"],
+    "blurb": "Pull every email address out of any pasted text, deduplicated and ready to copy as a clean list.",
+    "params": { "title": "Email Extractor", "h1": "Email Extractor — find addresses in text", "transforms": ["extract-emails"], "rows": 10 }
+  },
+  {
+    "id": "url-extractor",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["url extractor", "find links in text", "extract urls", "link extractor"],
+    "blurb": "Extract all http and https links from any document, log or page source, deduplicated into a tidy list.",
+    "params": { "title": "URL Extractor", "h1": "URL Extractor — pull links out of text", "transforms": ["extract-urls"], "rows": 10 }
+  },
+  {
+    "id": "variable-case-converter",
+    "factory": "text-transform",
+    "category": "Developer",
+    "keywords": ["camelcase converter", "snake case converter", "kebab case", "variable name converter"],
+    "blurb": "Convert identifier names between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE for any programming language.",
+    "params": { "title": "Variable Case Converter", "h1": "Variable Case Converter — camel, snake, kebab", "transforms": ["camel-case", "pascal-case", "snake-case", "kebab-case", "constant-case"], "rows": 6 }
+  },
+  {
+    "id": "url-encoder-decoder",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": ["url encode", "url decode", "percent encoding", "encode url online"],
+    "blurb": "Percent-encode and decode URL components so special characters never break your links or query strings.",
+    "params": { "title": "URL Encoder / Decoder", "h1": "URL Encode & Decode — percent-encoding", "codec": "url" }
+  },
+  {
+    "id": "html-entity-encoder-decoder",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": ["html entities", "html entity encoder", "escape html", "html encode"],
+    "blurb": "Escape text into HTML entities for safe display in markup, and decode entities back to readable text.",
+    "params": { "title": "HTML Entity Encoder / Decoder", "h1": "HTML Entities — encode & decode", "codec": "html-entity" }
+  },
+  {
+    "id": "text-to-hex-converter",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": ["text to hex", "hex to text", "hexadecimal converter", "string to hex"],
+    "blurb": "Convert text to its hexadecimal byte representation and back, with full UTF-8 support for any language.",
+    "params": { "title": "Text to Hex Converter", "h1": "Text ⇄ Hex — hexadecimal converter", "codec": "hex" }
+  },
+  {
+    "id": "text-to-binary-converter",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": ["text to binary", "binary to text", "binary translator", "string to binary"],
+    "blurb": "See any text as 8-bit binary bytes and convert binary back to readable text with validation.",
+    "params": { "title": "Text to Binary Converter", "h1": "Text ⇄ Binary Converter", "codec": "binary" }
+  },
+  {
+    "id": "unicode-escape-converter",
+    "factory": "encoder-decoder",
+    "category": "Developer",
+    "keywords": ["unicode escape", "unicode unescape", "js unicode", "\\u converter"],
+    "blurb": "Convert non-ASCII text to JavaScript-style \\u escape sequences and decode them back to readable characters.",
+    "params": { "title": "Unicode Escape Converter", "h1": "Unicode Escapes — encode & decode", "codec": "unicode-escape" }
+  },
+  {
+    "id": "rot13-encoder-decoder",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": ["rot13", "rot13 decoder", "caesar cipher 13", "rot13 online"],
+    "blurb": "Apply the classic ROT13 cipher to obscure spoilers and puzzle answers — encoding and decoding are the same operation.",
+    "params": { "title": "ROT13 Encoder / Decoder", "h1": "ROT13 — encode & decode", "codec": "rot13" }
+  },
+  {
+    "id": "random-number-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["random number generator", "random integer", "number picker", "rng"],
+    "blurb": "Generate random integers in any range, up to 20 at a time — for raffles, dice, sampling and games.",
+    "params": { "title": "Random Number Generator", "h1": "Random Number Generator — pick integers in any range", "generator": "random-number" },
+    "popularity": 70
+  },
+  {
+    "id": "dice-roller",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["dice roller", "roll dice online", "d20 roller", "virtual dice"],
+    "blurb": "Roll virtual dice: d4 through d20, up to 20 dice at once with individual rolls and totals.",
+    "params": { "title": "Dice Roller", "h1": "Dice Roller — d4 to d20, roll up to 20 dice", "generator": "dice" }
+  },
+  {
+    "id": "coin-flip",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["coin flip", "flip a coin", "heads or tails", "coin toss online"],
+    "blurb": "Flip a virtual coin for instant heads-or-tails decisions — flip up to 10 times and see the tally.",
+    "params": { "title": "Coin Flip", "h1": "Flip a Coin — heads or tails?", "generator": "coin" }
+  },
+  {
+    "id": "random-color-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["random color generator", "random hex color", "color picker random", "palette ideas"],
+    "blurb": "Generate random hex color codes for palettes, placeholders and design inspiration — up to 8 at once.",
+    "params": { "title": "Random Color Generator", "h1": "Random Color Generator — hex codes", "generator": "random-color" }
+  },
+  {
+    "id": "random-letter-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["random letter generator", "random alphabet letter", "letter picker"],
+    "blurb": "Pick random letters of the alphabet for games, initials and classroom activities.",
+    "params": { "title": "Random Letter Generator", "h1": "Random Letter Generator — A to Z", "generator": "random-letter" }
+  },
+  {
+    "id": "random-date-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["random date generator", "random dates", "date picker random", "test dates"],
+    "blurb": "Generate random dates within any range, with weekdays — ideal for test data and mockups.",
+    "params": { "title": "Random Date Generator", "h1": "Random Date Generator — dates with weekdays", "generator": "random-date" }
+  },
+  {
+    "id": "yes-or-no-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["yes or no generator", "yes no oracle", "decision maker", "random yes or no"],
+    "blurb": "Get an instant random Yes or No for any decision question — no login, no judgment.",
+    "params": { "title": "Yes or No Generator", "h1": "Yes or No — the instant decision maker", "generator": "yes-or-no" }
+  },
+  {
+    "id": "length-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["length converter", "cm to inches", "meters to feet", "km to miles", "inches to mm"],
+    "blurb": "Convert between meters, kilometers, miles, feet, inches and more with exact, standards-based factors.",
+    "params": { "title": "Length Converter", "h1": "Length Converter — metric & imperial", "kind": "length", "sampleValue": 1 },
+    "popularity": 66
+  },
+  {
+    "id": "weight-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["weight converter", "kg to lbs", "pounds to kilograms", "ounces to grams"],
+    "blurb": "Convert kilograms, grams, pounds, ounces, stones and metric tons instantly with precise factors.",
+    "params": { "title": "Weight Converter", "h1": "Weight Converter — kg, lb, oz & more", "kind": "mass" },
+    "popularity": 66
+  },
+  {
+    "id": "temperature-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["temperature converter", "celsius to fahrenheit", "fahrenheit to celsius", "kelvin converter"],
+    "blurb": "Convert between Celsius, Fahrenheit and Kelvin using the exact official formulas.",
+    "params": { "title": "Temperature Converter", "h1": "Temperature Converter — °C ⇄ °F ⇄ K", "kind": "temperature", "sampleValue": 25 },
+    "popularity": 64
+  },
+  {
+    "id": "speed-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["speed converter", "kmh to mph", "mph to kmh", "knots to kmh"],
+    "blurb": "Convert speed between m/s, km/h, mph, knots and ft/s with exact factors.",
+    "params": { "title": "Speed Converter", "h1": "Speed Converter — m/s, km/h, mph, knots", "kind": "speed", "sampleValue": 100 }
+  },
+  {
+    "id": "data-size-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["data size converter", "mb to gb", "bytes converter", "mib to mb", "kb to mb"],
+    "blurb": "Convert bytes, KB, MB, GB, TB and binary KiB/MiB/GiB/TiB — finally reconcile what your OS and your disk label each claim.",
+    "params": { "title": "Data Size Converter", "h1": "Data Size Converter — MB, GB, MiB & more", "kind": "data", "sampleValue": 500 }
+  },
+  {
+    "id": "area-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["area converter", "square feet to meters", "acres to hectares", "sqft converter"],
+    "blurb": "Convert square meters, square feet, acres, hectares and more for property, land and DIY projects.",
+    "params": { "title": "Area Converter", "h1": "Area Converter — m², ft², acres, hectares", "kind": "area", "sampleValue": 100 }
+  },
+  {
+    "id": "volume-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["volume converter", "liters to gallons", "ml to cups", "cups to ml"],
+    "blurb": "Convert liters, milliliters, US gallons, cups, tablespoons and teaspoons for recipes and science.",
+    "params": { "title": "Volume Converter", "h1": "Volume Converter — liters, gallons, cups", "kind": "volume", "sampleValue": 2 }
+  },
+  {
+    "id": "time-unit-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["time converter", "seconds to hours", "days to weeks", "milliseconds converter"],
+    "blurb": "Convert between milliseconds, seconds, minutes, hours, days, weeks, months and years.",
+    "params": { "title": "Time Converter", "h1": "Time Converter — seconds to years", "kind": "time", "sampleValue": 90 }
+  }
+]

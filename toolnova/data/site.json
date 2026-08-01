@@ -1,0 +1,21 @@
+{
+  "name": "ToolNova",
+  "url": "https://toolnova.vercel.app",
+  "tagline": "Free online tools that run entirely in your browser",
+  "shortTagline": "Free online tools, one new tool every day",
+  "description": "ToolNova is a growing collection of fast, free, privacy-friendly online tools — text tools, developer utilities, converters, calculators and generators. No sign-up, no uploads: everything runs locally in your browser.",
+  "author": "ToolNova",
+  "repo": "https://github.com/YOUR-USERNAME/toolnova",
+  "locale": "en_US",
+  "themeColor": "#4f46e5",
+  "ogImage": "/assets/og.jpg",
+  "keywords": [
+    "free online tools",
+    "browser tools",
+    "text tools",
+    "developer tools",
+    "converters",
+    "calculators",
+    "generators"
+  ]
+}

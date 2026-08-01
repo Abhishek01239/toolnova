@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-build-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Zero dependencies: nothing to install.
+      - name: Unit tests
+        run: node --test tests/
+
+      - name: Build site
+        run: node scripts/build.mjs
+
+      - name: Verify output (SEO, links, schema, syntax)
+        run: node scripts/verify.mjs

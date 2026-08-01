@@ -1,0 +1,1168 @@
+[
+  {
+    "id": "word-counter",
+    "title": "Word Counter",
+    "h1": "Word Counter — count words, characters & reading time",
+    "seoTitle": "Word Counter — Count Words, Characters & Reading Time | ToolNova",
+    "description": "Count words, characters, sentences and paragraphs instantly, with reading time and keyword density. Free, private, no sign-up — runs in your browser.",
+    "intro": "Paste or type any text to get instant live statistics: word count, characters with and without spaces, sentences, paragraphs, estimated reading and speaking time, plus the most-used keywords. Nothing is uploaded — counting happens in your browser.",
+    "category": "Text",
+    "keywords": [
+      "word counter",
+      "character counter",
+      "word count online",
+      "count words",
+      "reading time calculator",
+      "text counter",
+      "keyword density"
+    ],
+    "popularity": 92,
+    "ui": {
+      "layout": "single",
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Your text",
+          "rows": 13,
+          "placeholder": "Start typing or paste your text here — statistics update live as you type…",
+          "mono": false
+        }
+      ],
+      "actions": [
+        {
+          "id": "clear",
+          "label": "Clear text"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "stats",
+          "id": "stats",
+          "label": "Live statistics"
+        },
+        {
+          "type": "pre",
+          "id": "keywords",
+          "label": "Top keywords (density)"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the box — every statistic updates live with each keystroke.",
+      "Words are counted using Unicode-aware boundaries, so it works for any language and script.",
+      "Reading time assumes 200 words per minute; speaking time assumes a calm 130 words per minute.",
+      "The keyword list shows your most frequent meaningful words (common words like “the” are filtered out) and their density percentage.",
+      "Use the Clear button to start over. Nothing you type is stored or sent anywhere."
+    ],
+    "examples": [
+      "Paste a 1,500-word blog post to confirm it reads in about 7–8 minutes.",
+      "Draft a 280-character social post and watch the character count stay honest in real time.",
+      "Check keyword density before publishing an article to avoid over-using a term."
+    ],
+    "faq": [
+      {
+        "q": "How are words counted?",
+        "a": "A word is any run of letters or numbers, including internal apostrophes and hyphens (so “it’s” and “high-quality” count as one word each). Matching is Unicode-aware, which means accented and non-Latin scripts count correctly too."
+      },
+      {
+        "q": "Does it count characters with and without spaces?",
+        "a": "Yes. You get both numbers: total characters including whitespace, and characters with all whitespace removed — the metric most form limits care about."
+      },
+      {
+        "q": "How accurate is the reading time estimate?",
+        "a": "It assumes an average adult reading speed of 200 words per minute and a speaking pace of 130 words per minute. Real times vary with content difficulty, so treat it as a solid estimate rather than an exact figure."
+      },
+      {
+        "q": "Is there a limit to how much text I can paste?",
+        "a": "No hard limit — everything is computed locally in your browser. Even a full novel processes instantly on a modern device, and your text never leaves your machine."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Count words, characters, sentences and paragraphs instantly, with reading time and keyword density. Free, private, no sign-up — runs in your browser."
+  },
+  {
+    "id": "json-formatter",
+    "title": "JSON Formatter & Validator",
+    "h1": "JSON Formatter, Validator & Minifier",
+    "seoTitle": "JSON Formatter & Validator — Beautify, Minify Online | ToolNova",
+    "description": "Format, validate and minify JSON instantly. Precise error location with line and column, key sorting, 2/4-space or tab indent, and file download. Free.",
+    "intro": "Paste raw JSON to beautify, validate or minify it in one click. Errors are pinpointed with line and column, keys can be sorted alphabetically, and the result can be copied or downloaded as a .json file — all offline, in your browser.",
+    "category": "JSON",
+    "keywords": [
+      "json formatter",
+      "json validator",
+      "json beautifier",
+      "json minifier",
+      "format json online",
+      "json pretty print",
+      "validate json"
+    ],
+    "popularity": 91,
+    "ui": {
+      "layout": "single",
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Paste your JSON",
+          "rows": 12,
+          "placeholder": "{\"hello\":\"world\",\"numbers\":[1,2,3]}"
+        },
+        {
+          "type": "select",
+          "id": "indent",
+          "label": "Indentation",
+          "value": "2",
+          "options": [
+            {
+              "value": "2",
+              "label": "2 spaces"
+            },
+            {
+              "value": "4",
+              "label": "4 spaces"
+            },
+            {
+              "value": "tab",
+              "label": "Tab"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "sort-keys",
+          "label": "Sort object keys alphabetically (recursive)",
+          "checked": false
+        }
+      ],
+      "actions": [
+        {
+          "id": "format",
+          "label": "Format / beautify",
+          "primary": true
+        },
+        {
+          "id": "minify",
+          "label": "Minify"
+        },
+        {
+          "id": "validate",
+          "label": "Validate only"
+        },
+        {
+          "id": "download",
+          "label": "Download .json"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Formatted output",
+          "rows": 12,
+          "large": true
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste JSON into the input box and choose Format, Minify or Validate.",
+      "Invalid JSON is reported with the parser’s message translated into a line and column position so you can jump straight to the problem.",
+      "Formatting supports 2 spaces, 4 spaces or tabs, and can recursively sort object keys — useful when diffing two documents.",
+      "Minify removes every unnecessary byte of whitespace and reports how many bytes you saved.",
+      "Download writes the current output to a .json file locally. Nothing is uploaded at any point."
+    ],
+    "examples": [
+      "Input `{\"a\":1,\"b\":[true,null]}` → Format → pretty-printed with your chosen indentation.",
+      "Input `{\"a\":1,}` → error reported at the trailing comma, with exact line and column.",
+      "Minify a 12 KB pretty-printed config to a single line and see the byte savings."
+    ],
+    "faq": [
+      {
+        "q": "Why does my JSON fail to parse?",
+        "a": "The usual culprits are trailing commas, single quotes instead of double quotes, unquoted keys and comments — none of which JSON allows. The error message shows the exact line and column so the fix is fast."
+      },
+      {
+        "q": "Does formatting change my data?",
+        "a": "No. Formatting and minifying only add or remove whitespace. Key order is preserved exactly unless you explicitly enable key sorting, which never changes values — only the order keys are written in."
+      },
+      {
+        "q": "Is there a size limit?",
+        "a": "Only your browser’s memory. Multi-megabyte JSON files format fine on modern devices. Because everything runs locally, even confidential payloads are safe to paste."
+      },
+      {
+        "q": "Can it fix my JSON automatically?",
+        "a": "It validates and pinpoints errors rather than silently guessing — silent fixes corrupt data. If your input is “JSON-ish” config (comments, trailing commas), strip those first; the error location guides you line by line."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Format, validate and minify JSON instantly. Precise error location with line and column, key sorting, 2/4-space or tab indent, and file download. Free."
+  },
+  {
+    "id": "password-generator",
+    "title": "Password Generator",
+    "h1": "Strong Password Generator — secure & local",
+    "seoTitle": "Strong Password Generator — Secure, Random & Free | ToolNova",
+    "description": "Generate strong random passwords with crypto-grade randomness. Control length, symbols and ambiguous characters, see entropy strength. Free & private.",
+    "intro": "Create strong, truly random passwords using your browser’s cryptographic random generator — with unbiased sampling, entropy-strength feedback and options for symbols and ambiguous characters. Passwords are generated locally and never leave your device.",
+    "category": "Password",
+    "keywords": [
+      "password generator",
+      "strong password",
+      "random password",
+      "secure password generator",
+      "password maker",
+      "passphrase generator"
+    ],
+    "popularity": 90,
+    "ui": {
+      "controls": [
+        {
+          "type": "range",
+          "id": "length",
+          "label": "Length",
+          "min": 4,
+          "max": 64,
+          "step": 1,
+          "value": 16,
+          "help": "16+ characters recommended for important accounts."
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase",
+          "label": "Uppercase (A–Z)",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "lowercase",
+          "label": "Lowercase (a–z)",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "digits",
+          "label": "Digits (0–9)",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "symbols",
+          "label": "Symbols (!@#$%…)",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "exclude-similar",
+          "label": "Exclude look-alike characters (l, 1, I, O, 0)",
+          "checked": false
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "↻ New password",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "password",
+          "label": "Generated password"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Pick a length and character sets — the password regenerates automatically.",
+      "Characters are drawn with crypto.getRandomValues plus rejection sampling, so every character in the set is equally likely (no modulo bias).",
+      "The strength read-out shows entropy in bits; aim for 80+ bits for important accounts.",
+      "Click the password’s Copy button, paste it into your password manager, then clear the field.",
+      "Nothing is transmitted or stored — the password exists only in this tab until you close it."
+    ],
+    "examples": [
+      "16 characters with all sets enabled gives ~105 bits of entropy — “very strong”.",
+      "Enable “exclude look-alike characters” when a password must be read aloud or typed from print.",
+      "For Wi-Fi and devices with awkward keyboards, disable symbols and raise the length to 20+."
+    ],
+    "faq": [
+      {
+        "q": "How random are the generated passwords?",
+        "a": "They use your browser’s cryptographic random number generator (crypto.getRandomValues), the same source your operating system uses for keys. Rejection sampling removes modulo bias, so every possible character is exactly equally likely."
+      },
+      {
+        "q": "What does the entropy number mean?",
+        "a": "Entropy (in bits) measures how hard the password is to guess: length × log2(character set size). Under 45 bits is weak, 60–80 is strong, and above 80 bits is very strong — beyond practical brute force for online attacks."
+      },
+      {
+        "q": "Is it safe to generate passwords in a browser?",
+        "a": "On this page, yes. Generation happens entirely on your device with no network calls, no storage and no third-party scripts. For maximum safety, bookmark the page and use it offline — it works without internet once loaded."
+      },
+      {
+        "q": "Should I include symbols in my password?",
+        "a": "Symbols raise entropy per character, but length matters more. Some sites reject certain symbols — for those, disable symbols and add extra length instead. A password manager removes the need to type either."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Generate strong random passwords with crypto-grade randomness. Control length, symbols and ambiguous characters, see entropy strength. Free & private."
+  },
+  {
+    "id": "uuid-generator",
+    "title": "UUID Generator",
+    "h1": "UUID Generator (v4) — bulk unique identifiers",
+    "seoTitle": "UUID Generator — Free Bulk v4 UUIDs, Copy in One Click | ToolNova",
+    "description": "Generate up to 100 random UUID version 4 identifiers at once, uppercase or without hyphens. Cryptographically secure, free, no sign-up.",
+    "intro": "Generate cryptographically random version 4 UUIDs in bulk — up to 100 at a time. Choose uppercase formatting or strip the hyphens, then copy them all in one click. Everything is produced by your browser’s secure random generator.",
+    "category": "Developer",
+    "keywords": [
+      "uuid generator",
+      "uuid v4",
+      "guid generator",
+      "random uuid",
+      "bulk uuid",
+      "unique id generator",
+      "uuid online"
+    ],
+    "popularity": 80,
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many UUIDs?",
+          "value": 5,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase",
+          "label": "UPPERCASE letters",
+          "checked": false
+        },
+        {
+          "type": "checkbox",
+          "id": "no-hyphens",
+          "label": "Remove hyphens",
+          "checked": false
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Generate UUIDs",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Your UUIDs",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Click Generate (or change any option) to create a fresh batch of version 4 UUIDs.",
+      "Each UUID is 128 bits: 122 of them are filled by your browser’s cryptographically secure random generator, the rest mark the version and variant.",
+      "Toggle uppercase or hyphen-free formatting — the underlying identifier is identical, only the display changes.",
+      "Copy the whole list with the Copy button; each line holds one UUID."
+    ],
+    "examples": [
+      "A standard v4 UUID looks like `3f6b2a1e-8c4d-4e7a-9f1b-2c5d8e0a4b6f`.",
+      "Need IDs for a database seed? Generate 50 at once and paste them straight into your fixtures.",
+      "With hyphens removed you get `3f6b2a1e8c4d4e7a9f1b2c5d8e0a4b6f` — handy for URLs and filenames."
+    ],
+    "faq": [
+      {
+        "q": "What is a UUID?",
+        "a": "A universally unique identifier is a 128-bit value standardized by RFC 9562. Version 4 UUIDs are randomly generated, so the chance of two identical UUIDs ever being created is astronomically small — you can safely treat them as unique."
+      },
+      {
+        "q": "Are these UUIDs cryptographically secure?",
+        "a": "Yes. They are produced with your browser’s crypto.getRandomValues (or crypto.randomUUID where available), not the predictable Math.random, so they are suitable for security-sensitive identifiers."
+      },
+      {
+        "q": "What is the difference between a UUID and a GUID?",
+        "a": "They are effectively the same thing — GUID is Microsoft’s name for the UUID format. A GUID from this tool can be used anywhere a .NET or Windows GUID is expected."
+      },
+      {
+        "q": "Can two generated UUIDs ever collide?",
+        "a": "In practice, no. With 122 random bits you would need to generate about 2.7 quintillion UUIDs to have a 50% chance of a single collision. Generating a billion per second would take decades."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Generate up to 100 random UUID version 4 identifiers at once, uppercase or without hyphens. Cryptographically secure, free, no sign-up."
+  },
+  {
+    "id": "unit-converter",
+    "title": "Unit Converter",
+    "h1": "Unit Converter — length, weight, temperature & more",
+    "seoTitle": "Unit Converter — Length, Weight, Temperature & More | ToolNova",
+    "description": "Convert length, weight, temperature, speed, area, volume, data and time units instantly with exact conversion factors. Free, fast, no sign-up.",
+    "intro": "One converter for everyday units: length, weight, temperature, speed, area, volume, digital storage and time. Results update live as you type, with the exact conversion factor shown for reference.",
+    "category": "Unit Converter",
+    "keywords": [
+      "unit converter",
+      "convert units",
+      "length converter",
+      "weight converter",
+      "temperature converter",
+      "measurement converter",
+      "inch to cm"
+    ],
+    "popularity": 88,
+    "ui": {
+      "controls": [
+        {
+          "type": "select",
+          "id": "kind",
+          "label": "Measurement type",
+          "value": "length",
+          "options": [
+            {
+              "value": "length",
+              "label": "Length"
+            },
+            {
+              "value": "mass",
+              "label": "Weight / mass"
+            },
+            {
+              "value": "temperature",
+              "label": "Temperature"
+            },
+            {
+              "value": "speed",
+              "label": "Speed"
+            },
+            {
+              "value": "data",
+              "label": "Digital storage"
+            },
+            {
+              "value": "area",
+              "label": "Area"
+            },
+            {
+              "value": "volume",
+              "label": "Volume"
+            },
+            {
+              "value": "time",
+              "label": "Time"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 1,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "value": "Meter (m)",
+          "options": [
+            {
+              "value": "Meter (m)",
+              "label": "Meter (m)"
+            },
+            {
+              "value": "Kilometer (km)",
+              "label": "Kilometer (km)"
+            },
+            {
+              "value": "Centimeter (cm)",
+              "label": "Centimeter (cm)"
+            },
+            {
+              "value": "Millimeter (mm)",
+              "label": "Millimeter (mm)"
+            },
+            {
+              "value": "Micrometer (µm)",
+              "label": "Micrometer (µm)"
+            },
+            {
+              "value": "Mile (mi)",
+              "label": "Mile (mi)"
+            },
+            {
+              "value": "Yard (yd)",
+              "label": "Yard (yd)"
+            },
+            {
+              "value": "Foot (ft)",
+              "label": "Foot (ft)"
+            },
+            {
+              "value": "Inch (in)",
+              "label": "Inch (in)"
+            },
+            {
+              "value": "Nautical mile (nmi)",
+              "label": "Nautical mile (nmi)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "value": "Kilometer (km)",
+          "options": [
+            {
+              "value": "Meter (m)",
+              "label": "Meter (m)"
+            },
+            {
+              "value": "Kilometer (km)",
+              "label": "Kilometer (km)"
+            },
+            {
+              "value": "Centimeter (cm)",
+              "label": "Centimeter (cm)"
+            },
+            {
+              "value": "Millimeter (mm)",
+              "label": "Millimeter (mm)"
+            },
+            {
+              "value": "Micrometer (µm)",
+              "label": "Micrometer (µm)"
+            },
+            {
+              "value": "Mile (mi)",
+              "label": "Mile (mi)"
+            },
+            {
+              "value": "Yard (yd)",
+              "label": "Yard (yd)"
+            },
+            {
+              "value": "Foot (ft)",
+              "label": "Foot (ft)"
+            },
+            {
+              "value": "Inch (in)",
+              "label": "Inch (in)"
+            },
+            {
+              "value": "Nautical mile (nmi)",
+              "label": "Nautical mile (nmi)"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Choose a measurement type — length, weight, temperature, speed, storage, area, volume or time.",
+      "Enter a value and pick the units to convert between; the result updates instantly.",
+      "Conversions go through an exact reference unit (or the official formula for temperature), so results stay precise.",
+      "The status line shows the unit-to-unit factor, e.g. “1 mi = 1.609344 km”, for quick mental math.",
+      "Everything is computed locally in your browser."
+    ],
+    "examples": [
+      "5 Mile (mi) = 8.04672 Kilometer (km).",
+      "100 °F = 37.7777777778 °C — temperature uses exact formulas, not factors.",
+      "1 Gibibyte (GiB) = 1.073741824 Gigabyte (GB) — both decimal and binary storage units are included.",
+      "1 US gallon (gal) = 3.785411784 Liter (L)."
+    ],
+    "faq": [
+      {
+        "q": "Which unit types are supported?",
+        "a": "Length, weight/mass, temperature, speed, digital storage (both SI decimal like MB and IEC binary like MiB), area, volume (US customary and metric) and time. The catalogue covers the units people search for most."
+      },
+      {
+        "q": "How precise are the conversions?",
+        "a": "Factors use internationally defined exact values where they exist (for example 1 inch = 0.0254 meters exactly), and results are displayed to 10 significant digits — more than enough for everyday, engineering and recipe use."
+      },
+      {
+        "q": "What is the difference between MB and MiB?",
+        "a": "Megabyte (MB) is decimal: 1,000,000 bytes. Mebibyte (MiB) is binary: 1,048,576 bytes. Storage makers use MB/GB/TB, while operating systems often report GiB/TiB — this converter includes both so the numbers finally line up."
+      },
+      {
+        "q": "Why does temperature use formulas instead of factors?",
+        "a": "Because Celsius, Fahrenheit and Kelvin do not share a zero point, temperature conversion needs offsets as well as scaling: °F = °C × 1.8 + 32 and K = °C + 273.15. The tool applies the exact formulas for you."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Convert length, weight, temperature, speed, area, volume, data and time units instantly with exact conversion factors. Free, fast, no sign-up."
+  },
+  {
+    "id": "age-calculator",
+    "title": "Age Calculator",
+    "h1": "Age Calculator — exact age in years, months & days",
+    "seoTitle": "Age Calculator — Exact Age in Years, Months, Days | ToolNova",
+    "description": "Calculate your exact age in years, months and days — plus total days lived, day of birth, zodiac sign and countdown to your next birthday. Free.",
+    "intro": "Find your exact age down to the day: years, months and days, plus your total time on Earth in weeks, days and hours, the weekday you were born, your zodiac sign and a live countdown to your next birthday.",
+    "category": "Date & Time",
+    "keywords": [
+      "age calculator",
+      "how old am i",
+      "date of birth calculator",
+      "age in days",
+      "birthday calculator",
+      "exact age"
+    ],
+    "popularity": 85,
+    "ui": {
+      "layout": "single",
+      "controls": [
+        {
+          "type": "date",
+          "id": "dob",
+          "label": "Date of birth",
+          "value": "1995-06-15"
+        },
+        {
+          "type": "date",
+          "id": "on",
+          "label": "Age at the date of",
+          "value": "2026-07-31",
+          "help": "Defaults to today — change it to calculate your age on any past or future date."
+        }
+      ],
+      "actions": [],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Exact age"
+        },
+        {
+          "type": "stats",
+          "id": "breakdown",
+          "label": "Your time on Earth"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter your date of birth; the second date defaults to today but can be any date you like.",
+      "The calendar math borrows days from the correct month and accounts for leap years automatically.",
+      "The breakdown shows your age in total months, weeks, days, hours and minutes.",
+      "You also get the weekday you were born, your zodiac sign and how many days remain until your next birthday.",
+      "All calculations run in your browser — birth dates are never sent anywhere."
+    ],
+    "examples": [
+      "Born 1995-06-15 and checking on 2026-07-31 → 31 years, 1 month and 16 days old.",
+      "Born on a leap day (1996-02-29)? Your birthday falls on February 28 in non-leap years.",
+      "Set the second date to your next New Year to see exactly how old you will be."
+    ],
+    "faq": [
+      {
+        "q": "How is the exact age calculated?",
+        "a": "The tool counts whole years, then whole months, then remaining days, borrowing days from the correct calendar month when needed. Leap years and month lengths are handled automatically, so the result matches a calendar count done by hand."
+      },
+      {
+        "q": "Can I calculate age on a past or future date?",
+        "a": "Yes — change the “Age at the date of” field to any date. This is handy for form deadlines (“age as of 1 January 2027”), historical figures or planning future milestones."
+      },
+      {
+        "q": "What happens if I was born on February 29?",
+        "a": "Your age calculation works normally. For the birthday countdown, your birthday is celebrated on February 28 in years that are not leap years — the common legal convention in most countries."
+      },
+      {
+        "q": "How accurate is “total hours” for old dates?",
+        "a": "Hours and minutes assume midnight birth time, so they are exact in multiples of whole days — 24 hours and 1,440 minutes per day lived — which is the standard convention for age counters."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Calculate your exact age in years, months and days — plus total days lived, day of birth, zodiac sign and countdown to your next birthday. Free."
+  },
+  {
+    "id": "slug-generator",
+    "title": "Slug Generator",
+    "h1": "Slug Generator — SEO-friendly URLs from any text",
+    "seoTitle": "Slug Generator — Create SEO-Friendly URL Slugs Free | ToolNova",
+    "description": "Turn titles into clean, SEO-friendly URL slugs. Handles accents, removes stop words, custom separators, bulk line-by-line mode. Free and private.",
+    "intro": "Paste one or more titles and get clean, SEO-ready URL slugs instantly. Accents are transliterated (café → cafe), punctuation is stripped, and you can remove stop words, choose your separator and cap the length — one slug per line, in bulk.",
+    "category": "SEO",
+    "keywords": [
+      "slug generator",
+      "url slug",
+      "seo friendly url",
+      "slugify",
+      "permalink generator",
+      "url generator",
+      "blog slug"
+    ],
+    "popularity": 74,
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Titles or phrases (one per line)",
+          "rows": 7,
+          "placeholder": "My First Blog Post!\n10 Tips for Better Sleep in 2026\nCafé René: à la carte",
+          "mono": false
+        },
+        {
+          "type": "select",
+          "id": "separator",
+          "label": "Word separator",
+          "value": "-",
+          "options": [
+            {
+              "value": "-",
+              "label": "Hyphen (recommended) — my-title"
+            },
+            {
+              "value": "_",
+              "label": "Underscore — my_title"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "remove-stopwords",
+          "label": "Remove stop words (a, the, of, in…)",
+          "checked": true
+        },
+        {
+          "type": "number",
+          "id": "max-length",
+          "label": "Maximum length (0 = no limit)",
+          "value": 0,
+          "min": 0,
+          "max": 200,
+          "step": 1
+        }
+      ],
+      "actions": [],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "URL slugs",
+          "rows": 7
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter one title per line — each line becomes its own slug.",
+      "Text is lowercased, accents are removed (é → e, ü → u) and any character that is not a letter or number is dropped.",
+      "Optionally, common stop words are removed and the result is trimmed to your maximum length at a word boundary.",
+      "Slugs update live as you type or change any option; copy them all with one click."
+    ],
+    "examples": [
+      "“My First Blog Post!” → `my-first-blog-post`",
+      "“10 Tips for Better Sleep in 2026” with stop words removed → `10-tips-better-sleep-2026`",
+      "“Café René: à la carte” → `cafe-rene-a-la-carte` (accents transliterated automatically)",
+      "Set max length 30 and “The Complete Guide to Container Gardening” → `complete-guide-container-gard` trimmed at a word boundary."
+    ],
+    "faq": [
+      {
+        "q": "What is a URL slug?",
+        "a": "A slug is the human-readable part of a URL that identifies a page, like /blog/my-first-post. Good slugs are short, lowercase, hyphen-separated and contain the main keyword — exactly what this tool generates."
+      },
+      {
+        "q": "Should I use hyphens or underscores in slugs?",
+        "a": "Hyphens. Search engines treat hyphens as word separators, while underscores join words together. The hyphen is the default here because it is the recommended choice for SEO."
+      },
+      {
+        "q": "Why remove stop words?",
+        "a": "Words like “a”, “the” and “of” add length without adding meaning. Removing them keeps URLs short and keyword-focused, which is easier to read, share and rank."
+      },
+      {
+        "q": "Are accented and non-Latin characters supported?",
+        "a": "Accented Latin characters are transliterated automatically (café → cafe, naïve → naive). Scripts without a Latin mapping (like Chinese or Arabic) are simply omitted, following the same convention most CMSs use."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Turn titles into clean, SEO-friendly URL slugs. Handles accents, removes stop words, custom separators, bulk line-by-line mode. Free and private."
+  },
+  {
+    "id": "lorem-ipsum-generator",
+    "title": "Lorem Ipsum Generator",
+    "h1": "Lorem Ipsum Generator — placeholder text",
+    "seoTitle": "Lorem Ipsum Generator — Paragraphs, Sentences, Words | ToolNova",
+    "description": "Generate lorem ipsum placeholder text by paragraphs, sentences or words. Classic start option, HTML paragraph wrapping, copy in one click. Free.",
+    "intro": "Generate clean placeholder text for mockups and layouts — by paragraph, sentence or exact word count. Start with the classic “Lorem ipsum dolor sit amet”, optionally wrap paragraphs in HTML tags, and copy everything in one click.",
+    "category": "Generators",
+    "keywords": [
+      "lorem ipsum",
+      "lorem ipsum generator",
+      "placeholder text",
+      "dummy text",
+      "filler text",
+      "sample text generator"
+    ],
+    "popularity": 76,
+    "ui": {
+      "controls": [
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Generate",
+          "value": "paragraphs",
+          "options": [
+            {
+              "value": "paragraphs",
+              "label": "Paragraphs"
+            },
+            {
+              "value": "sentences",
+              "label": "Sentences"
+            },
+            {
+              "value": "words",
+              "label": "Words (exact count)"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many?",
+          "value": 3,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "classic",
+          "label": "Start with “Lorem ipsum dolor sit amet…”",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "html",
+          "label": "Wrap paragraphs in <p> tags",
+          "checked": false
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Generate text",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Placeholder text",
+          "rows": 12,
+          "large": true
+        }
+      ]
+    },
+    "howItWorks": [
+      "Choose paragraphs, sentences or an exact word count — then hit Generate.",
+      "The classic option always opens with “Lorem ipsum dolor sit amet, consectetur…”, the sentence counts vary naturally like real prose.",
+      "Enable HTML wrapping and each paragraph is emitted inside <p>…</p> tags, ready to paste into a template.",
+      "Copy the whole result with one click. Text is generated locally from a 120-word Latin vocabulary."
+    ],
+    "examples": [
+      "3 paragraphs for a landing-page mockup — enough to judge typography and spacing.",
+      "12 words for a tagline placeholder: a realistic length without inventing copy.",
+      "Enable <p> wrapping and paste the output straight into static HTML."
+    ],
+    "faq": [
+      {
+        "q": "What is lorem ipsum?",
+        "a": "It is scrambled Latin derived from a 45 BC text by Cicero. Because the word lengths and letter patterns resemble real English, it lets designers judge layout and typography without readable copy distracting the viewer."
+      },
+      {
+        "q": "Why use placeholder text instead of real copy?",
+        "a": "Real copy is distracting during design reviews — stakeholders read it instead of judging the layout. Neutral filler keeps attention on spacing, hierarchy and readability until copy is ready."
+      },
+      {
+        "q": "Is the generated text the same every time?",
+        "a": "No — sentences are assembled randomly from a Latin word list on each click, so you get fresh filler every time (with the classic opening kept when that option is enabled)."
+      },
+      {
+        "q": "Can I use lorem ipsum on a live site?",
+        "a": "It is meant for drafts and mockups only. Search engines and users treat leftover placeholder text as unfinished content, so always replace it before launch."
+      }
+    ],
+    "added": "2026-07-31",
+    "blurb": "Generate lorem ipsum placeholder text by paragraphs, sentences or words. Classic start option, HTML paragraph wrapping, copy in one click. Free."
+  },
+  {
+    "id": "case-converter",
+    "title": "Case Converter",
+    "h1": "Case Converter — UPPER, lower, Title & more",
+    "intro": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE with one click.",
+    "blurb": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE with one click.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "uppercase",
+          "label": "UPPERCASE",
+          "primary": true
+        },
+        {
+          "id": "lowercase",
+          "label": "lowercase",
+          "primary": false
+        },
+        {
+          "id": "title-case",
+          "label": "Title Case",
+          "primary": false
+        },
+        {
+          "id": "sentence-case",
+          "label": "Sentence case",
+          "primary": false
+        },
+        {
+          "id": "camel-case",
+          "label": "camelCase",
+          "primary": false
+        },
+        {
+          "id": "pascal-case",
+          "label": "PascalCase",
+          "primary": false
+        },
+        {
+          "id": "snake-case",
+          "label": "snake_case",
+          "primary": false
+        },
+        {
+          "id": "kebab-case",
+          "label": "kebab-case",
+          "primary": false
+        },
+        {
+          "id": "constant-case",
+          "label": "CONSTANT_CASE",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox jumps over the lazy dog\" → click \"UPPERCASE\" → output \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\".",
+      "Input \"THE QUICK BROWN FOX JUMPS HIGH\" → click \"lowercase\" → output \"the quick brown fox jumps high\".",
+      "Input \"the quick brown fox jumps over the lazy dog\" → click \"Title Case\" → output \"The Quick Brown Fox Jumps Over The Lazy Dog\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Case Converter do?",
+        "a": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE with one click."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Case Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Case Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE with one click.",
+    "seoTitle": "Case Converter — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-07-31",
+    "popularity": 84,
+    "keywords": [
+      "case converter",
+      "uppercase to lowercase",
+      "title case converter",
+      "capitalization tool"
+    ]
+  },
+  {
+    "id": "base64-encoder-decoder",
+    "title": "Base64 Encoder / Decoder",
+    "h1": "Base64 Encode & Decode — Unicode-safe",
+    "intro": "Encode and decode Base64 text online with full Unicode and emoji support. Safe copy-paste for tokens, data URIs and API payloads.",
+    "blurb": "Encode and decode Base64 text online with full Unicode and emoji support. Safe copy-paste for tokens, data URIs and API payloads.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to Base64",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from Base64"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to Base64\" or \"Decode from Base64\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"Hello, ToolNova! 👋\" produces \"SGVsbG8sIFRvb2xOb3ZhISDwn5GL\".",
+      "Decoding \"SGVsbG8sIFRvb2xOb3ZhISDwn5GL\" returns the original \"Hello, ToolNova! 👋\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is Base64 encoding?",
+        "a": "Base64 converts text or binary data into a safe ASCII alphabet (A–Z, a–z, 0–9, + and /), which is handy for embedding data in URLs, JSON, HTML or email."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Base64 Encoder / Decoder runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Base64 Encoder / Decoder is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Encode and decode Base64 text online with full Unicode and emoji support. Safe copy-paste for tokens, data URIs and API payloads.",
+    "seoTitle": "Base64 Encoder / Decoder — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-07-31",
+    "popularity": 86,
+    "keywords": [
+      "base64 encode",
+      "base64 decode",
+      "base64 converter",
+      "base64 online"
+    ]
+  },
+  {
+    "id": "remove-duplicate-lines",
+    "title": "Remove Duplicate Lines",
+    "h1": "Remove Duplicate Lines — keep unique lines only",
+    "intro": "Delete duplicate lines from any list while keeping the original order. Perfect for cleaning exports, email lists and keyword lists.",
+    "blurb": "Delete duplicate lines from any list while keeping the original order. Perfect for cleaning exports, email lists and keyword lists.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your list (one item per line)",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "dedupe-lines",
+          "label": "Remove duplicate lines",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Remove duplicate lines) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"apple ⏎ banana ⏎ apple ⏎ cherry ⏎ banana\" → click \"Remove duplicate lines\" → output \"apple ⏎ banana ⏎ cherry\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Remove Duplicate Lines do?",
+        "a": "Delete duplicate lines from any list while keeping the original order. Perfect for cleaning exports, email lists and keyword lists."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Remove Duplicate Lines runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Remove Duplicate Lines is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Delete duplicate lines from any list while keeping the original order. Perfect for cleaning exports, email lists and keyword lists.",
+    "seoTitle": "Remove Duplicate Lines — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-07-31",
+    "popularity": 45,
+    "keywords": [
+      "remove duplicate lines",
+      "delete duplicate lines",
+      "dedupe list",
+      "unique lines"
+    ]
+  }
+]

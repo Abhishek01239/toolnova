@@ -1,0 +1,52 @@
+name: Garden Catalog
+
+# Weekly top-up of the idea backlog — Mondays 03:30 UTC = 09:00 IST (after
+# the daily run). Also runnable manually with a custom target count.
+on:
+  schedule:
+    - cron: '30 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'How many new ideas to plant'
+        required: true
+        default: '15'
+
+permissions:
+  contents: write
+
+# Shares the group with the daily run so the two never push on top of each other.
+concurrency:
+  group: daily-tool
+  cancel-in-progress: false
+
+jobs:
+  tend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Plant new catalog ideas
+        id: garden
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL || 'llama-3.3-70b-versatile' }}
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'auto' }}
+          GARDEN_TARGET: ${{ github.event.inputs.target || '15' }}
+        run: |
+          node scripts/tend-catalog.mjs --target "$GARDEN_TARGET" | tee garden.log
+          grep -E '^GARDEN_ADDED=' garden.log | tail -1 >> "$GITHUB_OUTPUT" || echo 'GARDEN_ADDED=none' >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.garden.outputs.GARDEN_ADDED != '' && steps.garden.outputs.GARDEN_ADDED != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(catalog): plant new ideas (${{ steps.garden.outputs.GARDEN_ADDED }}) [garden]"
+          git push

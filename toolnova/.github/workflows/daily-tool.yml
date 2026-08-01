@@ -1,0 +1,60 @@
+name: Daily Tool
+
+# Every morning at 02:30 UTC = 08:00 IST. Also runnable manually with a
+# custom tool count (Actions → Daily Tool → Run workflow).
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'How many new tools to add this run'
+        required: true
+        default: '1'
+
+permissions:
+  contents: write
+
+# Never let two runs race each other (a second queued run just adds the next tool).
+concurrency:
+  group: daily-tool
+  cancel-in-progress: false
+
+jobs:
+  add-tool:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Optional AI features (Groq free tier). Without a key both features
+      # silently disable: ranking falls back to catalog order and tools come
+      # from vetted factories. With a key, the AI author also WRITES a new
+      # custom tool module — which still must pass the full quality gate.
+      - name: Generate today's tool (tests + build + verify are the gate)
+        id: add
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL || 'llama-3.3-70b-versatile' }}
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'auto' }}
+          AI_BUDGET: ${{ vars.AI_BUDGET || '4' }}
+          COUNT: ${{ github.event.inputs.count || '1' }}
+        run: |
+          node scripts/add-daily-tool.mjs --count "$COUNT" | tee add.log
+          grep -E '^ADDED_TOOLS=' add.log >> "$GITHUB_OUTPUT" || echo 'ADDED_TOOLS=' >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "feat(tools): add ${{ steps.add.outputs.ADDED_TOOLS }} [daily]"
+          git push
+
+# Vercel deploys the push automatically via its Git integration
+# (vercel.json: buildCommand "node scripts/build.mjs", outputDirectory "dist").
