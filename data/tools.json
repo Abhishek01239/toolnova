@@ -1318,5 +1318,82 @@
       "flip text backwards",
       "reverse string"
     ]
+  },
+  {
+    "id": "remove-empty-lines",
+    "title": "Remove Empty Lines",
+    "h1": "Remove Empty & Blank Lines from text",
+    "intro": "Strip blank and whitespace-only lines from pasted text and optionally trim line ends, for compact clean lists.",
+    "blurb": "Strip blank and whitespace-only lines from pasted text and optionally trim line ends, for compact clean lists.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "remove-empty-lines",
+          "label": "Remove empty lines",
+          "primary": true
+        },
+        {
+          "id": "trim-lines",
+          "label": "Trim line ends",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Remove empty lines, Trim line ends) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"one ⏎  ⏎  ⏎  ⏎ two ⏎     ⏎ three\" → click \"Remove empty lines\" → output \"one ⏎ two ⏎ three\".",
+      "Input \"   padded left and right    ⏎ \talso padded\t\" → click \"Trim line ends\" → output \"padded left and right ⏎ also padded\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Remove Empty Lines do?",
+        "a": "Strip blank and whitespace-only lines from pasted text and optionally trim line ends, for compact clean lists."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Remove Empty Lines runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Remove Empty Lines is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Strip blank and whitespace-only lines from pasted text and optionally trim line ends, for compact clean lists.",
+    "seoTitle": "Remove Empty Lines — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "remove empty lines",
+      "delete blank lines",
+      "clean up text",
+      "remove blank rows"
+    ]
   }
 ]
