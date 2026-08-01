@@ -1858,5 +1858,82 @@
       "percent encoding",
       "encode url online"
     ]
+  },
+  {
+    "id": "html-entity-encoder-decoder",
+    "title": "HTML Entity Encoder / Decoder",
+    "h1": "HTML Entities — encode & decode",
+    "intro": "Escape text into HTML entities for safe display in markup, and decode entities back to readable text.",
+    "blurb": "Escape text into HTML entities for safe display in markup, and decode entities back to readable text.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to HTML entities",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from HTML entities"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to HTML entities\" or \"Decode from HTML entities\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"<p>Tom & Jerry said \"5 > 3\" — café ☕</p>\" produces \"&lt;p&gt;Tom &amp; Jerry said &quot;5 &gt; 3&quot; &#8212; caf&#233; &#9749;&lt;/p&gt;\".",
+      "Decoding \"&lt;p&gt;Tom &amp; Jerry said &quot;5 &gt; 3&quot; &#8212; caf&#233; &#9749;&lt;/p&gt;\" returns the original \"<p>Tom & Jerry said \"5 > 3\" — café ☕</p>\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is HTML entities encoding?",
+        "a": "HTML entity encoding turns characters like <, >, & and quotes into safe entities (&lt;, &gt;, &amp;…) so text can be shown inside HTML without being parsed as markup."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The HTML Entity Encoder / Decoder runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. HTML Entity Encoder / Decoder is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Escape text into HTML entities for safe display in markup, and decode entities back to readable text. Free, fast and private — runs entirely in your browser with no up…",
+    "seoTitle": "HTML Entity Encoder / Decoder — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "html entities",
+      "html entity encoder",
+      "escape html",
+      "html encode"
+    ]
   }
 ]
