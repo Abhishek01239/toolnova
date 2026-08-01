@@ -1472,5 +1472,77 @@
       "trim spaces",
       "fix double spaces"
     ]
+  },
+  {
+    "id": "html-to-text-converter",
+    "title": "HTML to Text Converter",
+    "h1": "HTML to Text — strip tags instantly",
+    "intro": "Strip HTML tags and decode entities to recover clean readable text, with paragraphs and line breaks preserved sensibly.",
+    "blurb": "Strip HTML tags and decode entities to recover clean readable text, with paragraphs and line breaks preserved sensibly.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "strip-html",
+          "label": "Strip HTML tags",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Strip HTML tags) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"<p>Hello <strong>beautiful</strong> world!</p>\" → click \"Strip HTML tags\" → output \"Hello beautiful world! ⏎ \".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the HTML to Text Converter do?",
+        "a": "Strip HTML tags and decode entities to recover clean readable text, with paragraphs and line breaks preserved sensibly."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The HTML to Text Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. HTML to Text Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Strip HTML tags and decode entities to recover clean readable text, with paragraphs and line breaks preserved sensibly.",
+    "seoTitle": "HTML to Text Converter — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "html to text",
+      "strip html tags",
+      "remove html",
+      "convert html to plain text"
+    ]
   }
 ]
