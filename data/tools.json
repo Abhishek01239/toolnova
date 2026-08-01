@@ -1241,5 +1241,82 @@
       "sort text lines",
       "a to z sorter"
     ]
+  },
+  {
+    "id": "reverse-text-generator",
+    "title": "Reverse Text Generator",
+    "h1": "Reverse Text — characters & line order",
+    "intro": "Reverse text character by character or flip the order of lines — Unicode-aware so emoji and accents survive intact.",
+    "blurb": "Reverse text character by character or flip the order of lines — Unicode-aware so emoji and accents survive intact.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "reverse-text",
+          "label": "Reverse characters",
+          "primary": true
+        },
+        {
+          "id": "reverse-lines",
+          "label": "Reverse line order",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Reverse characters, Reverse line order) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"stressed desserts\" → click \"Reverse characters\" → output \"stressed desserts\".",
+      "Input \"first ⏎ second ⏎ third\" → click \"Reverse line order\" → output \"third ⏎ second ⏎ first\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Reverse Text Generator do?",
+        "a": "Reverse text character by character or flip the order of lines — Unicode-aware so emoji and accents survive intact."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Reverse Text Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Reverse Text Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Reverse text character by character or flip the order of lines — Unicode-aware so emoji and accents survive intact.",
+    "seoTitle": "Reverse Text Generator — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-01",
+    "popularity": 45,
+    "keywords": [
+      "reverse text",
+      "backwards text",
+      "flip text backwards",
+      "reverse string"
+    ]
   }
 ]
