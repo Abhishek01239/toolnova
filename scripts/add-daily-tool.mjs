@@ -121,9 +121,9 @@ async function generateTool(catalogItem, ctx, allowAuthor) {
 }
 
 function runQualityGate(root) {
-  execFileSync('node', ['--test', 'tests/'], { cwd: root, stdio: 'inherit' });
-  execFileSync('node', ['scripts/build.mjs'], { cwd: root, stdio: 'inherit' });
-  execFileSync('node', ['scripts/verify.mjs'], { cwd: root, stdio: 'inherit' });
+  execFileSync(process.argv[0], ['--test', 'tests/'], { cwd: root, stdio: 'inherit' });
+  execFileSync(process.argv[0], ['scripts/build.mjs'], { cwd: root, stdio: 'inherit' });
+  execFileSync(process.argv[0], ['scripts/verify.mjs'], { cwd: root, stdio: 'inherit' });
 }
 
 async function main() {

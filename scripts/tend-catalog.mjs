@@ -49,9 +49,9 @@ async function main() {
 
   if (added.length) {
     // Prove the enlarged catalog still passes the whole quality gate.
-    execFileSync('node', ['--test', 'tests/'], { cwd: ROOT, stdio: 'inherit' });
-    execFileSync('node', ['scripts/build.mjs'], { cwd: ROOT, stdio: 'inherit' });
-    execFileSync('node', ['scripts/verify.mjs'], { cwd: ROOT, stdio: 'inherit' });
+    execFileSync(process.argv[0], ['--test', 'tests/'], { cwd: ROOT, stdio: 'inherit' });
+    execFileSync(process.argv[0], ['scripts/build.mjs'], { cwd: ROOT, stdio: 'inherit' });
+    execFileSync(process.argv[0], ['scripts/verify.mjs'], { cwd: ROOT, stdio: 'inherit' });
   }
 
   console.log(`\nGARDEN_ADDED=${added.map((e) => e.id).join(',') || 'none'}`);
