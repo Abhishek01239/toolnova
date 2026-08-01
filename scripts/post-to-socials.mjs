@@ -118,16 +118,27 @@ server.listen(PORT, async () => {
       const igCaption = `🚀 NEW TOOL RELEASE: [ ${tool.title.toUpperCase()} ]! 🚀\n\nWe just added a brand-new tool to ToolNova!\n\n${tool.blurb || tool.description}\n\n👉 Try it now! Link in bio: @toolnova_home\n\n🔒 100% Private: runs entirely in your browser. No sign-up, no cost.\n\n#toolnova #developer #productivity #webapps #designer #usefulwebsites #freeonlineapps #coder`;
       
       // 1. Post to Facebook
-      console.log(`📣 Posting to Facebook Page...`);
-      const fbRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/feed`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: captionText,
-          link: toolLink,
-          access_token: process.env.FB_PAGE_ACCESS_TOKEN
-        })
+      console.log("Page ID:", process.env.FB_PAGE_ID);
+      console.log(
+        "Token starts with:",
+        process.env.FB_PAGE_ACCESS_TOKEN?.substring(0, 20)
+      );
+
+      console.log("📣 Posting to Facebook Page...");
+      const params = new URLSearchParams({
+        message: captionText,
+        link: toolLink,
+        access_token: process.env.FB_PAGE_ACCESS_TOKEN,
       });
+
+      const fbRes = await fetch(
+        `https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/feed`,
+        {
+          method: "POST",
+          body: params,
+        }
+      );
+
       const fbJson = await fbRes.json();
       if (fbJson.error) {
         console.error("❌ Facebook Post Error:", fbJson.error);
