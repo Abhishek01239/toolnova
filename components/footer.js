@@ -13,8 +13,9 @@ export function footer(site, tools) {
     .sort((a, b) => b[1].length - a[1].length)
     .slice(0, 10)
     .map(([cat, items]) =>
-      `<li><a href="/category/${categorySlug(cat)}">${categoryEmoji(cat)} ${esc(cat)} <span class="muted">(${items.length})</span></a></li>`
+      `<li><a href="/category/${categorySlug(cat)}">${categoryEmoji(cat)} [ ${esc(cat.toUpperCase())} (${items.length}) ]</a></li>`
     ).join('');
+
 
   const latest = [...tools]
     .sort((a, b) => (a.added < b.added ? 1 : -1))

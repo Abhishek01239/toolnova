@@ -10,8 +10,8 @@ export function toolCard(tool) {
       <h3>${esc(tool.title)}</h3>
       <p class="muted">${esc(tool.blurb || tool.description)}</p>
       <span class="tool-card-meta">
-        <span class="chip">${esc(tool.category)}</span>
-        <span class="chip chip-free">Free</span>
+        <span class="chip">[ ${esc(tool.category.toUpperCase())} ]</span>
+        <span class="chip chip-free">[ FREE ]</span>
       </span>
     </span>
   </a>
@@ -24,7 +24,9 @@ export function toolGrid(tools) {
 }
 
 export function categoryChip(name, count) {
+  const countStr = count !== undefined ? ` (${count})` : '';
   return `<a class="category-chip" href="/category/${categorySlug(name)}">
-  <span aria-hidden="true">${categoryEmoji(name)}</span> ${esc(name)}${count !== undefined ? ` <span class="muted">(${count})</span>` : ''}
+  <span aria-hidden="true">${categoryEmoji(name)}</span> [ ${esc(name.toUpperCase())}${countStr} ]
 </a>`;
 }
+

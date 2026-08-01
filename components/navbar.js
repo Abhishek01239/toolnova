@@ -10,7 +10,8 @@ const NAV_LINKS = [
 export function navbar(site, currentPath) {
   const links = NAV_LINKS.map((l) => {
     const active = currentPath === l.href || currentPath.startsWith(l.href + '/');
-    return `<a href="${l.href}"${active ? ' aria-current="page" class="active"' : ''}>${esc(l.name)}</a>`;
+    const label = `[ ${l.name.toUpperCase()} ]`;
+    return `<a href="${l.href}"${active ? ' aria-current="page" class="active"' : ''}>${esc(label)}</a>`;
   }).join('');
 
   return `<header class="site-header">
@@ -20,7 +21,7 @@ export function navbar(site, currentPath) {
     </a>
     <nav class="main-nav" aria-label="Main navigation">${links}</nav>
     <form class="nav-search" action="/search" method="get" role="search">
-      <input type="search" name="q" placeholder="Search tools…" aria-label="Search tools" minlength="1">
+      <input type="search" name="q" placeholder="[ SEARCH… ]" aria-label="Search tools" minlength="1">
       <button type="submit" aria-label="Search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
       </button>
