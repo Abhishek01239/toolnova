@@ -2166,5 +2166,82 @@
       "js unicode",
       "\\u converter"
     ]
+  },
+  {
+    "id": "rot13-encoder-decoder",
+    "title": "ROT13 Encoder / Decoder",
+    "h1": "ROT13 — encode & decode",
+    "intro": "Apply the classic ROT13 cipher to obscure spoilers and puzzle answers — encoding and decoding are the same operation.",
+    "blurb": "Apply the classic ROT13 cipher to obscure spoilers and puzzle answers — encoding and decoding are the same operation.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to ROT13",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from ROT13"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to ROT13\" or \"Decode from ROT13\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"Hello, world! Try me.\" produces \"Uryyb, jbeyq! Gel zr.\".",
+      "Decoding \"Uryyb, jbeyq! Gel zr.\" returns the original \"Hello, world! Try me.\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is ROT13 encoding?",
+        "a": "ROT13 shifts every letter 13 places through the alphabet. Applying it twice returns the original text, which makes it a classic way to obscure spoilers and puzzle answers."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The ROT13 Encoder / Decoder runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. ROT13 Encoder / Decoder is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Apply the classic ROT13 cipher to obscure spoilers and puzzle answers — encoding and decoding are the same operation.",
+    "seoTitle": "ROT13 Encoder / Decoder — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "rot13",
+      "rot13 decoder",
+      "caesar cipher 13",
+      "rot13 online"
+    ]
   }
 ]
