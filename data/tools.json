@@ -2243,5 +2243,94 @@
       "caesar cipher 13",
       "rot13 online"
     ]
+  },
+  {
+    "id": "random-number-generator",
+    "title": "Random Number Generator",
+    "h1": "Random Number Generator — pick integers in any range",
+    "intro": "Generate random integers in any range, up to 20 at a time — for raffles, dice, sampling and games. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Generate random integers in any range, up to 20 at a time — for raffles, dice, sampling and games.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "min",
+          "label": "Minimum",
+          "value": 1,
+          "min": -1000000000,
+          "max": 1000000000
+        },
+        {
+          "type": "number",
+          "id": "max",
+          "label": "Maximum",
+          "value": 100,
+          "min": -1000000000,
+          "max": 1000000000
+        },
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many?",
+          "value": 1,
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Generate random numbers",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Set minimum 1, maximum 6 and count 3 to simulate three six-sided dice.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Random Number Generator do?",
+        "a": "Generate random integers in any range, up to 20 at a time — for raffles, dice, sampling and games."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Random Number Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Random Number Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Generate random integers in any range, up to 20 at a time — for raffles, dice, sampling and games. Free, fast and private — runs entirely in your browser with no uploa…",
+    "seoTitle": "Random Number Generator — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-02",
+    "popularity": 70,
+    "keywords": [
+      "random number generator",
+      "random integer",
+      "number picker",
+      "rng"
+    ]
   }
 ]
