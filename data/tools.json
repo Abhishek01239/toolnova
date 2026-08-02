@@ -2661,5 +2661,90 @@
       "random alphabet letter",
       "letter picker"
     ]
+  },
+  {
+    "id": "random-date-generator",
+    "title": "Random Date Generator",
+    "h1": "Random Date Generator — dates with weekdays",
+    "intro": "Generate random dates within any range, with weekdays — ideal for test data and mockups. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Generate random dates within any range, with weekdays — ideal for test data and mockups.",
+    "ui": {
+      "controls": [
+        {
+          "type": "date",
+          "id": "start",
+          "label": "Start of range",
+          "value": "2000-01-01"
+        },
+        {
+          "type": "date",
+          "id": "end",
+          "label": "End of range",
+          "value": "2030-12-31"
+        },
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many dates?",
+          "value": 1,
+          "min": 1,
+          "max": 10,
+          "step": 1
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Generate random dates",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Pick a range like 2000-01-01 to 2030-12-31 to create random birthdays, deadlines or test data.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Random Date Generator do?",
+        "a": "Generate random dates within any range, with weekdays — ideal for test data and mockups."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Random Date Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Random Date Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Generate random dates within any range, with weekdays — ideal for test data and mockups. Free, fast and private — runs entirely in your browser with no uploads or sign…",
+    "seoTitle": "Random Date Generator — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "random date generator",
+      "random dates",
+      "date picker random",
+      "test dates"
+    ]
   }
 ]
