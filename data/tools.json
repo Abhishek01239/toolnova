@@ -2089,5 +2089,82 @@
       "binary translator",
       "string to binary"
     ]
+  },
+  {
+    "id": "unicode-escape-converter",
+    "title": "Unicode Escape Converter",
+    "h1": "Unicode Escapes — encode & decode",
+    "intro": "Convert non-ASCII text to JavaScript-style \\u escape sequences and decode them back to readable characters.",
+    "blurb": "Convert non-ASCII text to JavaScript-style \\u escape sequences and decode them back to readable characters.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to JavaScript unicode escapes",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from JavaScript unicode escapes"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to JavaScript unicode escapes\" or \"Decode from JavaScript unicode escapes\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"café — naïve — 日本語 😀\" produces \"caf\\u00e9 \\u2014 na\\u00efve \\u2014 \\u65e5\\u672c\\u8a9e \\u{1f600}\".",
+      "Decoding \"caf\\u00e9 \\u2014 na\\u00efve \\u2014 \\u65e5\\u672c\\u8a9e \\u{1f600}\" returns the original \"café — naïve — 日本語 😀\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is JavaScript unicode escapes encoding?",
+        "a": "Unicode escape sequences (\\u0041 style) are how non-ASCII characters are written inside JavaScript strings, JSON and many config formats."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Unicode Escape Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Unicode Escape Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert non-ASCII text to JavaScript-style \\u escape sequences and decode them back to readable characters. Free, fast and private — runs entirely in your browser with…",
+    "seoTitle": "Unicode Escape Converter — Free Online Tool | ToolNova",
+    "category": "Developer",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "unicode escape",
+      "unicode unescape",
+      "js unicode",
+      "\\u converter"
+    ]
   }
 ]
