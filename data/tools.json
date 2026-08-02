@@ -2437,5 +2437,78 @@
       "d20 roller",
       "virtual dice"
     ]
+  },
+  {
+    "id": "coin-flip",
+    "title": "Coin Flip",
+    "h1": "Flip a Coin — heads or tails?",
+    "intro": "Flip a virtual coin for instant heads-or-tails decisions — flip up to 10 times and see the tally. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Flip a virtual coin for instant heads-or-tails decisions — flip up to 10 times and see the tally.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many flips?",
+          "value": 1,
+          "min": 1,
+          "max": 10,
+          "step": 1
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Flip the coin",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Flip once for a quick heads-or-tails decision, or 10 times to see the spread.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Coin Flip do?",
+        "a": "Flip a virtual coin for instant heads-or-tails decisions — flip up to 10 times and see the tally."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Coin Flip runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Coin Flip is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Flip a virtual coin for instant heads-or-tails decisions — flip up to 10 times and see the tally. Free, fast and private — runs entirely in your browser with no upload…",
+    "seoTitle": "Coin Flip — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "coin flip",
+      "flip a coin",
+      "heads or tails",
+      "coin toss online"
+    ]
   }
 ]
