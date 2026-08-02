@@ -2809,5 +2809,175 @@
       "decision maker",
       "random yes or no"
     ]
+  },
+  {
+    "id": "length-converter",
+    "title": "Length Converter",
+    "h1": "Length Converter — metric & imperial",
+    "intro": "Convert between meters, kilometers, miles, feet, inches and more with exact, standards-based factors.",
+    "blurb": "Convert between meters, kilometers, miles, feet, inches and more with exact, standards-based factors.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 1,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Meter (m)",
+              "label": "Meter (m)"
+            },
+            {
+              "value": "Kilometer (km)",
+              "label": "Kilometer (km)"
+            },
+            {
+              "value": "Centimeter (cm)",
+              "label": "Centimeter (cm)"
+            },
+            {
+              "value": "Millimeter (mm)",
+              "label": "Millimeter (mm)"
+            },
+            {
+              "value": "Micrometer (µm)",
+              "label": "Micrometer (µm)"
+            },
+            {
+              "value": "Mile (mi)",
+              "label": "Mile (mi)"
+            },
+            {
+              "value": "Yard (yd)",
+              "label": "Yard (yd)"
+            },
+            {
+              "value": "Foot (ft)",
+              "label": "Foot (ft)"
+            },
+            {
+              "value": "Inch (in)",
+              "label": "Inch (in)"
+            },
+            {
+              "value": "Nautical mile (nmi)",
+              "label": "Nautical mile (nmi)"
+            }
+          ],
+          "value": "Meter (m)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Meter (m)",
+              "label": "Meter (m)"
+            },
+            {
+              "value": "Kilometer (km)",
+              "label": "Kilometer (km)"
+            },
+            {
+              "value": "Centimeter (cm)",
+              "label": "Centimeter (cm)"
+            },
+            {
+              "value": "Millimeter (mm)",
+              "label": "Millimeter (mm)"
+            },
+            {
+              "value": "Micrometer (µm)",
+              "label": "Micrometer (µm)"
+            },
+            {
+              "value": "Mile (mi)",
+              "label": "Mile (mi)"
+            },
+            {
+              "value": "Yard (yd)",
+              "label": "Yard (yd)"
+            },
+            {
+              "value": "Foot (ft)",
+              "label": "Foot (ft)"
+            },
+            {
+              "value": "Inch (in)",
+              "label": "Inch (in)"
+            },
+            {
+              "value": "Nautical mile (nmi)",
+              "label": "Nautical mile (nmi)"
+            }
+          ],
+          "value": "Kilometer (km)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the meter as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "1 Meter (m) = 0.001 Kilometer (km).",
+      "Quick reference: 1 m = 0.001 km.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert m to km?",
+        "a": "Enter your value, select Meter (m) in the “From” box and Kilometer (km) in the “To” box. For reference, 1 m = 0.001 km."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Length Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Length Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert between meters, kilometers, miles, feet, inches and more with exact, standards-based factors. Free, fast and private — runs entirely in your browser with no up…",
+    "seoTitle": "Length Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-02",
+    "popularity": 66,
+    "keywords": [
+      "length converter",
+      "cm to inches",
+      "meters to feet",
+      "km to miles",
+      "inches to mm"
+    ]
   }
 ]
