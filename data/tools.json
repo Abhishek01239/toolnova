@@ -2583,5 +2583,83 @@
       "color picker random",
       "palette ideas"
     ]
+  },
+  {
+    "id": "random-letter-generator",
+    "title": "Random Letter Generator",
+    "h1": "Random Letter Generator — A to Z",
+    "intro": "Pick random letters of the alphabet for games, initials and classroom activities. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Pick random letters of the alphabet for games, initials and classroom activities.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many letters?",
+          "value": 1,
+          "min": 1,
+          "max": 20,
+          "step": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "lowercase",
+          "label": "Use lowercase letters",
+          "checked": false
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Generate letters",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Generate five letters as initials for a game or a teaching exercise.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Random Letter Generator do?",
+        "a": "Pick random letters of the alphabet for games, initials and classroom activities."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Random Letter Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Random Letter Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Pick random letters of the alphabet for games, initials and classroom activities. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Random Letter Generator — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "random letter generator",
+      "random alphabet letter",
+      "letter picker"
+    ]
   }
 ]
