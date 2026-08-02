@@ -2746,5 +2746,68 @@
       "date picker random",
       "test dates"
     ]
+  },
+  {
+    "id": "yes-or-no-generator",
+    "title": "Yes or No Generator",
+    "h1": "Yes or No — the instant decision maker",
+    "intro": "Get an instant random Yes or No for any decision question — no login, no judgment. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Get an instant random Yes or No for any decision question — no login, no judgment.",
+    "ui": {
+      "controls": [],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Ask again",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Ask any yes/no question — “Should I take the day off?” — and let fate decide.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Yes or No Generator do?",
+        "a": "Get an instant random Yes or No for any decision question — no login, no judgment."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Yes or No Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Yes or No Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Get an instant random Yes or No for any decision question — no login, no judgment. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Yes or No Generator — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "yes or no generator",
+      "yes no oracle",
+      "decision maker",
+      "random yes or no"
+    ]
   }
 ]
