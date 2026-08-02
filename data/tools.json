@@ -2012,5 +2012,82 @@
       "hexadecimal converter",
       "string to hex"
     ]
+  },
+  {
+    "id": "text-to-binary-converter",
+    "title": "Text to Binary Converter",
+    "h1": "Text ⇄ Binary Converter",
+    "intro": "See any text as 8-bit binary bytes and convert binary back to readable text with validation. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "See any text as 8-bit binary bytes and convert binary back to readable text with validation.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to binary",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from binary"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to binary\" or \"Decode from binary\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"Hi!\" produces \"01001000 01101001 00100001\".",
+      "Decoding \"01001000 01101001 00100001\" returns the original \"Hi!\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is binary encoding?",
+        "a": "Binary encoding shows each byte of text as eight 0s and 1s — the raw representation computers actually store."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Text to Binary Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Text to Binary Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "See any text as 8-bit binary bytes and convert binary back to readable text with validation. Free, fast and private — runs entirely in your browser with no uploads or…",
+    "seoTitle": "Text to Binary Converter — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-08-02",
+    "popularity": 45,
+    "keywords": [
+      "text to binary",
+      "binary to text",
+      "binary translator",
+      "string to binary"
+    ]
   }
 ]
