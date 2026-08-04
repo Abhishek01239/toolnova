@@ -3237,5 +3237,134 @@
       "fahrenheit to celsius",
       "kelvin converter"
     ]
+  },
+  {
+    "id": "speed-converter",
+    "title": "Speed Converter",
+    "h1": "Speed Converter — m/s, km/h, mph, knots",
+    "intro": "Convert speed between m/s, km/h, mph, knots and ft/s with exact factors. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert speed between m/s, km/h, mph, knots and ft/s with exact factors.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 100,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Meter/second (m/s)",
+              "label": "Meter/second (m/s)"
+            },
+            {
+              "value": "Kilometer/hour (km/h)",
+              "label": "Kilometer/hour (km/h)"
+            },
+            {
+              "value": "Mile/hour (mph)",
+              "label": "Mile/hour (mph)"
+            },
+            {
+              "value": "Knot (kn)",
+              "label": "Knot (kn)"
+            },
+            {
+              "value": "Foot/second (ft/s)",
+              "label": "Foot/second (ft/s)"
+            }
+          ],
+          "value": "Meter/second (m/s)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Meter/second (m/s)",
+              "label": "Meter/second (m/s)"
+            },
+            {
+              "value": "Kilometer/hour (km/h)",
+              "label": "Kilometer/hour (km/h)"
+            },
+            {
+              "value": "Mile/hour (mph)",
+              "label": "Mile/hour (mph)"
+            },
+            {
+              "value": "Knot (kn)",
+              "label": "Knot (kn)"
+            },
+            {
+              "value": "Foot/second (ft/s)",
+              "label": "Foot/second (ft/s)"
+            }
+          ],
+          "value": "Kilometer/hour (km/h)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the meter per second as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "100 Meter/second (m/s) = 360 Kilometer/hour (km/h).",
+      "Quick reference: 1 m/s = 3.6 km/h.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert m/s to km/h?",
+        "a": "Enter your value, select Meter/second (m/s) in the “From” box and Kilometer/hour (km/h) in the “To” box. For reference, 1 m/s = 3.6 km/h."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Speed Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Speed Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert speed between m/s, km/h, mph, knots and ft/s with exact factors. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Speed Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-04",
+    "popularity": 45,
+    "keywords": [
+      "speed converter",
+      "kmh to mph",
+      "mph to kmh",
+      "knots to kmh"
+    ]
   }
 ]
