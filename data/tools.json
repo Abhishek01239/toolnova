@@ -3124,5 +3124,118 @@
       "pounds to kilograms",
       "ounces to grams"
     ]
+  },
+  {
+    "id": "temperature-converter",
+    "title": "Temperature Converter",
+    "h1": "Temperature Converter — °C ⇄ °F ⇄ K",
+    "intro": "Convert between Celsius, Fahrenheit and Kelvin using the exact official formulas. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert between Celsius, Fahrenheit and Kelvin using the exact official formulas.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 25,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Celsius (°C)",
+              "label": "Celsius (°C)"
+            },
+            {
+              "value": "Fahrenheit (°F)",
+              "label": "Fahrenheit (°F)"
+            },
+            {
+              "value": "Kelvin (K)",
+              "label": "Kelvin (K)"
+            }
+          ],
+          "value": "Celsius (°C)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Celsius (°C)",
+              "label": "Celsius (°C)"
+            },
+            {
+              "value": "Fahrenheit (°F)",
+              "label": "Fahrenheit (°F)"
+            },
+            {
+              "value": "Kelvin (K)",
+              "label": "Kelvin (K)"
+            }
+          ],
+          "value": "Fahrenheit (°F)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Temperature conversions use the standard Celsius/Fahrenheit/Kelvin formulas.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "25 Celsius (°C) = 77 Fahrenheit (°F).",
+      "Quick reference: 1 °C = 33.8 °F.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert °C to °F?",
+        "a": "Enter your value, select Celsius (°C) in the “From” box and Fahrenheit (°F) in the “To” box. For reference, 1 °C = 33.8 °F."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Temperature Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Temperature Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert between Celsius, Fahrenheit and Kelvin using the exact official formulas. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Temperature Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-04",
+    "popularity": 64,
+    "keywords": [
+      "temperature converter",
+      "celsius to fahrenheit",
+      "fahrenheit to celsius",
+      "kelvin converter"
+    ]
   }
 ]
