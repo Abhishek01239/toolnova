@@ -43,8 +43,10 @@ jobs:
           AI_BUDGET: ${{ vars.AI_BUDGET || '4' }}
           COUNT: ${{ github.event.inputs.count || '1' }}
         run: |
-          node scripts/add-daily-tool.mjs --count "$COUNT" | tee add.log
+          node scripts/add-daily-tool.mjs --count "$COUNT" > add.log
+          cat add.log
           grep -E '^ADDED_TOOLS=' add.log >> "$GITHUB_OUTPUT" || echo 'ADDED_TOOLS=' >> "$GITHUB_OUTPUT"
+
 
       - name: Install Playwright and dependencies
         if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
