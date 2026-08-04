@@ -54,17 +54,13 @@ jobs:
           npm install --no-save playwright
           npx playwright install --with-deps chromium
 
-      - name: Post to Instagram & Facebook
+      - name: Take screenshots of new tool
         if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
-        env:
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
-          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
-          IG_BUSINESS_ID: ${{ secrets.IG_BUSINESS_ID }}
-          SITE_URL: ${{ vars.SITE_URL || 'https://toolnova.vercel.app' }}
-          ADDED_TOOLS: ${{ steps.add.outputs.ADDED_TOOLS }}
         run: |
           node scripts/build.mjs
-          node scripts/post-to-socials.mjs
+          node scripts/take-screenshots.mjs
+        env:
+          ADDED_TOOLS: ${{ steps.add.outputs.ADDED_TOOLS }}
 
       - name: Commit and push
         if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
@@ -76,6 +72,18 @@ jobs:
           git commit -m "feat(tools): add ${{ steps.add.outputs.ADDED_TOOLS }} [daily]"
           git pull --rebase origin main
           git push
+
+      - name: Post to Instagram & Facebook
+        if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_BUSINESS_ID: ${{ secrets.IG_BUSINESS_ID }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://toolnova.vercel.app' }}
+          ADDED_TOOLS: ${{ steps.add.outputs.ADDED_TOOLS }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          node scripts/post-to-socials.mjs
 
 
 # Vercel deploys the push automatically via its Git integration
