@@ -4035,5 +4035,121 @@
       "days to weeks",
       "milliseconds converter"
     ]
+  },
+  {
+    "id": "bmi-calculator",
+    "title": "BMI Calculator",
+    "h1": "BMI Calculator — free & online Body Mass Index tracker",
+    "seoTitle": "BMI Calculator — Free Online Body Mass Index Tracker | ToolNova",
+    "description": "Calculate your Body Mass Index (BMI) instantly. Supports metric and imperial units, shows your weight category, and provides healthy weight guidance.",
+    "intro": "Determine your Body Mass Index (BMI) using height and weight. Discover your BMI category (Underweight, Normal, Overweight, or Obese) and see your target healthy weight range instantly.",
+    "category": "Calculators",
+    "keywords": [
+      "bmi calculator",
+      "body mass index",
+      "bmi chart",
+      "calculate bmi",
+      "healthy weight range"
+    ],
+    "popularity": 80,
+    "ui": {
+      "layout": "single",
+      "controls": [
+        {
+          "type": "number",
+          "id": "weight",
+          "label": "Weight",
+          "value": 70,
+          "min": 1,
+          "max": 500,
+          "step": 0.1
+        },
+        {
+          "type": "select",
+          "id": "weight-unit",
+          "label": "Weight unit",
+          "options": [
+            {
+              "value": "kg",
+              "label": "kg"
+            },
+            {
+              "value": "lb",
+              "label": "lbs"
+            }
+          ],
+          "value": "kg"
+        },
+        {
+          "type": "number",
+          "id": "height",
+          "label": "Height",
+          "value": 170,
+          "min": 1,
+          "max": 300,
+          "step": 0.1
+        },
+        {
+          "type": "select",
+          "id": "height-unit",
+          "label": "Height unit",
+          "options": [
+            {
+              "value": "cm",
+              "label": "cm"
+            },
+            {
+              "value": "in",
+              "label": "inches"
+            }
+          ],
+          "value": "cm"
+        }
+      ],
+      "actions": [],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "bmi-val",
+          "label": "Your BMI"
+        },
+        {
+          "type": "text",
+          "id": "bmi-cat",
+          "label": "Weight Category"
+        },
+        {
+          "type": "stats",
+          "id": "guidance",
+          "label": "Healthy Weight Guidance"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter your current weight and select your preferred weight unit (kilograms or pounds).",
+      "Enter your height and select your preferred height unit (centimeters or inches).",
+      "The tool calculates your Body Mass Index (BMI) instantly using standard medical formulas.",
+      "It displays your weight classification (Underweight, Normal, Overweight, or Obese) and calculates the ideal weight range for your height."
+    ],
+    "examples": [
+      "A person weighing 70 kg at a height of 170 cm has a BMI of 24.22 (Normal weight).",
+      "A person weighing 180 lbs at a height of 70 inches has a BMI of 25.82 (Overweight)."
+    ],
+    "faq": [
+      {
+        "q": "What is Body Mass Index (BMI)?",
+        "a": "BMI is a simple numerical calculation of body fat based on height and weight. It is widely used by healthcare providers as a quick method to identify if a person is underweight, normal weight, overweight, or obese."
+      },
+      {
+        "q": "How is BMI calculated?",
+        "a": "For metric units, the formula is weight in kilograms divided by height in meters squared (kg/m²). For imperial units, the formula is weight in pounds multiplied by 703, divided by height in inches squared (lbs * 703 / in²)."
+      },
+      {
+        "q": "Is BMI accurate for everyone?",
+        "a": "BMI is a general screening tool and has limitations. It may not be accurate for athletes or bodybuilders (who have high muscle mass), pregnant women, or the elderly, as it does not distinguish between muscle mass and fat mass."
+      }
+    ],
+    "added": "2026-08-04",
+    "blurb": "Calculate your Body Mass Index (BMI) instantly. Supports metric and imperial units, shows your weight category, and provides healthy weight guidance."
   }
 ]
