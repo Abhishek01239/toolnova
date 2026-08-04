@@ -86,6 +86,22 @@ const PORT = 4173;
 server.listen(PORT, async () => {
   console.log(`📡 Local server listening on http://localhost:${PORT}`);
   
+  // Exchange System User Token for Page Access Token (needed for Facebook unpublished posts)
+  let pageAccessToken = process.env.FB_PAGE_ACCESS_TOKEN;
+  try {
+    console.log("🔑 Exchanging System User Token for Page Access Token...");
+    const pageInfoRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}?fields=access_token&access_token=${process.env.FB_PAGE_ACCESS_TOKEN}`);
+    const pageInfoJson = await pageInfoRes.json();
+    if (pageInfoJson.access_token) {
+      pageAccessToken = pageInfoJson.access_token;
+      console.log("🔑 Successfully obtained Page Access Token!");
+    } else {
+      console.warn("⚠️ Could not exchange token automatically. Using raw FB_PAGE_ACCESS_TOKEN directly.", pageInfoJson.error || pageInfoJson);
+    }
+  } catch (err) {
+    console.warn("⚠️ Token exchange failed with exception, using raw FB_PAGE_ACCESS_TOKEN directly:", err);
+  }
+
   try {
     const { chromium } = await import('playwright');
     const tools = JSON.parse(fs.readFileSync(TOOLS_JSON, 'utf8'));
@@ -290,7 +306,7 @@ server.listen(PORT, async () => {
           const formData = new FormData();
           formData.append('source', fileBlob, `${toolId}-social-${i+1}.png`);
           formData.append('published', 'false');
-          formData.append('access_token', process.env.FB_PAGE_ACCESS_TOKEN);
+          formData.append('access_token', pageAccessToken);
 
           const fbPhotoRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/photos`, {
             method: 'POST',
@@ -316,7 +332,7 @@ server.listen(PORT, async () => {
           body: new URLSearchParams({
             message: captionText,
             attached_media: JSON.stringify(mediaList),
-            access_token: process.env.FB_PAGE_ACCESS_TOKEN
+            access_token: pageAccessToken
           })
         });
         const fbFeedJson = await fbFeedRes.json();
