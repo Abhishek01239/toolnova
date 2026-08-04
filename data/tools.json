@@ -3536,5 +3536,158 @@
       "mib to mb",
       "kb to mb"
     ]
+  },
+  {
+    "id": "area-converter",
+    "title": "Area Converter",
+    "h1": "Area Converter — m², ft², acres, hectares",
+    "intro": "Convert square meters, square feet, acres, hectares and more for property, land and DIY projects. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert square meters, square feet, acres, hectares and more for property, land and DIY projects.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 100,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Square meter (m²)",
+              "label": "Square meter (m²)"
+            },
+            {
+              "value": "Square kilometer (km²)",
+              "label": "Square kilometer (km²)"
+            },
+            {
+              "value": "Hectare (ha)",
+              "label": "Hectare (ha)"
+            },
+            {
+              "value": "Acre (ac)",
+              "label": "Acre (ac)"
+            },
+            {
+              "value": "Square foot (ft²)",
+              "label": "Square foot (ft²)"
+            },
+            {
+              "value": "Square yard (yd²)",
+              "label": "Square yard (yd²)"
+            },
+            {
+              "value": "Square mile (mi²)",
+              "label": "Square mile (mi²)"
+            },
+            {
+              "value": "Square inch (in²)",
+              "label": "Square inch (in²)"
+            }
+          ],
+          "value": "Square meter (m²)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Square meter (m²)",
+              "label": "Square meter (m²)"
+            },
+            {
+              "value": "Square kilometer (km²)",
+              "label": "Square kilometer (km²)"
+            },
+            {
+              "value": "Hectare (ha)",
+              "label": "Hectare (ha)"
+            },
+            {
+              "value": "Acre (ac)",
+              "label": "Acre (ac)"
+            },
+            {
+              "value": "Square foot (ft²)",
+              "label": "Square foot (ft²)"
+            },
+            {
+              "value": "Square yard (yd²)",
+              "label": "Square yard (yd²)"
+            },
+            {
+              "value": "Square mile (mi²)",
+              "label": "Square mile (mi²)"
+            },
+            {
+              "value": "Square inch (in²)",
+              "label": "Square inch (in²)"
+            }
+          ],
+          "value": "Square kilometer (km²)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the square meter as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "100 Square meter (m²) = 0.0001 Square kilometer (km²).",
+      "Quick reference: 1 m² = 0.000001 km².",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert m² to km²?",
+        "a": "Enter your value, select Square meter (m²) in the “From” box and Square kilometer (km²) in the “To” box. For reference, 1 m² = 0.000001 km²."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Area Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Area Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert square meters, square feet, acres, hectares and more for property, land and DIY projects. Free, fast and private — runs entirely in your browser with no upload…",
+    "seoTitle": "Area Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-04",
+    "popularity": 45,
+    "keywords": [
+      "area converter",
+      "square feet to meters",
+      "acres to hectares",
+      "sqft converter"
+    ]
   }
 ]
