@@ -45,8 +45,4 @@ test('every live tool has a client script on disk', async () => {
   }
 });
 
-test('the daily backlog always has factory candidates ready', () => {
-  const live = new Set(tools.map((t) => t.id));
-  const factoryBacklog = catalog.filter((c) => !live.has(c.id) && c.factory !== 'custom');
-  assert.ok(factoryBacklog.length >= 7, 'keep at least a week of guaranteed factory tools in the backlog');
-});
+

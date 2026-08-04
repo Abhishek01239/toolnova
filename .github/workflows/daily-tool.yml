@@ -61,8 +61,8 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL || 'https://toolnova.vercel.app' }}
           ADDED_TOOLS: ${{ steps.add.outputs.ADDED_TOOLS }}
         run: |
-          node scripts/post-to-socials.mjs
           node scripts/build.mjs
+          node scripts/post-to-socials.mjs
 
       - name: Commit and push
         if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'

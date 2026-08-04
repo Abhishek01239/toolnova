@@ -14,6 +14,32 @@ const DIST = path.join(ROOT, 'dist');
 const TOOLS_JSON = path.join(ROOT, 'data', 'tools.json');
 const SITE_JSON = path.join(ROOT, 'data', 'site.json');
 
+// Helper to poll the status of an Instagram media container until it is fully processed.
+const waitForInstagramMediaReady = async (containerId, accessToken) => {
+  const maxRetries = 20;
+  const delayMs = 3000;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const res = await fetch(`https://graph.facebook.com/v20.0/${containerId}?fields=status_code&access_token=${accessToken}`);
+      const json = await res.json();
+      if (json.status_code === 'FINISHED') {
+        return true;
+      }
+      if (json.status_code === 'ERROR') {
+        console.error(`❌ Instagram Media Container ${containerId} failed processing:`, json.error || json);
+        return false;
+      }
+      console.log(`⏳ Instagram Media ${containerId} status is ${json.status_code || 'UNKNOWN'} (attempt ${attempt}/${maxRetries}). Waiting...`);
+    } catch (err) {
+      console.warn(`⚠️ Error checking status of ${containerId}:`, err);
+    }
+    await new Promise(resolve => setTimeout(resolve, delayMs));
+  }
+  console.error(`❌ Timeout waiting for Instagram Media ${containerId} to finish processing.`);
+  return false;
+};
+
+
 // Graceful check for credentials
 if (!process.env.FB_PAGE_ID || !process.env.FB_PAGE_ACCESS_TOKEN || !process.env.IG_BUSINESS_ID) {
   console.log("⚠️ Meta API credentials not found. Skipping automated posting.");
@@ -225,29 +251,8 @@ server.listen(PORT, async () => {
 
       await browser.close();
       
-      // --- UPLOAD IMAGES TO LITTERBOX ---
-      // Upload Facebook images (natural aspect ratios)
-      const fbImageUrls = [];
-      for (let i = 0; i < fbScreenshotPaths.length; i++) {
-        console.log(`📤 Uploading Facebook screenshot ${i+1}/5 to Litterbox...`);
-        const fileBuffer = fs.readFileSync(fbScreenshotPaths[i]);
-        const fileBlob = new Blob([fileBuffer], { type: 'image/png' });
-        const formData = new FormData();
-        formData.append('reqtype', 'fileupload');
-        formData.append('time', '1h');
-        formData.append('fileToUpload', fileBlob, `${toolId}-social-${i+1}.png`);
-        
-        const uploadRes = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {
-          method: 'POST',
-          body: formData
-        });
-        if (!uploadRes.ok) throw new Error(`FB Upload failed: ${uploadRes.statusText}`);
-        const rawImageUrl = await uploadRes.text();
-        console.log(`🔗 FB Photo ${i+1} URL: ${rawImageUrl}`);
-        fbImageUrls.push(rawImageUrl.trim());
-      }
-
-      // Upload Instagram images (1:1 padded square aspect ratios)
+      // --- UPLOAD IMAGES FOR INSTAGRAM TO LITTERBOX ---
+      // (Instagram Graph API strictly requires public URLs for image media containers)
       const igImageUrls = [];
       for (let i = 0; i < igScreenshotPaths.length; i++) {
         console.log(`📤 Uploading Instagram screenshot ${i+1}/5 to Litterbox...`);
@@ -275,23 +280,31 @@ server.listen(PORT, async () => {
       const captionText = `🚀 New Tool Release: [ ${tool.title.toUpperCase()} ]! 🚀\n\nCheck out our brand new utility, live now and 100% free!\n\n👉 Try it here: ${toolLink}\n\n${tool.blurb || tool.description}\n\n🔒 Private by design: runs entirely in your browser — your data never leaves your device.\n\n#toolnova #freewebtools #productivity #developer #utilities #freeapps`;
       const igCaption = `🚀 NEW TOOL RELEASE: [ ${tool.title.toUpperCase()} ]! 🚀\n\nWe just added a brand-new tool to ToolNova!\n\n${tool.blurb || tool.description}\n\n👉 Try it now! Link in bio: @toolnova_home\n\n🔒 100% Private: runs entirely in your browser. No sign-up, no cost.\n\n#toolnova #developer #productivity #webapps #designer #usefulwebsites #freeonlineapps #coder`;
       
-      // --- 1. PUBLISH TO FACEBOOK AS A MULTI-PHOTO CAROUSEL ---
-      console.log(`📣 Uploading carousel images to Facebook Page...`);
+      // --- 1. PUBLISH TO FACEBOOK AS A MULTI-PHOTO CAROUSEL (DIRECT BINARY UPLOAD) ---
+      console.log(`📣 Uploading carousel images directly to Facebook Page...`);
       const fbPhotoIds = [];
-      for (const url of fbImageUrls) {
-        const fbPhotoRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/photos`, {
-          method: 'POST',
-          body: new URLSearchParams({
-            url: url,
-            published: 'false',
-            access_token: process.env.FB_PAGE_ACCESS_TOKEN
-          })
-        });
-        const fbPhotoJson = await fbPhotoRes.json();
-        if (fbPhotoJson.id) {
-          fbPhotoIds.push(fbPhotoJson.id);
-        } else {
-          console.error("❌ Facebook Photo Upload Error:", fbPhotoJson.error);
+      for (let i = 0; i < fbScreenshotPaths.length; i++) {
+        try {
+          const fileBuffer = fs.readFileSync(fbScreenshotPaths[i]);
+          const fileBlob = new Blob([fileBuffer], { type: 'image/png' });
+          const formData = new FormData();
+          formData.append('source', fileBlob, `${toolId}-social-${i+1}.png`);
+          formData.append('published', 'false');
+          formData.append('access_token', process.env.FB_PAGE_ACCESS_TOKEN);
+
+          const fbPhotoRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.FB_PAGE_ID}/photos`, {
+            method: 'POST',
+            body: formData
+          });
+          const fbPhotoJson = await fbPhotoRes.json();
+          if (fbPhotoJson.id) {
+            fbPhotoIds.push(fbPhotoJson.id);
+            console.log(`🔗 Facebook Photo ${i+1} uploaded. ID: ${fbPhotoJson.id}`);
+          } else {
+            console.error(`❌ Facebook Photo ${i+1} Upload Error:`, fbPhotoJson.error);
+          }
+        } catch (err) {
+          console.error(`❌ Facebook Photo ${i+1} Upload Exception:`, err);
         }
       }
 
@@ -336,37 +349,52 @@ server.listen(PORT, async () => {
       }
 
       if (igItemIds.length === igImageUrls.length) {
-        console.log(`📣 Creating Instagram carousel parent container...`);
-        const igParentRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            media_type: 'CAROUSEL',
-            children: igItemIds,
-            caption: igCaption,
-            access_token: process.env.FB_PAGE_ACCESS_TOKEN
-          })
-        });
-        const igParentJson = await igParentRes.json();
-        if (igParentJson.error) {
-          console.error("❌ Instagram Carousel Parent Error:", igParentJson.error);
-        } else {
-          const parentId = igParentJson.id;
-          console.log(`📣 Publishing Instagram carousel container: ${parentId}...`);
-          const igPublishRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media_publish`, {
+        console.log(`⏳ Waiting for Instagram carousel item containers to finish processing...`);
+        const waitResults = await Promise.all(
+          igItemIds.map(id => waitForInstagramMediaReady(id, process.env.FB_PAGE_ACCESS_TOKEN))
+        );
+
+        if (waitResults.every(res => res === true)) {
+          console.log(`📣 Creating Instagram carousel parent container...`);
+          const igParentRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              creation_id: parentId,
+              media_type: 'CAROUSEL',
+              children: igItemIds,
+              caption: igCaption,
               access_token: process.env.FB_PAGE_ACCESS_TOKEN
             })
           });
-          const igPublishJson = await igPublishRes.json();
-          if (igPublishJson.error) {
-            console.error("❌ Instagram Publish Error:", igPublishJson.error);
+          const igParentJson = await igParentRes.json();
+          if (igParentJson.error) {
+            console.error("❌ Instagram Carousel Parent Error:", igParentJson.error);
           } else {
-            console.log(`✅ Instagram carousel post published! ID: ${igPublishJson.id}`);
+            const parentId = igParentJson.id;
+            console.log(`⏳ Waiting for Instagram carousel parent container to finish processing...`);
+            const parentReady = await waitForInstagramMediaReady(parentId, process.env.FB_PAGE_ACCESS_TOKEN);
+            if (parentReady) {
+              console.log(`📣 Publishing Instagram carousel container: ${parentId}...`);
+              const igPublishRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media_publish`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  creation_id: parentId,
+                  access_token: process.env.FB_PAGE_ACCESS_TOKEN
+                })
+              });
+              const igPublishJson = await igPublishRes.json();
+              if (igPublishJson.error) {
+                console.error("❌ Instagram Publish Error:", igPublishJson.error);
+              } else {
+                console.log(`✅ Instagram carousel post published! ID: ${igPublishJson.id}`);
+              }
+            } else {
+              console.error("❌ Instagram carousel parent container failed to become ready.");
+            }
           }
+        } else {
+          console.error("❌ One or more Instagram carousel item containers failed to finish processing.");
         }
       }
       
