@@ -3689,5 +3689,198 @@
       "acres to hectares",
       "sqft converter"
     ]
+  },
+  {
+    "id": "volume-converter",
+    "title": "Volume Converter",
+    "h1": "Volume Converter — liters, gallons, cups",
+    "intro": "Convert liters, milliliters, US gallons, cups, tablespoons and teaspoons for recipes and science. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert liters, milliliters, US gallons, cups, tablespoons and teaspoons for recipes and science.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 2,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Liter (L)",
+              "label": "Liter (L)"
+            },
+            {
+              "value": "Milliliter (mL)",
+              "label": "Milliliter (mL)"
+            },
+            {
+              "value": "Cubic meter (m³)",
+              "label": "Cubic meter (m³)"
+            },
+            {
+              "value": "Cubic centimeter (cm³)",
+              "label": "Cubic centimeter (cm³)"
+            },
+            {
+              "value": "US gallon (gal)",
+              "label": "US gallon (gal)"
+            },
+            {
+              "value": "US quart (qt)",
+              "label": "US quart (qt)"
+            },
+            {
+              "value": "US pint (pt)",
+              "label": "US pint (pt)"
+            },
+            {
+              "value": "US cup (cup)",
+              "label": "US cup (cup)"
+            },
+            {
+              "value": "US fluid ounce (fl oz)",
+              "label": "US fluid ounce (fl oz)"
+            },
+            {
+              "value": "Tablespoon (tbsp)",
+              "label": "Tablespoon (tbsp)"
+            },
+            {
+              "value": "Teaspoon (tsp)",
+              "label": "Teaspoon (tsp)"
+            },
+            {
+              "value": "Cubic foot (ft³)",
+              "label": "Cubic foot (ft³)"
+            },
+            {
+              "value": "Cubic inch (in³)",
+              "label": "Cubic inch (in³)"
+            }
+          ],
+          "value": "Liter (L)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Liter (L)",
+              "label": "Liter (L)"
+            },
+            {
+              "value": "Milliliter (mL)",
+              "label": "Milliliter (mL)"
+            },
+            {
+              "value": "Cubic meter (m³)",
+              "label": "Cubic meter (m³)"
+            },
+            {
+              "value": "Cubic centimeter (cm³)",
+              "label": "Cubic centimeter (cm³)"
+            },
+            {
+              "value": "US gallon (gal)",
+              "label": "US gallon (gal)"
+            },
+            {
+              "value": "US quart (qt)",
+              "label": "US quart (qt)"
+            },
+            {
+              "value": "US pint (pt)",
+              "label": "US pint (pt)"
+            },
+            {
+              "value": "US cup (cup)",
+              "label": "US cup (cup)"
+            },
+            {
+              "value": "US fluid ounce (fl oz)",
+              "label": "US fluid ounce (fl oz)"
+            },
+            {
+              "value": "Tablespoon (tbsp)",
+              "label": "Tablespoon (tbsp)"
+            },
+            {
+              "value": "Teaspoon (tsp)",
+              "label": "Teaspoon (tsp)"
+            },
+            {
+              "value": "Cubic foot (ft³)",
+              "label": "Cubic foot (ft³)"
+            },
+            {
+              "value": "Cubic inch (in³)",
+              "label": "Cubic inch (in³)"
+            }
+          ],
+          "value": "Milliliter (mL)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the liter as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "2 Liter (L) = 2000 Milliliter (mL).",
+      "Quick reference: 1 L = 1000 mL.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert L to mL?",
+        "a": "Enter your value, select Liter (L) in the “From” box and Milliliter (mL) in the “To” box. For reference, 1 L = 1000 mL."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Volume Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Volume Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert liters, milliliters, US gallons, cups, tablespoons and teaspoons for recipes and science. Free, fast and private — runs entirely in your browser with no upload…",
+    "seoTitle": "Volume Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-04",
+    "popularity": 45,
+    "keywords": [
+      "volume converter",
+      "liters to gallons",
+      "ml to cups",
+      "cups to ml"
+    ]
   }
 ]
