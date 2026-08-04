@@ -3366,5 +3366,175 @@
       "mph to kmh",
       "knots to kmh"
     ]
+  },
+  {
+    "id": "data-size-converter",
+    "title": "Data Size Converter",
+    "h1": "Data Size Converter — MB, GB, MiB & more",
+    "intro": "Convert bytes, KB, MB, GB, TB and binary KiB/MiB/GiB/TiB — finally reconcile what your OS and your disk label each claim.",
+    "blurb": "Convert bytes, KB, MB, GB, TB and binary KiB/MiB/GiB/TiB — finally reconcile what your OS and your disk label each claim.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 500,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Byte (B)",
+              "label": "Byte (B)"
+            },
+            {
+              "value": "Kilobyte (KB)",
+              "label": "Kilobyte (KB)"
+            },
+            {
+              "value": "Megabyte (MB)",
+              "label": "Megabyte (MB)"
+            },
+            {
+              "value": "Gigabyte (GB)",
+              "label": "Gigabyte (GB)"
+            },
+            {
+              "value": "Terabyte (TB)",
+              "label": "Terabyte (TB)"
+            },
+            {
+              "value": "Kibibyte (KiB)",
+              "label": "Kibibyte (KiB)"
+            },
+            {
+              "value": "Mebibyte (MiB)",
+              "label": "Mebibyte (MiB)"
+            },
+            {
+              "value": "Gibibyte (GiB)",
+              "label": "Gibibyte (GiB)"
+            },
+            {
+              "value": "Tebibyte (TiB)",
+              "label": "Tebibyte (TiB)"
+            },
+            {
+              "value": "Bit (b)",
+              "label": "Bit (b)"
+            }
+          ],
+          "value": "Byte (B)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Byte (B)",
+              "label": "Byte (B)"
+            },
+            {
+              "value": "Kilobyte (KB)",
+              "label": "Kilobyte (KB)"
+            },
+            {
+              "value": "Megabyte (MB)",
+              "label": "Megabyte (MB)"
+            },
+            {
+              "value": "Gigabyte (GB)",
+              "label": "Gigabyte (GB)"
+            },
+            {
+              "value": "Terabyte (TB)",
+              "label": "Terabyte (TB)"
+            },
+            {
+              "value": "Kibibyte (KiB)",
+              "label": "Kibibyte (KiB)"
+            },
+            {
+              "value": "Mebibyte (MiB)",
+              "label": "Mebibyte (MiB)"
+            },
+            {
+              "value": "Gibibyte (GiB)",
+              "label": "Gibibyte (GiB)"
+            },
+            {
+              "value": "Tebibyte (TiB)",
+              "label": "Tebibyte (TiB)"
+            },
+            {
+              "value": "Bit (b)",
+              "label": "Bit (b)"
+            }
+          ],
+          "value": "Kilobyte (KB)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the byte as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "500 Byte (B) = 0.5 Kilobyte (KB).",
+      "Quick reference: 1 B = 0.001 KB.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert B to KB?",
+        "a": "Enter your value, select Byte (B) in the “From” box and Kilobyte (KB) in the “To” box. For reference, 1 B = 0.001 KB."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Data Size Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Data Size Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert bytes, KB, MB, GB, TB and binary KiB/MiB/GiB/TiB — finally reconcile what your OS and your disk label each claim.",
+    "seoTitle": "Data Size Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-04",
+    "popularity": 45,
+    "keywords": [
+      "data size converter",
+      "mb to gb",
+      "bytes converter",
+      "mib to mb",
+      "kb to mb"
+    ]
   }
 ]
