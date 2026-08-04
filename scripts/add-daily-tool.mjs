@@ -207,6 +207,8 @@ async function main() {
         await writeFile(TOOLS_JSON, JSON.stringify(tools, null, 2) + '\n', 'utf8');
         if (wroteJs) await rm(path.join(TOOLS_DIR, `${candidate.id}.js`), { force: true });
         if (authoredModulePath) await rm(authoredModulePath, { force: true });
+        // Wait a short moment before moving to the next candidate to avoid hammering APIs
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     }
 
