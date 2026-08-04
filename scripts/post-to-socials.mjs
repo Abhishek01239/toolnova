@@ -279,11 +279,26 @@ server.listen(PORT, async () => {
         formData.append('time', '1h');
         formData.append('fileToUpload', fileBlob, `${toolId}-social-${i+1}-ig.png`);
         
-        const uploadRes = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {
-          method: 'POST',
-          body: formData
-        });
-        if (!uploadRes.ok) throw new Error(`IG Upload failed: ${uploadRes.statusText}`);
+        let uploadRes;
+        const maxAttempts = 3;
+        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+          try {
+            uploadRes = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {
+              method: 'POST',
+              body: formData
+            });
+            if (uploadRes.ok) break;
+            console.warn(`⏳ Litterbox upload failed (attempt ${attempt}/${maxAttempts}): ${uploadRes.statusText}`);
+          } catch (err) {
+            console.warn(`⏳ Litterbox upload errored (attempt ${attempt}/${maxAttempts}): ${err.message}`);
+            if (attempt === maxAttempts) throw err;
+          }
+          if (attempt < maxAttempts) {
+            console.log(`Waiting 3 seconds before retrying...`);
+            await new Promise(resolve => setTimeout(resolve, 3000));
+          }
+        }
+        if (!uploadRes || !uploadRes.ok) throw new Error(`IG Upload failed: ${uploadRes ? uploadRes.statusText : 'Unknown Error'}`);
         const rawImageUrl = await uploadRes.text();
         console.log(`🔗 IG Photo ${i+1} URL: ${rawImageUrl}`);
         igImageUrls.push(rawImageUrl.trim());
