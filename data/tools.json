@@ -2979,5 +2979,150 @@
       "km to miles",
       "inches to mm"
     ]
+  },
+  {
+    "id": "weight-converter",
+    "title": "Weight Converter",
+    "h1": "Weight Converter — kg, lb, oz & more",
+    "intro": "Convert kilograms, grams, pounds, ounces, stones and metric tons instantly with precise factors. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert kilograms, grams, pounds, ounces, stones and metric tons instantly with precise factors.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 1,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Kilogram (kg)",
+              "label": "Kilogram (kg)"
+            },
+            {
+              "value": "Gram (g)",
+              "label": "Gram (g)"
+            },
+            {
+              "value": "Milligram (mg)",
+              "label": "Milligram (mg)"
+            },
+            {
+              "value": "Metric ton (t)",
+              "label": "Metric ton (t)"
+            },
+            {
+              "value": "Pound (lb)",
+              "label": "Pound (lb)"
+            },
+            {
+              "value": "Ounce (oz)",
+              "label": "Ounce (oz)"
+            },
+            {
+              "value": "Stone (st)",
+              "label": "Stone (st)"
+            }
+          ],
+          "value": "Kilogram (kg)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Kilogram (kg)",
+              "label": "Kilogram (kg)"
+            },
+            {
+              "value": "Gram (g)",
+              "label": "Gram (g)"
+            },
+            {
+              "value": "Milligram (mg)",
+              "label": "Milligram (mg)"
+            },
+            {
+              "value": "Metric ton (t)",
+              "label": "Metric ton (t)"
+            },
+            {
+              "value": "Pound (lb)",
+              "label": "Pound (lb)"
+            },
+            {
+              "value": "Ounce (oz)",
+              "label": "Ounce (oz)"
+            },
+            {
+              "value": "Stone (st)",
+              "label": "Stone (st)"
+            }
+          ],
+          "value": "Gram (g)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the kilogram as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "1 Kilogram (kg) = 1000 Gram (g).",
+      "Quick reference: 1 kg = 1000 g.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert kg to g?",
+        "a": "Enter your value, select Kilogram (kg) in the “From” box and Gram (g) in the “To” box. For reference, 1 kg = 1000 g."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Weight Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Weight Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert kilograms, grams, pounds, ounces, stones and metric tons instantly with precise factors. Free, fast and private — runs entirely in your browser with no uploads…",
+    "seoTitle": "Weight Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-04",
+    "popularity": 66,
+    "keywords": [
+      "weight converter",
+      "kg to lbs",
+      "pounds to kilograms",
+      "ounces to grams"
+    ]
   }
 ]
