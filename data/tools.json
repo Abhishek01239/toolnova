@@ -4406,5 +4406,121 @@
     ],
     "added": "2026-08-05",
     "blurb": "Calculate tips easily and split the bill with friends. Features custom tip percentages, split count, and smart rounding options. Free and private."
+  },
+  {
+    "id": "emi-calculator",
+    "title": "EMI Calculator",
+    "h1": "EMI Calculator — loan Equated Monthly Installment planner",
+    "seoTitle": "EMI Calculator — Free Online Loan Payment Calculator | ToolNova",
+    "description": "Calculate Equated Monthly Installments (EMI) for home, car, or personal loans. View monthly payment, total interest payable, and payment breakdown.",
+    "intro": "Plan your loans with ease. Calculate your equated monthly installments (EMI) by entering the loan amount, interest rate, and tenure, and see the interest vs. principal split instantly.",
+    "category": "Finance",
+    "keywords": [
+      "emi calculator",
+      "loan emi",
+      "home loan emi",
+      "loan payment calculator",
+      "mortgage calculator",
+      "monthly installment"
+    ],
+    "popularity": 80,
+    "ui": {
+      "layout": "single",
+      "controls": [
+        {
+          "type": "number",
+          "id": "loan-amount",
+          "label": "Loan Amount ($)",
+          "value": 100000,
+          "min": 100,
+          "max": 100000000,
+          "step": 100
+        },
+        {
+          "type": "number",
+          "id": "interest-rate",
+          "label": "Interest Rate (Annual %)",
+          "value": 8.5,
+          "min": 0.1,
+          "max": 50,
+          "step": 0.05
+        },
+        {
+          "type": "number",
+          "id": "loan-tenure",
+          "label": "Tenure",
+          "value": 5,
+          "min": 1,
+          "max": 600,
+          "step": 1
+        },
+        {
+          "type": "select",
+          "id": "tenure-type",
+          "label": "Tenure Unit",
+          "options": [
+            {
+              "value": "years",
+              "label": "Years"
+            },
+            {
+              "value": "months",
+              "label": "Months"
+            }
+          ],
+          "value": "years"
+        }
+      ],
+      "actions": [],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "monthly-emi",
+          "label": "Monthly Payment (EMI)"
+        },
+        {
+          "type": "text",
+          "id": "total-interest",
+          "label": "Total Interest Payable"
+        },
+        {
+          "type": "text",
+          "id": "total-payment",
+          "label": "Total Payment (Principal + Interest)"
+        },
+        {
+          "type": "stats",
+          "id": "ratio-breakdown",
+          "label": "Payment Ratio Breakdown"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the total principal amount of the loan you want to borrow.",
+      "Enter the annual interest rate offered by the lender.",
+      "Choose the loan term duration and select whether it is in Years or Months.",
+      "The tool calculates your Equated Monthly Installment (EMI) using the standard compounding formula.",
+      "It displays the monthly payment, total interest accrued over the tenure, and the breakdown of principal vs. interest."
+    ],
+    "examples": [
+      "A loan of $100,000 at 8.5% interest for 5 years results in a monthly EMI of $2,051.65, with $23,099.18 in total interest.",
+      "A personal loan of $10,000 at 12% interest for 24 months results in an EMI of $470.73 per month."
+    ],
+    "faq": [
+      {
+        "q": "What is an EMI?",
+        "a": "EMI stands for Equated Monthly Installment. It is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are applied to both interest and principal each month, so that over a specified number of years, the loan is fully paid off."
+      },
+      {
+        "q": "How does interest rate affect EMI?",
+        "a": "A higher interest rate increases your monthly EMI and greatly increases the total amount of interest paid over the life of the loan. Even a small increase in the rate can add thousands of dollars to your total cost for long-term loans like mortgages."
+      },
+      {
+        "q": "Can I pay off my loan early?",
+        "a": "Most banks and financial institutions allow early payoff or extra monthly payments, which reduces the total interest owed. This calculator assumes a standard amortization schedule without pre-payments."
+      }
+    ],
+    "added": "2026-08-05",
+    "blurb": "Calculate Equated Monthly Installments (EMI) for home, car, or personal loans. View monthly payment, total interest payable, and payment breakdown."
   }
 ]
