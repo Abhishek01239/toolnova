@@ -63,8 +63,10 @@ export async function selfTest() { if (1 === 2) throw new Error('x'); }
 
 // ---------- provider resolution ----------
 test('resolveProvider honors env configuration', () => {
-  const key = process.env.GROQ_API_KEY;
+  const groqKey = process.env.GROQ_API_KEY;
+  const opencodeKey = process.env.OPENCODE_API_KEY;
   delete process.env.GROQ_API_KEY;
+  delete process.env.OPENCODE_API_KEY;
   process.env.AI_PROVIDER = 'auto';
   assert.equal(resolveProvider(), 'none');
   process.env.AI_PROVIDER = 'mock';
@@ -76,8 +78,18 @@ test('resolveProvider honors env configuration', () => {
   assert.equal(resolveProvider(), 'groq');
   process.env.AI_PROVIDER = 'groq';
   assert.equal(resolveProvider(), 'groq');
-  if (key === undefined) delete process.env.GROQ_API_KEY;
-  else process.env.GROQ_API_KEY = key;
+
+  delete process.env.GROQ_API_KEY;
+  process.env.OPENCODE_API_KEY = 'test-key';
+  process.env.AI_PROVIDER = 'auto';
+  assert.equal(resolveProvider(), 'opencode-zen');
+  process.env.AI_PROVIDER = 'opencode-zen';
+  assert.equal(resolveProvider(), 'opencode-zen');
+
+  if (groqKey === undefined) delete process.env.GROQ_API_KEY;
+  else process.env.GROQ_API_KEY = groqKey;
+  if (opencodeKey === undefined) delete process.env.OPENCODE_API_KEY;
+  else process.env.OPENCODE_API_KEY = opencodeKey;
   delete process.env.AI_PROVIDER;
 });
 
