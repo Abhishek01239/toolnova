@@ -4282,5 +4282,129 @@
     ],
     "added": "2026-08-05",
     "blurb": "Solve any percentage problem: calculate percentage of a value, percentage ratio of two values, percentage increase or decrease, and reverse percentages."
+  },
+  {
+    "id": "tip-calculator",
+    "title": "Tip Calculator",
+    "h1": "Tip Calculator — split bill & calculate tip instantly",
+    "seoTitle": "Tip Calculator — Free Online Bill Splitter | ToolNova",
+    "description": "Calculate tips easily and split the bill with friends. Features custom tip percentages, split count, and smart rounding options. Free and private.",
+    "intro": "A premium tip calculator and bill splitter. Easily determine the exact tip amount, split the total bill among any number of people, and apply smart rounding options for simple payments.",
+    "category": "Calculators",
+    "keywords": [
+      "tip calculator",
+      "gratuity calculator",
+      "split bill",
+      "bill splitter",
+      "calculate tip",
+      "restaurant tip"
+    ],
+    "popularity": 80,
+    "ui": {
+      "layout": "single",
+      "controls": [
+        {
+          "type": "number",
+          "id": "bill-amount",
+          "label": "Bill amount ($)",
+          "value": 100,
+          "min": 0.01,
+          "max": 1000000,
+          "step": 0.01
+        },
+        {
+          "type": "number",
+          "id": "tip-percentage",
+          "label": "Tip percentage (%)",
+          "value": 15,
+          "min": 0,
+          "max": 100,
+          "step": 0.5
+        },
+        {
+          "type": "number",
+          "id": "people-count",
+          "label": "Number of people",
+          "value": 2,
+          "min": 1,
+          "max": 1000,
+          "step": 1
+        },
+        {
+          "type": "select",
+          "id": "round-direction",
+          "label": "Rounding options",
+          "options": [
+            {
+              "value": "none",
+              "label": "Do not round"
+            },
+            {
+              "value": "tip",
+              "label": "Round tip amount"
+            },
+            {
+              "value": "total",
+              "label": "Round total bill"
+            },
+            {
+              "value": "person",
+              "label": "Round share per person"
+            }
+          ],
+          "value": "none"
+        }
+      ],
+      "actions": [],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "tip-amount",
+          "label": "Total tip"
+        },
+        {
+          "type": "text",
+          "id": "total-amount",
+          "label": "Total bill (with tip)"
+        },
+        {
+          "type": "text",
+          "id": "share-amount",
+          "label": "Each person pays"
+        },
+        {
+          "type": "stats",
+          "id": "breakdown",
+          "label": "Details per person"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the total bill amount before tip.",
+      "Enter your preferred tip percentage (presets like 15% or 20% are common, or choose your own).",
+      "Specify the number of people sharing the bill (defaults to 2).",
+      "Select a rounding option to round the tip, total bill, or individual share to the nearest dollar.",
+      "The split details update live, showing the total tip, overall total, and individual shares."
+    ],
+    "examples": [
+      "A $100 bill with a 15% tip split between 2 people results in a $15 total tip and $57.50 per person.",
+      "A $85.50 bill with an 18% tip split among 3 people rounded to the nearest dollar per person results in each paying exactly $34.00."
+    ],
+    "faq": [
+      {
+        "q": "What is the standard tip percentage?",
+        "a": "In many countries, particularly the United States, standard tips range from 15% to 20% of the pre-tax bill. For exceptional service, 22% or more is common, while 10% is typical for basic service."
+      },
+      {
+        "q": "How does the rounding feature work?",
+        "a": "Rounding makes paying cash or splitting card payments easier. You can round the total tip, the total bill, or each person’s individual share. The calculator automatically adjusts the other figures to ensure the math remains perfectly balanced."
+      },
+      {
+        "q": "Is my financial data secure?",
+        "a": "Yes, completely. The tip calculator runs entirely in your local browser using client-side JavaScript. None of your inputs, bill amounts, or calculations are sent to a server."
+      }
+    ],
+    "added": "2026-08-05",
+    "blurb": "Calculate tips easily and split the bill with friends. Features custom tip percentages, split count, and smart rounding options. Free and private."
   }
 ]
