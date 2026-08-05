@@ -208,7 +208,12 @@ async function main() {
         if (wroteJs) await rm(path.join(TOOLS_DIR, `${candidate.id}.js`), { force: true });
         if (authoredModulePath) await rm(authoredModulePath, { force: true });
         // Wait a short moment before moving to the next candidate to avoid hammering APIs
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        const isRateLimit = String(err.message).includes('Rate Limit') || String(err.message).includes('429');
+        const nextDelay = isRateLimit ? 60000 : 3000;
+        if (isRateLimit) {
+          console.log(`⏳ Rate limit hit. Waiting 60s for reset before trying the next candidate…`);
+        }
+        await new Promise((resolve) => setTimeout(resolve, nextDelay));
       }
     }
 
