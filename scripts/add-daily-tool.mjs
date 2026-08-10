@@ -25,10 +25,15 @@ const CUSTOM_DIR = path.join(ROOT, 'scripts', 'generators', 'custom');
 // How many model calls one run may spend authoring modules (each candidate
 // retries once, so 4 ≈ up to 2 AI-authored tools/candidates per day).
 let aiCallsRemaining = Math.max(0, parseInt(process.env.AI_BUDGET || '4', 10) || 4);
+// Hard wall-clock cap for the whole generation step: slow providers (free-tier
+// queues) can make a single author call take minutes; without a deadline a run
+// can grind for an hour. Default 15 minutes, override with AI_RUN_DEADLINE_SECONDS.
+const RUN_DEADLINE_MS = Date.now() + (parseInt(process.env.AI_RUN_DEADLINE_SECONDS || '900', 10) || 900) * 1000;
 // Set when the provider answers 429 with a reset window too long to wait for;
 // further AI attempts in this run would fail identically.
 let rateLimitAborted = false;
 let skippedAIReported = false;
+let deadlineHit = false;
 
 const FACTORY_LOADERS = {
   'text-transform': () => import('../lib/factories/text-transform.mjs'),
@@ -183,6 +188,11 @@ async function main() {
 
     let addedThisRound = false;
     for (const candidate of candidates) {
+      if (Date.now() > RUN_DEADLINE_MS) {
+        deadlineHit = true;
+        console.warn(`⏰ Generation deadline reached (${process.env.AI_RUN_DEADLINE_SECONDS || '900'}s) — stopping; ${addedIds.length} added so far.`);
+        break;
+      }
       // Budget spent, or the provider is rate-limited with a long reset
       // window: skip AI-dependent candidates (every one would fail the same
       // way), but keep trying deterministic factory candidates — they cost
@@ -257,8 +267,8 @@ async function main() {
         // An AI-only outage (rate limit, exhausted budget, no provider) is an
         // environmental condition, not a pipeline bug: end the run green so
         // the schedule stays healthy and the next run simply retries.
-        if (skippedAIReported || rateLimitAborted) {
-          console.log('ℹ️  Cause: AI provider unavailable or rate-limited — no tools generated; exiting 0 (retry next run).');
+        if (skippedAIReported || rateLimitAborted || deadlineHit) {
+          console.log('ℹ️  Cause: AI provider unavailable, rate-limited or run deadline reached — no tools generated; exiting 0 (retry next run).');
           console.log('\nADDED_TOOLS=none');
           process.exit(0);
         }
