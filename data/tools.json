@@ -5043,5 +5043,86 @@
       "password maker",
       "secure password"
     ]
+  },
+  {
+    "id": "lottery-number-generator",
+    "title": "Lottery Number Generator",
+    "h1": "Lottery Number Picker — unique random picks",
+    "intro": "Pick unique random lottery numbers from any range — 6 from 49, 5 from 90, Mega Millions and more — no repeats.",
+    "blurb": "Pick unique random lottery numbers from any range — 6 from 49, 5 from 90, Mega Millions and more — no repeats.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "max",
+          "label": "Number range (1 to …)",
+          "value": 49,
+          "min": 2,
+          "max": 1000
+        },
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many picks?",
+          "value": 6,
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Pick numbers",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Your numbers"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Pick “6 from 49” for a classic lotto game, or set a custom range like 1–90 for regional draws.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Lottery Number Generator do?",
+        "a": "Pick unique random lottery numbers from any range — 6 from 49, 5 from 90, Mega Millions and more — no repeats."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Lottery Number Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Lottery Number Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Pick unique random lottery numbers from any range — 6 from 49, 5 from 90, Mega Millions and more — no repeats.",
+    "seoTitle": "Lottery Number Generator — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-10",
+    "popularity": 58,
+    "keywords": [
+      "lottery number generator",
+      "pick 6 numbers",
+      "lotto numbers",
+      "random picks"
+    ]
   }
 ]
