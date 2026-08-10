@@ -345,5 +345,59 @@
     "keywords": ["time converter", "seconds to hours", "days to weeks", "milliseconds converter"],
     "blurb": "Convert between milliseconds, seconds, minutes, hours, days, weeks, months and years.",
     "params": { "title": "Time Converter", "h1": "Time Converter — seconds to years", "kind": "time", "sampleValue": 90 }
+  },
+  {
+    "id": "energy-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["energy converter", "joules to calories", "kwh to mj", "wh to kwh", "calories to joules"],
+    "blurb": "Convert energy between joules, kilowatt-hours, calories, BTU, electronvolts and more with exact physical factors.",
+    "params": { "title": "Energy Converter", "h1": "Energy Converter — J, kWh, cal, BTU", "kind": "energy", "sampleValue": 100 },
+    "popularity": 55
+  },
+  {
+    "id": "pressure-converter",
+    "factory": "unit-converter",
+    "category": "Unit Converter",
+    "keywords": ["pressure converter", "bar to psi", "kpa to psi", "atm to bar", "mmhg to kpa"],
+    "blurb": "Convert pressure between pascals, bar, atmospheres, psi and mmHg for engineering, weather and diving data.",
+    "params": { "title": "Pressure Converter", "h1": "Pressure Converter — Pa, bar, psi, atm", "kind": "pressure", "sampleValue": 1 },
+    "popularity": 55
+  },
+  {
+    "id": "random-password-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["random password generator", "strong password generator", "password maker", "secure password"],
+    "blurb": "Generate strong random passwords with an adjustable length slider and toggles for uppercase, numbers and symbols.",
+    "params": { "title": "Random Password Generator", "h1": "Random Password Generator — strong & custom", "generator": "random-password", "outputLabel": "Your password" },
+    "popularity": 68
+  },
+  {
+    "id": "lottery-number-generator",
+    "factory": "random-generator",
+    "category": "Random Generators",
+    "keywords": ["lottery number generator", "pick 6 numbers", "lotto numbers", "random picks"],
+    "blurb": "Pick unique random lottery numbers from any range — 6 from 49, 5 from 90, Mega Millions and more — no repeats.",
+    "params": { "title": "Lottery Number Generator", "h1": "Lottery Number Picker — unique random picks", "generator": "lottery-pick", "outputLabel": "Your numbers" },
+    "popularity": 58
+  },
+  {
+    "id": "add-line-numbers",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["add line numbers", "number lines", "line numbering tool", "numbered list"],
+    "blurb": "Add sequential line numbers to any pasted text or list, perfect for code excerpts, scripts and numbered instruction sets.",
+    "params": { "title": "Add Line Numbers", "h1": "Add Line Numbers to text & lists", "transforms": ["add-line-numbers"], "rows": 12 },
+    "popularity": 45
+  },
+  {
+    "id": "text-cleaner",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": ["text cleaner", "clean text online", "fix pasted text", "remove duplicate lines", "collapse spaces"],
+    "blurb": "Clean up messy pasted text in one click: collapse extra spaces, trim line ends, drop empty lines and remove duplicates.",
+    "params": { "title": "Text Cleaner", "h1": "Text Cleaner — trim, dedupe & tidy", "transforms": ["remove-empty-lines", "trim-lines", "remove-extra-spaces", "dedupe-lines"], "rows": 12 },
+    "popularity": 52
   }
 ]

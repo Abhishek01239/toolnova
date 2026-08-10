@@ -4637,5 +4637,167 @@
     ],
     "added": "2026-08-05",
     "blurb": "Calculate simple interest on any principal over days, months, or years. See the exact math and formula applied step by step."
+  },
+  {
+    "id": "energy-converter",
+    "title": "Energy Converter",
+    "h1": "Energy Converter — J, kWh, cal, BTU",
+    "intro": "Convert energy between joules, kilowatt-hours, calories, BTU, electronvolts and more with exact physical factors.",
+    "blurb": "Convert energy between joules, kilowatt-hours, calories, BTU, electronvolts and more with exact physical factors.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 100,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Joule (J)",
+              "label": "Joule (J)"
+            },
+            {
+              "value": "Kilojoule (kJ)",
+              "label": "Kilojoule (kJ)"
+            },
+            {
+              "value": "Megajoule (MJ)",
+              "label": "Megajoule (MJ)"
+            },
+            {
+              "value": "Calorie (cal)",
+              "label": "Calorie (cal)"
+            },
+            {
+              "value": "Kilocalorie (kcal)",
+              "label": "Kilocalorie (kcal)"
+            },
+            {
+              "value": "Watt-hour (Wh)",
+              "label": "Watt-hour (Wh)"
+            },
+            {
+              "value": "Kilowatt-hour (kWh)",
+              "label": "Kilowatt-hour (kWh)"
+            },
+            {
+              "value": "BTU (BTU)",
+              "label": "BTU (BTU)"
+            },
+            {
+              "value": "Electronvolt (eV)",
+              "label": "Electronvolt (eV)"
+            }
+          ],
+          "value": "Joule (J)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Joule (J)",
+              "label": "Joule (J)"
+            },
+            {
+              "value": "Kilojoule (kJ)",
+              "label": "Kilojoule (kJ)"
+            },
+            {
+              "value": "Megajoule (MJ)",
+              "label": "Megajoule (MJ)"
+            },
+            {
+              "value": "Calorie (cal)",
+              "label": "Calorie (cal)"
+            },
+            {
+              "value": "Kilocalorie (kcal)",
+              "label": "Kilocalorie (kcal)"
+            },
+            {
+              "value": "Watt-hour (Wh)",
+              "label": "Watt-hour (Wh)"
+            },
+            {
+              "value": "Kilowatt-hour (kWh)",
+              "label": "Kilowatt-hour (kWh)"
+            },
+            {
+              "value": "BTU (BTU)",
+              "label": "BTU (BTU)"
+            },
+            {
+              "value": "Electronvolt (eV)",
+              "label": "Electronvolt (eV)"
+            }
+          ],
+          "value": "Kilojoule (kJ)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the joule as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "100 Joule (J) = 0.1 Kilojoule (kJ).",
+      "Quick reference: 1 J = 0.001 kJ.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert J to kJ?",
+        "a": "Enter your value, select Joule (J) in the “From” box and Kilojoule (kJ) in the “To” box. For reference, 1 J = 0.001 kJ."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Energy Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Energy Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert energy between joules, kilowatt-hours, calories, BTU, electronvolts and more with exact physical factors.",
+    "seoTitle": "Energy Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-10",
+    "popularity": 55,
+    "keywords": [
+      "energy converter",
+      "joules to calories",
+      "kwh to mj",
+      "wh to kwh",
+      "calories to joules"
+    ]
   }
 ]

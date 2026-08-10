@@ -14,6 +14,7 @@ import { finalizeEntry } from '../lib/factories/helpers.mjs';
 import { rankWithAI } from '../lib/ai.mjs';
 import { authorModule, resolveProvider } from '../lib/ai-author.mjs';
 import { tendCatalog } from '../lib/ai-gardener.mjs';
+import { EMERGENCY_POOL } from '../lib/templates.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TOOLS_JSON = path.join(ROOT, 'data', 'tools.json');
@@ -135,6 +136,29 @@ function runQualityGate(root) {
   execFileSync(process.argv[0], ['scripts/verify.mjs'], { cwd: root, stdio: 'inherit' });
 }
 
+// Writes the tool's client script, registers it in tools.json and (unless
+// disabled) runs the full quality gate. Own cleanup on failure so the repo
+// never keeps a half-registered tool.
+async function commitTool(finalEntry, js, args, tools, live, addedIds) {
+  const jsPath = path.join(TOOLS_DIR, `${finalEntry.id}.js`);
+  await writeFile(jsPath, js, 'utf8');
+  tools.push(finalEntry);
+  try {
+    await writeFile(TOOLS_JSON, JSON.stringify(tools, null, 2) + '\n', 'utf8');
+  } catch (err) {
+    tools.pop();
+    await rm(jsPath, { force: true });
+    throw err;
+  }
+  if (!args.noGate) {
+    console.log(`  …running quality gate (tests → build → verify) for "${finalEntry.id}"`);
+    runQualityGate(ROOT);
+  }
+  live.add(finalEntry.id);
+  addedIds.push(finalEntry.id);
+  console.log(`✅ Added "${finalEntry.title}" (${finalEntry.id}) — ${tools.length} tools live.`);
+}
+
 async function main() {
   const args = parseArgs();
   const site = JSON.parse(await readFile(SITE_JSON, 'utf8'));
@@ -174,17 +198,9 @@ async function main() {
     if (ranked) candidates = ranked;
     console.log(`\n▶ ${candidates.length} candidates in the backlog; trying in order…`);
 
-    // If no AI provider is configured at all and every remaining candidate
-    // needs the AI author, there is nothing this run can do — exit cleanly
-    // instead of failing 65 times with "custom module not written yet".
-    if (resolveProvider() === 'none' && candidates.every((c) => c.factory === 'custom')) {
-      console.warn('🤖 No AI provider configured (no API key) and every backlog candidate needs AI authoring — nothing to add this run.');
-      if (addedIds.length === 0) {
-        console.log('\nADDED_TOOLS=none');
-        process.exit(0);
-      }
-      break;
-    }
+    // No AI provider is configured at all: ranking is skipped (fallback order)
+    // and every custom candidate is skipped below, so the run falls through to
+    // the deterministic factories and the emergency pool instead of exiting.
 
     let addedThisRound = false;
     for (const candidate of candidates) {
@@ -197,11 +213,13 @@ async function main() {
       // window: skip AI-dependent candidates (every one would fail the same
       // way), but keep trying deterministic factory candidates — they cost
       // nothing and can still succeed.
-      if (candidate.factory === 'custom' && (aiCallsRemaining <= 0 || rateLimitAborted)) {
+      if (candidate.factory === 'custom' && (aiCallsRemaining <= 0 || rateLimitAborted || resolveProvider() === 'none')) {
         if (!skippedAIReported) {
-          const why = rateLimitAborted
-            ? 'AI provider is rate-limited with a long reset window'
-            : 'AI authoring budget for this run is exhausted';
+          const why = resolveProvider() === 'none'
+            ? 'no AI provider is configured (no API key)'
+            : rateLimitAborted
+              ? 'AI provider is rate-limited with a long reset window'
+              : 'AI authoring budget for this run is exhausted';
           console.warn(`⏭️ Skipping AI-authored candidates — ${why}.`);
           skippedAIReported = true;
         }
@@ -224,21 +242,9 @@ async function main() {
           break;
         }
 
-        await writeFile(path.join(TOOLS_DIR, `${finalEntry.id}.js`), js, 'utf8');
-        wroteJs = true;
-        tools.push(finalEntry);
-        pushedEntry = true;
-        await writeFile(TOOLS_JSON, JSON.stringify(tools, null, 2) + '\n', 'utf8');
-
-        if (!args.noGate) {
-          console.log(`  …running quality gate (tests → build → verify) for "${finalEntry.id}"`);
-          runQualityGate(ROOT);
-        }
-
-        live.add(finalEntry.id);
-        addedIds.push(finalEntry.id);
+        await commitTool(finalEntry, js, args, tools, live, addedIds);
+        if (authoredModulePath) console.log('  🤖 module written by the AI author.');
         addedThisRound = true;
-        console.log(`✅ Added "${finalEntry.title}" (${finalEntry.id})${authoredModulePath ? ' 🤖 module written by the AI author' : ''} — ${tools.length} tools live.`);
         break;
       } catch (err) {
         console.warn(`✗ candidate "${candidate.id}" failed: ${String(err.message).split('\n')[0]}`);
@@ -263,6 +269,27 @@ async function main() {
 
     if (!addedThisRound) {
       console.error('\n🚨 No candidate could be generated successfully this run.');
+      // Deterministic fallback: never leave the run empty-handed. The emergency
+      // pool drives the same vetted factories with no AI at all, so a tool
+      // always lands and the screenshots/commit/socials steps never skip.
+      if (!args.dryRun && addedIds.length === 0) {
+        for (const item of EMERGENCY_POOL) {
+          if (live.has(item.id)) continue;
+          console.log(`⚙️  AI supply unavailable — deterministic fallback: adding "${item.title}" from the emergency pool…`);
+          try {
+            const { entry, js } = await generateTool(item, ctx, false);
+            const finalEntry = normalizeEntry(entry);
+            validateEntry(finalEntry);
+            if (!js || js.length < 200) throw new Error('generated client script looks empty');
+            await commitTool(finalEntry, js, args, tools, live, addedIds);
+            console.log('  🛡️  Fallback committed — the run is not empty-handed.');
+            addedThisRound = true;
+            break;
+          } catch (err) {
+            console.warn(`✗ emergency pool item "${item.id}" failed: ${String(err.message).split('\n')[0]}`);
+          }
+        }
+      }
       if (addedIds.length === 0) {
         // An AI-only outage (rate limit, exhausted budget, no provider) is an
         // environmental condition, not a pipeline bug: end the run green so
