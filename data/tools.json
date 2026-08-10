@@ -4799,5 +4799,159 @@
       "wh to kwh",
       "calories to joules"
     ]
+  },
+  {
+    "id": "pressure-converter",
+    "title": "Pressure Converter",
+    "h1": "Pressure Converter — Pa, bar, psi, atm",
+    "intro": "Convert pressure between pascals, bar, atmospheres, psi and mmHg for engineering, weather and diving data.",
+    "blurb": "Convert pressure between pascals, bar, atmospheres, psi and mmHg for engineering, weather and diving data.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 1,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Pascal (Pa)",
+              "label": "Pascal (Pa)"
+            },
+            {
+              "value": "Kilopascal (kPa)",
+              "label": "Kilopascal (kPa)"
+            },
+            {
+              "value": "Megapascal (MPa)",
+              "label": "Megapascal (MPa)"
+            },
+            {
+              "value": "Bar (bar)",
+              "label": "Bar (bar)"
+            },
+            {
+              "value": "Atmosphere (atm)",
+              "label": "Atmosphere (atm)"
+            },
+            {
+              "value": "Pound/sq inch (psi)",
+              "label": "Pound/sq inch (psi)"
+            },
+            {
+              "value": "Millimeter mercury (mmHg)",
+              "label": "Millimeter mercury (mmHg)"
+            },
+            {
+              "value": "Torr (Torr)",
+              "label": "Torr (Torr)"
+            }
+          ],
+          "value": "Pascal (Pa)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Pascal (Pa)",
+              "label": "Pascal (Pa)"
+            },
+            {
+              "value": "Kilopascal (kPa)",
+              "label": "Kilopascal (kPa)"
+            },
+            {
+              "value": "Megapascal (MPa)",
+              "label": "Megapascal (MPa)"
+            },
+            {
+              "value": "Bar (bar)",
+              "label": "Bar (bar)"
+            },
+            {
+              "value": "Atmosphere (atm)",
+              "label": "Atmosphere (atm)"
+            },
+            {
+              "value": "Pound/sq inch (psi)",
+              "label": "Pound/sq inch (psi)"
+            },
+            {
+              "value": "Millimeter mercury (mmHg)",
+              "label": "Millimeter mercury (mmHg)"
+            },
+            {
+              "value": "Torr (Torr)",
+              "label": "Torr (Torr)"
+            }
+          ],
+          "value": "Kilopascal (kPa)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the pascal as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "1 Pascal (Pa) = 0.001 Kilopascal (kPa).",
+      "Quick reference: 1 Pa = 0.001 kPa.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert Pa to kPa?",
+        "a": "Enter your value, select Pascal (Pa) in the “From” box and Kilopascal (kPa) in the “To” box. For reference, 1 Pa = 0.001 kPa."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Pressure Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Pressure Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert pressure between pascals, bar, atmospheres, psi and mmHg for engineering, weather and diving data. Free, fast and private — runs entirely in your browser with…",
+    "seoTitle": "Pressure Converter — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-10",
+    "popularity": 55,
+    "keywords": [
+      "pressure converter",
+      "bar to psi",
+      "kpa to psi",
+      "atm to bar",
+      "mmhg to kpa"
+    ]
   }
 ]
