@@ -4953,5 +4953,95 @@
       "atm to bar",
       "mmhg to kpa"
     ]
+  },
+  {
+    "id": "random-password-generator",
+    "title": "Random Password Generator",
+    "h1": "Random Password Generator — strong & custom",
+    "intro": "Generate strong random passwords with an adjustable length slider and toggles for uppercase, numbers and symbols.",
+    "blurb": "Generate strong random passwords with an adjustable length slider and toggles for uppercase, numbers and symbols.",
+    "ui": {
+      "controls": [
+        {
+          "type": "range",
+          "id": "length",
+          "label": "Length",
+          "value": 16,
+          "min": 4,
+          "max": 64
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase",
+          "label": "Uppercase (A–Z)",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "numbers",
+          "label": "Numbers (0–9)",
+          "checked": true
+        },
+        {
+          "type": "checkbox",
+          "id": "symbols",
+          "label": "Symbols (!@#$%…)",
+          "checked": true
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Generate password",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Your password"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Set length 16 with all character types for a strong default, or 24+ for extra headroom on sensitive accounts.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Random Password Generator do?",
+        "a": "Generate strong random passwords with an adjustable length slider and toggles for uppercase, numbers and symbols."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Random Password Generator runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Random Password Generator is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Generate strong random passwords with an adjustable length slider and toggles for uppercase, numbers and symbols.",
+    "seoTitle": "Random Password Generator — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-10",
+    "popularity": 68,
+    "keywords": [
+      "random password generator",
+      "strong password generator",
+      "password maker",
+      "secure password"
+    ]
   }
 ]
