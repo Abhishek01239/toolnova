@@ -25,6 +25,10 @@ const CUSTOM_DIR = path.join(ROOT, 'scripts', 'generators', 'custom');
 // How many model calls one run may spend authoring modules (each candidate
 // retries once, so 4 ≈ up to 2 AI-authored tools/candidates per day).
 let aiCallsRemaining = Math.max(0, parseInt(process.env.AI_BUDGET || '4', 10) || 4);
+// Set when the provider answers 429 with a reset window too long to wait for;
+// further AI attempts in this run would fail identically.
+let rateLimitAborted = false;
+let skippedAIReported = false;
 
 const FACTORY_LOADERS = {
   'text-transform': () => import('../lib/factories/text-transform.mjs'),
@@ -165,8 +169,34 @@ async function main() {
     if (ranked) candidates = ranked;
     console.log(`\n▶ ${candidates.length} candidates in the backlog; trying in order…`);
 
+    // If no AI provider is configured at all and every remaining candidate
+    // needs the AI author, there is nothing this run can do — exit cleanly
+    // instead of failing 65 times with "custom module not written yet".
+    if (resolveProvider() === 'none' && candidates.every((c) => c.factory === 'custom')) {
+      console.warn('🤖 No AI provider configured (no API key) and every backlog candidate needs AI authoring — nothing to add this run.');
+      if (addedIds.length === 0) {
+        console.log('\nADDED_TOOLS=none');
+        process.exit(0);
+      }
+      break;
+    }
+
     let addedThisRound = false;
     for (const candidate of candidates) {
+      // Budget spent, or the provider is rate-limited with a long reset
+      // window: skip AI-dependent candidates (every one would fail the same
+      // way), but keep trying deterministic factory candidates — they cost
+      // nothing and can still succeed.
+      if (candidate.factory === 'custom' && (aiCallsRemaining <= 0 || rateLimitAborted)) {
+        if (!skippedAIReported) {
+          const why = rateLimitAborted
+            ? 'AI provider is rate-limited with a long reset window'
+            : 'AI authoring budget for this run is exhausted';
+          console.warn(`⏭️ Skipping AI-authored candidates — ${why}.`);
+          skippedAIReported = true;
+        }
+        continue;
+      }
       let wroteJs = false;
       let pushedEntry = false;
       let authoredModulePath = null;
@@ -208,7 +238,11 @@ async function main() {
         if (wroteJs) await rm(path.join(TOOLS_DIR, `${candidate.id}.js`), { force: true });
         if (authoredModulePath) await rm(authoredModulePath, { force: true });
         // Wait a short moment before moving to the next candidate to avoid hammering APIs
-        const isRateLimit = String(err.message).includes('Rate Limit') || String(err.message).includes('429');
+        const errMsg = String(err.message);
+        const isRateLimit = errMsg.includes('Rate Limit') || errMsg.includes('429');
+        if (errMsg.includes('Aborting retries') || errMsg.includes('reset time is too long')) {
+          rateLimitAborted = true;
+        }
         const nextDelay = isRateLimit ? 60000 : 3000;
         if (isRateLimit) {
           console.log(`⏳ Rate limit hit. Waiting 60s for reset before trying the next candidate…`);
@@ -219,7 +253,17 @@ async function main() {
 
     if (!addedThisRound) {
       console.error('\n🚨 No candidate could be generated successfully this run.');
-      if (addedIds.length === 0) process.exit(1);
+      if (addedIds.length === 0) {
+        // An AI-only outage (rate limit, exhausted budget, no provider) is an
+        // environmental condition, not a pipeline bug: end the run green so
+        // the schedule stays healthy and the next run simply retries.
+        if (skippedAIReported || rateLimitAborted) {
+          console.log('ℹ️  Cause: AI provider unavailable or rate-limited — no tools generated; exiting 0 (retry next run).');
+          console.log('\nADDED_TOOLS=none');
+          process.exit(0);
+        }
+        process.exit(1);
+      }
       break;
     }
   }

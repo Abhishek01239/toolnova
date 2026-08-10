@@ -1,10 +1,12 @@
 name: Daily Tool
 
-# Run every 30 minutes. Also runnable manually with a
+# Four daily attempts (00/06/12/18 UTC) — each run is budget-capped and
+# exits green when the AI provider is rate-limited, so a busy free tier
+# never turns the schedule red. Also runnable manually with a
 # custom tool count (Actions → Daily Tool → Run workflow).
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */6 * * *'
   workflow_dispatch:
     inputs:
       count:
@@ -38,7 +40,13 @@ jobs:
         id: add
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          AI_MODEL: ${{ vars.AI_MODEL || 'llama-3.3-70b-versatile' }}
+          # GitHub does not expose secrets as env vars automatically — without
+          # this export the Zen provider falls back to the Groq key and wrong
+          # endpoint, causing 401/429 failures in the runner.
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          # Empty when the var is unset; lib/ai.mjs then picks the provider's
+          # correct default model (deepseek-chat for zen, llama-3.3-70b for groq).
+          AI_MODEL: ${{ vars.AI_MODEL }}
           AI_PROVIDER: ${{ vars.AI_PROVIDER || 'auto' }}
           AI_BUDGET: ${{ vars.AI_BUDGET || '4' }}
           COUNT: ${{ github.event.inputs.count || '1' }}
