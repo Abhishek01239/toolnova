@@ -5196,5 +5196,94 @@
       "line numbering tool",
       "numbered list"
     ]
+  },
+  {
+    "id": "text-cleaner",
+    "title": "Text Cleaner",
+    "h1": "Text Cleaner — trim, dedupe & tidy",
+    "intro": "Clean up messy pasted text in one click: collapse extra spaces, trim line ends, drop empty lines and remove duplicates.",
+    "blurb": "Clean up messy pasted text in one click: collapse extra spaces, trim line ends, drop empty lines and remove duplicates.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 12,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "remove-empty-lines",
+          "label": "Remove empty lines",
+          "primary": true
+        },
+        {
+          "id": "trim-lines",
+          "label": "Trim line ends",
+          "primary": false
+        },
+        {
+          "id": "remove-extra-spaces",
+          "label": "Collapse extra spaces",
+          "primary": false
+        },
+        {
+          "id": "dedupe-lines",
+          "label": "Remove duplicate lines",
+          "primary": false
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 12
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Remove empty lines, Trim line ends, Collapse extra spaces, Remove duplicate lines) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"one ⏎  ⏎  ⏎  ⏎ two ⏎     ⏎ three\" → click \"Remove empty lines\" → output \"one ⏎ two ⏎ three\".",
+      "Input \"   padded left and right    ⏎ \talso padded\t\" → click \"Trim line ends\" → output \"padded left and right ⏎ also padded\".",
+      "Input \"too     many      spaces    in   here\" → click \"Collapse extra spaces\" → output \"too many spaces in here\"."
+    ],
+    "faq": [
+      {
+        "q": "What does the Text Cleaner do?",
+        "a": "Clean up messy pasted text in one click: collapse extra spaces, trim line ends, drop empty lines and remove duplicates."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Text Cleaner runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Text Cleaner is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Clean up messy pasted text in one click: collapse extra spaces, trim line ends, drop empty lines and remove duplicates.",
+    "seoTitle": "Text Cleaner — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-11",
+    "popularity": 52,
+    "keywords": [
+      "text cleaner",
+      "clean text online",
+      "fix pasted text",
+      "remove duplicate lines",
+      "collapse spaces"
+    ]
   }
 ]
