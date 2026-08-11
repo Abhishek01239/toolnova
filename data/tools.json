@@ -5124,5 +5124,77 @@
       "lotto numbers",
       "random picks"
     ]
+  },
+  {
+    "id": "add-line-numbers",
+    "title": "Add Line Numbers",
+    "h1": "Add Line Numbers to text & lists",
+    "intro": "Add sequential line numbers to any pasted text or list, perfect for code excerpts, scripts and numbered instruction sets.",
+    "blurb": "Add sequential line numbers to any pasted text or list, perfect for code excerpts, scripts and numbered instruction sets.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 12,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "add-line-numbers",
+          "label": "Add line numbers",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 12
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Add line numbers) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"alpha ⏎ beta ⏎ gamma\" → click \"Add line numbers\" → output \"1. alpha ⏎ 2. beta ⏎ 3. gamma\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Add Line Numbers do?",
+        "a": "Add sequential line numbers to any pasted text or list, perfect for code excerpts, scripts and numbered instruction sets."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Add Line Numbers runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Add Line Numbers is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Add sequential line numbers to any pasted text or list, perfect for code excerpts, scripts and numbered instruction sets.",
+    "seoTitle": "Add Line Numbers — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-11",
+    "popularity": 45,
+    "keywords": [
+      "add line numbers",
+      "number lines",
+      "line numbering tool",
+      "numbered list"
+    ]
   }
 ]
