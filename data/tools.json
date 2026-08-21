@@ -5429,5 +5429,76 @@
       "title case converter",
       "headline case"
     ]
+  },
+  {
+    "id": "sentence-case-tool",
+    "title": "Sentence Case Converter",
+    "h1": "Sentence Case Converter",
+    "intro": "Normalize messy text into proper Sentence case with the first letter of every sentence capitalized. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Normalize messy text into proper Sentence case with the first letter of every sentence capitalized.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "sentence-case",
+          "label": "Sentence case",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Sentence case) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the fox jumps. it jumps very high. what a jump!\" → click \"Sentence case\" → output \"The fox jumps. It jumps very high. What a jump!\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Sentence Case Converter do?",
+        "a": "Normalize messy text into proper Sentence case with the first letter of every sentence capitalized."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Sentence Case Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Sentence Case Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Normalize messy text into proper Sentence case with the first letter of every sentence capitalized. Free, fast and private — runs entirely in your browser with no uplo…",
+    "seoTitle": "Sentence Case Converter — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-21",
+    "popularity": 50,
+    "keywords": [
+      "sentence case",
+      "sentence case converter",
+      "capitalize first letter"
+    ]
   }
 ]
