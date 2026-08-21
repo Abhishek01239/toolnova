@@ -5357,5 +5357,77 @@
       "mirror text",
       "reverse string"
     ]
+  },
+  {
+    "id": "title-case-tool",
+    "title": "Title Case Converter",
+    "h1": "Title Case Converter",
+    "intro": "Convert any sentence into clean Title Case for headings, titles and labels in one click. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert any sentence into clean Title Case for headings, titles and labels in one click.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "title-case",
+          "label": "Title Case",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Title Case) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox jumps over the lazy dog\" → click \"Title Case\" → output \"The Quick Brown Fox Jumps Over The Lazy Dog\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Title Case Converter do?",
+        "a": "Convert any sentence into clean Title Case for headings, titles and labels in one click."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Title Case Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Title Case Converter is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert any sentence into clean Title Case for headings, titles and labels in one click. Free, fast and private — runs entirely in your browser with no uploads or sign…",
+    "seoTitle": "Title Case Converter — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-21",
+    "popularity": 52,
+    "keywords": [
+      "title case",
+      "capitalize words",
+      "title case converter",
+      "headline case"
+    ]
   }
 ]
