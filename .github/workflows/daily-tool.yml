@@ -81,6 +81,15 @@ jobs:
           git pull --rebase origin main
           git push
 
+      # Guardrail: a green run that produced NO tool is a silent pipeline
+      # failure (e.g. every AI call died). Fail the job loudly so GitHub
+      # notifies instead of pretending everything is fine.
+      - name: Fail if no tool was generated
+        if: steps.add.outputs.ADDED_TOOLS == '' || steps.add.outputs.ADDED_TOOLS == 'none'
+        run: |
+          echo "::error::Daily run finished with ADDED_TOOLS='${{ steps.add.outputs.ADDED_TOOLS }}' — no tool was generated or committed. Check the 'Generate today'\''s tool' step log."
+          exit 1
+
       - name: Post to Instagram & Facebook
         if: steps.add.outputs.ADDED_TOOLS != '' && steps.add.outputs.ADDED_TOOLS != 'none'
         env:
