@@ -5,3 +5,11 @@ node_modules/
 .vercel
 .env
 .env.*
+=== appending log-artifact ignores ===
+
+# CI log artifacts (never commit)
+rv/
+rv.zip
+run*.zip
+run*_logs/
+add.log
