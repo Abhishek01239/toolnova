@@ -197,18 +197,32 @@ async function main() {
             const parentReady = await waitForInstagramMediaReady(parentId, process.env.FB_PAGE_ACCESS_TOKEN);
             if (parentReady) {
               console.log(`📣 Publishing Instagram carousel container: ${parentId}...`);
-              const igPublishRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media_publish`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  creation_id: parentId,
-                  access_token: process.env.FB_PAGE_ACCESS_TOKEN
-                })
-              });
-              const igPublishJson = await igPublishRes.json();
-              if (igPublishJson.error) {
-                console.error("❌ Instagram Publish Error:", igPublishJson.error);
-              } else {
+              // Meta throttles the Graph API ("Application request limit
+              // reached", code 4). A short backoff often clears a transient
+              // throttle, so retry the publish instead of dropping the post.
+              let igPublishJson = null;
+              for (let pubAttempt = 1; pubAttempt <= 3; pubAttempt++) {
+                const igPublishRes = await fetch(`https://graph.facebook.com/v20.0/${process.env.IG_BUSINESS_ID}/media_publish`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    creation_id: parentId,
+                    access_token: process.env.FB_PAGE_ACCESS_TOKEN
+                  })
+                });
+                igPublishJson = await igPublishRes.json();
+                if (!igPublishJson.error) break;
+                const isThrottle = igPublishJson.error && (igPublishJson.error.code === 4 || /request limit reached/i.test(igPublishJson.error.message || ''));
+                if (!isThrottle || pubAttempt === 3) {
+                  console.error(`❌ Instagram Publish Error (attempt ${pubAttempt}):`, igPublishJson.error);
+                  igPublishJson = { error: igPublishJson.error };
+                  break;
+                }
+                const backoff = pubAttempt * 30000;
+                console.warn(`⏳ Instagram publish throttled (code 4). Retrying in ${(backoff / 1000).toFixed(0)}s (attempt ${pubAttempt}/3)...`);
+                await new Promise(resolve => setTimeout(resolve, backoff));
+              }
+              if (igPublishJson && !igPublishJson.error) {
                 console.log(`✅ Instagram carousel post published! ID: ${igPublishJson.id}`);
               }
             } else {

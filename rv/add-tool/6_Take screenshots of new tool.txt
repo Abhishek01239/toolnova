@@ -1,0 +1,16 @@
+﻿2026-08-21T06:09:31.9228337Z ##[group]Run node scripts/build.mjs
+2026-08-21T06:09:31.9228717Z [36;1mnode scripts/build.mjs[0m
+2026-08-21T06:09:31.9229012Z [36;1mnode scripts/take-screenshots.mjs[0m
+2026-08-21T06:09:31.9266468Z shell: /usr/bin/bash -e {0}
+2026-08-21T06:09:31.9266918Z env:
+2026-08-21T06:09:31.9267141Z   ADDED_TOOLS: reverse-text-tool
+2026-08-21T06:09:31.9267404Z ##[endgroup]
+2026-08-21T06:09:32.1839567Z 🛠  Built 73 pages: 52 tools, 13 categories, 52 tool scripts → dist/
+2026-08-21T06:09:32.2385383Z 📡 Local server listening on http://localhost:4173
+2026-08-21T06:09:32.6260268Z 📸 Taking screenshots of tool: Reverse Text...
+2026-08-21T06:09:35.0749594Z ✓ Saved Screenshot 1: /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-1.png and /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-1-ig.png
+2026-08-21T06:09:35.5550406Z ✓ Saved Screenshot 2: /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-2.png and /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-2-ig.png
+2026-08-21T06:09:35.8779109Z ✓ Saved Screenshot 3: /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-3.png and /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-3-ig.png
+2026-08-21T06:09:36.3152451Z ✓ Saved Screenshot 4: /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-4.png and /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-4-ig.png
+2026-08-21T06:09:36.6661503Z ✓ Saved Screenshot 5: /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-5.png and /home/runner/work/toolnova/toolnova/public/assets/tools/reverse-text-tool-social-5-ig.png
+2026-08-21T06:09:36.7041241Z 📡 Server stopped. Exiting.
