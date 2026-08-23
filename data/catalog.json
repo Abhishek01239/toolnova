@@ -1596,8 +1596,8 @@
     ],
     "blurb": "Flip any text backwards character by character - handy for puzzles, obfuscation and quick checks.",
     "params": {
-      "title": "Reverse Text",
-      "h1": "Reverse Text — flip any string backwards",
+      "title": "Reverse Text Tool",
+      "h1": "Reverse Text Tool — flip any string backwards",
       "transforms": [
         "reverse-text"
       ],
@@ -1679,7 +1679,7 @@
     ],
     "blurb": "Pull every email address out of a block of text and list them one per line, duplicates removed.",
     "params": {
-      "title": "Extract Emails",
+      "title": "Email Extractor Tool",
       "h1": "Extract Emails from any text",
       "transforms": [
         "extract-emails"
@@ -1700,7 +1700,7 @@
     ],
     "blurb": "Alphabetically sort a pasted list of lines A to Z (or Z to A) in a single click.",
     "params": {
-      "title": "Sort Lines",
+      "title": "Sort Lines Tool",
       "h1": "Sort Lines — alphabetize any list",
       "transforms": [
         "sort-lines"
@@ -1721,8 +1721,8 @@
     ],
     "blurb": "Remove duplicate lines from any list while keeping the order of the first occurrence.",
     "params": {
-      "title": "Remove Duplicate Lines",
-      "h1": "Remove Duplicate Lines",
+      "title": "Remove Duplicate Lines Tool",
+      "h1": "Remove Duplicate Lines Tool",
       "transforms": [
         "dedupe-lines"
       ],
@@ -1741,7 +1741,7 @@
     ],
     "blurb": "Convert any text to ALL UPPERCASE instantly — handy for headings, shouty titles and quick normalization.",
     "params": {
-      "title": "Uppercase Text",
+      "title": "Uppercase Text Tool",
       "h1": "Uppercase Text — convert to ALL CAPS",
       "transforms": [
         "uppercase"
@@ -1761,7 +1761,7 @@
     ],
     "blurb": "Convert any text to all lowercase in one click — great for normalizing user input and cleaning captions.",
     "params": {
-      "title": "Lowercase Text",
+      "title": "Lowercase Text Tool",
       "h1": "Lowercase Text — convert to all lowercase",
       "transforms": [
         "lowercase"
@@ -1781,7 +1781,7 @@
     ],
     "blurb": "Turn any phrase into camelCase for variable names and code, preserving words automatically.",
     "params": {
-      "title": "Camel Case Converter",
+      "title": "Camel Case Tool",
       "h1": "Camel Case Converter",
       "transforms": [
         "camel-case"
@@ -1801,7 +1801,7 @@
     ],
     "blurb": "Convert text to kebab-case with hyphens — perfect for CSS classes, URLs and file slugs.",
     "params": {
-      "title": "Kebab Case Converter",
+      "title": "Kebab Case Tool",
       "h1": "Kebab Case Converter",
       "transforms": [
         "kebab-case"
@@ -1821,7 +1821,7 @@
     ],
     "blurb": "Convert any phrase to snake_case for database columns, env vars and code identifiers.",
     "params": {
-      "title": "Snake Case Converter",
+      "title": "Snake Case Tool",
       "h1": "Snake Case Converter",
       "transforms": [
         "snake-case"
@@ -1841,7 +1841,7 @@
     ],
     "blurb": "Reverse the order of lines in any list or paragraph — useful for undoing sorts and reordering blocks.",
     "params": {
-      "title": "Reverse Lines",
+      "title": "Reverse Lines Tool",
       "h1": "Reverse Lines — flip list order",
       "transforms": [
         "reverse-lines"
@@ -1861,7 +1861,7 @@
     ],
     "blurb": "Strip leading and trailing whitespace from every line of pasted text in one click.",
     "params": {
-      "title": "Trim Lines",
+      "title": "Trim Lines Tool",
       "h1": "Trim Lines — clean line edges",
       "transforms": [
         "trim-lines"
@@ -1881,7 +1881,7 @@
     ],
     "blurb": "Pull every URL out of a block of text and list them one per line, duplicates removed.",
     "params": {
-      "title": "Extract URLs",
+      "title": "URL Extractor Tool",
       "h1": "Extract URLs from any text",
       "transforms": [
         "extract-urls"
@@ -1901,7 +1901,7 @@
     ],
     "blurb": "Generate random hex colors with a copy-ready swatch — useful for design mockups and palettes.",
     "params": {
-      "title": "Random Color Generator",
+      "title": "Random Color Picker",
       "h1": "Random Color Generator",
       "generator": "random-color"
     },
@@ -1918,7 +1918,7 @@
     ],
     "blurb": "Flip a virtual coin for instant, unbiased heads-or-tails decisions.",
     "params": {
-      "title": "Coin Flip",
+      "title": "Coin Flipper",
       "h1": "Coin Flip — heads or tails",
       "generator": "coin"
     },
@@ -1935,7 +1935,7 @@
     ],
     "blurb": "Roll one or more dice (d4–d20) for board games, RPGs and quick random picks.",
     "params": {
-      "title": "Dice Roller",
+      "title": "Dice Roll Tool",
       "h1": "Dice Roller",
       "generator": "dice"
     },
@@ -1952,7 +1952,7 @@
     ],
     "blurb": "Convert length and distance between meters, centimeters, kilometers, inches, feet, yards and miles with exact factors.",
     "params": {
-      "title": "Length Converter",
+      "title": "Length Converter Tool",
       "h1": "Length Converter — m, cm, km, in, ft, mi",
       "kind": "length",
       "sampleValue": 1
@@ -1970,7 +1970,7 @@
     ],
     "blurb": "Convert weight and mass between kilograms, grams, milligrams, pounds, ounces and tonnes instantly.",
     "params": {
-      "title": "Weight Converter",
+      "title": "Weight Converter Tool",
       "h1": "Weight Converter — kg, g, lb, oz",
       "kind": "mass",
       "sampleValue": 1
@@ -1988,7 +1988,7 @@
     ],
     "blurb": "Convert speed between km/h, mph, m/s and knots for driving, cycling and aviation.",
     "params": {
-      "title": "Speed Converter",
+      "title": "Speed Converter Tool",
       "h1": "Speed Converter — km/h, mph, m/s, knots",
       "kind": "speed",
       "sampleValue": 100
@@ -2006,7 +2006,7 @@
     ],
     "blurb": "Convert data sizes between bytes, KB, MB, GB, TB and PB with binary and decimal units.",
     "params": {
-      "title": "Data Size Converter",
+      "title": "Data Size Converter Tool",
       "h1": "Data Size Converter — B, KB, MB, GB, TB",
       "kind": "data",
       "sampleValue": 1
@@ -2024,7 +2024,7 @@
     ],
     "blurb": "Convert area between square meters, square feet, acres, hectares and square kilometers.",
     "params": {
-      "title": "Area Converter",
+      "title": "Area Converter Tool",
       "h1": "Area Converter — m², ft², acre, hectare",
       "kind": "area",
       "sampleValue": 1
@@ -2042,7 +2042,7 @@
     ],
     "blurb": "Convert volume between liters, milliliters, gallons, cups, pints and cubic meters.",
     "params": {
-      "title": "Volume Converter",
+      "title": "Volume Converter Tool",
       "h1": "Volume Converter — L, mL, gal, cup",
       "kind": "volume",
       "sampleValue": 1
@@ -2060,7 +2060,7 @@
     ],
     "blurb": "Convert time between seconds, minutes, hours, days and weeks for scheduling and pacing.",
     "params": {
-      "title": "Time Converter",
+      "title": "Time Converter Tool",
       "h1": "Time Converter — s, min, hr, day, week",
       "kind": "time",
       "sampleValue": 3600
