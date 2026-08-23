@@ -5788,5 +5788,76 @@
       "unique lines",
       "delete duplicates"
     ]
+  },
+  {
+    "id": "uppercase-tool",
+    "title": "Uppercase Text Tool",
+    "h1": "Uppercase Text — convert to ALL CAPS",
+    "intro": "Convert any text to ALL UPPERCASE instantly — handy for headings, shouty titles and quick normalization.",
+    "blurb": "Convert any text to ALL UPPERCASE instantly — handy for headings, shouty titles and quick normalization.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "uppercase",
+          "label": "UPPERCASE",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (UPPERCASE) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox jumps over the lazy dog\" → click \"UPPERCASE\" → output \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Uppercase Text Tool do?",
+        "a": "Convert any text to ALL UPPERCASE instantly — handy for headings, shouty titles and quick normalization."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Uppercase Text Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Uppercase Text Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert any text to ALL UPPERCASE instantly — handy for headings, shouty titles and quick normalization. Free, fast and private — runs entirely in your browser with no…",
+    "seoTitle": "Uppercase Text Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-23",
+    "popularity": 55,
+    "keywords": [
+      "uppercase text",
+      "all caps converter",
+      "capitalize all letters"
+    ]
   }
 ]
