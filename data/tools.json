@@ -5930,5 +5930,76 @@
       "small caps",
       "convert to lowercase"
     ]
+  },
+  {
+    "id": "camel-case-tool",
+    "title": "Camel Case Tool",
+    "h1": "Camel Case Converter",
+    "intro": "Turn any phrase into camelCase for variable names and code, preserving words automatically. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Turn any phrase into camelCase for variable names and code, preserving words automatically.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "camel-case",
+          "label": "camelCase",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (camelCase) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox\" → click \"camelCase\" → output \"theQuickBrownFox\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Camel Case Tool do?",
+        "a": "Turn any phrase into camelCase for variable names and code, preserving words automatically."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Camel Case Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Camel Case Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Turn any phrase into camelCase for variable names and code, preserving words automatically. Free, fast and private — runs entirely in your browser with no uploads or s…",
+    "seoTitle": "Camel Case Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-24",
+    "popularity": 52,
+    "keywords": [
+      "camel case converter",
+      "camelCase",
+      "code case"
+    ]
   }
 ]
