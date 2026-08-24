@@ -6143,5 +6143,76 @@
       "underscore case",
       "variable naming"
     ]
+  },
+  {
+    "id": "reverse-lines-tool",
+    "title": "Reverse Lines Tool",
+    "h1": "Reverse Lines — flip list order",
+    "intro": "Reverse the order of lines in any list or paragraph — useful for undoing sorts and reordering blocks.",
+    "blurb": "Reverse the order of lines in any list or paragraph — useful for undoing sorts and reordering blocks.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "reverse-lines",
+          "label": "Reverse line order",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Reverse line order) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"first ⏎ second ⏎ third\" → click \"Reverse line order\" → output \"third ⏎ second ⏎ first\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Reverse Lines Tool do?",
+        "a": "Reverse the order of lines in any list or paragraph — useful for undoing sorts and reordering blocks."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Reverse Lines Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Reverse Lines Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Reverse the order of lines in any list or paragraph — useful for undoing sorts and reordering blocks. Free, fast and private — runs entirely in your browser with no up…",
+    "seoTitle": "Reverse Lines Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-24",
+    "popularity": 46,
+    "keywords": [
+      "reverse lines",
+      "flip list order",
+      "invert lines"
+    ]
   }
 ]
