@@ -6072,5 +6072,76 @@
       "slug case",
       "hyphen case"
     ]
+  },
+  {
+    "id": "snake-case-tool",
+    "title": "Snake Case Tool",
+    "h1": "Snake Case Converter",
+    "intro": "Convert any phrase to snake_case for database columns, env vars and code identifiers. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert any phrase to snake_case for database columns, env vars and code identifiers.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "snake-case",
+          "label": "snake_case",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (snake_case) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox\" → click \"snake_case\" → output \"the_quick_brown_fox\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Snake Case Tool do?",
+        "a": "Convert any phrase to snake_case for database columns, env vars and code identifiers."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Snake Case Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Snake Case Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert any phrase to snake_case for database columns, env vars and code identifiers. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Snake Case Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-24",
+    "popularity": 50,
+    "keywords": [
+      "snake case",
+      "underscore case",
+      "variable naming"
+    ]
   }
 ]
