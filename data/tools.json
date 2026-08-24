@@ -6001,5 +6001,76 @@
       "camelCase",
       "code case"
     ]
+  },
+  {
+    "id": "kebab-case-tool",
+    "title": "Kebab Case Tool",
+    "h1": "Kebab Case Converter",
+    "intro": "Convert text to kebab-case with hyphens — perfect for CSS classes, URLs and file slugs. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert text to kebab-case with hyphens — perfect for CSS classes, URLs and file slugs.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "kebab-case",
+          "label": "kebab-case",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (kebab-case) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the quick brown fox\" → click \"kebab-case\" → output \"the-quick-brown-fox\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Kebab Case Tool do?",
+        "a": "Convert text to kebab-case with hyphens — perfect for CSS classes, URLs and file slugs."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Kebab Case Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Kebab Case Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert text to kebab-case with hyphens — perfect for CSS classes, URLs and file slugs. Free, fast and private — runs entirely in your browser with no uploads or sign…",
+    "seoTitle": "Kebab Case Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-24",
+    "popularity": 50,
+    "keywords": [
+      "kebab case",
+      "slug case",
+      "hyphen case"
+    ]
   }
 ]
