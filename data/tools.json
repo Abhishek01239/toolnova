@@ -6285,5 +6285,76 @@
       "remove line whitespace",
       "clean indentation"
     ]
+  },
+  {
+    "id": "extract-urls-tool",
+    "title": "URL Extractor Tool",
+    "h1": "Extract URLs from any text",
+    "intro": "Pull every URL out of a block of text and list them one per line, duplicates removed. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Pull every URL out of a block of text and list them one per line, duplicates removed.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "extract-urls",
+          "label": "Extract URLs",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Extract URLs) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"See https://example.com and http://test.org/docs?page=2. https://example.com rocks.\" → click \"Extract URLs\" → output \"https://example.com ⏎ http://test.org/docs?page=2.\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the URL Extractor Tool do?",
+        "a": "Pull every URL out of a block of text and list them one per line, duplicates removed."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The URL Extractor Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. URL Extractor Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Pull every URL out of a block of text and list them one per line, duplicates removed. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "URL Extractor Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-25",
+    "popularity": 54,
+    "keywords": [
+      "extract urls",
+      "url extractor",
+      "find links"
+    ]
   }
 ]
