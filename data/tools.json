@@ -6214,5 +6214,76 @@
       "flip list order",
       "invert lines"
     ]
+  },
+  {
+    "id": "trim-lines-tool",
+    "title": "Trim Lines Tool",
+    "h1": "Trim Lines — clean line edges",
+    "intro": "Strip leading and trailing whitespace from every line of pasted text in one click. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Strip leading and trailing whitespace from every line of pasted text in one click.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 8,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "trim-lines",
+          "label": "Trim line ends",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 8
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Trim line ends) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"   padded left and right    ⏎ \talso padded\t\" → click \"Trim line ends\" → output \"padded left and right ⏎ also padded\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Trim Lines Tool do?",
+        "a": "Strip leading and trailing whitespace from every line of pasted text in one click."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Trim Lines Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Trim Lines Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Strip leading and trailing whitespace from every line of pasted text in one click. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Trim Lines Tool — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-08-25",
+    "popularity": 46,
+    "keywords": [
+      "trim lines",
+      "remove line whitespace",
+      "clean indentation"
+    ]
   }
 ]
