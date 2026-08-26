@@ -6500,5 +6500,109 @@
       "heads or tails",
       "random coin"
     ]
+  },
+  {
+    "id": "dice-roller-tool",
+    "title": "Dice Roll Tool",
+    "h1": "Dice Roller",
+    "intro": "Roll one or more dice (d4–d20) for board games, RPGs and quick random picks. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Roll one or more dice (d4–d20) for board games, RPGs and quick random picks.",
+    "ui": {
+      "controls": [
+        {
+          "type": "select",
+          "id": "sides",
+          "label": "Die type",
+          "value": "6",
+          "options": [
+            {
+              "value": "4",
+              "label": "d4 (4 sides)"
+            },
+            {
+              "value": "6",
+              "label": "d6 (6 sides)"
+            },
+            {
+              "value": "8",
+              "label": "d8 (8 sides)"
+            },
+            {
+              "value": "10",
+              "label": "d10 (10 sides)"
+            },
+            {
+              "value": "12",
+              "label": "d12 (12 sides)"
+            },
+            {
+              "value": "20",
+              "label": "d20 (20 sides)"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many dice?",
+          "value": 2,
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Roll the dice",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Choose a d20 and count 1 for tabletop critical rolls, or roll 5d6 for character stats.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Dice Roll Tool do?",
+        "a": "Roll one or more dice (d4–d20) for board games, RPGs and quick random picks."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Dice Roll Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Dice Roll Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Roll one or more dice (d4–d20) for board games, RPGs and quick random picks. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Dice Roll Tool — Free Online Tool | ToolNova",
+    "category": "Random Generators",
+    "added": "2026-08-26",
+    "popularity": 58,
+    "keywords": [
+      "dice roller",
+      "roll dice",
+      "random dice"
+    ]
   }
 ]
