@@ -7556,5 +7556,157 @@
       "liters to gallons",
       "ml converter"
     ]
+  },
+  {
+    "id": "time-converter-2",
+    "title": "Time Converter Tool",
+    "h1": "Time Converter — s, min, hr, day, week",
+    "intro": "Convert time between seconds, minutes, hours, days and weeks for scheduling and pacing. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert time between seconds, minutes, hours, days and weeks for scheduling and pacing.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 3600,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Second (s)",
+              "label": "Second (s)"
+            },
+            {
+              "value": "Millisecond (ms)",
+              "label": "Millisecond (ms)"
+            },
+            {
+              "value": "Minute (min)",
+              "label": "Minute (min)"
+            },
+            {
+              "value": "Hour (h)",
+              "label": "Hour (h)"
+            },
+            {
+              "value": "Day (d)",
+              "label": "Day (d)"
+            },
+            {
+              "value": "Week (wk)",
+              "label": "Week (wk)"
+            },
+            {
+              "value": "Month (average)",
+              "label": "Month (average)"
+            },
+            {
+              "value": "Year (average)",
+              "label": "Year (average)"
+            }
+          ],
+          "value": "Second (s)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Second (s)",
+              "label": "Second (s)"
+            },
+            {
+              "value": "Millisecond (ms)",
+              "label": "Millisecond (ms)"
+            },
+            {
+              "value": "Minute (min)",
+              "label": "Minute (min)"
+            },
+            {
+              "value": "Hour (h)",
+              "label": "Hour (h)"
+            },
+            {
+              "value": "Day (d)",
+              "label": "Day (d)"
+            },
+            {
+              "value": "Week (wk)",
+              "label": "Week (wk)"
+            },
+            {
+              "value": "Month (average)",
+              "label": "Month (average)"
+            },
+            {
+              "value": "Year (average)",
+              "label": "Year (average)"
+            }
+          ],
+          "value": "Millisecond (ms)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the second as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "3600 Second (s) = 3600000 Millisecond (ms).",
+      "Quick reference: 1 s = 1000 ms.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert s to ms?",
+        "a": "Enter your value, select Second (s) in the “From” box and Millisecond (ms) in the “To” box. For reference, 1 s = 1000 ms."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Time Converter Tool runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Time Converter Tool is part of a collection of free tools where a new one is added every day."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert time between seconds, minutes, hours, days and weeks for scheduling and pacing. Free, fast and private — runs entirely in your browser with no uploads or sign…",
+    "seoTitle": "Time Converter Tool — Free Online Tool | ToolNova",
+    "category": "Unit Converter",
+    "added": "2026-08-28",
+    "popularity": 55,
+    "keywords": [
+      "time converter",
+      "seconds to minutes",
+      "hours to days"
+    ]
   }
 ]
