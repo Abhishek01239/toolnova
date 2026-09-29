@@ -1,9 +1,9 @@
 # ⚒️ ToolNova
 
-**Free online tools, one new tool every day** — a self-growing utility website that builds, tests, documents and deploys a brand-new browser tool every morning, fully automatically, for **$0**.
+**Free online tools, curated and managed deliberately** — a curated utility website focused on practical, privacy-conscious browser tools.
 
 - 🌱 **11 tools live today**, ~100 more already queued in the backlog
-- 🤖 **Daily autonomous pipeline** (GitHub Actions cron) with a hard quality gate — a tool only ships if tests, build and verification pass
+- 🤖 **Manual publishing workflow** — new tools are reviewed before they are published
 - 🔒 **Privacy-first**: every tool runs 100% in the browser; nothing is ever uploaded
 - 🚀 **Zero dependencies**: plain Node (20+) scripts generate a static site, deployed free on Vercel
 - 🔍 **SEO-complete**: unique titles/descriptions, canonical URLs, OpenGraph + Twitter cards, JSON-LD (WebApplication, FAQPage, BreadcrumbList, ItemList), breadcrumbs, FAQ, sitemap.xml, robots.txt, internal linking — all generated, all verified
@@ -44,7 +44,7 @@ node scripts/add-daily-tool.mjs --count=3  # add several (for catch-up/seeding)
    ```
 2. **Vercel** — `vercel.com/new` → Import the repo → **Other** framework preset. The included `vercel.json` already sets `buildCommand: node scripts/build.mjs` and `outputDirectory: dist`. Deploy. (Free tier, no secrets needed.)
 3. **Update `data/site.json`** — set `url` to your real domain (canonical/sitemap/OG depend on it), and `repo` to your GitHub URL.
-4. **Daily automation** — in GitHub: *Settings → Actions → General → Workflow permissions → **Read and write*** (needed so the bot can commit the new tool). The `.github/workflows/daily-tool.yml` cron ([`30 2 * * *`](https://crontab.guru/#30_2_*_*_*) = 08:00 IST / 02:30 UTC) then runs every morning. You can also trigger it manually: *Actions → Daily Tool → Run workflow*.
+4. **Manual publishing** — in GitHub: *Settings → Actions → General → Workflow permissions → **Read and write*** (needed so the bot can commit the new tool). The `.github/workflows/daily-tool.yml` cron ([`30 2 * * *`](https://crontab.guru/#30_2_*_*_*) = 08:00 IST / 02:30 UTC) then runs every morning. You can also trigger it manually: *Actions → Daily Tool → Run workflow*.
 
 That's it. Every push to `main` auto-deploys on Vercel; every morning the bot pushes one new tool.
 
@@ -103,10 +103,10 @@ The gardener is also testable offline: `AI_PROVIDER=mock node scripts/tend-catal
 
 ---
 
-## How the daily pipeline works
+## How ToolNova is maintained
 
 ```
-                     ┌──────────────── GitHub Actions (cron 08:00 IST) ────────────────┐
+                     ┌──────────────── manual GitHub changes 08:00 IST) ────────────────┐
                      │                                                                  │
   data/catalog.json ─┼─► pick 1st catalog entry not in data/tools.json (AI may re-rank) │
   (the backlog)      │                                                                  │
