@@ -2,7 +2,7 @@
 
 To allow the automated script to publish tool posts to your Facebook Page and Instagram Business account, you need to generate three credentials and save them as GitHub Secrets. 
 
-Once saved, the daily pipeline will run completely on autopilot with no manual steps needed!
+Once saved, the manual publishing workflow will run completely on autopilot with no manual steps needed!
 
 ---
 
@@ -66,4 +66,4 @@ To get a permanent access token that never expires:
 
 ---
 
-All done! Your daily pipeline will now automatically publish posts with screenshot previews whenever a new tool builds.
+All done! Your manual publishing workflow will now automatically publish posts with screenshot previews whenever a new tool builds.
