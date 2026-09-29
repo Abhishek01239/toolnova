@@ -10,7 +10,7 @@ Do these once. After that the site runs itself.
 ```bash
 git init -b main
 git add -A
-git commit -m "ToolNova: 11 tools, autonomous daily pipeline"
+git commit -m "ToolNova: 11 tools, autonomous manual publishing workflow"
 git remote add origin https://github.com/<YOUR-USERNAME>/toolnova.git
 git push -u origin main
 ```
@@ -33,7 +33,7 @@ Edit `data/site.json`:
 
 Commit and push. This fixes canonical URLs, sitemap, and OG tags.
 
-## 4. Let GitHub Actions commit new tools
+## 4. Publish reviewed changes
 
 Repo → **Settings → Actions → General → Workflow permissions** → select **"Read and write permissions"** → Save.
 (Without this, the daily run will fail when trying to push the new tool.)
@@ -47,7 +47,7 @@ This lets the pipeline also build fully custom tools (BMI calculator, JWT decode
    - Name: `GROQ_API_KEY`
    - Value: your key
 
-No key? No problem — the daily pipeline still works, using the built-in factory backlog (~35 ready entries ≈ first month covered) plus the 110-idea catalog.
+No key? No problem — the manual publishing workflow still works, using the built-in factory backlog (~35 ready entries ≈ first month covered) plus the 110-idea catalog.
 
 ## 6. Prove it works — right now
 
