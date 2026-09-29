@@ -7,32 +7,37 @@ export default function privacy({ site }) {
   const crumbs = [{ name: 'Home', path: '/' }, { name: 'Privacy' }];
   const head = buildHead({
     site,
-    title: `Privacy policy — ${site.name}`,
-    description: `${site.name} tools run entirely in your browser. Nothing you type, paste or upload is sent to a server. Read the full privacy policy.`,
+    title: `Privacy Policy — ${site.name}`,
+    description: `Read the ${site.name} privacy policy, including local tool processing, hosting logs, advertising and cookies.`,
     path,
     jsonLd: [breadcrumbLD(site, crumbs)]
   });
 
   const body = `${breadcrumbs(crumbs)}
 <article class="prose">
-  <h1>Privacy policy</h1>
-  <p class="muted">Last updated: 2026-07-31</p>
-  <p><strong>The short version: your data never leaves your browser.</strong> Every tool on ${esc(site.name)} performs its work locally on your device using standard browser APIs. We have no database, no analytics cookies and no accounts.</p>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Last updated: 2026-09-29</p>
 
-  <h2>What we collect</h2>
+  <p>${esc(site.name)} is designed so that supported tools can process your input locally in your browser. Where a tool explicitly uses an external service, that tool's page should identify the relevant dependency.</p>
+
+  <h2>Information handled by tools</h2>
   <ul>
-    <li><strong>Nothing you type into a tool.</strong> All processing happens client-side; inputs and results are never transmitted to us.</li>
-    <li><strong>No tracking cookies.</strong> The only thing stored on your device is a single <code>localStorage</code> entry remembering your light/dark theme preference, plus — on some tools — your last-used settings. These never leave your device.</li>
+    <li><strong>Tool input.</strong> Browser-only tools process text, numbers and other inputs on your device and do not intentionally send that input to ${esc(site.name)}.</li>
+    <li><strong>Local preferences.</strong> The site may use browser local storage for preferences such as light/dark theme or a tool's last-used settings.</li>
   </ul>
 
-  <h2>Hosting provider logs</h2>
-  <p>Like any website, the static files are served by a hosting provider (currently Vercel). Their infrastructure may temporarily record standard technical request data such as IP address and user agent. We do not access, combine or share these logs.</p>
+  <h2>Hosting and technical data</h2>
+  <p>The site is currently hosted on Vercel. Like most web hosts, the hosting infrastructure may process technical request information such as IP address, browser information and timestamps for security, reliability and delivery.</p>
 
-  <h2>Third-party services</h2>
-  <p>Pages load no third-party scripts, fonts, trackers or advertising networks. All assets are self-hosted.</p>
+  <h2>Advertising and cookies</h2>
+  <p>${esc(site.name)} uses Google AdSense/Google advertising technology. Advertising providers may use cookies, device information and related signals to serve, measure or personalize advertising, subject to their own policies and the choices available to visitors in their advertising settings. You can learn more about Google's advertising and privacy controls through Google's own documentation.</p>
+  <p>Advertising scripts are separate from the core functionality of the browser tools. We do not ask you to submit tool input in order to view or use a tool.</p>
+
+  <h2>Third-party resources</h2>
+  <p>The site may load third-party resources such as advertising or web fonts. Their handling of information is governed by the respective provider's policies.</p>
 
   <h2>Changes</h2>
-  <p>If this policy changes, the update will be published on this page with a new "last updated" date.</p>
+  <p>If this policy changes, the updated version will be published on this page with a new revision date.</p>
 </article>`;
 
   return { path, head, body };
