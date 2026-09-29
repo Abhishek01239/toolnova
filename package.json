@@ -1,8 +1,8 @@
 {
   "name": "toolnova",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "ToolNova — a self-growing collection of free browser-based tools. Zero-dependency static site generator + daily autonomous tool pipeline.",
+  "description": "ToolNova — a curated collection of free browser-based tools. Zero-dependency static site generator managed manually through GitHub.",
   "type": "module",
   "engines": {
     "node": ">=20"
