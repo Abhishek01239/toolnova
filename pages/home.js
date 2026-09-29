@@ -9,7 +9,7 @@ export default function home({ site, tools, byCategory, latest, popular }) {
     title: `${site.name} — ${site.shortTagline}`,
     description: site.description,
     path: '/',
-    jsonLd: [websiteLD(site), organizationLD(site), itemListLD(site, 'Latest tools', latest.slice(0, 8))]
+    jsonLd: [websiteLD(site), organizationLD(site), itemListLD(site, 'Featured tools', popular.slice(0, 8))]
   });
 
   const chips = [...byCategory.keys()]
@@ -31,35 +31,33 @@ export default function home({ site, tools, byCategory, latest, popular }) {
     }).join('\n');
 
   const body = `<section class="hero">
-  <h1>Free online tools, <span class="hero-grad">one new tool every day</span></h1>
-  <p class="lead">${esc(site.tagline)}. Fast, privacy-friendly utilities for text, code, conversion, calculation and more — no sign-up, no uploads, no cost.</p>
+  <div class="hero-eyebrow"><span>TOOLNOVA</span><span>•</span><span>FREE &amp; BROWSER-BASED</span></div>
+  <h1>Useful tools, <span class="hero-grad">without the friction.</span></h1>
+  <p class="lead">${esc(site.tagline)}. Search a growing library of practical utilities for text, code, conversion, calculation and more — no account required.</p>
   <form class="hero-search" action="/search" method="get" role="search">
     <input type="search" name="q" placeholder="Search ${tools.length} tools…" aria-label="Search tools" autofocus>
-    <button class="btn btn-primary" type="submit">Search</button>
+    <button class="btn btn-primary" type="submit">Find a tool</button>
   </form>
   <div class="hero-stats">
     <span class="stat-chip"><strong>${tools.length}</strong> tools</span>
     <span class="stat-chip"><strong>${byCategory.size}</strong> categories</span>
     <span class="stat-chip"><strong>100%</strong> free</span>
-    <span class="stat-chip"><strong>0</strong> data uploads</span>
-    <span class="stat-chip"><strong>1</strong> new tool daily</span>
+    <span class="stat-chip"><strong>0</strong> sign-up required</span>
   </div>
+</section>
+
+<section class="trust-strip" aria-label="ToolNova benefits">
+  <div><span class="trust-icon">⚡</span><strong>Fast</strong><span>Lightweight static pages</span></div>
+  <div><span class="trust-icon">🔒</span><strong>Private</strong><span>Local processing where supported</span></div>
+  <div><span class="trust-icon">✓</span><strong>Practical</strong><span>Focused tools with clear instructions</span></div>
 </section>
 
 <section class="section" aria-labelledby="cat-heading">
   <div class="section-head">
-    <h2 id="cat-heading">Browse by category</h2>
-    <a href="/categories">All categories →</a>
+    <h2 id="cat-heading">Explore categories</h2>
+    <a href="/categories">View all →</a>
   </div>
   <div class="category-chips">${chips}</div>
-</section>
-
-<section class="section" aria-labelledby="latest-heading">
-  <div class="section-head">
-    <h2 id="latest-heading">Latest tools</h2>
-    <a href="/latest">See all →</a>
-  </div>
-  ${toolGrid(latest.slice(0, 8))}
 </section>
 
 <section class="section" aria-labelledby="popular-heading">
@@ -70,11 +68,28 @@ export default function home({ site, tools, byCategory, latest, popular }) {
   ${toolGrid(popular.slice(0, 8))}
 </section>
 
-<section class="section" aria-labelledby="all-heading">
+<section class="section" aria-labelledby="latest-heading">
   <div class="section-head">
-    <h2 id="all-heading">All tools</h2>
+    <h2 id="latest-heading">Recently added</h2>
+    <a href="/latest">See all →</a>
+  </div>
+  ${toolGrid(latest.slice(0, 8))}
+</section>
+
+<section class="section directory-section" aria-labelledby="all-heading">
+  <div class="section-head">
+    <h2 id="all-heading">Full tool directory</h2>
+    <a href="/search">Search everything →</a>
   </div>
   ${directory}
+</section>
+
+<section class="editorial-note">
+  <div>
+    <span class="eyebrow">BUILT FOR EVERYDAY WORK</span>
+    <h2>Simple tools that get out of your way.</h2>
+  </div>
+  <p>ToolNova focuses on useful browser utilities with straightforward interfaces, accessible pages, helpful explanations and privacy-conscious defaults.</p>
 </section>`;
 
   return { path: '/', head, body };
