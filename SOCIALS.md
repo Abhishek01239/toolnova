@@ -1,6 +1,6 @@
 # 🚀 Automating Instagram & Facebook Posts for ToolNova
 
-Your ToolNova site now generates a dynamic **RSS Feed** (`rss.xml`) containing your latest tools. This feed updates automatically every morning whenever the daily pipeline publishes a new tool.
+Your ToolNova site now generates a dynamic **RSS Feed** (`rss.xml`) containing your latest tools. This feed updates automatically every morning whenever the manual publishing workflow publishes a new tool.
 
 You can connect this RSS feed to **Buffer** (for scheduled social queueing) or **Zapier/Make.com** (for fully automated instant posting) to publish to Instagram and Facebook with zero code maintenance.
 
