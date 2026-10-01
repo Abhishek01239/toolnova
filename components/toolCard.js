@@ -10,8 +10,8 @@ export function toolCard(tool) {
       <h3>${esc(tool.title)}</h3>
       <p class="muted">${esc(tool.blurb || tool.description)}</p>
       <span class="tool-card-meta">
-        <span class="chip">[ ${esc(tool.category.toUpperCase())} ]</span>
-        <span class="chip chip-free">[ FREE ]</span>
+        <span class="chip">${esc(tool.category)}</span>
+        <span class="chip chip-free">Free</span>
       </span>
     </span>
   </a>
@@ -19,14 +19,13 @@ export function toolCard(tool) {
 }
 
 export function toolGrid(tools) {
-  if (!tools.length) return '<p class="muted">No tools here yet — check back tomorrow.</p>';
+  if (!tools.length) return '<p class="muted">No tools here yet — check back soon.</p>';
   return `<div class="tool-grid">${tools.map(toolCard).join('\n')}</div>`;
 }
 
 export function categoryChip(name, count) {
-  const countStr = count !== undefined ? ` (${count})` : '';
+  const countStr = count !== undefined ? ` <span class="cc-count">${count}</span>` : '';
   return `<a class="category-chip" href="/category/${categorySlug(name)}">
-  <span aria-hidden="true">${categoryEmoji(name)}</span> [ ${esc(name.toUpperCase())}${countStr} ]
+  <span aria-hidden="true">${categoryEmoji(name)}</span> ${esc(name)}${countStr}
 </a>`;
 }
-
