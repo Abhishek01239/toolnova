@@ -1,0 +1,61 @@
+{
+  "id": "pdf-merger",
+  "title": "PDF Merger",
+  "h1": "Merge PDF Files Online — Free & Private",
+  "seoTitle": "Merge PDF Files Online Free — Combine PDFs Privately",
+  "description": "Combine multiple PDF files into one document and reorder them in seconds. Free PDF merger that runs in your browser — files are never uploaded.",
+  "intro": "Add two or more PDFs, drag them into the order you want and download a single merged file. Everything happens on your device, so contracts, invoices and scans never leave your computer.",
+  "blurb": "Combine multiple PDFs into one file in any order — fast, free and fully private.",
+  "keywords": ["merge pdf", "pdf merger", "combine pdf files", "join pdf", "pdf combiner", "merge pdf online free", "combine pdfs into one"],
+  "category": "PDF",
+  "added": "2026-10-02",
+  "popularity": 88,
+  "ui": {
+    "controls": [
+      {
+        "id": "filename",
+        "type": "text",
+        "label": "Output file name",
+        "value": "merged.pdf",
+        "placeholder": "merged.pdf",
+        "help": "The merged file is saved with this name. The .pdf ending is added automatically."
+      }
+    ],
+    "actions": [
+      { "id": "merge", "label": "Merge PDFs", "primary": true },
+      { "id": "sort", "label": "Sort A–Z" },
+      { "id": "clear", "label": "Clear all" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag two or more PDF files onto it — each file is read locally by your browser.",
+    "Drag the files, or use the arrow buttons, to put them in the order you want them in the final document.",
+    "Choose a name for the output file and press Merge PDFs — the combined PDF downloads straight to your device."
+  ],
+  "examples": [
+    "Combine a signed contract, its appendix and a cover page into one PDF to email.",
+    "Join twelve monthly invoice PDFs into a single file for your accountant.",
+    "Merge scanned pages from different scanning sessions into one document before archiving."
+  ],
+  "faq": [
+    {
+      "q": "Are my PDF files uploaded to a server?",
+      "a": "No. The merge runs entirely in your browser using a local PDF library, so your files never leave your device and nothing is stored or logged."
+    },
+    {
+      "q": "Is there a limit on file size or number of PDFs?",
+      "a": "Nothing is uploaded, so there is no server limit. The practical limit is your device's memory — very large files may be slow on phones. You can add up to 50 files at once."
+    },
+    {
+      "q": "Can I merge password-protected PDFs?",
+      "a": "Encrypted or password-protected PDFs can't be merged directly. Remove the password in your PDF viewer first, then add the file again."
+    },
+    {
+      "q": "Will merging change the quality or layout of my pages?",
+      "a": "No. Pages are copied as they are from each source file, so text, images, fonts and layout are preserved. Interactive form fields and bookmarks from the originals may not carry over."
+    }
+  ]
+}

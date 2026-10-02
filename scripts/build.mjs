@@ -26,6 +26,25 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 const readJson = async (p) => JSON.parse(await readFile(p, 'utf8'));
 
+// Hand-added tools live one-per-file in data/tools.d/*.json (each file holds a
+// single registry entry or an array of entries) and are merged after tools.json.
+async function loadManualTools() {
+  const dir = path.join(ROOT, 'data', 'tools.d');
+  let names;
+  try {
+    names = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort();
+  } catch (err) {
+    if (err.code === 'ENOENT') return [];
+    throw err;
+  }
+  const out = [];
+  for (const name of names) {
+    const parsed = await readJson(path.join(dir, name));
+    out.push(...(Array.isArray(parsed) ? parsed : [parsed]));
+  }
+  return out;
+}
+
 async function writePage(relPath, html, overrideFile) {
   const file = overrideFile
     ? path.join(DIST, overrideFile)
@@ -69,7 +88,7 @@ function buildRss(site, tools) {
 
 async function main() {
   const site = await readJson(path.join(ROOT, 'data', 'site.json'));
-  const tools = await readJson(path.join(ROOT, 'data', 'tools.json'));
+  const tools = [...(await readJson(path.join(ROOT, 'data', 'tools.json'))), ...(await loadManualTools())];
   validateRegistry(tools);
 
   const byCategory = new Map();

@@ -37,6 +37,25 @@ const fileExists = async (p) => {
   }
 };
 
+// tools.json plus hand-added tools in data/tools.d/*.json (same as the build).
+async function loadAllTools() {
+  const base = JSON.parse(await readFile(path.join(ROOT, 'data', 'tools.json'), 'utf8'));
+  const dir = path.join(ROOT, 'data', 'tools.d');
+  let names;
+  try {
+    names = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort();
+  } catch (e) {
+    if (e.code === 'ENOENT') return base;
+    throw e;
+  }
+  const extra = [];
+  for (const name of names) {
+    const parsed = JSON.parse(await readFile(path.join(dir, name), 'utf8'));
+    extra.push(...(Array.isArray(parsed) ? parsed : [parsed]));
+  }
+  return [...base, ...extra];
+}
+
 function routeOf(file) {
   const rel = path.relative(DIST, file).replaceAll(path.sep, '/');
   if (rel === 'index.html') return '/';
@@ -47,7 +66,7 @@ function routeOf(file) {
 
 async function main() {
   const site = JSON.parse(await readFile(path.join(ROOT, 'data', 'site.json'), 'utf8'));
-  const tools = JSON.parse(await readFile(path.join(ROOT, 'data', 'tools.json'), 'utf8'));
+  const tools = await loadAllTools();
 
   const files = await walk(DIST);
   const htmlFiles = files.filter((f) => f.endsWith('.html'));
