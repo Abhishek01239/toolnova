@@ -1,0 +1,96 @@
+{
+  "id": "images-to-pdf",
+  "title": "Images to PDF",
+  "h1": "Convert Images to PDF Online — JPG, PNG & WebP",
+  "seoTitle": "Images to PDF Converter — JPG, PNG to PDF Free & Private",
+  "description": "Turn JPG, PNG and WebP images into a single PDF. Reorder pages, pick A4 or Letter and download — free, private and done entirely in your browser.",
+  "intro": "Add your photos, scans or screenshots, drag them into the order you want and download one tidy PDF. Pick A4, US Letter or fit-to-image pages — your images never leave your device.",
+  "blurb": "Combine JPG, PNG and WebP images into one PDF with your choice of page size — free and private.",
+  "keywords": ["images to pdf", "jpg to pdf", "png to pdf", "convert image to pdf", "photos to pdf", "webp to pdf", "combine images into pdf"],
+  "category": "PDF",
+  "added": "2026-10-02",
+  "popularity": 90,
+  "ui": {
+    "controls": [
+      {
+        "id": "size",
+        "type": "select",
+        "label": "Page size",
+        "value": "a4",
+        "options": [
+          { "value": "a4", "label": "A4 (210 × 297 mm)" },
+          { "value": "letter", "label": "US Letter (8.5 × 11 in)" },
+          { "value": "fit", "label": "Fit to image (no white space)" }
+        ]
+      },
+      {
+        "id": "orient",
+        "type": "select",
+        "label": "Orientation",
+        "value": "auto",
+        "options": [
+          { "value": "auto", "label": "Auto (match each image)" },
+          { "value": "portrait", "label": "Portrait" },
+          { "value": "landscape", "label": "Landscape" }
+        ],
+        "help": "Applies to A4 and Letter pages."
+      },
+      {
+        "id": "margin",
+        "type": "select",
+        "label": "Page margin",
+        "value": "24",
+        "options": [
+          { "value": "0", "label": "None" },
+          { "value": "24", "label": "Small" },
+          { "value": "48", "label": "Medium" }
+        ],
+        "help": "Applies to A4 and Letter pages."
+      },
+      {
+        "id": "filename",
+        "type": "text",
+        "label": "Output file name",
+        "value": "images.pdf",
+        "placeholder": "images.pdf",
+        "help": "The .pdf ending is added automatically."
+      }
+    ],
+    "actions": [
+      { "id": "create", "label": "Create PDF", "primary": true },
+      { "id": "sort", "label": "Sort A–Z" },
+      { "id": "clear", "label": "Clear all" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag your images onto it — JPG, PNG, WebP and other formats your browser can display all work.",
+    "Drag the thumbnails, or use the arrow buttons, to set the page order, then choose page size, orientation and margin.",
+    "Press Create PDF and the finished document downloads straight to your device — one image per page."
+  ],
+  "examples": [
+    "Turn photos of a handwritten form or receipts into one PDF you can email.",
+    "Combine phone screenshots into a single document for a bug report or tutorial.",
+    "Bundle scanned ID pages into one PDF using the Fit to image option so nothing gets cropped."
+  ],
+  "faq": [
+    {
+      "q": "Are my images uploaded to a server?",
+      "a": "No. The PDF is built entirely in your browser, so your photos and scans never leave your device and nothing is stored or logged."
+    },
+    {
+      "q": "Which image formats are supported?",
+      "a": "JPG, PNG, WebP, GIF, BMP and AVIF, as long as your browser can display them. HEIC/HEIF photos only work in browsers that can show them, such as Safari — otherwise convert them to JPG first."
+    },
+    {
+      "q": "Will the image quality be reduced?",
+      "a": "JPG and PNG files are embedded as they are, so their quality is not reduced. Other formats such as WebP are converted to PNG first, and photos that need rotating are re-saved at high quality."
+    },
+    {
+      "q": "How many images can I add at once?",
+      "a": "Up to 100 images at once, with one image per page. Very large photos use more memory, so on a phone you may want to convert them in smaller batches."
+    }
+  ]
+}
