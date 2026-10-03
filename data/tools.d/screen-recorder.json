@@ -4,8 +4,8 @@
   "h1": "Free Online Screen Recorder — No Install, No Watermark",
   "seoTitle": "Free Screen Recorder Online — Record Screen & Audio in Browser",
   "description": "Record your screen, a window or a browser tab with sound straight from your browser. Free, no watermark, no sign-up — videos never leave your device.",
-  "intro": "Capture your whole screen, a single window or one browser tab, with optional microphone or tab audio. Pause when you need to, then preview and download the video. Nothing is uploaded — the recording stays on your device.",
-  "blurb": "Record your screen, a window or a tab with audio — free, no watermark, no install.",
+  "intro": "Desktop browsers only: phones and tablets cannot record the screen from a web page, so use your device’s built-in recorder there. On a computer you can capture your whole screen, a window or one browser tab, with optional microphone or tab audio, then preview and download the video. Nothing is uploaded.",
+  "blurb": "Record your screen, a window or a tab with audio on desktop — free, no watermark, no install.",
   "keywords": ["screen recorder", "online screen recorder", "record screen online", "free screen recorder", "screen recorder with audio", "record browser tab", "screen capture video"],
   "category": "Utilities",
   "added": "2026-10-03",
@@ -73,7 +73,7 @@
     ]
   },
   "howItWorks": [
-    "Choose your audio, quality and format, then press Start recording and pick a screen, window or browser tab in the prompt your browser shows.",
+    "On a computer, choose your audio, quality and format, then press Start recording and pick a screen, window or browser tab in the prompt your browser shows.",
     "Record as long as you like — use Pause and Resume if you need a break, then press Stop & save (or use your browser’s Stop sharing button).",
     "Preview the video in the page and press Download recording to save it to your device."
   ],
@@ -88,12 +88,12 @@
       "a": "No. The recording is created by your browser and kept on your device. It is never sent to a server, and nothing is stored or logged."
     },
     {
-      "q": "Can I record sound from my computer?",
-      "a": "Browser tab audio works in Chrome and Edge when you tick the Share audio box in the picker. Whole-system audio is only offered on Windows. On other setups, record tab audio or use your microphone."
+      "q": "Can I record my screen on Android or iPhone?",
+      "a": "Not from a web page — phone and tablet browsers do not allow it. Use the built-in recorder instead: the Screen record tile in Android Quick Settings, or Screen Recording in iPhone Control Center. This tool works in desktop Chrome, Edge, Firefox and Safari."
     },
     {
-      "q": "Which browsers and devices are supported?",
-      "a": "Desktop Chrome, Edge, Firefox and Safari can record the screen. Most phone and tablet browsers do not allow screen recording from a web page, so use your device’s built-in recorder there."
+      "q": "Can I record sound from my computer?",
+      "a": "Browser tab audio works in Chrome and Edge when you tick the Share audio box in the picker. Whole-system audio is only offered on Windows. On other setups, record tab audio or use your microphone."
     },
     {
       "q": "Is there a time limit or watermark?",
