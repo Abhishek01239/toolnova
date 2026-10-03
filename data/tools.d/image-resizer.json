@@ -1,0 +1,153 @@
+{
+  "id": "image-resizer",
+  "title": "Image Resizer",
+  "h1": "Resize Images Online — Change Size in Pixels or Percent",
+  "seoTitle": "Image Resizer — Resize JPG, PNG & WebP Online Free",
+  "description": "Resize images by pixels, percentage or ready-made social media and passport sizes. Free, private image resizer that works in your browser.",
+  "intro": "Set an exact width and height, scale by percent, or pick a ready-made size for Instagram, YouTube, WhatsApp or a passport photo. Your pictures are resized on your own device and never uploaded.",
+  "blurb": "Resize photos by pixels, percent or preset sizes for social media and passports — free and private.",
+  "keywords": ["image resizer", "resize image", "resize image online", "change image size", "resize photo", "resize image in pixels", "image size changer"],
+  "category": "Image",
+  "added": "2026-10-04",
+  "popularity": 94,
+  "ui": {
+    "controls": [
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Resize by",
+        "value": "pixels",
+        "options": [
+          { "value": "pixels", "label": "Pixels (width and height)" },
+          { "value": "percent", "label": "Percentage" },
+          { "value": "preset", "label": "Ready-made size (social media, passport)" }
+        ]
+      },
+      {
+        "id": "width",
+        "type": "number",
+        "label": "Width (px)",
+        "placeholder": "e.g. 1200",
+        "min": 1,
+        "max": 16384,
+        "step": 1
+      },
+      {
+        "id": "height",
+        "type": "number",
+        "label": "Height (px)",
+        "placeholder": "e.g. 800",
+        "min": 1,
+        "max": 16384,
+        "step": 1,
+        "help": "Fill in just one to keep the picture’s proportions automatically."
+      },
+      {
+        "id": "keepratio",
+        "type": "checkbox",
+        "label": "Keep aspect ratio (fit inside the width and height)"
+      },
+      {
+        "id": "percent",
+        "type": "number",
+        "label": "Scale (%)",
+        "value": 50,
+        "min": 1,
+        "max": 1000,
+        "step": 1,
+        "help": "50 makes the image half as wide and half as tall."
+      },
+      {
+        "id": "preset",
+        "type": "select",
+        "label": "Size",
+        "value": "1080x1080",
+        "options": [
+          { "value": "1080x1080", "label": "Instagram post — 1080 × 1080" },
+          { "value": "1080x1350", "label": "Instagram portrait — 1080 × 1350" },
+          { "value": "1080x1920", "label": "Story / Reel / Status — 1080 × 1920" },
+          { "value": "500x500", "label": "WhatsApp profile photo — 500 × 500" },
+          { "value": "1280x720", "label": "YouTube thumbnail — 1280 × 720" },
+          { "value": "1200x630", "label": "Facebook / link preview — 1200 × 630" },
+          { "value": "1500x500", "label": "X (Twitter) header — 1500 × 500" },
+          { "value": "1584x396", "label": "LinkedIn banner — 1584 × 396" },
+          { "value": "413x531", "label": "Passport photo 35 × 45 mm — 413 × 531" },
+          { "value": "600x600", "label": "Visa photo 2 × 2 in — 600 × 600" },
+          { "value": "2480x3508", "label": "A4 page at 300 dpi — 2480 × 3508" }
+        ]
+      },
+      {
+        "id": "fit",
+        "type": "select",
+        "label": "How should the picture fit?",
+        "value": "cover",
+        "options": [
+          { "value": "cover", "label": "Fill the size (crop the edges)" },
+          { "value": "contain", "label": "Fit inside (white bars if needed)" },
+          { "value": "stretch", "label": "Stretch to the exact size" }
+        ]
+      },
+      {
+        "id": "format",
+        "type": "select",
+        "label": "Output format",
+        "value": "keep",
+        "options": [
+          { "value": "keep", "label": "Same as the original" },
+          { "value": "jpeg", "label": "JPG" },
+          { "value": "png", "label": "PNG" },
+          { "value": "webp", "label": "WebP" }
+        ]
+      },
+      {
+        "id": "quality",
+        "type": "range",
+        "label": "Quality",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "value": 90,
+        "help": "Applies to JPG and WebP. PNG is always lossless."
+      }
+    ],
+    "actions": [
+      { "id": "download", "label": "Download resized", "primary": true },
+      { "id": "clear", "label": "Clear all" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag in your images, then choose whether to resize by pixels, by percentage or to a ready-made size.",
+    "Each image is resized right away and the new dimensions and file size appear next to it; change any setting and everything updates live.",
+    "Press Download resized — one image downloads directly, and several arrive together in one ZIP."
+  ],
+  "examples": [
+    "Make a photo exactly 413 × 531 pixels for a passport or exam form upload.",
+    "Resize a picture to 1080 × 1080 for an Instagram post, or 500 × 500 for a WhatsApp profile photo.",
+    "Shrink a batch of phone photos to 50% so they are quick to email."
+  ],
+  "faq": [
+    {
+      "q": "Are my images uploaded to a server?",
+      "a": "No. Resizing happens entirely in your browser, so your photos never leave your device and nothing is stored or logged."
+    },
+    {
+      "q": "How do I resize without stretching or distorting the picture?",
+      "a": "Fill in only the width or only the height and the other side is worked out for you. With both filled in and Keep aspect ratio ticked, the picture is fitted inside that box without distortion."
+    },
+    {
+      "q": "What is the difference between Fill, Fit and Stretch for ready-made sizes?",
+      "a": "Fill scales the picture until it covers the whole size and crops what overflows. Fit shows the whole picture and adds white bars if the shapes differ. Stretch forces the exact size and can distort the picture."
+    },
+    {
+      "q": "Does enlarging an image make it sharper?",
+      "a": "No. Making an image larger cannot add detail that is not there, so it may look soft. For the best quality, start from the largest original you have."
+    },
+    {
+      "q": "Why did my file size change so much?",
+      "a": "File size depends on the pixel dimensions, the format and the quality. Making an image smaller usually shrinks the file a lot, while a larger size or PNG output can make it bigger."
+    }
+  ]
+}
