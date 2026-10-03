@@ -1,0 +1,82 @@
+{
+  "id": "split-pdf",
+  "title": "Split PDF",
+  "h1": "Split PDF Files Online — Extract Pages Free",
+  "seoTitle": "Split PDF Online Free — Extract Pages & Separate PDFs",
+  "description": "Extract pages or split a PDF into separate files by page range. Free PDF splitter that works in your browser — your documents are never uploaded.",
+  "intro": "Pull out the pages you need, split a long document into parts, or turn every page into its own file. Everything runs on your device, so contracts, statements and scans stay private.",
+  "blurb": "Extract pages or split a PDF by range into separate files — free and private.",
+  "keywords": ["split pdf", "pdf splitter", "extract pages from pdf", "separate pdf pages", "split pdf by page range", "divide pdf", "pdf page extractor"],
+  "category": "PDF",
+  "added": "2026-10-03",
+  "popularity": 89,
+  "ui": {
+    "controls": [
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "What do you want to do?",
+        "value": "extract",
+        "options": [
+          { "value": "extract", "label": "Extract pages into one PDF" },
+          { "value": "ranges", "label": "Split each range into its own PDF" },
+          { "value": "each", "label": "Split every page into its own PDF" }
+        ]
+      },
+      {
+        "id": "pages",
+        "type": "text",
+        "label": "Pages",
+        "placeholder": "e.g. 1-3, 5, 8-10",
+        "help": "Separate pages or ranges with commas. Use 7- for page 7 to the end."
+      },
+      {
+        "id": "filename",
+        "type": "text",
+        "label": "Output file name",
+        "value": "split",
+        "placeholder": "split",
+        "help": "Several files are bundled into one ZIP with this name."
+      }
+    ],
+    "actions": [
+      { "id": "split", "label": "Split PDF", "primary": true },
+      { "id": "clear", "label": "Clear file" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag a PDF onto it — the file is read locally and its page count appears straight away.",
+    "Choose a mode and, if needed, type the pages you want, such as 1-3, 5, 8-10.",
+    "Press Split PDF — a single PDF downloads directly, and several files arrive together in one ZIP."
+  ],
+  "examples": [
+    "Extract pages 3-5 of a long report to share just one chapter.",
+    "Split a scanned bundle into separate documents with ranges like 1-2, 3-6, 7-9.",
+    "Turn every page of a presentation handout into its own PDF."
+  ],
+  "faq": [
+    {
+      "q": "Is my PDF uploaded to a server?",
+      "a": "No. The file is processed entirely in your browser with a local PDF library, so it never leaves your device and nothing is stored or logged."
+    },
+    {
+      "q": "How do I write the page ranges?",
+      "a": "Use page numbers and ranges separated by commas, for example 1-3, 5, 8-10. A range ending in a dash, like 7-, runs from that page to the end of the document."
+    },
+    {
+      "q": "What is the difference between the three modes?",
+      "a": "Extract pages gathers all the pages you list into one new PDF. Split each range creates a separate PDF for every range you list. Split every page makes one PDF per page and ignores the Pages box."
+    },
+    {
+      "q": "Why do I get a ZIP file?",
+      "a": "When the result is more than one PDF, the files are bundled into a single ZIP so your browser can download everything in one step. A single result downloads directly as a PDF."
+    },
+    {
+      "q": "Can I split a password-protected PDF?",
+      "a": "Encrypted or password-protected PDFs can't be split directly. Remove the password in your PDF viewer first, then add the file again."
+    }
+  ]
+}
