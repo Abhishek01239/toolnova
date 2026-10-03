@@ -1,0 +1,107 @@
+{
+  "id": "screen-recorder",
+  "title": "Screen Recorder",
+  "h1": "Free Online Screen Recorder — No Install, No Watermark",
+  "seoTitle": "Free Screen Recorder Online — Record Screen & Audio in Browser",
+  "description": "Record your screen, a window or a browser tab with sound straight from your browser. Free, no watermark, no sign-up — videos never leave your device.",
+  "intro": "Capture your whole screen, a single window or one browser tab, with optional microphone or tab audio. Pause when you need to, then preview and download the video. Nothing is uploaded — the recording stays on your device.",
+  "blurb": "Record your screen, a window or a tab with audio — free, no watermark, no install.",
+  "keywords": ["screen recorder", "online screen recorder", "record screen online", "free screen recorder", "screen recorder with audio", "record browser tab", "screen capture video"],
+  "category": "Utilities",
+  "added": "2026-10-03",
+  "popularity": 92,
+  "ui": {
+    "controls": [
+      {
+        "id": "audio",
+        "type": "select",
+        "label": "Audio",
+        "value": "none",
+        "options": [
+          { "value": "none", "label": "No audio" },
+          { "value": "system", "label": "Tab / system audio" },
+          { "value": "mic", "label": "Microphone" },
+          { "value": "both", "label": "System audio + microphone" }
+        ],
+        "help": "Tab audio works in Chrome and Edge — tick ‘Share audio’ when the browser asks what to share."
+      },
+      {
+        "id": "quality",
+        "type": "select",
+        "label": "Video quality",
+        "value": "4000000",
+        "options": [
+          { "value": "8000000", "label": "High — sharp text, larger file" },
+          { "value": "4000000", "label": "Standard" },
+          { "value": "1500000", "label": "Small file — best for long recordings" }
+        ]
+      },
+      {
+        "id": "format",
+        "type": "select",
+        "label": "File format",
+        "value": "webm",
+        "options": [
+          { "value": "webm", "label": "WebM — works in all supported browsers" },
+          { "value": "mp4", "label": "MP4 — where your browser supports it" }
+        ],
+        "help": "If your browser cannot record MP4, WebM is used instead."
+      },
+      {
+        "id": "countdown",
+        "type": "checkbox",
+        "label": "Show a 3-second countdown before recording"
+      },
+      {
+        "id": "filename",
+        "type": "text",
+        "label": "File name",
+        "value": "screen-recording",
+        "placeholder": "screen-recording",
+        "help": "The file extension is added automatically."
+      }
+    ],
+    "actions": [
+      { "id": "start", "label": "Start recording", "primary": true },
+      { "id": "pause", "label": "Pause" },
+      { "id": "stop", "label": "Stop & save" },
+      { "id": "download", "label": "Download recording", "primary": true },
+      { "id": "discard", "label": "Discard" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Recording details" }
+    ]
+  },
+  "howItWorks": [
+    "Choose your audio, quality and format, then press Start recording and pick a screen, window or browser tab in the prompt your browser shows.",
+    "Record as long as you like — use Pause and Resume if you need a break, then press Stop & save (or use your browser’s Stop sharing button).",
+    "Preview the video in the page and press Download recording to save it to your device."
+  ],
+  "examples": [
+    "Record a quick tutorial or walkthrough to send to a colleague or customer.",
+    "Capture a bug on screen, with your voice explaining what went wrong, to attach to a report.",
+    "Save a short clip of a presentation, demo or online class for your own notes."
+  ],
+  "faq": [
+    {
+      "q": "Is my recording uploaded anywhere?",
+      "a": "No. The recording is created by your browser and kept on your device. It is never sent to a server, and nothing is stored or logged."
+    },
+    {
+      "q": "Can I record sound from my computer?",
+      "a": "Browser tab audio works in Chrome and Edge when you tick the Share audio box in the picker. Whole-system audio is only offered on Windows. On other setups, record tab audio or use your microphone."
+    },
+    {
+      "q": "Which browsers and devices are supported?",
+      "a": "Desktop Chrome, Edge, Firefox and Safari can record the screen. Most phone and tablet browsers do not allow screen recording from a web page, so use your device’s built-in recorder there."
+    },
+    {
+      "q": "Is there a time limit or watermark?",
+      "a": "There is no watermark and no fixed time limit. The recording is held in memory until you stop, so very long high-quality sessions can use a lot of memory — choose the Small file quality for long recordings."
+    },
+    {
+      "q": "Why is my file a WebM, and can I get an MP4?",
+      "a": "WebM is the format most browsers can record. If your browser supports MP4 recording (recent Chrome, Edge and Safari), choose MP4 for wider compatibility with editors and phones."
+    }
+  ]
+}
