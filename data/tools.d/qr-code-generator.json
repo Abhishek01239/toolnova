@@ -1,0 +1,219 @@
+{
+  "id": "qr-code-generator",
+  "title": "QR Code Generator",
+  "h1": "Free QR Code Generator — Links, Wi-Fi, UPI & More",
+  "seoTitle": "Free QR Code Generator — URL, WiFi, UPI, WhatsApp QR",
+  "description": "Create QR codes for links, text, Wi-Fi, UPI payments and WhatsApp. Download as PNG or SVG — free, no sign-up, and generated privately in your browser.",
+  "intro": "Pick what the QR code should do, fill in the details and watch it appear instantly. Download a sharp PNG or a print-ready SVG — your data is never sent to a server.",
+  "blurb": "Make QR codes for links, Wi-Fi, UPI, WhatsApp and more — free PNG and SVG downloads.",
+  "keywords": ["qr code generator", "qr code maker", "create qr code", "free qr code", "upi qr code generator", "wifi qr code", "whatsapp qr code"],
+  "category": "QR Code",
+  "added": "2026-10-03",
+  "popularity": 97,
+  "ui": {
+    "controls": [
+      {
+        "id": "type",
+        "type": "select",
+        "label": "QR code type",
+        "value": "text",
+        "options": [
+          { "value": "text", "label": "Text or website link" },
+          { "value": "upi", "label": "UPI payment" },
+          { "value": "whatsapp", "label": "WhatsApp message" },
+          { "value": "wifi", "label": "Wi-Fi network" },
+          { "value": "email", "label": "Email" },
+          { "value": "phone", "label": "Phone number" },
+          { "value": "sms", "label": "SMS message" }
+        ]
+      },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text or link",
+        "rows": 4,
+        "mono": false,
+        "value": "https://toolnova-seven.vercel.app",
+        "placeholder": "https://example.com"
+      },
+      {
+        "id": "upiid",
+        "type": "text",
+        "label": "UPI ID",
+        "placeholder": "name@bank",
+        "help": "The UPI ID that should receive the payment."
+      },
+      {
+        "id": "upiname",
+        "type": "text",
+        "label": "Payee name (optional)",
+        "placeholder": "Your name or shop name"
+      },
+      {
+        "id": "upiamount",
+        "type": "number",
+        "label": "Amount in ₹ (optional)",
+        "placeholder": "Leave empty to let the payer choose",
+        "min": 0,
+        "step": 0.01
+      },
+      {
+        "id": "upinote",
+        "type": "text",
+        "label": "Payment note (optional)",
+        "placeholder": "e.g. Invoice 102"
+      },
+      {
+        "id": "wanumber",
+        "type": "text",
+        "label": "WhatsApp number with country code",
+        "placeholder": "919876543210",
+        "inputmode": "tel",
+        "help": "Digits only, country code first — for India start with 91."
+      },
+      {
+        "id": "wamsg",
+        "type": "text",
+        "label": "Pre-filled message (optional)",
+        "placeholder": "Hi, I would like to know more"
+      },
+      {
+        "id": "ssid",
+        "type": "text",
+        "label": "Network name (SSID)",
+        "placeholder": "My Home Wi-Fi"
+      },
+      {
+        "id": "wifipass",
+        "type": "text",
+        "label": "Wi-Fi password",
+        "placeholder": "Leave empty for open networks"
+      },
+      {
+        "id": "wifisec",
+        "type": "select",
+        "label": "Security",
+        "value": "WPA",
+        "options": [
+          { "value": "WPA", "label": "WPA / WPA2 / WPA3" },
+          { "value": "WEP", "label": "WEP" },
+          { "value": "nopass", "label": "No password" }
+        ]
+      },
+      {
+        "id": "emailto",
+        "type": "text",
+        "label": "Email address",
+        "placeholder": "hello@example.com",
+        "inputmode": "email"
+      },
+      {
+        "id": "emailsub",
+        "type": "text",
+        "label": "Subject (optional)"
+      },
+      {
+        "id": "emailbody",
+        "type": "text",
+        "label": "Message (optional)"
+      },
+      {
+        "id": "phone",
+        "type": "text",
+        "label": "Phone number",
+        "placeholder": "+919876543210",
+        "inputmode": "tel"
+      },
+      {
+        "id": "smsnumber",
+        "type": "text",
+        "label": "Phone number",
+        "placeholder": "+919876543210",
+        "inputmode": "tel"
+      },
+      {
+        "id": "smsbody",
+        "type": "text",
+        "label": "Message (optional)"
+      },
+      {
+        "id": "size",
+        "type": "select",
+        "label": "Image size",
+        "value": "512",
+        "options": [
+          { "value": "256", "label": "Small — 256 px" },
+          { "value": "512", "label": "Medium — 512 px" },
+          { "value": "1024", "label": "Large — 1024 px" },
+          { "value": "2048", "label": "Extra large — 2048 px (for print)" }
+        ]
+      },
+      {
+        "id": "ecc",
+        "type": "select",
+        "label": "Error correction",
+        "value": "M",
+        "options": [
+          { "value": "L", "label": "Low (7%) — smallest code" },
+          { "value": "M", "label": "Medium (15%) — recommended" },
+          { "value": "Q", "label": "Quartile (25%)" },
+          { "value": "H", "label": "High (30%) — most damage-resistant" }
+        ],
+        "help": "Higher levels let the code still scan when it is dirty or partly covered, but make it denser."
+      },
+      {
+        "id": "color",
+        "type": "select",
+        "label": "Code color",
+        "value": "#000000",
+        "options": [
+          { "value": "#000000", "label": "Black" },
+          { "value": "#0B3D91", "label": "Navy blue" },
+          { "value": "#0B7A3B", "label": "Green" },
+          { "value": "#5B21B6", "label": "Purple" },
+          { "value": "#B91C1C", "label": "Red" }
+        ],
+        "help": "The background stays white so the code scans reliably."
+      }
+    ],
+    "actions": [
+      { "id": "png", "label": "Download PNG", "primary": true },
+      { "id": "svg", "label": "Download SVG" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Details" }
+    ]
+  },
+  "howItWorks": [
+    "Choose the type of QR code — a link, UPI payment, WhatsApp chat, Wi-Fi login and more — and fill in the fields that appear.",
+    "Your QR code updates instantly as you type; adjust the size, error correction and color if you like.",
+    "Press Download PNG for sharing on screen, or Download SVG for sharp printing at any size."
+  ],
+  "examples": [
+    "Put a UPI QR code on your shop counter so customers can pay you straight from their phone.",
+    "Print a Wi-Fi QR code for guests so they can join without typing the password.",
+    "Add a WhatsApp QR code to a poster or visiting card that opens a chat with a ready message."
+  ],
+  "faq": [
+    {
+      "q": "Is my information sent to a server?",
+      "a": "No. The QR code is generated in your browser, so the links, Wi-Fi passwords and payment details you enter are never uploaded or stored."
+    },
+    {
+      "q": "Do these QR codes expire or track scans?",
+      "a": "No. These are static QR codes: the data is stored inside the code itself, so it never expires and there is no tracking or redirect service in between."
+    },
+    {
+      "q": "Which error correction level should I choose?",
+      "a": "Medium is a good default. Choose High if the code will be printed on something that may get scuffed or if you want to place a logo over the centre. Lower levels give simpler, easier-to-scan codes for short text."
+    },
+    {
+      "q": "Can I use the UPI QR code to receive payments?",
+      "a": "Yes. Enter your UPI ID and, optionally, an amount and note. Scanning opens the payer’s UPI app with the details pre-filled. Always scan your own code with a payment app before printing it."
+    },
+    {
+      "q": "Should I download PNG or SVG?",
+      "a": "Use PNG for websites, chats and social posts. Use SVG for print: it is a vector file that stays perfectly sharp at any size, from a business card to a banner."
+    }
+  ]
+}
