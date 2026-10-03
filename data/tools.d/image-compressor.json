@@ -1,0 +1,88 @@
+{
+  "id": "image-compressor",
+  "title": "Image Compressor",
+  "h1": "Compress Images Online — Reduce JPG, PNG & WebP Size",
+  "seoTitle": "Image Compressor — Reduce JPG, PNG & WebP Size Free",
+  "description": "Shrink JPG, PNG and WebP images with a live quality slider and see the savings instantly. Free, private compressor that runs in your browser.",
+  "intro": "Drop in your photos or screenshots, slide the quality up or down and watch the file sizes change in real time. Nothing is uploaded — every image is compressed on your own device.",
+  "blurb": "Make JPG, PNG and WebP images smaller with a live quality slider — free and private.",
+  "keywords": ["image compressor", "compress image", "reduce image size", "compress jpg", "compress png", "image optimizer", "compress images online"],
+  "category": "Image",
+  "added": "2026-10-03",
+  "popularity": 95,
+  "ui": {
+    "controls": [
+      {
+        "id": "format",
+        "type": "select",
+        "label": "Output format",
+        "value": "image/jpeg",
+        "options": [
+          { "value": "image/jpeg", "label": "JPG — works everywhere" },
+          { "value": "image/webp", "label": "WebP — smallest files" },
+          { "value": "image/png", "label": "PNG — lossless, keeps transparency" }
+        ],
+        "help": "JPG fills transparent areas with white. Choose WebP or PNG to keep transparency."
+      },
+      {
+        "id": "quality",
+        "type": "range",
+        "label": "Quality",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "value": 75,
+        "help": "Lower quality means smaller files. 70–80 is usually hard to tell apart from the original. Ignored for PNG."
+      },
+      {
+        "id": "maxwidth",
+        "type": "number",
+        "label": "Max width (px)",
+        "placeholder": "Original size",
+        "min": 50,
+        "max": 10000,
+        "step": 1,
+        "help": "Optional. Wider images are scaled down to this width; images are never enlarged."
+      }
+    ],
+    "actions": [
+      { "id": "download", "label": "Download compressed", "primary": true },
+      { "id": "clear", "label": "Clear all" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag in your images — each one is compressed straight away, right in your browser.",
+    "Adjust the output format, quality slider or maximum width; the new file sizes update live next to each image.",
+    "Press Download compressed — a single image downloads directly, and several arrive together in one ZIP."
+  ],
+  "examples": [
+    "Shrink phone photos before attaching them to an email or a job application.",
+    "Reduce large website images to speed up page loading.",
+    "Convert heavy PNG screenshots to WebP or JPG to save storage and bandwidth."
+  ],
+  "faq": [
+    {
+      "q": "Are my images uploaded to a server?",
+      "a": "No. Compression happens entirely in your browser using your device, so your photos never leave your computer and nothing is stored or logged."
+    },
+    {
+      "q": "How much smaller will my images get?",
+      "a": "It depends on the image. Photos usually shrink the most. Screenshots and graphics saved as PNG shrink best when you switch to WebP or JPG, or reduce the maximum width."
+    },
+    {
+      "q": "Which output format should I choose?",
+      "a": "JPG is the safest choice and works everywhere. WebP usually gives the smallest files, but some browsers, notably Safari, can't create WebP files here and will fall back to another format. Use PNG when you need transparency without any quality loss."
+    },
+    {
+      "q": "Does compressing remove metadata such as location?",
+      "a": "Yes. Re-encoding an image removes camera details and GPS location. The exception is when an image can't be made any smaller: then the original file is kept exactly as it is, metadata included."
+    },
+    {
+      "q": "Why is some image marked as already optimized?",
+      "a": "If compressing would make a file larger than the original in the same format, the tool keeps the original so you never end up with a bigger file."
+    }
+  ]
+}
