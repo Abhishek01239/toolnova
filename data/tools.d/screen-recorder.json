@@ -65,7 +65,7 @@
       { "id": "start", "label": "Start recording", "primary": true },
       { "id": "pause", "label": "Pause" },
       { "id": "stop", "label": "Stop & save" },
-      { "id": "download", "label": "Download recording", "primary": true },
+      { "id": "download", "label": "Download recording" },
       { "id": "discard", "label": "Discard" }
     ],
     "outputs": [

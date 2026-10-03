@@ -61,6 +61,11 @@
     var btn = getBtn(id);
     if (btn) btn.addEventListener('click', function () { fn(btn); });
   }
+  function setPrimary(btn, on) {
+    if (!btn) return;
+    btn.classList.toggle('btn-primary', on);
+    btn.classList.toggle('btn-ghost', !on);
+  }
   function val(id, fallback) {
     var n = control(id);
     return n ? n.value : fallback;
@@ -184,6 +189,9 @@
       var b = getBtn(id);
       if (b) b.style.display = show[id] ? '' : 'none';
     });
+    // After a recording the main action is Download; starting again is secondary.
+    setPrimary(getBtn('start'), s !== 'done');
+    setPrimary(getBtn('download'), s === 'done');
     var pb = getBtn('pause');
     if (pb) pb.textContent = s === 'paused' ? 'Resume' : 'Pause';
     var sb = getBtn('start');
