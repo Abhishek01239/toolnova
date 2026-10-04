@@ -1,0 +1,83 @@
+{
+  "id": "cidr-subnet-calculator",
+  "title": "CIDR Subnet Calculator",
+  "h1": "CIDR Subnet Calculator \u2014 IPv4 Network, Hosts and Mask",
+  "seoTitle": "CIDR Subnet Calculator \u2014 IPv4 Mask, Range and Hosts",
+  "description": "Calculate the IPv4 network address, broadcast, usable host range, subnet mask, and host count from an IP and CIDR prefix. Computed locally, nothing is uploaded.",
+  "intro": "Enter an IPv4 address and a prefix length from 0 to 32. The calculator shows the network, broadcast, usable range, subnet mask, wildcard mask, and host count.",
+  "blurb": "Find the IPv4 network, broadcast, usable hosts, and subnet mask for any CIDR prefix.",
+  "keywords": [
+    "cidr calculator",
+    "subnet calculator",
+    "ipv4 subnet",
+    "subnet mask",
+    "network address"
+  ],
+  "category": "Developer",
+  "added": "2026-10-04",
+  "popularity": 76,
+  "ui": {
+    "controls": [
+      {
+        "id": "ip",
+        "type": "text",
+        "label": "IPv4 address",
+        "value": "192.168.1.25",
+        "placeholder": "192.168.1.25"
+      },
+      {
+        "id": "prefix",
+        "type": "number",
+        "label": "Prefix length",
+        "value": 24,
+        "min": 0,
+        "max": 32,
+        "step": 1,
+        "help": "The number after the slash in CIDR notation, such as /24."
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Calculate subnet",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "CIDR summary"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Addresses"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter any IPv4 address and the CIDR prefix length from 0 to 32.",
+    "Press Calculate subnet to mask the address and derive the network and broadcast.",
+    "Read the usable host range, subnet mask, wildcard mask, and total host count."
+  ],
+  "examples": [
+    "192.168.1.25/24 is network 192.168.1.0, broadcast 192.168.1.255, mask 255.255.255.0.",
+    "10.0.0.15/30 is network 10.0.0.12, broadcast 10.0.0.15, usable hosts 10.0.0.13 and 10.0.0.14.",
+    "A /32 is a single host address with no separate network and broadcast split."
+  ],
+  "faq": [
+    {
+      "q": "Which IP version does this support?",
+      "a": "IPv4 only. Each octet must be an integer from 0 to 255, and the prefix must be an integer from 0 to 32."
+    },
+    {
+      "q": "Why can the usable host count be zero?",
+      "a": "For /31 and /32 there is no traditional network-plus-broadcast pair with spare hosts. /31 is often used as a point-to-point link, and /32 is a single address."
+    },
+    {
+      "q": "Is the address looked up online?",
+      "a": "No. The mask math runs in your browser. The tool does not check who owns the address."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "px-to-rem-converter",
+  "title": "PX to REM Converter",
+  "h1": "PX to REM Converter \u2014 CSS Pixel and Root Font Size",
+  "seoTitle": "PX to REM Converter \u2014 Pixels to Rem for CSS",
+  "description": "Convert CSS pixels to rem and rem back to pixels using any root font size. Handy for design tokens and accessible type scales. Runs entirely in your browser.",
+  "intro": "Enter a pixel size and the root font size used by the page. The converter shows the rem value and can turn rem back into pixels for the same root.",
+  "blurb": "Convert CSS px and rem using a configurable root font size.",
+  "keywords": [
+    "px to rem",
+    "rem to px",
+    "css rem converter",
+    "pixel to rem",
+    "root font size"
+  ],
+  "category": "Design",
+  "added": "2026-10-04",
+  "popularity": 73,
+  "ui": {
+    "controls": [
+      {
+        "id": "px",
+        "type": "number",
+        "label": "Pixels",
+        "value": 16,
+        "min": 0,
+        "step": 0.01
+      },
+      {
+        "id": "rem",
+        "type": "number",
+        "label": "Rem",
+        "value": 1,
+        "min": 0,
+        "step": 0.001
+      },
+      {
+        "id": "root",
+        "type": "number",
+        "label": "Root font size (px)",
+        "value": 16,
+        "min": 1,
+        "step": 0.01,
+        "help": "Browsers default to 16px unless html { font-size } changes it."
+      }
+    ],
+    "actions": [
+      {
+        "id": "to-rem",
+        "label": "Convert px to rem",
+        "primary": true
+      },
+      {
+        "id": "to-px",
+        "label": "Convert rem to px"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "CSS value"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Set the root font size. 16px is the usual browser default.",
+    "Enter a pixel value and press Convert px to rem, or enter rem and press Convert rem to px.",
+    "Copy the CSS value. 1rem always equals the root font size you entered."
+  ],
+  "examples": [
+    "16px at a 16px root is 1rem.",
+    "24px at a 16px root is 1.5rem.",
+    "1.25rem at an 18px root is 22.5px."
+  ],
+  "faq": [
+    {
+      "q": "What is a rem?",
+      "a": "A rem is a CSS length equal to the font size of the root element, usually the html element. It does not depend on the parent element's font size the way em does."
+    },
+    {
+      "q": "Why would I change the root size?",
+      "a": "Some designs set html { font-size: 62.5% } so 1rem is 10px, or they use a larger root for accessibility. Match the root used by the stylesheet."
+    },
+    {
+      "q": "Does this change my website?",
+      "a": "No. It only calculates the equivalent length so you can paste it into CSS."
+    }
+  ]
+}

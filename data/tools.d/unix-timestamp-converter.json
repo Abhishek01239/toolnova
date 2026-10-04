@@ -1,0 +1,106 @@
+{
+  "id": "unix-timestamp-converter",
+  "title": "Unix Timestamp Converter",
+  "h1": "Unix Timestamp Converter \u2014 Epoch to Date and Back",
+  "seoTitle": "Unix Timestamp Converter \u2014 Epoch Seconds or Milliseconds",
+  "description": "Convert Unix epoch seconds or milliseconds into UTC and local dates, or turn a date and time into a timestamp. Private, instant, and free in your browser.",
+  "intro": "Paste a Unix timestamp or a date and see both directions at once: epoch seconds, milliseconds, UTC, and your local time. Nothing is uploaded.",
+  "blurb": "Convert epoch seconds or milliseconds to dates, and dates back to Unix timestamps.",
+  "keywords": [
+    "unix timestamp",
+    "epoch converter",
+    "timestamp to date",
+    "date to unix",
+    "milliseconds converter"
+  ],
+  "category": "Date & Time",
+  "added": "2026-10-04",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "timestamp",
+        "type": "text",
+        "label": "Unix timestamp",
+        "value": "1717200000",
+        "placeholder": "1717200000 or 1717200000000",
+        "help": "Seconds are about 10 digits; milliseconds are about 13 digits."
+      },
+      {
+        "id": "unit",
+        "type": "select",
+        "label": "Timestamp unit",
+        "value": "auto",
+        "options": [
+          {
+            "value": "auto",
+            "label": "Detect automatically"
+          },
+          {
+            "value": "seconds",
+            "label": "Seconds"
+          },
+          {
+            "value": "milliseconds",
+            "label": "Milliseconds"
+          }
+        ]
+      },
+      {
+        "id": "datetime",
+        "type": "text",
+        "label": "Date and time (local)",
+        "value": "2024-06-01T00:00",
+        "placeholder": "2024-06-01T00:00",
+        "help": "Use a local datetime-local value such as 2024-06-01T15:30."
+      }
+    ],
+    "actions": [
+      {
+        "id": "from-timestamp",
+        "label": "Timestamp to date",
+        "primary": true
+      },
+      {
+        "id": "from-date",
+        "label": "Date to timestamp"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Converted value"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Breakdown"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste a Unix timestamp and choose seconds, milliseconds, or automatic detection.",
+    "Press Timestamp to date to see UTC and your local timezone side by side.",
+    "Or enter a local date and time and press Date to timestamp to get epoch seconds and milliseconds."
+  ],
+  "examples": [
+    "1717200000 is 1 June 2024 at 00:00 UTC.",
+    "A 13-digit value such as 1717200000000 is the same moment in milliseconds.",
+    "Scheduling jobs often need the epoch seconds for a local meeting time."
+  ],
+  "faq": [
+    {
+      "q": "What is a Unix timestamp?",
+      "a": "It is the number of seconds since 1 January 1970 00:00:00 UTC, ignoring leap seconds. Millisecond timestamps multiply that count by 1,000."
+    },
+    {
+      "q": "Does this account for my timezone?",
+      "a": "Yes. UTC is shown separately from the timezone reported by your browser, so local civil time and UTC stay distinct."
+    },
+    {
+      "q": "Is the date I enter uploaded?",
+      "a": "No. Conversion uses the built-in Date object in your browser and never sends the value to a server."
+    }
+  ]
+}

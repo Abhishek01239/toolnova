@@ -1,0 +1,94 @@
+{
+  "id": "csv-to-markdown-table",
+  "title": "CSV to Markdown Table",
+  "h1": "CSV to Markdown Table \u2014 GitHub-Flavored Tables",
+  "seoTitle": "CSV to Markdown Table Converter \u2014 Free and Private",
+  "description": "Turn CSV rows into a GitHub-flavored Markdown table, with an optional header row and comma, tab, or semicolon delimiters. Conversion stays in your browser.",
+  "intro": "Paste CSV or tab-separated rows and get a Markdown table you can drop into a README, issue, or document. Quotes and separators are handled locally.",
+  "blurb": "Convert CSV or TSV into a GitHub-flavored Markdown table in the browser.",
+  "keywords": [
+    "csv to markdown",
+    "markdown table generator",
+    "tsv to markdown",
+    "csv table"
+  ],
+  "category": "CSV",
+  "added": "2026-10-04",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "CSV or TSV",
+        "rows": 8,
+        "value": "Name,Role,Score\nAda,Engineer,98\nLin,Designer,91"
+      },
+      {
+        "id": "delimiter",
+        "type": "select",
+        "label": "Delimiter",
+        "value": ",",
+        "options": [
+          {
+            "value": ",",
+            "label": "Comma"
+          },
+          {
+            "value": "\\t",
+            "label": "Tab"
+          },
+          {
+            "value": ";",
+            "label": "Semicolon"
+          }
+        ]
+      },
+      {
+        "id": "header",
+        "type": "checkbox",
+        "label": "First row is a header",
+        "checked": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "convert",
+        "label": "Convert to Markdown",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Markdown table",
+        "rows": 10
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste CSV, choose comma, tab, or semicolon, and say whether the first row is a header.",
+    "Press Convert to Markdown. Quoted fields can contain the delimiter.",
+    "Copy the table into GitHub, GitLab, or any Markdown file that supports pipe tables."
+  ],
+  "examples": [
+    "A header plus two data rows becomes a three-line Markdown table with an alignment row.",
+    "Spreadsheet exports that use semicolons can be converted by switching the delimiter.",
+    "Pipe characters inside a cell are escaped so they do not break the table."
+  ],
+  "faq": [
+    {
+      "q": "Which Markdown flavor is this?",
+      "a": "It emits GitHub-flavored pipe tables: a header row, a separator row, then one row per record. Left alignment is used."
+    },
+    {
+      "q": "Are quoted commas kept inside a cell?",
+      "a": "Yes. A standard CSV quote wraps a field, and a doubled quote inside that field becomes a literal quote."
+    },
+    {
+      "q": "Is the spreadsheet uploaded?",
+      "a": "No. Parsing and formatting run in your browser, so the pasted rows are not sent to ToolNova."
+    }
+  ]
+}

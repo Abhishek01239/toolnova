@@ -1,0 +1,78 @@
+{
+  "id": "palindrome-checker",
+  "title": "Palindrome Checker",
+  "h1": "Palindrome Checker \u2014 Words, Phrases and Numbers",
+  "seoTitle": "Palindrome Checker \u2014 Test Words and Phrases Online",
+  "description": "Check whether a word, phrase, or number reads the same forwards and backwards. Spaces and punctuation can be ignored. The check stays in your browser.",
+  "intro": "Type a word, sentence, or number and see immediately if it is a palindrome. You can ignore spaces, punctuation, and letter case for phrase checks.",
+  "blurb": "Test words, phrases, and numbers for palindromes without uploading your text.",
+  "keywords": [
+    "palindrome checker",
+    "is it a palindrome",
+    "palindrome test",
+    "reverse text check"
+  ],
+  "category": "Text",
+  "added": "2026-10-04",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text or number",
+        "rows": 5,
+        "value": "A man, a plan, a canal: Panama"
+      },
+      {
+        "id": "ignore-nonletters",
+        "type": "checkbox",
+        "label": "Ignore spaces, punctuation, and case",
+        "checked": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "check",
+        "label": "Check palindrome",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Comparison"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the word, phrase, or number you want to test.",
+    "Leave the filter on to ignore spaces, punctuation, and letter case, which is the usual rule for sentence palindromes.",
+    "Press Check palindrome to see the cleaned text beside its reverse and a yes or no result."
+  ],
+  "examples": [
+    "\u201cracecar\u201d is a palindrome even with the filter off.",
+    "\u201cA man, a plan, a canal: Panama\u201d is a palindrome when spaces and punctuation are ignored.",
+    "\u201c12321\u201d is a numeric palindrome."
+  ],
+  "faq": [
+    {
+      "q": "What is a palindrome?",
+      "a": "A palindrome reads the same forwards and backwards. Words, phrases, and numbers can all qualify depending on the rules you choose."
+    },
+    {
+      "q": "Why does my phrase fail when the filter is off?",
+      "a": "Spaces, commas, and capital letters then have to match in reverse as well. Turn the filter on for the usual phrase test."
+    },
+    {
+      "q": "Are accented letters supported?",
+      "a": "Yes. Letters are lowercased with Unicode rules and compared by character, so accented text is not stripped unless you ignore non-letters."
+    }
+  ]
+}

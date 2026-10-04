@@ -1,0 +1,88 @@
+{
+  "id": "word-frequency-counter",
+  "title": "Word Frequency Counter",
+  "h1": "Word Frequency Counter \u2014 Most Used Words",
+  "seoTitle": "Word Frequency Counter \u2014 Count Repeated Words Online",
+  "description": "Count how often each word appears in any text, with optional case folding and a minimum length. Sorted results stay in your browser and are never uploaded.",
+  "intro": "Paste an essay, article, or notes and see which words dominate. Case can be ignored, and short tokens can be filtered out before the ranking.",
+  "blurb": "Rank the words in a text by how often they appear, privately in the browser.",
+  "keywords": [
+    "word frequency",
+    "word count list",
+    "most used words",
+    "keyword density",
+    "text frequency"
+  ],
+  "category": "Text",
+  "added": "2026-10-04",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text",
+        "rows": 10,
+        "value": "The cat sat on the mat. The cat sat."
+      },
+      {
+        "id": "ignore-case",
+        "type": "checkbox",
+        "label": "Ignore letter case",
+        "checked": true
+      },
+      {
+        "id": "min-length",
+        "type": "number",
+        "label": "Minimum word length",
+        "value": 1,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      }
+    ],
+    "actions": [
+      {
+        "id": "count",
+        "label": "Count words",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Ranked words"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Totals"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste the text you want to inspect. Punctuation is separated from words automatically.",
+    "Choose whether uppercase and lowercase should count as the same word, and set a minimum length.",
+    "Press Count words to get a frequency table sorted from most common to least common."
+  ],
+  "examples": [
+    "In \u201cThe cat sat on the mat. The cat sat.\u201d the word the appears twice when case is ignored.",
+    "Set minimum length to 4 to skip short function words while reviewing a draft.",
+    "Writers use the ranking to spot repeated words before editing."
+  ],
+  "faq": [
+    {
+      "q": "What counts as a word?",
+      "a": "Runs of letters and numbers are counted. Punctuation and extra spaces are ignored, so \u201cmat.\u201d and \u201cmat\u201d match."
+    },
+    {
+      "q": "Does ignore case affect accented letters?",
+      "a": "Yes. Matching uses Unicode-aware lowercasing, so accented letters stay intact and compare case-insensitively."
+    },
+    {
+      "q": "Is my writing sent to a server?",
+      "a": "No. Counting happens locally in the page, and the text is not stored by ToolNova."
+    }
+  ]
+}
