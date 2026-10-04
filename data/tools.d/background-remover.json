@@ -1,0 +1,73 @@
+{
+  "id": "background-remover",
+  "title": "Background Remover",
+  "h1": "Remove Image Background Online — Free, Private, No Sign-up",
+  "seoTitle": "Background Remover — Remove Image Background Free Online",
+  "description": "Remove the background from any photo in seconds and download a transparent PNG or add a solid colour. Runs in your browser, so your picture is never uploaded.",
+  "intro": "Upload a photo of a person, product or pet and the background disappears. Save it as a transparent PNG or put it on white, black or a colour. The AI runs on your own device, so your picture is never uploaded.",
+  "blurb": "Remove the background from a photo and save a transparent PNG — free, private, no sign-up.",
+  "keywords": ["background remover", "remove background", "remove background from image", "transparent background", "remove bg", "cut out image", "photo background remover"],
+  "category": "Image",
+  "added": "2026-10-04",
+  "popularity": 97,
+  "ui": {
+    "controls": [
+      {
+        "id": "bg",
+        "type": "select",
+        "label": "New background",
+        "value": "transparent",
+        "options": [
+          { "value": "transparent", "label": "Transparent (PNG)" },
+          { "value": "#ffffff", "label": "White" },
+          { "value": "#000000", "label": "Black" },
+          { "value": "#e53935", "label": "Red" },
+          { "value": "#1e88e5", "label": "Blue" },
+          { "value": "#43a047", "label": "Green" },
+          { "value": "#fdd835", "label": "Yellow" },
+          { "value": "#bdbdbd", "label": "Light grey" }
+        ]
+      }
+    ],
+    "actions": [
+      { "id": "remove", "label": "Remove background", "primary": true },
+      { "id": "download", "label": "Download PNG" },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area and choose a photo, or drag one in. Photos of people, products and animals work best.",
+    "Press Remove background. The first time, a small AI model downloads to your browser (about 25 MB), which can take a minute on a slow connection; after that it is much faster.",
+    "Pick a transparent, white or coloured background to preview it, then press Download PNG."
+  ],
+  "examples": [
+    "Cut yourself out of a selfie to make a profile picture or sticker.",
+    "Put a product photo on a clean white background for an online shop listing.",
+    "Make a transparent PNG logo or cut-out to place on a poster or slide."
+  ],
+  "faq": [
+    {
+      "q": "Is my photo uploaded to a server?",
+      "a": "No. The AI model runs inside your browser on your own device, so your photo is never sent anywhere. Only the model file itself is downloaded the first time."
+    },
+    {
+      "q": "Why is it slow the first time?",
+      "a": "The first run downloads the AI model, about 25 MB, and your browser keeps it for next time. After that, removing a background usually takes a few seconds."
+    },
+    {
+      "q": "What kind of photos work best?",
+      "a": "Clear photos where one person, product or animal stands out from the background. Cluttered scenes, hair against similar colours or glass and see-through objects can leave rough edges."
+    },
+    {
+      "q": "Will it work on my phone?",
+      "a": "Yes on most modern Android phones and iPhones. Very old or low-memory phones may run out of memory, in which case try a smaller photo or a computer."
+    },
+    {
+      "q": "How do I get a transparent background?",
+      "a": "Leave New background on Transparent and download the PNG. PNG is the format that keeps transparency, so the result can be placed over any other picture."
+    }
+  ]
+}
