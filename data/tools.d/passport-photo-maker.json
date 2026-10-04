@@ -1,0 +1,181 @@
+{
+  "id": "passport-photo-maker",
+  "title": "Passport Photo Maker",
+  "h1": "Passport Photo Maker — Crop, Resize & Print Sheet Free",
+  "seoTitle": "Passport Photo Maker Online — Free Size Crop & Print Sheet",
+  "description": "Make passport, visa and exam-form photos in any size. Crop with a face guide, set a KB limit and download a print-ready sheet — free and private.",
+  "intro": "Add a photo, drag and zoom until your face sits inside the guide, then download the photo in the exact size you need — or a ready-to-print sheet with several copies. Your picture never leaves your device.",
+  "blurb": "Crop passport, visa and exam-form photos to size, limit the file size in KB and print a copy sheet — free.",
+  "keywords": ["passport photo maker", "passport size photo online", "passport photo size", "passport photo print sheet", "visa photo maker", "photo size in kb", "resize photo for exam form"],
+  "category": "Image",
+  "added": "2026-10-04",
+  "popularity": 96,
+  "ui": {
+    "controls": [
+      {
+        "id": "preset",
+        "type": "select",
+        "label": "Photo size",
+        "value": "35x45",
+        "options": [
+          { "value": "35x45", "label": "35 × 45 mm — India, UK, EU, Schengen, Australia" },
+          { "value": "51x51", "label": "2 × 2 in (51 × 51 mm) — US passport & visa, OCI" },
+          { "value": "33x48", "label": "33 × 48 mm — China visa" },
+          { "value": "50x70", "label": "50 × 70 mm — Canada passport" },
+          { "value": "25x35", "label": "25 × 35 mm — PAN card, small ID" },
+          { "value": "20x25", "label": "20 × 25 mm — stamp size" },
+          { "value": "pixels", "label": "Custom size in pixels (exam forms)" },
+          { "value": "custom", "label": "Custom size in millimetres" }
+        ],
+        "help": "Photos are made at 300 dpi, the standard for printing."
+      },
+      {
+        "id": "pxw",
+        "type": "number",
+        "label": "Width (pixels)",
+        "value": 200,
+        "min": 20,
+        "max": 6000,
+        "step": 1
+      },
+      {
+        "id": "pxh",
+        "type": "number",
+        "label": "Height (pixels)",
+        "value": 230,
+        "min": 20,
+        "max": 6000,
+        "step": 1
+      },
+      {
+        "id": "cw",
+        "type": "number",
+        "label": "Width (mm)",
+        "value": 35,
+        "min": 10,
+        "max": 300,
+        "step": 0.5
+      },
+      {
+        "id": "ch",
+        "type": "number",
+        "label": "Height (mm)",
+        "value": 45,
+        "min": 10,
+        "max": 300,
+        "step": 0.5
+      },
+      {
+        "id": "zoom",
+        "type": "range",
+        "label": "Zoom",
+        "min": 50,
+        "max": 300,
+        "step": 1,
+        "value": 100,
+        "help": "Drag the photo to move it. Pinch with two fingers or use this slider to zoom."
+      },
+      {
+        "id": "guides",
+        "type": "checkbox",
+        "label": "Show the face guide"
+      },
+      {
+        "id": "bg",
+        "type": "select",
+        "label": "Colour behind the photo",
+        "value": "white",
+        "options": [
+          { "value": "white", "label": "White" },
+          { "value": "blue", "label": "Light blue" },
+          { "value": "grey", "label": "Light grey" }
+        ],
+        "help": "Only visible if you zoom out. Your own background is not changed."
+      },
+      {
+        "id": "format",
+        "type": "select",
+        "label": "File format",
+        "value": "image/jpeg",
+        "options": [
+          { "value": "image/jpeg", "label": "JPG" },
+          { "value": "image/png", "label": "PNG" }
+        ]
+      },
+      {
+        "id": "maxkb",
+        "type": "number",
+        "label": "Maximum file size in KB (optional)",
+        "placeholder": "e.g. 50",
+        "min": 1,
+        "max": 5000,
+        "step": 1,
+        "help": "For forms that need a photo under a size limit. Works with JPG."
+      },
+      {
+        "id": "sheet",
+        "type": "select",
+        "label": "Print sheet paper",
+        "value": "4x6",
+        "options": [
+          { "value": "4x6", "label": "4 × 6 inch photo paper" },
+          { "value": "a4", "label": "A4 paper" }
+        ]
+      },
+      {
+        "id": "copies",
+        "type": "number",
+        "label": "Copies on the sheet (optional)",
+        "placeholder": "Leave empty to fill the sheet",
+        "min": 1,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "border",
+        "type": "checkbox",
+        "label": "Draw a thin cutting line around each photo"
+      }
+    ],
+    "actions": [
+      { "id": "photo", "label": "Download photo", "primary": true },
+      { "id": "sheet", "label": "Download print sheet" },
+      { "id": "reset", "label": "Reset position" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Details" }
+    ]
+  },
+  "howItWorks": [
+    "Add a clear front-facing photo, then choose the size you need — a passport or visa size, or your own size in pixels or millimetres.",
+    "Drag the photo and use Zoom (or pinch) until your face fits the guide, then optionally set a maximum file size in KB.",
+    "Press Download photo for a single image, or Download print sheet for several copies on 4 × 6 inch or A4 paper."
+  ],
+  "examples": [
+    "Make a 35 × 45 mm passport or visa photo and print six copies on one 4 × 6 inch sheet.",
+    "Create a 200 × 230 pixel photo under 50 KB for an online exam or job application form.",
+    "Prepare a 2 × 2 inch photo for a US visa application."
+  ],
+  "faq": [
+    {
+      "q": "Is my photo uploaded to a server?",
+      "a": "No. Everything happens in your browser, so your photo never leaves your device and nothing is stored or logged."
+    },
+    {
+      "q": "Does this change or replace my background?",
+      "a": "No. The tool crops and resizes your photo but does not edit the background. For best results, take the photo against a plain white or light wall with even lighting and no shadows."
+    },
+    {
+      "q": "How do I keep a photo under a size limit like 50 KB?",
+      "a": "Choose JPG, type the limit in the Maximum file size box, and the tool lowers the quality just enough to fit. The File size value in the details panel shows the result. If the limit cannot be met at that pixel size, choose a smaller size."
+    },
+    {
+      "q": "Will the photo be accepted by the passport or visa office?",
+      "a": "The sizes follow common standards, but rules differ by country and change over time. Always check the latest requirements of the authority you are applying to. This tool does not check face position, expression or background for you."
+    },
+    {
+      "q": "How do I print the sheet?",
+      "a": "Download the print sheet and print it at 100% scale (no fit-to-page) on 4 × 6 inch photo paper or A4 paper, or take the file to a local photo studio. Then cut along the thin lines."
+    }
+  ]
+}
