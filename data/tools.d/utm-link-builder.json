@@ -1,0 +1,105 @@
+{
+  "id": "utm-link-builder",
+  "title": "UTM Link Builder",
+  "h1": "UTM Link Builder \u2014 Campaign URL Parameters",
+  "seoTitle": "UTM Link Builder \u2014 Campaign Tracking URLs",
+  "description": "Build a campaign URL with utm_source, utm_medium, utm_campaign and optional term and content. Values are encoded for safe sharing. Runs locally.",
+  "intro": "Paste a landing-page URL and fill the campaign fields. The builder appends standard UTM parameters with correct encoding so analytics can attribute the click.",
+  "blurb": "Append encoded UTM parameters to a landing-page URL for campaign tracking.",
+  "keywords": [
+    "utm builder",
+    "campaign url builder",
+    "utm parameters",
+    "google analytics utm"
+  ],
+  "category": "SEO",
+  "added": "2026-10-05",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "url",
+        "type": "text",
+        "label": "Landing page URL",
+        "value": "https://example.com/pricing",
+        "placeholder": "https://example.com/page"
+      },
+      {
+        "id": "source",
+        "type": "text",
+        "label": "Source (utm_source)",
+        "value": "newsletter",
+        "placeholder": "newsletter"
+      },
+      {
+        "id": "medium",
+        "type": "text",
+        "label": "Medium (utm_medium)",
+        "value": "email",
+        "placeholder": "email"
+      },
+      {
+        "id": "campaign",
+        "type": "text",
+        "label": "Campaign (utm_campaign)",
+        "value": "spring-launch",
+        "placeholder": "spring-launch"
+      },
+      {
+        "id": "term",
+        "type": "text",
+        "label": "Term (utm_term, optional)",
+        "placeholder": "paid keyword"
+      },
+      {
+        "id": "content",
+        "type": "text",
+        "label": "Content (utm_content, optional)",
+        "placeholder": "header-cta"
+      }
+    ],
+    "actions": [
+      {
+        "id": "build",
+        "label": "Build URL",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Campaign URL"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Parameters"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the full page URL, including https://.",
+    "Fill source, medium and campaign. Term and content are optional and skipped when blank.",
+    "Press Build URL. Spaces and reserved characters are percent-encoded and joined with &."
+  ],
+  "examples": [
+    "https://example.com/pricing with source newsletter, medium email and campaign spring-launch.",
+    "A blank term field is omitted instead of adding an empty utm_term.",
+    "Spaces in a campaign name are encoded so the link stays valid."
+  ],
+  "faq": [
+    {
+      "q": "What do the UTM fields mean?",
+      "a": "Source is where the click came from, medium is the channel type, and campaign names the promotion. Term and content distinguish keywords or creatives."
+    },
+    {
+      "q": "Will this overwrite existing query parameters?",
+      "a": "No. Existing query parameters stay, and the UTM pairs are appended. A hash fragment is kept at the end of the URL."
+    },
+    {
+      "q": "Does this call an analytics service?",
+      "a": "No. It only assembles the link in your browser. Tracking happens later if the destination site reads the parameters."
+    }
+  ]
+}

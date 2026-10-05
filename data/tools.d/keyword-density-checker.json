@@ -1,0 +1,79 @@
+{
+  "id": "keyword-density-checker",
+  "title": "Keyword Density Checker",
+  "h1": "Keyword Density Checker \u2014 Phrase Share of a Text",
+  "seoTitle": "Keyword Density Checker \u2014 Phrase Frequency",
+  "description": "Measure how often a word or phrase appears in a text, as a count and as a percentage of words. A simple on-page SEO check that stays in the browser.",
+  "intro": "Paste copy and a target phrase. The checker counts case-insensitive matches and shows what share of the word count that phrase represents.",
+  "blurb": "Count a keyword or phrase and its percentage share of the text.",
+  "keywords": [
+    "keyword density",
+    "keyword frequency",
+    "seo keyword checker",
+    "phrase density"
+  ],
+  "category": "SEO",
+  "added": "2026-10-05",
+  "popularity": 71,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text",
+        "rows": 10,
+        "placeholder": "Paste the page copy"
+      },
+      {
+        "id": "phrase",
+        "type": "text",
+        "label": "Keyword or phrase",
+        "value": "browser tools",
+        "placeholder": "keyword"
+      }
+    ],
+    "actions": [
+      {
+        "id": "check",
+        "label": "Check density",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Density"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Counts"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste the text and enter the word or phrase to measure.",
+    "Press Check density. Matching ignores letter case and counts non-overlapping occurrences.",
+    "Density is phrase occurrences divided by the number of words, shown as a percentage."
+  ],
+  "examples": [
+    "The phrase \"free tools\" twice in a 100-word paragraph is 2%.",
+    "A missing phrase returns 0 matches and 0% density.",
+    "Matching treats \"SEO\" and \"seo\" as the same phrase."
+  ],
+  "faq": [
+    {
+      "q": "Is a higher density better?",
+      "a": "Not by itself. This only reports frequency. Readable copy usually mentions a topic naturally instead of repeating a phrase in every sentence."
+    },
+    {
+      "q": "How are words counted?",
+      "a": "Words are sequences separated by whitespace. The phrase count uses a case-insensitive search and does not overlap itself."
+    },
+    {
+      "q": "Is the copy uploaded for analysis?",
+      "a": "No. The count runs in your browser and is not stored."
+    }
+  ]
+}

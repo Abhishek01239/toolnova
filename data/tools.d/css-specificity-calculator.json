@@ -1,0 +1,72 @@
+{
+  "id": "css-specificity-calculator",
+  "title": "CSS Specificity Calculator",
+  "h1": "CSS Specificity Calculator \u2014 Selector Weight",
+  "seoTitle": "CSS Specificity Calculator \u2014 Selector Weight",
+  "description": "Score a CSS selector as inline, IDs, classes/attributes/pseudo-classes, and elements. Useful when two rules conflict. Calculated locally in the browser.",
+  "intro": "Paste one selector to see its specificity tuple. IDs outweigh classes, and classes outweigh elements. :where() adds no weight; :is() and :not() use the most specific argument.",
+  "blurb": "Calculate CSS selector specificity as an (inline, ID, class, element) tuple.",
+  "keywords": [
+    "css specificity",
+    "selector specificity",
+    "css weight calculator",
+    "specificity tuple"
+  ],
+  "category": "Design",
+  "added": "2026-10-05",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "selector",
+        "type": "text",
+        "label": "CSS selector",
+        "value": "nav .menu > a:hover",
+        "placeholder": "#id .class element"
+      }
+    ],
+    "actions": [
+      {
+        "id": "score",
+        "label": "Calculate specificity",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Specificity"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Breakdown"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter a single selector, not a full rule with braces.",
+    "Press Calculate specificity. The tuple is inline styles, IDs, classes/attributes/pseudo-classes, then elements/pseudo-elements.",
+    "Compare tuples left to right. A higher number in an earlier column wins."
+  ],
+  "examples": [
+    "#main .item scores (0, 1, 1, 0).",
+    "nav .menu > a:hover scores (0, 0, 2, 2) because :hover is a pseudo-class.",
+    "button scores (0, 0, 0, 1)."
+  ],
+  "faq": [
+    {
+      "q": "Does !important change the tuple?",
+      "a": "No. !important is a separate cascade layer and is not part of the specificity tuple. Remove it from the selector before scoring."
+    },
+    {
+      "q": "How are :is() and :where() handled?",
+      "a": ":where() contributes nothing. :is() and :not() contribute the highest specificity among their arguments, not the sum of every argument."
+    },
+    {
+      "q": "Are commas supported?",
+      "a": "Enter one selector. If you paste a comma-separated list, only the first selector is scored and a note is shown."
+    }
+  ]
+}

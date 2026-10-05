@@ -1,0 +1,105 @@
+{
+  "id": "aspect-ratio-calculator",
+  "title": "Aspect Ratio Calculator",
+  "h1": "Aspect Ratio Calculator \u2014 Resize Width and Height",
+  "seoTitle": "Aspect Ratio Calculator \u2014 Keep Proportions",
+  "description": "Calculate a missing width or height from an aspect ratio, or simplify pixel dimensions to a ratio. Handy for images, video and CSS. Private in-browser math.",
+  "intro": "Enter a width and height to simplify the ratio, or lock a ratio and solve for the missing side. Useful for crops, embeds and responsive layouts.",
+  "blurb": "Solve width, height and simplified aspect ratios without breaking proportions.",
+  "keywords": [
+    "aspect ratio calculator",
+    "width height ratio",
+    "16:9 calculator",
+    "image aspect ratio"
+  ],
+  "category": "Design",
+  "added": "2026-10-05",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "width",
+        "type": "number",
+        "label": "Width",
+        "value": 1920,
+        "min": 0,
+        "step": 1
+      },
+      {
+        "id": "height",
+        "type": "number",
+        "label": "Height",
+        "value": 1080,
+        "min": 0,
+        "step": 1
+      },
+      {
+        "id": "ratio-w",
+        "type": "number",
+        "label": "Ratio width",
+        "value": 16,
+        "min": 1,
+        "step": 1
+      },
+      {
+        "id": "ratio-h",
+        "type": "number",
+        "label": "Ratio height",
+        "value": 9,
+        "min": 1,
+        "step": 1
+      }
+    ],
+    "actions": [
+      {
+        "id": "simplify",
+        "label": "Simplify ratio",
+        "primary": true
+      },
+      {
+        "id": "from-width",
+        "label": "Height from width"
+      },
+      {
+        "id": "from-height",
+        "label": "Width from height"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter pixel width and height, then press Simplify ratio to reduce them by their greatest common divisor.",
+    "To resize, set the target ratio and one side, then press Height from width or Width from height.",
+    "The decimal form is width divided by height, which CSS uses as the aspect-ratio value."
+  ],
+  "examples": [
+    "1920 by 1080 simplifies to 16:9.",
+    "A 16:9 frame that is 1280 wide is 720 high.",
+    "1080 by 1080 simplifies to 1:1."
+  ],
+  "faq": [
+    {
+      "q": "How is the ratio simplified?",
+      "a": "Both sides are divided by their greatest common divisor, so 1920:1080 becomes 16:9. The visual proportion does not change."
+    },
+    {
+      "q": "Can I use this for video crops?",
+      "a": "Yes. 16:9 is common for widescreen video, 9:16 for vertical stories, 4:5 for portrait posts and 1:1 for square crops."
+    },
+    {
+      "q": "Are the dimensions sent anywhere?",
+      "a": "No. The arithmetic runs locally in the browser."
+    }
+  ]
+}

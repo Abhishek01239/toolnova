@@ -1,0 +1,72 @@
+{
+  "id": "json-minifier",
+  "title": "JSON Minifier",
+  "h1": "JSON Minifier \u2014 Remove Whitespace Safely",
+  "seoTitle": "JSON Minifier \u2014 Compact Valid JSON",
+  "description": "Minify JSON by parsing it and writing it back without extra spaces. Invalid JSON is reported instead of silently corrupted. Everything stays in the browser.",
+  "intro": "Paste a JSON document to strip insignificant whitespace. The minifier parses first, so comments are rejected and strings keep their escaped characters.",
+  "blurb": "Compact valid JSON by removing insignificant whitespace after a real parse.",
+  "keywords": [
+    "json minifier",
+    "minify json",
+    "compress json",
+    "json whitespace"
+  ],
+  "category": "JSON",
+  "added": "2026-10-05",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "JSON",
+        "rows": 12,
+        "placeholder": "{\"name\": \"ToolNova\"}"
+      }
+    ],
+    "actions": [
+      {
+        "id": "minify",
+        "label": "Minify JSON",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Minified JSON"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Size"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste JSON. Trailing commas and comments are not valid JSON and will be flagged.",
+    "Press Minify JSON. The page parses the document, then serializes it with no added spaces.",
+    "Compare character counts to see how much formatting whitespace was removed."
+  ],
+  "examples": [
+    "{\"a\": 1, \"b\": [2, 3]} minifies to {\"a\":1,\"b\":[2,3]}.",
+    "A trailing comma such as {\"a\":1,} is reported as invalid.",
+    "Strings keep internal spaces; only structural whitespace is removed."
+  ],
+  "faq": [
+    {
+      "q": "Is this the same as a JSON formatter?",
+      "a": "A formatter adds indentation for reading. This tool removes that formatting so the document is smaller to paste into configs, query strings or fixtures."
+    },
+    {
+      "q": "Will key order change?",
+      "a": "Keys stay in the order the parser returned them, which in current browsers is the order they appeared in the object."
+    },
+    {
+      "q": "Is the JSON uploaded?",
+      "a": "No. Parsing and serialization happen locally with JSON.parse and JSON.stringify."
+    }
+  ]
+}

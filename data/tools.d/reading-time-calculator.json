@@ -1,0 +1,82 @@
+{
+  "id": "reading-time-calculator",
+  "title": "Reading Time Calculator",
+  "h1": "Reading Time Calculator \u2014 Words per Minute Estimate",
+  "seoTitle": "Reading Time Calculator \u2014 Words per Minute",
+  "description": "Estimate how long a passage takes to read from word count and a words-per-minute pace. Useful for blogs, essays and scripts. Runs in your browser.",
+  "intro": "Paste any text and set a reading pace. The calculator counts words and estimates minutes and seconds at that speed, with a speaking-time comparison.",
+  "blurb": "Estimate reading time from word count and a words-per-minute pace.",
+  "keywords": [
+    "reading time calculator",
+    "words per minute",
+    "blog reading time",
+    "read time estimate"
+  ],
+  "category": "Text",
+  "added": "2026-10-05",
+  "popularity": 76,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text",
+        "rows": 10,
+        "placeholder": "Paste an article, essay or script"
+      },
+      {
+        "id": "wpm",
+        "type": "number",
+        "label": "Reading pace (words per minute)",
+        "value": 238,
+        "min": 50,
+        "max": 600,
+        "step": 1,
+        "help": "Average adult silent reading is often cited around 200\u2013250 wpm."
+      }
+    ],
+    "actions": [
+      {
+        "id": "estimate",
+        "label": "Estimate reading time",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Estimate"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Breakdown"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste the passage you want to time. Empty lines are ignored for the word count.",
+    "Set words per minute. 238 is a common silent-reading average; use about 150 for a presentation.",
+    "Press Estimate reading time. Minutes and seconds are words divided by your pace."
+  ],
+  "examples": [
+    "238 words at 238 wpm is about 1 minute 0 seconds.",
+    "500 words at 200 wpm is 2 minutes 30 seconds.",
+    "A 1,200-word post at 250 wpm is 4 minutes 48 seconds."
+  ],
+  "faq": [
+    {
+      "q": "What pace should I use?",
+      "a": "For silent blog reading, 200 to 250 words per minute is a practical range. Aloud narration is slower, often 130 to 160 words per minute."
+    },
+    {
+      "q": "Does punctuation change the count?",
+      "a": "Words are split on whitespace. Punctuation attached to a word stays with that word, so the count matches a typical article word counter."
+    },
+    {
+      "q": "Is the text uploaded?",
+      "a": "No. Counting and division happen in the page. Closing the tab clears the text."
+    }
+  ]
+}

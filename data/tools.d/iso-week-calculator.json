@@ -1,0 +1,71 @@
+{
+  "id": "iso-week-calculator",
+  "title": "ISO Week Number Calculator",
+  "h1": "ISO Week Number Calculator \u2014 Week of the Year",
+  "seoTitle": "ISO Week Number Calculator \u2014 Week of Year",
+  "description": "Find the ISO 8601 week number for any date, plus the week-year and the Monday that starts that week. Useful for schedules and reports. Local only.",
+  "intro": "Pick a date to see its ISO week number. Weeks start on Monday, and week 1 is the week that contains the first Thursday of the calendar year.",
+  "blurb": "Look up the ISO week number, week-year and Monday start for any date.",
+  "keywords": [
+    "iso week number",
+    "week of year calculator",
+    "iso 8601 week",
+    "week number"
+  ],
+  "category": "Date & Time",
+  "added": "2026-10-05",
+  "popularity": 69,
+  "ui": {
+    "controls": [
+      {
+        "id": "date",
+        "type": "date",
+        "label": "Date",
+        "value": "2026-10-05"
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Get week number",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "ISO week"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Choose a calendar date. The default is 5 October 2026.",
+    "Press Get week number. The result uses the ISO rule that weeks start on Monday.",
+    "Week 1 is the week with the year's first Thursday, so early January can belong to the previous week-year."
+  ],
+  "examples": [
+    "1 January 2021 was a Friday in ISO week 53 of 2020.",
+    "4 January 2021 was a Monday and the start of ISO week 1 of 2021.",
+    "5 October 2026 falls in an ISO week that starts on the previous Monday."
+  ],
+  "faq": [
+    {
+      "q": "Why can January belong to the previous year?",
+      "a": "ISO week-years follow Thursday. If 1 January falls on Friday, Saturday or Sunday, those days are in week 52 or 53 of the previous week-year."
+    },
+    {
+      "q": "Which day starts the week?",
+      "a": "Monday. Sunday is the last day of an ISO week, not the first."
+    },
+    {
+      "q": "Does this use my timezone?",
+      "a": "The date you pick is treated as a calendar date, not a timestamp, so timezone offsets do not shift the week."
+    }
+  ]
+}

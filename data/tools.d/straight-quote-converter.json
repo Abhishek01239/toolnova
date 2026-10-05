@@ -1,0 +1,84 @@
+{
+  "id": "straight-quote-converter",
+  "title": "Straight Quote Converter",
+  "h1": "Straight Quote Converter \u2014 Clean Curly Quotes",
+  "seoTitle": "Straight Quote Converter \u2014 Clean Curly Quotes",
+  "description": "Replace curly quotes, apostrophes, dashes and invisible spaces with plain ASCII characters. Helpful before pasting into code or CSV. Runs locally.",
+  "intro": "Paste text copied from a document or web page. The converter turns smart quotes and dashes into straight characters and can strip zero-width spaces.",
+  "blurb": "Turn curly quotes, dashes and invisible spaces into plain ASCII text.",
+  "keywords": [
+    "curly quotes to straight",
+    "smart quote remover",
+    "replace fancy quotes",
+    "ascii quotes"
+  ],
+  "category": "Text",
+  "added": "2026-10-05",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text",
+        "rows": 10,
+        "placeholder": "Paste text with \u201ccurly\u201d quotes"
+      },
+      {
+        "id": "dashes",
+        "type": "checkbox",
+        "label": "Also convert en and em dashes to hyphens",
+        "checked": true
+      },
+      {
+        "id": "invisible",
+        "type": "checkbox",
+        "label": "Remove zero-width and non-breaking spaces",
+        "checked": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "clean",
+        "label": "Convert quotes",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Plain text"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Replacements"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste text that may contain curly quotes from a word processor or website.",
+    "Choose whether dashes and invisible spaces should be normalized too.",
+    "Press Convert quotes. Left and right quotes become \" and apostrophes become '."
+  ],
+  "examples": [
+    "\u201chello\u201d becomes \"hello\".",
+    "it\u2019s becomes it's.",
+    "An em dash can be rewritten as a hyphen when that option is on."
+  ],
+  "faq": [
+    {
+      "q": "Why do curly quotes cause bugs?",
+      "a": "Code, CSV and some search tools expect ASCII quotes. A curly quote looks similar but is a different character, so strings and formulas fail to match."
+    },
+    {
+      "q": "Will this change accented letters?",
+      "a": "No. Letters such as \u00e9 stay as they are. Only quote, dash and selected invisible-space characters are rewritten."
+    },
+    {
+      "q": "Is the text uploaded?",
+      "a": "No. Replacement runs in the browser and nothing is stored."
+    }
+  ]
+}
