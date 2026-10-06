@@ -2,18 +2,27 @@
 
 **Free online tools, curated and managed deliberately** — a curated utility website focused on practical, privacy-conscious browser tools.
 
-- 🌱 **11 tools live today**, ~100 more already queued in the backlog
+- 🌱 **~100 tools live today**, more already queued in the backlog
 - 🤖 **Manual publishing workflow** — new tools are reviewed before they are published
 - 🔒 **Privacy-first**: every tool runs 100% in the browser; nothing is ever uploaded
 - 🚀 **Zero dependencies**: plain Node (20+) scripts generate a static site, deployed free on Vercel
 - 🔍 **SEO-complete**: unique titles/descriptions, canonical URLs, OpenGraph + Twitter cards, JSON-LD (WebApplication, FAQPage, BreadcrumbList, ItemList), breadcrumbs, FAQ, sitemap.xml, robots.txt, internal linking — all generated, all verified
+
+### Recent highlights (last 7 days)
+
+- **PDF suite** — PDF Merger, Split PDF, Images to PDF (drag-to-reorder, client-side)
+- **Image tools** — Image Compressor, Image Resizer, Passport Photo Maker, Background Remover
+- **QR Code Generator** — text/URL, UPI, WhatsApp, Wi-Fi, email, phone, SMS; PNG + SVG
+- **Screen Recorder** — screen/window/tab capture with mic + tab audio
+- **Developer utilities** — JWT decoder, SHA-256 hash, HTTP status lookup, cron expression explainer, color contrast checker, and more
+- **UI** — production design system (v5 → v6 black & light-green theme with motion)
 
 ---
 
 ## Quick start
 
 ```bash
-git clone <your-repo-url> && cd toolnova
+git clone https://github.com/Abhishek01239/toolnova.git && cd toolnova
 
 # No npm install needed — there are literally zero dependencies.
 node scripts/build.mjs   # build the whole site into dist/
@@ -47,6 +56,8 @@ node scripts/add-daily-tool.mjs --count=3  # add several (for catch-up/seeding)
 4. **Manual publishing** — in GitHub: *Settings → Actions → General → Workflow permissions → **Read and write*** (needed so the bot can commit the new tool). The `.github/workflows/daily-tool.yml` cron ([`30 2 * * *`](https://crontab.guru/#30_2_*_*_*) = 08:00 IST / 02:30 UTC) then runs every morning. You can also trigger it manually: *Actions → Daily Tool → Run workflow*.
 
 That's it. Every push to `main` auto-deploys on Vercel; every morning the bot pushes one new tool.
+
+Live site: [https://toolnova-seven.vercel.app](https://toolnova-seven.vercel.app)
 
 ### Optional: AI inside the daily agent (Groq free tier)
 
@@ -137,7 +148,7 @@ The gardener is also testable offline: `AI_PROVIDER=mock node scripts/tend-catal
 
 ## Adding tools (the part that scales)
 
-There are two ways a tool enters the world. The catalog (`data/catalog.json`) is the single release queue — ~100 ideas already wait there.
+There are two ways a tool enters the world. The catalog (`data/catalog.json`) is the single release queue — many ideas already wait there.
 
 ### 1. Factory tools (instant, recommended for families)
 
@@ -214,8 +225,9 @@ Unique kebab id · 3 keyword min · 60–170 char description · H1 ≤ 90 chars
 ```
 data/
   site.json        ← brand, URL, tagline, repo (edit me first!)
-  catalog.json     ← the release backlog (~100 ideas) in priority order
+  catalog.json     ← the release backlog in priority order
   tools.json       ← live registry (the robot appends here)
+  tools.d/         ← hand-added / richer tool definitions
 lib/
   html.js seo.js layout.js render.js registry.js categories.js
   ai.mjs           ← optional AI candidate ranking (Groq free tier)
@@ -243,7 +255,7 @@ vercel.json        ← buildCommand/outputDirectory/header caching
 
 ## Design & accessibility
 
-Mobile-first responsive layout, light/dark theme with `prefers-color-scheme` + saved preference (no flash), skip-link, focus-visible rings, semantic landmarks, labeled controls, `aria-live` status regions, reduced-motion support, system font stack (no webfont latency). One CSS file (~14 KB), one 2 KB core script; each tool loads only its own small script — easy 95+ Lighthouse territory.
+Mobile-first responsive layout, light/dark theme with `prefers-color-scheme` + saved preference (no flash), skip-link, focus-visible rings, semantic landmarks, labeled controls, `aria-live` status regions, reduced-motion support. Current design system (v6): black & light-green theme with subtle motion (shine, spinning borders, scroll reveals). One CSS file, one small core script; each tool loads only its own script — easy 95+ Lighthouse territory.
 
 ## SEO coverage (per page: title, meta description, H1, H2s, canonical, OG, Twitter, JSON-LD, breadcrumbs, FAQ, internal links, related tools, sitemap entry)
 
@@ -258,9 +270,9 @@ Home · tool pages · category pages (auto-created per category with tools) · l
 | Optional Groq ranking (free tier) | $0 |
 | Domain (optional) | ~$10/yr if wanted |
 
-## Roadmap ideas (already in the backlog)
+## Roadmap ideas
 
-QR codes (vendor the MIT `qrcode-generator` single file), PDF merge/split via vendored `pdf-lib`, image tools on `<canvas>`, JWT decoder, regex tester, diff checker, meta-tag & robots.txt generators, color contrast checker, cron explainer, 15+ finance/date calculators, CSS generators… The backlog format supports any of them the moment a custom module (human- or AI-written) lands in `scripts/generators/custom/`.
+Many earlier roadmap items are now live (QR codes, PDF merge/split, image tools on canvas, JWT decoder, color contrast checker, cron explainer, etc.). Remaining backlog includes more finance/date calculators, CSS generators, regex tester, diff checker, meta-tag & robots.txt generators, and further image/document utilities. The backlog format supports any of them the moment a custom module (human- or AI-written) lands in `scripts/generators/custom/`.
 
 ## License
 
