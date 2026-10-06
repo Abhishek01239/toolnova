@@ -1,0 +1,67 @@
+{
+  "id": "day-of-year-calculator",
+  "title": "Day of Year Calculator",
+  "h1": "Day of Year Calculator \u2014 Ordinal Date",
+  "seoTitle": "Day of Year Calculator \u2014 Ordinal Date",
+  "description": "Find the day number of a date, days remaining in the year, and whether the year is a leap year. Uses your local calendar and runs offline.",
+  "intro": "Pick a date to see its ordinal day (1\u2013366), how many days are left after it, and the leap-year status of that year.",
+  "blurb": "Get the ordinal day of a date and the days left in that year.",
+  "keywords": [
+    "day of year",
+    "ordinal date",
+    "leap year check",
+    "days left in year"
+  ],
+  "category": "Date & Time",
+  "added": "2026-10-06",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "date",
+        "type": "date",
+        "label": "Date",
+        "value": "2026-10-06"
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Year"
+      }
+    ]
+  },
+  "howItWorks": [
+    "The date is read as a local calendar date, not a UTC timestamp.",
+    "Day of year is the difference from January 1 of the same year, plus one.",
+    "February 29 is included only when the year is a leap year."
+  ],
+  "examples": [
+    "2026-01-01 is day 1 with 364 days remaining.",
+    "2024-12-31 is day 366 because 2024 is a leap year.",
+    "2026-10-06 is day 279."
+  ],
+  "faq": [
+    {
+      "q": "Which timezone is used?",
+      "a": "The date input is a calendar date. Day numbers are calculated from that year, month and day without shifting zones."
+    },
+    {
+      "q": "What counts as a leap year?",
+      "a": "Years divisible by 4 are leap years, except century years, which must be divisible by 400."
+    }
+  ]
+}

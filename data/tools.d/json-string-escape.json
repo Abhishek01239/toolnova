@@ -1,0 +1,79 @@
+{
+  "id": "json-string-escape",
+  "title": "JSON String Escape",
+  "h1": "JSON String Escape and Unescape",
+  "seoTitle": "JSON String Escape and Unescape",
+  "description": "Escape plain text into a JSON string or unescape a JSON string back to text. Quotes, newlines and Unicode are handled locally with JSON.parse.",
+  "intro": "Use this when a log, prompt or config needs a JSON-safe string. Escape wraps the text in quotes and escapes special characters. Unescape expects a JSON string literal.",
+  "blurb": "Escape text for JSON or unescape a JSON string literal in the browser.",
+  "keywords": [
+    "json escape",
+    "unescape json string",
+    "json string literal",
+    "escape quotes"
+  ],
+  "category": "JSON",
+  "added": "2026-10-06",
+  "popularity": 73,
+  "ui": {
+    "controls": [
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Mode",
+        "value": "escape",
+        "options": [
+          {
+            "value": "escape",
+            "label": "Escape to JSON string"
+          },
+          {
+            "value": "unescape",
+            "label": "Unescape JSON string"
+          }
+        ]
+      },
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Input",
+        "value": "Hello \"world\"\nline 2",
+        "rows": 8
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Output"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Escape uses JSON.stringify so quotes, backslashes and newlines become JSON escapes.",
+    "Unescape runs JSON.parse and requires a quoted JSON string, not a full object.",
+    "The conversion stays in the page; the input is not sent anywhere."
+  ],
+  "examples": [
+    "Hello \"world\" escapes to a quoted string with a backslash before the quote.",
+    "A newline becomes the two-character escape \\n inside the JSON string.",
+    "Unescape of \"caf\\u00e9\" returns caf\u00e9."
+  ],
+  "faq": [
+    {
+      "q": "Can I paste a whole JSON object?",
+      "a": "Unescape expects one JSON string literal. For objects, use the JSON formatter instead."
+    },
+    {
+      "q": "Does escape add surrounding quotes?",
+      "a": "Yes. The output is a valid JSON string token, including the wrapping quotes."
+    }
+  ]
+}

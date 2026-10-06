@@ -1,0 +1,68 @@
+{
+  "id": "color-palette-generator",
+  "title": "Color Palette Generator",
+  "h1": "Color Palette Generator \u2014 Tints from One Hex",
+  "seoTitle": "Color Palette Generator \u2014 Tints from One Hex",
+  "description": "Build a five-step tint and shade palette from one hex color. Steps are mixed toward white and black locally, with hex codes you can copy.",
+  "intro": "Start with a base hex color. The tool makes two lighter tints, the base, and two darker shades so you have a small UI palette.",
+  "blurb": "Generate five hex tints and shades from a single base color.",
+  "keywords": [
+    "color palette generator",
+    "tint and shade",
+    "hex palette",
+    "ui color steps"
+  ],
+  "category": "Design",
+  "added": "2026-10-06",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "hex",
+        "type": "text",
+        "label": "Base hex",
+        "value": "#0F766E",
+        "placeholder": "#0F766E"
+      }
+    ],
+    "actions": [
+      {
+        "id": "build",
+        "label": "Build palette",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Palette"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Steps"
+      }
+    ]
+  },
+  "howItWorks": [
+    "The base color accepts 3- or 6-digit hex, with or without #.",
+    "Lighter steps mix the base with white; darker steps mix it with black.",
+    "Each step is written as a six-digit hex code, from lightest to darkest."
+  ],
+  "examples": [
+    "#0F766E produces a teal scale with the base in the middle.",
+    "#fff is treated as white, so darker steps are grays.",
+    "A three-digit value such as #39c is expanded before mixing."
+  ],
+  "faq": [
+    {
+      "q": "Is this a perceptual color scale?",
+      "a": "No. Steps are simple RGB mixes toward white and black. They are even in channel space, not in lightness perception."
+    },
+    {
+      "q": "Can I export CSS variables?",
+      "a": "The output lists hex codes one per line. Copy them into your stylesheet; this page does not write files."
+    }
+  ]
+}

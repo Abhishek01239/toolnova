@@ -1,0 +1,68 @@
+{
+  "id": "average-calculator",
+  "title": "Average Calculator",
+  "h1": "Average Calculator \u2014 Mean, Median, Mode",
+  "seoTitle": "Average Calculator \u2014 Mean, Median and Mode",
+  "description": "Paste numbers to get the mean, median, mode, sum and count. Commas and new lines are both accepted, and the calculation stays in the browser.",
+  "intro": "Enter a list of numbers separated by commas, spaces or new lines. The tool reports count, sum, mean, median and every mode.",
+  "blurb": "Calculate mean, median, mode, sum and count from a list of numbers.",
+  "keywords": [
+    "average calculator",
+    "mean median mode",
+    "number average",
+    "median calculator"
+  ],
+  "category": "Math",
+  "added": "2026-10-06",
+  "popularity": 77,
+  "ui": {
+    "controls": [
+      {
+        "id": "numbers",
+        "type": "textarea",
+        "label": "Numbers",
+        "value": "4, 8, 15, 16, 23, 42, 8",
+        "rows": 6
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Statistics"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Tokens are split on commas, spaces and line breaks, then parsed as decimals.",
+    "Mean is the sum divided by the count. Median uses the middle value or the average of the two middle values.",
+    "Mode lists every value that appears most often. If every value appears once, there is no mode."
+  ],
+  "examples": [
+    "4, 8, 15, 16, 23, 42, 8 has mean 16.571 and mode 8.",
+    "1 2 3 4 has median 2.5 because there are two middle numbers.",
+    "A blank line between numbers is ignored."
+  ],
+  "faq": [
+    {
+      "q": "Are negative numbers allowed?",
+      "a": "Yes. A leading minus is part of the number. Other characters make that token invalid."
+    },
+    {
+      "q": "How many decimals are shown?",
+      "a": "Results are rounded to four decimal places when they are not whole numbers."
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "random-id-generator",
+  "title": "Random ID Generator",
+  "h1": "Random ID Generator \u2014 URL-Safe IDs",
+  "seoTitle": "Random ID Generator \u2014 URL-Safe IDs",
+  "description": "Generate URL-safe random IDs in the browser with a chosen length and alphabet. Uses crypto.getRandomValues, not Math.random, and nothing is stored.",
+  "intro": "Create short IDs for filenames, test data or local prototypes. Pick the length and whether to include symbols that stay safe in URLs.",
+  "blurb": "Create URL-safe random IDs locally with the Web Crypto random source.",
+  "keywords": [
+    "random id generator",
+    "nanoid",
+    "url safe id",
+    "random string generator"
+  ],
+  "category": "Generators",
+  "added": "2026-10-06",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "length",
+        "type": "number",
+        "label": "Length",
+        "value": "21",
+        "min": 4,
+        "max": 64
+      },
+      {
+        "id": "count",
+        "type": "number",
+        "label": "How many",
+        "value": "5",
+        "min": 1,
+        "max": 50
+      },
+      {
+        "id": "alphabet",
+        "type": "select",
+        "label": "Alphabet",
+        "value": "url",
+        "options": [
+          {
+            "value": "url",
+            "label": "URL-safe (A-Z, a-z, 0-9, _-)"
+          },
+          {
+            "value": "alnum",
+            "label": "Letters and digits"
+          },
+          {
+            "value": "hex",
+            "label": "Hex digits"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "generate",
+        "label": "Generate IDs",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "IDs"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Length is limited to 4\u201364 characters and the batch size to 50 IDs.",
+    "Each character is chosen with crypto.getRandomValues so the source is the browser CSPRNG.",
+    "The URL-safe alphabet avoids characters that need encoding in paths."
+  ],
+  "examples": [
+    "Length 21 with the URL-safe alphabet matches the usual NanoID size.",
+    "Hex mode returns only 0-9 and a-f, useful for short tokens.",
+    "A count of 5 prints five IDs, one per line."
+  ],
+  "faq": [
+    {
+      "q": "Are these UUIDs?",
+      "a": "No. They are random strings, not RFC 4122 UUIDs. Use the UUID generator when you need that format."
+    },
+    {
+      "q": "Is this safe for passwords?",
+      "a": "The randomness is strong, but this page is for identifiers. Use the password generator for passwords with explicit character rules."
+    }
+  ]
+}

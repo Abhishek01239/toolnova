@@ -1,0 +1,68 @@
+{
+  "id": "luhn-validator",
+  "title": "Luhn Check Validator",
+  "h1": "Luhn Check Validator \u2014 Card Number Checksum",
+  "seoTitle": "Luhn Check Validator \u2014 Card Number Checksum",
+  "description": "Check a card or ID number with the Luhn checksum in your browser. Digits never leave the page, and the result shows the check digit and brand hint.",
+  "intro": "Paste a number to test the Luhn checksum used by payment cards and some ID schemes. Spaces and dashes are ignored. Nothing is uploaded.",
+  "blurb": "Validate a card or ID number with the Luhn checksum, locally in the browser.",
+  "keywords": [
+    "luhn validator",
+    "credit card checksum",
+    "luhn algorithm",
+    "card number check"
+  ],
+  "category": "Validators",
+  "added": "2026-10-06",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "number",
+        "type": "text",
+        "label": "Number",
+        "value": "4242 4242 4242 4242",
+        "placeholder": "ACCT-000015"
+      }
+    ],
+    "actions": [
+      {
+        "id": "check",
+        "label": "Check number",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Spaces and dashes are stripped so only digits remain.",
+    "The Luhn algorithm doubles every second digit from the right and sums the digits.",
+    "A total divisible by 10 is valid. A brand hint is inferred from the prefix only."
+  ],
+  "examples": [
+    "4242424242424242 is a common Visa-format test number and passes Luhn.",
+    "4242424242424241 fails because the check digit is wrong.",
+    "Dashes in 3782-822463-10005 are ignored before the checksum."
+  ],
+  "faq": [
+    {
+      "q": "Does a passing check mean the card is real?",
+      "a": "No. Luhn only checks the checksum. It cannot confirm that an account exists, is funded, or is not stolen."
+    },
+    {
+      "q": "Is the number sent to a server?",
+      "a": "No. The check runs in your browser and the field is not submitted anywhere."
+    }
+  ]
+}

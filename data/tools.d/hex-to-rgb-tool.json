@@ -1,0 +1,96 @@
+{
+  "id": "hex-to-rgb-tool",
+  "title": "Hex to RGB Converter",
+  "h1": "Hex to RGB and HSL Converter",
+  "seoTitle": "Hex to RGB and HSL Converter",
+  "description": "Convert a hex color to RGB and HSL, and build a hex code from RGB values. The preview updates in the page and no color service is called.",
+  "intro": "Enter a 3- or 6-digit hex color, or set red, green and blue from 0 to 255. The tool shows both notations and a small preview swatch.",
+  "blurb": "Convert between hex and RGB, with HSL values and a local color preview.",
+  "keywords": [
+    "hex to rgb",
+    "rgb to hex",
+    "hex color converter",
+    "hsl converter"
+  ],
+  "category": "Color",
+  "added": "2026-10-06",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "hex",
+        "type": "text",
+        "label": "Hex",
+        "value": "#3B82F6",
+        "placeholder": "#3B82F6"
+      },
+      {
+        "id": "red",
+        "type": "number",
+        "label": "Red (0\u2013255)",
+        "value": "59",
+        "min": 0,
+        "max": 255
+      },
+      {
+        "id": "green",
+        "type": "number",
+        "label": "Green (0\u2013255)",
+        "value": "130",
+        "min": 0,
+        "max": 255
+      },
+      {
+        "id": "blue",
+        "type": "number",
+        "label": "Blue (0\u2013255)",
+        "value": "246",
+        "min": 0,
+        "max": 255
+      }
+    ],
+    "actions": [
+      {
+        "id": "fromhex",
+        "label": "Convert hex",
+        "primary": true
+      },
+      {
+        "id": "fromrgb",
+        "label": "Convert RGB"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Converted values"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Channels"
+      }
+    ]
+  },
+  "howItWorks": [
+    "A leading # is optional. Three-digit hex expands by repeating each digit.",
+    "RGB values are clamped to 0\u2013255 and written as a six-digit hex code.",
+    "HSL is calculated from the RGB channels so you can copy either format."
+  ],
+  "examples": [
+    "#fff expands to #FFFFFF, rgb(255, 255, 255).",
+    "#3B82F6 is the common Tailwind blue and converts to rgb(59, 130, 246).",
+    "Red 0, green 128, blue 0 becomes #008000."
+  ],
+  "faq": [
+    {
+      "q": "Are 8-digit hex colors supported?",
+      "a": "No. This tool handles opaque 3- and 6-digit hex only. Alpha channels are ignored rather than guessed."
+    },
+    {
+      "q": "Does the preview upload the color?",
+      "a": "No. The swatch is drawn from the calculated RGB value in the browser."
+    }
+  ]
+}

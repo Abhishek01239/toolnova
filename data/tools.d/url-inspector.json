@@ -1,0 +1,68 @@
+{
+  "id": "url-inspector",
+  "title": "URL Inspector",
+  "h1": "URL Inspector \u2014 Parse Links into Parts",
+  "seoTitle": "URL Inspector \u2014 Parse Links into Parts",
+  "description": "Split a URL into protocol, host, port, path, query parameters and hash. Parsing stays in the browser and shows every query pair on its own line.",
+  "intro": "Paste any absolute URL to see its pieces. Query parameters are decoded and listed so campaign links and API endpoints are easier to read.",
+  "blurb": "Break an absolute URL into protocol, host, path, query pairs and hash.",
+  "keywords": [
+    "url parser",
+    "query string parser",
+    "url inspector",
+    "parse url parameters"
+  ],
+  "category": "Developer",
+  "added": "2026-10-06",
+  "popularity": 76,
+  "ui": {
+    "controls": [
+      {
+        "id": "url",
+        "type": "text",
+        "label": "URL",
+        "value": "https://example.com:8443/docs/start?q=tool+nova&lang=en#install",
+        "placeholder": "https://example.com/path?a=1"
+      }
+    ],
+    "actions": [
+      {
+        "id": "parse",
+        "label": "Inspect URL",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Parts"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Overview"
+      }
+    ]
+  },
+  "howItWorks": [
+    "The value is parsed with the browser URL constructor, so it must include a scheme.",
+    "Path, host, port and hash are read from the parsed object.",
+    "Each query parameter is decoded and listed; repeated keys stay as separate rows."
+  ],
+  "examples": [
+    "https://example.com/docs?q=tool+nova shows q as tool nova.",
+    "A hash such as #install is reported separately from the path.",
+    "http://localhost:3000/api has host localhost and port 3000."
+  ],
+  "faq": [
+    {
+      "q": "Why was my link rejected?",
+      "a": "Relative paths and missing schemes are not absolute URLs. Add https:// or http:// and try again."
+    },
+    {
+      "q": "Does this fetch the page?",
+      "a": "No. It only parses the string locally and does not open the link."
+    }
+  ]
+}
