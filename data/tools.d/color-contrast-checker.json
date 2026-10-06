@@ -1,0 +1,79 @@
+{
+  "id": "color-contrast-checker",
+  "title": "Color Contrast Checker",
+  "h1": "Color Contrast Checker \u2014 WCAG Ratio",
+  "seoTitle": "Color Contrast Checker \u2014 WCAG AA and AAA",
+  "description": "Check the WCAG contrast ratio of two hex colors. See AA and AAA pass or fail for normal text, large text and UI graphics. Runs locally.",
+  "intro": "Enter a foreground and background hex color. The checker computes the WCAG relative-luminance ratio and marks AA and AAA thresholds.",
+  "blurb": "Measure WCAG contrast between two hex colors for text and interface graphics.",
+  "keywords": [
+    "contrast checker",
+    "wcag contrast",
+    "color contrast ratio",
+    "accessibility contrast"
+  ],
+  "category": "Design",
+  "added": "2026-10-06",
+  "popularity": 80,
+  "ui": {
+    "controls": [
+      {
+        "id": "fg",
+        "type": "text",
+        "label": "Foreground hex",
+        "value": "#1A1A1A",
+        "placeholder": "#1A1A1A"
+      },
+      {
+        "id": "bg",
+        "type": "text",
+        "label": "Background hex",
+        "value": "#FFFFFF",
+        "placeholder": "#FFFFFF"
+      }
+    ],
+    "actions": [
+      {
+        "id": "check",
+        "label": "Check contrast",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Thresholds"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter two colors as #RGB or #RRGGBB.",
+    "Press Check contrast. Relative luminance follows the WCAG 2 formula.",
+    "Compare the ratio with 4.5:1 and 3:1 for AA, and 7:1 and 4.5:1 for AAA."
+  ],
+  "examples": [
+    "#1A1A1A on #FFFFFF is a high-contrast pair that passes AAA for normal text.",
+    "#777777 on #FFFFFF is a common mid-gray that often fails AA for normal text.",
+    "Short #RGB values such as #FFF are expanded before the ratio is calculated."
+  ],
+  "faq": [
+    {
+      "q": "What ratio is required for WCAG AA?",
+      "a": "Normal text needs at least 4.5:1. Large text and non-text UI components need at least 3:1. AAA raises normal text to 7:1 and large text to 4.5:1."
+    },
+    {
+      "q": "Does this check alpha transparency?",
+      "a": "No. Only opaque hex colors are compared. Flatten transparent colors onto the real background before checking."
+    },
+    {
+      "q": "Is this an official audit?",
+      "a": "It applies the published WCAG contrast formula for a quick check. It is not a substitute for a full accessibility review of a page."
+    }
+  ]
+}

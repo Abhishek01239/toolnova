@@ -1,0 +1,77 @@
+{
+  "id": "jwt-decoder",
+  "title": "JWT Decoder",
+  "h1": "JWT Decoder \u2014 Header and Payload",
+  "seoTitle": "JWT Decoder \u2014 Inspect Tokens Locally",
+  "description": "Decode a JSON Web Token header and payload in the browser. Base64url segments are pretty-printed. The signature is not verified.",
+  "intro": "Paste a JWT to inspect its header and claims locally. Nothing is uploaded. Signature verification is intentionally not performed.",
+  "blurb": "Decode a JWT header and payload locally without verifying the signature.",
+  "keywords": [
+    "jwt decoder",
+    "json web token",
+    "decode jwt",
+    "jwt header payload"
+  ],
+  "category": "Security",
+  "added": "2026-10-06",
+  "popularity": 77,
+  "ui": {
+    "controls": [
+      {
+        "id": "token",
+        "type": "textarea",
+        "label": "JSON Web Token",
+        "rows": 6,
+        "placeholder": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+      }
+    ],
+    "actions": [
+      {
+        "id": "decode",
+        "label": "Decode",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "header",
+        "type": "textarea",
+        "label": "Header"
+      },
+      {
+        "id": "payload",
+        "type": "textarea",
+        "label": "Payload"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Token info"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste a token with three base64url segments separated by dots.",
+    "Press Decode. The header and payload are decoded and formatted as JSON when possible.",
+    "Read the claim timestamps if present. The signature segment is shown only as a length, not verified."
+  ],
+  "examples": [
+    "A token whose payload includes exp shows that claim as a Unix time and a local date.",
+    "A two-segment string is rejected because a JWT has header, payload and signature.",
+    "Payloads that are not JSON are shown as decoded text instead of formatted JSON."
+  ],
+  "faq": [
+    {
+      "q": "Does this verify the signature?",
+      "a": "No. Decoding only reveals what the token claims. Trust a token only after a server verifies it with the correct key."
+    },
+    {
+      "q": "Is the token uploaded?",
+      "a": "No. Decoding uses the browser only. Still avoid pasting production secrets into a shared or logged machine."
+    },
+    {
+      "q": "What is the exp claim?",
+      "a": "exp is the expiry time as seconds since 1970-01-01 UTC. iat is issued-at and nbf is not-before, when those claims exist."
+    }
+  ]
+}

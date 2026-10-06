@@ -1,0 +1,85 @@
+{
+  "id": "cron-expression-explainer",
+  "title": "Cron Expression Explainer",
+  "h1": "Cron Expression Explainer \u2014 Five-Field Schedules",
+  "seoTitle": "Cron Expression Explainer \u2014 Free Online",
+  "description": "Explain a standard five-field cron expression in plain language and list the next run times. Supports lists, ranges and steps. Runs locally.",
+  "intro": "Paste a minute-hour-day-month-weekday expression. The explainer names each field and estimates the next few matching times in your local timezone.",
+  "blurb": "Turn a five-field cron expression into plain language and upcoming run times.",
+  "keywords": [
+    "cron explainer",
+    "crontab guru",
+    "cron expression",
+    "cron schedule"
+  ],
+  "category": "Developer",
+  "added": "2026-10-06",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "expr",
+        "type": "text",
+        "label": "Cron expression",
+        "value": "0 9 * * 1-5",
+        "placeholder": "0 9 * * 1-5"
+      },
+      {
+        "id": "count",
+        "type": "number",
+        "label": "Next runs to list",
+        "value": "5",
+        "min": 1,
+        "max": 12
+      }
+    ],
+    "actions": [
+      {
+        "id": "explain",
+        "label": "Explain",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "meaning",
+        "type": "textarea",
+        "label": "Meaning"
+      },
+      {
+        "id": "runs",
+        "type": "pre",
+        "label": "Next runs (local time)"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Fields"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter five space-separated fields: minute, hour, day of month, month, day of week.",
+    "Use * for any, commas for lists, hyphens for ranges and / for steps, such as */15 or 1-5.",
+    "Press Explain to see a field-by-field reading and the next matching local times."
+  ],
+  "examples": [
+    "0 9 * * 1-5 means 09:00 on Monday through Friday.",
+    "*/15 * * * * means every 15 minutes.",
+    "0 0 1 * * means midnight on the first day of each month."
+  ],
+  "faq": [
+    {
+      "q": "Which cron dialect does this cover?",
+      "a": "Standard five-field cron used by Vixie cron and many schedulers. It does not parse seconds, years, or names such as JAN or MON."
+    },
+    {
+      "q": "How are day-of-month and day-of-week combined?",
+      "a": "If both fields are restricted, a time matches when either field matches, which is the usual cron OR rule. If either field is *, only the other field is applied."
+    },
+    {
+      "q": "Is the expression sent to a server?",
+      "a": "No. Parsing and the next-run search happen in your browser. Results use your device timezone."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "http-status-lookup",
+  "title": "HTTP Status Lookup",
+  "h1": "HTTP Status Lookup \u2014 Code Meanings",
+  "seoTitle": "HTTP Status Lookup \u2014 Code Meanings",
+  "description": "Look up common HTTP status codes and see the class, a short meaning and a typical response use. Works offline after the page loads.",
+  "intro": "Enter a status code such as 404 or 429. The lookup explains the class and a practical meaning for APIs and web pages.",
+  "blurb": "Look up common HTTP status codes with class and a practical meaning.",
+  "keywords": [
+    "http status codes",
+    "404 meaning",
+    "status code lookup",
+    "http response codes"
+  ],
+  "category": "Developer",
+  "added": "2026-10-06",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "code",
+        "type": "number",
+        "label": "Status code",
+        "value": "404",
+        "min": 100,
+        "max": 599
+      }
+    ],
+    "actions": [
+      {
+        "id": "lookup",
+        "label": "Look up",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Meaning"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Class"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter a three-digit HTTP status code.",
+    "Press Look up. Known codes return a name, class and a short usage note.",
+    "Unknown codes still show the class from the first digit, such as 4xx client error."
+  ],
+  "examples": [
+    "404 is Not Found, a client error when the target resource does not exist.",
+    "301 is Moved Permanently, a redirect that clients and caches may store.",
+    "503 is Service Unavailable, a server error often used during maintenance."
+  ],
+  "faq": [
+    {
+      "q": "Are unofficial codes included?",
+      "a": "The list covers widely used codes from the HTTP specifications and common extensions such as 418 and 429. Obscure vendor codes may only get a class label."
+    },
+    {
+      "q": "Does this call a website?",
+      "a": "No. The meanings are bundled in the page and the lookup runs locally."
+    },
+    {
+      "q": "What is the difference between 401 and 403?",
+      "a": "401 means authentication is missing or rejected. 403 means the server understood the request but refuses to authorize it."
+    }
+  ]
+}

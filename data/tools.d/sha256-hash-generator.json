@@ -1,0 +1,72 @@
+{
+  "id": "sha256-hash-generator",
+  "title": "SHA-256 Hash Generator",
+  "h1": "SHA-256 Hash Generator \u2014 Local Digest",
+  "seoTitle": "SHA-256 Hash Generator \u2014 Free Online",
+  "description": "Hash text with SHA-256 in your browser and copy the hex digest. Uses the Web Crypto API. The input is never uploaded.",
+  "intro": "Type or paste text and generate a SHA-256 hex digest locally. Useful for checksums of notes, tokens and short files you paste as text.",
+  "blurb": "Compute a SHA-256 hex digest of text entirely in the browser.",
+  "keywords": [
+    "sha256 generator",
+    "sha-256 hash",
+    "checksum text",
+    "web crypto hash"
+  ],
+  "category": "Security",
+  "added": "2026-10-06",
+  "popularity": 76,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text to hash",
+        "rows": 8,
+        "value": "toolnova"
+      }
+    ],
+    "actions": [
+      {
+        "id": "hash",
+        "label": "Generate SHA-256",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "digest",
+        "type": "textarea",
+        "label": "Hex digest"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste the exact text, including spaces and line breaks.",
+    "Press Generate SHA-256. The browser hashes the UTF-8 bytes with SubtleCrypto.",
+    "Copy the 64-character lowercase hex digest. The same text always produces the same digest."
+  ],
+  "examples": [
+    "The word toolnova has a stable SHA-256 hex digest you can recompute any time.",
+    "Adding a trailing space changes the digest because the bytes change.",
+    "An empty box hashes the empty string, which is a known SHA-256 value."
+  ],
+  "faq": [
+    {
+      "q": "Is SHA-256 encryption?",
+      "a": "No. It is a one-way hash. You cannot recover the original text from the digest."
+    },
+    {
+      "q": "Does this hash files?",
+      "a": "It hashes the text you paste, encoded as UTF-8. For a file checksum, paste the file contents only if they are text."
+    },
+    {
+      "q": "Will the result match other tools?",
+      "a": "Yes, when those tools hash the same UTF-8 bytes. Watch for hidden newlines added by editors."
+    }
+  ]
+}
