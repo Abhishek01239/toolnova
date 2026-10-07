@@ -1,0 +1,86 @@
+{
+  "id": "roman-numeral-converter",
+  "title": "Roman Numeral Converter",
+  "h1": "Roman Numeral Converter \u2014 1 to 3999",
+  "seoTitle": "Roman Numeral Converter \u2014 Free Online",
+  "description": "Convert numbers from 1 to 3999 into Roman numerals and parse standard Roman numerals back to integers. Runs locally. Nothing is uploaded.",
+  "intro": "Turn an integer into a standard Roman numeral, or paste a numeral such as MCMXCIV and get the integer. Subtractive pairs are validated.",
+  "blurb": "Convert between integers and standard Roman numerals in the browser.",
+  "keywords": [
+    "roman numeral converter",
+    "number to roman",
+    "roman to number",
+    "roman numerals"
+  ],
+  "category": "Math",
+  "added": "2026-10-07",
+  "popularity": 64,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "text",
+        "label": "Number or numeral",
+        "placeholder": "1994 or MCMXCIV"
+      },
+      {
+        "id": "direction",
+        "type": "select",
+        "label": "Direction",
+        "options": [
+          {
+            "value": "to-roman",
+            "label": "Number to Roman"
+          },
+          {
+            "value": "to-number",
+            "label": "Roman to number"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "text",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter an integer from 1 to 3999, or a Roman numeral using I, V, X, L, C, D and M.",
+    "Choose a direction and press Convert.",
+    "Invalid repeats and non-standard subtractive pairs are rejected."
+  ],
+  "examples": [
+    "1994 becomes MCMXCIV.",
+    "XLII becomes 42.",
+    "IIII is rejected because four repeats are not standard."
+  ],
+  "faq": [
+    {
+      "q": "Why stop at 3999?",
+      "a": "Standard Roman numerals without overlines cover 1 through 3999. Larger values need vinculum notation, which this tool does not emit."
+    },
+    {
+      "q": "Is IIII accepted for clocks?",
+      "a": "No. Only the standard subtractive form is accepted, so 4 is IV."
+    },
+    {
+      "q": "Is the value uploaded?",
+      "a": "No. Conversion runs in the browser."
+    }
+  ]
+}

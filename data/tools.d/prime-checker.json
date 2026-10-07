@@ -1,0 +1,71 @@
+{
+  "id": "prime-checker",
+  "title": "Prime Checker",
+  "h1": "Prime Checker and Factorization",
+  "seoTitle": "Prime Checker \u2014 Factorize Integers",
+  "description": "Check whether an integer is prime and list its prime factors with exponents. Trial division runs locally. Nothing is uploaded.",
+  "intro": "Enter a positive integer to see if it is prime, plus the full prime factorization when it is composite. Handy for homework and quick checks.",
+  "blurb": "Test primality and show prime factors entirely in the browser.",
+  "keywords": [
+    "prime checker",
+    "prime factorization",
+    "is prime",
+    "factor calculator"
+  ],
+  "category": "Math",
+  "added": "2026-10-07",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "number",
+        "type": "text",
+        "label": "Positive integer",
+        "placeholder": "360"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Check",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Factorization"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter a positive integer up to 15 digits.",
+    "Press Check. The page trial-divides by primes up to the square root.",
+    "Read whether it is prime and the exponent form of its factors."
+  ],
+  "examples": [
+    "17 is prime, so the factorization is 17.",
+    "360 factors as 2^3 \u00d7 3^2 \u00d7 5.",
+    "1 is neither prime nor composite and is reported that way."
+  ],
+  "faq": [
+    {
+      "q": "What is the size limit?",
+      "a": "Inputs longer than 15 digits are rejected so the page stays responsive. Use a computer-algebra tool for huge integers."
+    },
+    {
+      "q": "Are negatives accepted?",
+      "a": "No. Primality is defined for integers greater than 1. Enter the absolute value."
+    },
+    {
+      "q": "Is the number uploaded?",
+      "a": "No. Factorization runs in your browser."
+    }
+  ]
+}

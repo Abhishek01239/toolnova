@@ -1,0 +1,72 @@
+{
+  "id": "gcd-lcm-calculator",
+  "title": "GCD and LCM Calculator",
+  "h1": "GCD and LCM Calculator",
+  "seoTitle": "GCD and LCM Calculator \u2014 Free Online",
+  "description": "Find the greatest common divisor and least common multiple of two or more integers. Euclidean steps stay in the browser. Nothing is uploaded.",
+  "intro": "Paste a list of integers and get the GCD, LCM and a short Euclidean trace for the first pair. Useful for fractions, schedules and ratios.",
+  "blurb": "Calculate GCD and LCM for any list of integers locally.",
+  "keywords": [
+    "gcd calculator",
+    "lcm calculator",
+    "greatest common divisor",
+    "least common multiple"
+  ],
+  "category": "Math",
+  "added": "2026-10-07",
+  "popularity": 66,
+  "ui": {
+    "controls": [
+      {
+        "id": "numbers",
+        "type": "textarea",
+        "label": "Integers",
+        "rows": 4,
+        "placeholder": "12, 18, 30"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter two or more integers separated by commas, spaces or new lines.",
+    "Press Calculate. GCD uses the Euclidean algorithm; LCM uses GCD so products do not overflow early.",
+    "Read the shared divisor, the common multiple and the step trace."
+  ],
+  "examples": [
+    "12 and 18 have GCD 6 and LCM 36.",
+    "8, 12 and 20 have GCD 4 and LCM 120.",
+    "Coprime inputs such as 7 and 13 have GCD 1."
+  ],
+  "faq": [
+    {
+      "q": "Can I use more than two numbers?",
+      "a": "Yes. The calculator folds GCD and LCM across the whole list, ignoring order."
+    },
+    {
+      "q": "What about zero and negatives?",
+      "a": "Signs are ignored. A list of only zeros has GCD 0 and no finite LCM, which is reported."
+    },
+    {
+      "q": "Is any data sent away?",
+      "a": "No. The arithmetic runs entirely in the page."
+    }
+  ]
+}

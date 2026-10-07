@@ -1,0 +1,109 @@
+{
+  "id": "number-base-converter",
+  "title": "Number Base Converter",
+  "h1": "Number Base Converter \u2014 Bin, Oct, Dec, Hex",
+  "seoTitle": "Number Base Converter \u2014 Binary to Hex",
+  "description": "Convert integers between binary, octal, decimal and hexadecimal in the browser. Prefixes like 0x and 0b are accepted. Nothing is uploaded.",
+  "intro": "Paste an integer in binary, octal, decimal or hex and see the same value in the other three bases, including a bit length.",
+  "blurb": "Convert integers between binary, octal, decimal and hexadecimal locally.",
+  "keywords": [
+    "number base converter",
+    "binary to decimal",
+    "hex to binary",
+    "octal converter"
+  ],
+  "category": "Developer",
+  "added": "2026-10-07",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "value",
+        "type": "text",
+        "label": "Integer",
+        "placeholder": "255 or 0xFF or 0b11111111"
+      },
+      {
+        "id": "base",
+        "type": "select",
+        "label": "Input base",
+        "options": [
+          {
+            "value": "10",
+            "label": "Decimal"
+          },
+          {
+            "value": "2",
+            "label": "Binary"
+          },
+          {
+            "value": "8",
+            "label": "Octal"
+          },
+          {
+            "value": "16",
+            "label": "Hexadecimal"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "binary",
+        "type": "text",
+        "label": "Binary"
+      },
+      {
+        "id": "octal",
+        "type": "text",
+        "label": "Octal"
+      },
+      {
+        "id": "decimal",
+        "type": "text",
+        "label": "Decimal"
+      },
+      {
+        "id": "hex",
+        "type": "text",
+        "label": "Hexadecimal"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter an integer and pick the base you typed it in.",
+    "Press Convert. Optional 0b, 0o and 0x prefixes are stripped when they match the selected base.",
+    "Read binary, octal, decimal and hex forms of the same value."
+  ],
+  "examples": [
+    "Decimal 255 is binary 11111111, octal 377 and hex FF.",
+    "Hex 0x10 in the hexadecimal base is decimal 16.",
+    "A digit that does not belong in the chosen base is rejected."
+  ],
+  "faq": [
+    {
+      "q": "How large can the number be?",
+      "a": "Values are handled as JavaScript BigInt, so they are not limited to 32-bit integers. Very long inputs still work."
+    },
+    {
+      "q": "Are negative numbers supported?",
+      "a": "Yes. A leading minus is kept and applied to every output base."
+    },
+    {
+      "q": "Does this call a server?",
+      "a": "No. Parsing and conversion stay in the browser."
+    }
+  ]
+}

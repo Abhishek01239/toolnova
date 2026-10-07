@@ -1,0 +1,87 @@
+{
+  "id": "morse-code-translator",
+  "title": "Morse Code Translator",
+  "h1": "Morse Code Translator \u2014 Text and Dots",
+  "seoTitle": "Morse Code Translator \u2014 Free & Local",
+  "description": "Translate text to International Morse and decode dots and dashes in the browser. Letters use spaces; words use slashes. Nothing is uploaded.",
+  "intro": "Convert letters, digits and common punctuation to International Morse, or paste dots and dashes to read them back. Encoding stays on this device.",
+  "blurb": "Translate text to International Morse code and decode dots and dashes locally.",
+  "keywords": [
+    "morse code translator",
+    "text to morse",
+    "morse decoder",
+    "international morse"
+  ],
+  "category": "Encoding",
+  "added": "2026-10-07",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text or Morse",
+        "rows": 6,
+        "placeholder": "HELLO WORLD or .... . .-.. .-.. --- / .-- --- .-. .-.. -.."
+      },
+      {
+        "id": "direction",
+        "type": "select",
+        "label": "Direction",
+        "options": [
+          {
+            "value": "to-morse",
+            "label": "Text to Morse"
+          },
+          {
+            "value": "to-text",
+            "label": "Morse to text"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Translate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Type plain text or Morse made of dots (.) and dashes (-).",
+    "Choose a direction and press Translate. Unknown characters are marked with #.",
+    "Copy the result. Words in Morse are separated by a slash."
+  ],
+  "examples": [
+    "HELLO becomes .... . .-.. .-.. ---.",
+    ".... . .-.. .-.. --- / .-- --- .-. .-.. -.. decodes to HELLO WORLD.",
+    "A question mark maps to ..--.. and is restored when decoding."
+  ],
+  "faq": [
+    {
+      "q": "Which Morse standard is used?",
+      "a": "International Morse for A\u2013Z, 0\u20139 and common punctuation. American railroad Morse is not included."
+    },
+    {
+      "q": "How should Morse be spaced?",
+      "a": "Separate letters with a space and words with a slash. Extra spaces are collapsed before decoding."
+    },
+    {
+      "q": "Is the message uploaded?",
+      "a": "No. Translation runs in the page. Playback audio is not generated; this tool only converts text."
+    }
+  ]
+}

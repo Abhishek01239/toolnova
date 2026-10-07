@@ -1,0 +1,125 @@
+{
+  "id": "chmod-calculator",
+  "title": "chmod Calculator",
+  "h1": "chmod Calculator \u2014 Octal and Symbolic",
+  "seoTitle": "chmod Calculator \u2014 Octal Permissions",
+  "description": "Build Unix file permissions from read, write and execute boxes, or decode an octal mode like 755. Runs locally. Nothing is uploaded.",
+  "intro": "Tick owner, group and other permissions to get the octal mode, symbolic string and a chmod command. Or decode an octal value the other way.",
+  "blurb": "Convert between chmod checkboxes, octal modes and symbolic permissions.",
+  "keywords": [
+    "chmod calculator",
+    "unix permissions",
+    "octal chmod",
+    "755 permissions"
+  ],
+  "category": "Developer",
+  "added": "2026-10-07",
+  "popularity": 73,
+  "ui": {
+    "controls": [
+      {
+        "id": "or",
+        "type": "checkbox",
+        "label": "Owner read (4)"
+      },
+      {
+        "id": "ow",
+        "type": "checkbox",
+        "label": "Owner write (2)"
+      },
+      {
+        "id": "ox",
+        "type": "checkbox",
+        "label": "Owner execute (1)"
+      },
+      {
+        "id": "gr",
+        "type": "checkbox",
+        "label": "Group read (4)"
+      },
+      {
+        "id": "gw",
+        "type": "checkbox",
+        "label": "Group write (2)"
+      },
+      {
+        "id": "gx",
+        "type": "checkbox",
+        "label": "Group execute (1)"
+      },
+      {
+        "id": "otr",
+        "type": "checkbox",
+        "label": "Other read (4)"
+      },
+      {
+        "id": "otw",
+        "type": "checkbox",
+        "label": "Other write (2)"
+      },
+      {
+        "id": "otx",
+        "type": "checkbox",
+        "label": "Other execute (1)"
+      },
+      {
+        "id": "octal",
+        "type": "text",
+        "label": "Octal mode",
+        "placeholder": "644"
+      }
+    ],
+    "actions": [
+      {
+        "id": "from-boxes",
+        "label": "From checkboxes",
+        "primary": true
+      },
+      {
+        "id": "from-octal",
+        "label": "Decode octal"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "command",
+        "type": "text",
+        "label": "Command"
+      },
+      {
+        "id": "symbolic",
+        "type": "text",
+        "label": "Symbolic"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Tick read, write and execute for owner, group and other, then press From checkboxes.",
+    "Or type a three-digit octal mode and press Decode octal to fill the meaning.",
+    "Copy the chmod command. Special bits such as setuid are not included."
+  ],
+  "examples": [
+    "Owner read/write and everyone else read is 644, shown as rw-r--r--.",
+    "Owner rwx and group/other r-x is 755, a common directory mode.",
+    "Typing 600 decodes to owner read and write only."
+  ],
+  "faq": [
+    {
+      "q": "What do the digits mean?",
+      "a": "Each class sums read=4, write=2 and execute=1. 7 is rwx, 6 is rw-, 5 is r-x and 4 is r--."
+    },
+    {
+      "q": "Does this change files on a server?",
+      "a": "No. It only prints the command. Run chmod yourself on the machine that owns the file."
+    },
+    {
+      "q": "Are setuid and sticky bits included?",
+      "a": "No. This calculator covers the standard three-digit owner, group and other mode."
+    }
+  ]
+}
