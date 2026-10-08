@@ -1,0 +1,71 @@
+{
+  "id": "isbn-validator",
+  "title": "ISBN Validator",
+  "h1": "ISBN Validator \u2014 ISBN-10 and ISBN-13",
+  "seoTitle": "ISBN Validator \u2014 Free & Local",
+  "description": "Check an ISBN-10 or ISBN-13 checksum and normalize hyphens. Validation uses the public ISBN check-digit rules in your browser.",
+  "intro": "Paste an ISBN with or without hyphens. The tool checks the length and the official check digit, then reprints a compact form.",
+  "blurb": "Validate ISBN-10 and ISBN-13 check digits locally.",
+  "keywords": [
+    "isbn validator",
+    "isbn-13 check digit",
+    "isbn-10 checksum",
+    "validate isbn"
+  ],
+  "category": "Validators",
+  "added": "2026-10-08",
+  "popularity": 69,
+  "ui": {
+    "controls": [
+      {
+        "id": "isbn",
+        "type": "text",
+        "label": "ISBN",
+        "placeholder": "978-0-306-40615-7"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Validate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste an ISBN-10 or ISBN-13. Hyphens and spaces are removed.",
+    "Press Validate. ISBN-13 uses a 1-3 alternating sum modulo 10. ISBN-10 uses weights 10 down to 1, with X allowed as the check character.",
+    "Read whether the check digit matches."
+  ],
+  "examples": [
+    "9780306406157 is a valid ISBN-13.",
+    "0-306-40615-2 is a valid ISBN-10.",
+    "9780306406158 fails the ISBN-13 check digit."
+  ],
+  "faq": [
+    {
+      "q": "Which standards are checked?",
+      "a": "The ISBN-10 weighted checksum and the ISBN-13 GTIN-style check digit. Hyphen group structure is not looked up in the ISBN range registry."
+    },
+    {
+      "q": "Does X count in ISBN-10?",
+      "a": "Yes. A trailing X or x is treated as the check value 10, which is the usual ISBN-10 convention."
+    },
+    {
+      "q": "Is the number uploaded?",
+      "a": "No. The checksum runs in the page."
+    }
+  ]
+}

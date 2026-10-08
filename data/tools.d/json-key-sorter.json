@@ -1,0 +1,72 @@
+{
+  "id": "json-key-sorter",
+  "title": "JSON Key Sorter",
+  "h1": "JSON Key Sorter \u2014 Stable Object Keys",
+  "seoTitle": "JSON Key Sorter \u2014 Free & Local",
+  "description": "Sort JSON object keys alphabetically at every depth and pretty-print the result. Parsing stays in the browser and nothing is uploaded.",
+  "intro": "Paste a JSON document to rewrite object keys in alphabetical order. Arrays keep their order. Invalid JSON is reported instead of guessed.",
+  "blurb": "Alphabetize JSON object keys recursively and pretty-print the document.",
+  "keywords": [
+    "json key sorter",
+    "sort json keys",
+    "canonicalize json",
+    "json pretty sort"
+  ],
+  "category": "JSON",
+  "added": "2026-10-08",
+  "popularity": 73,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "JSON",
+        "rows": 8,
+        "placeholder": "{\"b\":1,\"a\":{\"d\":2,\"c\":3}}"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Sort keys",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Sorted JSON"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste a JSON object or array.",
+    "Press Sort keys. Objects are rebuilt with keys sorted by UTF-16 code unit. Arrays stay in place.",
+    "Copy the two-space pretty print. The original text is not changed."
+  ],
+  "examples": [
+    "{\"b\":1,\"a\":2} becomes an object with a then b.",
+    "Nested objects are sorted at every level.",
+    "[{\"z\":1,\"a\":2}] sorts keys inside the object and keeps the array."
+  ],
+  "faq": [
+    {
+      "q": "Does sorting change values?",
+      "a": "No. Only object key order changes. Numbers, strings and array order stay the same. Duplicate keys follow the browser JSON parser, which keeps the last value."
+    },
+    {
+      "q": "Is key order meaningful in JSON?",
+      "a": "Parsers may ignore object key order. Sorting is still useful for diffs and reviews."
+    },
+    {
+      "q": "Is the document uploaded?",
+      "a": "No. Parsing and sorting run in the page."
+    }
+  ]
+}

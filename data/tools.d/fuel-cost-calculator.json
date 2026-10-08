@@ -1,0 +1,83 @@
+{
+  "id": "fuel-cost-calculator",
+  "title": "Fuel Cost Calculator",
+  "h1": "Fuel Cost Calculator \u2014 Trip Estimate",
+  "seoTitle": "Fuel Cost Calculator \u2014 Free & Local",
+  "description": "Estimate trip fuel use and cost from distance, consumption and price per unit. The arithmetic stays in the browser.",
+  "intro": "Enter distance, how much fuel the vehicle uses per 100 units of distance, and the price per fuel unit to estimate the trip cost.",
+  "blurb": "Estimate fuel used and trip cost from distance, consumption and price.",
+  "keywords": [
+    "fuel cost calculator",
+    "trip fuel estimate",
+    "petrol cost calculator",
+    "mileage cost"
+  ],
+  "category": "Calculators",
+  "added": "2026-10-08",
+  "popularity": 71,
+  "ui": {
+    "controls": [
+      {
+        "id": "distance",
+        "type": "number",
+        "label": "Distance",
+        "value": "120"
+      },
+      {
+        "id": "consumption",
+        "type": "number",
+        "label": "Fuel per 100 distance units",
+        "value": "6.5"
+      },
+      {
+        "id": "price",
+        "type": "number",
+        "label": "Price per fuel unit",
+        "value": "1.8"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Estimate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Estimate"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the trip distance, consumption per 100 of the same distance unit, and price per fuel unit.",
+    "Press Estimate. Fuel used is distance divided by 100, multiplied by consumption.",
+    "Cost is fuel used times price. Units are whatever you entered; the tool does not convert miles to litres."
+  ],
+  "examples": [
+    "120 distance units at 6.5 per 100 and price 1.8 costs 14.04.",
+    "Doubling the distance doubles both fuel and cost.",
+    "A zero price returns the fuel volume with a zero cost."
+  ],
+  "faq": [
+    {
+      "q": "Which units does it use?",
+      "a": "It does not assume kilometres or miles. Consumption must be fuel units per 100 distance units, such as litres per 100 km. Keep price in the same fuel unit."
+    },
+    {
+      "q": "Does it include tolls or stops?",
+      "a": "No. It only multiplies distance, consumption and price. Real trips also depend on speed, load and idling."
+    },
+    {
+      "q": "Are the numbers uploaded?",
+      "a": "No. The estimate is calculated in the page."
+    }
+  ]
+}

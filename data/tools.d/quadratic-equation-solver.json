@@ -1,0 +1,83 @@
+{
+  "id": "quadratic-equation-solver",
+  "title": "Quadratic Equation Solver",
+  "h1": "Quadratic Equation Solver \u2014 ax\u00b2 + bx + c",
+  "seoTitle": "Quadratic Equation Solver \u2014 Free & Local",
+  "description": "Solve ax\u00b2 + bx + c = 0 for real roots, the discriminant and the vertex. Coefficients stay in the browser and are not uploaded.",
+  "intro": "Enter a, b and c to see the discriminant, real roots when they exist, and the vertex of the parabola.",
+  "blurb": "Solve a quadratic equation and show the discriminant, roots and vertex.",
+  "keywords": [
+    "quadratic equation solver",
+    "quadratic formula",
+    "discriminant calculator",
+    "solve ax2 bx c"
+  ],
+  "category": "Math",
+  "added": "2026-10-08",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "a",
+        "type": "number",
+        "label": "a",
+        "value": "1"
+      },
+      {
+        "id": "b",
+        "type": "number",
+        "label": "b",
+        "value": "-3"
+      },
+      {
+        "id": "c",
+        "type": "number",
+        "label": "c",
+        "value": "2"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Solve",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Roots"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the coefficients of ax\u00b2 + bx + c = 0. a must not be zero.",
+    "Press Solve. The discriminant is b\u00b2 \u2212 4ac.",
+    "Copy the real roots, or the note that the roots are complex when the discriminant is negative."
+  ],
+  "examples": [
+    "1, -3, 2 gives roots 1 and 2.",
+    "1, 0, -4 gives roots -2 and 2.",
+    "1, 0, 1 has a negative discriminant, so no real roots."
+  ],
+  "faq": [
+    {
+      "q": "What if a is zero?",
+      "a": "The equation is linear, not quadratic. The tool asks you to enter a non-zero a instead of silently switching formulas."
+    },
+    {
+      "q": "Are complex roots calculated?",
+      "a": "No. A negative discriminant is reported as no real roots. Only real roots are printed."
+    },
+    {
+      "q": "Is any coefficient uploaded?",
+      "a": "No. The quadratic formula runs in the page."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "sleep-cycle-calculator",
+  "title": "Sleep Cycle Calculator",
+  "h1": "Sleep Cycle Calculator \u2014 90-Minute Estimate",
+  "seoTitle": "Sleep Cycle Calculator \u2014 Free & Local",
+  "description": "Estimate wake-up or bedtime times using 90-minute sleep cycles plus 15 minutes to fall asleep. Times stay on this device.",
+  "intro": "Pick a bedtime or a wake time and get nearby cycle estimates. This is a planning aid, not medical advice.",
+  "blurb": "Estimate bed and wake times from 90-minute cycles plus a fall-asleep buffer.",
+  "keywords": [
+    "sleep cycle calculator",
+    "bedtime calculator",
+    "wake up time",
+    "90 minute sleep cycle"
+  ],
+  "category": "Productivity",
+  "added": "2026-10-08",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "I know",
+        "options": [
+          {
+            "value": "bed",
+            "label": "Bedtime \u2014 suggest wake times"
+          },
+          {
+            "value": "wake",
+            "label": "Wake time \u2014 suggest bedtimes"
+          }
+        ]
+      },
+      {
+        "id": "clock",
+        "type": "text",
+        "label": "Time (HH:MM)",
+        "placeholder": "23:00",
+        "value": "23:00"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Suggested times"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Assumptions"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Choose whether you know bedtime or wake time, then enter a 24-hour clock time.",
+    "Press Calculate. Each suggestion adds 15 minutes to fall asleep plus 3 to 6 cycles of 90 minutes.",
+    "Use the list as an estimate. Individual sleep length varies."
+  ],
+  "examples": [
+    "Bedtime 23:00 suggests a 04:45 wake time after four cycles.",
+    "Wake time 07:00 suggests a 00:15 bedtime for five cycles.",
+    "Six cycles from 22:30 lands at 07:45 the next morning."
+  ],
+  "faq": [
+    {
+      "q": "Why 90 minutes?",
+      "a": "A commonly cited average adult cycle is about 90 minutes. The tool uses that fixed estimate plus 15 minutes to fall asleep. It is not a measurement of your sleep."
+    },
+    {
+      "q": "Is this medical advice?",
+      "a": "No. It only does clock arithmetic so you can plan a consistent schedule. Talk to a clinician for sleep problems."
+    },
+    {
+      "q": "Are times uploaded?",
+      "a": "No. The suggestions are calculated in the browser."
+    }
+  ]
+}

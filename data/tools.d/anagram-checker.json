@@ -1,0 +1,79 @@
+{
+  "id": "anagram-checker",
+  "title": "Anagram Checker",
+  "h1": "Anagram Checker \u2014 Same Letters",
+  "seoTitle": "Anagram Checker \u2014 Free & Local",
+  "description": "Check whether two phrases are anagrams after ignoring spaces, punctuation and letter case. Comparison stays in the browser.",
+  "intro": "Paste two words or phrases. The tool counts letters and tells you which characters differ if they are not anagrams.",
+  "blurb": "Compare two phrases and see whether they use the same letters.",
+  "keywords": [
+    "anagram checker",
+    "are these anagrams",
+    "letter comparison",
+    "anagram solver check"
+  ],
+  "category": "Text",
+  "added": "2026-10-08",
+  "popularity": 66,
+  "ui": {
+    "controls": [
+      {
+        "id": "left",
+        "type": "textarea",
+        "label": "First phrase",
+        "rows": 3,
+        "placeholder": "listen"
+      },
+      {
+        "id": "right",
+        "type": "textarea",
+        "label": "Second phrase",
+        "rows": 3,
+        "placeholder": "silent"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Compare",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Counts"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste two phrases. Spaces, punctuation and case are ignored.",
+    "Press Compare. Letters are counted with Unicode case folding.",
+    "Read whether the counts match, plus letters that appear more often on one side."
+  ],
+  "examples": [
+    "listen and silent are anagrams.",
+    "conversation and voices rant on are anagrams after spaces are removed.",
+    "cat and cats differ by one s."
+  ],
+  "faq": [
+    {
+      "q": "Are spaces ignored?",
+      "a": "Yes. Spaces, digits and punctuation are skipped so only letters are compared. Case does not matter."
+    },
+    {
+      "q": "Does it find anagram words for me?",
+      "a": "No. It only checks two phrases you provide. It does not search a dictionary."
+    },
+    {
+      "q": "Is the text uploaded?",
+      "a": "No. Counting runs in the page."
+    }
+  ]
+}

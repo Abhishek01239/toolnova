@@ -1,0 +1,72 @@
+{
+  "id": "leap-year-checker",
+  "title": "Leap Year Checker",
+  "h1": "Leap Year Checker \u2014 Gregorian Rules",
+  "seoTitle": "Leap Year Checker \u2014 Free & Local",
+  "description": "Check whether a year is a leap year under Gregorian rules and see the next and previous leap years. The check runs in your browser.",
+  "intro": "Enter a year to see if February has 29 days, why the rule matched, and the nearest leap years on either side.",
+  "blurb": "Test any year against the Gregorian leap-year rule and list nearby leap years.",
+  "keywords": [
+    "leap year checker",
+    "is it a leap year",
+    "february 29",
+    "gregorian calendar"
+  ],
+  "category": "Date & Time",
+  "added": "2026-10-08",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "year",
+        "type": "number",
+        "label": "Year",
+        "placeholder": "2028",
+        "value": "2028"
+      }
+    ],
+    "actions": [
+      {
+        "id": "run",
+        "label": "Check year",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Nearby leap years"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Type a year from 1 through 9999.",
+    "Press Check year. A year is a leap year when it is divisible by 4, except century years, which must be divisible by 400.",
+    "Read the verdict plus the previous and next leap years."
+  ],
+  "examples": [
+    "2024 is a leap year because it is divisible by 4.",
+    "1900 is not a leap year because it is a century not divisible by 400.",
+    "2000 is a leap year because it is divisible by 400."
+  ],
+  "faq": [
+    {
+      "q": "Which calendar rule is used?",
+      "a": "The proleptic Gregorian rule: divisible by 4, but not by 100 unless also divisible by 400. Julian-only calendars are not applied."
+    },
+    {
+      "q": "Does this predict holidays?",
+      "a": "No. It only answers whether February has 29 days in that year and lists nearby leap years."
+    },
+    {
+      "q": "Is the year uploaded?",
+      "a": "No. The division checks run in the page and nothing is sent to a server."
+    }
+  ]
+}
