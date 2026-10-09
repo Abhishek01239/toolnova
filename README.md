@@ -312,3 +312,20 @@ Before introducing any server API, AI proxy, upload endpoint, authentication, or
 - Test under-limit, over-limit, reset-window, spoofed-header, and concurrent-request cases. Avoid using client-provided user IDs as the sole rate-limit identity.
 
 The `tests/rate-limiting.test.mjs` regression check flags newly added server endpoint directories or Vercel functions so rate limiting can be implemented and tested as part of the endpoint review. It is an architecture guard, **not** a live traffic limiter or a load test.
+
+
+## Security: JWT signing secrets
+
+ToolNova is currently a static, browser-only site; repository inspection has not identified a server-side authentication endpoint or JWT issuer/validator. Therefore, there is no JWT signing secret to configure in this repository today. Do not add a JWT secret to frontend JavaScript, `public/`, generated `dist/` assets, HTML, or any `NEXT_PUBLIC_*`/client-exposed variable: browser-delivered values are public, regardless of minification or obfuscation.
+
+If authentication/JWT support is introduced, apply these requirements before release:
+
+- Generate a high-entropy secret with a cryptographically secure random generator (for example, `openssl rand -base64 32` for a 256-bit random secret when using an HMAC algorithm). Do not invent, reuse, commit, or share secrets.
+- Store production secrets only in the hosting provider's encrypted server-side environment/secret settings; scope them to the required project and environment. Never put them in Git, client-side environment variables, logs, error messages, URLs, or JWT payloads.
+- Keep development, preview, and production secrets separate. Restrict who can view/change them and rotate immediately if exposed; remove the compromised value and review repository history and deployment logs.
+- Prefer an asymmetric signing algorithm (such as EdDSA or RS256) when multiple services need to verify tokens without having signing capability. If using HMAC, use a strong random secret and keep signing and verification server-side.
+- Pin the accepted algorithm in the JWT library; reject `alg: none` and unexpected algorithms. Validate signature, issuer, audience, expiry (`exp`), not-before (`nbf`) when used, and any required subject/claims. Use short-lived access tokens and a deliberate refresh/revocation strategy.
+- Never put passwords, API keys, or other confidential data in JWT claims; signed JWTs are generally readable, not encrypted. Avoid localStorage for sensitive long-lived tokens; prefer appropriately configured `Secure; HttpOnly; SameSite` cookies when the application architecture supports them, with CSRF defenses for cookie-authenticated state changes.
+- Add tests for invalid signatures, wrong issuer/audience, expired tokens, algorithm confusion, and missing required claims. Do not create JWTs in the browser using a secret.
+
+The `tests/jwt-secret-security.test.mjs` regression checks guard the current static architecture and verify that the documentation records these requirements. They do not validate a live JWT implementation or prove that deployment secrets are configured.
