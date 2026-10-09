@@ -59,6 +59,14 @@ That's it. Every push to `main` auto-deploys on Vercel; every morning the bot pu
 
 Live site: [https://toolnova-seven.vercel.app](https://toolnova-seven.vercel.app)
 
+## Security: CSRF
+
+ToolNova is currently a static, browser-only site: its forms are read-only GET searches, and the repository does not define authenticated sessions, cookie-backed actions, or server-side state-changing endpoints. In this architecture, there is no state-changing application endpoint for a conventional CSRF attack to exploit, so adding a CSRF token to the search forms would provide no meaningful protection.
+
+If a future feature adds login, cookies, payments, saved data, or any other state-changing server endpoint, it must add CSRF defenses before release: use framework/server-side CSRF tokens for cookie-authenticated actions, validate the `Origin` (and when appropriate `Referer`) on unsafe methods, set session cookies `Secure; HttpOnly; SameSite=Lax` or stricter, and never perform state changes through GET requests. CORS alone is not CSRF protection.
+
+The `tests/csrf.test.mjs` regression checks guard the current static-site assumption by detecting server endpoint directories and POST forms in page/component templates. Revisit these checks and add endpoint-level tests whenever the architecture changes.
+
 ### Optional: AI inside the daily agent (Groq free tier)
 
 The pipeline never *needs* AI — but with one free secret it gains two superpowers:
