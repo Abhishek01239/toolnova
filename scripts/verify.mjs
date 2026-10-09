@@ -76,7 +76,7 @@ async function main() {
   if (sourceMaps.length) err('production output contains source maps: ' + sourceMaps.map((f) => path.relative(DIST, f)).join(', '));
   for (const jsFile of jsFiles) {
     const js = await readFile(jsFile, 'utf8');
-    if (/\\bsourceMappingURL\\s*=/.test(js)) {
+    if (/\bsourceMappingURL\s*=/.test(js)) {
       err(path.relative(DIST, jsFile) + ': sourceMappingURL exposes a production source map');
     }
   }
