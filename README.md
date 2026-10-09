@@ -342,3 +342,17 @@ If a future browser feature needs a credentialed third-party API, implement a se
 If a key has ever appeared in browser code, a public build, logs, or Git history, treat it as compromised: revoke/rotate it at the provider and review usage. Deleting the visible value alone does not invalidate it.
 
 The `tests/api-secret-security.test.mjs` regression checks scan browser-delivered source/build files for common real-key formats, reject server environment access in those files, and confirm the current Node AI pipeline reads provider keys from environment variables. These are automated guardrails, not a secrets-scanning service; review provider-specific formats and enable repository/provider secret scanning as an additional layer.
+
+
+## Security: Password hashing
+
+ToolNova currently builds a static, browser-first website and has no identified server-side password registration/login endpoints or password database. **No password-hashing feature is implemented by this documentation change.** Do not collect or store user passwords in browser code, local storage, static JSON, or generated site files.
+
+If authentication is added, password handling must run on a trusted server or managed authentication provider:
+- Prefer **Argon2id** with parameters tuned for the production environment and the current OWASP Password Storage Cheat Sheet; use **scrypt** when Argon2id is unavailable. Use bcrypt only for legacy compatibility, with a work factor appropriate to the deployment.
+- Use the library's password-hashing API to generate a cryptographically secure, unique random salt per password and store only the encoded hash plus algorithm/parameters and salt as required by that format. Never use plain SHA-256/SHA-1/MD5, a fast general-purpose hash, or reversible encryption alone for password storage. Never log passwords or return them to the client.
+- Verify passwords with the library's verify function and its safe comparison behavior. Use generic login errors, rate-limit authentication attempts server-side, and add secure account recovery and session protections.
+- Keep any pepper or other application secret only in server-side secret storage, separate from the password database. Plan for parameter upgrades and rehash after successful login as settings evolve.
+- Add tests for correct and incorrect passwords, unique salts for identical passwords, malformed stored hashes, rate limiting, and account/session flows. Never commit real user credentials or test secrets.
+
+The `tests/password-hashing-security.test.mjs` file is an architecture/documentation guard only. It confirms that future changes must review password hashing before adding authentication endpoints or dependencies; it does not hash passwords or provide live authentication.
