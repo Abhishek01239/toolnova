@@ -59,10 +59,14 @@
     if (n < 1073741824) return (n / 1048576).toFixed(1) + ' MB';
     return (n / 1073741824).toFixed(2) + ' GB';
   }
+  var MAX_IMAGE_BYTES = 20 * 1024 * 1024;
   function isImage(f) {
-    var t = (f.type || '').toLowerCase();
-    if (t === 'image/gif' || t === 'image/svg+xml') return false;
-    return t.indexOf('image/') === 0 || /\.(jpe?g|png|webp|bmp|avif)$/i.test(f.name);
+    if (!f || typeof f.name !== 'string' || !Number.isFinite(f.size) || f.size <= 0 || f.size > MAX_IMAGE_BYTES) return false;
+    var match = f.name.toLowerCase().match(/\.([^.]+)$/);
+    var ext = match ? match[1] : '';
+    var allowed = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', bmp: 'image/bmp', avif: 'image/avif' };
+    var type = (f.type || '').toLowerCase();
+    return !!allowed[ext] && (!type || type === allowed[ext] || (ext === 'jpeg' && type === 'image/pjpeg'));
   }
   function extFor(type) {
     var map = { 'image/jpeg': '.jpg', 'image/webp': '.webp', 'image/png': '.png' };
@@ -435,8 +439,8 @@
       added++;
     });
     render();
-    if (skipped && added) status(added + ' added. Skipped ' + skipped + ' (JPG, PNG, WebP, BMP or AVIF only, up to ' + MAX_FILES + ' at a time).', 'error');
-    else if (skipped) status('Only JPG, PNG, WebP, BMP or AVIF images are accepted, up to ' + MAX_FILES + ' at a time.', 'error');
+    if (skipped && added) status(added + ' added. Skipped ' + skipped + ' (matching JPG, PNG, WebP, BMP or AVIF files up to 20 MB each, maximum ' + MAX_FILES + ' files).', 'error');
+    else if (skipped) status('Choose matching JPG, PNG, WebP, BMP or AVIF images up to 20 MB each (maximum ' + MAX_FILES + ' files).', 'error');
     else status('');
     if (added) schedule(0);
   }
