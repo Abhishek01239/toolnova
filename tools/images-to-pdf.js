@@ -56,8 +56,14 @@
     if (n < 1073741824) return (n / 1048576).toFixed(1) + ' MB';
     return (n / 1073741824).toFixed(2) + ' GB';
   }
+  var MAX_IMAGE_BYTES = 20 * 1024 * 1024;
   function isImage(f) {
-    return (f.type || '').indexOf('image/') === 0 || /\.(jpe?g|png|webp|gif|bmp|avif)$/i.test(f.name);
+    if (!f || typeof f.name !== 'string' || !Number.isFinite(f.size) || f.size <= 0 || f.size > MAX_IMAGE_BYTES) return false;
+    var match = f.name.toLowerCase().match(/\.([^.]+)$/);
+    var ext = match ? match[1] : '';
+    var allowed = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', bmp: 'image/bmp', avif: 'image/avif' };
+    var type = (f.type || '').toLowerCase();
+    return !!allowed[ext] && (!type || type === allowed[ext] || (ext === 'jpeg' && type === 'image/pjpeg'));
   }
   function outputName() {
     var node = control('filename');
@@ -290,8 +296,8 @@
     });
     files = files.concat(added);
     touch();
-    if (skipped && added.length) status(added.length + ' added. Skipped ' + skipped + ' (images only, up to ' + MAX_FILES + ' at a time).', 'error');
-    else if (skipped) status('Only image files are accepted, up to ' + MAX_FILES + ' at a time.', 'error');
+    if (skipped && added.length) status(added.length + ' added. Skipped ' + skipped + ' (supported images up to 20 MB each, maximum ' + MAX_FILES + ' files).', 'error');
+    else if (skipped) status('Choose supported images up to 20 MB each (maximum ' + MAX_FILES + ' files).', 'error');
     else status(added.length + (added.length === 1 ? ' image added.' : ' images added.'), 'ok');
     added.forEach(inspect);
     if (added.length) ensureLib().catch(function () {});
