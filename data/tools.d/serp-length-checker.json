@@ -1,0 +1,78 @@
+{
+  "id": "serp-length-checker",
+  "title": "SERP Length Checker",
+  "h1": "SERP Length Checker \u2014 Title and Description Limits",
+  "seoTitle": "SERP Length Checker \u2014 Title and Meta Length",
+  "description": "Count characters and pixels for a page title and meta description against common search snippet limits. Checking runs locally in the browser.",
+  "intro": "Paste a title and meta description. The checker counts characters and estimates pixel width so you can see what may be truncated in search results.",
+  "blurb": "Check title and meta description length against common snippet limits.",
+  "keywords": [
+    "serp length checker",
+    "meta description length",
+    "title tag length",
+    "seo snippet length"
+  ],
+  "category": "SEO",
+  "added": "2026-10-09",
+  "popularity": 73,
+  "ui": {
+    "controls": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Title tag",
+        "value": "Free GPA calculator for students"
+      },
+      {
+        "id": "description",
+        "type": "textarea",
+        "label": "Meta description",
+        "rows": 4,
+        "value": "Calculate a weighted GPA from letter grades and credits in the browser. No signup."
+      }
+    ],
+    "actions": [
+      {
+        "id": "check",
+        "label": "Check length",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Notes"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Counts"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste the title tag and meta description you plan to publish.",
+    "Press Check length to count characters and estimate pixel width.",
+    "Use the notes as a guide. Search engines still rewrite snippets and widths vary by device."
+  ],
+  "examples": [
+    "A 58 character title is usually within a desktop snippet.",
+    "A 170 character description is near the long end of common meta guidance.",
+    "Wide letters such as W increase the pixel estimate faster than i or l."
+  ],
+  "faq": [
+    {
+      "q": "Are these official Google limits?",
+      "a": "No. Google does not publish a fixed character cap. The checker uses widely cited planning ranges: about 580 pixels for titles and 920 for descriptions."
+    },
+    {
+      "q": "Why pixels and characters?",
+      "a": "Snippets truncate by rendered width more than by character count. Both numbers are shown so you can judge either way."
+    },
+    {
+      "q": "Does this crawl my site?",
+      "a": "No. It only measures the text you paste."
+    }
+  ]
+}

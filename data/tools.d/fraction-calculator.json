@@ -1,0 +1,101 @@
+{
+  "id": "fraction-calculator",
+  "title": "Fraction Calculator",
+  "h1": "Fraction Calculator \u2014 Add, Subtract, Multiply, Divide",
+  "seoTitle": "Fraction Calculator \u2014 Simplify Fraction Results",
+  "description": "Add, subtract, multiply or divide two fractions and simplify the result. Mixed numbers are accepted, and the math runs in your browser.",
+  "intro": "Enter two fractions as whole numbers or mixed values such as 1 1/2. Pick an operation to see the simplified result and the decimal form.",
+  "blurb": "Add, subtract, multiply or divide fractions and simplify the result.",
+  "keywords": [
+    "fraction calculator",
+    "simplify fractions",
+    "add fractions",
+    "divide fractions"
+  ],
+  "category": "Math",
+  "added": "2026-10-09",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "left",
+        "type": "text",
+        "label": "First fraction",
+        "value": "1 1/2"
+      },
+      {
+        "id": "op",
+        "type": "select",
+        "label": "Operation",
+        "value": "add",
+        "options": [
+          {
+            "value": "add",
+            "label": "Add"
+          },
+          {
+            "value": "sub",
+            "label": "Subtract"
+          },
+          {
+            "value": "mul",
+            "label": "Multiply"
+          },
+          {
+            "value": "div",
+            "label": "Divide"
+          }
+        ]
+      },
+      {
+        "id": "right",
+        "type": "text",
+        "label": "Second fraction",
+        "value": "3/4"
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Result"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Forms"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter each value as a proper fraction (3/4), a whole number (2) or a mixed number (1 1/2).",
+    "Choose add, subtract, multiply or divide.",
+    "Press Calculate to see the simplified fraction, a mixed number when it is greater than one, and the decimal."
+  ],
+  "examples": [
+    "1 1/2 plus 3/4 equals 2 1/4.",
+    "3/4 divided by 1/2 equals 1 1/2.",
+    "2/4 simplifies to 1/2 before it is shown."
+  ],
+  "faq": [
+    {
+      "q": "How do I enter a mixed number?",
+      "a": "Use a space between the whole part and the fraction, such as 1 1/2. A slash is required in the fractional part."
+    },
+    {
+      "q": "What happens on divide by zero?",
+      "a": "A zero denominator or a zero divisor is rejected with an error. The page does not return infinity."
+    },
+    {
+      "q": "Are results exact?",
+      "a": "Yes for rational inputs. The calculator uses integer arithmetic and reduces by the greatest common divisor."
+    }
+  ]
+}

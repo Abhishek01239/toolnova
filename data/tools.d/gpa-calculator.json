@@ -1,0 +1,88 @@
+{
+  "id": "gpa-calculator",
+  "title": "GPA Calculator",
+  "h1": "GPA Calculator \u2014 Weighted and Unweighted",
+  "seoTitle": "GPA Calculator \u2014 Weighted Grade Point Average",
+  "description": "Calculate a weighted or unweighted GPA from course grades and credits. Supports 4.0 letter grades and numeric points, entirely in the browser.",
+  "intro": "Paste one course per line as a letter grade or points value, then optional credits. The calculator returns GPA, total credits and quality points.",
+  "blurb": "Calculate weighted or unweighted GPA from letter grades and credits.",
+  "keywords": [
+    "gpa calculator",
+    "grade point average",
+    "weighted gpa",
+    "college gpa"
+  ],
+  "category": "Calculators",
+  "added": "2026-10-09",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "courses",
+        "type": "textarea",
+        "label": "Courses (grade credit)",
+        "rows": 8,
+        "value": "A 3\nB+ 4\nA- 3\nC 2"
+      },
+      {
+        "id": "scale",
+        "type": "select",
+        "label": "Scale",
+        "value": "4",
+        "options": [
+          {
+            "value": "4",
+            "label": "4.0 letter scale"
+          },
+          {
+            "value": "points",
+            "label": "Numeric grade points"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Calculate GPA",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Breakdown"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter one course per line: a letter grade and optional credit hours, such as A- 3.",
+    "Choose the 4.0 letter scale or numeric points already on a 4.0-style scale.",
+    "Press Calculate GPA to see quality points, total credits and the average."
+  ],
+  "examples": [
+    "A 3 and B 3 on the 4.0 scale is a 3.50 GPA across 6 credits.",
+    "A line with only A counts as 1 credit when no credit is given.",
+    "Numeric mode treats 3.7 4 as 3.7 points over 4 credits."
+  ],
+  "faq": [
+    {
+      "q": "Which letter grades are recognized?",
+      "a": "A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D- and F. Plus and minus use common 4.0 increments such as A- = 3.7 and B+ = 3.3."
+    },
+    {
+      "q": "Is this an official transcript GPA?",
+      "a": "No. Schools weight honors courses and round differently. Use this as a planning estimate and confirm with your registrar scale."
+    },
+    {
+      "q": "Does any course data leave the browser?",
+      "a": "No. Grades are parsed locally after the page loads and are not uploaded."
+    }
+  ]
+}

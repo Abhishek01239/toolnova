@@ -1,0 +1,113 @@
+{
+  "id": "css-box-shadow-generator",
+  "title": "CSS Box Shadow Generator",
+  "h1": "CSS Box Shadow Generator \u2014 Offset, Blur, Spread",
+  "seoTitle": "CSS Box Shadow Generator \u2014 Copy-Ready Shadow",
+  "description": "Build a CSS box-shadow from offset, blur, spread, color and inset, then copy the declaration. Preview values update locally in the browser.",
+  "intro": "Adjust the shadow controls and generate a box-shadow declaration you can paste into a stylesheet. No design account is required.",
+  "blurb": "Generate a CSS box-shadow declaration from offset, blur, spread and color.",
+  "keywords": [
+    "css box shadow generator",
+    "box-shadow css",
+    "shadow generator",
+    "css shadow"
+  ],
+  "category": "Design",
+  "added": "2026-10-09",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "x",
+        "type": "number",
+        "label": "X offset (px)",
+        "value": "0",
+        "step": "1"
+      },
+      {
+        "id": "y",
+        "type": "number",
+        "label": "Y offset (px)",
+        "value": "8",
+        "step": "1"
+      },
+      {
+        "id": "blur",
+        "type": "number",
+        "label": "Blur (px)",
+        "value": "24",
+        "min": 0,
+        "step": "1"
+      },
+      {
+        "id": "spread",
+        "type": "number",
+        "label": "Spread (px)",
+        "value": "0",
+        "step": "1"
+      },
+      {
+        "id": "color",
+        "type": "text",
+        "label": "Color (hex)",
+        "value": "#0f172a"
+      },
+      {
+        "id": "alpha",
+        "type": "range",
+        "label": "Opacity",
+        "value": "25",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "id": "inset",
+        "type": "checkbox",
+        "label": "Inset shadow"
+      }
+    ],
+    "actions": [
+      {
+        "id": "build",
+        "label": "Generate CSS",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "CSS declaration"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Parts"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Set horizontal and vertical offsets, blur and spread in pixels.",
+    "Enter a hex color and an opacity from 0 to 100. Check inset for an inner shadow.",
+    "Press Generate CSS to get a box-shadow declaration ready to paste."
+  ],
+  "examples": [
+    "0 8px 24px with 25% opacity is a soft drop shadow under a card.",
+    "Inset with a small blur darkens the inner edge of an input.",
+    "A negative spread pulls the shadow inward so it does not spill past rounded corners."
+  ],
+  "faq": [
+    {
+      "q": "What color formats work?",
+      "a": "Use a 3 or 6 digit hex color such as #0f172a. Opacity is applied separately as an rgba alpha."
+    },
+    {
+      "q": "Can I stack multiple shadows?",
+      "a": "This generator emits one shadow. Paste several declarations together with commas if you need a stack."
+    },
+    {
+      "q": "Does it call a design API?",
+      "a": "No. The CSS string is built locally in the page."
+    }
+  ]
+}

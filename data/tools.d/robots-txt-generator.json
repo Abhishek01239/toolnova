@@ -1,0 +1,100 @@
+{
+  "id": "robots-txt-generator",
+  "title": "Robots.txt Generator",
+  "h1": "Robots.txt Generator \u2014 Allow, Disallow, Sitemap",
+  "seoTitle": "Robots.txt Generator \u2014 Crawl Rules and Sitemap",
+  "description": "Generate a robots.txt file with user-agent rules, allow and disallow paths, and an optional sitemap URL. Edit locally, then copy the file.",
+  "intro": "Choose a default policy, list paths to block or allow, and add a sitemap URL. The generator writes a robots.txt body you can place at your site root.",
+  "blurb": "Generate robots.txt crawl rules with allow, disallow and sitemap lines.",
+  "keywords": [
+    "robots.txt generator",
+    "robots txt",
+    "disallow paths",
+    "sitemap robots"
+  ],
+  "category": "SEO",
+  "added": "2026-10-09",
+  "popularity": 77,
+  "ui": {
+    "controls": [
+      {
+        "id": "agent",
+        "type": "text",
+        "label": "User-agent",
+        "value": "*"
+      },
+      {
+        "id": "policy",
+        "type": "select",
+        "label": "Default policy",
+        "value": "allow",
+        "options": [
+          {
+            "value": "allow",
+            "label": "Allow all, then disallow listed paths"
+          },
+          {
+            "value": "disallow",
+            "label": "Disallow all, then allow listed paths"
+          }
+        ]
+      },
+      {
+        "id": "paths",
+        "type": "textarea",
+        "label": "Paths (one per line)",
+        "rows": 6,
+        "value": "/admin\n/api/private"
+      },
+      {
+        "id": "sitemap",
+        "type": "text",
+        "label": "Sitemap URL (optional)",
+        "value": "https://example.com/sitemap.xml"
+      }
+    ],
+    "actions": [
+      {
+        "id": "build",
+        "label": "Generate robots.txt",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "robots.txt"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Checks"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Set the user-agent. A star applies the group to every crawler that does not have its own group.",
+    "Pick a default policy and list paths that are exceptions, one path per line.",
+    "Add a sitemap URL if you have one, then generate and copy the file to your site root."
+  ],
+  "examples": [
+    "Allow all with /admin disallowed blocks that path while leaving the rest crawlable.",
+    "Disallow all with /public allowed is a closed default plus an exception.",
+    "A sitemap line points crawlers at https://example.com/sitemap.xml."
+  ],
+  "faq": [
+    {
+      "q": "Does robots.txt hide private pages?",
+      "a": "No. It is a crawl hint, not access control. Sensitive URLs still need authentication even if they are disallowed."
+    },
+    {
+      "q": "Where should the file live?",
+      "a": "Place it at the host root, for example https://example.com/robots.txt. A file in a subfolder is not the standard location."
+    },
+    {
+      "q": "Is the text uploaded?",
+      "a": "No. The file body is assembled in your browser."
+    }
+  ]
+}

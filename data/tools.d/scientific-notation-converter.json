@@ -1,0 +1,79 @@
+{
+  "id": "scientific-notation-converter",
+  "title": "Scientific Notation Converter",
+  "h1": "Scientific Notation Converter \u2014 Standard and E Notation",
+  "seoTitle": "Scientific Notation Converter \u2014 Standard Form",
+  "description": "Convert a number to scientific notation or expand scientific notation into a plain decimal. Useful for science homework and data cleanup.",
+  "intro": "Enter a plain number or a value such as 6.02e23. The converter shows scientific notation, normalized coefficient and the expanded decimal when it fits.",
+  "blurb": "Convert numbers to and from scientific notation without leaving the browser.",
+  "keywords": [
+    "scientific notation converter",
+    "standard form converter",
+    "e notation",
+    "scientific notation calculator"
+  ],
+  "category": "Math",
+  "added": "2026-10-09",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "value",
+        "type": "text",
+        "label": "Number",
+        "value": "602200000000000000000000"
+      },
+      {
+        "id": "digits",
+        "type": "number",
+        "label": "Significant digits",
+        "value": "4",
+        "min": 1,
+        "max": 15
+      }
+    ],
+    "actions": [
+      {
+        "id": "convert",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Forms"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Parts"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter a decimal number or E notation such as 1.5e-7.",
+    "Set how many significant digits the scientific form should keep.",
+    "Press Convert to see the coefficient, exponent and both written forms."
+  ],
+  "examples": [
+    "6022 followed by zeros becomes 6.022 \u00d7 10^23 at 4 significant digits.",
+    "0.00045 becomes 4.5 \u00d7 10^-4.",
+    "1.5e-7 expands to 0.00000015."
+  ],
+  "faq": [
+    {
+      "q": "What input formats work?",
+      "a": "Plain decimals and JavaScript-style E notation are accepted. Commas and spaces are ignored."
+    },
+    {
+      "q": "Why might the expanded form be omitted?",
+      "a": "Extremely large or small exponents are kept in scientific form so the page does not print thousands of zeros."
+    },
+    {
+      "q": "Is this uploaded?",
+      "a": "No. Conversion runs locally in the browser."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "hourly-salary-calculator",
+  "title": "Hourly Salary Calculator",
+  "h1": "Hourly Salary Calculator \u2014 Wage and Annual Pay",
+  "seoTitle": "Hourly Salary Calculator \u2014 Convert Wage and Pay",
+  "description": "Convert an annual salary to an hourly wage, or an hourly rate to yearly pay, using hours per week and weeks worked. Runs locally.",
+  "intro": "Enter either annual pay or an hourly rate. The other figure is calculated from your weekly hours and working weeks.",
+  "blurb": "Convert annual salary and hourly wage using your real work schedule.",
+  "keywords": [
+    "hourly salary calculator",
+    "salary to hourly",
+    "hourly to salary",
+    "wage converter"
+  ],
+  "category": "Finance",
+  "added": "2026-10-09",
+  "popularity": 76,
+  "ui": {
+    "controls": [
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "I know",
+        "value": "annual",
+        "options": [
+          {
+            "value": "annual",
+            "label": "Annual salary"
+          },
+          {
+            "value": "hourly",
+            "label": "Hourly wage"
+          }
+        ]
+      },
+      {
+        "id": "amount",
+        "type": "number",
+        "label": "Amount",
+        "value": "65000",
+        "min": 0,
+        "step": "0.01"
+      },
+      {
+        "id": "hours",
+        "type": "number",
+        "label": "Hours per week",
+        "value": "40",
+        "min": 0.5,
+        "max": 168,
+        "step": "0.5"
+      },
+      {
+        "id": "weeks",
+        "type": "number",
+        "label": "Weeks per year",
+        "value": "52",
+        "min": 1,
+        "max": 52,
+        "step": "1"
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Pay breakdown"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Rates"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Choose whether the amount you know is annual salary or hourly wage.",
+    "Set hours per week and weeks per year. 40 hours and 52 weeks is a common full-time default.",
+    "Press Convert to see hourly, weekly, monthly and annual figures from the same schedule."
+  ],
+  "examples": [
+    "65000 a year at 40 hours and 52 weeks is about 31.25 per hour.",
+    "25 per hour at 40 hours and 52 weeks is 52000 a year.",
+    "A 48-week year lowers annual pay for the same hourly rate because fewer weeks are counted."
+  ],
+  "faq": [
+    {
+      "q": "Does this include taxes or benefits?",
+      "a": "No. Results are gross pay from rate and hours only. Taxes, overtime premiums and benefits are not applied."
+    },
+    {
+      "q": "Why is monthly pay not salary divided by 12 in every case?",
+      "a": "Monthly is annual divided by 12 so it stays aligned with the yearly total. Weekly is hourly times hours."
+    },
+    {
+      "q": "Is the calculation uploaded?",
+      "a": "No. The conversion runs in your browser after the page loads."
+    }
+  ]
+}

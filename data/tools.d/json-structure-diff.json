@@ -1,0 +1,79 @@
+{
+  "id": "json-structure-diff",
+  "title": "JSON Structure Diff",
+  "h1": "JSON Structure Diff \u2014 Keys Added and Removed",
+  "seoTitle": "JSON Structure Diff \u2014 Compare Object Keys",
+  "description": "Compare two JSON documents and list keys added, removed and changed. Useful for API payloads. Parsing stays in the browser.",
+  "intro": "Paste two JSON values. The diff walks objects and arrays and reports paths that were added, removed or changed, without uploading the documents.",
+  "blurb": "Compare two JSON documents and list added, removed and changed paths.",
+  "keywords": [
+    "json diff",
+    "compare json",
+    "json structure diff",
+    "api payload diff"
+  ],
+  "category": "JSON",
+  "added": "2026-10-09",
+  "popularity": 80,
+  "ui": {
+    "controls": [
+      {
+        "id": "left",
+        "type": "textarea",
+        "label": "Original JSON",
+        "rows": 8,
+        "value": "{\n  \"id\": 1,\n  \"name\": \"Ada\"\n}"
+      },
+      {
+        "id": "right",
+        "type": "textarea",
+        "label": "Updated JSON",
+        "rows": 8,
+        "value": "{\n  \"id\": 1,\n  \"name\": \"Ada Lovelace\",\n  \"role\": \"engineer\"\n}"
+      }
+    ],
+    "actions": [
+      {
+        "id": "diff",
+        "label": "Compare JSON",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Diff"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Counts"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste the original JSON on the left and the updated JSON on the right.",
+    "Press Compare JSON. Both sides must be valid JSON values.",
+    "Read added, removed and changed paths. Array indexes are included in the path."
+  ],
+  "examples": [
+    "Adding a role field reports role as added.",
+    "Changing name from Ada to Ada Lovelace reports name as changed.",
+    "Removing id reports id as removed."
+  ],
+  "faq": [
+    {
+      "q": "Does key order count as a change?",
+      "a": "No. Object key order is ignored. Only presence and JSON values are compared."
+    },
+    {
+      "q": "How are arrays compared?",
+      "a": "Arrays are compared by index. A longer array reports extra indexes as added."
+    },
+    {
+      "q": "Is the JSON sent to a server?",
+      "a": "No. Parsing and comparison run locally after the page loads."
+    }
+  ]
+}
