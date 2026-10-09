@@ -58,7 +58,8 @@ export async function selfTest() { if (1 === 2) throw new Error('x'); }
     'new DOMParser().parseFromString(userInput, "text/html")',
     'document.createRange().createContextualFragment(userInput)',
     'frame.srcdoc = userInput',
-    "document.createElement('script')"
+    "document.createElement('script')",
+    'document.createElement("script")'
   ];
   for (const snippet of banned) {
     const code = clean.replace("status(\"ok\")", "status(\"ok\");" + snippet);
