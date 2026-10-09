@@ -346,7 +346,7 @@ The `tests/api-secret-security.test.mjs` regression checks scan browser-delivere
 
 ## Security: Password hashing
 
-ToolNova currently builds a static, browser-first website and has no identified server-side password registration/login endpoints or password database. **No password-hashing feature is implemented by this documentation change.** Do not collect or store user passwords in browser code, local storage, static JSON, or generated site files.
+ToolNova currently builds a static, browser-first website and has no identified server-side password registration/login endpoints or password database. A server-only helper now exists at `lib/password-hashing.mjs`, using Node's built-in scrypt, a unique random salt, a versioned encoded hash, bounded parameters, and timing-safe comparison. **This helper is not wired into a live registration/login flow and does not mean ToolNova currently has authentication.** Do not collect or store user passwords in browser code, local storage, static JSON, or generated site files.
 
 If authentication is added, password handling must run on a trusted server or managed authentication provider:
 - Prefer **Argon2id** with parameters tuned for the production environment and the current OWASP Password Storage Cheat Sheet; use **scrypt** when Argon2id is unavailable. Use bcrypt only for legacy compatibility, with a work factor appropriate to the deployment.
@@ -355,4 +355,4 @@ If authentication is added, password handling must run on a trusted server or ma
 - Keep any pepper or other application secret only in server-side secret storage, separate from the password database. Plan for parameter upgrades and rehash after successful login as settings evolve.
 - Add tests for correct and incorrect passwords, unique salts for identical passwords, malformed stored hashes, rate limiting, and account/session flows. Never commit real user credentials or test secrets.
 
-The `tests/password-hashing-security.test.mjs` file is an architecture/documentation guard only. It confirms that future changes must review password hashing before adding authentication endpoints or dependencies; it does not hash passwords or provide live authentication.
+The `tests/password-hashing.test.mjs` suite exercises the actual server-only scrypt helper, including unique salts, correct/incorrect password verification, malformed hashes, and input validation. The separate `tests/password-hashing-security.test.mjs` file is an architecture/documentation guard. Neither file creates a registration/login endpoint or provides live authentication.
