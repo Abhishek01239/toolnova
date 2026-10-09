@@ -72,10 +72,14 @@
     if (isNaN(n)) return def;
     return Math.min(max, Math.max(min, n));
   }
+  var MAX_IMAGE_BYTES = 20 * 1024 * 1024;
   function isImage(f) {
-    var t = (f.type || '').toLowerCase();
-    if (t === 'image/gif' || t === 'image/svg+xml') return false;
-    return t.indexOf('image/') === 0 || /\.(jpe?g|png|webp|bmp|avif)$/i.test(f.name);
+    if (!f || typeof f.name !== 'string' || !Number.isFinite(f.size) || f.size <= 0 || f.size > MAX_IMAGE_BYTES) return false;
+    var match = f.name.toLowerCase().match(/\.([^.]+)$/);
+    var ext = match ? match[1] : '';
+    var allowed = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', bmp: 'image/bmp', avif: 'image/avif' };
+    var type = (f.type || '').toLowerCase();
+    return !!allowed[ext] && (!type || type === allowed[ext] || (ext === 'jpeg' && type === 'image/pjpeg'));
   }
   function extFor(mime) { return mime === 'image/png' ? '.png' : '.jpg'; }
   function download(blob, name) {
@@ -396,7 +400,7 @@
   function setFile(fileList) {
     var f = fileList && fileList[0];
     if (!f) return;
-    if (!isImage(f)) { status('Please choose a JPG, PNG or WebP photo.', 'error'); return; }
+    if (!isImage(f)) { status('Choose a matching JPG, PNG, WebP, BMP or AVIF image up to 20 MB.', 'error'); return; }
     if (imgUrl) URL.revokeObjectURL(imgUrl);
     imgUrl = URL.createObjectURL(f);
     var probe = new Image();
