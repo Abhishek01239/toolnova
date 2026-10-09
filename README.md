@@ -311,7 +311,7 @@ Before introducing any server API, AI proxy, upload endpoint, authentication, or
 - Use a shared/distributed counter (or a managed edge/WAF limiter) in multi-instance deployments; in-memory counters alone are not reliable across serverless instances. Trust client IP headers only when supplied by the hosting platform's trusted proxy.
 - Test under-limit, over-limit, reset-window, spoofed-header, and concurrent-request cases. Avoid using client-provided user IDs as the sole rate-limit identity.
 
-The `tests/rate-limiting.test.mjs` regression check flags newly added server endpoint directories or Vercel functions so rate limiting can be implemented and tested as part of the endpoint review. It is an architecture guard, **not** a live traffic limiter or a load test.
+The `tests/rate-limiting.test.mjs` regression check flags newly added server endpoint directories or Vercel functions so rate limiting can be implemented and tested as part of the endpoint review. It is an architecture guard, not a live traffic limiter or a load test.
 
 
 ## Security: JWT signing secrets
