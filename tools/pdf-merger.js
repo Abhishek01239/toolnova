@@ -56,8 +56,11 @@
     if (n < 1073741824) return (n / 1048576).toFixed(1) + ' MB';
     return (n / 1073741824).toFixed(2) + ' GB';
   }
+  var MAX_PDF_BYTES = 50 * 1024 * 1024;
   function isPdf(f) {
-    return f.type === 'application/pdf' || f.name.toLowerCase().slice(-4) === '.pdf';
+    if (!f || typeof f.name !== 'string' || !/\.pdf$/i.test(f.name)) return false;
+    if (!Number.isFinite(f.size) || f.size <= 0 || f.size > MAX_PDF_BYTES) return false;
+    return true;
   }
   function friendlyError(err) {
     var m = err && err.message ? err.message : '';
@@ -190,8 +193,8 @@
     });
     files = files.concat(added);
     touch();
-    if (skipped && added.length) status(added.length + ' added. Skipped ' + skipped + ' (PDF files only, up to ' + MAX_FILES + ' at a time).', 'error');
-    else if (skipped) status('Only PDF files are accepted, up to ' + MAX_FILES + ' at a time.', 'error');
+    if (skipped && added.length) status(added.length + ' added. Skipped ' + skipped + ' (PDF files up to 50 MB each, up to ' + MAX_FILES + ' files).', 'error');
+    else if (skipped) status('Choose valid .pdf files up to 50 MB each (maximum ' + MAX_FILES + ' files).', 'error');
     else status(added.length + (added.length === 1 ? ' file added.' : ' files added.'), 'ok');
     added.forEach(inspect);
   }
