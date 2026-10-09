@@ -350,8 +350,8 @@ ToolNova currently builds a static, browser-first website and has no identified 
 
 If authentication is added, password handling must run on a trusted server or managed authentication provider:
 - Prefer **Argon2id** with parameters tuned for the production environment and the current OWASP Password Storage Cheat Sheet; use **scrypt** when Argon2id is unavailable. Use bcrypt only for legacy compatibility, with a work factor appropriate to the deployment.
-- Use the library's password-hashing API to generate a cryptographically secure, unique random salt per password and store only the encoded hash plus algorithm/parameters and salt as required by that format. Never use plain SHA-256/SHA-1/MD5, a fast general-purpose hash, or reversible encryption alone for password storage. Never log passwords or return them to the client.
-- Verify passwords with the library's verify function and its safe comparison behavior. Use generic login errors, rate-limit authentication attempts server-side, and add secure account recovery and session protections.
+- Use the library's password-hashing API to generate a cryptographically secure, unique random salt per password and store only the encoded hash plus algorithm/parameters and salt as required by that format. **Never store plaintext passwords.** Never use plain SHA-256/SHA-1/MD5, a fast general-purpose hash, or reversible encryption alone for password storage. Never log passwords or return them to the client.
+- Verify passwords with the library's verify function and its constant-time comparison behavior. Use generic login errors, rate-limit authentication attempts server-side, and add secure account recovery and session protections.
 - Keep any pepper or other application secret only in server-side secret storage, separate from the password database. Plan for parameter upgrades and rehash after successful login as settings evolve.
 - Add tests for correct and incorrect passwords, unique salts for identical passwords, malformed stored hashes, rate limiting, and account/session flows. Never commit real user credentials or test secrets.
 
