@@ -58,8 +58,11 @@
     while (s.length < w) s = '0' + s;
     return s;
   }
+  var MAX_PDF_BYTES = 50 * 1024 * 1024;
   function isPdf(f) {
-    return f.type === 'application/pdf' || f.name.toLowerCase().slice(-4) === '.pdf';
+    if (!f || typeof f.name !== 'string' || !/\.pdf$/i.test(f.name)) return false;
+    if (!Number.isFinite(f.size) || f.size <= 0 || f.size > MAX_PDF_BYTES) return false;
+    return true;
   }
   function friendlyError(err) {
     var m = err && err.message ? err.message : '';
@@ -298,7 +301,7 @@
   function setFile(fileList) {
     var f = fileList && fileList[0];
     if (!f) return;
-    if (!isPdf(f)) { status('Please choose a PDF file.', 'error'); return; }
+    if (!isPdf(f)) { status('Choose a non-empty .pdf file up to 50 MB.', 'error'); return; }
     current = { file: f, name: f.name, size: f.size, pages: null, error: '', src: null };
     lastOut = null;
     status('');
