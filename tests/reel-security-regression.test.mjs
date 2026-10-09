@@ -9,15 +9,15 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 test('browser runtime clears known legacy auth tokens without storing new credentials', async () => {
   const core = await readFile(path.join(ROOT, 'public/assets/core.js'), 'utf8');
   for (const key of ['access_token', 'auth_token', 'authToken', 'refresh_token', 'id_token']) {
-    assert.match(core, new RegExp("localStorage\\.removeItem\\(['\\\"]" + key + "['\\\"]\\)"));
+    assert.ok(core.includes("localStorage.removeItem('" + key + "')"), 'missing cleanup for ' + key);
   }
-  const writes = [...core.matchAll(/localStorage\\.setItem\\(\\s*['"]([^'"]+)['"]/g)].map((m) => m[1]);
+  const writes = [...core.matchAll(/localStorage\.setItem\(\s*['"]([^'"]+)['"]/g)].map((m) => m[1]);
   assert.deepEqual(writes, ['tn-theme'], 'only the non-sensitive theme preference may be persisted');
 });
 
 test('production verification rejects source maps and sourceMappingURL references', async () => {
   const verifier = await readFile(path.join(ROOT, 'scripts/verify.mjs'), 'utf8');
-  assert.match(verifier, /sourceMaps = files\.filter\(\(f\) => f\.endsWith\('\.map'\)\)/);
+  assert.ok(verifier.includes("const sourceMaps = files.filter((f) => f.endsWith('.map'))"));
   assert.match(verifier, /sourceMappingURL/);
 });
 
