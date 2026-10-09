@@ -71,6 +71,15 @@ async function main() {
   const files = await walk(DIST);
   const htmlFiles = files.filter((f) => f.endsWith('.html'));
   const jsFiles = files.filter((f) => f.endsWith('.js'));
+  // Production source maps can expose original source and internal comments.
+  const sourceMaps = files.filter((f) => f.endsWith('.map'));
+  if (sourceMaps.length) err('production output contains source maps: ' + sourceMaps.map((f) => path.relative(DIST, f)).join(', '));
+  for (const jsFile of jsFiles) {
+    const js = await readFile(jsFile, 'utf8');
+    if (/\\bsourceMappingURL\\s*=/.test(js)) {
+      err(path.relative(DIST, jsFile) + ': sourceMappingURL exposes a production source map');
+    }
+  }
   if (!htmlFiles.length) err('no HTML files in dist/ — did the build run?');
 
   const titles = new Map();
