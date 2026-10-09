@@ -3,6 +3,15 @@
 (function () {
   'use strict';
 
+  /* This site has no login system. Remove known legacy auth-token keys left by
+     earlier experiments; never store session or provider credentials here. */
+  (function clearLegacyAuthTokens() {
+    var legacyKeys = ['access_token', 'auth_token', 'authToken', 'refresh_token', 'id_token'];
+    try {
+      legacyKeys.forEach(function (key) { localStorage.removeItem(key); });
+    } catch (e) { /* storage can be unavailable in private/restricted contexts */ }
+  })();
+
   /* ---- Theme toggle ---- */
   function currentTheme() {
     return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
