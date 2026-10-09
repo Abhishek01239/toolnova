@@ -356,3 +356,23 @@ If authentication is added, password handling must run on a trusted server or ma
 - Add tests for correct and incorrect passwords, unique salts for identical passwords, malformed stored hashes, rate limiting, and account/session flows. Never commit real user credentials or test secrets.
 
 The `tests/password-hashing.test.mjs` suite exercises the actual server-only scrypt helper, including unique salts, correct/incorrect password verification, malformed hashes, and input validation. The separate `tests/password-hashing-security.test.mjs` file is an architecture/documentation guard. Neither file creates a registration/login endpoint or provides live authentication.
+
+
+## Security: Multi-factor authentication (MFA)
+
+ToolNova is still a static, browser-first site with no live registration/login endpoint, user database, or authenticated session flow. The server-only primitives in `lib/mfa.mjs` are a foundation for a future integration—not an enabled MFA feature and not a substitute for an authentication provider.
+
+The helper provides:
+- A cryptographically random 160-bit Base32 secret for authenticator apps.
+- RFC 6238 time-based one-time password (TOTP) generation and verification using six-digit codes and a bounded clock-drift window.
+- High-entropy one-time recovery-code generation and constant-time digest comparison. Recovery codes are random 128-bit values by default, so SHA-256 digests are appropriate for storing these codes; **this is not a password-hashing method**.
+
+Before enabling MFA for real users:
+1. Connect a trusted server-side authentication system (prefer a managed provider that supports TOTP MFA) and a persistent user store. Do not implement MFA only in browser JavaScript or local storage.
+2. Generate each user's secret server-side, keep it encrypted at rest, show the setup QR/otpauth URI only during enrollment, and require a valid TOTP before marking MFA as enabled.
+3. Require the second factor during sign-in after the primary credential is verified. Do not create a fully authenticated session until both factors pass; protect enrollment, disable, and recovery operations with recent re-authentication.
+4. Persist only recovery-code digests, display plaintext recovery codes once, and atomically invalidate each code when used. The helper verifies a digest but does not provide storage or one-time consumption by itself.
+5. Add server-enforced per-account and per-IP rate limits, generic errors, audit events without secrets/OTP values, secure session cookies, CSRF protections for cookie-authenticated state changes, and safe recovery procedures.
+6. Never log or commit TOTP secrets, QR/otpauth URLs, one-time codes, recovery codes, or real credentials. Keep this module out of browser-delivered assets.
+
+Run `node --test tests/mfa.test.mjs` to test the TOTP test vector, secret generation, malformed-code rejection, and recovery-code helpers. These tests exercise the helper only; they do not test a live sign-in flow or mean MFA is active on the deployed website.
