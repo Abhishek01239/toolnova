@@ -1,0 +1,40 @@
+name: ToolNova Security Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 4 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: toolnova-security-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-security-gates:
+    name: Tests, build, and security verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run regression tests
+        run: node --test tests/
+
+      - name: Build static site
+        run: node scripts/build.mjs
+
+      - name: Verify production output
+        run: node scripts/verify.mjs
