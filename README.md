@@ -285,3 +285,12 @@ Many earlier roadmap items are now live (QR codes, PDF merge/split, image tools 
 ## License
 
 MIT — see [LICENSE](./LICENSE). Tool code and copy are original works created for this project; no third-party branding or copyrighted material.
+
+
+## Security: Broken Object-Level Authorization (BOLA / IDOR)
+
+ToolNova is currently a static, browser-only site. Repository inspection found no server-side API/function routes, authenticated user records, or server-side object store to authorize. The public tools run in each visitor's browser; there are no private per-user objects in this architecture for a BOLA/IDOR exploit to cross-access. This is an architecture-based assessment, not a penetration test or a guarantee that every dependency or deployment is secure.
+
+The `tests/object-authorization.test.mjs` regression check flags the addition of server endpoint directories, Vercel functions, or common server-side persistence dependencies so new features trigger an authorization review.
+
+Before adding accounts, saved files, projects, payments, or any private object, implement authorization on the server for every read, update, delete, download, and export. Derive the user identity from a verified session/token; load the object scoped to that identity (for example, query by both object ID and owner ID); deny access by default; return 403 or a non-enumerating 404 for unauthorized objects; never trust a client-supplied owner/user ID; and add tests proving user A cannot read or mutate user B's objects by changing IDs. Public static tools and public catalog entries should remain explicitly public rather than being treated as private records.
