@@ -294,3 +294,21 @@ ToolNova is currently a static, browser-only site. Repository inspection found n
 The `tests/object-authorization.test.mjs` regression check flags the addition of server endpoint directories, Vercel functions, or common server-side persistence dependencies so new features trigger an authorization review.
 
 Before adding accounts, saved files, projects, payments, or any private object, implement authorization on the server for every read, update, delete, download, and export. Derive the user identity from a verified session/token; load the object scoped to that identity (for example, query by both object ID and owner ID); deny access by default; return 403 or a non-enumerating 404 for unauthorized objects; never trust a client-supplied owner/user ID; and add tests proving user A cannot read or mutate user B's objects by changing IDs. Public static tools and public catalog entries should remain explicitly public rather than being treated as private records.
+
+
+## Security: Rate limiting
+
+ToolNova currently deploys as a static site with browser-only tools and no server API/function endpoints identified in the repository. That means there is no application endpoint where a trustworthy per-client request counter can be enforced today. A JavaScript-only timer or counter would be bypassable and is **not** a security rate limiter, so this repository does not pretend to provide one.
+
+For deployment-level protection against request floods, configure rate-limiting rules in the Vercel project Firewall/WAF dashboard where available. Scope rules to sensitive routes when they exist; do not blindly apply a tight limit to all static assets, because that can block normal visitors, crawlers, and page resources. Review Vercel plan/feature availability and test rules before enabling them in production. Dashboard firewall rules are deployment settings and are not created by this GitHub commit.
+
+Before introducing any server API, AI proxy, upload endpoint, authentication, or other costly/stateful operation, add **server-enforced** limits before release. Starting points to tune using real traffic:
+
+- General API: 60 requests per client per minute.
+- Expensive AI/compute endpoints: 10 requests per client per minute, plus a daily usage budget where appropriate.
+- Login, OTP, or password-reset endpoints: stricter per-IP and per-account limits, progressive backoff, and abuse monitoring.
+- Return HTTP 429 with a `Retry-After` header when a limit is exceeded; validate limits for each route and method.
+- Use a shared/distributed counter (or a managed edge/WAF limiter) in multi-instance deployments; in-memory counters alone are not reliable across serverless instances. Trust client IP headers only when supplied by the hosting platform's trusted proxy.
+- Test under-limit, over-limit, reset-window, spoofed-header, and concurrent-request cases. Avoid using client-provided user IDs as the sole rate-limit identity.
+
+The `tests/rate-limiting.test.mjs` regression check flags newly added server endpoint directories or Vercel functions so rate limiting can be implemented and tested as part of the endpoint review. It is an architecture guard, **not** a live traffic limiter or a load test.
