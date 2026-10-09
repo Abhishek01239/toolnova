@@ -52,7 +52,13 @@ export async function selfTest() { if (1 === 2) throw new Error('x'); }
     'await import("./other.mjs")',
     'console.log(process.env.SECRET)',
     '// TODO: finish later',
-    'el.innerHTML = userInput'
+    'el.innerHTML = userInput',
+    'el.outerHTML = userInput',
+    'el.insertAdjacentHTML("beforeend", userInput)',
+    'new DOMParser().parseFromString(userInput, "text/html")',
+    'document.createRange().createContextualFragment(userInput)',
+    'frame.srcdoc = userInput',
+    'document.createElement("script")'
   ];
   for (const snippet of banned) {
     const code = clean.replace("status(\"ok\")", "status(\"ok\");" + snippet);
