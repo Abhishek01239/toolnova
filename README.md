@@ -329,3 +329,16 @@ If authentication/JWT support is introduced, apply these requirements before rel
 - Add tests for invalid signatures, wrong issuer/audience, expired tokens, algorithm confusion, and missing required claims. Do not create JWTs in the browser using a secret.
 
 The `tests/jwt-secret-security.test.mjs` regression checks guard the current static architecture and verify that the documentation records these requirements. They do not validate a live JWT implementation or prove that deployment secrets are configured.
+
+
+## Security: API secrets stay server-side
+
+**Never put provider API keys in browser-delivered code.** Anything shipped in `public/`, `tools/`, HTML, generated `dist/`, or client-side configuration can be read by every visitor. Minifying or obfuscating a key does not protect it. Do not use public/client-prefixed environment variables for secrets, and do not commit real credentials to source control.
+
+Current architecture: ToolNova is a static browser-first site. The optional Groq/OpenCode AI features run in Node-based maintenance scripts and GitHub Actions; configure provider keys as GitHub Actions repository/environment secrets (for example, `GROQ_API_KEY` or `OPENCODE_API_KEY`) and expose them only to the workflow step that needs them. Do not pass these values into the static build or generated browser assets. The repository's `.env` files are ignored by Git, but that is a convenience guard—not a substitute for secret storage or a check that a key was never committed.
+
+If a future browser feature needs a credentialed third-party API, implement a server-side endpoint or trusted backend proxy. Store the provider key in the hosting platform's encrypted server-side environment settings, call the provider only from that server endpoint, validate and limit incoming requests, restrict allowed operations and inputs, and return only the minimum response data the browser needs. Never return the secret to the client. Add authentication/authorization where needed, server-enforced rate limits, origin/CSRF protections for cookie-authenticated state changes, safe error handling, and tests before release. A static-only deployment cannot keep a secret from visitors if the browser calls the provider directly with that secret.
+
+If a key has ever appeared in browser code, a public build, logs, or Git history, treat it as compromised: revoke/rotate it at the provider and review usage. Deleting the visible value alone does not invalidate it.
+
+The `tests/api-secret-security.test.mjs` regression checks scan browser-delivered source/build files for common real-key formats, reject server environment access in those files, and confirm the current Node AI pipeline reads provider keys from environment variables. These are automated guardrails, not a secrets-scanning service; review provider-specific formats and enable repository/provider secret scanning as an additional layer.
