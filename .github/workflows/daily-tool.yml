@@ -1,0 +1,71 @@
+name: Daily Tool
+
+on:
+  schedule:
+    # 02:30 UTC = 08:00 IST every day
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many tools to add this run"
+        required: false
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: toolnova-daily-tool
+  cancel-in-progress: false
+
+jobs:
+  add-tool:
+    name: Add daily tool(s) and push for Vercel deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          # Need write token so the job can push the new tool commit
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "ToolNova Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Add daily tool(s)
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'auto' }}
+          AI_MODEL: ${{ vars.AI_MODEL || 'llama-3.3-70b-versatile' }}
+          AI_BUDGET: ${{ vars.AI_BUDGET || '4' }}
+          GARDEN_MIN: ${{ vars.GARDEN_MIN || '14' }}
+          SEED_COUNT: ${{ github.event.inputs.count || '1' }}
+        run: |
+          node scripts/add-daily-tool.mjs --count=${{ github.event.inputs.count || '1' }}
+
+      - name: Commit and push if anything changed
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          git add -A
+          # Prefer a clear message from the script output if present
+          MSG="feat: add daily tool(s) [skip ci]"
+          if [ -f /tmp/added-tools.txt ]; then
+            MSG="feat: add tool(s) $(cat /tmp/added-tools.txt)"
+          fi
+          # Detect AI-authored tools from the log line the script prints
+          if git diff --cached --name-only | grep -q 'scripts/generators/custom/'; then
+            MSG="$MSG 🤖"
+          fi
+          git commit -m "$MSG" || exit 0
+          git push origin HEAD:main
