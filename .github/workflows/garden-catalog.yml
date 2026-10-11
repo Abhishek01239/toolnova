@@ -1,0 +1,59 @@
+name: Garden Catalog
+
+on:
+  schedule:
+    # 03:30 UTC Monday = 09:00 IST Monday
+    - cron: "30 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "How many new ideas to plant"
+        required: false
+        default: "15"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: toolnova-garden-catalog
+  cancel-in-progress: false
+
+jobs:
+  garden:
+    name: Plant fresh unique tool ideas into the backlog
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "ToolNova Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Tend catalog
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          AI_PROVIDER: ${{ vars.AI_PROVIDER || 'auto' }}
+          AI_MODEL: ${{ vars.AI_MODEL || 'llama-3.3-70b-versatile' }}
+          GARDEN_TARGET: ${{ github.event.inputs.target || '15' }}
+        run: |
+          node scripts/tend-catalog.mjs --target=${{ github.event.inputs.target || '15' }}
+
+      - name: Commit and push if catalog grew
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No catalog changes."
+            exit 0
+          fi
+          git add data/catalog.json
+          git commit -m "chore: garden catalog — plant fresh tool ideas" || exit 0
+          git push origin HEAD:main
