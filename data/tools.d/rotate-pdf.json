@@ -1,0 +1,89 @@
+{
+  "id": "rotate-pdf",
+  "title": "Rotate PDF",
+  "h1": "Rotate PDF Pages Online — Free & Private",
+  "seoTitle": "Rotate PDF Online Free — Turn Pages Sideways or Upside Down",
+  "description": "Rotate PDF pages by 90°, 180° or 270° — all pages, odd, even or a custom range. Free, runs in your browser, and your file is never uploaded.",
+  "intro": "Fix scanned pages that came out sideways or upside down. Rotate the whole document or only the pages you choose, then download the corrected PDF — everything happens on your device.",
+  "blurb": "Rotate all or selected PDF pages by 90°, 180° or 270° — free and private.",
+  "keywords": ["rotate pdf", "rotate pdf pages", "turn pdf sideways", "flip pdf upside down", "fix scanned pdf orientation", "rotate pdf online free", "pdf page rotator"],
+  "category": "PDF",
+  "added": "2026-10-12",
+  "popularity": 86,
+  "ui": {
+    "controls": [
+      {
+        "id": "scope",
+        "type": "select",
+        "label": "Which pages?",
+        "value": "all",
+        "options": [
+          { "value": "all", "label": "All pages" },
+          { "value": "odd", "label": "Odd pages only (1, 3, 5…)" },
+          { "value": "even", "label": "Even pages only (2, 4, 6…)" },
+          { "value": "custom", "label": "Custom pages or ranges" }
+        ]
+      },
+      {
+        "id": "pages",
+        "type": "text",
+        "label": "Pages",
+        "placeholder": "e.g. 1-3, 5, 8-10",
+        "help": "Separate pages or ranges with commas. Use 7- for page 7 to the end."
+      },
+      {
+        "id": "angle",
+        "type": "select",
+        "label": "Rotation",
+        "value": "90",
+        "options": [
+          { "value": "90", "label": "90° clockwise" },
+          { "value": "180", "label": "180° (upside down)" },
+          { "value": "270", "label": "90° counter-clockwise" }
+        ]
+      },
+      {
+        "id": "filename",
+        "type": "text",
+        "label": "Output file name",
+        "value": "rotated",
+        "placeholder": "rotated"
+      }
+    ],
+    "actions": [
+      { "id": "rotate", "label": "Rotate PDF", "primary": true },
+      { "id": "clear", "label": "Clear file" }
+    ],
+    "outputs": [
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag a PDF onto it — the file is read locally and its page count appears straight away.",
+    "Choose which pages to turn and how far: 90° clockwise, 180°, or 90° counter-clockwise.",
+    "Press Rotate PDF — the corrected file downloads straight away, with all other content left untouched."
+  ],
+  "examples": [
+    "Turn a scanned document that came out sideways by rotating all pages 90° clockwise.",
+    "Fix only the landscape pages of a report by listing them, such as 4, 9-11.",
+    "Flip every other page upside down after double-sided scanning by using the even pages option."
+  ],
+  "faq": [
+    {
+      "q": "Is my PDF uploaded to a server?",
+      "a": "No. The file is processed entirely in your browser with a local PDF library, so it never leaves your device and nothing is stored or logged."
+    },
+    {
+      "q": "Does rotating reduce the quality of my PDF?",
+      "a": "No. Only the page rotation setting changes, so text, images and layout are kept exactly as they were and the file is not re-rendered or compressed."
+    },
+    {
+      "q": "Can I rotate only some pages?",
+      "a": "Yes. Pick Odd, Even or Custom in the Which pages menu. For Custom, type page numbers and ranges separated by commas, for example 1-3, 5, 8-10."
+    },
+    {
+      "q": "Can I rotate a password-protected PDF?",
+      "a": "Encrypted or password-protected PDFs can't be rotated directly. Remove the password in your PDF viewer first, then add the file again."
+    }
+  ]
+}
