@@ -1,0 +1,102 @@
+{
+  "id": "compound-interest-calculator",
+  "title": "Compound Interest Calculator",
+  "h1": "Compound Interest Calculator \u2014 Future Value & Interest",
+  "seoTitle": "Compound Interest Calculator | ToolNova",
+  "description": "Calculate compound interest and future value from principal, annual rate, time and compounding frequency. Supports yearly through daily compounding, all client-side.",
+  "intro": "Enter the principal, annual interest rate, number of years and compounding frequency. The tool shows the future value, total interest earned and a simple year-by-year balance.",
+  "blurb": "See how money grows with compounding \u2014 yearly, quarterly, monthly or daily \u2014 including total interest and final amount.",
+  "keywords": [
+    "compound interest calculator",
+    "compounding calculator",
+    "investment growth",
+    "future value calculator"
+  ],
+  "category": "Finance",
+  "added": "2026-10-12",
+  "popularity": 74,
+  "ui": {
+    "controls": [
+      {
+        "id": "principal",
+        "type": "number",
+        "label": "Principal amount",
+        "value": "10000",
+        "min": "0",
+        "step": "0.01"
+      },
+      {
+        "id": "rate",
+        "type": "number",
+        "label": "Annual interest rate (%)",
+        "value": "5",
+        "min": "0",
+        "step": "0.01"
+      },
+      {
+        "id": "years",
+        "type": "number",
+        "label": "Time (years)",
+        "value": "10",
+        "min": "0",
+        "step": "0.1"
+      },
+      {
+        "id": "frequency",
+        "type": "select",
+        "label": "Compounding frequency",
+        "value": "yearly",
+        "options": [
+          { "value": "yearly", "label": "Yearly (1\u00d7)" },
+          { "value": "half", "label": "Half-yearly (2\u00d7)" },
+          { "value": "quarterly", "label": "Quarterly (4\u00d7)" },
+          { "value": "monthly", "label": "Monthly (12\u00d7)" },
+          { "value": "daily", "label": "Daily (365\u00d7)" }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "calc",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Results"
+      },
+      {
+        "id": "schedule",
+        "type": "pre",
+        "label": "Year-by-year balance"
+      }
+    ]
+  },
+  "howItWorks": [
+    "The standard compound interest formula A = P \u00d7 (1 + r/n)^(n\u00d7t) is applied, where r is the annual rate as a decimal and n is the compounding periods per year.",
+    "Future value A includes principal plus all compounded interest. Total interest earned is A minus P.",
+    "A year-by-year schedule shows the balance at the end of each complete year using the same rate and frequency."
+  ],
+  "examples": [
+    "$10,000 at 5% compounded yearly for 10 years becomes approximately $16,288.95.",
+    "The same $10,000 at 5% compounded monthly for 10 years becomes approximately $16,470.09.",
+    "At 8% yearly for 5 years on $5,000 the future value is about $7,346.64."
+  ],
+  "faq": [
+    {
+      "q": "Which compounding frequencies can I choose?",
+      "a": "Yearly (once a year), half-yearly, quarterly, monthly and daily (365 times per year)."
+    },
+    {
+      "q": "How are partial years handled?",
+      "a": "The final future value uses the exact fractional years you enter. The schedule only lists complete years."
+    },
+    {
+      "q": "Is the calculation accurate for large numbers?",
+      "a": "Yes, within normal JavaScript number precision. Results are shown to two decimal places."
+    }
+  ]
+}
