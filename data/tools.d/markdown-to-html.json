@@ -1,0 +1,52 @@
+{
+  "id": "markdown-to-html",
+  "title": "Markdown to HTML",
+  "h1": "Markdown to HTML Converter \u2014 Free and Private",
+  "seoTitle": "Markdown to HTML Converter \u2014 Preview in Browser",
+  "description": "Convert Markdown to clean HTML in your browser. Supports headings, lists, links, bold, italic and code. Nothing is uploaded.",
+  "intro": "Paste your Markdown and see the rendered HTML instantly. Useful for writing docs, READMEs or blog posts. Conversion happens entirely on your device.",
+  "blurb": "Turn Markdown into HTML with a live preview \u2014 free, no sign-up, runs in the browser.",
+  "keywords": ["markdown to html", "markdown converter", "md to html", "markdown preview"],
+  "category": "Markdown",
+  "added": "2026-10-13",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "markdown",
+        "type": "textarea",
+        "label": "Markdown",
+        "rows": 12,
+        "value": "# Hello\n\nThis is **bold** and *italic*.\n\n- List item\n- Another\n\n[Link](https://example.com)"
+      }
+    ],
+    "actions": [
+      { "id": "convert", "label": "Convert to HTML", "primary": true },
+      { "id": "copy", "label": "Copy HTML" }
+    ],
+    "outputs": [
+      { "id": "html", "type": "textarea", "label": "HTML" },
+      { "id": "preview", "type": "pre", "label": "Preview (source)" }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type Markdown in the input box.",
+    "Press Convert to HTML to generate the corresponding HTML.",
+    "Copy the result or review the source."
+  ],
+  "examples": [
+    "Convert a README section for a website.",
+    "Turn notes into HTML for an email or CMS.",
+    "Preview simple documentation formatting."
+  ],
+  "faq": [
+    {
+      "q": "Does this support all Markdown features?",
+      "a": "It handles common syntax: headings, paragraphs, bold, italic, links, inline code, and unordered lists. Advanced features like tables or footnotes are not included."
+    },
+    {
+      "q": "Is my Markdown uploaded?",
+      "a": "No. The conversion runs entirely in your browser using plain JavaScript. Your text never leaves your device."
+    }
+  ]
+}
