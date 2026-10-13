@@ -1,0 +1,52 @@
+{
+  "id": "json-to-yaml",
+  "title": "JSON to YAML",
+  "h1": "JSON to YAML Converter \u2014 Free and Private",
+  "seoTitle": "JSON to YAML Converter \u2014 Browser-Based",
+  "description": "Convert JSON to clean YAML syntax in your browser. Handles nested objects and arrays. No data is uploaded or stored.",
+  "intro": "Paste valid JSON and get equivalent YAML output instantly. Useful for config files, Kubernetes manifests or documentation. Conversion stays on your device.",
+  "blurb": "Turn JSON into readable YAML \u2014 free, private, runs entirely in the browser.",
+  "keywords": ["json to yaml", "json yaml converter", "yaml from json", "convert json to yaml"],
+  "category": "JSON",
+  "added": "2026-10-13",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "json",
+        "type": "textarea",
+        "label": "JSON",
+        "rows": 12,
+        "mono": true,
+        "value": "{\n  \"name\": \"example\",\n  \"items\": [1, 2, 3],\n  \"nested\": {\n    \"flag\": true\n  }\n}"
+      }
+    ],
+    "actions": [
+      { "id": "convert", "label": "Convert to YAML", "primary": true },
+      { "id": "copy", "label": "Copy YAML" }
+    ],
+    "outputs": [
+      { "id": "yaml", "type": "textarea", "label": "YAML" }
+    ]
+  },
+  "howItWorks": [
+    "Paste valid JSON into the input.",
+    "Press Convert to YAML to generate the YAML representation.",
+    "Copy the result for use in configs or docs."
+  ],
+  "examples": [
+    "Convert an API response sample to YAML for a config.",
+    "Turn a package.json snippet into YAML.",
+    "Prepare data for tools that prefer YAML."
+  ],
+  "faq": [
+    {
+      "q": "Does it handle nested structures?",
+      "a": "Yes. Objects become indented mappings and arrays become lists. Invalid JSON shows an error."
+    },
+    {
+      "q": "Is my data uploaded?",
+      "a": "No. Parsing and conversion happen entirely in your browser. Nothing leaves your device."
+    }
+  ]
+}
