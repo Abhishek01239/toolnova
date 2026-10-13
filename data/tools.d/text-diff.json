@@ -1,0 +1,58 @@
+{
+  "id": "text-diff",
+  "title": "Text Diff Checker",
+  "h1": "Text Diff Checker \u2014 Compare Two Texts",
+  "seoTitle": "Text Diff Checker \u2014 Line and Character Differences",
+  "description": "Compare two pieces of text and highlight differences line by line. Runs entirely in your browser so your content stays private.",
+  "intro": "Paste two versions of text and see which lines were added, removed or changed. Useful for reviewing edits, code snippets or documents without uploading anything.",
+  "blurb": "Spot differences between two texts instantly \u2014 free, private, no sign-up.",
+  "keywords": ["text diff", "diff checker", "compare text", "text comparison", "diff tool"],
+  "category": "Text",
+  "added": "2026-10-13",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {
+        "id": "left",
+        "type": "textarea",
+        "label": "Original text",
+        "rows": 10,
+        "value": "Hello world\nThis is line two\nShared line"
+      },
+      {
+        "id": "right",
+        "type": "textarea",
+        "label": "Modified text",
+        "rows": 10,
+        "value": "Hello world\nThis is line two edited\nShared line\nNew line"
+      }
+    ],
+    "actions": [
+      { "id": "diff", "label": "Show differences", "primary": true }
+    ],
+    "outputs": [
+      { "id": "result", "type": "pre", "label": "Differences" },
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Paste the original text on the left and the modified version on the right.",
+    "Press Show differences to compare them line by line.",
+    "Added, removed and changed lines are marked so you can review the edits."
+  ],
+  "examples": [
+    "Review changes to a paragraph or README.",
+    "Compare two versions of a configuration snippet.",
+    "Check student essay revisions or code comments."
+  ],
+  "faq": [
+    {
+      "q": "How are differences shown?",
+      "a": "Lines that exist only in the original are marked removed, lines only in the modified text are marked added, and matching lines are shown as unchanged."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. The comparison runs entirely in your browser using plain JavaScript. Your text never leaves your device."
+    }
+  ]
+}
