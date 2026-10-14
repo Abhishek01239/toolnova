@@ -1,0 +1,80 @@
+{
+  "id": "tip-calculator",
+  "title": "Tip Calculator",
+  "h1": "Tip Calculator — Split Bill and Calculate Tips Instantly",
+  "seoTitle": "Free Tip Calculator — Calculate Tips and Split Bills",
+  "description": "Calculate the tip amount and total for any bill. Split the cost between any number of people. Runs privately in your browser.",
+  "intro": "Enter the bill amount, choose a tip percentage and the number of people sharing the bill. Instantly see the tip, total and amount per person.",
+  "blurb": "Calculate tips and split restaurant bills fairly — free and private.",
+  "keywords": ["tip calculator", "calculate tip", "bill splitter", "restaurant tip", "tip percentage"],
+  "category": "Finance",
+  "added": "2026-10-14",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "bill",
+        "type": "number",
+        "label": "Bill amount",
+        "placeholder": "50.00",
+        "min": 0,
+        "step": 0.01
+      },
+      {
+        "id": "tip",
+        "type": "number",
+        "label": "Tip percentage",
+        "value": "15",
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "people",
+        "type": "number",
+        "label": "Number of people",
+        "value": "1",
+        "min": 1,
+        "step": 1
+      }
+    ],
+    "actions": [
+      {
+        "id": "calculate",
+        "label": "Calculate tip",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Breakdown"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the total bill amount before tip.",
+    "Set the tip percentage you want to leave (common values are 15%, 18% or 20%).",
+    "Enter how many people are splitting the bill, then press Calculate tip."
+  ],
+  "examples": [
+    "A $45.80 bill with 18% tip for 2 people shows the tip amount, total and share per person.",
+    "Use 20% on a $120 dinner for 4 friends to see exactly what each person owes.",
+    "Leave the people field at 1 for a simple tip calculation without splitting."
+  ],
+  "faq": [
+    {
+      "q": "Is the calculation done on a server?",
+      "a": "No. Everything runs in your browser. Your bill amount is never sent anywhere."
+    },
+    {
+      "q": "What tip percentages are common?",
+      "a": "In many places 15% is standard, 18–20% is generous, and 10% is for average service. Adjust to match local custom."
+    },
+    {
+      "q": "Can I split an uneven bill?",
+      "a": "This tool splits the final total equally. For uneven shares, calculate the total first, then divide manually."
+    }
+  ]
+}
