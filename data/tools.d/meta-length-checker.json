@@ -1,0 +1,68 @@
+{
+  "id": "meta-length-checker",
+  "title": "Meta Length Checker",
+  "h1": "Meta Title and Description Length Checker",
+  "seoTitle": "SEO Meta Length Checker — Title and Description Limits",
+  "description": "Check if your page title and meta description are within recommended character limits for search results. Free and private.",
+  "intro": "Paste a title and meta description to see character counts and whether they fit typical search-engine display lengths.",
+  "blurb": "Check SEO title and meta description lengths against common limits.",
+  "keywords": ["meta length checker", "title length", "meta description length", "seo character count", "serp length"],
+  "category": "SEO",
+  "added": "2026-10-14",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Page title",
+        "placeholder": "Your page title here"
+      },
+      {
+        "id": "description",
+        "type": "textarea",
+        "label": "Meta description",
+        "rows": 4,
+        "placeholder": "Your meta description..."
+      }
+    ],
+    "actions": [
+      {
+        "id": "check",
+        "label": "Check lengths",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Results"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the title you plan to use in the <title> tag.",
+    "Enter the meta description content.",
+    "Press Check lengths to see character counts and guidance based on common display limits (about 50–60 for titles, 150–160 for descriptions)."
+  ],
+  "examples": [
+    "A 55-character title is usually safe; a 70-character one may be truncated.",
+    "A 155-character description often displays fully on desktop search results.",
+    "Use the tool before publishing a new page or blog post."
+  ],
+  "faq": [
+    {
+      "q": "What are the recommended lengths?",
+      "a": "Titles are often best under 60 characters. Meta descriptions under 160 characters tend to display without truncation on most devices."
+    },
+    {
+      "q": "Does this guarantee ranking?",
+      "a": "No. Length is only one small factor. Relevance, quality and other signals matter more."
+    },
+    {
+      "q": "Is the text sent anywhere?",
+      "a": "No. Counting is done locally in your browser."
+    }
+  ]
+}
