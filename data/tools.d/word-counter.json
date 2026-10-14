@@ -1,0 +1,66 @@
+{
+  "id": "word-counter",
+  "title": "Word Counter",
+  "h1": "Word Counter — Words, Characters, Reading Time and Keywords",
+  "seoTitle": "Free Word Counter — Count Words, Characters and More",
+  "description": "Count words, characters, sentences, paragraphs and estimate reading and speaking time. See top keywords. Runs entirely in your browser.",
+  "intro": "Paste text to see live word count, character counts, sentence and paragraph counts, reading time and the most frequent keywords.",
+  "blurb": "Count words and characters with reading time and keyword highlights.",
+  "keywords": ["word counter", "character counter", "count words", "reading time calculator", "keyword density"],
+  "category": "Text",
+  "added": "2026-10-14",
+  "popularity": 92,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text",
+        "rows": 12,
+        "placeholder": "Paste or type your text here..."
+      }
+    ],
+    "actions": [
+      {
+        "id": "clear",
+        "label": "Clear"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "stats",
+        "type": "stats",
+        "label": "Statistics"
+      },
+      {
+        "id": "keywords",
+        "type": "textarea",
+        "label": "Top keywords"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type text into the box. Counts update as you type.",
+    "Words are letter/number sequences; stop words are ignored for keywords.",
+    "Reading time assumes 200 words per minute; speaking time 130."
+  ],
+  "examples": [
+    "Check an essay stays under a word limit.",
+    "See reading time before publishing a blog post.",
+    "Spot the most frequent meaningful words in a draft."
+  ],
+  "faq": [
+    {
+      "q": "How are words counted?",
+      "a": "Sequences of letters or numbers, including contractions. Whitespace separates them."
+    },
+    {
+      "q": "What are the top keywords?",
+      "a": "The most common words of three or more characters, excluding common stop words."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. All counting happens locally in your browser."
+    }
+  ]
+}
