@@ -9,16 +9,6 @@
     if (!el) return;
     if ('value' in el) { el.value = value; } else { el.textContent = value; }
   }
-  function onAction(id, fn) {
-    var btn = root.querySelector('[data-action="' + id + '"]');
-    if (btn) btn.addEventListener('click', function () { fn(btn); });
-  }
-  function status(msg, kind) {
-    var el = root.querySelector('[data-status]');
-    if (!el) return;
-    el.textContent = msg || '';
-    el.className = 'status' + (kind ? ' ' + kind : '');
-  }
   function setStats(id, entries) {
     var el = outputEl(id);
     if (!el) return;
@@ -35,42 +25,64 @@
       el.appendChild(wrap);
     });
   }
-  function readControls(defs) {
-    var vals = {};
-    defs.forEach(function (d) {
-      var el = control(d.id);
-      if (!el) { vals[d.id] = d.value; return; }
-      if (d.type === 'checkbox') vals[d.id] = el.checked;
-      else if (d.type === 'number' || d.type === 'range') vals[d.id] = parseFloat(el.value) || 0;
-      else vals[d.id] = el.value;
-    });
-    return vals;
+  function onAction(id, fn) {
+    var btn = root.querySelector('[data-action="' + id + '"]');
+    if (btn) btn.addEventListener('click', function () { fn(btn); });
+  }
+  function status(msg, kind) {
+    var el = root.querySelector('[data-status]');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.className = 'status' + (kind ? ' ' + kind : '');
   }
 
-  var transforms = {};
-  transforms["dedupe-lines"] = function dedupeLines(text) {
-  var seen = new Set();
-  return text.split('\n').filter(function (line) {
-    if (seen.has(line)) return false;
-    seen.add(line);
-    return true;
-  }).join('\n');
-};
-
-  root.querySelectorAll('[data-action]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var fn = transforms[btn.getAttribute('data-action')];
-      if (!fn) return;
-      try {
-        var before = control('input').value;
-        var result = fn(before);
-        setOutput('output', result);
-        var lines = result && result.indexOf('\n') !== -1 ? ', ' + (result.split('\n').length) + ' lines' : '';
-        status('Done — ' + result.length + ' characters' + lines + '.', 'ok');
-      } catch (err) {
-        setOutput('output', '');
-        status(err && err.message ? err.message : 'Something went wrong.', 'error');
+  function dedupe() {
+    var text = control('text').value;
+    var caseSensitive = control('case-sensitive').checked;
+    var doTrim = control('trim').checked;
+    var lines = text.split('\n');
+    var seen = new Set();
+    var unique = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i];
+      var key = doTrim ? line.trim() : line;
+      if (!caseSensitive) key = key.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        unique.push(line);
       }
-    });
+    }
+    setOutput('result', unique.join('\n'));
+    var removed = lines.length - unique.length;
+    setStats('stats', [
+      ['Original lines', lines.length.toLocaleString()],
+      ['Unique lines', unique.length.toLocaleString()],
+      ['Duplicates removed', removed.toLocaleString()]
+    ]);
+    status(removed ? removed + ' duplicates removed.' : 'No duplicates found.', 'ok');
+  }
+
+  onAction('dedupe', dedupe);
+  onAction('copy', function () {
+    var result = outputEl('result').value;
+    if (result && navigator.clipboard) {
+      navigator.clipboard.writeText(result).then(function () {
+        status('Copied to clipboard.', 'ok');
+      }).catch(function () {
+        status('Could not copy.', 'err');
+      });
+    } else {
+      status('Nothing to copy.', 'warn');
+    }
   });
+  onAction('clear', function () {
+    control('text').value = '';
+    setOutput('result', '');
+    setStats('stats', []);
+    status('');
+    control('text').focus();
+  });
+
+  control('text').addEventListener('input', dedupe);
+  dedupe();
 })();

@@ -1,0 +1,75 @@
+{
+  "id": "sort-lines",
+  "title": "Sort Lines",
+  "h1": "Sort Lines — Alphabetically, by Length or Reverse",
+  "seoTitle": "Free Sort Lines Tool — Alphabetize and Order Text Lines",
+  "description": "Sort the lines of any text alphabetically, reverse alphabetically, by length, or randomly. Remove empty lines optionally. Everything runs in your browser.",
+  "intro": "Paste a list of lines and sort them in different ways. Useful for cleaning data, organizing lists, or preparing code comments.",
+  "blurb": "Sort text lines alphabetically, by length, or reverse them instantly.",
+  "keywords": ["sort lines", "alphabetize lines", "sort text", "line sorter", "order lines"],
+  "category": "Text",
+  "added": "2026-10-15",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Lines",
+        "rows": 12,
+        "placeholder": "One item per line..."
+      },
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Sort by",
+        "value": "alpha",
+        "options": [
+          { "value": "alpha", "label": "A → Z" },
+          { "value": "alpha-rev", "label": "Z → A" },
+          { "value": "length", "label": "Shortest first" },
+          { "value": "length-rev", "label": "Longest first" },
+          { "value": "random", "label": "Random" }
+        ]
+      },
+      {
+        "id": "remove-empty",
+        "type": "checkbox",
+        "label": "Remove empty lines",
+        "value": true
+      }
+    ],
+    "actions": [
+      { "id": "sort", "label": "Sort", "primary": true },
+      { "id": "copy", "label": "Copy result" },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "result", "type": "textarea", "label": "Sorted lines" }
+    ]
+  },
+  "howItWorks": [
+    "Paste one item per line into the box.",
+    "Choose how you want them sorted and whether to drop blank lines.",
+    "Press Sort. The ordered list appears instantly."
+  ],
+  "examples": [
+    "Alphabetize a list of names or keywords.",
+    "Order CSS class names or file paths by length.",
+    "Shuffle lines for a random playlist or test data."
+  ],
+  "faq": [
+    {
+      "q": "Does sorting ignore case?",
+      "a": "Yes. Alphabetical sorting is case-insensitive so 'Apple' and 'apple' group together."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. Sorting happens entirely in your browser. Nothing is sent to a server."
+    },
+    {
+      "q": "What about empty lines?",
+      "a": "You can choose to keep or remove blank lines before sorting."
+    }
+  ]
+}

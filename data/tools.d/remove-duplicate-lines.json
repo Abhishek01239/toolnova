@@ -1,0 +1,69 @@
+{
+  "id": "remove-duplicate-lines",
+  "title": "Remove Duplicate Lines",
+  "h1": "Remove Duplicate Lines — Keep Unique Lines from Any Text",
+  "seoTitle": "Free Remove Duplicate Lines Tool — Deduplicate Text Lists",
+  "description": "Remove duplicate lines from a list or text block. Choose case-sensitive or case-insensitive matching and keep the first occurrence. Runs privately in your browser.",
+  "intro": "Paste a list and instantly remove repeated lines. Ideal for cleaning keyword lists, email addresses, or any data with duplicates.",
+  "blurb": "Remove duplicate lines and keep only unique entries.",
+  "keywords": ["remove duplicate lines", "deduplicate lines", "unique lines", "remove duplicates", "line deduper"],
+  "category": "Text",
+  "added": "2026-10-15",
+  "popularity": 84,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Lines",
+        "rows": 12,
+        "placeholder": "Paste lines here..."
+      },
+      {
+        "id": "case-sensitive",
+        "type": "checkbox",
+        "label": "Case-sensitive comparison",
+        "value": false
+      },
+      {
+        "id": "trim",
+        "type": "checkbox",
+        "label": "Trim whitespace before comparing",
+        "value": true
+      }
+    ],
+    "actions": [
+      { "id": "dedupe", "label": "Remove duplicates", "primary": true },
+      { "id": "copy", "label": "Copy result" },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "result", "type": "textarea", "label": "Unique lines" },
+      { "id": "stats", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Paste your text with one item per line.",
+    "Choose whether comparison should ignore case and trim spaces.",
+    "Click Remove duplicates. Only the first occurrence of each line is kept."
+  ],
+  "examples": [
+    "Clean a list of email addresses or domains.",
+    "Remove repeated keywords from an SEO list.",
+    "Deduplicate log lines or CSV rows."
+  ],
+  "faq": [
+    {
+      "q": "Which duplicate is kept?",
+      "a": "The first occurrence of each unique line is kept; later copies are discarded."
+    },
+    {
+      "q": "Is my data uploaded?",
+      "a": "No. Deduplication runs entirely in your browser."
+    },
+    {
+      "q": "Does it preserve order?",
+      "a": "Yes. Unique lines stay in the order they first appeared."
+    }
+  ]
+}

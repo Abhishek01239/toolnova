@@ -1,0 +1,66 @@
+{
+  "id": "slug-generator",
+  "title": "Slug Generator",
+  "h1": "Slug Generator — Create Clean URL Slugs from Any Text",
+  "seoTitle": "Free Slug Generator — Convert Text to URL-Friendly Slugs",
+  "description": "Turn titles and phrases into clean, SEO-friendly URL slugs. Removes special characters, lowercases text, and replaces spaces with hyphens. Runs entirely in your browser.",
+  "intro": "Paste any text and instantly get a clean URL slug ready for blog posts, product pages, or any SEO-friendly link. No data leaves your device.",
+  "blurb": "Convert text into clean, SEO-friendly URL slugs in one click.",
+  "keywords": ["slug generator", "url slug", "seo slug", "text to slug", "permalink generator", "url friendly"],
+  "category": "SEO",
+  "added": "2026-10-15",
+  "popularity": 88,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text",
+        "rows": 6,
+        "placeholder": "Paste your title or phrase here..."
+      },
+      {
+        "id": "separator",
+        "type": "select",
+        "label": "Separator",
+        "value": "-",
+        "options": [
+          { "value": "-", "label": "Hyphen (-)" },
+          { "value": "_", "label": "Underscore (_)" }
+        ]
+      }
+    ],
+    "actions": [
+      { "id": "generate", "label": "Generate slug", "primary": true },
+      { "id": "copy", "label": "Copy slug" },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "slug", "type": "textarea", "label": "Slug" }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type the text you want to turn into a slug.",
+    "Choose hyphen or underscore as the separator.",
+    "Click Generate slug. Special characters are removed and spaces become separators."
+  ],
+  "examples": [
+    "Blog post title: How to Bake the Perfect Cake → how-to-bake-the-perfect-cake",
+    "Product name: Super Widget Pro 2026 → super-widget-pro-2026",
+    "With accents: Café & Restaurant Menu → cafe-restaurant-menu"
+  ],
+  "faq": [
+    {
+      "q": "What is a URL slug?",
+      "a": "A slug is the part of a web address that identifies a page in a readable way, usually derived from the page title."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. Everything runs locally in your browser. Your text never leaves your device."
+    },
+    {
+      "q": "How are special characters handled?",
+      "a": "Accents are simplified, punctuation and symbols are removed, and multiple spaces or separators are collapsed into one."
+    }
+  ]
+}
