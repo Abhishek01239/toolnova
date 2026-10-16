@@ -1,0 +1,60 @@
+{
+  "id": "base64-encoder-decoder",
+  "title": "Base64 Encoder/Decoder",
+  "h1": "Base64 Encoder & Decoder \u2014 Encode and Decode Text Free",
+  "seoTitle": "Base64 Encoder Decoder \u2014 Free Online UTF-8 Tool",
+  "description": "Encode any text to Base64 or decode Base64 strings back to readable text. Correct UTF-8 handling, runs privately in your browser with no uploads or sign-up.",
+  "intro": "Paste text to turn it into Base64, or paste Base64 to recover the original text. Encoding and decoding happen entirely on your device so sensitive strings never leave your browser.",
+  "blurb": "Encode text to Base64 or decode Base64 back to text \u2014 free, private, and UTF-8 safe.",
+  "keywords": ["base64 encoder", "base64 decoder", "base64 encode", "base64 decode", "encode base64", "decode base64"],
+  "category": "Encoding",
+  "added": "2026-10-16",
+  "popularity": 85,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text or Base64",
+        "rows": 10,
+        "placeholder": "Paste text to encode or Base64 to decode"
+      }
+    ],
+    "actions": [
+      { "id": "encode", "label": "Encode to Base64", "primary": true },
+      { "id": "decode", "label": "Decode from Base64" }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Result",
+        "rows": 10
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste plain text into the box and press Encode to Base64 to get the encoded version.",
+    "Paste a Base64 string and press Decode from Base64 to recover the original text.",
+    "All processing uses your browser's built-in text and binary handling; nothing is sent to a server."
+  ],
+  "examples": [
+    "Encode an API key or small payload so it can travel safely inside a JSON string or header.",
+    "Decode a Base64 string you found in a log or config to see the original message.",
+    "Turn a short snippet of text into Base64 for testing an encoder on another system."
+  ],
+  "faq": [
+    {
+      "q": "Is my text uploaded when I encode or decode?",
+      "a": "No. Encoding and decoding run completely inside your browser using JavaScript. The text you paste never leaves your device."
+    },
+    {
+      "q": "Does it handle Unicode and emoji correctly?",
+      "a": "Yes. The tool uses UTF-8 encoding, so accented characters, emoji and non-Latin scripts survive the round trip unchanged."
+    },
+    {
+      "q": "What happens if the Base64 is invalid?",
+      "a": "The decoder checks the alphabet and padding and shows a clear error instead of producing garbage output."
+    }
+  ]
+}
