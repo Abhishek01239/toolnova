@@ -1,0 +1,60 @@
+{
+  "id": "url-encoder-decoder",
+  "title": "URL Encoder/Decoder",
+  "h1": "URL Encoder & Decoder \u2014 Percent-Encode Text Free",
+  "seoTitle": "URL Encoder Decoder \u2014 Free Percent-Encoding Tool",
+  "description": "Encode text for safe use in URLs or decode percent-encoded strings back to readable form. Runs entirely in your browser with correct handling of special characters.",
+  "intro": "Turn any text into a URL-safe percent-encoded string, or reverse the process to see the original characters. Useful for query strings, redirects and debugging links \u2014 all done locally.",
+  "blurb": "Percent-encode text for URLs or decode percent-encoded strings \u2014 free and private.",
+  "keywords": ["url encoder", "url decoder", "percent encode", "url encode", "url decode", "encode uri component"],
+  "category": "Encoding",
+  "added": "2026-10-16",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text or encoded string",
+        "rows": 8,
+        "placeholder": "Paste text to encode or a percent-encoded string to decode"
+      }
+    ],
+    "actions": [
+      { "id": "encode", "label": "Encode for URL", "primary": true },
+      { "id": "decode", "label": "Decode URL text" }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Result",
+        "rows": 8
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste plain text and press Encode for URL to turn spaces and special characters into percent escapes.",
+    "Paste a percent-encoded string and press Decode URL text to restore the original characters.",
+    "The tool uses the browser\u2019s encodeURIComponent and decodeURIComponent, so the result matches what web browsers expect."
+  ],
+  "examples": [
+    "Encode a search query that contains spaces or punctuation before putting it in a link.",
+    "Decode a long query string from a browser address bar to read the parameters clearly.",
+    "Prepare a string that must survive inside a URL path or fragment."
+  ],
+  "faq": [
+    {
+      "q": "What is percent-encoding?",
+      "a": "Percent-encoding replaces characters that are not allowed in a URL with a percent sign followed by two hexadecimal digits, so the string can travel safely in addresses and query parameters."
+    },
+    {
+      "q": "Is anything sent to a server?",
+      "a": "No. Both encoding and decoding happen entirely in your browser. The text you enter stays on your device."
+    },
+    {
+      "q": "Why does decoding sometimes fail?",
+      "a": "If a percent escape is incomplete or contains invalid hex digits the browser cannot decode it. The tool reports the problem instead of showing broken text."
+    }
+  ]
+}
