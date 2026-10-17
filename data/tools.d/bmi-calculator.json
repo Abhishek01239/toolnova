@@ -1,0 +1,95 @@
+{
+  "id": "bmi-calculator",
+  "title": "BMI Calculator",
+  "h1": "BMI Calculator — Body Mass Index",
+  "seoTitle": "Free BMI Calculator — Calculate Body Mass Index Online",
+  "description": "Calculate your Body Mass Index (BMI) from weight and height in metric or imperial units. See category and healthy range. Private browser calculation.",
+  "intro": "Enter your weight and height. Choose metric (kg, cm) or imperial (lb, in). Instantly see your BMI and weight category.",
+  "blurb": "Calculate BMI from weight and height with metric or imperial units.",
+  "keywords": ["bmi calculator", "body mass index", "calculate bmi", "bmi chart", "weight height calculator"],
+  "category": "Health",
+  "added": "2026-10-17",
+  "popularity": 88,
+  "ui": {
+    "controls": [
+      {
+        "id": "weight",
+        "type": "number",
+        "label": "Weight",
+        "placeholder": "70",
+        "min": 0,
+        "step": 0.1
+      },
+      {
+        "id": "weight-unit",
+        "type": "select",
+        "label": "Weight unit",
+        "value": "kg",
+        "options": [
+          {"value": "kg", "label": "Kilograms (kg)"},
+          {"value": "lb", "label": "Pounds (lb)"}
+        ]
+      },
+      {
+        "id": "height",
+        "type": "number",
+        "label": "Height",
+        "placeholder": "175",
+        "min": 0,
+        "step": 0.1
+      },
+      {
+        "id": "height-unit",
+        "type": "select",
+        "label": "Height unit",
+        "value": "cm",
+        "options": [
+          {"value": "cm", "label": "Centimeters (cm)"},
+          {"value": "in", "label": "Inches (in)"}
+        ]
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "bmi-value",
+        "type": "text",
+        "label": "BMI"
+      },
+      {
+        "id": "category",
+        "type": "text",
+        "label": "Category"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter weight and select unit (kg or lb).",
+    "Enter height and select unit (cm or in).",
+    "BMI updates live as you type. Categories follow standard WHO ranges."
+  ],
+  "examples": [
+    "70 kg and 175 cm gives a BMI of about 22.9 (Normal).",
+    "160 lb and 68 in gives a BMI of about 24.3 (Normal).",
+    "Use to track fitness goals or check healthy weight ranges."
+  ],
+  "faq": [
+    {
+      "q": "Is my data sent anywhere?",
+      "a": "No. The calculation runs entirely in your browser."
+    },
+    {
+      "q": "What are the BMI categories?",
+      "a": "Underweight <18.5, Normal 18.5–24.9, Overweight 25–29.9, Obese 30+."
+    },
+    {
+      "q": "Is BMI a perfect measure?",
+      "a": "BMI is a useful screening tool but does not account for muscle mass, age, or body composition."
+    }
+  ]
+}

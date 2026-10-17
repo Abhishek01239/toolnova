@@ -1,0 +1,75 @@
+{
+  "id": "lorem-ipsum-generator",
+  "title": "Lorem Ipsum Generator",
+  "h1": "Lorem Ipsum Generator — Placeholder Text",
+  "seoTitle": "Free Lorem Ipsum Generator — Dummy Text Online",
+  "description": "Generate Lorem Ipsum placeholder text by paragraphs, sentences, or words. Useful for design mockups and testing. Runs privately in your browser.",
+  "intro": "Choose how much dummy text you need and the format. Copy the result for your designs, prototypes, or tests.",
+  "blurb": "Generate classic Lorem Ipsum placeholder text for mockups.",
+  "keywords": ["lorem ipsum generator", "dummy text", "placeholder text", "lorem ipsum", "generate lorem"],
+  "category": "Text",
+  "added": "2026-10-17",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "count",
+        "type": "number",
+        "label": "Amount",
+        "value": "3",
+        "min": 1,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "id": "unit",
+        "type": "select",
+        "label": "Unit",
+        "value": "paragraphs",
+        "options": [
+          {"value": "paragraphs", "label": "Paragraphs"},
+          {"value": "sentences", "label": "Sentences"},
+          {"value": "words", "label": "Words"}
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "generate",
+        "label": "Generate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Lorem Ipsum"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Set the number of units and choose paragraphs, sentences, or words.",
+    "Click Generate to create classic Lorem Ipsum text.",
+    "Copy the output for use in designs or tests."
+  ],
+  "examples": [
+    "Generate 3 paragraphs for a website mockup.",
+    "Create 5 sentences for a card design.",
+    "Make 50 words for a short placeholder."
+  ],
+  "faq": [
+    {
+      "q": "Is this the standard Lorem Ipsum?",
+      "a": "Yes, it starts with the classic 'Lorem ipsum dolor sit amet...' and continues with common filler text."
+    },
+    {
+      "q": "Can I generate a lot of text?",
+      "a": "Up to 50 units. For larger amounts, generate multiple times."
+    },
+    {
+      "q": "Is any data uploaded?",
+      "a": "No. Everything is generated locally in your browser."
+    }
+  ]
+}

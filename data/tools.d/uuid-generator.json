@@ -1,0 +1,64 @@
+{
+  "id": "uuid-generator",
+  "title": "UUID Generator",
+  "h1": "UUID Generator — Create Unique Identifiers",
+  "seoTitle": "Free UUID Generator — Generate UUIDs Online",
+  "description": "Generate random UUIDs (v4) instantly in your browser. Copy one or many. No server, completely private.",
+  "intro": "Click to generate a new UUID v4. Optionally generate several at once and copy them.",
+  "blurb": "Generate cryptographically random UUID version 4 identifiers.",
+  "keywords": ["uuid generator", "generate uuid", "uuid v4", "unique id generator", "guid generator"],
+  "category": "Developer",
+  "added": "2026-10-17",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "count",
+        "type": "number",
+        "label": "How many",
+        "value": "1",
+        "min": 1,
+        "max": 50,
+        "step": 1
+      }
+    ],
+    "actions": [
+      {
+        "id": "generate",
+        "label": "Generate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "uuids",
+        "type": "textarea",
+        "label": "UUIDs"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Set how many UUIDs you need (1–50).",
+    "Click Generate. Each is a random version 4 UUID.",
+    "Copy the results for use in code, databases, or testing."
+  ],
+  "examples": [
+    "Generate a single ID for a new database record.",
+    "Create 10 UUIDs for a test data set.",
+    "Use in APIs, filenames, or session identifiers."
+  ],
+  "faq": [
+    {
+      "q": "Is this a real UUID v4?",
+      "a": "Yes. It uses crypto.getRandomValues for strong randomness, matching the UUID version 4 specification."
+    },
+    {
+      "q": "Are these unique?",
+      "a": "The chance of collision is astronomically low for practical use."
+    },
+    {
+      "q": "Does it require an internet connection after loading?",
+      "a": "No. Generation happens entirely in your browser."
+    }
+  ]
+}

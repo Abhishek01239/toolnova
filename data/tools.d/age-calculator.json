@@ -1,0 +1,59 @@
+{
+  "id": "age-calculator",
+  "title": "Age Calculator",
+  "h1": "Age Calculator — Exact Age in Years, Months, Days",
+  "seoTitle": "Free Age Calculator — Calculate Exact Age Online",
+  "description": "Calculate your exact age in years, months, and days from a birth date. Also shows total days lived and next birthday. Private and instant.",
+  "intro": "Enter a birth date. See precise age, total days, and days until the next birthday.",
+  "blurb": "Calculate exact age from birth date with years, months, and days.",
+  "keywords": ["age calculator", "calculate age", "how old am I", "birthday calculator", "exact age"],
+  "category": "Date & Time",
+  "added": "2026-10-17",
+  "popularity": 86,
+  "ui": {
+    "controls": [
+      {
+        "id": "birthdate",
+        "type": "date",
+        "label": "Birth date"
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "age",
+        "type": "text",
+        "label": "Age"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Select or type a birth date.",
+    "The calculator computes the difference to today.",
+    "See years, months, days, total days lived, and next birthday countdown."
+  ],
+  "examples": [
+    "Someone born 1990-05-15 is currently in their mid-30s.",
+    "Use to find exact age for forms or just curiosity.",
+    "See how many days until the next birthday."
+  ],
+  "faq": [
+    {
+      "q": "Does it account for leap years?",
+      "a": "Yes. The calculation uses proper date arithmetic including leap days."
+    },
+    {
+      "q": "What if the birth date is in the future?",
+      "a": "It will show a negative or zero result; choose a past date for age."
+    },
+    {
+      "q": "Is the date sent to a server?",
+      "a": "No. All computation happens locally in your browser."
+    }
+  ]
+}

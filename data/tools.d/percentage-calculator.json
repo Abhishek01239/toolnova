@@ -1,0 +1,79 @@
+{
+  "id": "percentage-calculator",
+  "title": "Percentage Calculator",
+  "h1": "Percentage Calculator — Find Percentages Easily",
+  "seoTitle": "Free Percentage Calculator — Calculate Percentages Online",
+  "description": "Calculate what percentage one number is of another, percentage of a number, or percentage change. Fast, private browser tool.",
+  "intro": "Choose a calculation type and enter the numbers. See the result instantly with clear explanations.",
+  "blurb": "Calculate percentages, percentage of a number, and percentage change.",
+  "keywords": ["percentage calculator", "percent calculator", "calculate percentage", "percentage of number", "percent change"],
+  "category": "Math",
+  "added": "2026-10-17",
+  "popularity": 90,
+  "ui": {
+    "controls": [
+      {
+        "id": "calc-type",
+        "type": "select",
+        "label": "Calculation",
+        "value": "of",
+        "options": [
+          {"value": "of", "label": "What is X% of Y?"},
+          {"value": "is", "label": "X is what % of Y?"},
+          {"value": "change", "label": "Percentage change from X to Y"}
+        ]
+      },
+      {
+        "id": "x",
+        "type": "number",
+        "label": "X",
+        "placeholder": "20",
+        "step": 0.01
+      },
+      {
+        "id": "y",
+        "type": "number",
+        "label": "Y",
+        "placeholder": "150",
+        "step": 0.01
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Result"
+      },
+      {
+        "id": "explanation",
+        "type": "text",
+        "label": "Explanation"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Select the type of percentage calculation.",
+    "Enter the two numbers X and Y.",
+    "The result and a short explanation appear immediately."
+  ],
+  "examples": [
+    "What is 15% of 200? Answer: 30.",
+    "25 is what percent of 80? Answer: 31.25%.",
+    "Percentage change from 100 to 120 is +20%."
+  ],
+  "faq": [
+    {
+      "q": "Does this work offline?",
+      "a": "Yes, once the page loads, all calculations happen in your browser."
+    },
+    {
+      "q": "How is percentage change calculated?",
+      "a": "((Y - X) / |X|) * 100. Positive means increase, negative means decrease."
+    },
+    {
+      "q": "Can I use decimals?",
+      "a": "Yes. Enter decimal numbers for more precise results."
+    }
+  ]
+}
