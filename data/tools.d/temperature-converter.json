@@ -1,0 +1,77 @@
+{
+  "id": "temperature-converter",
+  "title": "Temperature Converter",
+  "h1": "Temperature Converter — Celsius, Fahrenheit, Kelvin",
+  "seoTitle": "Free Temperature Converter — °C °F K Online",
+  "description": "Convert temperatures between Celsius, Fahrenheit and Kelvin instantly. Accurate, private browser calculator.",
+  "intro": "Enter a temperature and select the unit. Results in all three scales appear as you type.",
+  "blurb": "Convert between Celsius, Fahrenheit and Kelvin in real time.",
+  "keywords": ["temperature converter", "celsius to fahrenheit", "fahrenheit to celsius", "kelvin converter"],
+  "category": "Converters",
+  "added": "2026-10-18",
+  "popularity": 80,
+  "ui": {
+    "controls": [
+      {
+        "id": "value",
+        "type": "number",
+        "label": "Temperature",
+        "placeholder": "20",
+        "step": 0.1
+      },
+      {
+        "id": "unit",
+        "type": "select",
+        "label": "Unit",
+        "value": "c",
+        "options": [
+          {"value": "c", "label": "Celsius (°C)"},
+          {"value": "f", "label": "Fahrenheit (°F)"},
+          {"value": "k", "label": "Kelvin (K)"}
+        ]
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "celsius",
+        "type": "text",
+        "label": "Celsius (°C)"
+      },
+      {
+        "id": "fahrenheit",
+        "type": "text",
+        "label": "Fahrenheit (°F)"
+      },
+      {
+        "id": "kelvin",
+        "type": "text",
+        "label": "Kelvin (K)"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Type a temperature value.",
+    "Choose the input unit from the dropdown.",
+    "All three scales update immediately using standard conversion formulas."
+  ],
+  "examples": [
+    "0 °C is 32 °F and 273.15 K.",
+    "100 °C is 212 °F and 373.15 K.",
+    "Body temperature 98.6 °F is about 37 °C."
+  ],
+  "faq": [
+    {
+      "q": "Are the conversions exact?",
+      "a": "Yes. Formulas are the standard scientific ones: °F = °C × 9/5 + 32, K = °C + 273.15."
+    },
+    {
+      "q": "Does this work offline?",
+      "a": "Yes. After the page loads, conversions happen entirely in your browser."
+    },
+    {
+      "q": "Can I convert negative temperatures?",
+      "a": "Yes. Absolute zero and below are handled correctly."
+    }
+  ]
+}
