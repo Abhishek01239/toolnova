@@ -1,0 +1,72 @@
+{
+  "id": "text-to-binary",
+  "title": "Text to Binary Converter",
+  "h1": "Text to Binary — Convert Text to Binary Code",
+  "seoTitle": "Free Text to Binary Converter — Online",
+  "description": "Convert plain text to binary representation and back. Useful for learning encoding. Runs privately in the browser.",
+  "intro": "Enter text to see its binary form, or paste binary to recover the original text.",
+  "blurb": "Encode text as binary or decode binary back to text.",
+  "keywords": ["text to binary", "binary converter", "binary to text", "text binary encoder"],
+  "category": "Converters",
+  "added": "2026-10-18",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text or Binary",
+        "rows": 6,
+        "placeholder": "Hello"
+      },
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Mode",
+        "value": "to-bin",
+        "options": [
+          {"value": "to-bin", "label": "Text → Binary"},
+          {"value": "to-text", "label": "Binary → Text"}
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "convert",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Result"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste text or binary (space-separated 8-bit groups).",
+    "Choose the conversion direction.",
+    "Click Convert. Encoding uses standard UTF-8 / ASCII byte mapping."
+  ],
+  "examples": [
+    "Hello becomes 01001000 01100101 01101100 01101100 01101111.",
+    "Binary 01000001 decodes to A.",
+    "Spaces separate each byte for readability."
+  ],
+  "faq": [
+    {
+      "q": "What encoding is used?",
+      "a": "Each character is converted to its UTF-8 byte(s) and shown as 8-bit binary groups."
+    },
+    {
+      "q": "Can I convert multi-byte characters?",
+      "a": "Yes. Unicode characters produce multiple binary groups as expected."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. Conversion happens entirely in your browser."
+    }
+  ]
+}
