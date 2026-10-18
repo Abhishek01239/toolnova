@@ -1,0 +1,81 @@
+{
+  "id": "random-number-generator",
+  "title": "Random Number Generator",
+  "h1": "Random Number Generator — Pick Numbers in a Range",
+  "seoTitle": "Free Random Number Generator — Online",
+  "description": "Generate random integers or decimals within a custom range. Optional unique numbers. Private and instant.",
+  "intro": "Set the minimum, maximum and how many numbers you need. Get cryptographically random results.",
+  "blurb": "Generate one or more random numbers in any range.",
+  "keywords": ["random number generator", "random number", "rng", "pick random number"],
+  "category": "Generators",
+  "added": "2026-10-18",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "min",
+        "type": "number",
+        "label": "Minimum",
+        "value": "1"
+      },
+      {
+        "id": "max",
+        "type": "number",
+        "label": "Maximum",
+        "value": "100"
+      },
+      {
+        "id": "count",
+        "type": "number",
+        "label": "How many",
+        "value": "1",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "id": "unique",
+        "type": "checkbox",
+        "label": "Unique numbers only",
+        "value": false
+      }
+    ],
+    "actions": [
+      {
+        "id": "generate",
+        "label": "Generate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Results"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the lower and upper bounds.",
+    "Choose how many numbers to produce.",
+    "Optionally require unique values. Click Generate."
+  ],
+  "examples": [
+    "Min 1, max 6, count 1 simulates a die roll.",
+    "Min 0, max 100, count 5 with unique gives five different numbers.",
+    "Decimals are supported if you use non-integer bounds."
+  ],
+  "faq": [
+    {
+      "q": "Are the numbers truly random?",
+      "a": "Yes. The generator uses the browser's crypto.getRandomValues for cryptographic randomness."
+    },
+    {
+      "q": "What happens if unique is checked and the range is too small?",
+      "a": "The tool reports an error if it cannot produce enough unique numbers."
+    },
+    {
+      "q": "Is anything stored?",
+      "a": "No. Generation is local and the page keeps no history."
+    }
+  ]
+}

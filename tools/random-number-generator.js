@@ -3,9 +3,8 @@
   var root = document.getElementById('tool-app');
   if (!root) return;
   function control(id) { return root.querySelector('[data-control="' + id + '"]'); }
-  function outputEl(id) { return root.querySelector('[data-output="' + id + '"]'); }
   function setOutput(id, value) {
-    var el = outputEl(id);
+    var el = root.querySelector('[data-output="' + id + '"]');
     if (!el) return;
     if ('value' in el) { el.value = value; } else { el.textContent = value; }
   }
@@ -19,57 +18,55 @@
     el.textContent = msg || '';
     el.className = 'status' + (kind ? ' ' + kind : '');
   }
-  function setStats(id, entries) {
-    var el = outputEl(id);
-    if (!el) return;
-    el.innerHTML = '';
-    entries.forEach(function (pair) {
-      var wrap = document.createElement('div');
-      wrap.className = 'stat';
-      var dt = document.createElement('dt');
-      dt.textContent = pair[0];
-      var dd = document.createElement('dd');
-      dd.textContent = pair[1];
-      wrap.appendChild(dt);
-      wrap.appendChild(dd);
-      el.appendChild(wrap);
-    });
-  }
-  function readControls(defs) {
-    var vals = {};
-    defs.forEach(function (d) {
-      var el = control(d.id);
-      if (!el) { vals[d.id] = d.value; return; }
-      if (d.type === 'checkbox') vals[d.id] = el.checked;
-      else if (d.type === 'number' || d.type === 'range') vals[d.id] = parseFloat(el.value) || 0;
-      else vals[d.id] = el.value;
-    });
-    return vals;
+
+  function randomInt(min, max) {
+    var range = max - min + 1;
+    var arr = new Uint32Array(1);
+    crypto.getRandomValues(arr);
+    return min + (arr[0] % range);
   }
 
-  var CONTROL_DEFS = [{"id":"min","type":"number","value":1},{"id":"max","type":"number","value":100},{"id":"count","type":"number","value":1}];
-  var run = function (vals) {
-      var out = [];
-      var lo = Math.ceil(Math.min(vals.min, vals.max));
-      var hi = Math.floor(Math.max(vals.min, vals.max));
-      for (var i = 0; i < vals.count; i++) {
-        out.push(String(lo + Math.floor(Math.random() * (hi - lo + 1))));
-      }
-      return out.join('\n');
-    };
-
-  function go() {
-    try {
-      var result = run(readControls(CONTROL_DEFS));
-      setOutput('result', result);
-      var lines = String(result).split('\n').filter(function (l) { return l.trim() !== ''; });
-      status('Generated ' + lines.length + ' result' + (lines.length === 1 ? '' : 's') + '.', 'ok');
-    } catch (err) {
+  function generate() {
+    var min = parseFloat(control('min').value);
+    var max = parseFloat(control('max').value);
+    var count = parseInt(control('count').value, 10) || 1;
+    var unique = control('unique').checked;
+    if (isNaN(min) || isNaN(max) || min > max) {
+      status('Invalid range.', 'err');
       setOutput('result', '');
-      status(err && err.message ? err.message : 'Something went wrong.', 'error');
+      return;
     }
+    count = Math.max(1, Math.min(100, count));
+    var isInt = Number.isInteger(min) && Number.isInteger(max);
+    var results = [];
+    var used = new Set();
+    var attempts = 0;
+    var maxAttempts = count * 100;
+    while (results.length < count && attempts < maxAttempts) {
+      attempts++;
+      var n;
+      if (isInt) {
+        n = randomInt(Math.ceil(min), Math.floor(max));
+      } else {
+        var arr = new Uint32Array(1);
+        crypto.getRandomValues(arr);
+        n = min + (arr[0] / 4294967296) * (max - min);
+        n = Math.round(n * 100) / 100;
+      }
+      if (unique) {
+        if (used.has(n)) continue;
+        used.add(n);
+      }
+      results.push(n);
+    }
+    if (results.length < count) {
+      status('Could not generate enough unique numbers in this range.', 'err');
+      setOutput('result', results.join('\n'));
+      return;
+    }
+    setOutput('result', results.join('\n'));
+    status('Generated ' + results.length + ' number(s).', 'ok');
   }
 
-  onAction('generate', go);
-  go();
+  onAction('generate', generate);
 })();
