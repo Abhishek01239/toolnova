@@ -1,0 +1,78 @@
+{
+  "id": "emi-calculator",
+  "title": "EMI Calculator",
+  "h1": "EMI Calculator — Monthly Loan Payment",
+  "seoTitle": "Free EMI Calculator — Loan EMI Online",
+  "description": "Calculate the monthly EMI for a loan from principal, interest rate and tenure. See total interest and total amount payable. Instant and private.",
+  "intro": "Enter the loan amount, annual interest rate and tenure in months or years. The monthly EMI updates instantly along with total interest.",
+  "blurb": "Calculate monthly EMI, total interest and amount payable for any loan.",
+  "keywords": ["emi calculator", "loan emi", "home loan emi", "car loan calculator", "monthly installment"],
+  "category": "Calculators",
+  "added": "2026-10-19",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "principal",
+        "type": "number",
+        "label": "Loan amount",
+        "value": "500000",
+        "min": 1,
+        "step": 1
+      },
+      {
+        "id": "rate",
+        "type": "number",
+        "label": "Annual interest rate (%)",
+        "value": "8.5",
+        "min": 0,
+        "step": 0.1
+      },
+      {
+        "id": "tenure",
+        "type": "number",
+        "label": "Tenure (months)",
+        "value": "60",
+        "min": 1,
+        "step": 1
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "emi",
+        "type": "text",
+        "label": "Monthly EMI"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the principal amount, yearly interest rate and number of months.",
+    "The standard EMI formula is applied instantly in the browser.",
+    "See the monthly payment, total interest and total amount you will pay."
+  ],
+  "examples": [
+    "A ₹5,00,000 loan at 8.5% for 60 months has an EMI around ₹10,300.",
+    "Compare different tenures to see how interest changes.",
+    "Use for personal, car or home loan estimates."
+  ],
+  "faq": [
+    {
+      "q": "What formula is used?",
+      "a": "The standard reducing-balance EMI formula: EMI = P × r × (1+r)^n / ((1+r)^n − 1), where r is the monthly rate."
+    },
+    {
+      "q": "Is this an exact bank calculation?",
+      "a": "It is a close approximation. Actual bank EMIs may differ slightly due to rounding or additional charges."
+    },
+    {
+      "q": "Is my data sent anywhere?",
+      "a": "No. All calculations run locally in your browser."
+    }
+  ]
+}
