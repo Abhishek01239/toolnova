@@ -1,0 +1,71 @@
+{
+  "id": "discount-calculator",
+  "title": "Discount Calculator",
+  "h1": "Discount Calculator — Sale Price and Savings",
+  "seoTitle": "Free Discount Calculator — Percentage Off Online",
+  "description": "Calculate the final price after a percentage discount. Also shows the amount saved. Useful for shopping, sales and invoices.",
+  "intro": "Enter the original price and the discount percentage. Instantly see the sale price and how much you save.",
+  "blurb": "Find the final price and savings after a percentage discount.",
+  "keywords": ["discount calculator", "percentage off", "sale price calculator", "how much discount", "price after discount"],
+  "category": "Calculators",
+  "added": "2026-10-19",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "original",
+        "type": "number",
+        "label": "Original price",
+        "value": "1000",
+        "min": 0,
+        "step": 0.01
+      },
+      {
+        "id": "percent",
+        "type": "number",
+        "label": "Discount (%)",
+        "value": "20",
+        "min": 0,
+        "max": 100,
+        "step": 0.1
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "final",
+        "type": "text",
+        "label": "Final price"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Type the original price and the discount percentage.",
+    "The tool subtracts the discount amount from the original price.",
+    "You see the final price and the exact amount saved."
+  ],
+  "examples": [
+    "A ₹1,000 item with 20% off costs ₹800; you save ₹200.",
+    "Check flash-sale prices before buying.",
+    "Calculate invoice discounts quickly."
+  ],
+  "faq": [
+    {
+      "q": "Can I enter more than 100%?",
+      "a": "The percentage is capped at 100 in the interface for sensible results."
+    },
+    {
+      "q": "Does it handle decimals?",
+      "a": "Yes. Prices and percentages can have decimal places."
+    },
+    {
+      "q": "Is any data uploaded?",
+      "a": "No. The calculation runs entirely in your browser."
+    }
+  ]
+}
