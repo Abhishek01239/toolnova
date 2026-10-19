@@ -1,0 +1,64 @@
+{
+  "id": "days-between-calculator",
+  "title": "Days Between Calculator",
+  "h1": "Days Between Dates — Exact Day Count",
+  "seoTitle": "Free Days Between Dates Calculator",
+  "description": "Calculate the exact number of days between two dates. Also shows weeks and remaining days. Useful for planning, deadlines and age gaps.",
+  "intro": "Pick a start date and an end date. Instantly see the total days, weeks and the remaining days between them.",
+  "blurb": "Count the exact number of days between any two dates.",
+  "keywords": ["days between dates", "date difference calculator", "how many days between", "day counter", "date gap"],
+  "category": "Date & Time",
+  "added": "2026-10-19",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "start",
+        "type": "date",
+        "label": "Start date"
+      },
+      {
+        "id": "end",
+        "type": "date",
+        "label": "End date"
+      }
+    ],
+    "actions": [],
+    "outputs": [
+      {
+        "id": "days",
+        "type": "text",
+        "label": "Total days"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Select a start date and an end date.",
+    "The difference in milliseconds is converted to whole days.",
+    "You also see the number of full weeks and the leftover days."
+  ],
+  "examples": [
+    "From 2026-01-01 to 2026-12-31 is 364 days (or 365 in a leap year).",
+    "Count days until a project deadline or holiday.",
+    "Measure the gap between two events."
+  ],
+  "faq": [
+    {
+      "q": "Does the count include both dates?",
+      "a": "It counts the number of full days between the two dates (end minus start)."
+    },
+    {
+      "q": "What if the end date is before the start?",
+      "a": "The result will be negative. Swap the dates for a positive count."
+    },
+    {
+      "q": "Is the calculation private?",
+      "a": "Yes. Everything runs in your browser; no dates are uploaded."
+    }
+  ]
+}
