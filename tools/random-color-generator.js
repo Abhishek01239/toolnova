@@ -2,25 +2,13 @@
   'use strict';
   var root = document.getElementById('tool-app');
   if (!root) return;
-  function control(id) { return root.querySelector('[data-control="' + id + '"]'); }
-  function outputEl(id) { return root.querySelector('[data-output="' + id + '"]'); }
   function setOutput(id, value) {
-    var el = outputEl(id);
+    var el = root.querySelector('[data-output="' + id + '"]');
     if (!el) return;
     if ('value' in el) { el.value = value; } else { el.textContent = value; }
   }
-  function onAction(id, fn) {
-    var btn = root.querySelector('[data-action="' + id + '"]');
-    if (btn) btn.addEventListener('click', function () { fn(btn); });
-  }
-  function status(msg, kind) {
-    var el = root.querySelector('[data-status]');
-    if (!el) return;
-    el.textContent = msg || '';
-    el.className = 'status' + (kind ? ' ' + kind : '');
-  }
   function setStats(id, entries) {
-    var el = outputEl(id);
+    var el = root.querySelector('[data-output="' + id + '"]');
     if (!el) return;
     el.innerHTML = '';
     entries.forEach(function (pair) {
@@ -35,41 +23,40 @@
       el.appendChild(wrap);
     });
   }
-  function readControls(defs) {
-    var vals = {};
-    defs.forEach(function (d) {
-      var el = control(d.id);
-      if (!el) { vals[d.id] = d.value; return; }
-      if (d.type === 'checkbox') vals[d.id] = el.checked;
-      else if (d.type === 'number' || d.type === 'range') vals[d.id] = parseFloat(el.value) || 0;
-      else vals[d.id] = el.value;
-    });
-    return vals;
+  function onAction(id, fn) {
+    var btn = root.querySelector('[data-action="' + id + '"]');
+    if (btn) btn.addEventListener('click', function () { fn(btn); });
   }
 
-  var CONTROL_DEFS = [{"id":"count","type":"number","value":1}];
-  var run = function (vals) {
-      var colors = [];
-      for (var i = 0; i < vals.count; i++) {
-        var hex = '';
-        for (var j = 0; j < 6; j++) hex += '0123456789ABCDEF'[Math.floor(Math.random() * 16)];
-        colors.push('#' + hex);
-      }
-      return colors.join('\n');
-    };
+  var current = '#000000';
 
-  function go() {
-    try {
-      var result = run(readControls(CONTROL_DEFS));
-      setOutput('result', result);
-      var lines = String(result).split('\n').filter(function (l) { return l.trim() !== ''; });
-      status('Generated ' + lines.length + ' result' + (lines.length === 1 ? '' : 's') + '.', 'ok');
-    } catch (err) {
-      setOutput('result', '');
-      status(err && err.message ? err.message : 'Something went wrong.', 'error');
-    }
+  function randomHex() {
+    var n = Math.floor(Math.random() * 16777216);
+    return '#' + n.toString(16).padStart(6, '0');
   }
 
-  onAction('generate', go);
-  go();
+  function generate() {
+    current = randomHex();
+    setOutput('hex', current);
+    setStats('preview', [
+      ['Hex', current],
+      ['RGB', hexToRgb(current)]
+    ]);
+    var preview = root.querySelector('[data-output="preview"]');
+    if (preview) preview.style.background = current;
+  }
+
+  function hexToRgb(hex) {
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  }
+
+  onAction('generate', generate);
+  onAction('copy', function () {
+    navigator.clipboard.writeText(current).then(function () {
+    }).catch(function () {});
+  });
+  generate();
 })();

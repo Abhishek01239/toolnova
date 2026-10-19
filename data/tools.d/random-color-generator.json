@@ -1,0 +1,63 @@
+{
+  "id": "random-color-generator",
+  "title": "Random Color Generator",
+  "h1": "Random Color Generator — Hex Codes",
+  "seoTitle": "Free Random Color Generator — Hex Palette",
+  "description": "Generate a random hex color instantly. Copy the code or generate another. Great for design inspiration and UI experiments.",
+  "intro": "Click to generate a fresh random color. See the hex code, a large swatch, and copy it with one click.",
+  "blurb": "Generate random hex colors for design and inspiration.",
+  "keywords": ["random color generator", "hex color generator", "random hex", "color picker random", "design color"],
+  "category": "Design",
+  "added": "2026-10-19",
+  "popularity": 68,
+  "ui": {
+    "controls": [],
+    "actions": [
+      {
+        "id": "generate",
+        "label": "Generate new color",
+        "primary": true
+      },
+      {
+        "id": "copy",
+        "label": "Copy hex"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "hex",
+        "type": "text",
+        "label": "Hex code"
+      },
+      {
+        "id": "preview",
+        "type": "stats",
+        "label": "Preview"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Press Generate new color to create a random RGB color.",
+    "The hex code appears and a colored swatch is shown.",
+    "Press Copy hex to put the code on your clipboard."
+  ],
+  "examples": [
+    "Quickly pick a color for a button or background.",
+    "Generate inspiration when starting a design.",
+    "Use the hex in CSS, Figma or other tools."
+  ],
+  "faq": [
+    {
+      "q": "How random is the color?",
+      "a": "Each of the red, green and blue channels is chosen independently from 0–255 using the browser's random number generator."
+    },
+    {
+      "q": "Can I generate more than one?",
+      "a": "Yes. Each click produces a new independent color."
+    },
+    {
+      "q": "Is anything sent to a server?",
+      "a": "No. Color generation and copying happen entirely in your browser."
+    }
+  ]
+}
