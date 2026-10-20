@@ -1,0 +1,37 @@
+{
+  "id": "regex-tester",
+  "title": "Regex Tester",
+  "h1": "Regex Tester \u2014 Test Patterns Live",
+  "seoTitle": "Free Regex Tester \u2014 Live Match & Groups | ToolNova",
+  "description": "Test regular expressions against sample text with live matches, groups, and flags. Everything stays in your browser for privacy.",
+  "intro": "Enter a pattern and flags, paste test text, and see matches highlighted with capture groups explained.",
+  "blurb": "Test regular expressions with live matching and capture group details.",
+  "keywords": ["regex tester", "regular expression tester", "regex match", "javascript regex"],
+  "category": "Developer",
+  "added": "2026-10-20",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {"id": "pattern", "type": "textarea", "label": "Pattern", "rows": 3, "value": "\\b\\w+@\\w+\\.\\w+\\b"},
+      {"id": "flags", "type": "text", "label": "Flags", "value": "gi"},
+      {"id": "text", "type": "textarea", "label": "Test text", "rows": 8, "value": "Contact support@example.com or sales@toolnova.org for help."}
+    ],
+    "actions": [{"id": "test", "label": "Test Regex", "primary": true}],
+    "outputs": [{"id": "result", "type": "textarea", "label": "Matches", "rows": 10}]
+  },
+  "howItWorks": [
+    "Enter your regular expression pattern and optional flags (g, i, m, etc.).",
+    "Paste the text you want to test against.",
+    "Click Test Regex to see all matches and their capture groups."
+  ],
+  "examples": [
+    "Pattern \\b\\w+@\\w+\\.\\w+\\b with flag gi finds email addresses.",
+    "Use capturing groups like (\\d{4})-(\\d{2})-(\\d{2}) to extract date parts.",
+    "The global flag g finds every match instead of only the first."
+  ],
+  "faq": [
+    {"q": "Which regex flavor is used?", "a": "JavaScript's native RegExp engine, so lookbehind and other modern features work where the browser supports them."},
+    {"q": "Are my patterns or text sent anywhere?", "a": "No. Matching runs entirely in the browser."},
+    {"q": "How do I see capture groups?", "a": "Each match line shows the full match followed by any numbered or named groups."}
+  ]
+}

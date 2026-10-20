@@ -1,0 +1,36 @@
+{
+  "id": "html-entity-encoder",
+  "title": "HTML Entity Encoder / Decoder",
+  "h1": "HTML Entity Encoder and Decoder",
+  "seoTitle": "Free HTML Entity Encoder & Decoder | ToolNova",
+  "description": "Encode special characters to HTML entities or decode entities back to plain text. Fast, private, and runs entirely in your browser.",
+  "intro": "Paste text or HTML entities and switch between encoded and decoded forms with one click.",
+  "blurb": "Encode and decode HTML entities for safe embedding or readable text.",
+  "keywords": ["html entity encoder", "html decode", "encode html entities", "escape html"],
+  "category": "Encoding",
+  "added": "2026-10-20",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Input", "rows": 8, "value": "<script>alert('hello & goodbye')</script>"},
+      {"id": "mode", "type": "select", "label": "Mode", "value": "encode", "options": [{"value": "encode", "label": "Encode"}, {"value": "decode", "label": "Decode"}]}
+    ],
+    "actions": [{"id": "run", "label": "Convert", "primary": true}],
+    "outputs": [{"id": "result", "type": "textarea", "label": "Result", "rows": 8}]
+  },
+  "howItWorks": [
+    "Paste the text you want to encode or the entities you want to decode.",
+    "Choose Encode or Decode mode.",
+    "Click Convert to get the transformed output."
+  ],
+  "examples": [
+    "< becomes &lt; and & becomes &amp; when encoding.",
+    "Decoding &lt;div&gt; returns the actual <div> characters.",
+    "Useful for safely embedding user content or reading escaped HTML."
+  ],
+  "faq": [
+    {"q": "Which entities are handled?", "a": "Common named entities plus numeric entities are converted. The browser's built-in encoding is used for reliability."},
+    {"q": "Is this safe for XSS prevention?", "a": "Encoding helps, but always use proper contextual escaping in your templates. This tool is for convenience."},
+    {"q": "Does anything leave my browser?", "a": "No. Conversion is 100% client-side."}
+  ]
+}

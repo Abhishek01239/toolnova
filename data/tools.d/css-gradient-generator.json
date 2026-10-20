@@ -1,0 +1,38 @@
+{
+  "id": "css-gradient-generator",
+  "title": "CSS Gradient Generator",
+  "h1": "CSS Gradient Generator \u2014 Linear and Radial",
+  "seoTitle": "Free CSS Gradient Generator \u2014 Linear & Radial | ToolNova",
+  "description": "Build linear or radial CSS gradients with custom colors and angles. Preview and copy the CSS code instantly. Runs entirely in your browser.",
+  "intro": "Choose gradient type, set colors and direction, then copy the generated CSS for use in any stylesheet.",
+  "blurb": "Generate CSS linear and radial gradients with live preview and copy-ready code.",
+  "keywords": ["css gradient generator", "linear gradient", "radial gradient", "css background gradient"],
+  "category": "Design",
+  "added": "2026-10-20",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {"id": "type", "type": "select", "label": "Type", "value": "linear", "options": [{"value": "linear", "label": "Linear"}, {"value": "radial", "label": "Radial"}]},
+      {"id": "angle", "type": "number", "label": "Angle (degrees)", "value": "90", "min": 0, "max": 360},
+      {"id": "color1", "type": "text", "label": "Color 1", "value": "#4f46e5"},
+      {"id": "color2", "type": "text", "label": "Color 2", "value": "#ec4899"}
+    ],
+    "actions": [{"id": "generate", "label": "Generate CSS", "primary": true}],
+    "outputs": [{"id": "css", "type": "textarea", "label": "CSS Code", "rows": 6}]
+  },
+  "howItWorks": [
+    "Select linear or radial gradient.",
+    "Adjust the angle (for linear) and enter two hex colors.",
+    "Click Generate CSS to get the background property ready to paste."
+  ],
+  "examples": [
+    "linear-gradient(90deg, #4f46e5, #ec4899) creates a left-to-right blend.",
+    "radial-gradient(circle, #4f46e5, #ec4899) centers the first color.",
+    "Use any valid CSS color values including rgb() or named colors."
+  ],
+  "faq": [
+    {"q": "Does this support more than two colors?", "a": "This simple version generates two-stop gradients. For complex multi-stop gradients you can edit the output CSS."},
+    {"q": "Is the preview accurate?", "a": "The generated CSS matches standard browser linear-gradient and radial-gradient syntax."},
+    {"q": "Can I use it offline?", "a": "Yes. Everything runs locally in your browser with no network requests."}
+  ]
+}

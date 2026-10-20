@@ -1,0 +1,37 @@
+{
+  "id": "csv-to-json",
+  "title": "CSV to JSON",
+  "h1": "CSV to JSON Converter",
+  "seoTitle": "Free CSV to JSON Converter \u2014 Private Browser Tool",
+  "description": "Convert CSV or TSV data into JSON arrays of objects. Handles headers, custom delimiters, and quoted fields entirely in your browser.",
+  "intro": "Paste CSV, choose delimiter and whether the first row is headers, then get clean JSON ready to use in code or APIs.",
+  "blurb": "Turn CSV into JSON objects or arrays with proper quote and delimiter handling.",
+  "keywords": ["csv to json", "csv converter", "json from csv", "spreadsheet to json"],
+  "category": "CSV",
+  "added": "2026-10-20",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "CSV data", "rows": 8, "value": "name,role,score\nAda,Engineer,98\nLin,Designer,91"},
+      {"id": "delimiter", "type": "select", "label": "Delimiter", "value": ",", "options": [{"value": ",", "label": "Comma"}, {"value": "\\t", "label": "Tab"}, {"value": ";", "label": "Semicolon"}]},
+      {"id": "header", "type": "checkbox", "label": "First row is headers", "checked": true}
+    ],
+    "actions": [{"id": "convert", "label": "Convert to JSON", "primary": true}],
+    "outputs": [{"id": "result", "type": "textarea", "label": "JSON", "rows": 12}]
+  },
+  "howItWorks": [
+    "Paste your CSV or TSV content.",
+    "Select the delimiter and whether the first row contains column names.",
+    "Click Convert to JSON to produce an array of objects (or arrays if no headers)."
+  ],
+  "examples": [
+    "A header row plus data becomes [{ \"name\": \"Ada\", \"role\": \"Engineer\" }, ...].",
+    "Without headers you get arrays of values: [[\"Ada\", \"Engineer\", \"98\"], ...].",
+    "Quoted fields containing commas are preserved correctly."
+  ],
+  "faq": [
+    {"q": "Does it handle quoted commas?", "a": "Yes. Standard CSV quoting rules are followed so commas inside quotes stay inside the field."},
+    {"q": "What if my CSV has empty lines?", "a": "Empty lines are skipped. Trailing empty fields are kept."},
+    {"q": "Is the data uploaded?", "a": "No. Conversion runs completely in your browser."}
+  ]
+}
