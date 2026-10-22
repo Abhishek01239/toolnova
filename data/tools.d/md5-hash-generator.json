@@ -1,0 +1,66 @@
+{
+  "id": "md5-hash-generator",
+  "title": "MD5 Hash Generator",
+  "h1": "MD5 Hash Generator — Create MD5 Checksums Online",
+  "seoTitle": "Free MD5 Hash Generator — Calculate MD5 Checksum",
+  "description": "Generate the MD5 hash of any text instantly in your browser. Useful for checksums and verification. Completely private, nothing is uploaded.",
+  "intro": "Paste any text to instantly compute its MD5 hash. The calculation runs entirely in your browser so your data never leaves your device.",
+  "blurb": "Generate MD5 hashes from text for checksums and verification — private and instant.",
+  "keywords": ["md5 generator", "md5 hash", "md5 checksum", "md5 calculator", "generate md5"],
+  "category": "Developer",
+  "added": "2026-10-22",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text to hash",
+        "rows": 6,
+        "placeholder": "Enter text here..."
+      }
+    ],
+    "actions": [
+      {
+        "id": "hash",
+        "label": "Generate MD5",
+        "primary": true
+      },
+      {
+        "id": "copy",
+        "label": "Copy hash"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "hash",
+        "type": "text",
+        "label": "MD5 hash"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Type or paste the text you want to hash.",
+    "Click Generate MD5. The 128-bit hash appears immediately.",
+    "Copy the hash if needed. Everything stays in your browser."
+  ],
+  "examples": [
+    "Hash a password or string for a quick checksum (note: MD5 is not secure for passwords).",
+    "Verify the integrity of a short message by comparing hashes.",
+    "Generate a reproducible identifier from text."
+  ],
+  "faq": [
+    {
+      "q": "Is MD5 secure for passwords?",
+      "a": "No. MD5 is cryptographically broken and should not be used for password storage. Use it only for non-security checksums."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. The MD5 calculation runs entirely locally in your browser."
+    },
+    {
+      "q": "What is an MD5 hash?",
+      "a": "A fixed-length 32-character hexadecimal string produced from the input. The same input always produces the same hash."
+    }
+  ]
+}

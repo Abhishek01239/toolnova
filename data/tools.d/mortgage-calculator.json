@@ -1,0 +1,81 @@
+{
+  "id": "mortgage-calculator",
+  "title": "Mortgage Calculator",
+  "h1": "Mortgage Calculator — Monthly Payment, Interest and Amortization",
+  "seoTitle": "Free Mortgage Calculator — Calculate Monthly Payment Online",
+  "description": "Calculate monthly mortgage payments, total interest and loan cost from principal, rate and term. Private browser tool with no upload.",
+  "intro": "Enter the loan amount, annual interest rate and term in years to see the monthly payment, total interest paid and overall cost of the mortgage.",
+  "blurb": "Calculate monthly mortgage payment, total interest and total cost of a home loan.",
+  "keywords": ["mortgage calculator", "home loan calculator", "monthly mortgage payment", "loan interest calculator", "mortgage payment calculator"],
+  "category": "Finance",
+  "added": "2026-10-22",
+  "popularity": 88,
+  "ui": {
+    "controls": [
+      {
+        "id": "principal",
+        "type": "number",
+        "label": "Loan amount",
+        "value": 300000,
+        "min": 0,
+        "step": 1000
+      },
+      {
+        "id": "rate",
+        "type": "number",
+        "label": "Annual interest rate (%)",
+        "value": 6.5,
+        "min": 0,
+        "max": 30,
+        "step": 0.1
+      },
+      {
+        "id": "years",
+        "type": "number",
+        "label": "Loan term (years)",
+        "value": 30,
+        "min": 1,
+        "max": 50,
+        "step": 1
+      }
+    ],
+    "actions": [
+      {
+        "id": "calculate",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "stats",
+        "label": "Results"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the principal loan amount, annual interest rate and the number of years.",
+    "Click Calculate. The monthly payment uses the standard amortization formula.",
+    "See the monthly payment, total amount paid and total interest over the full term."
+  ],
+  "examples": [
+    "A $300,000 loan at 6.5% for 30 years costs about $1,896 per month.",
+    "Compare a 15-year versus 30-year term to see the interest savings.",
+    "Adjust the rate to model different lender offers."
+  ],
+  "faq": [
+    {
+      "q": "Does this include taxes or insurance?",
+      "a": "No. This calculates only principal and interest. Property taxes and insurance are usually added separately by the lender."
+    },
+    {
+      "q": "Is the calculation exact?",
+      "a": "It uses the standard fixed-rate mortgage formula. Actual payments may vary slightly with compounding or fees."
+    },
+    {
+      "q": "Is any data uploaded?",
+      "a": "No. All calculations happen locally in your browser."
+    }
+  ]
+}

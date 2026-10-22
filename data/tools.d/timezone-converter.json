@@ -1,0 +1,94 @@
+{
+  "id": "timezone-converter",
+  "title": "Timezone Converter",
+  "h1": "Timezone Converter — Convert Times Across Time Zones",
+  "seoTitle": "Free Timezone Converter — Convert Time Between Zones",
+  "description": "Convert a date and time from one time zone to another instantly. See the equivalent time in major cities. Runs privately in your browser.",
+  "intro": "Pick a date and time, choose the source and target time zones, and see the converted time. Useful for scheduling across regions.",
+  "blurb": "Convert any date and time between different time zones instantly.",
+  "keywords": ["timezone converter", "time zone converter", "convert time zones", "world time converter", "timezone calculator"],
+  "category": "Date & Time",
+  "added": "2026-10-22",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "datetime",
+        "type": "text",
+        "label": "Date and time (YYYY-MM-DD HH:MM)",
+        "value": "",
+        "placeholder": "2026-10-22 14:30"
+      },
+      {
+        "id": "from",
+        "type": "select",
+        "label": "From timezone",
+        "value": "UTC",
+        "options": [
+          { "value": "UTC", "label": "UTC" },
+          { "value": "America/New_York", "label": "New York (ET)" },
+          { "value": "America/Los_Angeles", "label": "Los Angeles (PT)" },
+          { "value": "Europe/London", "label": "London" },
+          { "value": "Europe/Paris", "label": "Paris" },
+          { "value": "Asia/Tokyo", "label": "Tokyo" },
+          { "value": "Asia/Kolkata", "label": "India (IST)" },
+          { "value": "Australia/Sydney", "label": "Sydney" }
+        ]
+      },
+      {
+        "id": "to",
+        "type": "select",
+        "label": "To timezone",
+        "value": "America/New_York",
+        "options": [
+          { "value": "UTC", "label": "UTC" },
+          { "value": "America/New_York", "label": "New York (ET)" },
+          { "value": "America/Los_Angeles", "label": "Los Angeles (PT)" },
+          { "value": "Europe/London", "label": "London" },
+          { "value": "Europe/Paris", "label": "Paris" },
+          { "value": "Asia/Tokyo", "label": "Tokyo" },
+          { "value": "Asia/Kolkata", "label": "India (IST)" },
+          { "value": "Australia/Sydney", "label": "Sydney" }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "convert",
+        "label": "Convert",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Converted time"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter a date and time in YYYY-MM-DD HH:MM format.",
+    "Select the source timezone and the target timezone.",
+    "Click Convert. The equivalent time in the target zone is shown."
+  ],
+  "examples": [
+    "Convert 14:30 in New York to Tokyo time for a meeting.",
+    "See what time a London event is in Los Angeles.",
+    "Quickly check IST versus UTC for a call."
+  ],
+  "faq": [
+    {
+      "q": "Does it handle daylight saving time?",
+      "a": "Yes. The browser's built-in timezone data accounts for current DST rules."
+    },
+    {
+      "q": "Is the date sent to a server?",
+      "a": "No. Conversion happens locally using your browser's timezone support."
+    },
+    {
+      "q": "What format should I use?",
+      "a": "Use YYYY-MM-DD HH:MM, for example 2026-10-22 09:15. Leave blank to use the current time."
+    }
+  ]
+}

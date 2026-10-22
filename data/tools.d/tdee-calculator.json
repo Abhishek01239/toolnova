@@ -1,0 +1,103 @@
+{
+  "id": "tdee-calculator",
+  "title": "TDEE Calculator",
+  "h1": "TDEE Calculator — Daily Calorie Needs",
+  "seoTitle": "Free TDEE Calculator — Calculate Daily Calorie Needs",
+  "description": "Estimate your Total Daily Energy Expenditure (TDEE) from age, sex, weight, height and activity level. Helps plan calorie intake. Private and instant.",
+  "intro": "Enter your details to calculate BMR and TDEE. Use the result as a starting point for maintenance, weight loss or gain calorie targets.",
+  "blurb": "Calculate your daily calorie needs (TDEE) based on personal stats and activity.",
+  "keywords": ["tdee calculator", "calorie calculator", "daily calorie needs", "bmr calculator", "maintenance calories"],
+  "category": "Health",
+  "added": "2026-10-22",
+  "popularity": 84,
+  "ui": {
+    "controls": [
+      {
+        "id": "sex",
+        "type": "select",
+        "label": "Sex",
+        "value": "male",
+        "options": [
+          { "value": "male", "label": "Male" },
+          { "value": "female", "label": "Female" }
+        ]
+      },
+      {
+        "id": "age",
+        "type": "number",
+        "label": "Age (years)",
+        "value": 30,
+        "min": 15,
+        "max": 100
+      },
+      {
+        "id": "weight",
+        "type": "number",
+        "label": "Weight (kg)",
+        "value": 70,
+        "min": 30,
+        "max": 250,
+        "step": 0.1
+      },
+      {
+        "id": "height",
+        "type": "number",
+        "label": "Height (cm)",
+        "value": 175,
+        "min": 100,
+        "max": 250
+      },
+      {
+        "id": "activity",
+        "type": "select",
+        "label": "Activity level",
+        "value": "1.55",
+        "options": [
+          { "value": "1.2", "label": "Sedentary (little or no exercise)" },
+          { "value": "1.375", "label": "Lightly active (1-3 days/week)" },
+          { "value": "1.55", "label": "Moderately active (3-5 days/week)" },
+          { "value": "1.725", "label": "Very active (6-7 days/week)" },
+          { "value": "1.9", "label": "Extra active (physical job + exercise)" }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "calculate",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "stats",
+        "label": "Results"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter age, sex, weight in kilograms and height in centimeters.",
+    "Select your typical activity level.",
+    "Click Calculate. BMR uses the Mifflin-St Jeor equation; TDEE multiplies by the activity factor."
+  ],
+  "examples": [
+    "A 30-year-old moderately active male at 70 kg / 175 cm needs roughly 2,400–2,600 kcal.",
+    "Adjust activity to see how exercise changes daily needs.",
+    "Use the maintenance number as a base for a calorie deficit or surplus."
+  ],
+  "faq": [
+    {
+      "q": "What formula is used?",
+      "a": "BMR is calculated with the Mifflin-St Jeor equation, which is widely regarded as accurate for most adults. TDEE applies a standard activity multiplier."
+    },
+    {
+      "q": "Is this medical advice?",
+      "a": "No. This is an estimate for general planning. Consult a professional for personalized nutrition advice."
+    },
+    {
+      "q": "Are my details uploaded?",
+      "a": "No. All calculations run locally in your browser."
+    }
+  ]
+}
