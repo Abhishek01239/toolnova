@@ -1,0 +1,68 @@
+{
+  "id": "pomodoro-timer",
+  "title": "Pomodoro Timer",
+  "h1": "Pomodoro Timer — Focus in 25-Minute Sprints",
+  "seoTitle": "Free Pomodoro Timer — 25 Minute Focus Sessions",
+  "description": "Classic Pomodoro timer with 25-minute work sessions and 5-minute breaks. Start, pause and reset locally in your browser for better focus.",
+  "intro": "Set a work interval and break length, then start the timer. A simple focus tool that stays private on your device.",
+  "blurb": "Run focused 25-minute work sessions with short breaks using the Pomodoro technique.",
+  "keywords": ["pomodoro timer", "focus timer", "25 minute timer", "productivity timer", "pomodoro technique"],
+  "category": "Productivity",
+  "added": "2026-10-23",
+  "popularity": 88,
+  "ui": {
+    "controls": [
+      {
+        "id": "work",
+        "type": "number",
+        "label": "Work minutes",
+        "value": "25",
+        "min": 1,
+        "max": 90,
+        "step": 1
+      },
+      {
+        "id": "break",
+        "type": "number",
+        "label": "Break minutes",
+        "value": "5",
+        "min": 1,
+        "max": 30,
+        "step": 1
+      }
+    ],
+    "actions": [
+      {"id": "start", "label": "Start", "primary": true},
+      {"id": "pause", "label": "Pause"},
+      {"id": "reset", "label": "Reset"}
+    ],
+    "outputs": [
+      {"id": "display", "type": "text", "label": "Time remaining"},
+      {"id": "phase", "type": "text", "label": "Current phase"}
+    ]
+  },
+  "howItWorks": [
+    "Set your preferred work and break durations (defaults are 25 and 5 minutes).",
+    "Click Start to begin a work session. The timer counts down in your browser.",
+    "When the session ends, start a break. Pause or reset at any time. Nothing is stored or uploaded."
+  ],
+  "examples": [
+    "Use the classic 25/5 cycle to write an essay or code a feature.",
+    "Shorten work to 15 minutes for quick tasks and keep 5-minute breaks.",
+    "After four work sessions, take a longer 15-minute break."
+  ],
+  "faq": [
+    {
+      "q": "Does the timer keep running if I leave the tab?",
+      "a": "Modern browsers may throttle timers in background tabs. For best accuracy, keep the tab open or in the foreground."
+    },
+    {
+      "q": "Is any data saved or sent to a server?",
+      "a": "No. The timer runs entirely in your browser using JavaScript. No account, no storage, no uploads."
+    },
+    {
+      "q": "Can I change the times while the timer is running?",
+      "a": "Changing the numbers applies on the next Start or Reset. Pause first if you want to adjust mid-session."
+    }
+  ]
+}
