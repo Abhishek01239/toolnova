@@ -4,7 +4,7 @@
   "h1": "Case Converter — Change Text Case Instantly",
   "seoTitle": "Free Case Converter — Upper, Lower, Title & More",
   "description": "Convert any text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case or kebab-case. Private and free in your browser.",
-  "intro": "Paste text and choose a case style. Conversion happens instantly on your device with no uploads.",
+  "intro": "Paste text and pick a case style. Conversion happens instantly on your device with no uploads.",
   "blurb": "Switch text between common case styles in one click — free and private.",
   "keywords": ["case converter", "uppercase", "lowercase", "title case", "camelCase", "snake case", "kebab case"],
   "category": "Text",
@@ -18,35 +18,27 @@
         "label": "Text to convert",
         "rows": 8,
         "placeholder": "Paste or type text here"
-      },
-      {
-        "id": "case",
-        "type": "select",
-        "label": "Case style",
-        "value": "upper",
-        "options": [
-          {"value": "upper", "label": "UPPERCASE"},
-          {"value": "lower", "label": "lowercase"},
-          {"value": "title", "label": "Title Case"},
-          {"value": "sentence", "label": "Sentence case"},
-          {"value": "camel", "label": "camelCase"},
-          {"value": "snake", "label": "snake_case"},
-          {"value": "kebab", "label": "kebab-case"}
-        ]
       }
     ],
     "actions": [
-      {"id": "convert", "label": "Convert", "primary": true},
-      {"id": "clear", "label": "Clear"}
+      {"id": "uppercase", "label": "UPPERCASE"},
+      {"id": "lowercase", "label": "lowercase"},
+      {"id": "title-case", "label": "Title Case"},
+      {"id": "sentence-case", "label": "Sentence case"},
+      {"id": "camel-case", "label": "camelCase"},
+      {"id": "snake-case", "label": "snake_case"},
+      {"id": "kebab-case", "label": "kebab-case"},
+      {"id": "pascal-case", "label": "PascalCase"},
+      {"id": "constant-case", "label": "CONSTANT_CASE"}
     ],
     "outputs": [
-      {"id": "result", "type": "textarea", "label": "Converted text"}
+      {"id": "output", "type": "textarea", "label": "Converted text"}
     ]
   },
   "howItWorks": [
     "Paste or type your text into the input box.",
-    "Select the desired case style from the dropdown.",
-    "Click Convert to see the transformed text. Everything runs locally in your browser."
+    "Click one of the case style buttons to transform the text.",
+    "The result appears instantly. Everything runs locally in your browser."
   ],
   "examples": [
     "\"hello world\" to Title Case becomes \"Hello World\".",
@@ -64,7 +56,7 @@
     },
     {
       "q": "Does it handle punctuation and multiple spaces?",
-      "a": "Yes. Basic punctuation is preserved where sensible, and the converters clean extra whitespace for readable results."
+      "a": "Yes. The converters extract words carefully and produce clean results for the chosen style."
     }
   ]
 }
