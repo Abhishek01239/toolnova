@@ -1,0 +1,70 @@
+{
+  "id": "case-converter",
+  "title": "Case Converter",
+  "h1": "Case Converter — Change Text Case Instantly",
+  "seoTitle": "Free Case Converter — Upper, Lower, Title & More",
+  "description": "Convert any text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case or kebab-case. Private and free in your browser.",
+  "intro": "Paste text and choose a case style. Conversion happens instantly on your device with no uploads.",
+  "blurb": "Switch text between common case styles in one click — free and private.",
+  "keywords": ["case converter", "uppercase", "lowercase", "title case", "camelCase", "snake case", "kebab case"],
+  "category": "Text",
+  "added": "2026-10-23",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text to convert",
+        "rows": 8,
+        "placeholder": "Paste or type text here"
+      },
+      {
+        "id": "case",
+        "type": "select",
+        "label": "Case style",
+        "value": "upper",
+        "options": [
+          {"value": "upper", "label": "UPPERCASE"},
+          {"value": "lower", "label": "lowercase"},
+          {"value": "title", "label": "Title Case"},
+          {"value": "sentence", "label": "Sentence case"},
+          {"value": "camel", "label": "camelCase"},
+          {"value": "snake", "label": "snake_case"},
+          {"value": "kebab", "label": "kebab-case"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "convert", "label": "Convert", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "result", "type": "textarea", "label": "Converted text"}
+    ]
+  },
+  "howItWorks": [
+    "Paste or type your text into the input box.",
+    "Select the desired case style from the dropdown.",
+    "Click Convert to see the transformed text. Everything runs locally in your browser."
+  ],
+  "examples": [
+    "\"hello world\" to Title Case becomes \"Hello World\".",
+    "\"Hello World\" to camelCase becomes \"helloWorld\".",
+    "Use snake_case for variable names or kebab-case for CSS classes and slugs."
+  ],
+  "faq": [
+    {
+      "q": "Is my text uploaded to a server?",
+      "a": "No. All conversion happens entirely in your browser using JavaScript. Your text never leaves your device."
+    },
+    {
+      "q": "What is Title Case?",
+      "a": "Title Case capitalizes the first letter of each word, which is common for headings, titles, and button labels."
+    },
+    {
+      "q": "Does it handle punctuation and multiple spaces?",
+      "a": "Yes. Basic punctuation is preserved where sensible, and the converters clean extra whitespace for readable results."
+    }
+  ]
+}
