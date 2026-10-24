@@ -1,0 +1,69 @@
+{
+  "id": "text-reverser",
+  "title": "Text Reverser",
+  "h1": "Text Reverser — Reverse Text, Words or Lines",
+  "seoTitle": "Free Text Reverser — Reverse Strings, Words and Lines Online",
+  "description": "Reverse any text instantly: whole string, word by word, or line by line. Useful for puzzles, coding tests and quick edits. Runs in your browser.",
+  "intro": "Paste text and choose how to reverse it — character order, word order, or each line. Results update as you type.",
+  "blurb": "Reverse text by characters, words or lines instantly.",
+  "keywords": ["text reverser", "reverse text", "reverse string", "reverse words", "mirror text"],
+  "category": "Text",
+  "added": "2026-10-24",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text to reverse",
+        "rows": 8,
+        "placeholder": "Type or paste text here..."
+      },
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Reverse mode",
+        "value": "chars",
+        "options": [
+          {"value": "chars", "label": "Reverse characters"},
+          {"value": "words", "label": "Reverse word order"},
+          {"value": "lines", "label": "Reverse line order"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Reversed text"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type your text.",
+    "Select reverse mode: characters, word order or line order.",
+    "The reversed result appears instantly in the output box."
+  ],
+  "examples": [
+    "Hello World → dlroW olleH (characters)",
+    "The quick brown fox → fox brown quick The (word order)",
+    "Line 1\\nLine 2 → Line 2\\nLine 1 (line order)"
+  ],
+  "faq": [
+    {
+      "q": "Does this preserve spaces and punctuation?",
+      "a": "Yes. Character reverse keeps every character in reverse order. Word reverse keeps words intact and reverses their sequence."
+    },
+    {
+      "q": "Is the tool private?",
+      "a": "Yes. All processing happens in your browser. Nothing is uploaded."
+    },
+    {
+      "q": "Can I reverse multi-line text?",
+      "a": "Yes. Line-order mode reverses the sequence of lines while keeping each line's content."
+    }
+  ]
+}
