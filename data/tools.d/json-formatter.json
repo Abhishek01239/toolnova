@@ -1,0 +1,76 @@
+{
+  "id": "json-formatter",
+  "title": "JSON Formatter",
+  "h1": "JSON Formatter & Validator — Beautify and Check JSON",
+  "seoTitle": "Free JSON Formatter — Format, Validate and Beautify JSON Online",
+  "description": "Format, beautify and validate JSON instantly in your browser. Fix indentation, catch errors and copy clean output. Private and free.",
+  "intro": "Paste raw JSON to format it with proper indentation, validate syntax and see clear error messages if something is wrong.",
+  "blurb": "Format, beautify and validate JSON with clear error reporting.",
+  "keywords": ["json formatter", "json beautifier", "json validator", "format json", "pretty print json", "json lint"],
+  "category": "Developer",
+  "added": "2026-10-24",
+  "popularity": 88,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "JSON input",
+        "rows": 12,
+        "placeholder": "{\"name\":\"ToolNova\",\"free\":true}"
+      },
+      {
+        "id": "indent",
+        "type": "select",
+        "label": "Indentation",
+        "value": "2",
+        "options": [
+          {"value": "2", "label": "2 spaces"},
+          {"value": "4", "label": "4 spaces"},
+          {"value": "tab", "label": "Tabs"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "format", "label": "Format", "primary": true},
+      {"id": "minify", "label": "Minify"},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Formatted JSON"
+      },
+      {
+        "id": "status",
+        "type": "text",
+        "label": "Status"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type your JSON into the input box.",
+    "Choose indentation (2 spaces, 4 spaces or tabs) and press Format.",
+    "Valid JSON is pretty-printed. Invalid JSON shows a clear error message."
+  ],
+  "examples": [
+    "Turn minified JSON into readable multi-line output.",
+    "Quickly check if an API response is valid JSON.",
+    "Minify JSON to reduce size for storage or transmission."
+  ],
+  "faq": [
+    {
+      "q": "Does this send my JSON to a server?",
+      "a": "No. Everything runs locally in your browser. Your data never leaves your device."
+    },
+    {
+      "q": "What kinds of errors does it catch?",
+      "a": "Syntax errors such as missing commas, trailing commas, unquoted keys and invalid numbers. The error message includes the approximate position."
+    },
+    {
+      "q": "Can I minify JSON as well?",
+      "a": "Yes. Use the Minify button to remove all whitespace while keeping the data valid."
+    }
+  ]
+}
