@@ -1,0 +1,71 @@
+{
+  "id": "reading-level-analyzer",
+  "title": "Reading Level Analyzer",
+  "h1": "Reading Level Analyzer \u2014 Flesch Score and Grade Level",
+  "seoTitle": "Free Reading Level Analyzer \u2014 Flesch-Kincaid Online",
+  "description": "Analyze text for reading ease, grade level, sentence length and word complexity. Private browser tool for writers and students.",
+  "intro": "Paste any text to get Flesch Reading Ease, Flesch-Kincaid grade level, average sentence length and more. Everything stays in your browser.",
+  "blurb": "Check how easy a text is to read with Flesch scores and grade levels.",
+  "keywords": ["reading level", "flesch kincaid", "reading ease", "readability score", "grade level calculator"],
+  "category": "Text",
+  "added": "2026-10-25",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text to analyze",
+        "placeholder": "Paste your article, essay or paragraph here...",
+        "rows": 10
+      }
+    ],
+    "actions": [
+      {
+        "id": "analyze",
+        "label": "Analyze reading level",
+        "primary": true
+      },
+      {
+        "id": "clear",
+        "label": "Clear"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Readability summary"
+      },
+      {
+        "id": "details",
+        "type": "pre",
+        "label": "Detailed metrics"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type the text you want to check.",
+    "Press Analyze reading level. The tool counts sentences, words and syllables.",
+    "Review the Flesch Reading Ease score, grade level and supporting statistics."
+  ],
+  "examples": [
+    "A simple children's story usually scores above 80 on Flesch Reading Ease.",
+    "Academic papers often land in the 30\u201350 range and require higher education.",
+    "Marketing copy aims for 60\u201370 so most adults can read it comfortably."
+  ],
+  "faq": [
+    {
+      "q": "What is a good Flesch Reading Ease score?",
+      "a": "60\u201370 is plain English easily understood by 13\u201315 year olds. Higher is easier; below 30 is difficult."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. All counting and scoring happens locally in your browser."
+    },
+    {
+      "q": "How are syllables counted?",
+      "a": "A simple vowel-group heuristic is used. It is approximate but good enough for readability estimates."
+    }
+  ]
+}

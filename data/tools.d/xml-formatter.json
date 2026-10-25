@@ -1,0 +1,66 @@
+{
+  "id": "xml-formatter",
+  "title": "XML Formatter",
+  "h1": "XML Formatter \u2014 Pretty Print and Minify XML",
+  "seoTitle": "Free XML Formatter \u2014 Beautify and Minify XML Online",
+  "description": "Format messy XML into readable indented markup or minify it to a single line. Runs entirely in your browser.",
+  "intro": "Paste XML, choose pretty or minify, and get clean output instantly. No data leaves your device.",
+  "blurb": "Pretty-print or minify XML with one click \u2014 private and free.",
+  "keywords": ["xml formatter", "xml beautifier", "xml pretty print", "minify xml", "xml indent"],
+  "category": "Developer",
+  "added": "2026-10-25",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "xml",
+        "type": "textarea",
+        "label": "XML input",
+        "placeholder": "<root><item>value</item></root>",
+        "rows": 12
+      },
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Output mode",
+        "value": "pretty",
+        "options": [
+          {"value": "pretty", "label": "Pretty (indented)"},
+          {"value": "minify", "label": "Minify (compact)"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "format", "label": "Format XML", "primary": true},
+      {"id": "copy", "label": "Copy result"},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "result", "type": "textarea", "label": "Formatted XML"}
+    ]
+  },
+  "howItWorks": [
+    "Paste the XML you want to clean up.",
+    "Choose Pretty for readable indentation or Minify for a compact single line.",
+    "Press Format XML. Copy the result when you are happy with it."
+  ],
+  "examples": [
+    "Turn a one-line API response into indented XML for easier debugging.",
+    "Minify a configuration file before embedding it in a smaller payload.",
+    "Clean up hand-written XML that has inconsistent spacing."
+  ],
+  "faq": [
+    {
+      "q": "Is the XML sent to a server?",
+      "a": "No. Formatting uses only your browser's DOMParser and XMLSerializer."
+    },
+    {
+      "q": "What if the XML is invalid?",
+      "a": "The tool shows a clear error message instead of broken output."
+    },
+    {
+      "q": "Does it support namespaces?",
+      "a": "Yes. Standard XML with namespaces is preserved during pretty-printing."
+    }
+  ]
+}

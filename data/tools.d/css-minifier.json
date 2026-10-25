@@ -1,0 +1,57 @@
+{
+  "id": "css-minifier",
+  "title": "CSS Minifier",
+  "h1": "CSS Minifier \u2014 Compress Stylesheets Instantly",
+  "seoTitle": "Free CSS Minifier \u2014 Minify CSS Online Private",
+  "description": "Minify CSS by removing comments, whitespace and unnecessary characters. Fast, private, runs in your browser.",
+  "intro": "Paste your CSS and get a compact version ready for production. Nothing is uploaded.",
+  "blurb": "Shrink CSS files by stripping comments and extra whitespace.",
+  "keywords": ["css minifier", "minify css", "compress css", "css compressor", "remove css comments"],
+  "category": "Developer",
+  "added": "2026-10-25",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "css",
+        "type": "textarea",
+        "label": "CSS input",
+        "placeholder": "body { color: blue; /* comment */ }",
+        "rows": 12
+      }
+    ],
+    "actions": [
+      {"id": "minify", "label": "Minify CSS", "primary": true},
+      {"id": "copy", "label": "Copy result"},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "result", "type": "textarea", "label": "Minified CSS"},
+      {"id": "stats", "type": "stats", "label": "Size comparison"}
+    ]
+  },
+  "howItWorks": [
+    "Paste the CSS you want to compress.",
+    "Press Minify CSS. Comments and extra spaces are removed.",
+    "Copy the smaller result or check the size savings."
+  ],
+  "examples": [
+    "Reduce a development stylesheet before deploying to production.",
+    "Clean up CSS that has lots of comments and blank lines.",
+    "Compare original and minified sizes for a quick win on page weight."
+  ],
+  "faq": [
+    {
+      "q": "Is my CSS uploaded?",
+      "a": "No. Minification happens entirely in your browser."
+    },
+    {
+      "q": "Does it change the meaning of the CSS?",
+      "a": "It removes comments and unnecessary whitespace while preserving selectors and declarations."
+    },
+    {
+      "q": "Can it handle large files?",
+      "a": "Yes for typical stylesheets. Extremely large files may be slower in the browser."
+    }
+  ]
+}
