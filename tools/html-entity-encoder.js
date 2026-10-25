@@ -21,7 +21,7 @@
 
   function encode(s) {
     return s.replace(/[&<>"']/g, function(c) {
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'"::'&#39;'}[c];
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":':&#39;'}[c];
     });
   }
   function decode(s) {
@@ -30,14 +30,21 @@
     return ta.value;
   }
 
-  function run() {
-    var mode = control('mode').value;
-    var input = control('input').value;
-    var out = mode === 'decode' ? decode(input) : encode(input);
-    setOutput('result', out);
-    status(mode === 'decode' ? 'Decoded.' : 'Encoded.', 'ok');
-  }
-
-  onAction('run', run);
-  run();
+  onAction('encode', function () {
+    var input = control('input');
+    if (!input) return;
+    setOutput('output', encode(input.value));
+    status('Encoded.', 'ok');
+  });
+  onAction('decode', function () {
+    var input = control('input');
+    if (!input) return;
+    setOutput('output', decode(input.value));
+    status('Decoded.', 'ok');
+  });
+  onAction('clear', function () {
+    if (control('input')) control('input').value = '';
+    setOutput('output', '');
+    status('');
+  });
 })();
