@@ -1,0 +1,59 @@
+{
+  "id": "html-tag-remover",
+  "title": "HTML Tag Remover",
+  "h1": "Strip HTML Tags — Extract Clean Text Online",
+  "seoTitle": "HTML Tag Remover — Free Online Text Extractor",
+  "description": "Remove all HTML tags from text and extract clean plain text. Fast, private, and runs entirely in your browser.",
+  "intro": "Paste HTML or mixed content and get the plain text with every tag stripped away. Useful for cleaning copied web content.",
+  "blurb": "Strip HTML tags and get clean plain text — free and private.",
+  "keywords": ["html tag remover", "strip html tags", "remove html tags", "html to text", "extract text from html"],
+  "category": "Text",
+  "added": "2026-10-26",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "HTML input",
+        "rows": 12,
+        "placeholder": "Paste HTML here..."
+      }
+    ],
+    "actions": [
+      { "id": "strip", "label": "Remove tags", "primary": true },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Plain text"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste HTML or text containing tags into the input box.",
+    "Click Remove tags. All tags are stripped while text content is preserved.",
+    "Copy the clean plain text. Processing stays local in your browser."
+  ],
+  "examples": [
+    "Clean an article copied from a website before pasting into a document.",
+    "Extract readable text from HTML email or page source.",
+    "Prepare content for a word counter or plain-text editor."
+  ],
+  "faq": [
+    {
+      "q": "Is my content uploaded?",
+      "a": "No. Tag removal runs entirely in your browser. Nothing is sent to a server."
+    },
+    {
+      "q": "Does it handle nested or malformed HTML?",
+      "a": "Yes. It uses a simple DOM-based approach that extracts text content reliably for most HTML."
+    },
+    {
+      "q": "Will scripts or styles be included?",
+      "a": "No. Only visible text content is kept; script and style blocks are ignored."
+    }
+  ]
+}

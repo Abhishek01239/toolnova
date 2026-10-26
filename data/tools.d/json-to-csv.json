@@ -1,0 +1,59 @@
+{
+  "id": "json-to-csv",
+  "title": "JSON to CSV",
+  "h1": "JSON to CSV Converter — Free, Private, Browser-Only",
+  "seoTitle": "JSON to CSV Converter — Free Online Tool",
+  "description": "Convert a JSON array of objects into CSV instantly. Flattens nested fields and runs entirely in your browser so your data stays private.",
+  "intro": "Paste a JSON array of objects and get a ready-to-use CSV. Nested objects become dot-notation columns. Nothing is uploaded.",
+  "blurb": "Turn JSON arrays into CSV spreadsheets — free and private.",
+  "keywords": ["json to csv", "json to csv converter", "convert json to csv", "json csv", "json to spreadsheet"],
+  "category": "Data",
+  "added": "2026-10-26",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "JSON input",
+        "rows": 12,
+        "placeholder": "Paste a JSON array of objects here..."
+      }
+    ],
+    "actions": [
+      { "id": "convert", "label": "Convert to CSV", "primary": true },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "CSV output"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste a valid JSON array of objects into the input box.",
+    "Click Convert to CSV. Nested objects are flattened using dot notation.",
+    "Copy the result or use it in a spreadsheet. All processing stays in your browser."
+  ],
+  "examples": [
+    "Convert an API response array into a CSV for Excel or Google Sheets.",
+    "Flatten nested user records so address.city becomes its own column.",
+    "Prepare data for import into a database or analytics tool."
+  ],
+  "faq": [
+    {
+      "q": "Does my JSON get uploaded?",
+      "a": "No. Conversion runs entirely in your browser. Your data never leaves your device."
+    },
+    {
+      "q": "What JSON format is expected?",
+      "a": "An array of objects, for example [{\"name\":\"Ada\",\"age\":36}]. Nested objects are flattened."
+    },
+    {
+      "q": "How are nested fields handled?",
+      "a": "Objects become columns with dot notation such as address.city. Arrays are stringified."
+    }
+  ]
+}
