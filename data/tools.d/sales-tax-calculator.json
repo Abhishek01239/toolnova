@@ -1,0 +1,80 @@
+{
+  "id": "sales-tax-calculator",
+  "title": "Sales Tax Calculator",
+  "h1": "Sales Tax Calculator — Add or Remove Tax",
+  "seoTitle": "Free Sales Tax Calculator — Calculate Tax Online",
+  "description": "Calculate sales tax on a price or find the pre-tax amount from a total. Enter rate and amount for instant results in your browser.",
+  "intro": "Enter a price and tax rate to see the tax amount and total, or reverse a tax-included total.",
+  "blurb": "Compute sales tax or reverse it from a total with a custom rate.",
+  "keywords": ["sales tax calculator", "tax calculator", "add sales tax", "remove tax", "vat calculator"],
+  "category": "Finance",
+  "added": "2026-10-27",
+  "popularity": 80,
+  "ui": {
+    "controls": [
+      {
+        "id": "amount",
+        "type": "number",
+        "label": "Amount",
+        "value": "100",
+        "step": "any"
+      },
+      {
+        "id": "rate",
+        "type": "number",
+        "label": "Tax rate (%)",
+        "value": "8.5",
+        "step": "0.01"
+      },
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Mode",
+        "value": "add",
+        "options": [
+          {"value": "add", "label": "Add tax to amount"},
+          {"value": "remove", "label": "Remove tax from total"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "calculate", "label": "Calculate", "primary": true}
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Result"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Breakdown"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the amount and the tax rate as a percentage.",
+    "Choose whether to add tax or remove it from a tax-included total.",
+    "See the tax amount, net price, and total."
+  ],
+  "examples": [
+    "100 at 8.5% becomes 108.50 total with 8.50 tax.",
+    "A 108.50 total at 8.5% has a pre-tax price of 100.",
+    "Useful for invoices, shopping, or budgeting."
+  ],
+  "faq": [
+    {
+      "q": "Does this include local taxes?",
+      "a": "You enter the exact rate you need. Combine state, local, and special rates yourself for accuracy."
+    },
+    {
+      "q": "Can I use it for VAT?",
+      "a": "Yes. Enter the VAT rate the same way."
+    },
+    {
+      "q": "Is anything uploaded?",
+      "a": "No. Everything calculates in your browser."
+    }
+  ]
+}

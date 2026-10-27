@@ -1,0 +1,90 @@
+{
+  "id": "length-converter",
+  "title": "Length Converter",
+  "h1": "Length Converter — Metric and Imperial Units",
+  "seoTitle": "Free Length Converter — m, km, ft, in, miles Online",
+  "description": "Convert between meters, kilometers, feet, inches, miles, yards and more. Instant client-side length unit conversion.",
+  "intro": "Select units and enter a value to convert lengths across metric and imperial systems.",
+  "blurb": "Convert length units including meters, feet, miles, and kilometers.",
+  "keywords": ["length converter", "meter to feet", "km to miles", "unit converter length", "inches to cm"],
+  "category": "Converters",
+  "added": "2026-10-27",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "value",
+        "type": "number",
+        "label": "Value",
+        "value": "1",
+        "step": "any"
+      },
+      {
+        "id": "from",
+        "type": "select",
+        "label": "From",
+        "value": "m",
+        "options": [
+          {"value": "m", "label": "Meters"},
+          {"value": "km", "label": "Kilometers"},
+          {"value": "cm", "label": "Centimeters"},
+          {"value": "mm", "label": "Millimeters"},
+          {"value": "ft", "label": "Feet"},
+          {"value": "in", "label": "Inches"},
+          {"value": "yd", "label": "Yards"},
+          {"value": "mi", "label": "Miles"}
+        ]
+      },
+      {
+        "id": "to",
+        "type": "select",
+        "label": "To",
+        "value": "ft",
+        "options": [
+          {"value": "m", "label": "Meters"},
+          {"value": "km", "label": "Kilometers"},
+          {"value": "cm", "label": "Centimeters"},
+          {"value": "mm", "label": "Millimeters"},
+          {"value": "ft", "label": "Feet"},
+          {"value": "in", "label": "Inches"},
+          {"value": "yd", "label": "Yards"},
+          {"value": "mi", "label": "Miles"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "convert", "label": "Convert", "primary": true}
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Result"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the length value.",
+    "Choose the source unit and the target unit.",
+    "The converted value appears instantly."
+  ],
+  "examples": [
+    "1 meter = 3.28084 feet.",
+    "1 kilometer ≈ 0.621371 miles.",
+    "5 feet = 1.524 meters."
+  ],
+  "faq": [
+    {
+      "q": "Which units are supported?",
+      "a": "Meters, kilometers, centimeters, millimeters, feet, inches, yards, and miles."
+    },
+    {
+      "q": "How accurate is it?",
+      "a": "Uses standard conversion factors with good precision for everyday use."
+    },
+    {
+      "q": "Does it send data to a server?",
+      "a": "No. Conversion runs entirely in your browser."
+    }
+  ]
+}

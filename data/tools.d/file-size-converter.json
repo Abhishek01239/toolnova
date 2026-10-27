@@ -1,0 +1,94 @@
+{
+  "id": "file-size-converter",
+  "title": "File Size Converter",
+  "h1": "File Size Converter — Bytes, KB, MB, GB",
+  "seoTitle": "Free File Size Converter — KB to MB, GB to Bytes",
+  "description": "Convert file sizes between bytes, kilobytes, megabytes, gigabytes and terabytes. Handles binary and decimal units.",
+  "intro": "Enter a file size and choose units to convert between bytes, KB, MB, GB and more.",
+  "blurb": "Convert between bytes, KB, MB, GB using binary or decimal standards.",
+  "keywords": ["file size converter", "kb to mb", "bytes to gb", "data size converter", "mb to gb"],
+  "category": "Converters",
+  "added": "2026-10-27",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "value",
+        "type": "number",
+        "label": "Size",
+        "value": "1024",
+        "step": "any"
+      },
+      {
+        "id": "from",
+        "type": "select",
+        "label": "From",
+        "value": "KB",
+        "options": [
+          {"value": "B", "label": "Bytes"},
+          {"value": "KB", "label": "Kilobytes"},
+          {"value": "MB", "label": "Megabytes"},
+          {"value": "GB", "label": "Gigabytes"},
+          {"value": "TB", "label": "Terabytes"}
+        ]
+      },
+      {
+        "id": "to",
+        "type": "select",
+        "label": "To",
+        "value": "MB",
+        "options": [
+          {"value": "B", "label": "Bytes"},
+          {"value": "KB", "label": "Kilobytes"},
+          {"value": "MB", "label": "Megabytes"},
+          {"value": "GB", "label": "Gigabytes"},
+          {"value": "TB", "label": "Terabytes"}
+        ]
+      },
+      {
+        "id": "base",
+        "type": "select",
+        "label": "Base",
+        "value": "1024",
+        "options": [
+          {"value": "1024", "label": "Binary (1024)"},
+          {"value": "1000", "label": "Decimal (1000)"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "convert", "label": "Convert", "primary": true}
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Converted size"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the size value.",
+    "Select source unit, target unit, and whether to use binary (1024) or decimal (1000) base.",
+    "See the converted file size."
+  ],
+  "examples": [
+    "1024 KB (binary) = 1 MB.",
+    "1 GB (decimal) = 1000 MB.",
+    "Useful for comparing storage and download sizes."
+  ],
+  "faq": [
+    {
+      "q": "Binary vs decimal?",
+      "a": "Binary uses 1024 (common in computing). Decimal uses 1000 (SI units, often used by drive manufacturers)."
+    },
+    {
+      "q": "Which should I use?",
+      "a": "For RAM and most software, binary. For hard drive labels, decimal."
+    },
+    {
+      "q": "Private?",
+      "a": "Yes. Runs completely in the browser."
+    }
+  ]
+}

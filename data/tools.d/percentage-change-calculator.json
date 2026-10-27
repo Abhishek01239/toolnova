@@ -1,0 +1,70 @@
+{
+  "id": "percentage-change-calculator",
+  "title": "Percentage Change Calculator",
+  "h1": "Percentage Change Calculator — Increase or Decrease",
+  "seoTitle": "Free Percentage Change Calculator — % Increase Decrease",
+  "description": "Calculate the percentage increase or decrease between two values. Shows absolute change and percentage change instantly in your browser.",
+  "intro": "Enter the original and new values to see how much a number has grown or shrunk as a percentage.",
+  "blurb": "Compute percentage increase or decrease between two numbers.",
+  "keywords": ["percentage change", "percent increase", "percent decrease", "percentage difference", "growth rate"],
+  "category": "Math",
+  "added": "2026-10-27",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "old",
+        "type": "number",
+        "label": "Original value",
+        "value": "100",
+        "step": "any"
+      },
+      {
+        "id": "new",
+        "type": "number",
+        "label": "New value",
+        "value": "125",
+        "step": "any"
+      }
+    ],
+    "actions": [
+      {"id": "calculate", "label": "Calculate", "primary": true}
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Percentage change"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the starting (original) value and the ending (new) value.",
+    "Click Calculate or change the numbers.",
+    "See the percentage change, absolute difference, and whether it increased or decreased."
+  ],
+  "examples": [
+    "From 80 to 100 is a 25% increase.",
+    "From 200 to 150 is a 25% decrease.",
+    "Useful for tracking price changes, growth, or score improvements."
+  ],
+  "faq": [
+    {
+      "q": "What is the formula for percentage change?",
+      "a": "((New − Old) / |Old|) × 100. A positive result means increase; negative means decrease."
+    },
+    {
+      "q": "What if the original value is zero?",
+      "a": "Percentage change from zero is undefined. The tool will show a message instead of a number."
+    },
+    {
+      "q": "Is my data sent anywhere?",
+      "a": "No. All calculations happen locally in your browser."
+    }
+  ]
+}

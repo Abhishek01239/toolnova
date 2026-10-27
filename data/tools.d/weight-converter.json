@@ -1,0 +1,86 @@
+{
+  "id": "weight-converter",
+  "title": "Weight Converter",
+  "h1": "Weight Converter — kg, lb, oz, g and More",
+  "seoTitle": "Free Weight Converter — kg to lb, oz to g Online",
+  "description": "Convert weights between kilograms, pounds, ounces, grams, stones and more. Fast, private browser-based unit conversion.",
+  "intro": "Enter a weight and choose units to convert between metric and imperial systems instantly.",
+  "blurb": "Convert between kg, lb, oz, g, and other weight units.",
+  "keywords": ["weight converter", "kg to lbs", "pounds to kilograms", "oz to grams", "mass converter"],
+  "category": "Converters",
+  "added": "2026-10-27",
+  "popularity": 77,
+  "ui": {
+    "controls": [
+      {
+        "id": "value",
+        "type": "number",
+        "label": "Value",
+        "value": "1",
+        "step": "any"
+      },
+      {
+        "id": "from",
+        "type": "select",
+        "label": "From",
+        "value": "kg",
+        "options": [
+          {"value": "kg", "label": "Kilograms"},
+          {"value": "g", "label": "Grams"},
+          {"value": "lb", "label": "Pounds"},
+          {"value": "oz", "label": "Ounces"},
+          {"value": "st", "label": "Stones"},
+          {"value": "mg", "label": "Milligrams"}
+        ]
+      },
+      {
+        "id": "to",
+        "type": "select",
+        "label": "To",
+        "value": "lb",
+        "options": [
+          {"value": "kg", "label": "Kilograms"},
+          {"value": "g", "label": "Grams"},
+          {"value": "lb", "label": "Pounds"},
+          {"value": "oz", "label": "Ounces"},
+          {"value": "st", "label": "Stones"},
+          {"value": "mg", "label": "Milligrams"}
+        ]
+      }
+    ],
+    "actions": [
+      {"id": "convert", "label": "Convert", "primary": true}
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Result"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the weight value.",
+    "Select the from and to units.",
+    "The converted weight is shown immediately."
+  ],
+  "examples": [
+    "1 kilogram ≈ 2.20462 pounds.",
+    "16 ounces = 1 pound.",
+    "100 grams = 3.5274 ounces."
+  ],
+  "faq": [
+    {
+      "q": "What units can I convert?",
+      "a": "Kilograms, grams, milligrams, pounds, ounces, and stones."
+    },
+    {
+      "q": "Is stone included?",
+      "a": "Yes. 1 stone = 14 pounds = 6.35029 kg approximately."
+    },
+    {
+      "q": "Privacy?",
+      "a": "All conversion is done locally. Nothing is sent to a server."
+    }
+  ]
+}
