@@ -1,0 +1,41 @@
+{
+  "id": "ratio-calculator",
+  "title": "Ratio Calculator",
+  "h1": "Ratio Calculator — Simplify and Scale Ratios",
+  "seoTitle": "Free Ratio Calculator — Simplify Ratios Online",
+  "description": "Simplify ratios like 12:18 to 2:3 or scale a ratio to a new value. Useful for recipes, mixtures and proportions. Private browser calculation.",
+  "intro": "Enter two numbers to simplify their ratio, or provide a third value to find the missing part of a proportion.",
+  "blurb": "Simplify ratios and solve proportions instantly.",
+  "keywords": ["ratio calculator", "simplify ratio", "proportion calculator", "ratio simplifier", "find ratio"],
+  "category": "Math",
+  "added": "2026-10-28",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {"id": "a", "type": "number", "label": "First number (A)", "placeholder": "12", "min": 0, "step": 0.01},
+      {"id": "b", "type": "number", "label": "Second number (B)", "placeholder": "18", "min": 0, "step": 0.01},
+      {"id": "mode", "type": "select", "label": "Mode", "value": "simplify", "options": [{"value": "simplify", "label": "Simplify A:B"}, {"value": "scale", "label": "Scale: given C find D"}]},
+      {"id": "c", "type": "number", "label": "Third number (C) — for scale mode", "placeholder": "4", "min": 0, "step": 0.01}
+    ],
+    "actions": [{"id": "calculate", "label": "Calculate", "primary": true}],
+    "outputs": [
+      {"id": "result", "type": "text", "label": "Result"},
+      {"id": "details", "type": "stats", "label": "Details"}
+    ]
+  },
+  "howItWorks": [
+    "Enter the two numbers of the ratio.",
+    "Choose simplify to reduce the fraction, or scale to solve for the missing value.",
+    "Results update when you press Calculate. GCD is used for exact simplification."
+  ],
+  "examples": [
+    "12:18 simplifies to 2:3.",
+    "If 3 parts sugar to 5 parts flour, and you have 150 g sugar, you need 250 g flour.",
+    "Useful for mixing paint, scaling recipes or map scales."
+  ],
+  "faq": [
+    {"q": "Is my data sent anywhere?", "a": "No. The calculation runs entirely in your browser."},
+    {"q": "Does it handle decimals?", "a": "Yes. It works with decimal numbers and simplifies where possible."},
+    {"q": "What is the scale mode?", "a": "Given A:B and a new value C for A, it calculates the corresponding D for B so the ratio stays the same."}
+  ]
+}

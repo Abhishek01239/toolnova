@@ -1,0 +1,40 @@
+{
+  "id": "business-days-calculator",
+  "title": "Business Days Calculator",
+  "h1": "Business Days Calculator — Exclude Weekends",
+  "seoTitle": "Free Business Days Calculator — Count Working Days Online",
+  "description": "Count the number of business days between two dates, excluding weekends. Optionally skip the end date. Private and free.",
+  "intro": "Select a start and end date to see how many weekdays fall between them. Useful for project timelines, shipping estimates and payroll.",
+  "blurb": "Calculate working days between two dates, skipping weekends.",
+  "keywords": ["business days calculator", "working days between dates", "count business days", "exclude weekends", "weekday calculator"],
+  "category": "Time",
+  "added": "2026-10-28",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {"id": "start", "type": "date", "label": "Start date"},
+      {"id": "end", "type": "date", "label": "End date"},
+      {"id": "include-end", "type": "checkbox", "label": "Include end date", "checked": true}
+    ],
+    "actions": [{"id": "calculate", "label": "Calculate", "primary": true}],
+    "outputs": [
+      {"id": "days", "type": "text", "label": "Business days"},
+      {"id": "details", "type": "stats", "label": "Breakdown"}
+    ]
+  },
+  "howItWorks": [
+    "Choose a start date and an end date.",
+    "The tool counts Mondays through Fridays between them.",
+    "Optionally include or exclude the end date. Weekends are always skipped."
+  ],
+  "examples": [
+    "From Monday to Friday of the same week is 5 business days.",
+    "A 10-calendar-day span that includes a weekend is usually 8 business days.",
+    "Helpful for estimating delivery windows or leave calculations."
+  ],
+  "faq": [
+    {"q": "Does it account for public holidays?", "a": "Not automatically. It only skips Saturdays and Sundays. You can subtract known holidays manually."},
+    {"q": "Is the calculation private?", "a": "Yes. Dates are processed only in your browser."},
+    {"q": "What if the end date is before the start date?", "a": "The tool will show a clear message so you can correct the order."}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "css-border-radius-generator",
+  "title": "CSS Border Radius Generator",
+  "h1": "CSS Border-Radius Generator — Preview Rounded Corners",
+  "seoTitle": "Free CSS Border Radius Generator — Create Rounded Corners Online",
+  "description": "Visually design border-radius values for one or all corners and copy the ready CSS. Runs entirely in your browser.",
+  "intro": "Adjust the radius for each corner or set them all at once. See the generated CSS property ready to copy.",
+  "blurb": "Generate CSS border-radius with copy-ready code.",
+  "keywords": ["css border radius", "border-radius generator", "rounded corners css", "css radius tool", "border radius preview"],
+  "category": "Developer",
+  "added": "2026-10-28",
+  "popularity": 80,
+  "ui": {
+    "controls": [
+      {"id": "all", "type": "number", "label": "All corners (px)", "placeholder": "12", "min": 0, "max": 200, "step": 1, "value": 12},
+      {"id": "tl", "type": "number", "label": "Top-left", "min": 0, "max": 200, "step": 1},
+      {"id": "tr", "type": "number", "label": "Top-right", "min": 0, "max": 200, "step": 1},
+      {"id": "br", "type": "number", "label": "Bottom-right", "min": 0, "max": 200, "step": 1},
+      {"id": "bl", "type": "number", "label": "Bottom-left", "min": 0, "max": 200, "step": 1}
+    ],
+    "actions": [{"id": "copy", "label": "Copy CSS"}],
+    "outputs": [{"id": "css", "type": "textarea", "label": "CSS", "rows": 3}]
+  },
+  "howItWorks": [
+    "Set a single value for all corners or individual values for each.",
+    "The CSS updates live as you type.",
+    "Copy the generated border-radius declaration to use in your stylesheet."
+  ],
+  "examples": [
+    "A value of 8px on all corners gives a gently rounded button.",
+    "Different values create pill shapes or irregular rounded rectangles.",
+    "Useful when designing cards, buttons or image frames."
+  ],
+  "faq": [
+    {"q": "Does this upload anything?", "a": "No. Everything runs locally in your browser."},
+    {"q": "Can I use percentages?", "a": "The tool currently outputs pixel values. You can edit the copied CSS to use % or other units."},
+    {"q": "How do I use the output?", "a": "Paste the CSS property into your stylesheet or inline style."}
+  ]
+}

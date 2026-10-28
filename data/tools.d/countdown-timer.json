@@ -1,0 +1,38 @@
+{
+  "id": "countdown-timer",
+  "title": "Countdown Timer",
+  "h1": "Countdown Timer — Count Down to Any Date or Duration",
+  "seoTitle": "Free Countdown Timer — Online Timer and Date Countdown",
+  "description": "Create a countdown to a specific date or set a simple duration timer. See days, hours, minutes and seconds. Runs privately in your browser.",
+  "intro": "Pick a target date or enter hours and minutes for a short timer. The display updates every second.",
+  "blurb": "Live countdown to a date or for a set duration.",
+  "keywords": ["countdown timer", "online timer", "date countdown", "count down clock", "event countdown"],
+  "category": "Time",
+  "added": "2026-10-28",
+  "popularity": 85,
+  "ui": {
+    "controls": [
+      {"id": "mode", "type": "select", "label": "Mode", "value": "date", "options": [{"value": "date", "label": "To a date"}, {"value": "duration", "label": "Duration (hours/minutes)"}]},
+      {"id": "target", "type": "date", "label": "Target date"},
+      {"id": "hours", "type": "number", "label": "Hours", "min": 0, "max": 99, "value": 0},
+      {"id": "minutes", "type": "number", "label": "Minutes", "min": 0, "max": 59, "value": 5}
+    ],
+    "actions": [{"id": "start", "label": "Start", "primary": true}, {"id": "stop", "label": "Stop"}],
+    "outputs": [{"id": "display", "type": "text", "label": "Time remaining"}]
+  },
+  "howItWorks": [
+    "Choose date mode and pick a future date, or duration mode and set hours and minutes.",
+    "Press Start to begin the countdown.",
+    "The display shows remaining time and updates every second until it reaches zero."
+  ],
+  "examples": [
+    "Count down to a product launch or birthday.",
+    "Set a 25-minute focus timer (pair with Pomodoro ideas).",
+    "Use for cooking, presentations or study sessions."
+  ],
+  "faq": [
+    {"q": "Does the timer keep running if I leave the page?", "a": "No. It runs only while the tab is open because it is a client-side tool."},
+    {"q": "Is any data sent to a server?", "a": "No. The timer is calculated entirely in your browser."},
+    {"q": "Can I set seconds precisely?", "a": "Currently hours and minutes. You can approximate short timers with minutes."}
+  ]
+}
