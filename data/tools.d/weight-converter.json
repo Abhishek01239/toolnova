@@ -1,86 +1,39 @@
 {
   "id": "weight-converter",
   "title": "Weight Converter",
-  "h1": "Weight Converter — kg, lb, oz, g and More",
-  "seoTitle": "Free Weight Converter — kg to lb, oz to g Online",
-  "description": "Convert weights between kilograms, pounds, ounces, grams, stones and more. Fast, private browser-based unit conversion.",
-  "intro": "Enter a weight and choose units to convert between metric and imperial systems instantly.",
-  "blurb": "Convert between kg, lb, oz, g, and other weight units.",
-  "keywords": ["weight converter", "kg to lbs", "pounds to kilograms", "oz to grams", "mass converter"],
-  "category": "Converters",
-  "added": "2026-10-27",
-  "popularity": 77,
+  "h1": "Weight Converter — kg, lb, oz, stone",
+  "seoTitle": "Free Weight Converter — Kilograms to Pounds Online",
+  "description": "Convert between kilograms, pounds, ounces, grams and stone. Instant results, fully private.",
+  "intro": "Enter a weight and choose units to convert. Common units for cooking, shipping and fitness.",
+  "blurb": "Convert weight units including kg, lb, oz and stone.",
+  "keywords": ["weight converter", "kg to lb", "pounds to kilograms", "oz to grams", "stone to kg"],
+  "category": "Converter",
+  "added": "2026-10-19",
+  "popularity": 74,
   "ui": {
     "controls": [
-      {
-        "id": "value",
-        "type": "number",
-        "label": "Value",
-        "value": "1",
-        "step": "any"
-      },
-      {
-        "id": "from",
-        "type": "select",
-        "label": "From",
-        "value": "kg",
-        "options": [
-          {"value": "kg", "label": "Kilograms"},
-          {"value": "g", "label": "Grams"},
-          {"value": "lb", "label": "Pounds"},
-          {"value": "oz", "label": "Ounces"},
-          {"value": "st", "label": "Stones"},
-          {"value": "mg", "label": "Milligrams"}
-        ]
-      },
-      {
-        "id": "to",
-        "type": "select",
-        "label": "To",
-        "value": "lb",
-        "options": [
-          {"value": "kg", "label": "Kilograms"},
-          {"value": "g", "label": "Grams"},
-          {"value": "lb", "label": "Pounds"},
-          {"value": "oz", "label": "Ounces"},
-          {"value": "st", "label": "Stones"},
-          {"value": "mg", "label": "Milligrams"}
-        ]
-      }
+      {"id": "value", "type": "number", "label": "Value", "placeholder": "70", "min": 0, "step": 0.01},
+      {"id": "from", "type": "select", "label": "From", "value": "kg", "options": [{"value": "kg", "label": "Kilograms"}, {"value": "lb", "label": "Pounds"}, {"value": "oz", "label": "Ounces"}, {"value": "g", "label": "Grams"}, {"value": "st", "label": "Stone"}]},
+      {"id": "to", "type": "select", "label": "To", "value": "lb", "options": [{"value": "kg", "label": "Kilograms"}, {"value": "lb", "label": "Pounds"}, {"value": "oz", "label": "Ounces"}, {"value": "g", "label": "Grams"}, {"value": "st", "label": "Stone"}]}
     ],
-    "actions": [
-      {"id": "convert", "label": "Convert", "primary": true}
-    ],
+    "actions": [{"id": "convert", "label": "Convert", "primary": true}],
     "outputs": [
-      {
-        "id": "result",
-        "type": "text",
-        "label": "Result"
-      }
+      {"id": "result", "type": "text", "label": "Result"}
     ]
   },
   "howItWorks": [
     "Enter the weight value.",
-    "Select the from and to units.",
-    "The converted weight is shown immediately."
+    "Select the source unit and the target unit.",
+    "The converted value is shown immediately."
   ],
   "examples": [
-    "1 kilogram ≈ 2.20462 pounds.",
-    "16 ounces = 1 pound.",
-    "100 grams = 3.5274 ounces."
+    "70 kg is about 154.3 lb.",
+    "1 stone is 14 pounds.",
+    "Useful for recipes, luggage limits or fitness tracking."
   ],
   "faq": [
-    {
-      "q": "What units can I convert?",
-      "a": "Kilograms, grams, milligrams, pounds, ounces, and stones."
-    },
-    {
-      "q": "Is stone included?",
-      "a": "Yes. 1 stone = 14 pounds = 6.35029 kg approximately."
-    },
-    {
-      "q": "Privacy?",
-      "a": "All conversion is done locally. Nothing is sent to a server."
-    }
+    {"q": "What units can I convert?", "a": "Kilograms, pounds, ounces, grams and stone."},
+    {"q": "Is stone included?", "a": "Yes. Stone is supported as a unit."},
+    {"q": "Is my data private?", "a": "Yes. The conversion runs only in your browser."}
   ]
 }
