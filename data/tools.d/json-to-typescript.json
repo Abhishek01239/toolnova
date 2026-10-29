@@ -1,0 +1,52 @@
+{
+  "id": "json-to-typescript",
+  "title": "JSON to TypeScript",
+  "h1": "JSON to TypeScript Interface Generator — Free Online",
+  "seoTitle": "JSON to TypeScript — Generate Interfaces Free",
+  "description": "Convert any JSON object or array into TypeScript interfaces instantly. Perfect for API responses. Runs privately in your browser.",
+  "intro": "Paste a JSON sample and get clean TypeScript interface definitions. Handles nested objects and arrays automatically.",
+  "blurb": "Turn JSON samples into TypeScript interfaces in one click.",
+  "keywords": ["json to typescript", "json to ts", "generate interface", "typescript from json", "api types"],
+  "category": "Developer",
+  "added": "2026-10-29",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "JSON input",
+        "rows": 12,
+        "placeholder": "{\"name\":\"ToolNova\",\"tools\":[{\"id\":\"json-to-typescript\"}]}"
+      },
+      {
+        "id": "rootname",
+        "type": "text",
+        "label": "Root interface name",
+        "value": "Root"
+      }
+    ],
+    "actions": [
+      {"id": "generate", "label": "Generate TypeScript", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "TypeScript interfaces", "rows": 14}
+    ]
+  },
+  "howItWorks": [
+    "Paste a valid JSON object or array into the input.",
+    "Optionally change the root interface name.",
+    "Press Generate TypeScript to get interface definitions."
+  ],
+  "examples": [
+    "Convert an API response sample into types for your frontend code.",
+    "Generate interfaces from configuration JSON.",
+    "Quickly scaffold types from mock data."
+  ],
+  "faq": [
+    {"q": "Does this upload my JSON?", "a": "No. Everything runs locally in your browser. Your JSON never leaves your device."},
+    {"q": "Does it handle nested objects?", "a": "Yes. Nested objects and arrays of objects become separate interfaces with proper references."},
+    {"q": "What if my JSON is invalid?", "a": "You will see a clear error message pointing to the problem."}
+  ]
+}

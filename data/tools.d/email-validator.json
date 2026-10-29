@@ -1,0 +1,47 @@
+{
+  "id": "email-validator",
+  "title": "Email Validator",
+  "h1": "Email Address Validator — Check Emails Free",
+  "seoTitle": "Email Validator — Free Online Email Checker",
+  "description": "Validate one or many email addresses against a standard pattern. Instant results, private and free. Runs in your browser.",
+  "intro": "Paste one email or a list (one per line) and see which ones look valid. Useful for cleaning contact lists.",
+  "blurb": "Check if email addresses are valid.",
+  "keywords": ["email validator", "validate email", "check email", "email checker", "email format"],
+  "category": "Validators",
+  "added": "2026-10-29",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Email addresses (one per line)",
+        "rows": 10,
+        "placeholder": "user@example.com\nbad-email"
+      }
+    ],
+    "actions": [
+      {"id": "validate", "label": "Validate", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Results", "rows": 10},
+      {"id": "summary", "type": "stats", "label": "Summary"}
+    ]
+  },
+  "howItWorks": [
+    "Paste one or more email addresses, one per line.",
+    "Press Validate.",
+    "Each address is marked Valid or Invalid, with a summary count."
+  ],
+  "examples": [
+    "Clean a list of newsletter subscribers.",
+    "Quickly check a single address before sending.",
+    "Spot typos in email fields."
+  ],
+  "faq": [
+    {"q": "Is this a full RFC check?", "a": "It uses a practical regular expression that catches most invalid addresses. It does not verify that the mailbox actually exists."},
+    {"q": "Are the emails uploaded?", "a": "No. Validation runs entirely in your browser."},
+    {"q": "Can I paste many at once?", "a": "Yes. Put one address per line."}
+  ]
+}

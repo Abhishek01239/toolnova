@@ -1,0 +1,71 @@
+{
+  "id": "random-string-generator",
+  "title": "Random String Generator",
+  "h1": "Random String Generator — Free Online",
+  "seoTitle": "Random String Generator — Generate Random Strings",
+  "description": "Generate secure random strings of any length with custom character sets. Perfect for passwords, tokens and test data. Private and free.",
+  "intro": "Choose length and which characters to include, then generate a cryptographically random string in your browser.",
+  "blurb": "Generate random strings with custom options.",
+  "keywords": ["random string", "random string generator", "generate random string", "random token", "random password"],
+  "category": "Generators",
+  "added": "2026-10-29",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "length",
+        "type": "number",
+        "label": "Length",
+        "value": "16",
+        "min": 1,
+        "max": 256
+      },
+      {
+        "id": "uppercase",
+        "type": "checkbox",
+        "label": "Uppercase letters (A–Z)",
+        "checked": true
+      },
+      {
+        "id": "lowercase",
+        "type": "checkbox",
+        "label": "Lowercase letters (a–z)",
+        "checked": true
+      },
+      {
+        "id": "digits",
+        "type": "checkbox",
+        "label": "Digits (0–9)",
+        "checked": true
+      },
+      {
+        "id": "symbols",
+        "type": "checkbox",
+        "label": "Symbols (!@#$%^&*)",
+        "checked": false
+      }
+    ],
+    "actions": [
+      {"id": "generate", "label": "Generate", "primary": true},
+      {"id": "copy", "label": "Copy"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "text", "label": "Random string"}
+    ]
+  },
+  "howItWorks": [
+    "Set the desired length.",
+    "Choose which character sets to include.",
+    "Press Generate. Uses the browser's crypto API for randomness."
+  ],
+  "examples": [
+    "Create a random token for testing.",
+    "Generate a temporary password.",
+    "Produce random IDs for mock data."
+  ],
+  "faq": [
+    {"q": "Is the randomness secure?", "a": "Yes. It uses crypto.getRandomValues(), which is cryptographically strong."},
+    {"q": "Is anything uploaded?", "a": "No. Generation happens entirely in your browser."},
+    {"q": "Can I generate multiple?", "a": "Press Generate again for a new string each time."}
+  ]
+}

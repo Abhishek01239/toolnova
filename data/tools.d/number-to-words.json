@@ -1,0 +1,46 @@
+{
+  "id": "number-to-words",
+  "title": "Number to Words",
+  "h1": "Number to Words Converter — Free Online",
+  "seoTitle": "Number to Words — Convert Numbers to English",
+  "description": "Convert any number into English words. Supports whole numbers up to trillions. Private, free and runs in your browser.",
+  "intro": "Type a number and instantly see it written out in English words. Useful for cheques, documents and learning.",
+  "blurb": "Turn numbers into English words instantly.",
+  "keywords": ["number to words", "number to text", "numbers in words", "convert number to words", "english number words"],
+  "category": "Math",
+  "added": "2026-10-29",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {
+        "id": "number",
+        "type": "text",
+        "label": "Number",
+        "placeholder": "1234567",
+        "value": "1234"
+      }
+    ],
+    "actions": [
+      {"id": "convert", "label": "Convert to words", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "result", "type": "textarea", "label": "In words", "rows": 4}
+    ]
+  },
+  "howItWorks": [
+    "Enter a whole number (up to about 15 digits).",
+    "Press Convert to words.",
+    "The number is spelled out in standard English."
+  ],
+  "examples": [
+    "Write cheque amounts in words.",
+    "Convert large numbers for reports or presentations.",
+    "Help students learn place value."
+  ],
+  "faq": [
+    {"q": "Does it handle decimals?", "a": "This version converts whole numbers only. Decimals are ignored or rejected."},
+    {"q": "Is there a limit?", "a": "It works well for numbers up to the trillions. Very large numbers may be approximated."},
+    {"q": "Is my number uploaded?", "a": "No. Conversion happens entirely in your browser."}
+  ]
+}

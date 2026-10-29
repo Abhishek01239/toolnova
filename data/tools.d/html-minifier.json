@@ -1,0 +1,47 @@
+{
+  "id": "html-minifier",
+  "title": "HTML Minifier",
+  "h1": "HTML Minifier — Compress HTML Free Online",
+  "seoTitle": "HTML Minifier — Free Online HTML Compressor",
+  "description": "Minify HTML by removing comments and unnecessary whitespace. Reduce file size while keeping the markup valid. Private and free.",
+  "intro": "Paste HTML and get a minified version with comments and extra whitespace removed. Ideal for production snippets.",
+  "blurb": "Minify HTML to reduce size.",
+  "keywords": ["html minifier", "minify html", "compress html", "html compressor", "html minify"],
+  "category": "Developer",
+  "added": "2026-10-29",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "HTML input",
+        "rows": 12,
+        "placeholder": "<div class=\"box\">\n  <!-- comment -->\n  <p>Hello</p>\n</div>"
+      }
+    ],
+    "actions": [
+      {"id": "minify", "label": "Minify", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Minified HTML", "rows": 10},
+      {"id": "stats", "type": "stats", "label": "Size"}
+    ]
+  },
+  "howItWorks": [
+    "Paste your HTML markup into the input area.",
+    "Press the Minify button to process it.",
+    "Comments and most unnecessary whitespace are removed."
+  ],
+  "examples": [
+    "Shrink an HTML email template.",
+    "Prepare a snippet for embedding.",
+    "Reduce payload size of static HTML fragments."
+  ],
+  "faq": [
+    {"q": "Does it break the HTML?", "a": "It removes comments and collapses whitespace outside of <pre>, <script> and <style> carefully. Always test the result."},
+    {"q": "Is the HTML uploaded?", "a": "No. Minification runs entirely in your browser."},
+    {"q": "Can it handle large files?", "a": "Yes, as long as your browser can handle the text size."}
+  ]
+}

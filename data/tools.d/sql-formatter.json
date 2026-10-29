@@ -1,0 +1,46 @@
+{
+  "id": "sql-formatter",
+  "title": "SQL Formatter",
+  "h1": "SQL Formatter — Beautify SQL Queries Free",
+  "seoTitle": "SQL Formatter — Free Online SQL Beautifier",
+  "description": "Format and beautify SQL queries with proper indentation and keyword capitalisation. Free, private and runs in your browser.",
+  "intro": "Paste a messy SQL query and get a clean, readable version with keywords uppercased and basic indentation.",
+  "blurb": "Format SQL queries for better readability.",
+  "keywords": ["sql formatter", "sql beautifier", "format sql", "sql pretty print", "sql indent"],
+  "category": "Developer",
+  "added": "2026-10-29",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "SQL query",
+        "rows": 12,
+        "placeholder": "select id,name from users where active=1 order by name;"
+      }
+    ],
+    "actions": [
+      {"id": "format", "label": "Format SQL", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Formatted SQL", "rows": 14}
+    ]
+  },
+  "howItWorks": [
+    "Paste your SQL query into the input.",
+    "Press Format SQL.",
+    "Keywords are capitalised and the query is lightly indented for readability."
+  ],
+  "examples": [
+    "Clean up a long SELECT statement before sharing it.",
+    "Make generated SQL easier to read.",
+    "Standardise keyword case in a codebase."
+  ],
+  "faq": [
+    {"q": "Is this a full SQL parser?", "a": "No. It is a lightweight formatter that uppercases common keywords and adds basic newlines. Complex queries may need manual tweaks."},
+    {"q": "Does it send my query to a server?", "a": "No. Formatting happens entirely in your browser."},
+    {"q": "Which dialects are supported?", "a": "It works with standard SQL keywords (SELECT, FROM, WHERE, JOIN, etc.) used by most databases."}
+  ]
+}
