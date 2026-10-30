@@ -1,0 +1,78 @@
+{
+  "id": "sip-calculator",
+  "title": "SIP Calculator",
+  "h1": "SIP Calculator — Estimate Systematic Investment Returns",
+  "seoTitle": "SIP Calculator — Free Online Mutual Fund Tool",
+  "description": "Calculate the future value of a monthly SIP investment using expected annual return and tenure. See total invested, estimated corpus and wealth gained. Private browser tool.",
+  "intro": "Enter your monthly investment amount, expected annual return percentage and investment period in years. Instantly see how much your systematic investment plan could grow to.",
+  "blurb": "Estimate the future value of a monthly SIP with compound growth.",
+  "keywords": ["sip calculator", "systematic investment plan", "mutual fund calculator", "sip returns", "investment calculator"],
+  "category": "Finance",
+  "added": "2026-10-30",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "monthly",
+        "type": "number",
+        "label": "Monthly investment",
+        "value": "5000"
+      },
+      {
+        "id": "rate",
+        "type": "number",
+        "label": "Expected annual return (%)",
+        "value": "12"
+      },
+      {
+        "id": "years",
+        "type": "number",
+        "label": "Investment period (years)",
+        "value": "10"
+      }
+    ],
+    "actions": [
+      {
+        "id": "calculate",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Estimated future value"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Breakdown"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Enter the amount you plan to invest every month.",
+    "Provide the expected annual rate of return and the number of years.",
+    "Click Calculate to see the projected corpus, total amount invested and wealth gained."
+  ],
+  "examples": [
+    "Investing ₹5,000 per month at 12% for 10 years grows to roughly ₹11.6 lakh.",
+    "Compare different monthly amounts or tenures to plan a goal.",
+    "Use a conservative return rate for more realistic long-term estimates."
+  ],
+  "faq": [
+    {
+      "q": "What formula does the SIP calculator use?",
+      "a": "It uses the standard future value of an annuity formula: FV = P × (((1 + r)^n - 1) / r) × (1 + r) where r is the monthly rate and n is the number of months."
+    },
+    {
+      "q": "Are the results guaranteed?",
+      "a": "No. The calculation is an estimate based on the constant return rate you enter. Actual mutual fund returns vary and are not guaranteed."
+    },
+    {
+      "q": "Is any data sent to a server?",
+      "a": "No. All calculations run locally in your browser. Your investment figures stay private on your device."
+    }
+  ]
+}

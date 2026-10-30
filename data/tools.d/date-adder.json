@@ -1,0 +1,71 @@
+{
+  "id": "date-adder",
+  "title": "Date Adder",
+  "h1": "Date Adder — Add or Subtract Days from a Date",
+  "seoTitle": "Date Adder — Add Days to Date Free Online",
+  "description": "Add or subtract any number of days from a starting date to find the resulting calendar date and weekday. Free, private and runs instantly in your browser.",
+  "intro": "Pick a start date, enter how many days to add or subtract, and see the new date with its weekday. All calculation stays on your device.",
+  "blurb": "Add or subtract days from any date and see the resulting calendar date and weekday.",
+  "keywords": ["date adder", "add days to date", "subtract days from date", "date calculator", "future date calculator"],
+  "category": "Date & Time",
+  "added": "2026-10-30",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {
+        "id": "startdate",
+        "type": "date",
+        "label": "Start date"
+      },
+      {
+        "id": "days",
+        "type": "number",
+        "label": "Days to add (negative to subtract)",
+        "value": "30"
+      }
+    ],
+    "actions": [
+      {
+        "id": "calculate",
+        "label": "Calculate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "text",
+        "label": "Resulting date"
+      },
+      {
+        "id": "details",
+        "type": "stats",
+        "label": "Details"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Select or enter a starting date.",
+    "Enter the number of days to add (use a negative number to go backwards).",
+    "Click Calculate to see the new date and its weekday."
+  ],
+  "examples": [
+    "A project deadline is 45 days from today — enter today and 45.",
+    "Find the date 90 days before a birthday for a reminder.",
+    "Calculate the end date of a 14-day free trial."
+  ],
+  "faq": [
+    {
+      "q": "Does it handle leap years and month lengths correctly?",
+      "a": "Yes. It uses the browser's built-in Date object which correctly accounts for leap years and varying month lengths."
+    },
+    {
+      "q": "Can I subtract days?",
+      "a": "Yes. Enter a negative number in the days field to go backwards in time."
+    },
+    {
+      "q": "Is the calculation private?",
+      "a": "Yes. The entire calculation runs locally in your browser; no dates are sent to any server."
+    }
+  ]
+}

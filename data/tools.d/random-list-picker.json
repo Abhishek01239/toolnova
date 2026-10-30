@@ -1,0 +1,76 @@
+{
+  "id": "random-list-picker",
+  "title": "Random List Picker",
+  "h1": "Random List Picker — Draw Winners from a List",
+  "seoTitle": "Random List Picker — Free Online Name Picker",
+  "description": "Paste a list of names or items and randomly pick one or more winners. Perfect for giveaways, classrooms and raffles. Runs privately in your browser.",
+  "intro": "Enter one item per line. Choose how many to pick and get a fair random selection instantly. Nothing is uploaded.",
+  "blurb": "Randomly pick one or more items from a pasted list of names or options.",
+  "keywords": ["random list picker", "name picker", "random winner", "raffle picker", "pick random from list"],
+  "category": "Generators",
+  "added": "2026-10-30",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {
+        "id": "list",
+        "type": "textarea",
+        "label": "List (one item per line)",
+        "rows": 10
+      },
+      {
+        "id": "count",
+        "type": "number",
+        "label": "How many to pick",
+        "value": "1"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pick",
+        "label": "Pick randomly",
+        "primary": true
+      },
+      {
+        "id": "clear",
+        "label": "Clear"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Picked items"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste your list with one name or item on each line.",
+    "Set how many unique items you want to draw.",
+    "Click Pick randomly to see the fair random selection."
+  ],
+  "examples": [
+    "A classroom teacher picks one student to answer from the class list.",
+    "A giveaway host draws three winners from a list of entrants.",
+    "A team picks a random lunch option from a list of restaurants."
+  ],
+  "faq": [
+    {
+      "q": "Is the selection truly random?",
+      "a": "Yes. It uses the browser's Math.random which provides a uniform distribution so every remaining item has an equal chance of being picked."
+    },
+    {
+      "q": "Does it pick unique items?",
+      "a": "Yes. Empty lines are ignored and the same item is not picked more than once in a single draw."
+    },
+    {
+      "q": "Is my list sent to a server?",
+      "a": "No. Everything happens locally in your browser. Your list never leaves your device."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "character-frequency-counter",
+  "title": "Character Frequency Counter",
+  "h1": "Character Frequency Counter — Count Characters in Text",
+  "seoTitle": "Character Frequency Counter — Free Online Text Tool",
+  "description": "Count how often each character appears in any text. See frequencies for letters, numbers, spaces and punctuation. Private and instant in your browser.",
+  "intro": "Paste any text to see a sorted list of every character and how many times it appears. Useful for analysis, puzzles and data cleaning.",
+  "blurb": "Count the frequency of every character in a block of text.",
+  "keywords": ["character frequency", "char counter", "letter frequency", "character count by type", "text analysis"],
+  "category": "Text",
+  "added": "2026-10-30",
+  "popularity": 65,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text to analyse",
+        "rows": 10
+      }
+    ],
+    "actions": [
+      {
+        "id": "count",
+        "label": "Count characters",
+        "primary": true
+      },
+      {
+        "id": "clear",
+        "label": "Clear"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "type": "textarea",
+        "label": "Frequencies"
+      },
+      {
+        "id": "summary",
+        "type": "stats",
+        "label": "Summary"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type the text you want to analyse.",
+    "Click Count characters to generate the frequency list.",
+    "See every unique character sorted by count, plus totals for letters, spaces and more."
+  ],
+  "examples": [
+    "Analyse the letter frequencies in a passage for a cipher or puzzle.",
+    "Check how many spaces or punctuation marks are in a document draft.",
+    "Count specific characters while cleaning or normalising text."
+  ],
+  "faq": [
+    {
+      "q": "Does it count spaces and punctuation?",
+      "a": "Yes. Every character including spaces, tabs, newlines, letters, digits and symbols is counted separately."
+    },
+    {
+      "q": "Is the count case-sensitive?",
+      "a": "Yes. Uppercase and lowercase letters are treated as different characters."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. Counting happens entirely in your browser. The text never leaves your device."
+    }
+  ]
+}
