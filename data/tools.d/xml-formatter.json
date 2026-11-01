@@ -1,66 +1,65 @@
 {
   "id": "xml-formatter",
   "title": "XML Formatter",
-  "h1": "XML Formatter \u2014 Pretty Print and Minify XML",
-  "seoTitle": "Free XML Formatter \u2014 Beautify and Minify XML Online",
-  "description": "Format messy XML into readable indented markup or minify it to a single line. Runs entirely in your browser.",
-  "intro": "Paste XML, choose pretty or minify, and get clean output instantly. No data leaves your device.",
-  "blurb": "Pretty-print or minify XML with one click \u2014 private and free.",
-  "keywords": ["xml formatter", "xml beautifier", "xml pretty print", "minify xml", "xml indent"],
+  "h1": "XML Formatter — Pretty Print and Validate XML",
+  "seoTitle": "Free XML Formatter — Beautify and Validate XML Online",
+  "description": "Format, beautify and check XML structure in your browser. Indent tags, catch basic errors and copy clean output. Private and free.",
+  "intro": "Paste raw XML to format it with proper indentation and see a clear status if the structure looks valid.",
+  "blurb": "Format and beautify XML with proper indentation in the browser.",
+  "keywords": ["xml formatter", "xml beautifier", "pretty print xml", "format xml", "xml validator"],
   "category": "Developer",
-  "added": "2026-10-25",
-  "popularity": 78,
+  "added": "2026-11-01",
+  "popularity": 75,
   "ui": {
     "controls": [
       {
-        "id": "xml",
+        "id": "input",
         "type": "textarea",
         "label": "XML input",
-        "placeholder": "<root><item>value</item></root>",
-        "rows": 12
+        "rows": 12,
+        "placeholder": "<root><item>value</item></root>"
       },
       {
-        "id": "mode",
+        "id": "indent",
         "type": "select",
-        "label": "Output mode",
-        "value": "pretty",
+        "label": "Indentation",
+        "value": "2",
         "options": [
-          {"value": "pretty", "label": "Pretty (indented)"},
-          {"value": "minify", "label": "Minify (compact)"}
+          {"value": "2", "label": "2 spaces"},
+          {"value": "4", "label": "4 spaces"}
         ]
       }
     ],
     "actions": [
-      {"id": "format", "label": "Format XML", "primary": true},
-      {"id": "copy", "label": "Copy result"},
+      {"id": "format", "label": "Format", "primary": true},
       {"id": "clear", "label": "Clear"}
     ],
     "outputs": [
-      {"id": "result", "type": "textarea", "label": "Formatted XML"}
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "Formatted XML"
+      }
     ]
   },
   "howItWorks": [
-    "Paste the XML you want to clean up.",
-    "Choose Pretty for readable indentation or Minify for a compact single line.",
-    "Press Format XML. Copy the result when you are happy with it."
+    "Paste your XML into the input box.",
+    "Choose indentation and press Format.",
+    "The tool pretty-prints the XML if it is well-formed."
   ],
   "examples": [
-    "Turn a one-line API response into indented XML for easier debugging.",
-    "Minify a configuration file before embedding it in a smaller payload.",
-    "Clean up hand-written XML that has inconsistent spacing."
+    "Turn a single-line XML payload into readable nested tags.",
+    "Check basic structure before pasting into a config file.",
+    "Make API response XML easier to read."
   ],
   "faq": [
     {
-      "q": "Is the XML sent to a server?",
-      "a": "No. Formatting uses only your browser's DOMParser and XMLSerializer."
+      "q": "Does this send my XML to a server?",
+      "a": "No. Everything runs locally in your browser. Your data never leaves your device."
     },
     {
-      "q": "What if the XML is invalid?",
-      "a": "The tool shows a clear error message instead of broken output."
-    },
-    {
-      "q": "Does it support namespaces?",
-      "a": "Yes. Standard XML with namespaces is preserved during pretty-printing."
+      "q": "How strict is the validation?",
+      "a": "It checks basic well-formedness. For full schema validation use a dedicated validator."
     }
   ]
 }

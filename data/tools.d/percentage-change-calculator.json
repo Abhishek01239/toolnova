@@ -2,14 +2,14 @@
   "id": "percentage-change-calculator",
   "title": "Percentage Change Calculator",
   "h1": "Percentage Change Calculator — Increase or Decrease",
-  "seoTitle": "Free Percentage Change Calculator — % Increase Decrease",
-  "description": "Calculate the percentage increase or decrease between two values. Shows absolute change and percentage change instantly in your browser.",
-  "intro": "Enter the original and new values to see how much a number has grown or shrunk as a percentage.",
-  "blurb": "Compute percentage increase or decrease between two numbers.",
-  "keywords": ["percentage change", "percent increase", "percent decrease", "percentage difference", "growth rate"],
-  "category": "Math",
-  "added": "2026-10-27",
-  "popularity": 82,
+  "seoTitle": "Free Percentage Change Calculator — From Old to New Value",
+  "description": "Calculate the percentage increase or decrease between two numbers. See the absolute change and the percentage difference instantly. Free and private.",
+  "intro": "Enter an original value and a new value to see the percentage change and the absolute difference.",
+  "blurb": "Calculate percentage increase or decrease between two values.",
+  "keywords": ["percentage change calculator", "percent increase", "percent decrease", "percentage difference"],
+  "category": "Calculator",
+  "added": "2026-11-01",
+  "popularity": 70,
   "ui": {
     "controls": [
       {
@@ -37,34 +37,30 @@
         "label": "Percentage change"
       },
       {
-        "id": "details",
-        "type": "stats",
-        "label": "Details"
+        "id": "absolute",
+        "type": "text",
+        "label": "Absolute change"
       }
     ]
   },
   "howItWorks": [
-    "Enter the starting (original) value and the ending (new) value.",
-    "Click Calculate or change the numbers.",
-    "See the percentage change, absolute difference, and whether it increased or decreased."
+    "Enter the original (old) value.",
+    "Enter the new value.",
+    "Click Calculate to see the percentage change and absolute difference."
   ],
   "examples": [
-    "From 80 to 100 is a 25% increase.",
-    "From 200 to 150 is a 25% decrease.",
-    "Useful for tracking price changes, growth, or score improvements."
+    "From 100 to 125 is a 25% increase.",
+    "From 80 to 60 is a 25% decrease.",
+    "Useful for price changes, growth rates or score improvements."
   ],
   "faq": [
     {
-      "q": "What is the formula for percentage change?",
-      "a": "((New − Old) / |Old|) × 100. A positive result means increase; negative means decrease."
+      "q": "How is percentage change calculated?",
+      "a": "(new - old) / old * 100. Positive means increase, negative means decrease."
     },
     {
       "q": "What if the original value is zero?",
-      "a": "Percentage change from zero is undefined. The tool will show a message instead of a number."
-    },
-    {
-      "q": "Is my data sent anywhere?",
-      "a": "No. All calculations happen locally in your browser."
+      "a": "Percentage change is undefined when the starting value is zero. The tool will show a message."
     }
   ]
 }
