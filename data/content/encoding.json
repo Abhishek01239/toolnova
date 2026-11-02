@@ -1,0 +1,138 @@
+{
+  "base64-encoder-decoder": {
+    "overview": [
+      "The Base64 encoder converts readable text into the Base64 alphabet and the decoder reverses the process. It is useful when you need to embed text in a configuration value, a data URL, an email header or a JSON field that expects plain ASCII characters.",
+      "Base64 is an encoding, not encryption. It turns arbitrary bytes into 64 printable symbols so that binary or non-ASCII data can travel through systems that only handle text. Anyone who sees a Base64 string can decode it trivially. Never use it to protect a password, an API key or personal data; use encryption or a secret manager for that.",
+      "The encoder reads your text as UTF-8, so accented letters, emoji and non-Latin scripts are handled correctly. The decoder validates the input, ignores whitespace, and rejects strings whose length or characters cannot form valid Base64. Output is standard Base64 with + and / characters, not the URL-safe variant."
+    ],
+    "useCases": [
+      "Encode a short text snippet for a data URL or a test fixture.",
+      "Decode a Base64 value copied from a log, cookie or API response.",
+      "Check whether a suspicious string is simply encoded text.",
+      "Prepare an ASCII-safe representation of UTF-8 text for an older system.",
+      "Verify that two encoded strings differ after a small edit."
+    ],
+    "workedExample": "Encode the word \"ToolNova\". Its UTF-8 bytes are grouped into threes and mapped to the Base64 alphabet, producing \"VG9vbE5vdmE=\". Decoding that string returns \"ToolNova\". For a non-ASCII example, \"café\" encodes to \"Y2Fmw6k=\" because the é is two UTF-8 bytes; decoding gives the original word back, not a mangled character.",
+    "limits": [
+      "Text only. The tool does not accept file uploads, so it cannot encode an image, PDF or other binary file.",
+      "Standard Base64 is used. URL-safe Base64 with - and _ instead of + and / must be converted before decoding, and existing line breaks are ignored.",
+      "Invalid input is rejected rather than partially decoded, so a truncated string returns an error instead of a misleading result.",
+      "Base64 increases size by roughly one third; it is not compression and offers no confidentiality."
+    ],
+    "privacy": "Encoding and decoding happen entirely in your browser with the Web APIs. Your text is never sent to ToolNova or stored.",
+    "faq": [
+      {
+        "q": "Is Base64 secure?",
+        "a": "No. It is a reversible encoding with no key. Treat a Base64 string as public text and encrypt anything sensitive before encoding it."
+      },
+      {
+        "q": "Why does my Base64 string end with equals signs?",
+        "a": "The = characters pad the final group to a multiple of four symbols. They carry no data and are required by the standard form, though some systems omit them."
+      },
+      {
+        "q": "Can I decode a JWT segment with this tool?",
+        "a": "JWT segments use Base64url and are missing padding, so they may need conversion first. The JWT decoder tool handles that automatically."
+      }
+    ]
+  },
+  "html-entity-encoder": {
+    "overview": [
+      "The HTML entity encoder replaces the five characters that have special meaning in HTML with their named entities: ampersand becomes &amp;, less-than becomes &lt;, greater-than becomes &gt;, double quote becomes &quot; and apostrophe becomes &#39;. The decoder performs the reverse, turning entities back into characters.",
+      "Escaping these characters is what lets you display code samples, angle brackets, quotes and ampersands as text instead of having the browser interpret them as markup. It is also a basic defence against cross-site scripting when user input must be inserted into HTML, although modern applications should still use context-aware escaping on the server and a strict content security policy.",
+      "The decoder uses the browser's own HTML parsing, so it understands named and numeric entities such as &copy;, &euro; and &#x1F600;. That makes it convenient for reading encoded content copied from a page source, an email template or a CMS field."
+    ],
+    "useCases": [
+      "Display an HTML snippet as text in a tutorial or documentation page.",
+      "Escape a user-supplied string before inserting it into an HTML template.",
+      "Decode entities in text copied from a web page source or RSS feed.",
+      "Debug why an ampersand in a URL is breaking an HTML attribute.",
+      "Prepare content for an email template that escapes characters aggressively."
+    ],
+    "workedExample": "Enter the line <a href=\"shop?a=1&b=2\">Deals & more</a>. The encoder returns &lt;a href=&quot;shop?a=1&amp;b=2&quot;&gt;Deals &amp; more&lt;/a&gt;. If you paste that encoded line into the decoder, it returns the original markup exactly. Notice that the ampersand inside the URL is escaped too, which is required for valid HTML attributes.",
+    "limits": [
+      "The encoder escapes only five characters. It does not encode every non-ASCII character, and it is not a complete sanitiser for untrusted HTML.",
+      "Decoding relies on the browser's parser, so malformed entities may be left as-is or interpreted differently from a server-side library.",
+      "The tool works on text, not on a live DOM; it cannot tell whether a string will be placed in an attribute, a script block or a style context where different escaping rules apply.",
+      "Escaping is not encryption and does not make unsafe markup safe to inject."
+    ],
+    "privacy": "Conversion happens locally in the page. The text you paste is not transmitted, logged or retained.",
+    "faq": [
+      {
+        "q": "Does this prevent XSS?",
+        "a": "It helps for HTML text and attribute contexts, but correct output encoding must match the context, and URLs, JavaScript and CSS need different rules. Use a proven escaping library on the server as well."
+      },
+      {
+        "q": "Why is the apostrophe encoded as a number?",
+        "a": "&#39; is the numeric form of the apostrophe. The named entity &apos; is not defined in older HTML versions, so the numeric form is more portable."
+      }
+    ]
+  },
+  "morse-code-translator": {
+    "overview": [
+      "The Morse code translator converts text into International Morse Code and back again. It supports the 26 Latin letters, the digits 0 to 9 and a set of common punctuation marks including full stop, comma, question mark, apostrophe, exclamation mark, slash, brackets, ampersand, colon, semicolon, equals, plus, hyphen, underscore, quotation mark, dollar sign and at sign.",
+      "In text-to-Morse mode, letters within a word are separated by a single space and words are separated by a slash with spaces around it. In Morse-to-text mode, the translator accepts that convention, treats underscores as hyphens for convenience, and joins the decoded letters back into words. Characters it does not recognise are replaced with a hash mark and counted, so you can see at a glance that something was lost.",
+      "Morse is a timing-based code rather than a simple character map. Real transmissions distinguish dots, dashes, gaps between symbols, gaps between letters and longer gaps between words. This tool works on the written representation, which is useful for learning, puzzles and accessibility experiments, but it does not generate or decode audio."
+    ],
+    "useCases": [
+      "Translate a short message for a puzzle, game or classroom activity.",
+      "Decode a Morse string found in a film, book or escape room.",
+      "Check the correct code for a punctuation mark.",
+      "Create a themed greeting or label.",
+      "Teach the difference between letter gaps and word gaps."
+    ],
+    "workedExample": "Translate \"SOS help\". S is three dots, O is three dashes and S is three dots, so the first word becomes \"... --- ...\". H is four dots, E is one dot, L is dot-dash-dot-dot and P is dot-dash-dash-dot, giving \".... . .-.. .--.\". The complete output is \"... --- ... / .... . .-.. .--.\". Decoding it returns \"SOS HELP\", because the reverse conversion produces uppercase text.",
+    "limits": [
+      "Only the Latin alphabet, digits and the listed punctuation are supported. Accented letters, emoji and other scripts are marked as unknown.",
+      "The output is written Morse, not audio or timed keying, so it does not reproduce the rhythm of a real transmission.",
+      "Morse-to-text expects slashes between words. A message that uses only spaces between words will be read as one long word.",
+      "Decoding is case-insensitive but returns uppercase letters, so the original capitalisation cannot be recovered."
+    ],
+    "privacy": "The translation runs in your browser. Messages are not uploaded, and nothing is saved after the page is closed.",
+    "faq": [
+      {
+        "q": "What separates letters and words?",
+        "a": "A single space separates letters in a word, and a slash with spaces around it separates words. For example, \"... --- ... / .... . .-.. .--.\" means \"SOS HELP\"."
+      },
+      {
+        "q": "Why are some characters shown as #?",
+        "a": "The character has no entry in the supported Morse table. The hash marks the gap and the unknown-token counter tells you how many were replaced."
+      }
+    ]
+  },
+  "url-encoder-decoder": {
+    "overview": [
+      "The URL encoder converts text into percent-encoded form using JavaScript's encodeURIComponent, and the decoder reverses it. Percent encoding represents characters that are not allowed or would be ambiguous in a URL as a percent sign followed by two hexadecimal digits, so a space becomes %20 and an ampersand becomes %26.",
+      "This tool encodes a URL component, not a whole URL. That distinction matters: encodeURIComponent escapes colons, slashes, question marks and ampersands, which are structural characters in a full URL. If you paste a complete address into the encoder, it will encode the separators too and the result will no longer work as a link. Encode individual values, such as a search term or a redirect target, and leave the surrounding URL structure alone.",
+      "The decoder converts %XX escapes back into characters and treats a plus sign as a space, matching the common form-encoding convention. If a percent escape is incomplete or invalid, the decoder reports an error instead of returning a partially corrupted string."
+    ],
+    "useCases": [
+      "Encode a search query or a value inside a query string.",
+      "Decode a redirect or tracking URL to see where it really points.",
+      "Encode a filename or path segment that contains spaces or symbols.",
+      "Read an encoded email address in a mailto link.",
+      "Debug double-encoding problems in an API request."
+    ],
+    "workedExample": "Enter the search phrase \"red shoes & socks\". The encoder returns red%20shoes%20%26%20socks. The space becomes %20 and the ampersand becomes %26, so the value can safely sit inside a query parameter such as ?q=red%20shoes%20%26%20socks. Decoding that value returns \"red shoes & socks\". If you encode an entire URL, the :// and ? separators are escaped as well, which shows why whole URLs should not be passed through this function.",
+    "limits": [
+      "encodeURIComponent is designed for URL components. It is not the correct choice for encoding a complete URL or a path with slashes.",
+      "The decoder maps + to a space, which is right for form data but wrong for some path segments where a literal plus is meaningful.",
+      "Only UTF-8 percent encoding is handled. Other character encodings need conversion before decoding.",
+      "Encoding twice produces double-encoded output such as %2520; decode only as many times as the data was encoded."
+    ],
+    "privacy": "Encoding and decoding are performed locally in your browser. The text you enter is never sent to a server.",
+    "faq": [
+      {
+        "q": "Why did my full URL break after encoding?",
+        "a": "The encoder escaped the colon, slashes and question mark, which are part of the URL's structure. Encode only the values you insert into the URL, not the URL itself."
+      },
+      {
+        "q": "What is the difference between %20 and +?",
+        "a": "Both can represent a space in different contexts. %20 is the standard URL encoding; + is used in form submissions and application/x-www-form-urlencoded data."
+      },
+      {
+        "q": "Can I use this for Unicode text?",
+        "a": "Yes. The encoder works on UTF-8, so accented letters and emoji become multi-byte percent escapes and decode back correctly."
+      }
+    ]
+  }
+}

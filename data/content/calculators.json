@@ -1,0 +1,106 @@
+{
+  "discount-calculator": {
+    "overview": [
+      "The discount calculator takes an original price and a percentage discount and returns the amount saved and the price you actually pay. It is a two-line calculation, but doing it in your head at a sale rack or while comparing two offers is error-prone, especially when the discount is an awkward figure such as 17% or 33%.",
+      "The arithmetic is straightforward: the saving is the original price multiplied by the discount rate, and the final price is the original minus the saving. The tool shows all four values so you can check the result and quote the saving separately, which is useful when a receipt or expense form asks for the discount amount rather than the net price.",
+      "Discounts are not always directly comparable. A 20% discount followed by an extra 10% off is not 30% off the original; the second discount applies to the already reduced price, giving 28% off in total. This calculator handles one percentage at a time, so apply successive discounts in sequence for that kind of offer."
+    ],
+    "useCases": [
+      "Work out the final price during a percentage-off sale.",
+      "Check that a till receipt applied the advertised discount.",
+      "Calculate the saving on a bulk purchase before approving it.",
+      "Compare a percentage discount with a fixed-amount coupon.",
+      "Work out the net cost of an item for a reimbursement claim."
+    ],
+    "workedExample": "An item is listed at $1,200 with a 25% discount. The saving is 1,200 × 0.25 = $300.00 and the final price is $900.00. If the same item were discounted by a further 10% at the till, that second discount would apply to $900, taking off $90 and leaving $810. The combined reduction is $390, or 32.5% of the original price, not the 35% that adding the two percentages together would suggest.",
+    "limits": [
+      "Only one percentage discount is applied at a time. Successive or stacked discounts must be entered one after another.",
+      "The tool calculates a percentage reduction; it does not compare a percentage discount with a fixed-price offer or account for tax.",
+      "Negative values are not supported, and a discount above 100% is arithmetically possible but not meaningful for pricing.",
+      "Currency symbols are not added; enter the amount in whatever unit you are using."
+    ],
+    "privacy": "Prices and percentages are calculated in your browser and are never uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why isn't 20% off then 10% off the same as 30% off?",
+        "a": "The second discount applies to the reduced price, not the original. On a $100 item, 20% off leaves $80, and 10% off that is $8, for a total saving of $28, or 28%."
+      },
+      {
+        "q": "How do I find the original price from a sale price?",
+        "a": "Divide the sale price by (1 − discount rate). For example, $80 after 20% off means the original was 80 ÷ 0.8 = $100."
+      }
+    ]
+  },
+  "emi-calculator": {
+    "overview": [
+      "The EMI calculator estimates the equated monthly instalment on a fixed-rate loan. Enter the loan amount, the annual interest rate and the tenure in months, and the tool returns the monthly payment together with the total interest and the total amount repayable over the life of the loan.",
+      "EMI stands for equated monthly instalment: a constant payment that clears both interest and principal by the end of the term. The lender first charges interest on the outstanding balance and uses the remainder to reduce the principal. Because the balance falls slowly at first, early instalments contain a large interest component; the split shifts toward principal over time.",
+      "The tool uses the standard reducing-balance formula EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the principal, r is the monthly interest rate and n is the number of months. It is useful for personal loans, car loans, education loans and home loans quoted on a reducing-balance basis, provided the rate is fixed for the period you are modelling."
+    ],
+    "useCases": [
+      "Estimate the monthly outgo before applying for a personal or car loan.",
+      "Compare offers with different rates and tenures on the same principal.",
+      "See how much total interest a longer tenure adds.",
+      "Check a lender's repayment schedule against an independent calculation.",
+      "Decide whether a shorter tenure is affordable given the higher instalment."
+    ],
+    "workedExample": "Borrow ₹5,00,000 at 9% per year for 60 months. The monthly rate is 0.09 ÷ 12 = 0.0075 and there are 60 instalments. The formula gives an EMI of ₹10,379.18. Over five years you repay 60 × 10,379.18 = ₹6,22,750.66, so the total interest is ₹1,22,750.66. Stretching the same loan to 84 months lowers the monthly figure but raises the total interest, which is the trade-off the calculator makes visible.",
+    "limits": [
+      "The rate is assumed fixed for the full tenure. Floating-rate loans change when the benchmark rate moves, so the actual EMI or tenure may be adjusted.",
+      "Processing fees, insurance, documentation charges and prepayment penalties are not included.",
+      "The model assumes payments are made on time and that there are no extra principal repayments or moratoriums.",
+      "Lenders may round instalments and charge interest daily, so the exact schedule can differ slightly from the estimate."
+    ],
+    "privacy": "The loan figures are processed entirely in your browser. No amount, rate or tenure is sent to ToolNova or saved.",
+    "faq": [
+      {
+        "q": "What is the difference between flat and reducing interest?",
+        "a": "Flat interest is calculated on the original principal for the whole term, which makes the effective cost higher. This calculator uses reducing balance, where interest is charged on the outstanding amount."
+      },
+      {
+        "q": "Does a longer tenure always cost more?",
+        "a": "In total interest, usually yes, because the balance stays outstanding for longer. The monthly instalment is lower, so the right choice depends on cash flow as well as total cost."
+      },
+      {
+        "q": "Can I use this for a home loan?",
+        "a": "Yes, if the rate is fixed for the period you are modelling. Floating-rate home loans and loans with stepped rates need a schedule that reflects each rate change."
+      }
+    ]
+  },
+  "gpa-calculator": {
+    "overview": [
+      "The GPA calculator converts a list of course grades and credit values into a weighted grade point average. Enter one course per line in the form \"grade credits\", choose whether grades are letter grades on a 4.0 scale or numeric grade points, and the tool returns the GPA, total credits and total quality points.",
+      "GPA is a credit-weighted average, not a simple mean of grades. A three-credit course affects the result three times as much as a one-credit course. The tool multiplies each grade point by its credit value, sums those quality points and divides by the total credits. That is why a single low grade in a high-credit course can pull the average down more than a low grade in a minor elective.",
+      "The letter-grade scale used here maps A+ and A to 4.0, A− to 3.7, B+ to 3.3, B to 3.0, B− to 2.7, C+ to 2.3, C to 2.0, C− to 1.7, D+ to 1.3, D to 1.0, D− to 0.7 and F to 0. Institutions vary, so check your own transcript key before relying on the number."
+    ],
+    "useCases": [
+      "Estimate your GPA before official results are released.",
+      "Check which courses are dragging an average down.",
+      "Model the grades needed next term to reach a target GPA.",
+      "Convert a mixed list of letter grades into a single weighted figure.",
+      "Verify a GPA calculation shown in a scholarship or transfer application."
+    ],
+    "workedExample": "Suppose you took three courses: an A in a 3-credit course, a B+ in a 4-credit course and an A− in a 3-credit course. The grade points are 4.0, 3.3 and 3.7. Quality points are 4.0 × 3 = 12.0, 3.3 × 4 = 13.2 and 3.7 × 3 = 11.1, for a total of 36.3 across 10 credits. The GPA is 36.3 ÷ 10 = 3.63. Notice that the B+ carries the most weight because it sits in the largest course.",
+    "limits": [
+      "The letter scale is fixed to a common 4.0 mapping. Universities that use different values, such as A+ = 4.3 or no A+ grade, will produce a different result.",
+      "Only graded courses are included. Pass/fail, withdrawn, incomplete and transfer credits are not modelled unless you convert them to grade points yourself.",
+      "Credits must be positive numbers, and each line needs a recognised grade or a numeric point value in points mode.",
+      "The result is an estimate for planning, not an official transcript calculation."
+    ],
+    "privacy": "Course names and grades never leave your browser. The list is parsed locally and is not uploaded or retained.",
+    "faq": [
+      {
+        "q": "How do I enter a course with no credits?",
+        "a": "Every line needs a positive credit value because the GPA is credit-weighted. Omit zero-credit courses or leave them out of the calculation."
+      },
+      {
+        "q": "What does points mode do?",
+        "a": "It treats the first value on each line as a numeric grade point instead of a letter, so you can use a 5.0, 10-point or percentage-based scale with your own conversion."
+      },
+      {
+        "q": "Is this the same as a cumulative GPA?",
+        "a": "It becomes a cumulative GPA if you include every course taken so far. For a term GPA, enter only that term's courses."
+      }
+    ]
+  }
+}

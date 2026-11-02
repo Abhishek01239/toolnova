@@ -21,7 +21,7 @@
   }
 
   function escapeHtml(s) {
-    return s.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
   function mdToHtml(md) {
@@ -56,7 +56,11 @@
     s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
     s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, label, url) {
+      var target = url.trim();
+      if (!/^(https?:\/\/|mailto:|\/|#)/i.test(target)) target = '#';
+      return '<a href="' + target + '">' + label + '</a>';
+    });
     return s;
   }
 

@@ -1,0 +1,182 @@
+{
+  "keyword-density-checker": {
+    "overview": [
+      "The keyword density checker counts how often a word or phrase appears in a block of text and expresses that count as a percentage of the total word count. Paste the article, enter the target keyword, and the tool reports the number of matches, the number of words and the resulting density.",
+      "Density is a rough diagnostic, not a ranking factor. It is most useful for spotting two opposite problems: a page that never mentions the topic it claims to cover, and a page that repeats a phrase so mechanically that it reads badly. Search engines understand synonyms and context, so a natural article can rank well with a modest density and no exact-match repetition.",
+      "The checker lowercases the text and counts non-overlapping occurrences of the exact phrase. For a multi-word phrase, every occurrence counts as one match, even though it spans several words. That is why the percentage can look low on long articles: a phrase repeated ten times in a 2,000-word piece is only 0.5%, which is often perfectly healthy."
+    ],
+    "useCases": [
+      "Check that an article actually mentions its primary topic several times.",
+      "Find accidental over-repetition before publishing.",
+      "Compare density across two drafts written for the same query.",
+      "Audit a product description for awkward keyword stuffing.",
+      "Confirm that a rewritten page still contains its target phrase."
+    ],
+    "workedExample": "Suppose an 800-word draft contains the phrase \"budget planner\" six times. The density is 6 ÷ 800 × 100 = 0.75%. If the same phrase appears 40 times, the density is 5%, and reading the draft aloud will usually reveal the repetition. A density around 0.5% to 2% for a primary phrase is common in natural writing, but the right figure depends on length, topic and how many related terms the page uses.",
+    "limits": [
+      "Matching is exact and literal. It does not count synonyms, plurals, stemming variants or related concepts, so a page that says \"budgeting tool\" may score zero for \"budget planner\".",
+      "Counting is by substring, not by word boundaries, so a search for \"cat\" can match inside \"category\". Use a distinctive phrase to avoid false positives.",
+      "Occurrences are non-overlapping, and density is measured against whitespace-delimited words rather than tokens, so punctuation and hyphenation can shift the denominator slightly.",
+      "Density is not a ranking score. A higher number does not mean better SEO, and chasing a target percentage can make writing worse."
+    ],
+    "privacy": "The pasted text and keyword are processed in your browser and are never transmitted to a server or stored after you close the page.",
+    "faq": [
+      {
+        "q": "What is a good keyword density?",
+        "a": "There is no official target. Most natural articles land somewhere between 0.5% and 2% for a primary phrase. Write for readers first and use the number to catch obvious repetition."
+      },
+      {
+        "q": "Does the tool count partial matches?",
+        "a": "Yes, it uses literal substring matching, which is why a distinctive multi-word phrase gives cleaner results than a short common word."
+      },
+      {
+        "q": "Should I include the keyword in headings and the title?",
+        "a": "It usually helps clarity to mention the topic early, but the checker only measures body text. Headings and metadata are outside its scope."
+      }
+    ]
+  },
+  "meta-length-checker": {
+    "overview": [
+      "The meta length checker measures the character count of a page title and meta description and labels each one as good, long or too long. Search results and social previews truncate text at different points, so keeping both fields within common limits reduces the chance that the most important words are cut off.",
+      "As a broad guide, titles work best at roughly 50 to 60 characters and descriptions at roughly 150 to 160 characters. These are not hard rules: character width varies by letter, and Google sometimes rewrites titles and descriptions entirely. The checker reports raw character counts, which is a stable and predictable measure you can apply before publishing.",
+      "The tool is deliberately simple. It does not estimate pixel width, count emoji as double width, or fetch a live page. That makes it fast and private, and it keeps the guidance easy to understand: shorten the field until the label turns good, then check the result in a search preview."
+    ],
+    "useCases": [
+      "Check a title before publishing a blog post or product page.",
+      "Trim an overlong description so the call to action is not cut off.",
+      "Standardise metadata across a set of pages in a CMS.",
+      "Review titles imported from another site during a migration.",
+      "Catch empty title or description fields that would otherwise be auto-generated."
+    ],
+    "workedExample": "A title of 58 characters is labelled Good, while 66 characters is labelled Long and 84 characters is Too long. A description of 152 characters is Good; 171 characters is Long and 205 characters is Too long. If a 205-character description must keep its final sentence, move that sentence into the page body and end the description with the primary benefit instead.",
+    "limits": [
+      "Counts are plain JavaScript string lengths, so accented characters, emoji and some scripts can count differently from how a search engine displays them.",
+      "Character count is not pixel width. A title of 60 narrow letters may fit where 60 wide letters are truncated.",
+      "Search engines may rewrite or ignore titles and descriptions, so passing the check does not guarantee the snippet that appears.",
+      "The tool checks length only; it does not assess relevance, duplication, keyword use or whether the description is compelling."
+    ],
+    "privacy": "Titles and descriptions are measured locally in your browser. They are not sent to ToolNova, saved, or shared with any third party.",
+    "faq": [
+      {
+        "q": "Is 60 characters a hard limit for titles?",
+        "a": "No. It is a practical guideline. Google truncates by pixel width and may rewrite the title, so aim for clarity in the first 50 to 60 characters rather than treating 60 as a rule."
+      },
+      {
+        "q": "Why does my description get cut off even when it is under 160 characters?",
+        "a": "Character width, language and the device all affect display. Also, search engines sometimes generate their own snippet from page content instead of using your description."
+      },
+      {
+        "q": "Should every page have a unique description?",
+        "a": "Yes. Duplicate descriptions waste the opportunity to describe each page accurately and can make results look repetitive."
+      }
+    ]
+  },
+  "robots-txt-generator": {
+    "overview": [
+      "The robots.txt generator builds a plain-text crawl policy from a user-agent, a default policy and a list of paths. Choose whether the site is allowed by default with specific paths disallowed, or blocked by default with specific paths allowed, then optionally add a sitemap URL. The output is ready to paste into a robots.txt file.",
+      "The two modes produce different files. Allow mode writes \"Allow: /\" followed by a Disallow line for each path you list. Disallow mode writes \"Disallow: /\" followed by an Allow line for each exception. The second pattern is useful for staging sites or for blocking most of a site while keeping a few public pages crawlable.",
+      "A robots.txt file is a voluntary crawling instruction, not a security control. Well-behaved search engines honour it, but scrapers and malicious bots can ignore it. Anything that must not be public needs authentication or server-side access control, not a Disallow rule."
+    ],
+    "useCases": [
+      "Block a staging site from being indexed while leaving the home page crawlable.",
+      "Keep search engines out of admin, cart, search-result or account pages.",
+      "Publish a sitemap location for crawlers to discover.",
+      "Create a starting file for a new site and then refine it by hand.",
+      "Document a deliberate crawl policy for a client or team."
+    ],
+    "workedExample": "To block a staging site except for its home page, choose Disallow as the default policy and list \"/\" as the allowed path. The output starts with \"User-agent: *\", then \"Disallow: /\", then \"Allow: /\". To block only an admin area and a internal search page on a normal site, choose Allow as the policy and list \"/admin\" and \"/search\". The generator adds a Sitemap line only when you provide an absolute https URL.",
+    "limits": [
+      "The generator emits one user-agent group. Complex files with separate rules for Googlebot, Bingbot and others must be edited by hand.",
+      "Path matching in robots.txt follows prefix rules, not glob or regular-expression semantics; the tool does not validate whether a path is the right prefix.",
+      "It does not test the file against a live site or report crawl errors, and it cannot guarantee that every crawler will obey the rules.",
+      "A sitemap URL must include http:// or https://; relative values are rejected."
+    ],
+    "privacy": "The policy is assembled in your browser. No URLs, paths or sitemap addresses are uploaded to ToolNova.",
+    "faq": [
+      {
+        "q": "Can robots.txt hide private pages?",
+        "a": "No. It only asks crawlers not to fetch a URL. Anyone with the address can still open it, so protect private content with authentication."
+      },
+      {
+        "q": "Does Disallow remove a page from search results?",
+        "a": "Not necessarily. A blocked URL can still be indexed from links. To keep a page out of results, use a noindex directive on the page itself rather than relying on robots.txt."
+      },
+      {
+        "q": "Where should the file live?",
+        "a": "At the root of the domain, for example https://example.com/robots.txt. Rules in subdirectories are not treated as site-wide policy."
+      }
+    ]
+  },
+  "slug-generator": {
+    "overview": [
+      "The slug generator converts a title or phrase into a URL-friendly identifier. It normalises accented characters, lowercases the text, removes punctuation and symbols, collapses whitespace and separators, and joins the remaining words with either a hyphen or an underscore.",
+      "A clean slug is easier to read, easier to share and less likely to break when copied between systems. Hyphens are the usual choice for web URLs and are treated as word separators by search engines; underscores are common in some content systems but are often read as joining words. Whichever you choose, consistency across a site matters more than the individual choice.",
+      "The tool works entirely on the text you type, so it cannot check whether a slug is already taken. Before publishing, confirm that the final URL is unique and that changing an existing slug will not break inbound links without a redirect."
+    ],
+    "useCases": [
+      "Turn a blog post title into a readable URL path.",
+      "Create consistent slugs for product names with spaces and punctuation.",
+      "Remove accents from a title while keeping the words intelligible.",
+      "Generate filenames or anchor identifiers from headings.",
+      "Standardise slugs during a content migration."
+    ],
+    "workedExample": "Enter \"Café Crème: 10 Tips & Tricks!\" with a hyphen separator. Normalisation turns é and è into plain e characters, lowercasing gives \"cafe creme: 10 tips & tricks!\", punctuation is removed and the remaining words are joined as \"cafe-creme-10-tips-tricks\". With an underscore separator the result is \"cafe_creme_10_tips_tricks\". Leading, trailing and repeated separators are removed automatically.",
+    "limits": [
+      "Only Latin letters, digits, spaces, hyphens and underscores survive. Text in Cyrillic, Arabic, Chinese, Japanese or other non-Latin scripts is stripped, which can produce an empty slug.",
+      "The tool does not transliterate non-Latin scripts into Latin letters, and it does not consult a dictionary to shorten long titles.",
+      "It cannot detect duplicate slugs or reserved words in your CMS, and it does not create redirects when a slug changes.",
+      "Repeated separators are collapsed, so intentional double hyphens are not preserved."
+    ],
+    "privacy": "The text is converted in your browser. Nothing is uploaded, and the generated slug is not stored by ToolNova.",
+    "faq": [
+      {
+        "q": "Should I use hyphens or underscores?",
+        "a": "Hyphens are the safer default for public web URLs because they read as spaces and are widely treated as word separators. Use underscores only if your platform already does."
+      },
+      {
+        "q": "What happens to non-English characters?",
+        "a": "Accented Latin letters are reduced to their base letter. Non-Latin scripts are removed because the tool does not transliterate, so you may need to write a Latin slug manually."
+      },
+      {
+        "q": "Can I change a slug after publishing?",
+        "a": "Yes, but add a permanent redirect from the old URL so existing links and search rankings carry over."
+      }
+    ]
+  },
+  "utm-link-builder": {
+    "overview": [
+      "The UTM link builder appends campaign parameters to a landing page URL so analytics tools can attribute visits to a specific source, medium and campaign. Enter the destination plus the campaign details, and the tool returns a complete URL with properly encoded query parameters.",
+      "The five standard parameters are utm_source, utm_medium, utm_campaign, utm_term and utm_content. Source identifies where the traffic came from, medium describes the channel, campaign groups related activity, term is traditionally used for paid keywords and content distinguishes variants such as two versions of an ad or email button. Source, medium and campaign are required here because a link missing any of them is usually reported as direct or unattributed.",
+      "Consistency is what makes UTM data usable. Decide on lowercase conventions, use the same medium names across teams, and document the scheme. A link tagged \"Facebook\" and another tagged \"facebook\" will appear as two separate sources in most reports, quietly fragmenting your data."
+    ],
+    "useCases": [
+      "Tag links in a newsletter so email traffic is separated from organic traffic.",
+      "Distinguish social posts by platform, campaign and creative variant.",
+      "Attribute traffic from a partner or affiliate placement.",
+      "Build consistent links for a multi-channel product launch.",
+      "Compare two calls to action using different utm_content values."
+    ],
+    "workedExample": "Take the landing page https://example.com/pricing and enter source \"newsletter\", medium \"email\", campaign \"spring-launch\", content \"header-cta\" and leave term blank. The generated URL is https://example.com/pricing?utm_source=newsletter&utm_medium=email&utm_campaign=spring-launch&utm_content=header-cta. Blank optional fields are omitted rather than added as empty parameters, and existing query parameters on the destination are preserved.",
+    "limits": [
+      "The tool builds and encodes the URL but does not shorten it, validate that the destination exists, or test it in an analytics platform.",
+      "It does not enforce naming conventions or lowercase values, so inconsistent input produces inconsistent reports.",
+      "Campaign data is visible in the URL and may be shared when the link is copied; never put personal or confidential information in a UTM value.",
+      "The destination must be an absolute http or https URL, and source, medium and campaign are mandatory."
+    ],
+    "privacy": "The URL and campaign values are assembled in your browser. ToolNova does not receive, log or retain the links you build.",
+    "faq": [
+      {
+        "q": "Are UTM parameters case-sensitive?",
+        "a": "Analytics platforms generally treat values as case-sensitive, so \"Email\" and \"email\" can become separate mediums. Pick lowercase and stay consistent."
+      },
+      {
+        "q": "Should I use UTMs on internal links?",
+        "a": "No. Tagging internal links restarts the session and overwrites the original source, which corrupts attribution. Reserve UTMs for inbound links from outside your site."
+      },
+      {
+        "q": "Does the builder keep existing query parameters?",
+        "a": "Yes. It adds the UTM values to the existing URL and preserves unrelated parameters, replacing a UTM key only if you supply a new value for it."
+      }
+    ]
+  }
+}

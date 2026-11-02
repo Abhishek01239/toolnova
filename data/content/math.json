@@ -1,0 +1,280 @@
+{
+  "average-calculator": {
+    "overview": [
+      "The average calculator accepts a list of numbers separated by commas, spaces or line breaks and reports the count, sum, mean, median and mode. It is a quick way to summarise a data set without opening a spreadsheet, and it shows the intermediate values so you can check the result.",
+      "Mean describes the arithmetic centre, median shows the middle value and is less affected by extreme outliers, and mode identifies the most frequent value. Looking at all three together gives a more honest picture than a single average."
+    ],
+    "useCases": [
+      "Averaging test scores or survey ratings.",
+      "Finding the median price in a list where one very high value would distort the mean.",
+      "Checking which value appears most often in a set of responses.",
+      "Sanity-checking a spreadsheet calculation with an independent result."
+    ],
+    "workedExample": "Enter 4, 8, 15, 16, 23, 42 and 8. There are seven values, the sum is 116 and the mean is about 16.57. Sorted, the middle value is 16 and the most frequent value is 8, so the summary reports median 16 and mode 8.",
+    "limits": [
+      "Only finite decimal numbers are supported. Text, ranges and spreadsheet formulas are rejected or ignored.",
+      "The mode can be multiple values, and it is undefined when every value appears exactly once.",
+      "The calculation uses JavaScript floating-point arithmetic, so very large or high-precision values may show small rounding differences."
+    ],
+    "privacy": "The list is parsed and summarised in your browser. No values are uploaded or retained.",
+    "faq": [
+      {
+        "q": "What happens if there are two middle values?",
+        "a": "The median is the mean of the two middle values. For 1, 2, 3, 4 the median is 2.5."
+      }
+    ]
+  },
+  "fraction-calculator": {
+    "overview": [
+      "The fraction calculator adds, subtracts, multiplies and divides two fractions. It accepts proper fractions such as 3/4, whole numbers and mixed numbers such as 1 1/2, then returns the simplified fraction, a mixed-number form when the result exceeds one, and the decimal equivalent.",
+      "Showing all three representations makes the answer easier to use: the simplified fraction is exact, the mixed form is readable in everyday contexts, and the decimal is convenient for comparison or measurement."
+    ],
+    "useCases": [
+      "Checking a recipe that uses fractional quantities.",
+      "Solving homework problems involving mixed numbers.",
+      "Converting a result between fraction and decimal form.",
+      "Verifying a manual calculation before measuring or cutting material."
+    ],
+    "workedExample": "Add 1 1/2 and 3/4. The first value becomes 3/2, the common denominator is 4, so the sum is 6/4 plus 3/4, which is 9/4. The calculator shows 2 1/4 and 2.25 as the decimal form.",
+    "limits": [
+      "Input must be numeric fractions, whole numbers or mixed numbers. Algebraic fractions and variables are not supported.",
+      "Division by zero is rejected rather than returning infinity.",
+      "Very large numerators or denominators can exceed safe integer precision; ordinary school or recipe-sized values are well within range."
+    ],
+    "privacy": "The arithmetic runs locally in your browser. No values are transmitted or stored.",
+    "faq": [
+      {
+        "q": "Does the calculator reduce the result?",
+        "a": "Yes. The result is simplified using the greatest common divisor, so 2/4 is shown as 1/2."
+      },
+      {
+        "q": "How do I enter a negative fraction?",
+        "a": "Put the minus sign before the whole number or the numerator, for example -1 1/2 or -3/4."
+      }
+    ]
+  },
+  "gcd-lcm-calculator": {
+    "overview": [
+      "The GCD and LCM calculator finds the greatest common divisor and least common multiple of a list of integers. It uses the Euclidean algorithm for the GCD and derives the LCM from the GCD, which avoids the overflow that can occur when multiplying large numbers first.",
+      "The page also shows a short step trace for the first pair, making the result explainable rather than magic. That is useful for students and for anyone reducing fractions or aligning repeating schedules."
+    ],
+    "useCases": [
+      "Simplifying a fraction by dividing both parts by their GCD.",
+      "Finding a common denominator for several fractions.",
+      "Aligning maintenance or delivery cycles that repeat at different intervals.",
+      "Checking whether two numbers are coprime."
+    ],
+    "workedExample": "For 12 and 18, the Euclidean trace divides 18 by 12 with remainder 6, then 12 by 6 with remainder 0, so the GCD is 6. The LCM is 12 × 18 ÷ 6, which equals 36. Adding 8 to the list gives 8, 12 and 20: their GCD is 4 and their LCM is 120.",
+    "limits": [
+      "Inputs must be integers. Decimals and fractions need to be converted first.",
+      "The Euclidean trace is shown for the first pair only; the final GCD and LCM cover the whole list.",
+      "Zero values are handled specially, and the LCM of a list containing zero is zero rather than a positive product."
+    ],
+    "privacy": "All number theory calculations happen in the browser. Nothing you enter is sent to a server.",
+    "faq": [
+      {
+        "q": "What does it mean when the GCD is 1?",
+        "a": "The numbers are coprime: they share no positive divisor other than 1."
+      },
+      {
+        "q": "Can it handle negative numbers?",
+        "a": "Yes. The GCD and LCM are reported for the absolute values, which is the usual convention."
+      }
+    ]
+  },
+  "number-to-words": {
+    "overview": [
+      "Number to Words spells an integer out in standard English. It handles values up to roughly fifteen digits, covering the thousands, millions, billions and trillions groups, and joins them with the usual hyphenation for numbers such as twenty-one.",
+      "The tool is useful for cheques and formal documents where an amount must be written in words, and for reports or classroom materials where a large figure is easier to read aloud than in digits."
+    ],
+    "useCases": [
+      "Writing a cheque amount in words alongside the numeric value.",
+      "Converting large figures for a report, invoice or presentation script.",
+      "Teaching place value and number names.",
+      "Producing a spoken-form version of an ID or reference number for dictation."
+    ],
+    "workedExample": "Entering 1234567 returns one million two hundred thirty-four thousand five hundred sixty-seven. Entering 101 returns one hundred one, and entering 1001 returns one thousand one, which shows how the grouping handles internal zero blocks without producing awkward extra words.",
+    "limits": [
+      "Only whole numbers are supported. Decimals are not converted to a fractional word form.",
+      "Very large values beyond the safe integer range lose precision before conversion.",
+      "The output uses standard US-style English grouping. Local conventions such as Indian lakh and crore grouping are not applied."
+    ],
+    "privacy": "Conversion is performed locally in JavaScript. The number is not uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it support negative numbers?",
+        "a": "Yes. A leading minus is written as minus followed by the word form of the absolute value."
+      },
+      {
+        "q": "Can I use the result on a cheque?",
+        "a": "You can, but check your bank's required wording and capitalisation. Many banks also require the words to be written by hand or in a specific format."
+      }
+    ]
+  },
+  "percentage-calculator": {
+    "overview": [
+      "The percentage calculator handles three common questions in one place: what is X percent of Y, X is what percent of Y, and what is the percentage change from one value to another. Each mode returns the result together with a short explanation of the formula used.",
+      "It is useful for discounts, tips, tax, growth rates and test scores, where the arithmetic is simple but easy to get backwards under time pressure."
+    ],
+    "useCases": [
+      "Calculating a discount or a tip on a bill.",
+      "Working out what percentage one number is of another.",
+      "Measuring the percentage increase or decrease between two periods.",
+      "Checking a quoted percentage against the underlying numbers."
+    ],
+    "workedExample": "Choose “of”, enter 15 and 200, and the result is 30. Switch to “is” with 25 and 80 to learn that 25 is 31.25 percent of 80. Choose “change” with 100 and 120 to get a 20 percent increase, with the explanation showing the difference divided by the original value.",
+    "limits": [
+      "The change mode treats the first value as the original baseline; reversing the inputs gives a different percentage because the denominator changes.",
+      "Division by zero is rejected instead of returning infinity.",
+      "Results use floating-point arithmetic and are not rounded to a fixed number of decimals, so very long decimals may appear."
+    ],
+    "privacy": "Calculations run in the browser. The numbers you enter are not transmitted or stored.",
+    "faq": [
+      {
+        "q": "What is the difference between percentage change and percentage points?",
+        "a": "A change from 10 percent to 12 percent is two percentage points but a 20 percent relative increase. This calculator reports the relative change."
+      },
+      {
+        "q": "Why does a 20 percent discount followed by 20 percent tax not return the original price?",
+        "a": "The tax is applied to the discounted price, so the percentages are calculated from different bases. Use the change mode on each step to see the effect."
+      }
+    ]
+  },
+  "prime-checker": {
+    "overview": [
+      "The prime checker tests whether a positive integer is prime and, when it is composite, returns its full prime factorization in exponent form. It trial-divides by primes up to the square root of the number, which is sufficient for the fifteen-digit range the page supports.",
+      "The factorization makes the result verifiable: 360 becomes 2 cubed times 3 squared times 5, so you can multiply the factors back and confirm the answer."
+    ],
+    "useCases": [
+      "Checking whether a number is prime for homework or a puzzle.",
+      "Finding the prime factorization of a composite number.",
+      "Exploring divisors before simplifying a fraction or a radical.",
+      "Verifying a claim about a number's factors."
+    ],
+    "workedExample": "Enter 360. The checker reports that it is composite and factors it as 2^3 × 3^2 × 5. Multiplying 8, 9 and 5 returns 360, which confirms the factorization. Enter 17 and the result states that it is prime with no smaller divisors.",
+    "limits": [
+      "Only positive integers up to about fifteen digits are supported; larger values exceed safe integer precision.",
+      "The trial-division method is fast for everyday numbers but not suitable for cryptographic-sized primes.",
+      "1 is neither prime nor composite and is reported separately, while 0 and negative numbers are rejected."
+    ],
+    "privacy": "All division and factorization happen locally in your browser. The number is not sent to a server.",
+    "faq": [
+      {
+        "q": "Is 2 a prime number?",
+        "a": "Yes. 2 is the only even prime, because it has exactly two positive divisors: 1 and itself."
+      },
+      {
+        "q": "Why is the factorization shown with exponents?",
+        "a": "Exponent form is compact and shows repeated factors clearly, for example 2^3 instead of 2 × 2 × 2."
+      }
+    ]
+  },
+  "quadratic-equation-solver": {
+    "overview": [
+      "The quadratic solver takes the coefficients a, b and c from ax² + bx + c = 0 and computes the discriminant, the real roots when they exist, and the vertex of the corresponding parabola. It is a direct way to check homework, inspect a model or understand why an equation has no real solution.",
+      "When the discriminant is negative, the page explains that the roots are complex rather than pretending there is no answer. The vertex coordinates give additional context about the graph's turning point."
+    ],
+    "useCases": [
+      "Solving a quadratic equation from a textbook or exam question.",
+      "Checking whether a projectile or profit model has real break-even points.",
+      "Finding the vertex before sketching a parabola.",
+      "Understanding the effect of the discriminant on the number of real roots."
+    ],
+    "workedExample": "With a = 1, b = -3 and c = 2, the discriminant is 9 minus 8, which is 1. The square root is 1, so the roots are (3 ± 1) / 2, giving 2 and 1. The vertex lies at x = 1.5 and y = -0.25, below the x-axis because the parabola opens upward and crosses at both roots.",
+    "limits": [
+      "The coefficient a cannot be zero; that would make the equation linear and is rejected.",
+      "Only real roots are listed. When the discriminant is negative, the page reports that the roots are complex but does not print complex numbers.",
+      "Coefficients are floating-point values, so irrational or very large results may show rounding."
+    ],
+    "privacy": "Coefficients are evaluated locally in JavaScript. No equation is uploaded or stored.",
+    "faq": [
+      {
+        "q": "What does a negative discriminant mean?",
+        "a": "The parabola does not cross the x-axis, so the equation has no real roots. The roots are complex conjugates."
+      },
+      {
+        "q": "What if a is negative?",
+        "a": "The formula still works; the parabola opens downward. The vertex calculation uses the same coefficients and remains valid."
+      }
+    ]
+  },
+  "ratio-calculator": {
+    "overview": [
+      "The ratio calculator simplifies a ratio or solves a proportion. In simplify mode it reduces A:B to its lowest terms using the greatest common divisor. In scale mode it uses the known three values of A:B = C:? to find the missing fourth value.",
+      "It is useful for recipes, mixing instructions, map scales and any situation where the relationship between quantities matters more than the absolute amounts."
+    ],
+    "useCases": [
+      "Reducing a ratio such as 12:18 to 2:3.",
+      "Scaling a recipe when one ingredient amount changes.",
+      "Solving a proportion from a drawing or map scale.",
+      "Checking that two ratios are equivalent."
+    ],
+    "workedExample": "With 3 parts sugar to 5 parts flour and 150 grams of sugar, scale mode sets up 3:5 = 150:?. The missing value is 150 × 5 ÷ 3, which equals 250 grams of flour. Simplify mode on 12:18 divides both sides by 6 and returns 2:3.",
+    "limits": [
+      "Values must be numbers; the tool does not accept fractions, units or ranges directly.",
+      "Scale mode assumes a direct proportion and cannot model inverse relationships.",
+      "Zero and negative values are not meaningful for most ratios and may produce unhelpful results."
+    ],
+    "privacy": "Ratio calculations run in the browser. No values are transmitted or stored.",
+    "faq": [
+      {
+        "q": "Can the simplified ratio contain decimals?",
+        "a": "Yes. The tool reduces the numeric relationship, so decimal inputs can produce a simplified ratio with decimals rather than whole numbers."
+      }
+    ]
+  },
+  "roman-numeral-converter": {
+    "overview": [
+      "The Roman numeral converter translates between integers from 1 to 3999 and standard Roman numerals. It supports the seven symbols I, V, X, L, C, D and M and validates subtractive pairs, so non-standard forms such as IIII are rejected rather than silently converted.",
+      "The tool is useful for reading dates on buildings, captions and older documents, and for checking a numeral before using it in a title or design."
+    ],
+    "useCases": [
+      "Converting a year or chapter number to Roman numerals.",
+      "Decoding a numeral found on a plaque, clock or document.",
+      "Checking that a numeral uses a valid subtractive form.",
+      "Teaching the rules for IV, IX, XL, XC, CD and CM."
+    ],
+    "workedExample": "Entering 1994 returns MCMXCIV: M for 1000, CM for 900, XC for 90 and IV for 4. Converting XLII in the other direction returns 42. Entering IIII is rejected because the standard form for four is IV, not four repeated ones.",
+    "limits": [
+      "The supported range is 1 to 3999. Zero, negative numbers and values above 3999 have no standard representation here.",
+      "Validation follows the classical subtractive rules; variant historical forms are not accepted.",
+      "Lowercase input is accepted for convenience, but the output uses uppercase symbols."
+    ],
+    "privacy": "Conversion and validation happen locally in JavaScript. Nothing is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why is 4000 not supported?",
+        "a": "The classical system uses an overline to multiply by 1000 for larger values, which is outside this tool's simple symbol set."
+      }
+    ]
+  },
+  "scientific-notation-converter": {
+    "overview": [
+      "The scientific notation converter turns a plain decimal or E-notation value into normalized scientific form and back. You choose how many significant digits to keep, and the page reports the coefficient, the exponent and the expanded decimal when it fits on screen.",
+      "It is useful in science and engineering when a measurement such as 0.00000015 is easier to read as 1.5 × 10⁻⁷, or when a coefficient and exponent need to be turned back into an ordinary number."
+    ],
+    "useCases": [
+      "Writing a very small or very large measurement in scientific notation.",
+      "Checking the order of magnitude of a result.",
+      "Converting E notation from a calculator or data file into a readable form.",
+      "Rounding a coefficient to a requested number of significant digits."
+    ],
+    "workedExample": "Enter 0.00045 with three significant digits. The converter reports 4.5 × 10^-4, with coefficient 4.5 and exponent -4. Entering 1.5e-7 expands to 0.00000015, which makes the scale of the number easier to compare with everyday quantities.",
+    "limits": [
+      "The coefficient is rounded to the requested significant digits, so precision is intentionally lost when you reduce the digit count.",
+      "Extremely large or small values depend on JavaScript number precision and may show exponent notation in the expanded form.",
+      "The tool converts real decimal values; it does not perform unit conversion or uncertainty analysis."
+    ],
+    "privacy": "Conversion happens locally in your browser. No value is uploaded or stored.",
+    "faq": [
+      {
+        "q": "What is normalized scientific notation?",
+        "a": "A form with one non-zero digit before the decimal point and an exponent, for example 6.022 × 10^23 rather than 60.22 × 10^22."
+      },
+      {
+        "q": "Does reducing significant digits change the value?",
+        "a": "Yes. It changes the displayed precision. The underlying number is rounded to the requested digits."
+      }
+    ]
+  }
+}

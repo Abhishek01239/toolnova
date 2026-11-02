@@ -1,0 +1,146 @@
+{
+  "jwt-decoder": {
+    "overview": [
+      "The JWT decoder splits a JSON Web Token into its three parts, Base64url-decodes the header and payload, and displays both as formatted JSON. It also reads the algorithm and type from the header and converts the iat and exp claims into human-readable timestamps.",
+      "A JWT has three dot-separated segments: a header describing the algorithm and token type, a payload containing claims such as the subject, issuer and expiry, and a signature. The first two segments are only encoded, not encrypted, so anyone holding the token can read them. That is why sensitive data should never be placed in a JWT payload.",
+      "This tool decodes only. It does not verify the signature, check the issuer or audience, or confirm that the token has not expired. A token that displays correctly here can still be forged, revoked or invalid for your application. Signature verification requires the issuer's key and must happen on a trusted server."
+    ],
+    "useCases": [
+      "Inspect which claims an authentication service puts in a token.",
+      "Check the exp and iat values while debugging a login flow.",
+      "Confirm the signing algorithm before configuring a verifier.",
+      "Read a token from a test environment without installing a library.",
+      "Show a colleague that JWT payloads are readable rather than secret."
+    ],
+    "workedExample": "Paste the well-known demo token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c. The header decodes to {\"alg\":\"HS256\",\"typ\":\"JWT\"}, and the payload decodes to a subject of 1234567890, a name of John Doe and an issued-at timestamp. The summary shows HS256, the issued time and \"Signature: not verified\", because this tool never checks the signature.",
+    "limits": [
+      "Signatures are not verified, so the decoder cannot tell a genuine token from a forged one with the same payload.",
+      "Expiry, not-before, issuer, audience and scope claims are displayed but not enforced; no validation result is produced.",
+      "Only the three-segment JWS format is supported. Encrypted tokens (JWE, five segments) and nested tokens are not decoded.",
+      "Payload contents are untrusted input. Do not render them as HTML or act on them without validation on the server."
+    ],
+    "privacy": "Decoding happens entirely in your browser. Tokens are not uploaded or logged, but a JWT may still grant access to an account, so avoid pasting production tokens into any tool unless you control it.",
+    "faq": [
+      {
+        "q": "Can I trust the decoded claims?",
+        "a": "Only after verifying the signature with the correct key and validating the issuer, audience and expiry. Decoding alone proves nothing about authenticity."
+      },
+      {
+        "q": "Why does the tool say the signature is not verified?",
+        "a": "Verification needs a secret or public key and must use the algorithm the issuer intended. Doing that safely belongs on the server, so this page deliberately stops at decoding."
+      },
+      {
+        "q": "Is a JWT encrypted?",
+        "a": "A standard signed JWT is not encrypted. Its header and payload are Base64url-encoded and readable by anyone. Only JWE tokens provide confidentiality."
+      }
+    ]
+  },
+  "password-generator": {
+    "overview": [
+      "The password generator creates a random password of a chosen length from the character types you enable: uppercase letters, lowercase letters, digits and symbols. It uses the browser's cryptographically secure random number generator, crypto.getRandomValues, rather than Math.random.",
+      "Length is the most important setting. Every extra character multiplies the number of possible passwords, so a long password drawn from a large character pool is much harder to brute-force than a short one with a few symbols. The tool accepts lengths from 8 to 64 characters and combines all enabled sets into one pool, which keeps the generation logic simple and unbiased across the pool.",
+      "The generated value is shown only in the page. It is not sent anywhere or saved, but it is also not stored for you, so copy it into a password manager before navigating away. For important accounts, a dedicated password manager's generator is usually the better long-term home because it remembers the result and can sync it securely."
+    ],
+    "useCases": [
+      "Create a strong password for a new account.",
+      "Generate a value for a Wi-Fi network or a local device.",
+      "Produce a random secret for a test fixture or a development environment.",
+      "Replace a reused password with a unique one.",
+      "Generate several candidates when a site rejects specific symbols."
+    ],
+    "workedExample": "Choose a length of 16, enable all four character types and press Generate. One possible output is k7#Qm2!vR9@tLp4x. The pool contains 26 uppercase letters, 26 lowercase letters, 10 digits and 26 symbols, for 88 possible characters per position. Because every position is drawn independently, the keyspace is 88 to the power of 16, which is vastly larger than a short eight-character password built from letters alone.",
+    "limits": [
+      "The generator does not guarantee that every enabled character type appears in the result; a run could theoretically contain only lowercase letters even when all four sets are selected.",
+      "The modulo operation used to map random values to the character pool introduces a very slight bias, an acceptable trade-off for a general-purpose generator but not ideal for high-assurance cryptographic key material.",
+      "Passwords are displayed in plain text in the page and are not saved, so closing the tab loses them.",
+      "The tool does not check whether a generated password appears in a breach database or meets a particular site's rules."
+    ],
+    "privacy": "Generation uses the browser's secure random source and runs locally. No password is transmitted to ToolNova, stored in a cookie or written to local storage.",
+    "faq": [
+      {
+        "q": "Is this random enough for important accounts?",
+        "a": "It uses a cryptographically secure source and is suitable for ordinary account passwords. For long-term storage and recall, save it in a reputable password manager."
+      },
+      {
+        "q": "Why might a symbol be missing even though I selected symbols?",
+        "a": "The generator draws each character from the combined pool, so inclusion is probabilistic. Generate again if a site requires at least one of every type."
+      },
+      {
+        "q": "Should I use 16 characters or more?",
+        "a": "Longer is better. Sixteen random characters is a solid default; use 20 or more for high-value accounts if the site allows it."
+      }
+    ]
+  },
+  "password-strength-checker": {
+    "overview": [
+      "The password strength checker estimates how hard a password would be to guess by measuring its length and the size of the character pool it uses. It reports an entropy estimate in bits and places the password in one of four bands: Weak, Fair, Good or Strong.",
+      "The calculation is length × log2(pool size). The pool grows when the password contains lowercase letters (26), uppercase letters (26), digits (10) and symbols (about 33). A password using all four classes therefore has a larger per-character pool than one using only lowercase letters, and a longer password compounds that advantage.",
+      "Entropy is a useful teaching model, but it is not the whole story. It assumes characters are chosen uniformly at random. Human-chosen passwords are not: they follow patterns, reuse words, substitute obvious symbols and appear in breach lists. That is why a password like password123 can receive a Fair score even though it would fall almost immediately in a real attack. Treat the score as a rough diagnostic and prefer a password manager with long, unique random passwords."
+    ],
+    "useCases": [
+      "Get a quick sense of whether a proposed password is long enough.",
+      "Compare the effect of adding length versus adding a symbol.",
+      "Explain why a long passphrase can beat a short complex string.",
+      "Screen a password policy example before sharing it with a team.",
+      "Sanity-check a password before saving it in a manager."
+    ],
+    "workedExample": "Consider Tr0ub4dor&3. It is 11 characters and uses lowercase, uppercase, digits and symbols, so the pool is 95. The estimate is 11 × log2(95) ≈ 11 × 6.57 = 72 bits, which lands in the Good band. By contrast, password123 is 11 characters using only lowercase and digits, a pool of 36, giving 11 × 5.17 ≈ 57 bits and a Fair score. The second password is still weak in practice because it is a common pattern, which shows the limit of a pure entropy model.",
+    "limits": [
+      "The score is a heuristic based on assumed random character selection. It does not detect dictionary words, keyboard patterns, dates, names or reused passwords.",
+      "It does not query breach databases, so a password that has appeared in a leak can still score well.",
+      "Only four character classes are tracked; Unicode letters, spaces and extended symbols are not credited in the pool calculation.",
+      "The password is processed in the page, but typing a real password into any web page carries risk. Prefer testing a representative example rather than a live credential."
+    ],
+    "privacy": "The check runs entirely in your browser and the password is never transmitted or stored. Even so, avoid entering credentials you actually use; test a similar example instead.",
+    "faq": [
+      {
+        "q": "What does the bits figure mean?",
+        "a": "It is an estimate of entropy: roughly how many yes-or-no guesses an attacker would need to search the assumed keyspace. Higher is better, but the estimate assumes truly random characters."
+      },
+      {
+        "q": "Why does my complex password score lower than expected?",
+        "a": "Length dominates. A short password with many symbol types can still have less entropy than a longer passphrase, and the model does not know that your symbols follow a predictable pattern."
+      },
+      {
+        "q": "Should I use a passphrase instead?",
+        "a": "A long random passphrase is excellent, especially if it is unique and stored in a password manager. Four or more unrelated words can provide high entropy and be easier to type."
+      }
+    ]
+  },
+  "sha256-hash-generator": {
+    "overview": [
+      "The SHA-256 hash generator computes the SHA-256 digest of the text you enter and displays it as a 64-character hexadecimal string. It uses the browser's Web Crypto API, so the input is hashed locally and the result matches any standards-compliant SHA-256 implementation.",
+      "A cryptographic hash takes an input of any length and produces a fixed-size output. The same input always produces the same digest, a tiny change produces a completely different digest, and it is computationally infeasible to work backwards from the digest to the input. These properties make hashes useful for integrity checks, content addressing and digital signatures.",
+      "Hashing is not encryption. There is no key and no way to decrypt a digest. For passwords, a plain SHA-256 hash is not enough: fast hashes let attackers test billions of guesses per second, and identical passwords produce identical hashes. Password storage needs a deliberately slow, salted algorithm such as Argon2id, scrypt or bcrypt."
+    ],
+    "useCases": [
+      "Verify that a downloaded text or configuration value is unchanged.",
+      "Compute the hash of a string when testing an API signature scheme.",
+      "Generate a stable identifier for text content.",
+      "Compare two inputs without comparing their contents directly.",
+      "Learn how a small input change avalanches through the digest."
+    ],
+    "workedExample": "Hash the three characters \"abc\". The UTF-8 input is 3 bytes and the SHA-256 digest is ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad, which is 64 hexadecimal characters. Change the input to \"abd\" and the digest changes completely rather than differing in one place, illustrating the avalanche effect. The empty string also has a well-known digest, e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.",
+    "limits": [
+      "The tool hashes UTF-8 text only. It does not hash files, and it does not offer SHA-1, MD5, SHA-512 or keyed HMAC variants.",
+      "SHA-256 is unsalted, so identical inputs produce identical digests; this leaks equality and is unsuitable for password storage.",
+      "A hash proves integrity only when the expected digest comes from a trusted source; an attacker who can change both the file and the published hash defeats the check.",
+      "Web Crypto requires a secure context, so the tool will not work on a plain HTTP page in some browsers."
+    ],
+    "privacy": "Hashing is performed locally with the Web Crypto API. The text is not uploaded, logged or retained by ToolNova.",
+    "faq": [
+      {
+        "q": "Can I reverse a SHA-256 hash?",
+        "a": "No, not by design. Short or predictable inputs can be guessed and matched against a precomputed table, which is why salts and slow password hashes matter."
+      },
+      {
+        "q": "Should I use SHA-256 for passwords?",
+        "a": "No. Use a password-hashing function such as Argon2id, scrypt or bcrypt with a unique salt and appropriate cost parameters."
+      },
+      {
+        "q": "Why is the output always 64 characters?",
+        "a": "SHA-256 produces a 256-bit digest. Written in hexadecimal, each byte takes two characters, so 32 bytes become 64 characters."
+      }
+    ]
+  }
+}

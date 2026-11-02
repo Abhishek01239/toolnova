@@ -1,0 +1,172 @@
+{
+  "age-calculator": {
+    "overview": [
+      "The age calculator converts a birth date into an exact age in years, months and days, and also shows total days lived and the countdown to the next birthday. It compares the birth date with today using calendar arithmetic rather than dividing by an average year length.",
+      "That distinction matters around leap days and month boundaries. A person born on 29 February, for example, needs a rule for non-leap years, and a simple day count would produce an age that does not match the calendar."
+    ],
+    "useCases": [
+      "Filling in a form that asks for exact age in years and months.",
+      "Checking how many days remain until a birthday.",
+      "Finding total days lived for a milestone or novelty statistic.",
+      "Verifying an age calculation for a school or legal form."
+    ],
+    "workedExample": "For a birth date of 1990-05-15, on 2026-11-03 the calculator reports an age of 36 years, 5 months and 19 days. The details panel also shows the total days lived and the number of days until the next birthday on 15 May, which makes the result easy to interpret.",
+    "limits": [
+      "The calculation uses the device's current date and local timezone, so a device with the wrong clock produces a wrong age.",
+      "The birthday countdown assumes the next birthday is the next occurrence of the birth month and day; leap-day births need a consistent rule in non-leap years.",
+      "It calculates age only. It does not validate legal age requirements, which depend on jurisdiction and the exact date of the qualifying event."
+    ],
+    "privacy": "The birth date is compared with today's date entirely in your browser. It is not uploaded, logged or stored by the site.",
+    "faq": [
+      {
+        "q": "How is age calculated for a leap-day birthday?",
+        "a": "The calculator compares the birth month and day with today's date. In non-leap years, the exact result around 29 February depends on the comparison rule, so check the stated months and days if precision matters."
+      },
+      {
+        "q": "Why does the result differ by a day from another calculator?",
+        "a": "Tools disagree on timezones and on whether the start date counts as day one. This one uses local calendar dates and reports the elapsed difference."
+      }
+    ]
+  },
+  "date-adder": {
+    "overview": [
+      "Date Adder adds or subtracts a whole number of days from a selected start date and returns the resulting date with its weekday. It uses calendar arithmetic, so month lengths and leap years are handled automatically.",
+      "It is useful for deadlines, trial periods, notice periods and planning milestones where you know the offset in days but not the resulting date."
+    ],
+    "useCases": [
+      "Finding the end date of a 14-day free trial.",
+      "Calculating a deadline 45 or 90 days after a project start.",
+      "Working backwards from an event to schedule a reminder.",
+      "Checking which weekday a future date falls on."
+    ],
+    "workedExample": "Starting on 2026-11-03 and adding 45 days returns 2026-12-18, a Friday. Subtracting 90 days from the same start returns 2026-08-05. Both results cross month boundaries and are computed without manually counting the days in each month.",
+    "limits": [
+      "Only calendar days are counted. Weekends and public holidays are not skipped.",
+      "The output is a date, not a time. If a deadline has a specific cutoff time, track that separately.",
+      "Invalid dates or values outside the browser's supported date range are rejected."
+    ],
+    "privacy": "Date arithmetic is performed locally in your browser. The selected dates are not transmitted or stored.",
+    "faq": [
+      {
+        "q": "Can I subtract a number of days?",
+        "a": "Yes. Enter a negative value such as -30 to move backwards by thirty days."
+      },
+      {
+        "q": "Does the result include the start date?",
+        "a": "No. Adding 1 to a date returns the following day, so the start date is not counted as one of the days."
+      }
+    ]
+  },
+  "days-between-calculator": {
+    "overview": [
+      "Days Between Calculator reports the duration between two dates in total days, broken down into full weeks and remaining days. The result is the end date minus the start date, calculated at whole-day precision.",
+      "It is useful for measuring project lengths, billing periods, trips and countdowns, and for converting a date range into a more readable weeks-plus-days form."
+    ],
+    "useCases": [
+      "Counting the days until a launch, holiday or deadline.",
+      "Measuring the length of a project or rental period.",
+      "Checking the gap between two appointments or events.",
+      "Converting a date range into full weeks and extra days."
+    ],
+    "workedExample": "From 2026-01-01 to 2026-12-31 the tool returns 364 days, which is 52 weeks and 0 days. Because the end date is excluded, the range is one day shorter than the 365-day year. In a leap year the same dates span 365 days because February 29 is included.",
+    "limits": [
+      "The result is exclusive of the end date. Add one day if you need an inclusive count that counts both endpoints.",
+      "The calculation is based on calendar dates in the browser's local timezone and ignores partial days.",
+      "Dates must be valid and within the supported range; reversed dates produce a negative or reversed result depending on the fields."
+    ],
+    "privacy": "The two dates are compared locally in JavaScript. Nothing is sent to a server or stored.",
+    "faq": [
+      {
+        "q": "Does the end date count as a day?",
+        "a": "No. The tool reports the difference between the dates. Add one for an inclusive count."
+      },
+      {
+        "q": "Why is a 2026 full year 364 days here?",
+        "a": "Because the range starts on 1 January and ends on 31 December, the end date is not counted. A complete year from 1 January 2026 to 1 January 2027 is 365 days."
+      }
+    ]
+  },
+  "leap-year-checker": {
+    "overview": [
+      "The leap year checker applies the Gregorian rule: a year is a leap year if it is divisible by 4, except century years, which are leap years only when divisible by 400. It also shows the nearest leap years on either side of the one you enter.",
+      "The explanation makes the rule visible, which is useful for teaching why 1900 was not a leap year but 2000 was, and for checking a year before working with February dates."
+    ],
+    "useCases": [
+      "Checking whether February has 29 days in a given year.",
+      "Understanding why 1900 and 2100 differ from 2000.",
+      "Teaching the Gregorian calendar rule.",
+      "Verifying a year before calculating an anniversary or deadline."
+    ],
+    "workedExample": "Enter 2024 and the checker reports a leap year because 2024 is divisible by 4. Enter 1900 and it reports a common year because 1900 is a century year not divisible by 400. Enter 2000 and it reports a leap year because 2000 is divisible by 400.",
+    "limits": [
+      "The checker applies the Gregorian calendar only. Historical Julian dates and calendar reforms are outside scope.",
+      "The supported range is 1 through 9999, matching the input limits of the page.",
+      "It does not adjust dates or calculate durations; use the date tools for arithmetic."
+    ],
+    "privacy": "The rule is evaluated locally in your browser. The year you enter is not transmitted or stored.",
+    "faq": [
+      {
+        "q": "Is 2100 a leap year?",
+        "a": "No. It is a century year and is not divisible by 400, even though it is divisible by 4."
+      }
+    ]
+  },
+  "timezone-converter": {
+    "overview": [
+      "The timezone converter translates a date and time from one timezone to another using the browser's timezone database. You choose a source and target zone from a fixed list, and the page shows the equivalent local time in the target.",
+      "It is useful for scheduling meetings, releases and support coverage across regions, where daylight-saving transitions can otherwise cause an hour of confusion."
+    ],
+    "useCases": [
+      "Converting a New York meeting time to Tokyo or London.",
+      "Checking what time a release window starts for a distributed team.",
+      "Comparing India Standard Time with UTC for a call.",
+      "Planning support coverage across several regions."
+    ],
+    "workedExample": "Enter 2026-11-03 14:30, choose America/New_York as the source and Asia/Tokyo as the target. The converter returns the equivalent Tokyo time, taking the current offset between the zones into account. Repeating the conversion after a daylight-saving change produces a different offset, which is why a fixed hour difference is unreliable.",
+    "limits": [
+      "Only the timezones listed in the controls are available; arbitrary IANA zone names cannot be entered.",
+      "The conversion relies on the browser's timezone data, which may be outdated on an old device.",
+      "Ambiguous local times during a daylight-saving transition cannot be resolved uniquely from a wall-clock value alone."
+    ],
+    "privacy": "The conversion is calculated locally using the browser's date and timezone APIs. The selected time and zones are not sent to a server.",
+    "faq": [
+      {
+        "q": "Does it handle daylight saving?",
+        "a": "Yes, to the extent supported by the browser's timezone database for the chosen zones and date."
+      },
+      {
+        "q": "Can I convert a timezone not in the list?",
+        "a": "Not with this page. The fixed list keeps the comparison simple; a full IANA zone picker would be needed for arbitrary locations."
+      }
+    ]
+  },
+  "unix-timestamp-converter": {
+    "overview": [
+      "The Unix timestamp converter translates between epoch time and human-readable dates. Paste seconds or milliseconds and the page shows the UTC and local-time equivalents side by side; enter a local date and time and it returns the epoch value in both units.",
+      "It is useful when reading API payloads, logs and database records where timestamps are stored as integers, and when scheduling jobs that expect epoch seconds rather than a formatted date."
+    ],
+    "useCases": [
+      "Decoding a timestamp from an API response or log line.",
+      "Converting a local meeting time into epoch seconds for a scheduler.",
+      "Checking whether a value is in seconds or milliseconds.",
+      "Comparing UTC and local renderings of the same moment."
+    ],
+    "workedExample": "The value 1717200000 corresponds to 1 June 2024 at 00:00 UTC. The same moment in milliseconds is 1717200000000. Entering a local date and time returns both the seconds and milliseconds values, which makes it easy to choose the unit a particular API expects.",
+    "limits": [
+      "Automatic unit detection is a heuristic based on magnitude; unusual values near the boundary can be interpreted in the wrong unit, so choose seconds or milliseconds explicitly when precision matters.",
+      "Dates before 1970 or far in the future may be outside the browser's reliable range.",
+      "The local-time output depends on the device's timezone setting, which may differ from the server that produced the timestamp."
+    ],
+    "privacy": "Timestamp arithmetic runs locally in JavaScript. No timestamp, date or timezone is transmitted or stored.",
+    "faq": [
+      {
+        "q": "Is a Unix timestamp in seconds or milliseconds?",
+        "a": "Classic Unix time is in seconds. JavaScript's Date.now() returns milliseconds. A 13-digit value is usually milliseconds."
+      },
+      {
+        "q": "Why does the local time differ from UTC?",
+        "a": "The same instant is displayed in two timezones. The difference equals your device's current UTC offset, including daylight saving where applicable."
+      }
+    ]
+  }
+}

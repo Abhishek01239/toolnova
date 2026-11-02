@@ -1,0 +1,74 @@
+{
+  "bmi-calculator": {
+    "overview": [
+      "The BMI calculator computes body mass index from weight and height and assigns the result to a standard category. It accepts kilograms and centimetres or pounds and inches, converts everything to metric, and divides weight in kilograms by height in metres squared.",
+      "The category thresholds used here are the common adult cut-offs: below 18.5 is Underweight, 18.5 to 24.9 is Normal, 25 to 29.9 is Overweight and 30 or above is Obese. These are population-level screening bands, not a diagnosis. They were developed for adults of European descent and are interpreted differently for children, pregnant people and some ethnic groups.",
+      "BMI is popular because it needs only two measurements, but it cannot tell muscle from fat, where fat is stored or how fit someone is. A muscular athlete can be classified as overweight, while a person with low muscle mass can sit in the normal band despite excess body fat. Use the number as one signal among several, alongside waist circumference, body composition and clinical advice."
+    ],
+    "useCases": [
+      "Get a quick screening estimate from height and weight.",
+      "Compare a measurement against standard adult categories.",
+      "Track the direction of change over several months.",
+      "Convert an imperial measurement into the metric BMI formula.",
+      "Prepare a starting point for a conversation with a clinician."
+    ],
+    "workedExample": "A person weighs 70 kg and is 175 cm tall. Convert height to metres: 1.75 m. Square it: 3.0625. Divide 70 by 3.0625 to get 22.857, which rounds to 22.9 and falls in the Normal band. If the same person weighed 80 kg, the BMI would be 80 ÷ 3.0625 = 26.1, moving into the Overweight band even though height has not changed.",
+    "limits": [
+      "BMI does not distinguish muscle, bone, fat or water. Athletes and very muscular people are often misclassified.",
+      "The adult cut-offs are not valid for children, teenagers, pregnant or breastfeeding people, or some ethnic groups without adjusted thresholds.",
+      "Fat distribution matters: waist circumference and waist-to-height ratio add information that BMI cannot provide.",
+      "It is a screening indicator, not a medical diagnosis, and should not replace an assessment by a qualified professional."
+    ],
+    "privacy": "Weight and height are processed locally in your browser and are never transmitted or stored.",
+    "faq": [
+      {
+        "q": "Is BMI accurate for athletes?",
+        "a": "Often not. Muscle is denser than fat, so a fit athlete can have a BMI in the overweight range while carrying little body fat."
+      },
+      {
+        "q": "Which units does the tool accept?",
+        "a": "Kilograms with centimetres, or pounds with inches. Choose the unit next to each field; the tool converts to metric before calculating."
+      },
+      {
+        "q": "Should I use BMI to set a weight goal?",
+        "a": "It can be a rough reference, but a goal based on body composition, waist measurement and medical advice is more meaningful."
+      }
+    ]
+  },
+  "tdee-calculator": {
+    "overview": [
+      "The TDEE calculator estimates two numbers: basal metabolic rate (BMR), the energy the body uses at rest, and total daily energy expenditure (TDEE), the energy used after accounting for daily activity. It uses the Mifflin-St Jeor equation and an activity multiplier.",
+      "The Mifflin-St Jeor formula is BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5 for men and − 161 for women. TDEE is then BMR multiplied by an activity factor: 1.2 for sedentary, 1.375 for light activity, 1.55 for moderate activity, 1.725 for very active and 1.9 for extremely active. The tool also shows a roughly 500 kcal deficit and surplus, a common starting point for about 0.5 kg of weight change per week.",
+      "These are estimates, not measurements. The activity multiplier is a broad category applied to a highly individual behaviour, and BMR equations have error margins of a few hundred calories. Use the result as a starting point, track actual intake and weight for two to three weeks, and adjust based on observed trends rather than treating the number as exact."
+    ],
+    "useCases": [
+      "Estimate a maintenance calorie level before tracking food.",
+      "Set a starting deficit or surplus for a weight goal.",
+      "Compare how activity level changes the estimated daily burn.",
+      "Sanity-check a calorie target from an app or coach.",
+      "Understand the difference between BMR and total expenditure."
+    ],
+    "workedExample": "A 30-year-old man weighs 70 kg and is 175 cm tall, with a moderate activity multiplier of 1.55. BMR is 10 × 70 + 6.25 × 175 − 5 × 30 + 5 = 700 + 1,093.75 − 150 + 5 = 1,648.75, rounded to 1,649 kcal. TDEE is 1,648.75 × 1.55 = 2,555.56, rounded to 2,556 kcal. The suggested loss target is 2,056 kcal and the gain target is 3,056 kcal, both rounded to the nearest calorie.",
+    "limits": [
+      "The equation estimates a population average. Individual metabolism, medication, medical conditions and body composition can shift the true value substantially.",
+      "The activity multiplier is a coarse category; two people who both choose moderate activity can differ by several hundred calories.",
+      "The tool requires metric inputs, uses age 15 as a minimum and does not adjust for pregnancy, lactation or athletic training loads.",
+      "The 500 kcal deficit and surplus are generic illustrations, not personalised prescriptions, and rapid weight change should be discussed with a clinician."
+    ],
+    "privacy": "Age, sex, weight, height and activity level are calculated locally and never uploaded or retained.",
+    "faq": [
+      {
+        "q": "What is the difference between BMR and TDEE?",
+        "a": "BMR is the energy needed at complete rest. TDEE includes BMR plus movement, exercise, digestion and other daily activity, so it is always the larger number."
+      },
+      {
+        "q": "How accurate is the estimate?",
+        "a": "It is a reasonable starting point for most adults, but individual variation can be significant. Compare it with two to three weeks of real intake and weight data."
+      },
+      {
+        "q": "Why does the tool show a 500-calorie deficit?",
+        "a": "A 500 kcal daily deficit is a common approximation for losing about 0.5 kg per week. It is illustrative and should be adjusted to your circumstances."
+      }
+    ]
+  }
+}

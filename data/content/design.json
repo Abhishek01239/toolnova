@@ -1,0 +1,218 @@
+{
+  "aspect-ratio-calculator": {
+    "overview": [
+      "The aspect ratio calculator simplifies a width and height into the smallest whole-number ratio and converts between ratio and dimensions. Given 1920 by 1080 it returns 16:9, and given a target ratio plus one side it solves for the missing side.",
+      "It also reports the decimal width divided by height, which is the number CSS expects in an aspect-ratio property. That makes it useful for video embeds, image crops, responsive placeholders and social media templates."
+    ],
+    "useCases": [
+      "Checking that a video or image matches a platform's required ratio.",
+      "Finding the correct height for a 16:9 frame at a given width.",
+      "Converting a decimal aspect ratio from a design file back into a clean ratio.",
+      "Planning responsive image placeholders before assets are ready."
+    ],
+    "workedExample": "Enter 1920 and 1080 and simplify to get 16:9. With the ratio set to 16:9 and a width of 1280, solving for height returns 720. The decimal field shows 1.7778, which can be used directly as aspect-ratio: 16 / 9 in CSS.",
+    "limits": [
+      "Width and height are treated as plain numbers, so mixing units such as pixels and centimetres produces a meaningless ratio.",
+      "Simplification is exact only for integer inputs; decimal dimensions are rounded before the greatest common divisor is applied.",
+      "The tool calculates dimensions but does not crop, resize or inspect an actual image file."
+    ],
+    "privacy": "The arithmetic is performed locally in your browser. No dimensions or design files are uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why does 1920 by 1080 simplify to 16:9?",
+        "a": "Both values divide exactly by 120, giving 16 and 9. The ratio describes the shape, not the absolute pixel count."
+      },
+      {
+        "q": "Can I use the decimal value in CSS?",
+        "a": "Yes. A decimal such as 1.7778 can be written directly as aspect-ratio, although the 16 / 9 form is easier to read."
+      }
+    ]
+  },
+  "color-contrast-checker": {
+    "overview": [
+      "The contrast checker computes the WCAG relative-luminance ratio between a foreground and background colour. It reports the numeric ratio and marks whether the pair passes the AA and AAA thresholds for normal and large text.",
+      "It accepts three- and six-digit hex values and expands short forms automatically. Designers and developers use it to catch low-contrast labels, muted text and button states before they become accessibility bugs."
+    ],
+    "useCases": [
+      "Checking body text against a page background before launch.",
+      "Validating button and link colours in a design system.",
+      "Choosing a darker grey that still passes AA on white.",
+      "Reviewing a client palette for accessibility risks."
+    ],
+    "workedExample": "With foreground #1A1A1A and background #FFFFFF, the ratio is about 17.4:1, which passes AAA for normal text. Trying #777777 on white produces roughly 4.48:1, just below the 4.5:1 AA threshold for normal text, so a slightly darker grey is needed.",
+    "limits": [
+      "The calculation follows the WCAG 2 relative-luminance formula for opaque sRGB hex colours. Alpha transparency and colour spaces such as P3 are not modelled.",
+      "The result is a static pair test, not a full audit of focus indicators, gradients, images or hover states.",
+      "Passing a ratio does not guarantee readability for every user; font size, weight and rendering still matter."
+    ],
+    "privacy": "Contrast is computed in JavaScript from the hex values you enter. No colour values are transmitted or stored.",
+    "faq": [
+      {
+        "q": "What ratio do I need for normal text?",
+        "a": "WCAG AA requires 4.5:1 for normal text and 3:1 for large text. AAA raises those to 7:1 and 4.5:1."
+      },
+      {
+        "q": "Does it check link colours and focus rings?",
+        "a": "No. Check each foreground/background pair separately, including UI component boundaries, which have their own 3:1 requirement."
+      }
+    ]
+  },
+  "color-palette-generator": {
+    "overview": [
+      "The palette generator takes one base hex colour and produces five related swatches: two lighter tints, the base, and two darker shades. Tints are mixed with white and shades with black, giving a compact scale for backgrounds, borders and hover states.",
+      "It is a fast starting point for a UI palette when you already know the brand colour and need a consistent set of light and dark variants without opening a design tool."
+    ],
+    "useCases": [
+      "Building a small palette for buttons, alerts and cards from one brand colour.",
+      "Finding a lighter hover tint and a darker pressed shade.",
+      "Creating quick background and border variants for a prototype.",
+      "Exploring what a single hex colour looks like across a simple scale."
+    ],
+    "workedExample": "Enter #0F766E, a deep teal. The tool keeps that value in the middle, places two progressively lighter tints above it and two darker shades below it, and outputs all five as six-digit hex codes. The lightest tint works as a subtle background, while the darkest shade can serve as a pressed state.",
+    "limits": [
+      "Mixing with white and black is a simple RGB interpolation, not a perceptually uniform colour-space conversion, so mid-tones may shift in saturation.",
+      "The palette contains five colours only. It is not a full design system and does not generate semantic roles or accessible text pairings.",
+      "Three-digit hex is expanded, but named colours and rgb() values are not accepted by the base field."
+    ],
+    "privacy": "Colour mixing happens locally in the browser. The base colour and generated palette are never uploaded.",
+    "faq": [
+      {
+        "q": "Does the generator check contrast?",
+        "a": "No. Run the output pairs through the contrast checker before using them for text."
+      }
+    ]
+  },
+  "css-box-shadow-generator": {
+    "overview": [
+      "The box-shadow generator turns offset, blur, spread, colour, opacity and inset settings into a copy-ready CSS declaration. The controls map directly to the box-shadow syntax, so the output is easy to understand and adjust later.",
+      "It is useful for prototyping depth on cards, inputs and popovers, and for producing a consistent shadow value without remembering the order of the four length values."
+    ],
+    "useCases": [
+      "Creating a soft elevation shadow for a card or modal.",
+      "Producing an inset shadow for a pressed input or well.",
+      "Tuning a shadow so it does not spill past rounded corners.",
+      "Standardising shadow values across a component library."
+    ],
+    "workedExample": "With an x offset of 0, y offset of 8, blur of 24, spread of 0, a dark colour at 25 percent opacity and inset off, the generator returns a declaration such as box-shadow: 0 8px 24px rgba(0,0,0,0.25). That produces a gentle shadow below an elevated card.",
+    "limits": [
+      "The generator produces a single shadow layer. Layered shadows, multiple comma-separated values and CSS variables must be composed by hand.",
+      "Length controls are in pixels and the colour field accepts hex input, so rem units and named colours need manual conversion.",
+      "The output is CSS text only; the page does not render a live preview of the shadow on your own component."
+    ],
+    "privacy": "Shadow values are formatted locally in JavaScript. No styles or design data are transmitted or stored.",
+    "faq": [
+      {
+        "q": "What does a negative spread do?",
+        "a": "It contracts the shadow before blurring, which keeps the shadow from appearing beyond the element's edges."
+      },
+      {
+        "q": "Can I use the result with Tailwind?",
+        "a": "Yes. Paste the declaration into a custom utility or an inline style; the CSS property is framework-independent."
+      }
+    ]
+  },
+  "css-gradient-generator": {
+    "overview": [
+      "The gradient generator builds a CSS background gradient from a type, an angle and two colours. Linear gradients blend along the chosen angle, while radial gradients blend outward from the centre of the element.",
+      "It is a quick way to create a hero background, button fill or decorative panel without hand-writing the gradient function and remembering where the angle belongs."
+    ],
+    "useCases": [
+      "Creating a left-to-right hero background.",
+      "Producing a radial glow behind a call to action.",
+      "Experimenting with two brand colours before committing to a stylesheet.",
+      "Generating a gradient value to paste into a component."
+    ],
+    "workedExample": "Choose linear, set the angle to 90 degrees and use #4f46e5 and #ec4899. The output is linear-gradient(90deg, #4f46e5, #ec4899), which blends from indigo on the left to pink on the right. Switching to radial and keeping the same colours produces a centred circle that transitions outward.",
+    "limits": [
+      "Only two colour stops are generated. Multi-stop gradients, hard stops and colour interpolation hints require manual editing.",
+      "The angle control applies to linear gradients; radial output does not use it.",
+      "The tool emits CSS text and does not render the gradient against your actual layout or image."
+    ],
+    "privacy": "Gradient values are assembled locally. No colour choices or stylesheet content are uploaded or stored.",
+    "faq": [
+      {
+        "q": "Can I use other colour formats?",
+        "a": "The fields accept standard CSS colour values, including hex, rgb() and named colours, so the generated declaration can be pasted as-is."
+      }
+    ]
+  },
+  "css-specificity-calculator": {
+    "overview": [
+      "The specificity calculator scores a single CSS selector as a four-part tuple: inline styles, IDs, classes/attributes/pseudo-classes, and elements/pseudo-elements. Comparing tuples from left to right shows which rule wins when two selectors target the same element.",
+      "It understands modern pseudo-classes such as :where(), which contributes no specificity, and :is() and :not(), which take the specificity of their most specific argument. That makes it more useful than counting characters in the selector."
+    ],
+    "useCases": [
+      "Explaining why a component style is being overridden.",
+      "Choosing between an ID selector and a class-based approach.",
+      "Checking the effect of :is(), :not() and :where() on a selector's weight.",
+      "Reviewing a stylesheet for unnecessarily high specificity."
+    ],
+    "workedExample": "The selector #main .item scores (0,1,1,0): one ID and one class. The selector nav .menu > a:hover scores (0,0,2,2): one class for .menu, one pseudo-class for :hover, and two element selectors for nav and a. The first selector wins because its ID column is higher, regardless of the later columns.",
+    "limits": [
+      "Enter one selector, not a full rule with declarations or braces. Selector lists are parsed separately and should be checked one at a time.",
+      "The score does not model cascade layers, !important, source order or inherited styles, which can override specificity in practice.",
+      "Inline style attributes are represented by the first tuple column only when the selector itself is written as inline style; a normal stylesheet selector cannot outrank an inline attribute."
+    ],
+    "privacy": "Selectors are parsed locally in the browser. No stylesheet or page content is uploaded.",
+    "faq": [
+      {
+        "q": "Does :where() really add nothing?",
+        "a": "Correct. :where() always contributes zero specificity, while :is() and :not() adopt the specificity of their most specific argument."
+      },
+      {
+        "q": "Why does my rule still lose with a higher tuple?",
+        "a": "Check for !important, cascade layers, inline styles or a later rule with equal specificity. Specificity is only one part of the cascade."
+      }
+    ]
+  },
+  "px-to-rem-converter": {
+    "overview": [
+      "The PX to REM converter translates pixel values into rem units and back, using the root font size you specify. Since one rem equals the root font size, the conversion is a division or multiplication, but the correct root value is easy to forget.",
+      "It is useful when a design file uses pixels while a stylesheet uses rem, or when a project changes its base font size and existing spacing and typography values need to be rewritten consistently."
+    ],
+    "useCases": [
+      "Converting a design specification in pixels into rem values.",
+      "Checking a rem value against the standard 16-pixel browser default.",
+      "Recalculating spacing after changing the root font size.",
+      "Producing consistent type and spacing scales for a stylesheet."
+    ],
+    "workedExample": "With a root size of 16 pixels, 24px converts to 1.5rem, and 1.25rem converts back to 20px. If the root is changed to 18 pixels, the same 1.25rem now equals 22.5px, which shows why the root value must match the page base size before the values are pasted into CSS.",
+    "limits": [
+      "The conversion assumes the root font size you enter. It does not read the page computed styles or account for browser zoom and user font-size settings.",
+      "Results can contain long decimals; round them to a sensible precision for CSS.",
+      "Only px and rem are supported. em, percentages, vw and other relative units are not converted."
+    ],
+    "privacy": "Conversions run locally in JavaScript. The values you enter are not uploaded, stored or shared with any third party.",
+    "faq": [
+      {
+        "q": "Should I always use 16px as the root?",
+        "a": "16px is the usual browser default, but check your project. If the html element sets a different font-size, use that value for accurate conversions."
+      }
+    ]
+  },
+  "random-color-generator": {
+    "overview": [
+      "The random colour generator creates a fresh colour in the browser and shows its hex code, a large colour swatch and a one-click copy button. Each click produces an independent random RGB value.",
+      "It is useful for quick inspiration, placeholder colours and test data, but it is explicitly a random pick rather than a curated, harmonious or accessibility-checked palette."
+    ],
+    "useCases": [
+      "Finding an unexpected accent colour for a prototype.",
+      "Generating placeholder colours for charts or test fixtures.",
+      "Producing a random background for a demo card.",
+      "Exploring colour combinations without opening a design tool."
+    ],
+    "workedExample": "Clicking generate might produce #7A3FB2, a medium purple, and show it as a swatch with the hex code beside it. Copying the value puts #7A3FB2 on the clipboard, ready to paste into CSS, a design file or a chart configuration, where it can be adjusted by hand.",
+    "limits": [
+      "Colours are uniformly random in RGB, which tends to produce many mid-tone and muddy values rather than balanced palettes.",
+      "The tool does not check contrast, colour-blind safety or harmony with other colours.",
+      "The sequence is not reproducible, so a colour you like must be copied before generating another."
+    ],
+    "privacy": "Random values are generated locally in the browser. No colour, click history or usage data is transmitted or stored.",
+    "faq": [
+      {
+        "q": "Can I generate a palette instead of one colour?",
+        "a": "Use the palette generator, which derives two lighter tints and two darker shades from a base colour."
+      }
+    ]
+  }
+}

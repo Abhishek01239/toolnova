@@ -1,0 +1,74 @@
+{
+  "business-days-calculator": {
+    "overview": [
+      "The business days calculator counts weekdays between a start date and an end date. It includes Monday to Friday and excludes Saturday and Sunday. An option controls whether the end date itself is counted, which is the usual source of off-by-one disagreements when two people calculate the same timeline.",
+      "Counting is done one calendar day at a time from the start, so the result is exact for the dates entered rather than an estimate based on weeks. If the end date falls before the start date, the tool reports that the range is invalid instead of returning a negative count. The start date is always included.",
+      "Public holidays are not considered, because they vary by country, region and year. If a deadline depends on holidays, subtract those separately or use a calendar that knows the relevant holiday schedule. The tool also assumes a Monday-to-Friday working week; businesses that operate Sunday to Thursday need a different calculation."
+    ],
+    "useCases": [
+      "Estimate how many working days remain before a deadline.",
+      "Check the weekday length of a project phase.",
+      "Count payable days for a timesheet or invoice period.",
+      "Work out shipping lead times that exclude weekends.",
+      "Compare a calendar-day estimate with a business-day estimate."
+    ],
+    "workedExample": "Count business days from Monday 2 November 2026 to Friday 6 November 2026 with Include end turned on. The days are Monday, Tuesday, Wednesday, Thursday and Friday, so the result is 5. Turn Include end off and the result is 4. If the range runs from Friday 6 November to Monday 9 November with Include end on, only Friday and Monday count, giving 2 business days.",
+    "limits": [
+      "Only weekends are excluded. Public holidays, bank holidays, company shutdowns and regional rest days are not detected.",
+      "The working week is fixed to Monday–Friday, and the tool does not support part-time schedules or shift patterns.",
+      "Dates are interpreted at local midnight, so a time zone change or a daylight-saving transition can affect edge cases.",
+      "An end date before the start date returns an error rather than a negative number."
+    ],
+    "privacy": "The dates and the calculation stay in your browser. No calendar data is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Is the start date counted?",
+        "a": "Yes. Counting begins on the start date. The Include end option controls only whether the end date is added."
+      },
+      {
+        "q": "Does it exclude public holidays?",
+        "a": "No. It excludes Saturdays and Sundays only. Subtract holidays manually or use a country-specific business-day calendar."
+      },
+      {
+        "q": "Why do two people get different counts?",
+        "a": "They probably disagree about including the end date, or one of them is counting calendar days rather than weekdays. Check the Include end setting."
+      }
+    ]
+  },
+  "countdown-timer": {
+    "overview": [
+      "The countdown timer counts down to a calendar date or to a short duration. In date mode it counts to the end of the selected day, at 23:59:59 local time; in duration mode it counts down from a number of hours and minutes. The display updates every second and shows days, hours, minutes and seconds when the remaining time is long enough.",
+      "Date mode is useful for launches, deadlines, holidays and events, because it answers the question \"how long until that day is over?\" rather than \"how long until midnight at the start of that day?\". Duration mode is better for focused tasks, cooking, workouts or a short break, where you want the timer to start from now.",
+      "The countdown runs in the page and is not saved. Reloading or closing the tab stops it, and browsers may throttle timers in background tabs, so the displayed value can drift slightly if the tab is inactive for a long period. It does not play an alarm; when the countdown reaches zero the display stays at 00:00:00."
+    ],
+    "useCases": [
+      "Count down the days until a holiday or product launch.",
+      "Run a five-minute timer for a task or a steeped drink.",
+      "Track time remaining before a submission deadline.",
+      "Set a short break between work blocks.",
+      "Display a countdown during a presentation or stream."
+    ],
+    "workedExample": "Choose Duration mode and enter 0 hours and 5 minutes. Press Start and the display begins at 00:05:00, decreasing once per second. In Date mode, select 1 January 2027 while it is still 31 December 2026: the timer counts to 23:59:59 on 1 January, so the display includes the remaining part of the current day plus the whole target day. Press Stop to cancel and clear the countdown.",
+    "limits": [
+      "Date mode targets the end of the selected day, not the start, which may be a day later than some people expect for an event that begins in the morning.",
+      "Countdowns are not persisted. A page reload, navigation or closed tab loses the target time.",
+      "Background-tab throttling can make the display drift; the underlying target time is fixed, so refreshing corrects the display.",
+      "There is no sound, notification or time-zone conversion, and very large durations are not validated against a maximum."
+    ],
+    "privacy": "The target date or duration and the running countdown stay in your browser. Nothing is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does date mode count to the start or end of the day?",
+        "a": "It counts to 23:59:59 local time on the selected date, so the whole target day is included."
+      },
+      {
+        "q": "Will it keep running if I close the tab?",
+        "a": "No. The countdown exists only in the open page. Keep the tab open, or note the target time and restart it later."
+      },
+      {
+        "q": "Why does the time jump after I return to the tab?",
+        "a": "The browser throttled the timer while the tab was inactive, but the calculation is based on the fixed target time, so the display corrects itself on the next tick."
+      }
+    ]
+  }
+}

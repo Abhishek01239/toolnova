@@ -37,9 +37,13 @@ export function footer(site, tools) {
       <strong>Information</strong>
       <ul>
         <li><a href="/about">About</a></li>
+        <li><a href="/editorial">Editorial Policy</a></li>
         <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/cookies">Cookie Policy</a></li>
         <li><a href="/terms">Terms</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><button type="button" class="footer-link-btn" data-consent-open>Cookie settings</button></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </nav>

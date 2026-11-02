@@ -1,0 +1,110 @@
+{
+  "email-validator": {
+    "overview": [
+      "The email validator checks one or more email addresses against a syntax rule and marks each line as valid or invalid. It reports the total, how many passed and how many failed, which makes it convenient for cleaning up a pasted list before an import.",
+      "The check follows the shape of a practical email address: a local part made of letters, digits and common special characters, an at sign, and a domain made of labels separated by dots. It rejects spaces, missing at signs and labels that begin or end with a hyphen. It is deliberately permissive about things that are technically legal, such as plus addressing and subdomains, because those are common in real use.",
+      "Syntax validation is not delivery validation. The tool cannot tell you whether a mailbox exists, whether the domain accepts mail, whether the address is a disposable one or whether the person wants to hear from you. For a mailing list, send a confirmation message; that is the only reliable proof that an address works and is controlled by its owner."
+    ],
+    "useCases": [
+      "Spot typos in a list of addresses before importing contacts.",
+      "Check the format of an address collected in a form.",
+      "Separate malformed lines from plausible ones in a pasted CSV column.",
+      "Validate test fixtures without sending email.",
+      "Confirm that plus addressing is accepted by a form."
+    ],
+    "workedExample": "Paste four lines: jane.doe+news@example.co.uk, alex@sub.example.org, jane doe@example.com and jane@-example.com. The first two are marked Valid. The third is Invalid because it contains a space, and the fourth is Invalid because the domain label starts with a hyphen. The summary reports four addresses, two valid and two invalid, and the output keeps the original line next to each verdict.",
+    "limits": [
+      "The rule checks syntax only. It cannot confirm that the domain exists, has a mail exchanger or accepts the mailbox.",
+      "A dotless domain such as jane@example is accepted because it is syntactically possible on private networks, even though it is not a usable public address.",
+      "Internationalised addresses with non-ASCII characters in the domain are not normalised or fully validated.",
+      "It does not detect disposable providers, role accounts, duplicates or addresses that have previously bounced."
+    ],
+    "privacy": "Validation happens entirely in your browser. Addresses are not uploaded, stored or checked against any external service.",
+    "faq": [
+      {
+        "q": "Does a valid result mean the email will arrive?",
+        "a": "No. It only means the text looks like an address. Delivery depends on the domain, the mailbox and the receiving server's filtering."
+      },
+      {
+        "q": "Why is a dotless domain shown as valid?",
+        "a": "The syntax permits it for internal hosts. If you need public deliverability, require at least one dot in the domain as an extra check."
+      },
+      {
+        "q": "Can I validate a whole list at once?",
+        "a": "Yes. Put one address per line and the tool checks each line separately and reports totals."
+      }
+    ]
+  },
+  "isbn-validator": {
+    "overview": [
+      "The ISBN validator checks whether a 10- or 13-digit International Standard Book Number has a correct check digit. It removes spaces and hyphens, detects the format from the length, applies the appropriate checksum and reports whether the number is valid.",
+      "ISBN-13 uses a weighted sum in which alternating digits are multiplied by 1 and 3, and the final digit makes the total a multiple of 10. ISBN-10 uses weights from 10 down to 1, and the final character may be X to represent 10. A single mistyped digit almost always breaks the checksum, which is why the check digit is useful for catching transcription errors.",
+      "Passing the checksum does not prove that a book exists. The number could be a valid but unassigned identifier, or it could belong to a different edition than the one you expect. Use the result to catch typos, then look up the ISBN with a bookseller, library catalogue or national ISBN agency for publication details."
+    ],
+    "useCases": [
+      "Check a handwritten ISBN before ordering a book.",
+      "Verify a list of ISBNs imported from a spreadsheet.",
+      "Distinguish an ISBN-10 from an ISBN-13 by length.",
+      "Catch a transposed digit in a citation.",
+      "Confirm that the X check digit in an old ISBN-10 is correct."
+    ],
+    "workedExample": "Enter 978-0-306-40615-7. After removing hyphens the value is 9780306406157, which has 13 digits. The weighted sum of the first 12 digits is 9 + 21 + 8 + 0 + 9 + 0 + 18 + 0 + 3 + 45 + 1 + 15 = 129; the check digit that brings the total to the next multiple of 10 is 7, which matches. Entering 978-0-306-40615-6 instead fails, because the final digit does not match the checksum.",
+    "limits": [
+      "The tool validates the checksum only. It does not search a bibliographic database or confirm that the ISBN is assigned.",
+      "It does not convert between ISBN-10 and ISBN-13, which requires recalculating the check digit and, for some ranges, a prefix change.",
+      "Hyphens and spaces are ignored, but other separators and malformed groupings are not interpreted.",
+      "A valid checksum can still belong to a different edition, binding or format of a book."
+    ],
+    "privacy": "ISBNs are checked locally in your browser. No numbers are sent to ToolNova or retained.",
+    "faq": [
+      {
+        "q": "Can an ISBN-10 end in X?",
+        "a": "Yes. X represents the value 10 in the check position, for example 0-8044-2957-X. The validator accepts upper- or lowercase X."
+      },
+      {
+        "q": "Why do I need to remove hyphens?",
+        "a": "You do not; the tool strips spaces and hyphens automatically. It only needs the digits and any final X."
+      },
+      {
+        "q": "Does a valid ISBN prove the book exists?",
+        "a": "No. It proves the number is internally consistent. Confirm the title and edition with a catalogue or bookseller."
+      }
+    ]
+  },
+  "luhn-validator": {
+    "overview": [
+      "The Luhn validator checks whether a number satisfies the Luhn checksum, the mod-10 formula used by most payment cards, IMEI numbers and some account identifiers. It also reports the digit count, the check digit and a rough prefix hint such as Visa-like or Mastercard-like.",
+      "The algorithm starts from the rightmost digit, doubles every second digit, subtracts 9 from any result above 9, and adds everything together. If the total is a multiple of 10, the number passes. Because the check digit is part of the calculation, changing any single digit or swapping two adjacent digits almost always causes a failure, which makes the check useful for catching typing mistakes.",
+      "A passing checksum does not mean a card is valid, active or chargeable. It only means the digits are internally consistent. Anyone can invent a number that passes the Luhn check, and the prefix hint is a pattern match rather than an issuer lookup. Never enter a real card number into a website you do not control; use the published test numbers instead."
+    ],
+    "useCases": [
+      "Check a test card number while building a payment form.",
+      "Catch a mistyped digit before submitting an account number.",
+      "Teach how the mod-10 checksum works with a worked example.",
+      "Verify that a sample IMEI passes its checksum.",
+      "Sanity-check a number copied from a document."
+    ],
+    "workedExample": "Check 4111 1111 1111 1111, a standard Visa test number. After removing spaces it has 16 digits. Doubling every second digit from the right and reducing values above nine produces a sum that is a multiple of 10, so the validator reports a valid checksum. Change the last digit to 2 and the sum is no longer divisible by 10, so 4111 1111 1111 1112 fails. The prefix hint for the valid number is \"Visa-like\", but that is only a pattern, not proof of an account.",
+    "limits": [
+      "The Luhn check validates format only. It cannot confirm that a card exists, is active, has funds or belongs to the person entering it.",
+      "The prefix hint is a simple regular expression for common card networks and does not identify the issuer or card type reliably.",
+      "Numbers from 2 to 19 digits are accepted, so non-card identifiers that use Luhn can also be checked, but other lengths are rejected.",
+      "It does not perform expiry, CVV or address verification, and it must never be used as the only validation on a payment form."
+    ],
+    "privacy": "Validation runs locally in your browser and the number is not transmitted. Despite that, only paste real card details into systems you are authorised to use; prefer official test numbers for development.",
+    "faq": [
+      {
+        "q": "Does a Luhn pass mean the card is valid?",
+        "a": "No. It means the digits satisfy a checksum. Authorisation by the issuer is the only way to know whether a card can be charged."
+      },
+      {
+        "q": "Why do some valid numbers fail?",
+        "a": "Not every identifier uses Luhn, and some cards or regional systems use different check rules. A failure is a strong hint of a typo, but context matters."
+      },
+      {
+        "q": "Can I use this to validate an IMEI?",
+        "a": "Yes, IMEI numbers use the Luhn formula. Enter the 15 digits without spaces and check whether the checksum passes."
+      }
+    ]
+  }
+}

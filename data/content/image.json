@@ -1,0 +1,146 @@
+{
+  "background-remover": {
+    "overview": [
+      "The background remover uses an on-device AI model to separate the main subject of a photo from its background, then exports the cut-out as a transparent PNG or composites it onto a solid colour. You upload an image, press Remove background, wait for the model to process it, and download the result.",
+      "The model is MODNet, a matting network designed for portrait images. It estimates an alpha matte rather than making a hard yes-or-no decision per pixel, so hair, shoulders and semi-transparent edges can blend more naturally than a simple colour-threshold tool would allow. Images larger than 2048 pixels on the long side are scaled down for processing, which keeps memory use predictable on phones and laptops.",
+      "Processing happens in your browser after the model has been downloaded. Your photo is not uploaded to a server, but the page does fetch the Transformers.js library and the model weights from public CDNs the first time you use it, so an internet connection is required for that initial load. The model is then cached by the browser for later visits."
+    ],
+    "useCases": [
+      "Create a transparent portrait for a profile picture or slide deck.",
+      "Cut a person out of a photo before placing them on a branded background.",
+      "Prepare a subject image for a thumbnail or poster.",
+      "Remove a distracting background from a headshot for a team page.",
+      "Make a quick product-style cut-out when a person is the main subject."
+    ],
+    "workedExample": "Upload a portrait that is 3000 × 4000 pixels. Because the long side exceeds 2048, the tool scales it down before inference, runs MODNet, and gives you a cut-out canvas with a transparent background. Choose White as the new background and download a PNG: the subject is preserved, the original backdrop is replaced with white, and the exported file has the same aspect ratio as the processed image. Choosing Transparent instead keeps the alpha channel, which is useful for layering in a design tool.",
+    "limits": [
+      "The model is trained for people. Pets, products, furniture and complex scenes may be cut out imperfectly, especially around fine fur, transparent objects and busy edges.",
+      "Images larger than 2048 pixels on the long side are downscaled for processing, so the exported cut-out is not full resolution.",
+      "The first run needs a network connection to download the library and model, and performance depends on your device's CPU or GPU.",
+      "The result is an AI estimate, not a hand-drawn mask; inspect the edges and refine in an image editor if precision matters."
+    ],
+    "privacy": "Your image is processed locally and is never uploaded. The page downloads the AI library and model from public CDNs on first use, which reveals your IP address to those CDNs but not the contents of your photo.",
+    "faq": [
+      {
+        "q": "Is my photo uploaded?",
+        "a": "No. The image stays in the browser and is processed on your device. Only the model and library are downloaded from a CDN."
+      },
+      {
+        "q": "Why is the cut-out smaller than my original?",
+        "a": "Images above 2048 pixels on the long side are scaled down before inference to keep processing fast and memory use bounded."
+      },
+      {
+        "q": "Can I use the result commercially?",
+        "a": "The tool does not restrict your use of the output, but you are responsible for having the rights to the original photo and for checking the model's licence if you redistribute the model itself."
+      }
+    ]
+  },
+  "image-compressor": {
+    "overview": [
+      "The image compressor re-encodes JPG, PNG, WebP, BMP and AVIF images in your browser, letting you trade quality for file size with a live preview. Choose an output format, set the quality slider and optionally cap the width; the tool shows the new size next to each image before you download.",
+      "Compression works in two ways here. Reducing the maximum width throws away pixels, which is often the biggest saving for phone photos that are far larger than any screen needs. Lowering the quality setting makes the encoder discard more fine detail while keeping the same dimensions. For JPEG and WebP both effects combine; PNG is lossless, so the quality slider is ignored and savings come mainly from resizing.",
+      "The tool is designed for batch work: add up to 30 images of up to 20 MB each and download the compressed versions together. It is useful before uploading photos to a website, attaching images to email or submitting files to a portal with a size limit. Keep an untouched copy of anything important, because re-encoding is lossy and the original detail cannot be recovered from the compressed file."
+    ],
+    "useCases": [
+      "Shrink phone photos before uploading them to a website or form.",
+      "Bring several images under an email attachment limit.",
+      "Convert screenshots to WebP to reduce page weight.",
+      "Resize a batch of product photos to a consistent maximum width.",
+      "Compare JPG and WebP file sizes for the same picture."
+    ],
+    "workedExample": "Take a 4000 × 3000 phone photo that is 3.2 MB. Set the maximum width to 1600 pixels, choose JPG and move quality to 75. The image is resampled to 1600 × 1200 and re-encoded, which typically reduces it to a few hundred kilobytes; the exact size depends on how much detail the scene contains. The original stays untouched in the list until you clear it, and the new size is shown next to the preview so you can adjust the slider before downloading.",
+    "limits": [
+      "Up to 30 files per batch, each no larger than 20 MB. Other formats and larger files are skipped.",
+      "PNG output is lossless and ignores the quality slider, so a PNG may grow rather than shrink if the source was already efficient.",
+      "Transparent areas become a solid colour when the output format is JPEG, because JPEG has no alpha channel.",
+      "Re-encoding always loses some quality, and metadata such as camera settings and location is not preserved in the canvas-based output."
+    ],
+    "privacy": "Every image is decoded, resized and re-encoded on your device. Files are never uploaded to ToolNova or any third-party service.",
+    "faq": [
+      {
+        "q": "Which format should I choose?",
+        "a": "JPG is the most compatible. WebP usually produces smaller files but some browsers cannot create it and the tool falls back to another format. PNG is best when you need transparency or lossless output."
+      },
+      {
+        "q": "Does compression remove EXIF data?",
+        "a": "Yes. The image is drawn to a canvas and re-encoded, which drops most metadata, including the camera model and GPS location."
+      },
+      {
+        "q": "Can I compress a GIF?",
+        "a": "GIF is not in the accepted list, and animated images would lose their animation when re-encoded. Convert the frames to a supported still format first."
+      }
+    ]
+  },
+  "image-resizer": {
+    "overview": [
+      "The image resizer changes image dimensions by exact pixels, by a percentage, or to a ready-made size for social media and documents. It can keep the aspect ratio, choose between filling, fitting and stretching, and export as the original format, JPG, PNG or WebP.",
+      "The three fit modes solve different problems. Cover scales the image until it fills the target and crops the overflow, which is what you want for a profile picture or a thumbnail that must have no bars. Contain scales the image until it fits inside the target and fills the remaining space with white bars, preserving the whole frame. Stretch maps width and height independently, which fills the box exactly but distorts proportions.",
+      "The preset list covers common social placements, a 35 × 45 mm passport photo at 300 dpi and an A4 page at 300 dpi. Presets are a starting point, not a guarantee that a platform will accept the file; each service has its own cropping, file-size and content rules. Batch resizing supports up to 30 images of up to 20 MB each."
+    ],
+    "useCases": [
+      "Resize a photo to an exact pixel size for a form or upload field.",
+      "Create a square profile picture from a rectangular photo.",
+      "Prepare an Instagram post, story or YouTube thumbnail.",
+      "Scale an image to 50% for a faster-loading web page.",
+      "Produce a passport or visa photo at a documented pixel size."
+    ],
+    "workedExample": "Resize a 4032 × 3024 phone photo to 1080 × 1080. With Cover selected, the image is scaled by the larger ratio until both sides reach 1080, giving a 1440 × 1080 result that is cropped by 180 pixels on each side. With Contain, it is scaled to 1080 × 810 and white bars fill 135 pixels above and below. With Stretch, the 4:3 image is forced into a square and the subject appears wider than in reality.",
+    "limits": [
+      "Resizing cannot add detail. Enlarging a small image produces a softer or blockier result, depending on the browser's resampling.",
+      "Animated GIFs and animated WebPs are flattened to a single frame, and metadata such as EXIF orientation and GPS is not preserved.",
+      "Cover crops from the centre; there is no manual crop position control, so an off-centre subject may be cut awkwardly.",
+      "Up to 30 files per batch and 20 MB per file. Browsers without WebP encoding fall back to PNG."
+    ],
+    "privacy": "Images are decoded and resized locally in your browser. Nothing is uploaded, and the resized files are generated on your device.",
+    "faq": [
+      {
+        "q": "What is the difference between cover and contain?",
+        "a": "Cover fills the target and crops the edges. Contain fits the whole image inside the target and adds bars. Use cover for thumbnails and contain when nothing may be cropped."
+      },
+      {
+        "q": "Why does my resized image look soft?",
+        "a": "If you enlarged it, the browser has to invent pixels. If you shrank it heavily, fine detail is averaged away. Start from the largest original you have."
+      },
+      {
+        "q": "Does resizing reduce file size?",
+        "a": "Usually, because fewer pixels are stored. Choosing WebP or a lower JPEG quality reduces it further, while PNG may stay large."
+      }
+    ]
+  },
+  "passport-photo-maker": {
+    "overview": [
+      "The passport photo maker crops a photo to an official photo size, overlays alignment guides and exports a single image or a printable sheet with multiple copies. Presets are given in millimetres and converted at 300 dpi, so a 35 × 45 mm photo becomes 413 × 531 pixels and a 51 × 51 mm photo becomes 602 × 602 pixels.",
+      "The guides show an oval for the head and a line for the eyes. You drag and zoom the photo until the face sits inside the oval and the eyes are near the line, then choose a white, blue or grey background and download. A maximum file size option re-encodes the JPEG at progressively lower quality until the file fits, which is useful for portals that reject large uploads.",
+      "The print sheet lays out copies on a 4 × 6 inch or A4 page, optionally with a cut border. When you print it, select actual size or 100% scaling; a printer's fit-to-page setting will resize the photos and make the millimetre dimensions wrong."
+    ],
+    "useCases": [
+      "Prepare a passport or visa photo at a required millimetre size.",
+      "Make a 2 × 2 inch photo for a US-style application.",
+      "Create several identical copies on one sheet for printing at a shop.",
+      "Meet a portal's maximum file size without using separate compression software.",
+      "Align a casual photo to a face guide before cropping."
+    ],
+    "workedExample": "Choose the 35 × 45 mm preset, which produces 413 × 531 pixels at 300 dpi. Add a portrait, drag it so the chin and forehead sit inside the oval, and zoom until the eyes are close to the eye line. Select a white background and set a 200 KB maximum. The tool exports a JPEG, lowering quality only as much as needed to stay under 200 KB. Then switch to the sheet view, choose A4 and four copies to print a page for cutting.",
+    "limits": [
+      "The guides are alignment aids, not a compliance check. Every country has its own rules for head size, background, expression, glasses and recency.",
+      "Background replacement is a solid colour fill; it does not perform AI cut-out, so hair edges and transparent clothing may show artefacts.",
+      "Meeting a maximum file size relies on JPEG quality reduction, which can visibly soften the image if the limit is very small.",
+      "Printed dimensions are only correct when the printer is set to actual size or 100%; borderless and fit-to-page modes will scale the sheet."
+    ],
+    "privacy": "Your photo is loaded, cropped and encoded entirely on your device. It is never uploaded to ToolNova or sent to a printing service.",
+    "faq": [
+      {
+        "q": "Will this photo be accepted by an embassy?",
+        "a": "Not guaranteed. The tool matches common dimensions and provides alignment guides, but acceptance depends on the specific authority's rules. Check the official requirements before submitting."
+      },
+      {
+        "q": "Why does my printed sheet come out the wrong size?",
+        "a": "The printer is probably scaling the page to fit the paper. Choose actual size or 100% in the print dialog and disable fit-to-page."
+      },
+      {
+        "q": "Can I choose a custom size?",
+        "a": "Yes. Use millimetres in the custom mode or pixels in the pixel mode. The tool converts millimetres at 300 dpi."
+      }
+    ]
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "chmod-calculator": {
+    "overview": [
+      "The chmod calculator converts Unix file permissions between octal notation and the symbolic rwx string. Each of the three permission groups — owner, group and other — gets independent read (4), write (2) and execute (1) bits, and the total is the familiar three-digit mode such as 644 or 755.",
+      "Tick the permissions a file needs and the page produces the octal value, the symbolic form and a ready-to-copy chmod command. You can also work in the opposite direction: enter an octal mode and decode exactly who can read, write or execute the file."
+    ],
+    "useCases": [
+      "Setting permissions on a web server when a deployment guide gives you one notation but your tool expects the other.",
+      "Checking what a mode like 600 or 775 actually allows before running a command.",
+      "Writing Dockerfiles, install scripts or CI steps that need an explicit chmod value.",
+      "Teaching or reviewing Unix permission basics without touching a real filesystem."
+    ],
+    "workedExample": "A shared configuration file should be readable and writable by its owner but readable only by everyone else. Tick owner read and write plus group read and other read. The calculator returns 644 and rw-r--r--, so the command becomes chmod 644 config.yml.",
+    "limits": [
+      "Special bits such as setuid, setgid and the sticky bit are not part of the three-digit mode and are not calculated here.",
+      "The tool only converts notation. It cannot read a file's current permissions or apply a change to a server.",
+      "Symbolic forms using u, g, o, a, +, - and = are decoded into a mode, but ACLs and SELinux contexts are outside scope."
+    ],
+    "privacy": "Permission bits are computed in your browser from the controls you toggle. Nothing about the file path, server or intended command is transmitted or stored.",
+    "faq": [
+      {
+        "q": "What is the difference between 644 and 755?",
+        "a": "644 gives the owner read and write while group and other can only read; 755 adds execute for everyone, which is why directories and executables commonly use it."
+      },
+      {
+        "q": "Can I copy the command directly into a terminal?",
+        "a": "Yes. The generated command includes the octal mode and a placeholder filename, so replace the placeholder with the real path before running it."
+      }
+    ]
+  },
+  "cidr-subnet-calculator": {
+    "overview": [
+      "This subnet calculator takes an IPv4 address and a prefix length and derives the network it belongs to. It masks the address to find the network boundary, then reports the broadcast address, the first and last usable hosts, the dotted-decimal subnet mask, the wildcard mask and the total address count.",
+      "It is aimed at quick operational checks: confirming whether two addresses share a subnet, planning a small network for a lab, or translating a /30 or /29 into a usable host range without doing the binary arithmetic by hand."
+    ],
+    "useCases": [
+      "Checking whether a host such as 192.168.1.25 is inside a /24 or a smaller subnet.",
+      "Planning point-to-point links and small server networks with /30 or /31 prefixes.",
+      "Producing the subnet and wildcard masks needed for firewall or routing configuration.",
+      "Verifying address ranges in documentation or a cloud provider's VPC settings."
+    ],
+    "workedExample": "Enter 10.0.0.15 with prefix 30. The masked network is 10.0.0.12, the broadcast address is 10.0.0.15 and the usable hosts are 10.0.0.13 and 10.0.0.14. The subnet mask is 255.255.255.252 and the wildcard mask is 0.0.0.3, which makes the two-address range easy to confirm.",
+    "limits": [
+      "Only IPv4 is supported. IPv6 prefixes, compressed notation and EUI-64 addressing are not handled.",
+      "A /31 has two addresses that are both treated as usable hosts in practice, while a /32 represents a single host rather than a network with a broadcast address.",
+      "The calculator does not communicate with a router, DNS or any network; it is purely arithmetic on the values you enter."
+    ],
+    "privacy": "Addresses and prefix lengths are processed locally in JavaScript. No request is made with the IP address, so private range information never leaves your device.",
+    "faq": [
+      {
+        "q": "Why is the broadcast address missing for a /32?",
+        "a": "A /32 contains only one address, so there is no separate network and broadcast split; the address itself is the host."
+      },
+      {
+        "q": "Can I enter a hostname instead of an IP address?",
+        "a": "No. The calculator expects dotted-decimal IPv4 notation and will reject hostnames rather than performing DNS resolution."
+      }
+    ]
+  },
+  "cron-expression-explainer": {
+    "overview": [
+      "The cron explainer reads a standard five-field cron expression and translates it into plain English field by field. It also calculates the next several times the job would run in your browser's timezone, which makes it easier to spot mistakes such as a schedule that fires only on one day of the month.",
+      "Use it when you inherit a crontab, when a deployment pipeline uses cron syntax, or when you want to confirm that an expression like 0 9 * * 1-5 really means weekday mornings before you save it."
+    ],
+    "useCases": [
+      "Re-reading a legacy crontab and confirming what each line does.",
+      "Checking a schedule before committing it to a GitHub Actions workflow or server cron file.",
+      "Converting a human intention such as every fifteen minutes into an expression.",
+      "Spotting the difference between day-of-month and day-of-week scheduling mistakes."
+    ],
+    "workedExample": "The expression 0 9 * * 1-5 has five fields: minute 0, hour 9, every day of the month, every month, and Monday through Friday. The explainer lists the next runs as 09:00 on each weekday, so it is clear the job skips weekends without needing to inspect the field order manually.",
+    "limits": [
+      "The tool covers the common five-field cron syntax. Non-standard extensions, seconds fields, aliases such as @daily and platform-specific macros are not interpreted.",
+      "Next-run times depend on your device's timezone and clock, not on the timezone of the server that will run the job.",
+      "When both day-of-month and day-of-week are restricted, traditional cron treats them with OR semantics, which surprises many users."
+    ],
+    "privacy": "The expression is parsed in your browser and the preview times are computed locally. No schedule or server configuration is uploaded.",
+    "faq": [
+      {
+        "q": "Does the explainer support six-field cron with seconds?",
+        "a": "No. It is designed for the standard five-field format, so a seconds field will be misread or rejected rather than silently accepted."
+      },
+      {
+        "q": "Will it match my server's timezone?",
+        "a": "The preview uses your current browser timezone. Servers often run in UTC, so compare the times against the server's configured zone before deploying."
+      }
+    ]
+  },
+  "css-border-radius-generator": {
+    "overview": [
+      "This generator produces a border-radius declaration from either one shared value or four independent corner values. It is useful when a design calls for an asymmetric card, a pill-shaped button or a curved image frame without hand-writing the shorthand order of top-left, top-right, bottom-right and bottom-left.",
+      "The CSS output updates as you adjust the numbers, so you can copy the final declaration directly into a stylesheet or a component's style object."
+    ],
+    "useCases": [
+      "Creating a card with two heavily rounded corners and two sharp ones.",
+      "Making pill buttons by setting a large radius on every corner.",
+      "Matching a design handoff that specifies each corner separately.",
+      "Prototyping a rounded avatar or image frame quickly."
+    ],
+    "workedExample": "Set all corners to 8 pixels for a subtly rounded button. To create a card that curves only on the top-left and bottom-right, set those two values to 28 pixels and leave the others at 0. The output becomes border-radius: 28px 0 0 28px, ready to paste into the component's styles.",
+    "limits": [
+      "Corner values are generated in pixels; percentage or slash-separated elliptical syntax is not produced by the controls.",
+      "The tool writes the declaration but does not preview it on your actual element, so confirm it against your layout.",
+      "Very large radii are clamped by the browser differently depending on the element's dimensions."
+    ],
+    "privacy": "The radius values are formatted locally in JavaScript and no stylesheet, design file or component code is transmitted to a server or stored between visits.",
+    "faq": [
+      {
+        "q": "Can I use the output with React or Tailwind?",
+        "a": "Yes. Paste the declaration into a CSS file, an inline style object or a custom utility class; the property itself is framework-independent."
+      }
+    ]
+  },
+  "css-minifier": {
+    "overview": [
+      "The CSS minifier removes comments, redundant whitespace and unnecessary line breaks from a stylesheet. The result is a smaller file that is faster to transfer while keeping the same selectors and declarations for normal CSS.",
+      "Paste development CSS and the page reports the compressed output along with the before-and-after size, which is handy for a quick estimate of the saving before running a full build pipeline."
+    ],
+    "useCases": [
+      "Shrinking a hand-written stylesheet before deploying a small static site.",
+      "Removing comments and blank lines from CSS copied out of a design tool.",
+      "Estimating how much of a page's CSS weight is whitespace.",
+      "Preparing a compact style block for an email template or embedded widget."
+    ],
+    "workedExample": "A stylesheet containing a commented reset, blank lines and multi-line selectors might start at 4.2 KB. After minification the same rules can fit in about 2.8 KB, and the tool displays both sizes so you can judge whether the saving is worth committing the generated file.",
+    "limits": [
+      "The minifier is a lightweight text transform, not a full CSS parser. It may alter strings or custom property values that contain unusual spacing.",
+      "It does not rename classes, merge duplicate rules or perform advanced optimisations.",
+      "Very large stylesheets can take a moment to process because everything runs in the browser tab."
+    ],
+    "privacy": "Your CSS is processed with client-side JavaScript and is never uploaded. The output exists only in the page until you copy it.",
+    "faq": [
+      {
+        "q": "Should I keep a readable version of my CSS?",
+        "a": "Yes. Keep the source file under version control and deploy the minified output, otherwise future edits become unnecessarily difficult."
+      },
+      {
+        "q": "Does minifying break CSS variables?",
+        "a": "Normal custom properties survive, but unusual whitespace inside strings or data URLs is the main case to re-test after minification."
+      }
+    ]
+  },
+  "html-minifier": {
+    "overview": [
+      "The HTML minifier compresses a snippet of markup by removing comments and collapsing unnecessary whitespace. It is intended for small fragments — an email body, an embed, a static partial — where trimming bytes is useful but setting up a full build tool is overkill.",
+      "The page shows the minified markup and size statistics so you can compare it with the original before using the result."
+    ],
+    "useCases": [
+      "Compressing an HTML email template before sending it through a campaign tool.",
+      "Preparing a compact embed snippet for a CMS or documentation page.",
+      "Removing development comments from a copied HTML fragment.",
+      "Checking how much of a snippet's size is whitespace and comments."
+    ],
+    "workedExample": "A table-based email template with indentation and explanatory comments may contain many kilobytes of whitespace. After minification the tags are joined and the comments disappear, often reducing the payload by a noticeable fraction while the rendered email stays the same.",
+    "limits": [
+      "Whitespace inside preformatted blocks, textarea content and inline text can be significant, so review the output before using it where spacing is content.",
+      "It does not validate HTML, rewrite attributes or optimise images and scripts.",
+      "Script and style contents are treated as text; complex embedded code should be tested after minification."
+    ],
+    "privacy": "The markup is processed entirely in your browser. Nothing is sent to a server, which matters for templates that contain internal URLs or copy.",
+    "faq": [
+      {
+        "q": "Is minified HTML safe for email clients?",
+        "a": "Usually, but email clients are inconsistent. Send a test message through your provider and check the rendered result before a campaign."
+      }
+    ]
+  },
+  "http-status-lookup": {
+    "overview": [
+      "This lookup explains an HTTP status code in practical terms. Enter a three-digit code and it returns the standard name, the response class (informational, success, redirection, client error or server error) and a short note about when that status is normally used.",
+      "It is useful when reading API documentation, debugging a failing integration, or deciding whether a response indicates a client mistake, an authentication problem or a temporary server condition."
+    ],
+    "useCases": [
+      "Understanding an unfamiliar code returned by an API or reverse proxy.",
+      "Choosing the right status for a new endpoint during design review.",
+      "Explaining the difference between 401 and 403 to a teammate.",
+      "Recognising when a 429 or 503 suggests retrying with backoff rather than changing the request."
+    ],
+    "workedExample": "A request to an API returns 429. The lookup identifies it as Too Many Requests, a client-error class response used for rate limiting. That tells you the request format is probably fine and the correct response is to wait and retry with backoff rather than to change the payload.",
+    "limits": [
+      "The reference covers standard and common codes; vendor-specific or unofficial statuses may only be classified by their first digit.",
+      "A status code describes the response, not the root cause. Logs and response bodies are still needed for diagnosis.",
+      "The tool does not make a request or inspect headers; it only explains the number you provide."
+    ],
+    "privacy": "The status code is matched against a reference table bundled with the page. No URL, header, API response or other request information is transmitted or stored.",
+    "faq": [
+      {
+        "q": "What is the difference between 401 and 403?",
+        "a": "401 means authentication is missing or invalid, so the client should sign in. 403 means the request was understood but the authenticated identity is not allowed to perform it."
+      },
+      {
+        "q": "Is 418 a real status code?",
+        "a": "It exists as an April Fools' extension and is included in some references, but it is not part of the core HTTP specification and should not be used in production APIs."
+      }
+    ]
+  },
+  "image-to-base64": {
+    "overview": [
+      "Image to Base64 converts a local image file into a data URL that embeds the image bytes directly in text. The result can be placed in HTML, CSS, JSON or an email template when you cannot or do not want to host a separate image file.",
+      "The conversion uses the browser's FileReader API, so the image is read from your disk and encoded in the page. You can copy the resulting data URL and paste it wherever an image source is accepted."
+    ],
+    "useCases": [
+      "Embedding a small logo in a single-file HTML page or email signature.",
+      "Passing an image through a JSON configuration where file uploads are not available.",
+      "Creating a self-contained CSS background for a demo.",
+      "Avoiding an extra network request for a tiny icon."
+    ],
+    "workedExample": "Upload a 12 KB PNG logo. The tool produces a string beginning with data:image/png;base64, followed by the encoded bytes. Paste that full string into an img src or a CSS background-image rule, and the image renders without a separate file request.",
+    "limits": [
+      "Base64 encoding increases size by roughly one third, so large photos become very long strings and are usually better served as normal image files.",
+      "The output is a text string in the page; very large images can make the browser tab sluggish when copied or rendered.",
+      "Only formats the browser can read and label correctly, such as JPEG, PNG, WebP and GIF, are supported."
+    ],
+    "privacy": "The image is read locally with the FileReader API and never uploaded. The encoded string stays in your browser until you copy it.",
+    "faq": [
+      {
+        "q": "Why is the Base64 output bigger than my file?",
+        "a": "Base64 represents every three bytes as four printable characters, so the encoded text is about 33 percent larger than the original binary file."
+      },
+      {
+        "q": "Can I use the data URL in an img tag?",
+        "a": "Yes. Set the src attribute to the complete string beginning with data:image/…;base64, including the prefix."
+      }
+    ]
+  },
+  "json-formatter": {
+    "overview": [
+      "The JSON formatter pretty-prints raw JSON with consistent indentation, validates its syntax and reports a readable error when the document is malformed. It accepts the full JSON data model — objects, arrays, strings, numbers, booleans and null — rather than a relaxed JavaScript object literal.",
+      "Choose two spaces, four spaces or tabs, and the output can be copied straight into a config file, a code sample or a bug report. The formatter is useful for making minified API responses readable and for finding the exact position of a missing comma or bracket."
+    ],
+    "useCases": [
+      "Making a single-line API response readable during debugging.",
+      "Checking whether a configuration file is valid before deploying it.",
+      "Preparing a formatted example for documentation or a support ticket.",
+      "Finding the location of a syntax error in hand-edited JSON."
+    ],
+    "workedExample": "A response arrives as {\"user\":{\"id\":7,\"roles\":[\"admin\",\"editor\"]},\"active\":true}. Choosing two-space indentation expands it into nested lines with each key and value on its own level, so the roles array and the active flag are immediately visible instead of being buried in one long line.",
+    "limits": [
+      "Only strict JSON is accepted. Comments, trailing commas, single-quoted strings and unquoted keys are rejected, which is intentional.",
+      "The formatter does not repair invalid JSON automatically; it reports the problem so you can decide how to fix it.",
+      "Very large documents are processed in the browser tab and can be slow or memory-heavy."
+    ],
+    "privacy": "JSON is parsed with the browser's built-in JSON parser. No request is made with your data, so API responses containing internal identifiers stay local.",
+    "faq": [
+      {
+        "q": "Can I minify JSON here as well?",
+        "a": "Yes. The same parser can compact valid JSON by removing indentation, which is useful before storing or transmitting a document."
+      },
+      {
+        "q": "Does it preserve key order?",
+        "a": "JSON objects are unordered by specification, although JavaScript preserves insertion order for non-numeric keys in practice. Do not rely on order for correctness."
+      }
+    ]
+  },
+  "json-to-typescript": {
+    "overview": [
+      "JSON to TypeScript turns a sample JSON document into interface definitions. It walks nested objects and arrays, infers primitive types and emits a clean set of interfaces that you can paste into a TypeScript project as a starting point for API response types.",
+      "It is a scaffolding aid rather than a complete schema generator: the output reflects the sample you provide, so fields missing from the sample will be missing from the interfaces until you add them."
+    ],
+    "useCases": [
+      "Creating initial types from a real API response before hand-refining them.",
+      "Turning a large configuration object into named interfaces.",
+      "Generating mock-data types quickly for a frontend prototype.",
+      "Documenting the shape of a JSON fixture used in tests."
+    ],
+    "workedExample": "Given {\"id\":1,\"name\":\"Ada\",\"roles\":[\"admin\"],\"profile\":{\"active\":true}}, the generator produces a root interface with a numeric id, a string name, a string array roles and a nested Profile interface with a boolean active field. You can then rename the root interface and paste it into your project.",
+    "limits": [
+      "Types are inferred from one sample. Nullable fields, optional properties and unions are not reliably detected unless the sample demonstrates them.",
+      "Arrays are typed from their first element, so mixed-type arrays may produce an inaccurate annotation.",
+      "The generated interfaces are a starting point; review them against the real API contract and your project's naming conventions."
+    ],
+    "privacy": "The JSON is parsed and transformed in your browser. Nothing is uploaded, so response samples containing internal fields remain on your device.",
+    "faq": [
+      {
+        "q": "Can I choose the root interface name?",
+        "a": "Yes. Set the root name field before generating, and the top-level interface will use that name instead of the default."
+      },
+      {
+        "q": "Does it generate runtime validation code?",
+        "a": "No. It produces TypeScript type declarations only; add a schema validator such as Zod or io-ts if you need runtime checks."
+      }
+    ]
+  },
+  "md5-hash-generator": {
+    "overview": [
+      "This tool computes the MD5 message digest of text you paste. MD5 produces a fixed 128-bit value, usually shown as 32 hexadecimal characters, and the same input always produces the same digest. The calculation runs in the browser, so the text is not submitted to a server.",
+      "MD5 is useful for non-security checksums, cache keys and quick integrity comparisons. It is not safe for password storage or digital signatures because practical collision attacks exist and the algorithm is fast to brute-force."
+    ],
+    "useCases": [
+      "Comparing two text snippets to see whether they differ, using a short digest.",
+      "Generating a stable cache key for a small configuration string.",
+      "Checking a legacy system's expected checksum while migrating it.",
+      "Learning how hash functions behave with a live, local example."
+    ],
+    "workedExample": "Hashing the text hello produces the digest 5d41402abc4b2a76b9719d911017c592. Changing just the first letter to Hello produces a completely different digest. This demonstrates the avalanche effect, which makes the digest useful for detecting accidental changes even though MD5 is unsuitable for security.",
+    "limits": [
+      "MD5 is cryptographically broken. Do not use it for password hashing, signatures, certificates or any security decision.",
+      "The digest is shown in lowercase hexadecimal; comparing against a differently cased value requires normalising case first.",
+      "The tool hashes text as UTF-8. File hashing and binary input are not supported on this page."
+    ],
+    "privacy": "Hashing is performed locally with JavaScript. The input text and the resulting digest never leave your browser and are not logged or stored by the page.",
+    "faq": [
+      {
+        "q": "What should I use instead of MD5 for passwords?",
+        "a": "Use a dedicated password hashing function such as Argon2id, bcrypt or scrypt with a per-user salt. General-purpose hashes like MD5 or SHA-256 are not suitable for passwords."
+      }
+    ]
+  },
+  "number-base-converter": {
+    "overview": [
+      "The number base converter translates an integer between binary, octal, decimal and hexadecimal. Enter a value, choose the base you typed it in, and the page shows the same integer in all four representations along with its bit length and a short summary.",
+      "It is useful for reading memory addresses, permission masks, colour channels, network prefixes and embedded-register documentation, where the same value commonly appears in several bases."
+    ],
+    "useCases": [
+      "Converting a hexadecimal colour or register value into binary to inspect individual bits.",
+      "Reading an octal permission value alongside its decimal equivalent.",
+      "Checking a bitmask length before packing it into a fixed-width field.",
+      "Translating values between documentation that uses different conventions."
+    ],
+    "workedExample": "Enter 255 in decimal. The converter returns 11111111 in binary, 377 in octal and FF in hexadecimal, with a bit length of eight. Entering 0x10 with the hexadecimal base selected yields decimal 16, binary 10000 and octal 20, which confirms how the same pattern maps across bases.",
+    "limits": [
+      "The converter works on JavaScript integers and is reliable up to Number.MAX_SAFE_INTEGER; very large values lose precision.",
+      "Negative numbers are supported as signed values, but arbitrary-precision arithmetic and two's-complement bit widths are not modelled.",
+      "Digits that are invalid for the selected base are rejected rather than guessed."
+    ],
+    "privacy": "All base conversion is performed locally with JavaScript number operations. The value you enter is not sent to a server, logged or retained after you close the page.",
+    "faq": [
+      {
+        "q": "Why are optional 0b, 0o and 0x prefixes accepted?",
+        "a": "They are stripped when they match the selected base, so you can paste a value copied from code without editing it first."
+      },
+      {
+        "q": "Can I convert very large integers exactly?",
+        "a": "Not beyond the safe integer range. For arbitrary-precision values, use a BigInt-based tool or library."
+      }
+    ]
+  },
+  "regex-tester": {
+    "overview": [
+      "The regex tester runs a JavaScript regular expression against sample text and shows every match together with its capture groups. You can set the pattern, the flags and the subject text, then inspect exactly what the engine selects before putting the expression into application code.",
+      "It is designed for quick iteration: change a quantifier or a group and immediately see whether the match set grows or shrinks. The page uses the same regular-expression engine as the browser, so behaviour matches JavaScript rather than PCRE or Python."
+    ],
+    "useCases": [
+      "Checking an email, date or identifier pattern against realistic samples.",
+      "Confirming which text a capture group actually contains.",
+      "Comparing global and non-global matching behaviour.",
+      "Debugging an expression before adding it to form validation or a parser."
+    ],
+    "workedExample": "With the pattern (\\d{4})-(\\d{2})-(\\d{2}) and the global flag, the text 2026-11-03 and 2027-01-15 returns two matches. Each match exposes the full date plus three numbered groups for year, month and day, which can then be read by index in code.",
+    "limits": [
+      "This is the JavaScript regular-expression flavour. Lookbehind support, named groups and Unicode property escapes depend on the browser, and PCRE-specific syntax will not work.",
+      "Catastrophic backtracking in a poorly written pattern can freeze the tab; there is no execution timeout.",
+      "The tool reports matches and groups but does not generate replacement code or benchmark performance."
+    ],
+    "privacy": "Patterns and test text are evaluated entirely in your browser. Nothing is sent to a server, so internal log lines can be tested safely.",
+    "faq": [
+      {
+        "q": "Why does my pattern match only the first result?",
+        "a": "Add the global flag g. Without it, the engine stops after the first match, which is also how String.match behaves in JavaScript."
+      },
+      {
+        "q": "Can I use named capture groups?",
+        "a": "Yes in browsers that support the feature. The group names appear in the match details alongside numbered groups."
+      }
+    ]
+  },
+  "sql-formatter": {
+    "overview": [
+      "The SQL formatter tidies a pasted query by uppercasing common keywords and adding line breaks and indentation around major clauses. It turns a dense one-line SELECT into something that can be read and reviewed without mentally parsing every keyword.",
+      "It is a presentation tool rather than a database client. The SQL is not executed, validated against a schema or sent to a server; the output is simply a more readable rendering of the text you provided."
+    ],
+    "useCases": [
+      "Cleaning up a long query before pasting it into a code review or ticket.",
+      "Making generated SQL readable when debugging an ORM or query builder.",
+      "Standardising keyword case across a team's example queries.",
+      "Preparing documentation snippets that are easier to scan."
+    ],
+    "workedExample": "The input select id,name from users where active=1 and created_at>'2026-01-01' order by name becomes a multi-line statement with SELECT, FROM, WHERE and ORDER BY on separate lines and keywords in uppercase. The meaning is unchanged, but the structure is now visible at a glance.",
+    "limits": [
+      "Formatting is keyword-driven rather than driven by a full grammar, so unusual dialects, procedural blocks and deeply nested subqueries may be indented imperfectly.",
+      "String literals containing SQL keywords can be uppercased in rare cases; review the output before using it in production.",
+      "No syntax validation or semantic analysis is performed, so a malformed query still produces formatted output."
+    ],
+    "privacy": "Your query is processed locally in JavaScript inside the page. Table names, predicates and any sensitive literals are not transmitted to a server or stored.",
+    "faq": [
+      {
+        "q": "Does it support PostgreSQL, MySQL and SQL Server?",
+        "a": "Common SELECT, INSERT, UPDATE, DELETE and JOIN syntax formats well, but dialect-specific constructs may need manual adjustment."
+      }
+    ]
+  },
+  "url-inspector": {
+    "overview": [
+      "The URL inspector breaks an absolute URL into its components: scheme, host, port, path, query string and fragment. Each query parameter is decoded into a key and value pair, so encoded campaign parameters and API filters become readable instead of a wall of percent signs.",
+      "It uses the browser's URL parser, which means it follows the same rules as JavaScript's URL constructor and rejects relative strings that do not include a scheme."
+    ],
+    "useCases": [
+      "Reading long tracking links and spotting where a campaign parameter was appended twice.",
+      "Separating an API endpoint's path from its query filters.",
+      "Checking which port and fragment a copied link actually contains.",
+      "Debugging a redirect URL that behaves differently after encoding."
+    ],
+    "workedExample": "Inspecting https://example.com/docs?q=tool+nova&lang=en#install shows the host example.com, the path /docs, the fragment install, and two decoded parameters: q with the value tool nova and lang with the value en. The plus sign is correctly shown as a space in the query context.",
+    "limits": [
+      "A scheme is required. Plain strings such as example.com/path are treated as relative and rejected rather than guessed.",
+      "Repeated query keys are listed as separate rows; the tool does not merge them into an array or object.",
+      "The page inspects the URL text only. It does not follow redirects, fetch the resource or check certificate validity."
+    ],
+    "privacy": "URLs are parsed in the browser with the standard URL API. No request is made, so internal hostnames and signed links stay local.",
+    "faq": [
+      {
+        "q": "Does inspecting a URL make a network request?",
+        "a": "No. The parser works on the string you paste and never fetches the address, so private or signed URLs are safe to inspect."
+      },
+      {
+        "q": "Why are some characters still percent-encoded?",
+        "a": "The tool decodes query parameters but keeps the underlying URL representation intact where decoding would change its meaning."
+      }
+    ]
+  },
+  "uuid-generator": {
+    "overview": [
+      "The UUID generator creates version 4 universally unique identifiers using random data from the browser. You can generate one identifier or several at a time, then copy the list into a database seed, a test fixture or an API request.",
+      "A v4 UUID contains 122 random bits, which makes accidental collisions vanishingly unlikely for normal application use. The identifiers are formatted in the standard 8-4-4-4-12 hexadecimal pattern."
+    ],
+    "useCases": [
+      "Creating primary keys for records before they reach the database.",
+      "Generating identifiers for distributed services that cannot coordinate a counter.",
+      "Producing sample IDs for tests and fixtures.",
+      "Naming uploaded files or temporary resources without leaking sequencing information."
+    ],
+    "workedExample": "Asking for three identifiers might return values such as 3f2c9a1e-7b4d-4c8a-9e21-5d6f0a8b3c74. Each value contains the version nibble 4 and a valid variant, and all three are independent, so they can be assigned immediately to three new database records without coordinating a counter.",
+    "limits": [
+      "UUIDs are random identifiers, not secrets. Do not use them as authentication tokens or password reset codes.",
+      "The identifiers are generated in the browser; if your application requires a specific UUID version or namespace-based UUIDs, use the appropriate library instead.",
+      "Uniqueness is probabilistic. The collision risk is negligible at normal volumes but never mathematically zero."
+    ],
+    "privacy": "Identifiers are generated with the browser cryptographic random source. They are not transmitted, logged or stored by the page, and no seed or device information is collected.",
+    "faq": [
+      {
+        "q": "Are these UUID v4 values cryptographically random?",
+        "a": "They use the browser's secure random number generator where available. They are suitable as identifiers, but not as bearer secrets."
+      },
+      {
+        "q": "Can I generate more than 50 at once?",
+        "a": "The page caps the batch size to keep the textarea manageable. Generate another batch if you need more."
+      }
+    ]
+  },
+  "xml-formatter": {
+    "overview": [
+      "The XML formatter indents raw XML so nested elements, attributes and text are easier to read. Paste a single-line payload and the tool inserts line breaks and indentation while preserving the document's content.",
+      "It also reports whether the basic structure looks well formed, which helps catch a mismatched closing tag before the XML is pasted into a configuration file or sent to an API."
+    ],
+    "useCases": [
+      "Reading an XML response returned by a SOAP or integration endpoint.",
+      "Checking a configuration file for an unclosed element.",
+      "Preparing a readable XML sample for documentation.",
+      "Comparing two payloads after making them structurally consistent."
+    ],
+    "workedExample": "The input <catalog><item id=\"1\"><name>Pen</name></item></catalog> becomes a nested block with catalog, item and name each on their own indented line. The id attribute remains attached to the item element, so the original structure is preserved while the parent-child hierarchy becomes much easier to read.",
+    "limits": [
+      "Indentation is a text formatting operation, not a full XML schema validation. It cannot verify element ordering, data types or namespaces.",
+      "Comments, CDATA sections and processing instructions may be preserved verbatim but are not semantically checked.",
+      "Very large documents can be slow in the browser, and malformed input may produce partial output."
+    ],
+    "privacy": "The XML is parsed and formatted locally in your browser. No payload, namespace or credential embedded in the document is uploaded, logged or stored by the page.",
+    "faq": [
+      {
+        "q": "Does the formatter validate my XML against a schema?",
+        "a": "No. It checks basic well-formedness and formats the structure; XSD or DTD validation requires a dedicated validator."
+      }
+    ]
+  }
+}

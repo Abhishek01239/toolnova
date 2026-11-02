@@ -1,0 +1,110 @@
+{
+  "random-list-picker": {
+    "overview": [
+      "The random list picker chooses one or more items from a list you paste, one item per line. It shuffles the list and takes the first entries, so the same item cannot be selected twice in a single draw. The number of picks is capped at the number of items available.",
+      "Shuffling is the fair way to pick without replacement. Each item has an equal chance of ending up in any position, and the first n positions are returned. This is the same principle used for raffle draws, assigning groups, choosing a review sample or picking a restaurant from a shortlist.",
+      "The picker uses the browser's general-purpose random function, which is perfectly adequate for casual choices. It is not a certified random source and should not be used for regulated lotteries, cryptographic key generation or any draw where an attacker could benefit from predicting the result."
+    ],
+    "useCases": [
+      "Pick a winner or two from a list of entrants.",
+      "Choose a restaurant, film or activity from a shortlist.",
+      "Assign a random sample of items for review.",
+      "Select discussion topics for a meeting.",
+      "Split a list into random groups by drawing names in turn."
+    ],
+    "workedExample": "Paste six names, one per line: Ada, Lin, Maya, Omar, Priya and Sam. Set the count to 2 and press Pick. The tool shuffles all six and returns two distinct names, for example Maya and Omar. Press Pick again for a fresh shuffle; the previous result has no influence on the next draw, and the two names in a single draw are always different.",
+    "limits": [
+      "Blank lines are ignored, but duplicate lines are treated as separate entries, so a name entered twice has double the chance.",
+      "The pick count is limited to the number of available items; asking for more returns all items in random order.",
+      "The shuffle uses Math.random, which is not cryptographically secure and is unsuitable for regulated or security-sensitive draws.",
+      "Everything depends on the list you provide; the tool cannot verify identities or prevent someone from adding entries twice."
+    ],
+    "privacy": "The list stays in your browser and is never uploaded. Nothing is saved after you close the page.",
+    "faq": [
+      {
+        "q": "Can the same item be picked twice?",
+        "a": "No. A draw shuffles the list and takes distinct entries, so each item appears at most once per result."
+      },
+      {
+        "q": "Is this suitable for an official giveaway?",
+        "a": "For a casual draw, yes. For a regulated promotion, use a documented, auditable random process and keep a record of entries and results."
+      },
+      {
+        "q": "Does the order of my list matter?",
+        "a": "No. The list is shuffled before selection, so the original order does not affect the odds."
+      }
+    ]
+  },
+  "random-number-generator": {
+    "overview": [
+      "The random number generator produces one or more numbers between a minimum and a maximum. It supports whole numbers and decimals, an optional uniqueness constraint, and up to 100 values per run. Randomness comes from the browser's crypto.getRandomValues API rather than Math.random.",
+      "When both bounds are integers, the tool generates integers from the minimum to the maximum inclusive. When either bound is a decimal, it generates a decimal value in the range. With uniqueness enabled, it retries until it has the requested count of distinct values or gives up after a bounded number of attempts, which prevents an infinite loop when the range is too small.",
+      "The generator is useful for sampling, simulations, games and test data. For scientific work that needs reproducible results, use a seeded generator instead: this tool deliberately has no seed because its purpose is unpredictable output, not repeatability."
+    ],
+    "useCases": [
+      "Draw a random sample of ticket or order numbers.",
+      "Generate test values for a form or an API.",
+      "Pick a random score or dice-like result for a game.",
+      "Create several distinct random IDs within a range.",
+      "Simulate a simple random process for teaching."
+    ],
+    "workedExample": "Set the minimum to 1, the maximum to 100, the count to 5 and enable Unique. The tool might return 17, 3, 88, 42 and 61. Every value lies between 1 and 100 inclusive and no value repeats. If you ask for 10 unique numbers between 1 and 5, the tool reports that it cannot generate enough unique values, because the range contains only five possible integers.",
+    "limits": [
+      "The integer path uses a modulo operation on a 32-bit random value, which introduces a very small bias when the range does not divide evenly into 2³².",
+      "Uniqueness is enforced by retrying; a range that is too small for the requested count returns an error instead of looping forever.",
+      "There is no seed, so results cannot be reproduced exactly for debugging or scientific replication.",
+      "The count is capped at 100, and decimal ranges are sampled continuously rather than snapped to a step size."
+    ],
+    "privacy": "Generation uses your browser's secure random source and runs locally. No numbers or settings are uploaded or stored.",
+    "faq": [
+      {
+        "q": "Are the bounds inclusive?",
+        "a": "Yes for integer mode: choosing 1 to 100 can return 1 or 100. Decimal mode samples within the range."
+      },
+      {
+        "q": "Why did unique mode fail?",
+        "a": "You asked for more distinct values than the range can provide, or the retry limit was reached. Widen the range or reduce the count."
+      },
+      {
+        "q": "Can I reproduce the same sequence later?",
+        "a": "No. The generator has no seed and is designed for unpredictable output. Use a seeded PRNG in code when you need repeatability."
+      }
+    ]
+  },
+  "random-string-generator": {
+    "overview": [
+      "The random string generator creates a string of a chosen length from the character types you enable. Uppercase letters, lowercase letters, digits and symbols can be combined, and the result is produced with crypto.getRandomValues, the browser's cryptographically secure random source.",
+      "Strings like these are useful as tokens, nonces, temporary identifiers, test data and placeholder secrets. Because the characters are drawn from a pool, the strength depends on both length and pool size: a 16-character string using all four classes has far more possible combinations than an eight-character string using only lowercase letters.",
+      "The generator is not a password manager. It does not guarantee that every selected character class appears, it does not check the result against breach lists, and it does not remember what it generated. Copy the value somewhere safe before leaving the page, and use a dedicated password manager for credentials you need to keep."
+    ],
+    "useCases": [
+      "Create a random token for a test or a local prototype.",
+      "Generate a nonce or correlation ID for debugging.",
+      "Produce placeholder strings for a database seed.",
+      "Make a random session label for a workshop exercise.",
+      "Generate a strong value to paste into a password manager."
+    ],
+    "workedExample": "Choose a length of 16 and enable uppercase, lowercase, digits and symbols. One possible result is V7$kQ2!mR9@tLp4x. The pool contains 26 + 26 + 10 + 26 = 88 characters, and each position is drawn independently from that pool. The number of possible strings is 88 to the power of 16, which is why length matters so much: adding four characters multiplies the possibilities by roughly 88⁴.",
+    "limits": [
+      "There is no guarantee that every enabled character class appears in the output; a run could contain no symbols even when symbols are selected.",
+      "The mapping from random values to the character pool uses modulo arithmetic, which introduces a very slight bias and makes the generator less suitable for high-assurance key material than a dedicated cryptographic library.",
+      "Length is limited to 1–256 characters, and the string is shown in plain text without being saved.",
+      "It does not check for uniqueness, breach exposure or compliance with a specific site's password policy."
+    ],
+    "privacy": "Generation uses the browser's secure random API and never sends the result anywhere. The string is not stored in a cookie or local storage.",
+    "faq": [
+      {
+        "q": "Is the output cryptographically secure?",
+        "a": "It uses a cryptographically secure random source, so it is suitable for tokens and ordinary passwords. For production key material, use a vetted cryptographic library with a properly specified encoding."
+      },
+      {
+        "q": "Why might a symbol be missing?",
+        "a": "Characters are drawn independently from the combined pool, so inclusion is probabilistic. Generate again if a policy requires at least one of each class."
+      },
+      {
+        "q": "Can I generate a string with only digits?",
+        "a": "Yes. Disable the other classes and enable digits. The result will contain only 0–9."
+      }
+    ]
+  }
+}

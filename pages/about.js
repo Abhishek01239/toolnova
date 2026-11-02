@@ -30,8 +30,14 @@ export default function about({ site, tools, byCategory }) {
   <p>Tool additions and changes are now <strong>deliberately manual</strong>. Nothing on the site should be silently created, selected or committed by a scheduled GitHub Action. New tools are added only when explicitly reviewed and approved for publication.</p>
   <p>This keeps the catalogue predictable: no surprise tools, no unattended content generation and no automated commits changing the public site behind the scenes.</p>
 
+  <h2>Editorial standards</h2>
+  <p>Every tool page explains what the tool does, how to use it, a worked example, its limitations and how it handles your data. Pages are reviewed before publication and corrected when a reader reports a problem. Our full process is described in the <a href="/editorial">Editorial Policy</a>.</p>
+
+  <h2>Who runs the site</h2>
+  <p>${esc(site.name)} is an independent, ad-supported project. The tools and written content are maintained alongside the public source repository. For questions, corrections or privacy requests, email <a href="mailto:${escAttr(site.contactEmail)}">${esc(site.contactEmail)}</a> or use the <a href="/contact">contact page</a>.</p>
+
   <h2>Advertising</h2>
-  <p>ToolNova may display advertising to support hosting and continued development. Advertising does not change the functionality of the tools or the editorial organization of the catalogue. See the <a href="/privacy">Privacy Policy</a> for information about advertising-related data and cookies.</p>
+  <p>ToolNova displays advertising through Google AdSense to support hosting and continued development. Advertising does not change which tools are published or how they are described, and advertising cookies are disabled until you consent. See the <a href="/privacy">Privacy Policy</a> and <a href="/cookies">Cookie Policy</a> for details.</p>
 
   <h2>Open source</h2>
   <p>The site and its tooling are open source under the MIT license. Browse the code on <a href="${escAttr(site.repo)}" rel="noopener noreferrer">GitHub</a>.</p>

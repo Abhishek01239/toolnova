@@ -1,0 +1,254 @@
+{
+  "csv-to-json": {
+    "overview": [
+      "The CSV to JSON converter parses pasted comma-separated data and returns a JSON array. It supports comma, tab, semicolon and pipe delimiters, handles quoted fields and doubled quotes, and can treat the first row as column headers or generate column names automatically.",
+      "With headers enabled, each row becomes an object whose keys are the header names. Without headers, the keys are col1, col2 and so on. Values are kept as strings, including numbers and dates, because guessing types is risky: a postal code such as 02134 would lose its leading zero if converted to a number, and a score column might contain a mix of numbers and dashes.",
+      "The parser follows standard CSV quoting rules, so a comma inside quotes stays inside the field and a doubled quote becomes a literal quote. Empty lines are skipped, while trailing empty fields are preserved. The result is ready to paste into an API request, a seed script or a JSON fixture."
+    ],
+    "useCases": [
+      "Convert a spreadsheet export into JSON for a web app.",
+      "Turn a pasted table into an array for a test fixture.",
+      "Prepare contact or product rows for an import script.",
+      "Convert tab-separated data copied from a document.",
+      "Create a small JSON sample from CSV without writing code."
+    ],
+    "workedExample": "Paste the CSV name,role,score followed by Ada,Engineer,98 and Lin,Designer,91, with comma as the delimiter and headers enabled. The output is an array of two objects: the first has name \"Ada\", role \"Engineer\" and score \"98\"; the second has name \"Lin\", role \"Designer\" and score \"91\". Every value is a JSON string, not a number, so a downstream script should convert the score explicitly if it needs numeric comparison.",
+    "limits": [
+      "Values are not type-inferred; numbers, booleans and dates remain strings.",
+      "The parser handles simple quoted fields but does not implement every dialect option, such as custom quote characters or escape characters.",
+      "Nested structures are not created: a cell containing JSON stays a string unless you parse it separately.",
+      "Rows with different column counts are accepted, so missing fields become empty strings and extra fields appear only if the header row includes them."
+    ],
+    "privacy": "The CSV is parsed entirely in your browser. No row, header or derived JSON is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it handle commas inside quotes?",
+        "a": "Yes. Standard CSV quoting is followed, so \"Smith, John\" stays one field and doubled quotes become a literal quote."
+      },
+      {
+        "q": "Why are numbers returned as strings?",
+        "a": "Type inference can corrupt identifiers with leading zeros and mixed columns. Keeping strings preserves exactly what was in the file."
+      },
+      {
+        "q": "Can I use tabs or semicolons?",
+        "a": "Yes. Choose the matching delimiter before converting. For tab-separated data copied from a spreadsheet, select Tab."
+      }
+    ]
+  },
+  "hex-to-rgb-tool": {
+    "overview": [
+      "The hex to RGB converter translates between hexadecimal colour codes and red, green and blue values. Enter a three- or six-digit hex code such as #3B82F6 and the tool fills in the RGB channels; move the channel values and it produces the matching hex code. A live swatch shows the resulting colour.",
+      "A six-digit hex code stores three bytes in order: two digits for red, two for green and two for blue. Each pair ranges from 00 to FF, which is 0 to 255 in decimal. Three-digit shorthand works by doubling each digit, so #f00 is the same as #ff0000, a pure red. The tool also reports the colour in HSL, which is often easier for adjusting lightness and saturation.",
+      "The converter is useful for design work, CSS, data visualisation and anywhere a colour arrives in one notation but an API or library expects the other. It does not handle alpha transparency, so eight-digit hex codes and rgba() values are outside its scope."
+    ],
+    "useCases": [
+      "Convert a designer's hex value into RGB channels.",
+      "Turn RGB values from an image editor into a CSS hex code.",
+      "Check what a three-digit hex shorthand expands to.",
+      "Get an HSL view of a brand colour for a palette.",
+      "Verify a colour value copied from a screenshot or spec."
+    ],
+    "workedExample": "Enter #3B82F6. The red channel is 3B in hex, which is 59 in decimal; green is 82, or 130; blue is F6, or 246. The tool reports #3B82F6 and rgb(59, 130, 246) and shows a blue swatch. In the other direction, set red to 255, green to 0 and blue to 0, and the hex field becomes #FF0000. Entering the shorthand #f00 expands to #FF0000 before conversion.",
+    "limits": [
+      "Only solid colours are supported. Alpha channels, eight-digit hex codes and rgba() strings are not handled.",
+      "Channel values outside 0–255 are clamped, and non-numeric input is treated as zero rather than rejected.",
+      "The hex field accepts three or six hexadecimal digits; named CSS colours and other notations such as hsl() must be converted first.",
+      "Colour perception is not uniform in RGB or HSL, so matching a colour visually may still require adjustment."
+    ],
+    "privacy": "The conversion runs locally in your browser. No colour values are uploaded or stored.",
+    "faq": [
+      {
+        "q": "What does #f00 mean?",
+        "a": "It is shorthand for #ff0000: each digit is doubled, giving full red, no green and no blue."
+      },
+      {
+        "q": "Why does the tool show HSL as well?",
+        "a": "HSL describes hue, saturation and lightness, which is convenient for creating lighter, darker or less saturated variants of the same colour."
+      },
+      {
+        "q": "Can I convert a colour with transparency?",
+        "a": "Not here. An eight-digit hex code includes an alpha byte, and this tool expects exactly three or six digits."
+      }
+    ]
+  },
+  "json-to-csv": {
+    "overview": [
+      "The JSON to CSV converter turns an array of objects into comma-separated values suitable for a spreadsheet. It collects the union of all keys as column headers, flattens nested objects into dot-notation columns, and quotes any value that contains a comma, quote or line break.",
+      "Flattening is what makes nested data usable in a flat table. An object such as {\"address\":{\"city\":\"London\"}} becomes a column called address.city. Arrays are not flattened into multiple rows; they are serialised as JSON text inside a single cell, which preserves the data without inventing a row structure.",
+      "The converter expects a non-empty JSON array of objects. A single object, a nested array of arrays or malformed JSON produces an error rather than a partial file. Column order follows the first appearance of each key, so a stable input order produces a stable column layout."
+    ],
+    "useCases": [
+      "Export API response data for review in a spreadsheet.",
+      "Convert a JSON fixture into CSV for a colleague.",
+      "Flatten nested configuration or address fields into columns.",
+      "Prepare data for a bulk import that accepts CSV only.",
+      "Create a quick table from a small JSON array."
+    ],
+    "workedExample": "Convert [{\"name\":\"Ada\",\"address\":{\"city\":\"London\"},\"score\":98},{\"name\":\"Lin\",\"address\":{\"city\":\"Paris\"},\"score\":91}]. The headers become name, address.city and score. The first row is Ada, London, 98 and the second is Lin, Paris, 91. If one object also had a tags array, that cell would contain a JSON string such as [\"math\",\"code\"], properly quoted so the commas inside it do not split the CSV column.",
+    "limits": [
+      "Only an array of objects is accepted. A single object must be wrapped in an array, and arrays of scalars are rejected.",
+      "Nested objects are flattened with dots, so keys that already contain dots can collide with generated column names.",
+      "Arrays are stored as JSON text in one cell rather than expanded into rows.",
+      "Very large numbers may lose precision when parsed as JavaScript numbers, and the output uses commas regardless of your locale."
+    ],
+    "privacy": "The conversion happens entirely in your browser. JSON data is not uploaded to ToolNova or any third party.",
+    "faq": [
+      {
+        "q": "How are nested objects handled?",
+        "a": "They become dot-notation columns, so {\"user\":{\"name\":\"Ada\"}} produces a column called user.name."
+      },
+      {
+        "q": "Why is my array shown as JSON inside a cell?",
+        "a": "Arrays are not expanded into rows. They are serialised as text so no data is lost and the table stays rectangular."
+      },
+      {
+        "q": "What if objects have different keys?",
+        "a": "The header row is the union of all keys. Missing values are left empty in rows that do not contain that key."
+      }
+    ]
+  },
+  "json-to-yaml": {
+    "overview": [
+      "The JSON to YAML converter translates a JSON document into YAML with two-space indentation. Strings are quoted with JSON-style double quotes, objects become nested mappings, arrays become block sequences, and multi-line strings use YAML block scalars.",
+      "YAML is common in configuration files, CI pipelines, Kubernetes manifests and infrastructure tools because it is easier to read and allows comments. JSON is stricter and easier to generate reliably, so converting between the two is a routine step when moving a configuration from an API or a JavaScript project into a YAML-based system.",
+      "The converter is intentionally small and predictable. It preserves key order, quotes values that could otherwise be misread, and emits nested arrays and objects on separate indented lines. It is not a full YAML implementation, so anchors, aliases, tags, comments and flow-style collections are not generated, and round-tripping through a full YAML parser may change formatting even when the data is equivalent."
+    ],
+    "useCases": [
+      "Turn a JSON configuration into a YAML file.",
+      "Convert an API example into a readable manifest.",
+      "Prepare test data for a YAML-driven tool.",
+      "Check how a JSON structure looks in block style.",
+      "Generate a starting point for a CI configuration."
+    ],
+    "workedExample": "Convert {\"name\":\"example\",\"items\":[1,2,3],\"nested\":{\"flag\":true},\"note\":\"line one\\nline two\"}. The output starts with name: \"example\", followed by items: with 1, 2 and 3 as separate dash entries, then nested: with flag: true indented beneath it, and note: | followed by the two lines indented as a block scalar. Keys containing spaces are quoted, and string values are quoted so words like true or null remain strings.",
+    "limits": [
+      "The output is valid YAML but not the only valid representation; indentation, quoting and sequence style may differ from a full YAML emitter.",
+      "Anchors, aliases, tags, comments and flow-style collections are not produced.",
+      "Large integers may lose precision when the JSON is parsed, because JavaScript numbers are double-precision floats.",
+      "The converter does not validate YAML semantics beyond producing well-formed output; test critical configuration with the tool that will consume it."
+    ],
+    "privacy": "Conversion runs entirely in your browser. JSON and the generated YAML are never uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it preserve key order?",
+        "a": "Yes, keys are emitted in the order JavaScript sees them, which follows the JSON source order for ordinary string keys."
+      },
+      {
+        "q": "Why are strings quoted?",
+        "a": "Quoting avoids ambiguity with YAML keywords such as true, false, null, yes and no, and with values containing colons or hashes."
+      },
+      {
+        "q": "Can I add comments?",
+        "a": "Not through this converter. YAML comments must be added by hand after conversion, because JSON has no comment syntax."
+      }
+    ]
+  },
+  "markdown-to-html": {
+    "overview": [
+      "The Markdown to HTML converter turns common Markdown syntax into HTML. It supports headings from level one to six, paragraphs, unordered lists, bold and italic text, inline code and links. The result appears in an editable HTML field and a source preview.",
+      "The converter works line by line. Blank lines end a list and separate paragraphs, headings begin with one to six hash marks, and list items begin with a hyphen or asterisk. Inline formatting is applied after HTML escaping, so angle brackets in your text appear as literal characters rather than being interpreted as tags.",
+      "The preview panel shows the generated source, not a rendered page. That is deliberate: it lets you inspect and copy the exact markup without the page executing anything. Paste the HTML into a CMS, a static site generator or an email template, then check it in the target environment, because each system may allow a different subset of tags."
+    ],
+    "useCases": [
+      "Convert a README draft into HTML for a documentation page.",
+      "Turn meeting notes into simple markup for a CMS.",
+      "Generate HTML for a newsletter from Markdown text.",
+      "Check the markup produced by headings and inline formatting.",
+      "Prepare a small HTML snippet without opening an editor."
+    ],
+    "workedExample": "Paste \"# Hello\", a blank line, \"This is **bold** and *italic*.\", a blank line, two list items beginning with hyphens, and a link written as [Example](https://example.com). The output contains an h1 element, a paragraph with strong and em elements, a ul with two li items, and an anchor whose href is https://example.com. Characters such as ampersands and angle brackets in the source are escaped as entities in the output.",
+    "limits": [
+      "Only a small subset of Markdown is supported. Ordered lists, tables, blockquotes, images, fenced code blocks, nested lists and footnotes are not converted.",
+      "Raw HTML in the input is escaped and shown as text rather than passed through, which is safer but different from Markdown engines that allow embedded HTML.",
+      "Link targets are limited to http, https, mailto, root-relative and fragment URLs; other schemes are replaced with a hash.",
+      "The preview shows source markup, not a rendered visual preview, and there is no Markdown validation or round-trip support."
+    ],
+    "privacy": "Conversion is performed by plain JavaScript in your browser. Your Markdown is never uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it support tables and code blocks?",
+        "a": "No. It handles headings, paragraphs, unordered lists, bold, italic, inline code and links. More complex Markdown needs a full parser."
+      },
+      {
+        "q": "Why is raw HTML shown as text?",
+        "a": "The converter escapes HTML characters before applying inline formatting, which prevents markup in the input from being injected into the output."
+      },
+      {
+        "q": "Is the preview a rendered page?",
+        "a": "No. It shows the generated HTML source so you can inspect and copy it without executing it."
+      }
+    ]
+  },
+  "qr-code-generator": {
+    "overview": [
+      "The QR code generator creates a scannable code for a link, plain text, UPI payment, WhatsApp message, Wi-Fi network, email, phone number or SMS. Fill in the relevant fields and the code updates as you type; download it as a PNG at up to 2048 pixels or as a scalable SVG.",
+      "The type determines the payload. A link or text stores the characters directly. A UPI code uses the upi://pay scheme with the payee address, optional name, amount in rupees and note. WhatsApp uses a wa.me link with the number and optional message. Wi-Fi uses the WIFI: format with the network name, security type and password, escaping special characters. Email opens a mailto link with an optional subject and body; phone and SMS use tel: and SMSTO: respectively.",
+      "The code is static: the data is embedded inside the image, so there is no redirect service, no expiry and no scan tracking. That makes it durable for print, but it also means the destination cannot be changed later without generating a new code. Error correction can be set to L, M, Q or H; higher levels survive more damage but make the pattern denser for the same data."
+    ],
+    "useCases": [
+      "Put a link to a menu, form or landing page on a poster.",
+      "Create a UPI payment code with a preset amount.",
+      "Share a guest Wi-Fi network without typing the password.",
+      "Add a pre-filled WhatsApp or email contact code to a flyer.",
+      "Print a code on a product label or business card."
+    ],
+    "workedExample": "Choose the Wi-Fi type, enter the network name \"Cafe Guest\", select WPA and type the password \"latte2026\". The payload becomes WIFI:T:WPA;S:Cafe Guest;P:latte2026;; and the code appears immediately. Download the SVG for a printed sign so it stays sharp at any size, or a 1024-pixel PNG for a web page. Test it on both an iPhone and an Android phone before printing, since some scanners handle Wi-Fi joins differently.",
+    "limits": [
+      "Codes are static. Changing the destination requires generating and distributing a new code.",
+      "Very long text produces a denser code that is harder to scan from a distance; shorten URLs or move long content to a page.",
+      "The generator does not add logos, frames, scan analytics or dynamic redirects, and it cannot guarantee a specific scanner app will interpret every payload type.",
+      "Print quality and contrast matter: keep the code dark on a light background, leave a quiet zone around it, and test at the final physical size."
+    ],
+    "privacy": "QR codes are generated entirely in your browser. Links, Wi-Fi passwords and payment details are never uploaded, logged or stored. The QR library is loaded from a public CDN.",
+    "faq": [
+      {
+        "q": "Do these codes expire or track scans?",
+        "a": "No. The data is stored inside the code itself. There is no redirect or analytics service, so codes do not expire and scans are not counted."
+      },
+      {
+        "q": "Which error correction level should I choose?",
+        "a": "Medium is a good default. Use High if the code may be scuffed or printed small, accepting a denser pattern. Low is fine for clean digital displays."
+      },
+      {
+        "q": "Can I change the destination later?",
+        "a": "Not with a static code. Generate a new one, or use a dynamic QR service that stores a redirect you can edit."
+      }
+    ]
+  },
+  "screen-recorder": {
+    "overview": [
+      "The screen recorder captures your entire screen, a single window or one browser tab, with optional audio, and saves the result as a video file. It uses the browser's screen-sharing API, so you choose exactly what to share in the system picker, and the recording stays on your device.",
+      "Before recording you can select audio from none, system or tab audio, microphone, or both. Video quality is controlled by a bitrate choice of roughly 1.5, 4 or 8 megabits per second. The format can be WebM or MP4, but MP4 depends on browser codec support; if it is unavailable the recorder falls back to WebM and tells you. A three-second countdown gives you time to switch windows, and pause and resume let you skip interruptions.",
+      "After stopping, the recording is available for preview and download with a filename you choose. Closing or reloading the page discards it, so download before navigating away. The tool is desktop-only: mobile browsers do not expose screen capture to web pages, and phones have built-in recorders instead."
+    ],
+    "useCases": [
+      "Record a bug reproduction to send to a developer.",
+      "Capture a presentation or a walkthrough with narration.",
+      "Save a browser tab demonstration without installing software.",
+      "Record a short tutorial with microphone commentary.",
+      "Capture system audio from a tab for a quick clip."
+    ],
+    "workedExample": "Select System audio, 4 Mbps and WebM, tick the countdown and press Start. Choose the browser tab you want to share in the picker and tick Share audio if your browser offers it. After three seconds the recorder begins; a one-minute 1080p clip at 4 Mbps is roughly 30 MB, plus about 1 MB for 128 kbps audio. Press Pause during a distraction, Resume afterwards, then Stop and download the WebM file.",
+    "limits": [
+      "Desktop browsers only. Mobile browsers cannot record the screen from a web page.",
+      "System or tab audio depends on the browser and operating system, and the picker may not offer audio for every source.",
+      "MP4 recording is not available in every browser; the tool falls back to WebM, which some editors and messaging apps handle less smoothly.",
+      "Recording stops if you stop sharing from the browser bar, and DRM-protected video may appear black. There is no trimming, annotation or cloud storage."
+    ],
+    "privacy": "The recording is captured and kept on your device. It is never uploaded to ToolNova or any server, and nothing is stored after you leave the page.",
+    "faq": [
+      {
+        "q": "Can I record on a phone or tablet?",
+        "a": "No. Web pages on mobile browsers do not have screen-capture access. Use the built-in screen recorder in Android or iOS."
+      },
+      {
+        "q": "Why is my MP4 download a WebM file?",
+        "a": "Your browser does not support recording MP4 with the available codecs, so the tool used WebM, the most widely supported format for MediaRecorder."
+      },
+      {
+        "q": "How do I capture sound from the tab?",
+        "a": "Choose System or Both for audio, then tick Share audio in the screen picker if your browser shows that option. If no audio track is shared, the recording will be silent."
+      }
+    ]
+  }
+}

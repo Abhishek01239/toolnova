@@ -1,0 +1,162 @@
+{
+  "file-size-converter": {
+    "overview": [
+      "The file size converter changes a value between bytes, kilobytes, megabytes, gigabytes and terabytes. It offers two bases: 1024, the binary convention used by many operating systems and programming tools, and 1000, the decimal convention used by storage manufacturers and the International System of Units.",
+      "The difference is not cosmetic. With base 1024, one kilobyte is 1,024 bytes and one gigabyte is 1,073,741,824 bytes. With base 1000, one kilobyte is 1,000 bytes and one gigabyte is 1,000,000,000 bytes. That is why a drive advertised as 1 TB can appear as roughly 931 GB in an operating system that reports binary units. Neither figure is wrong; they use different definitions of the same prefix.",
+      "The tool converts through a common byte value, so any unit can be converted to any other in one step. It accepts non-negative numbers and displays up to six decimal places with trailing zeros removed, which keeps small fractions readable without turning exact integers into noisy decimals."
+    ],
+    "useCases": [
+      "Check why a 1 TB drive shows less capacity in your file manager.",
+      "Convert a hosting plan's storage allowance into gigabytes.",
+      "Compare an upload limit written in MB with a file size shown in GB.",
+      "Work out how many 4 MB photos fit in a 64 GB card.",
+      "Convert between binary and decimal units for documentation."
+    ],
+    "workedExample": "Convert 1.5 GB to MB with base 1024. The value in bytes is 1.5 × 1024³ = 1,610,612,736 bytes. Dividing by 1024² gives 1,536 MB. With base 1000, the same 1.5 GB is 1,500 MB. A 1 TB drive is 1,000,000,000,000 bytes in decimal terms, which is about 931.32 GiB when reported with binary units, explaining the familiar gap between advertised and displayed capacity.",
+    "limits": [
+      "The labels use KB, MB, GB and TB for both bases. Strictly, the binary units are KiB, MiB, GiB and TiB, but many interfaces use the shorter names loosely.",
+      "Only decimal input is accepted; expressions such as 2+2 or values with units attached are rejected.",
+      "The result is a mathematical conversion. Actual usable capacity is lower after formatting, filesystem overhead and reserved space.",
+      "Extremely large values can lose precision once they exceed the exact integer range of JavaScript numbers."
+    ],
+    "privacy": "The conversion runs in your browser. No values are uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why does my 1 TB drive show 931 GB?",
+        "a": "The manufacturer used decimal terabytes (1,000⁴ bytes) while the operating system reports binary units (1,024³ bytes per GB). 1 TB ÷ 1,073,741,824 ≈ 931.32 GiB."
+      },
+      {
+        "q": "Which base should I use?",
+        "a": "Use 1024 when matching what an operating system or development tool reports, and 1000 when matching storage marketing, networking or SI documentation."
+      }
+    ]
+  },
+  "weight-converter": {
+    "overview": [
+      "The weight converter translates between kilograms, grams, pounds, ounces and stones. It converts the input to grams using exact standard factors and then divides by the target unit's factor, so any pair of units can be compared without intermediate rounding.",
+      "The factors are the international standards: one pound is exactly 453.59237 grams, one ounce is 28.349523125 grams, and one stone is 14 pounds or 6,350.29318 grams. A kilogram is 1,000 grams by definition. Because the tool works through grams, converting kilograms to pounds and back returns the original value apart from display rounding.",
+      "This is useful for recipes, shipping labels, fitness tracking and anything that mixes metric and imperial units. The tool converts mass, which is what a scale measures; in everyday language people often call it weight, even though strictly weight is a force that depends on gravity."
+    ],
+    "useCases": [
+      "Convert a recipe's ounces to grams for a kitchen scale.",
+      "Check a shipping label in pounds against a metric limit.",
+      "Translate a body weight between kilograms and stones.",
+      "Compare product weights listed in different units.",
+      "Convert a baby's weight from pounds and ounces to kilograms."
+    ],
+    "workedExample": "Convert 70 kg to pounds. First convert to grams: 70 × 1,000 = 70,000 g. Divide by 453.59237 g per pound to get 154.3236 lb. To express the same weight in stones, divide 70 kg by 6.35029318 kg per stone, giving about 11.0231 st. Converting 5 lb to grams gives 5 × 453.59237 = 2,267.96185 g, or about 2.268 kg.",
+    "limits": [
+      "The converter handles mass only. It does not convert force units such as newtons or pound-force.",
+      "Results are displayed to six decimal places with trailing zeros removed, so very small quantities may round to zero.",
+      "The user interface offers kilograms, pounds, ounces, grams and stones; milligrams are supported by the underlying factors but not shown as an option.",
+      "It does not account for the difference between avoirdupois ounces used for general goods and troy ounces used for precious metals."
+    ],
+    "privacy": "All arithmetic happens locally in your browser. The value and units are never transmitted.",
+    "faq": [
+      {
+        "q": "How many pounds are in a stone?",
+        "a": "One stone is exactly 14 pounds, or about 6.3503 kilograms. The converter uses that exact relationship."
+      },
+      {
+        "q": "Is this suitable for precious metals?",
+        "a": "No. Troy ounces, used for gold and silver, differ from the avoirdupois ounces in this tool. Use a troy-specific converter for bullion."
+      }
+    ]
+  },
+  "length-converter": {
+    "overview": [
+      "The length converter translates between metres, kilometres, centimetres, millimetres, feet, inches, yards and miles. It converts the input to metres using exact factors and then to the target unit, which keeps the arithmetic consistent across metric and imperial systems.",
+      "The defining relationships are exact: one inch is 0.0254 metres, one foot is 0.3048 metres, one yard is 0.9144 metres and one mile is 1,609.344 metres. Metric units are powers of ten around the metre. Because the tool routes everything through metres, a chain of conversions does not accumulate separate rounding errors.",
+      "Typical uses include checking furniture dimensions against a room, converting a race distance, reading a map scale or comparing product specifications from different countries. The converter handles positive and negative values, so it can also represent differences in elevation or position, but it does not parse feet-and-inches notation such as 5'11\"."
+    ],
+    "useCases": [
+      "Convert a room measurement in feet to metres.",
+      "Compare a 5K race distance in miles.",
+      "Check whether furniture will fit through a doorway measured in inches.",
+      "Translate a hiking trail length from kilometres to miles.",
+      "Convert fabric or flooring quantities between yards and metres."
+    ],
+    "workedExample": "Convert 100 metres to feet. Divide by 0.3048 metres per foot: 100 ÷ 0.3048 = 328.08399 ft. To go the other way, convert 6 feet to metres: 6 × 0.3048 = 1.8288 m. A marathon of 26.2 miles becomes 26.2 × 1,609.344 = 42,164.8128 m, or about 42.165 km, which matches the standard 42.195 km marathon distance once the exact 26.2188-mile figure is used.",
+    "limits": [
+      "Feet-and-inches notation is not parsed. Convert 5 feet 11 inches by converting 71 inches, or add the two conversions separately.",
+      "Nautical miles, furlongs, chains and other specialist units are not included.",
+      "Results are shown to six decimal places, which is more than enough for everyday use but can round very large or very small values.",
+      "The tool converts linear distance, not area or volume; square and cubic units need different factors."
+    ],
+    "privacy": "The calculation is performed in your browser and the value is not uploaded or stored.",
+    "faq": [
+      {
+        "q": "How do I enter 5 feet 11 inches?",
+        "a": "Convert the whole height to inches first: 5 × 12 + 11 = 71 inches, then convert 71 inches to the target unit."
+      },
+      {
+        "q": "Is a mile exactly 1.6 km?",
+        "a": "No, that is a convenient approximation. One mile is exactly 1.609344 km, so 5 miles is about 8.0467 km, not 8 km."
+      }
+    ]
+  },
+  "temperature-converter": {
+    "overview": [
+      "The temperature converter takes a value in Celsius, Fahrenheit or Kelvin and displays the equivalent in all three scales at once. You type a number, choose the input scale, and the other two values update immediately.",
+      "The formulas are exact by definition. Celsius to Fahrenheit is F = C × 9/5 + 32. Fahrenheit to Celsius is C = (F − 32) × 5/9. Kelvin is Celsius shifted by 273.15, so K = C + 273.15. The scales cross at −40 degrees, where Celsius and Fahrenheit are equal, which is a useful sanity check for any converter.",
+      "The tool displays two decimal places, which is appropriate for weather, cooking, laboratory work and HVAC settings. It does not enforce physical limits, so it will happily convert a value below absolute zero; that is arithmetically valid but not physically meaningful."
+    ],
+    "useCases": [
+      "Convert a recipe temperature between Celsius and Fahrenheit.",
+      "Read a weather forecast in a scale you are not used to.",
+      "Check an oven setting against a recipe from another country.",
+      "Convert a laboratory temperature to Kelvin.",
+      "Sanity-check a sensor reading that reports the wrong scale."
+    ],
+    "workedExample": "Convert 25°C. Fahrenheit is 25 × 9/5 + 32 = 45 + 32 = 77°F. Kelvin is 25 + 273.15 = 298.15 K. Now convert −40°F: Celsius is (−40 − 32) × 5/9 = −72 × 5/9 = −40°C, confirming the crossover point, and Kelvin is 233.15 K. A body temperature of 98.6°F converts to 37.0°C and 310.15 K.",
+    "limits": [
+      "Only absolute temperature values are converted; temperature differences need a different treatment because Fahrenheit and Celsius degrees are different sizes.",
+      "Values below absolute zero (−273.15°C, −459.67°F, 0 K) are accepted even though they are not physically possible.",
+      "Results are rounded to two decimal places, so repeated conversions can drift slightly from the original.",
+      "The tool does not convert Rankine or Réaumur scales."
+    ],
+    "privacy": "The conversion runs locally in your browser. No temperature value is uploaded or recorded.",
+    "faq": [
+      {
+        "q": "Why do Celsius and Fahrenheit meet at −40?",
+        "a": "The two scales have different zero points and different degree sizes. Solving C = F shows they are equal at −40, which is why it is a common check for conversion code."
+      },
+      {
+        "q": "Can I convert a temperature difference?",
+        "a": "Not with this tool. A difference of 1°C equals 1.8°F, with no 32-degree offset. Use a dedicated difference converter or multiply by 1.8."
+      }
+    ]
+  },
+  "text-to-binary": {
+    "overview": [
+      "The text-to-binary converter turns text into its UTF-8 byte values written as eight-bit binary groups, and converts space-separated binary groups back into text. Each character is encoded as one or more bytes, and each byte becomes a sequence of eight zeros and ones.",
+      "English letters and digits typically use one byte, so \"Hi\" becomes 01001000 01101001. Accented letters, emoji and non-Latin scripts use multiple bytes, which is why a single visible character can produce several binary groups. The decoder collects the bytes and interprets them as UTF-8, so the original text is restored when the input is valid.",
+      "This is a useful teaching tool for showing how computers store text, and a practical way to inspect the byte-level content of a string. It is not encryption and offers no compression: the binary form is much longer than the original text and is readable by anyone who knows the encoding."
+    ],
+    "useCases": [
+      "Show how ASCII and UTF-8 bytes represent characters.",
+      "Inspect the byte sequence behind an accented letter or emoji.",
+      "Decode a binary message from a puzzle or exercise.",
+      "Check whether two visually similar strings really use the same bytes.",
+      "Prepare a binary representation for a classroom demonstration."
+    ],
+    "workedExample": "Convert \"Hi\". H is code point 72, which is 01001000 in eight-bit binary, and i is 105, which is 01101001, so the output is 01001000 01101001. Paste those two groups into decode mode and the tool returns \"Hi\". For a multi-byte example, the emoji 😀 is four UTF-8 bytes and therefore appears as four binary groups; decoding them together returns the single emoji.",
+    "limits": [
+      "Binary groups must be separated by whitespace. A continuous string of bits is treated as one oversized group and rejected.",
+      "Each group must represent a value from 0 to 255. Groups longer than eight bits or containing non-binary characters produce an error.",
+      "Decoding assumes UTF-8. Bytes from another encoding, such as Latin-1, may decode to replacement characters even though the byte values are valid.",
+      "The binary output is not compressed or encrypted and is roughly eight times longer than the input text, plus spaces."
+    ],
+    "privacy": "Conversion is performed in your browser. The text and binary data are never sent to a server or saved.",
+    "faq": [
+      {
+        "q": "Why does one emoji produce several groups?",
+        "a": "UTF-8 uses multiple bytes for characters outside the basic Latin range. A single emoji can take four bytes, so it appears as four eight-bit groups."
+      },
+      {
+        "q": "Can I use this to hide a message?",
+        "a": "No. Binary is a transparent representation, not encryption. Anyone can convert it back with the same tool."
+      }
+    ]
+  }
+}

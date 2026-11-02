@@ -36,7 +36,7 @@
       return value.map(function (item) {
         var s = toYaml(item, indent + 1);
         if (typeof item === 'object' && item !== null) {
-          return pad + '- ' + s.trimStart();
+          return pad + '-\n' + s;
         }
         return pad + '- ' + s;
       }).join('\n');
@@ -47,10 +47,11 @@
       return keys.map(function (k) {
         var v = value[k];
         var vs = toYaml(v, indent + 1);
-        if (typeof v === 'object' && v !== null && !Array.isArray(v)) {
-          return pad + k + ':\n' + vs;
+        var key = /^[A-Za-z0-9_.-]+$/.test(k) ? k : JSON.stringify(k);
+        if (typeof v === 'object' && v !== null) {
+          return pad + key + ':\n' + vs;
         }
-        return pad + k + ': ' + vs;
+        return pad + key + ': ' + vs;
       }).join('\n');
     }
     return String(value);

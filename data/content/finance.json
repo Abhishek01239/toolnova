@@ -1,0 +1,174 @@
+{
+  "compound-interest-calculator": {
+    "overview": [
+      "The compound interest calculator projects how a single lump sum grows when interest is added to the balance and then earns interest itself. You enter the starting principal, an annual percentage rate, a number of years and a compounding frequency, and the tool returns the future value, the total interest earned and a year-by-year balance table.",
+      "The important idea is that compounding frequency changes the result. A nominal 6% rate compounded monthly is not the same as 6% compounded once a year, because each month's interest joins the principal sooner and starts earning. The calculator applies the standard formula A = P × (1 + r/n)^(n×t), where P is the principal, r is the annual rate as a decimal, n is the number of compounding periods per year and t is the term in years.",
+      "The tool is intended for quick estimates on savings accounts, fixed deposits, bonds and other products that quote a fixed nominal rate. It is a planning aid rather than a bank statement: real products may use different day-count conventions, tiered rates, withholding tax or fees."
+    ],
+    "useCases": [
+      "Estimate the maturity value of a fixed deposit before opening it.",
+      "Compare the same nominal rate with yearly, quarterly and monthly compounding.",
+      "See how much of a long-term balance comes from interest rather than the original deposit.",
+      "Check whether a quoted projection from a bank or adviser is in the right range.",
+      "Model a child's education fund or another dated savings goal."
+    ],
+    "workedExample": "Suppose you deposit $100,000 at a nominal 6% for 10 years. With monthly compounding, n is 12 and the balance becomes 100,000 × (1 + 0.06/12)^120 = $181,939.67, so interest is $81,939.67. With yearly compounding the balance is 100,000 × 1.06^10 = $179,084.77, which is $2,854.90 lower. The calculator also lists the balance at the end of each whole year, so you can see the curve steepen as interest begins to compound on earlier interest.",
+    "limits": [
+      "The rate is treated as constant for the whole term. Real savings rates can change, and fixed products may have a promotional period followed by a lower rate.",
+      "Only a single deposit is modelled. There are no monthly contributions, withdrawals, taxes, account fees or inflation adjustments.",
+      "Compounding is approximated by dividing the annual rate by a fixed number of periods. Banks may calculate daily interest on an actual/365 or actual/360 basis and round each posting, so figures can differ by a few cents.",
+      "The output is an estimate, not financial advice, and it does not account for the tax treatment of interest in your country."
+    ],
+    "privacy": "Every value is processed by JavaScript in your browser. The principal, rate and term are never sent to a server or saved between visits.",
+    "faq": [
+      {
+        "q": "What is the difference between nominal and effective annual rate?",
+        "a": "The nominal rate is the quoted annual figure before compounding. The effective annual rate is (1 + r/n)^n − 1 and shows the true yearly growth. At 6% compounded monthly, the effective rate is about 6.17%."
+      },
+      {
+        "q": "Why is daily compounding only slightly better than monthly?",
+        "a": "The gain shrinks as periods get shorter because each extra period adds interest on a slightly smaller slice of time. Going from yearly to monthly matters far more than going from monthly to daily."
+      },
+      {
+        "q": "Can I use negative numbers to model a loss?",
+        "a": "No. The calculator accepts non-negative principal, rate and years, because a negative nominal rate would need a different model and is not supported by this form."
+      }
+    ]
+  },
+  "mortgage-calculator": {
+    "overview": [
+      "The mortgage calculator estimates the fixed monthly payment on a repayment mortgage and shows the total interest and total cost over the full term. Enter the amount borrowed, the annual interest rate and the term in years; the tool converts the rate to a monthly figure and applies the standard amortisation formula.",
+      "A repayment mortgage is designed so that every payment covers the interest due for that month plus a slice of the principal. Early payments are mostly interest because the outstanding balance is high; later payments chip away at the principal much faster. That is why the total interest can be a large fraction of the original loan even at a moderate rate.",
+      "Use the result to compare loan offers, test whether a shorter term is affordable, or sanity-check a lender's illustration. The figure is the principal-and-interest payment only. Council tax, buildings insurance, mortgage payment protection, service charges and any arrangement fees sit outside the calculation."
+    ],
+    "useCases": [
+      "Compare a 15-year and a 30-year mortgage on the same amount and rate.",
+      "Check the monthly cost before committing to a property budget.",
+      "Verify the payment quoted in a lender's key facts document.",
+      "See how much total interest a longer term adds.",
+      "Estimate the payment after a change in the assumed interest rate."
+    ],
+    "workedExample": "Borrow $300,000 at 6.5% over 30 years. The monthly rate is 0.065 ÷ 12 = 0.0054167 and there are 360 payments. Applying the amortisation formula gives a monthly payment of $1,896.20. Over the term you repay 360 × $1,896.20 = $682,633.47, of which $382,633.47 is interest. Shortening the term to 15 years raises the monthly payment but cuts the total interest substantially, which is why the term matters as much as the rate.",
+    "limits": [
+      "Only fixed-rate, fully amortising mortgages are modelled. Variable-rate, interest-only, balloon and offset mortgages behave differently.",
+      "The payment excludes property tax, insurance, mortgage insurance, homeowners association dues and one-off closing costs.",
+      "No overpayments, lump sums or payment holidays are included, so the real payoff date and interest can be lower than shown.",
+      "Lenders round payments and calculate interest daily in some markets, so the exact figure may differ by a small amount."
+    ],
+    "privacy": "The loan amount, rate and term are calculated locally in your browser and are not uploaded to ToolNova or any third party.",
+    "faq": [
+      {
+        "q": "Does a larger deposit reduce the monthly payment?",
+        "a": "Yes. A smaller principal directly lowers the payment. Enter the amount you actually need to borrow rather than the property price to see the effect."
+      },
+      {
+        "q": "Why is so much of the early payment interest?",
+        "a": "Interest is charged on the outstanding balance. At the start the balance is at its highest, so most of each payment covers interest; as the balance falls, more goes to principal."
+      },
+      {
+        "q": "Can I model an extra monthly payment?",
+        "a": "Not in this version. An overpayment reduces the principal immediately and shortens the term, so a dedicated overpayment calculator is more accurate for that question."
+      }
+    ]
+  },
+  "sales-tax-calculator": {
+    "overview": [
+      "The sales tax calculator works in two directions. In add mode it takes a pre-tax amount and a tax rate and returns the tax and the gross total. In remove mode it takes a tax-inclusive total and extracts the net amount and the tax that was already included, which is useful when a receipt or invoice shows only the final figure.",
+      "The formulas are simple but easy to get wrong in reverse. Adding tax means multiplying the net amount by the rate and adding the result. Removing tax is not the same as subtracting the same percentage from the gross total, because the percentage was applied to the smaller net figure. The correct reverse calculation divides the gross amount by (1 + rate/100).",
+      "Use the tool for invoices, expense claims, quotes and quick checks at the till. It handles a single rate only; jurisdictions with multiple stacked taxes, exemptions or special rounding rules need a dedicated accounting system."
+    ],
+    "useCases": [
+      "Add sales tax, VAT or GST to a quote or invoice line.",
+      "Work out how much tax is hidden inside a tax-inclusive receipt.",
+      "Check a supplier's arithmetic before approving an invoice.",
+      "Convert between gross and net figures when filling in an expense report.",
+      "Compare the tax component of purchases at different rates."
+    ],
+    "workedExample": "In add mode, enter a net amount of $200 and a rate of 7.5%. The tax is 200 × 0.075 = $15.00 and the total is $215.00. In remove mode, enter $215.00 at the same rate. The net amount is 215 ÷ 1.075 = $200.00 and the tax is $15.00. Notice that subtracting 7.5% from $215 would have given $198.87, which understates the net amount, so the division method is the correct one.",
+    "limits": [
+      "One flat rate applies to the whole amount. Mixed-rate baskets and reduced-rate categories must be calculated separately.",
+      "The tool does not know local rules for rounding tax to the nearest cent, nickle or whole unit, or whether tax is calculated per line or per invoice.",
+      "Exemptions, zero-rating, reverse-charge rules and cross-border VAT treatment are not modelled.",
+      "It is a general arithmetic aid, not tax advice; confirm the correct treatment with a qualified accountant."
+    ],
+    "privacy": "Amounts and rates stay in your browser and are never transmitted, logged or stored by ToolNova.",
+    "faq": [
+      {
+        "q": "Why can't I just subtract the tax rate from the total?",
+        "a": "Because the rate was applied to the smaller pre-tax amount. Subtracting it from the larger total removes too much. Dividing by (1 + rate) reverses the multiplication exactly."
+      },
+      {
+        "q": "Does this work for VAT and GST?",
+        "a": "The arithmetic is the same for any single-rate percentage tax. Local rounding and exemption rules still apply and are outside the tool."
+      }
+    ]
+  },
+  "sip-calculator": {
+    "overview": [
+      "The SIP calculator estimates the future value of a systematic investment plan: a fixed amount invested every month for a chosen number of years at an assumed annual return. It reports the projected corpus, the total amount you actually put in and the wealth gained, which is the difference between the two.",
+      "The calculation treats each monthly instalment as a separate investment that compounds for the remaining months. Contributions are assumed at the start of each month, so every instalment earns one extra month of growth. The tool uses the annuity-due formula FV = P × [((1 + i)^n − 1) ÷ i] × (1 + i), where P is the monthly amount, i is the monthly rate (annual rate ÷ 12 ÷ 100) and n is the number of months.",
+      "SIP projections are sensitive to the return assumption. A one or two percentage point change over a long horizon moves the final figure by a large amount, and real market returns are not smooth. Treat the output as a scenario, not a promise, and compare several rates rather than relying on a single optimistic number."
+    ],
+    "useCases": [
+      "Estimate the corpus from a monthly mutual fund SIP.",
+      "See how much of the final value comes from contributions versus growth.",
+      "Compare a 10-year and a 20-year plan at the same monthly amount.",
+      "Work backwards from a target corpus to a rough monthly contribution.",
+      "Show a family member why starting early matters more than investing a large lump sum later."
+    ],
+    "workedExample": "Invest ₹5,000 per month for 10 years at an assumed 12% annual return. The monthly rate is 1% and there are 120 months. The annuity-due formula gives about ₹11,61,695. You contributed 5,000 × 120 = ₹6,00,000, so the projected wealth gain is about ₹5,61,695. If the return assumption drops to 8%, the corpus falls noticeably, which shows why the rate is the most sensitive input in the model.",
+    "limits": [
+      "The annual return is assumed to be constant and compounded monthly. Actual mutual fund returns fluctuate and can be negative in some years.",
+      "The projection ignores expense ratios, exit loads, taxes, stamp duty and adviser fees, all of which reduce the real corpus.",
+      "Contributions are assumed at the start of each month and never missed, increased or stopped.",
+      "The output is illustrative and not investment advice; it is not a guarantee of any fund's performance."
+    ],
+    "privacy": "The monthly amount, return assumption and term are computed entirely in your browser. No financial data is sent to ToolNova or retained.",
+    "faq": [
+      {
+        "q": "Is the contribution at the start or end of the month?",
+        "a": "The tool uses the start-of-month convention, so each instalment earns an extra month of return. Many funds debit on a fixed date, so your actual result will differ slightly."
+      },
+      {
+        "q": "Why does a small rate change have such a large effect?",
+        "a": "Compounding multiplies every monthly return over the whole term. Over 20 or 30 years, a one percent difference in the assumed rate changes the final balance by a large absolute amount."
+      },
+      {
+        "q": "Does the calculator account for step-up SIPs?",
+        "a": "No. It assumes a constant monthly amount. A step-up plan needs each year's contribution modelled separately or a dedicated calculator."
+      }
+    ]
+  },
+  "tip-calculator": {
+    "overview": [
+      "The tip calculator works out the tip, the total bill and the amount each person pays when a bill is split. Enter the bill, a tip percentage, the number of people and an optional rounding rule; the tool updates the three headline figures as you type.",
+      "Splitting a bill fairly involves more than dividing the total. The tool therefore also shows the bill per person and the tip per person, which makes it easy to explain the split or to collect different amounts from each diner. Rounding can be applied to the tip, the grand total or each person's share, depending on how you prefer to settle up.",
+      "The calculator is useful in restaurants, cafes, salons, taxis and anywhere a percentage gratuity is customary. It does not decide what tip is appropriate; service standards, local customs and whether a service charge is already included are for you to judge."
+    ],
+    "useCases": [
+      "Split a restaurant bill evenly among a group.",
+      "Add a standard percentage tip before paying by card.",
+      "Round each person's share to a whole currency unit for easy cash collection.",
+      "Check whether a displayed total already includes a service charge.",
+      "Work out the tip on a taxi or salon bill."
+    ],
+    "workedExample": "A bill of $80 with a 20% tip and four diners gives a tip of $16.00, a total of $96.00 and a share of $24.00 each. If you choose to round each person's share up to the nearest dollar, the share becomes $24.00 (already whole), the total stays $96.00 and the tip remains $16.00. With a bill of $83.40 and three people at 18%, the unrounded share is $32.80, and rounding each person to $33.00 makes the collected total $99.00.",
+    "limits": [
+      "The bill is assumed to be the amount before any tip. If a service charge is already included, remove it first or you will tip twice.",
+      "Rounding is to the nearest whole currency unit, not to the nearest five or ten, and it follows standard half-up behaviour in JavaScript.",
+      "The tool does not handle separate bills, shared items or different tip rates per person.",
+      "Currency symbols are for display only; the arithmetic is unit-agnostic."
+    ],
+    "privacy": "All amounts are calculated locally in your browser. Nothing about the bill or the group is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Should I tip on the pre-tax or post-tax amount?",
+        "a": "Customs vary. Many people tip on the pre-tax subtotal, while others use the final total. Either is defensible; just be consistent and check whether a service charge is already present."
+      },
+      {
+        "q": "What does rounding each person's share do?",
+        "a": "It rounds the per-person amount to a whole unit and then multiplies back to get the collected total, so the group may pay slightly more or less than the exact total."
+      }
+    ]
+  }
+}

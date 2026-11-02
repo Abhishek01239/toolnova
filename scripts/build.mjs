@@ -20,6 +20,9 @@ import aboutPage from '../pages/about.js';
 import privacyPage from '../pages/privacy.js';
 import termsPage from '../pages/terms.js';
 import contactPage from '../pages/contact.js';
+import cookiesPage from '../pages/cookies.js';
+import disclaimerPage from '../pages/disclaimer.js';
+import editorialPage from '../pages/editorial.js';
 import notFoundPage from '../pages/notFound.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -45,6 +48,47 @@ async function loadManualTools() {
   return out;
 }
 
+// Editorial content lives in data/content/*.json, keyed by tool id. Requiring it
+// keeps every published page above the thin-content threshold.
+async function loadContent() {
+  const dir = path.join(ROOT, 'data', 'content');
+  const merged = {};
+  try {
+    const names = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort();
+    for (const name of names) Object.assign(merged, await readJson(path.join(dir, name)));
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
+  return merged;
+}
+
+function wordCount(text) {
+  return String(text).split(/\s+/).filter(Boolean).length;
+}
+
+function validateContent(id, content) {
+  const problems = [];
+  if (!content || typeof content !== 'object') return ['content entry is missing'];
+  if (!Array.isArray(content.overview) || content.overview.length < 2) problems.push('overview must have at least 2 paragraphs');
+  if (!Array.isArray(content.useCases) || content.useCases.length < 3) problems.push('useCases must have at least 3 items');
+  if (!Array.isArray(content.limits) || content.limits.length < 3) problems.push('limits must have at least 3 items');
+  if (typeof content.workedExample !== 'string' || wordCount(content.workedExample) < 35) problems.push('workedExample must be at least 35 words');
+  if (typeof content.privacy !== 'string' || wordCount(content.privacy) < 12) problems.push('privacy note must be at least 12 words');
+  if (content.faq !== undefined && (!Array.isArray(content.faq) || content.faq.some((f) => !f.q || !f.a))) problems.push('faq must be an array of {q,a}');
+  const total = [
+    ...(content.overview || []),
+    ...(content.useCases || []),
+    content.workedExample || '',
+    ...(content.limits || []),
+    content.privacy || '',
+    ...(content.faq || []).flatMap((f) => [f.q, f.a])
+  ].join(' ');
+  if (wordCount(total) < 200) problems.push(`only ${wordCount(total)} words of new content (minimum 200)`);
+  if (problems.length) return problems;
+  return [];
+}
+
+
 async function writePage(relPath, html, overrideFile) {
   const file = overrideFile
     ? path.join(DIST, overrideFile)
@@ -69,10 +113,13 @@ function buildSitemap(site, tools, byCategory, extraPages) {
   add('/', { changefreq: 'daily', priority: '1.0' });
   for (const p of extraPages) add(p, { priority: '0.5' });
   for (const cat of byCategory.keys()) add(`/category/${categorySlug(cat)}`, { priority: '0.6' });
-  for (const tool of tools) add(`/tools/${tool.id}`, { lastmod: tool.added, changefreq: 'monthly', priority: '0.8' });
+  for (const tool of tools) add(`/tools/${tool.id}`, { lastmod: tool.reviewed || tool.added, changefreq: 'monthly', priority: '0.8' });
   add('/about', { changefreq: 'yearly', priority: '0.3' });
+  add('/editorial', { changefreq: 'yearly', priority: '0.3' });
   add('/privacy', { changefreq: 'yearly', priority: '0.3' });
+  add('/cookies', { changefreq: 'yearly', priority: '0.3' });
   add('/terms', { changefreq: 'yearly', priority: '0.3' });
+  add('/disclaimer', { changefreq: 'yearly', priority: '0.3' });
   add('/contact', { changefreq: 'yearly', priority: '0.3' });
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
 }
@@ -90,6 +137,24 @@ async function main() {
   const site = await readJson(path.join(ROOT, 'data', 'site.json'));
   const tools = [...(await readJson(path.join(ROOT, 'data', 'tools.json'))), ...(await loadManualTools())];
   validateRegistry(tools);
+
+  const contentMap = await loadContent();
+  const missingContent = [];
+  for (const tool of tools) {
+    const content = contentMap[tool.id];
+    if (!content) {
+      missingContent.push(tool.id);
+      continue;
+    }
+    const problems = validateContent(tool.id, content);
+    if (problems.length) throw new Error(`Content for "${tool.id}" failed validation:\n  - ${problems.join('\n  - ')}`);
+    tool.content = content;
+    tool.reviewed = content.reviewed || '2026-11-03';
+    if (Array.isArray(content.faq) && content.faq.length) tool.faq = [...tool.faq, ...content.faq];
+  }
+  if (missingContent.length && process.env.ALLOW_MISSING_CONTENT !== '1') {
+    throw new Error(`Missing editorial content for ${missingContent.length} tools: ${missingContent.join(', ')}`);
+  }
 
   const byCategory = new Map();
   for (const tool of tools) {
@@ -119,7 +184,7 @@ async function main() {
     pages++;
   }
 
-  const staticRenderers = [homePage, searchPage, categoriesPage, latestPage, popularPage, aboutPage, privacyPage, termsPage, contactPage, notFoundPage];
+  const staticRenderers = [homePage, searchPage, categoriesPage, latestPage, popularPage, aboutPage, privacyPage, cookiesPage, termsPage, disclaimerPage, editorialPage, contactPage, notFoundPage];
   for (const render of staticRenderers) {
     const result = render(ctx);
     const results = Array.isArray(result) ? result : [result];

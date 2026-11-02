@@ -1,0 +1,314 @@
+{
+  "anagram-checker": {
+    "overview": [
+      "The anagram checker compares two words or phrases by counting their letters. Spaces, punctuation and letter case are ignored, so “conversation” and “voices rant on” are recognised as the same set of characters even though the spacing is different.",
+      "When the counts do not match, the page lists which letters appear more often on one side. That turns a simple yes-or-no test into a useful explanation, which is helpful for word puzzles, classroom exercises and checking a claimed anagram before sharing it."
+    ],
+    "useCases": [
+      "Checking a word-game answer where the order of letters can change but the letters themselves cannot.",
+      "Verifying whether two names or phrases are true anagrams.",
+      "Teaching letter frequency and the difference between anagrams and near-misses.",
+      "Settling a puzzle dispute by showing exactly which character is missing or duplicated."
+    ],
+    "workedExample": "Compare listen with silent. Both contain one e, one i, one l, one n, one s and one t, so the tool reports that the letter counts match. Compare cat with cats and the summary shows one extra s on the right, which explains why they are not anagrams.",
+    "limits": [
+      "Only letters are compared. Spaces, punctuation, digits and symbols are discarded, so two strings that differ only in punctuation are treated as anagrams.",
+      "The comparison uses Unicode-aware case folding, but visually identical characters from different scripts or with combining marks may not be treated as equal.",
+      "It verifies an anagram; it does not generate possible anagrams or check whether a phrase is a meaningful English sentence."
+    ],
+    "privacy": "Both phrases are counted locally in JavaScript. No text is sent to a server, and nothing is stored after the page is closed.",
+    "faq": [
+      {
+        "q": "Are numbers part of the comparison?",
+        "a": "No. The checker focuses on letters and ignores digits, punctuation and whitespace, which is the usual rule for phrase anagrams."
+      }
+    ]
+  },
+  "case-converter": {
+    "overview": [
+      "The case converter rewrites text into nine common casing styles: uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE. Buttons apply the transformation immediately, and the original text remains in the input box so you can try another style.",
+      "It is aimed at everyday writing and development tasks: preparing a heading, turning a label into a variable name, or converting a list of CSS class names without retyping them."
+    ],
+    "useCases": [
+      "Converting a phrase into camelCase or snake_case for code identifiers.",
+      "Standardising headings in title case or sentence case.",
+      "Turning labels into kebab-case for CSS classes or URL slugs.",
+      "Changing a block of shouted uppercase text back into readable lowercase."
+    ],
+    "workedExample": "Paste hello world and choose Title Case to get Hello World. Choosing camelCase instead produces helloWorld, while snake_case produces hello_world and kebab-case produces hello-world. Switching between them takes one click and leaves the input unchanged for comparison.",
+    "limits": [
+      "Word splitting is based on spaces, punctuation and existing capital letters. Acronyms and unusual identifiers can produce unexpected splits or lowercased letters.",
+      "The converter is not locale-aware for languages with special capitalisation rules, and it does not preserve rich formatting such as bold or links.",
+      "Casing is a presentation change only. Renaming a variable or class also requires updating every place that references it."
+    ],
+    "privacy": "Conversion happens entirely in your browser. The text you paste is never uploaded, logged or stored by the site.",
+    "faq": [
+      {
+        "q": "Which casing styles are supported?",
+        "a": "Uppercase, lowercase, title case, sentence case, camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE."
+      },
+      {
+        "q": "Does it keep line breaks?",
+        "a": "Line breaks are preserved for the whole-text styles. Identifier styles may reflow the text because they treat whitespace as a word separator."
+      }
+    ]
+  },
+  "html-tag-remover": {
+    "overview": [
+      "HTML Tag Remover parses a snippet of markup and returns only its readable text. It removes every element, including script, style and noscript blocks, and collapses the remaining whitespace into clean prose that can be pasted into a document or word counter.",
+      "It is useful when text is trapped inside copied page source or an HTML email and you need the words without the markup. The parsing uses the browser's own HTML parser, so entities such as ampersands and angle brackets are rendered as their text equivalents."
+    ],
+    "useCases": [
+      "Cleaning an article copied from a website before pasting it into a document.",
+      "Extracting readable text from an HTML email or template.",
+      "Preparing source text for a word count or readability check.",
+      "Removing markup from a snippet without opening a code editor."
+    ],
+    "workedExample": "Pasting <p>Hello <strong>world</strong></p> returns the single line Hello world. A block containing a style rule and a script is reduced to the visible paragraph text, because those non-content elements are removed before the text is extracted.",
+    "limits": [
+      "This is a text-extraction tool, not a security sanitiser. Do not use its output to build HTML that will be rendered to other users.",
+      "Inline formatting is lost, and adjacent block elements are joined with a single space rather than preserving paragraph boundaries.",
+      "Text generated by JavaScript after page load is not present in the pasted source, so it cannot be extracted."
+    ],
+    "privacy": "The markup is parsed in a detached element in your browser. No HTML, URL or extracted text is transmitted to a server.",
+    "faq": [
+      {
+        "q": "Can it clean HTML for display on my own site?",
+        "a": "No. Use a dedicated sanitiser such as DOMPurify for that purpose; this tool only extracts plain text and is not designed to prevent script injection."
+      }
+    ]
+  },
+  "lorem-ipsum-generator": {
+    "overview": [
+      "The Lorem Ipsum generator produces placeholder text in the amount and format you choose. You can request a number of paragraphs, sentences or words, then copy the result into a design, a prototype or a test fixture where real copy is not available yet.",
+      "Placeholder text lets reviewers judge layout, type size and spacing without being distracted by the wording. The generator uses the classic Latin-style filler that designers and typesetters have used for centuries."
+    ],
+    "useCases": [
+      "Filling a website or app mockup before final copy is written.",
+      "Testing how a card, table or email template handles different text lengths.",
+      "Creating dummy content for a CMS import or a component demo.",
+      "Producing a quick block of text for a typography experiment."
+    ],
+    "workedExample": "Choose three paragraphs for a landing-page mockup. The output gives three blocks of filler text separated by blank lines, long enough to show paragraph spacing and line height. Switching the unit to words and requesting fifty produces one short block instead, which is better for a button label or card excerpt.",
+    "limits": [
+      "Lorem Ipsum is intentionally meaningless. Never ship it as production copy or rely on it for translation.",
+      "The generator randomises sentence selection, so the exact output differs between runs and is not reproducible without copying it.",
+      "Requesting very large amounts of text produces a large textarea and may be slow to copy on low-memory devices."
+    ],
+    "privacy": "Generation happens locally in JavaScript. No request is made and no generated text is stored by the site.",
+    "faq": [
+      {
+        "q": "Can I generate whole paragraphs and individual words?",
+        "a": "Yes. Choose paragraphs, sentences or words and set the amount; the output adapts to that unit."
+      }
+    ]
+  },
+  "palindrome-checker": {
+    "overview": [
+      "The palindrome checker tests whether a word, phrase or number reads the same forwards and backwards. With the filter enabled, spaces, punctuation and letter case are ignored, which is the usual convention for sentence palindromes such as “A man, a plan, a canal: Panama”.",
+      "The page shows the cleaned text beside its reverse and states whether the two match, so the result is easy to verify instead of being an unexplained yes or no."
+    ],
+    "useCases": [
+      "Checking a word or phrase for a puzzle or quiz.",
+      "Verifying a numeric palindrome such as 12321.",
+      "Teaching how normalisation affects string comparison.",
+      "Settling a claim that a sentence is a palindrome when punctuation is ignored."
+    ],
+    "workedExample": "Enter “A man, a plan, a canal: Panama” with the filter on. The cleaned form becomes amanaplanacanalpanama, its reverse is identical, and the result is a palindrome. Turning the filter off makes the same sentence fail because the spaces and punctuation no longer mirror exactly.",
+    "limits": [
+      "The filter removes non-letter and non-digit characters and folds case, but it does not normalise accents or Unicode combining marks.",
+      "A palindrome is a textual property, not a grammar or meaning check; the tool does not judge whether the text is sensible.",
+      "Very large inputs are compared in memory in the browser and are not intended for book-length text."
+    ],
+    "privacy": "The comparison runs locally in JavaScript. Nothing you type is transmitted or stored.",
+    "faq": [
+      {
+        "q": "Are numbers supported?",
+        "a": "Yes. Digits are kept by the filter, so values such as 12321 and 9009 are recognised as palindromes."
+      }
+    ]
+  },
+  "reading-level-analyzer": {
+    "overview": [
+      "The reading level analyzer estimates how difficult a passage is using two standard formulas. Flesch Reading Ease produces a 0–100 score where higher is easier, and the Flesch–Kincaid grade level maps the same sentence and syllable data to a US school grade.",
+      "The page also reports sentence count, word count, average sentence length, average syllables per word and other supporting statistics. It is useful for checking whether marketing copy, documentation or study material matches its intended audience."
+    ],
+    "useCases": [
+      "Checking that a help article is written at a level most customers can read.",
+      "Comparing two drafts of the same page for readability.",
+      "Reviewing a student essay or teaching text against a target grade.",
+      "Tightening long sentences in marketing or technical copy."
+    ],
+    "workedExample": "A paragraph of short, common words with sentences around ten words long might score near 80 on Flesch Reading Ease, which is labelled Easy. An academic paragraph with long clauses and multi-syllable terminology might score in the 30s, labelled Difficult, even though both paragraphs discuss the same topic.",
+    "limits": [
+      "Both formulas were designed for English and estimate difficulty from sentence length and syllables. They do not measure comprehension, jargon or logical structure.",
+      "Syllable counting uses a heuristic and can be wrong for proper nouns, abbreviations and unusual words.",
+      "Scores are most useful when compared across drafts of similar content, not as absolute judgements of quality."
+    ],
+    "privacy": "The analysis runs entirely in the browser. Your text is not uploaded, stored or used to train anything.",
+    "faq": [
+      {
+        "q": "What score should I aim for?",
+        "a": "For general web copy, 60–70 is a common target. Technical documentation often sits lower, while children's material usually scores above 80."
+      },
+      {
+        "q": "Does it work for other languages?",
+        "a": "The formulas and syllable heuristic are English-specific, so results for other languages should be treated as rough estimates at best."
+      }
+    ]
+  },
+  "reading-time-calculator": {
+    "overview": [
+      "The reading time calculator estimates how long a passage takes to read silently or speak aloud. It counts words, divides by the reading speed you set, and returns minutes and seconds, with a separate estimate at a slower speaking pace.",
+      "It is useful before publishing an article, recording a video script or planning a presentation, because the word count alone does not tell you whether the piece fits the time you have."
+    ],
+    "useCases": [
+      "Estimating the reading time shown at the top of a blog post.",
+      "Checking whether a script fits a three-minute video or a five-minute talk.",
+      "Comparing a long and short version of the same copy.",
+      "Planning a narration or podcast segment before recording."
+    ],
+    "workedExample": "Paste a 500-word section and set the pace to 200 words per minute. The result is 2 minutes 30 seconds. At the default 238 words per minute the same text takes about 2 minutes 6 seconds, and the speaking comparison shows a longer estimate because speech is usually slower.",
+    "limits": [
+      "The estimate assumes a constant pace. Headings, code blocks, tables and complex figures slow real readers down.",
+      "Reading speed varies widely between people and by content type; the default is an average, not a measurement of your audience.",
+      "Empty lines are ignored for the word count, but markup pasted as plain text will be counted as words."
+    ],
+    "privacy": "Word counting and time estimation happen locally. Your text is not uploaded or stored.",
+    "faq": [
+      {
+        "q": "What is a realistic reading speed?",
+        "a": "About 200–250 words per minute is typical for silent reading of general prose. Use around 130–150 words per minute for spoken delivery."
+      }
+    ]
+  },
+  "remove-duplicate-lines": {
+    "overview": [
+      "Remove Duplicate Lines keeps the first occurrence of each line and discards later repeats. You can choose whether comparison ignores case and whether leading and trailing spaces should be trimmed before comparing, which matters when lists have been assembled from several sources.",
+      "The result preserves the original order of first appearances, so deduplicating a keyword list or a set of email addresses does not scramble the rest of the list."
+    ],
+    "useCases": [
+      "Cleaning a list of email addresses or domains before an import.",
+      "Removing repeated keywords from an SEO or advertising list.",
+      "Deduplicating log lines, IDs or CSV rows pasted as text.",
+      "Preparing a unique guest list or inventory list."
+    ],
+    "workedExample": "Paste the lines alpha, beta, alpha and Gamma. With case-sensitive comparison off, gamma and Gamma count as the same line, so the output keeps alpha, beta and the first Gamma. Enabling trimming also treats a line with trailing spaces as a duplicate of the clean version.",
+    "limits": [
+      "Comparison is line-based. Two lines that differ only by internal spacing or punctuation are treated as different.",
+      "Only the first occurrence is kept, so if later duplicates contain extra information that information is lost.",
+      "Blank lines are preserved unless you remove them separately; a blank line is treated as a value like any other."
+    ],
+    "privacy": "Deduplication runs locally in your browser. Lists, addresses and identifiers are never transmitted.",
+    "faq": [
+      {
+        "q": "Can I deduplicate a CSV column?",
+        "a": "Paste the column as one value per line. The tool does not parse CSV structure, so quoted commas spanning multiple fields need to be handled first."
+      }
+    ]
+  },
+  "sort-lines": {
+    "overview": [
+      "Sort Lines reorders a pasted list using alphabetical, reverse alphabetical, length-based or random ordering. You can also drop blank lines before sorting, which is handy when a list has been assembled from several documents.",
+      "The tool works line by line and leaves the content of each line untouched, so it is safe for lists of names, keywords, file paths or code comments that only need their order changed."
+    ],
+    "useCases": [
+      "Alphabetising a list of names, keywords or tags.",
+      "Ordering file paths or CSS classes by length for a quick visual review.",
+      "Shuffling lines to create a random playlist or test order.",
+      "Removing blank lines from a copied list before using it."
+    ],
+    "workedExample": "Paste banana, apple, cherry and choose alphabetical order. The output becomes apple, banana, cherry. Choosing length order instead puts apple first and cherry last, while the random mode produces a different order on each run and is useful when you need an unbiased shuffle.",
+    "limits": [
+      "Alphabetical sorting uses the browser's string comparison, which may place accented letters, numbers and uppercase letters differently than a locale-aware sort.",
+      "Sorting is stable in modern browsers, but the exact result for equal keys should not be relied on for a formal specification.",
+      "The tool does not parse CSV or JSON structure; each line is treated as an indivisible string."
+    ],
+    "privacy": "Sorting happens entirely in the browser. The list is not uploaded or retained by the site.",
+    "faq": [
+      {
+        "q": "Can I sort numbers numerically?",
+        "a": "No. This page sorts lines as text, so 10 can appear before 2 in alphabetical mode. Use a numeric sort tool for number lists."
+      }
+    ]
+  },
+  "straight-quote-converter": {
+    "overview": [
+      "Straight Quote Converter normalises typographic punctuation into plain ASCII characters. Curly single and double quotes become straight apostrophes and quotation marks, and optional settings also turn en and em dashes into hyphens and remove zero-width or non-breaking spaces.",
+      "It is useful when text copied from a word processor, PDF or website breaks code, CSV files or a plain-text workflow because of invisible or non-standard characters."
+    ],
+    "useCases": [
+      "Cleaning curly quotes from text that will be pasted into code or JSON.",
+      "Normalising punctuation in a caption or email template.",
+      "Removing zero-width spaces and non-breaking spaces that break search or imports.",
+      "Standardising dashes before publishing plain-text documentation."
+    ],
+    "workedExample": "Paste “hello” and it’s and enable dash conversion. The left and right double quotes become straight quotation marks, the curly apostrophe becomes an ASCII apostrophe, and an em dash elsewhere in the text can be rewritten as a hyphen if that option is enabled.",
+    "limits": [
+      "The conversion is character-based and does not understand context, so an apostrophe and a closing single quote become the same character.",
+      "Some invisible characters outside the listed set may remain; check the output if an import still fails.",
+      "Converting dashes can change the intended typography, so leave that option off when the text is for display rather than code."
+    ],
+    "privacy": "Text is transformed locally in your browser. Nothing is uploaded or stored, so draft manuscripts and internal copy remain private.",
+    "faq": [
+      {
+        "q": "Why does this matter for code?",
+        "a": "Programming languages and data formats expect ASCII quotes. A curly quote looks similar but is a different character and causes syntax or parse errors."
+      }
+    ]
+  },
+  "text-diff": {
+    "overview": [
+      "Text Diff Checker compares two versions of a text line by line and marks what was added, removed or changed. It is a quick way to review edits without uploading documents to a third-party service or opening a full version-control workflow.",
+      "The result is presented as a readable diff, with unchanged context and changed lines distinguished, so you can scan a paragraph, a README section or a configuration snippet for accidental edits."
+    ],
+    "useCases": [
+      "Reviewing changes between two drafts of a paragraph or article.",
+      "Comparing two versions of a configuration or code snippet.",
+      "Checking edits to a README, policy page or release note.",
+      "Spotting accidental differences after copying text between systems."
+    ],
+    "workedExample": "Paste “The quick brown fox.” on the left and “The quick red fox jumps.” on the right. The diff marks the original line as removed and the new line as added, making the changed colour word and the extra verb visible without reading both versions side by side.",
+    "limits": [
+      "The comparison is line-based, so a single changed character marks the whole line as changed rather than highlighting the character.",
+      "Whitespace and line endings are significant; a file with different line endings may appear entirely changed.",
+      "The algorithm is intended for moderate text sizes. Very large files can be slow and are better handled by a dedicated diff tool."
+    ],
+    "privacy": "Both versions are compared in your browser. Drafts, code and credentials pasted into the boxes are not transmitted to a server.",
+    "faq": [
+      {
+        "q": "Can it compare files?",
+        "a": "No. Paste the text content into the two boxes. Use a desktop diff tool for binary or very large files."
+      }
+    ]
+  },
+  "word-counter": {
+    "overview": [
+      "The word counter reports live word, character, sentence and paragraph counts, plus estimated reading and speaking times and the most frequent meaningful keywords. Counts update as you type, which makes it easy to trim an article to a limit or check the length of a caption.",
+      "Words are detected as sequences of letters and numbers, so punctuation does not inflate the count. For keyword frequency, common stop words such as “the” and “and” are ignored so that the list reflects the actual subject matter."
+    ],
+    "useCases": [
+      "Keeping an essay or application answer within a word limit.",
+      "Checking the length of a meta description, bio or social post.",
+      "Estimating reading time before publishing an article.",
+      "Spotting overused words in a draft before editing."
+    ],
+    "workedExample": "A 238-word passage reports 238 words and roughly one minute of reading time at 200 words per minute. The keyword panel may show that a product name appears ten times while incidental words are filtered out, which helps decide whether the draft repeats itself too often.",
+    "limits": [
+      "Counts depend on how words are defined. Hyphenated compounds are counted as one word, while text pasted with markup may include attribute values as words.",
+      "Character counts include spaces and punctuation; they are not the same as a platform's byte or grapheme limit.",
+      "Keyword frequency ignores a fixed English stop-word list and is not a substitute for proper SEO or linguistic analysis."
+    ],
+    "privacy": "All counting happens locally in the browser. Your draft is not uploaded, stored or analysed on a server.",
+    "faq": [
+      {
+        "q": "Does the counter include headings and captions?",
+        "a": "It counts everything pasted into the box. Paste only the body text if a publisher's limit excludes headings."
+      },
+      {
+        "q": "Why do two word counters disagree?",
+        "a": "They use different rules for hyphenated words, apostrophes, URLs and symbols. Check the target platform's definition if the number is critical."
+      }
+    ]
+  }
+}
