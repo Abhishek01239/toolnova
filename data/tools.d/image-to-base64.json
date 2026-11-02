@@ -1,0 +1,46 @@
+{
+  "id": "image-to-base64",
+  "title": "Image to Base64",
+  "h1": "Convert Image to Base64 Online — Free & Private",
+  "seoTitle": "Image to Base64 Converter — Free Online Tool",
+  "description": "Convert JPG, PNG, WebP or any image to a Base64 data URL or string. Everything runs in your browser so your image is never uploaded.",
+  "intro": "Drop an image and instantly get its Base64 representation. Perfect for embedding images in HTML, CSS, emails or JSON without hosting a file.",
+  "blurb": "Turn any image into a Base64 data URL without uploading it.",
+  "keywords": ["image to base64", "base64 encoder", "image encoder", "data url generator", "base64 image converter"],
+  "category": "Developer",
+  "added": "2026-11-02",
+  "popularity": 78,
+  "ui": {
+    "controls": [],
+    "actions": [
+      { "id": "copy", "label": "Copy Base64", "primary": true }
+    ],
+    "outputs": [
+      { "id": "result", "type": "textarea", "label": "Base64 Result" }
+    ]
+  },
+  "howItWorks": [
+    "Click the upload area or drag and drop an image file (JPG, PNG, WebP, GIF).",
+    "The tool reads the file locally with the FileReader API and converts it to a data URL.",
+    "Copy the Base64 string and paste it wherever you need an embedded image."
+  ],
+  "examples": [
+    "Use the data URL as a CSS background-image: url(data:image/png;base64,...).",
+    "Embed a small logo inside a JSON configuration file.",
+    "Share image data in plain text when file upload is not available."
+  ],
+  "faq": [
+    {
+      "q": "Is my image uploaded to a server?",
+      "a": "No. Conversion uses the browser's FileReader and never leaves your device."
+    },
+    {
+      "q": "What formats are supported?",
+      "a": "Any image format the browser can display: JPG, PNG, WebP, GIF, BMP, AVIF and more."
+    },
+    {
+      "q": "Why is the output so long?",
+      "a": "Base64 encoding increases size by roughly 33 percent. Large images produce very long strings."
+    }
+  ]
+}
