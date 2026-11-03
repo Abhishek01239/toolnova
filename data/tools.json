@@ -1,1 +1,70 @@
-PLACEHOLDER
+[
+  {
+    "id": "text-reverser-and-sorter",
+    "title": "Text Reverser & Sorter",
+    "h1": "Reverse and Sort Text Online",
+    "intro": "Reverse characters or lines and sort text lines alphabetically in one place.",
+    "blurb": "Reverse characters or lines and sort text lines alphabetically in one place.",
+    "category": "Text",
+    "keywords": ["reverse text", "sort lines", "text tools"],
+    "popularity": 75,
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "reverse-text",
+          "label": "Reverse characters",
+          "primary": true
+        },
+        {
+          "id": "reverse-lines",
+          "label": "Reverse line order"
+        },
+        {
+          "id": "sort-lines",
+          "label": "Sort lines A → Z"
+        },
+        {
+          "id": "sort-lines-reverse",
+          "label": "Sort lines Z → A"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Reverse characters, Reverse line order, Sort lines A → Z, Sort lines Z → A) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"stressed desserts\" → click \"Reverse characters\" → output \"stressed desserts\" reversed.",
+      "Input lines of fruit names → click \"Sort lines A → Z\" → alphabetically sorted list."
+    ],
+    "faq": [
+      {
+        "q": "Is my text uploaded?",
+        "a": "No. Everything runs in your browser."
+      },
+      {
+        "q": "Can I use long texts?",
+        "a": "Yes, limited only by your device's memory."
+      }
+    ]
+  }
+]
