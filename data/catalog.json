@@ -1,1 +1,24 @@
-PLACEHOLDER
+[
+  {
+    "id": "text-reverser-and-sorter",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": [
+      "reverse text",
+      "sort lines",
+      "text tools"
+    ],
+    "blurb": "Reverse characters or lines and sort text lines alphabetically in one place.",
+    "params": {
+      "title": "Text Reverser & Sorter",
+      "h1": "Reverse and Sort Text Online",
+      "transforms": [
+        "reverse-text",
+        "reverse-lines",
+        "sort-lines",
+        "sort-lines-reverse"
+      ]
+    },
+    "popularity": 75
+  }
+]
