@@ -1,0 +1,49 @@
+{
+  "id": "base64-image-viewer",
+  "title": "Base64 Image Viewer",
+  "h1": "Base64 Image Viewer — Preview Base64 Images",
+  "seoTitle": "Base64 Image Viewer — Preview Base64 Encoded Images Free",
+  "description": "Paste a Base64 data URL or raw Base64 string and preview the image instantly. Runs entirely in your browser.",
+  "intro": "Paste a Base64-encoded image (data URL or raw Base64) to see a live preview. Useful for debugging data URLs and embedded images. Nothing is uploaded.",
+  "blurb": "Preview Base64-encoded images directly in the browser.",
+  "keywords": ["base64 image", "base64 viewer", "data url preview", "base64 to image", "image from base64"],
+  "category": "Image",
+  "added": "2026-11-04",
+  "popularity": 65,
+  "ui": {
+    "controls": [
+      {
+        "type": "textarea",
+        "id": "input",
+        "label": "Base64 or data URL",
+        "rows": 8,
+        "placeholder": "data:image/png;base64,iVBOR... or raw Base64"
+      }
+    ],
+    "actions": [
+      { "id": "preview", "label": "Preview", "primary": true }
+    ],
+    "outputs": [
+      { "id": "preview", "type": "stats", "label": "Preview" }
+    ]
+  },
+  "howItWorks": [
+    "Paste a data URL (data:image/...) or raw Base64 string.",
+    "Press Preview. The image appears below if the data is valid.",
+    "The image is rendered locally; nothing is sent to a server."
+  ],
+  "examples": [
+    "Debug a data URL copied from a browser network tab.",
+    "Preview an image embedded as Base64 in an email or document."
+  ],
+  "faq": [
+    {
+      "q": "What formats are supported?",
+      "a": "Any image format the browser can display (PNG, JPG, WebP, GIF, etc.) when provided as a valid Base64 data URL or raw Base64 with a guessed MIME type."
+    },
+    {
+      "q": "Is the image uploaded?",
+      "a": "No. Decoding and rendering happen entirely in your browser."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "stopwatch",
+  "title": "Stopwatch",
+  "h1": "Stopwatch — Free Online Timer with Laps",
+  "seoTitle": "Stopwatch — Free Online Timer with Lap Times",
+  "description": "Simple browser stopwatch with start, stop, reset and lap times. Runs entirely in your browser with no uploads.",
+  "intro": "Start, stop and reset a precise stopwatch. Record lap times and see elapsed time in hours, minutes, seconds and milliseconds. Everything stays on your device.",
+  "blurb": "Free online stopwatch with lap times that runs entirely in your browser.",
+  "keywords": ["stopwatch", "online stopwatch", "lap timer", "timer with laps", "browser stopwatch"],
+  "category": "Time",
+  "added": "2026-11-04",
+  "popularity": 72,
+  "ui": {
+    "controls": [],
+    "actions": [
+      { "id": "start", "label": "Start", "primary": true },
+      { "id": "lap", "label": "Lap" },
+      { "id": "stop", "label": "Stop" },
+      { "id": "reset", "label": "Reset" }
+    ],
+    "outputs": [
+      { "id": "display", "type": "stats", "label": "Elapsed" },
+      { "id": "laps", "type": "pre", "label": "Laps" }
+    ]
+  },
+  "howItWorks": [
+    "Press Start to begin timing. The display updates in real time.",
+    "Press Lap to record the current elapsed time without stopping.",
+    "Press Stop to pause, then Start to resume from the same point.",
+    "Press Reset to clear the timer and all laps."
+  ],
+  "examples": [
+    "Time a presentation and record lap times for each section.",
+    "Measure how long a task takes and keep a history of attempts."
+  ],
+  "faq": [
+    {
+      "q": "Does the stopwatch keep running if I switch tabs?",
+      "a": "Yes for short periods, but browsers may throttle timers in background tabs. Keep the tab visible for highest accuracy."
+    },
+    {
+      "q": "Is any data uploaded?",
+      "a": "No. The timer runs entirely in your browser. Nothing is sent to a server."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "word-frequency-counter",
+  "title": "Word Frequency Counter",
+  "h1": "Word Frequency Counter — Find Most Common Words",
+  "seoTitle": "Word Frequency Counter — Free Online Text Analyzer",
+  "description": "Count how often each word appears in any text. See the most frequent words with counts. Runs privately in your browser.",
+  "intro": "Paste any text to see a ranked list of the most common words and their frequencies. Stop words can be ignored. Nothing is uploaded.",
+  "blurb": "Count word frequencies in any text and see the most common words.",
+  "keywords": ["word frequency", "word count frequency", "most common words", "text analyzer", "keyword frequency"],
+  "category": "Text",
+  "added": "2026-11-04",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {
+        "type": "textarea",
+        "id": "input",
+        "label": "Text",
+        "rows": 10,
+        "placeholder": "Paste your text here…"
+      },
+      {
+        "type": "checkbox",
+        "id": "ignoreStop",
+        "label": "Ignore common stop words",
+        "checked": true
+      }
+    ],
+    "actions": [
+      { "id": "count", "label": "Count words", "primary": true }
+    ],
+    "outputs": [
+      { "id": "result", "type": "pre", "label": "Frequencies" }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type text into the box.",
+    "Optionally ignore common English stop words.",
+    "Press Count words to see a ranked list of words and how many times each appears."
+  ],
+  "examples": [
+    "Find the most repeated words in an essay or blog post.",
+    "Analyze a speech transcript for key terms."
+  ],
+  "faq": [
+    {
+      "q": "Are stop words ignored by default?",
+      "a": "Yes. Common words such as the, a, and, of are skipped when the checkbox is enabled so the list focuses on meaningful terms."
+    },
+    {
+      "q": "Is my text uploaded?",
+      "a": "No. All counting happens locally in your browser."
+    }
+  ]
+}
