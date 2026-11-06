@@ -1,0 +1,40 @@
+{
+  "id": "bill-splitter",
+  "title": "Bill Splitter",
+  "h1": "Bill Splitter \u2014 Split a Bill Fairly Online",
+  "seoTitle": "Bill Splitter \u2014 Free Online Bill Split Calculator",
+  "description": "Split a restaurant or group bill including tax and tip. See each person's share instantly. Private and free, runs in your browser.",
+  "intro": "Enter the total bill, number of people, optional tip percentage and tax. Instantly see how much each person owes, with a clear breakdown.",
+  "blurb": "Split a group bill with tax and tip. See each person's share in seconds.",
+  "keywords": ["bill splitter", "split bill", "tip calculator", "group bill", "split the check"],
+  "category": "Finance",
+  "added": "2026-11-06",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {"id": "total", "type": "number", "label": "Bill total", "value": 100, "min": 0, "step": 0.01},
+      {"id": "people", "type": "number", "label": "Number of people", "value": 4, "min": 1, "step": 1},
+      {"id": "tip", "type": "number", "label": "Tip percentage", "value": 15, "min": 0, "max": 50, "step": 0.5},
+      {"id": "tax", "type": "number", "label": "Tax percentage", "value": 0, "min": 0, "max": 30, "step": 0.1}
+    ],
+    "actions": [{"id": "calculate", "label": "Calculate shares", "primary": true}],
+    "outputs": [
+      {"id": "summary", "type": "stats", "label": "Breakdown"},
+      {"id": "result", "type": "textarea", "label": "Per person", "rows": 4}
+    ]
+  },
+  "howItWorks": [
+    "Enter the pre-tip bill total, how many people are splitting, and the tip and tax percentages.",
+    "Click Calculate shares. Tax is applied first, then tip is calculated on the taxed amount.",
+    "The summary shows totals and the equal share each person should pay."
+  ],
+  "examples": [
+    "A $85 dinner for 3 people with 18% tip and 8% tax: each person pays roughly $34.50.",
+    "Split a $42.50 coffee-shop order among 2 people with a 10% tip and no tax."
+  ],
+  "faq": [
+    {"q": "Is the calculation private?", "a": "Yes. All numbers stay in your browser. Nothing is sent to a server."},
+    {"q": "How is tip calculated?", "a": "Tax is added to the bill first, then the tip percentage is applied to that subtotal. Each person pays an equal share of the final total."},
+    {"q": "Can I split unevenly?", "a": "This tool splits equally. For uneven shares you can run it multiple times or calculate manually from the per-person figure."}
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "json-diff",
+  "title": "JSON Diff Checker",
+  "h1": "JSON Diff Checker \u2014 Compare JSON Online",
+  "seoTitle": "JSON Diff Checker \u2014 Free Online JSON Compare",
+  "description": "Compare two JSON documents and see added, removed and changed keys instantly. Private, runs in your browser with no upload.",
+  "intro": "Paste two JSON objects or arrays and instantly see the differences: what was added, removed or modified. Perfect for debugging API responses or config changes.",
+  "blurb": "Compare two JSON documents and highlight added, removed and changed keys. Free and private.",
+  "keywords": ["json diff", "compare json", "json difference", "json compare", "diff checker"],
+  "category": "Developer",
+  "added": "2026-11-06",
+  "popularity": 82,
+  "ui": {
+    "controls": [
+      {"id": "left", "type": "textarea", "label": "JSON A (original)", "rows": 12, "placeholder": "Paste first JSON here"},
+      {"id": "right", "type": "textarea", "label": "JSON B (new)", "rows": 12, "placeholder": "Paste second JSON here"}
+    ],
+    "actions": [{"id": "compare", "label": "Compare", "primary": true}],
+    "outputs": [
+      {"id": "result", "type": "pre", "label": "Differences"},
+      {"id": "summary", "type": "stats", "label": "Summary"}
+    ]
+  },
+  "howItWorks": [
+    "Paste or type the original JSON into the left box and the updated JSON into the right box.",
+    "Click Compare. The tool parses both and walks the structure to find differences.",
+    "Added keys, removed keys and value changes appear in the result area with a clear summary."
+  ],
+  "examples": [
+    "Compare a local config.json with the one returned by an API to spot unexpected changes.",
+    "Check two versions of a package.json or tsconfig to see what dependencies or options changed."
+  ],
+  "faq": [
+    {"q": "Is my JSON uploaded to a server?", "a": "No. Both documents are parsed and compared entirely inside your browser. Nothing leaves your device."},
+    {"q": "What if the JSON is invalid?", "a": "The tool shows a clear error message pointing to the problem instead of a partial result."},
+    {"q": "Does it handle nested objects and arrays?", "a": "Yes. It recursively compares objects and arrays, reporting path-based differences."}
+  ]
+}

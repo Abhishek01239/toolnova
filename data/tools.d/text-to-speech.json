@@ -1,0 +1,39 @@
+{
+  "id": "text-to-speech",
+  "title": "Text to Speech",
+  "h1": "Text to Speech \u2014 Read Text Aloud Free",
+  "seoTitle": "Text to Speech \u2014 Free Online Speech Reader",
+  "description": "Convert any text to spoken audio using your browser's built-in voices. Adjust rate and pitch, private and free.",
+  "intro": "Paste text and hear it spoken aloud. Choose a voice, speed and pitch. Everything happens on your device using the Web Speech API.",
+  "blurb": "Turn text into speech with your browser's voices. Free, private, no sign-up.",
+  "keywords": ["text to speech", "tts", "read aloud", "speech synthesis", "voice reader"],
+  "category": "Productivity",
+  "added": "2026-11-06",
+  "popularity": 85,
+  "ui": {
+    "controls": [
+      {"id": "text", "type": "textarea", "label": "Text to speak", "rows": 8, "placeholder": "Type or paste the text you want to hear\u2026"},
+      {"id": "rate", "type": "range", "label": "Speed", "min": 0.5, "max": 2, "step": 0.1, "value": 1},
+      {"id": "pitch", "type": "range", "label": "Pitch", "min": 0.5, "max": 2, "step": 0.1, "value": 1}
+    ],
+    "actions": [
+      {"id": "speak", "label": "Speak", "primary": true},
+      {"id": "stop", "label": "Stop"}
+    ],
+    "outputs": [{"id": "summary", "type": "stats", "label": "Status"}]
+  },
+  "howItWorks": [
+    "Paste or type the text you want spoken into the box.",
+    "Adjust speed and pitch with the sliders if desired, then click Speak.",
+    "Your browser's speech engine reads the text aloud. Click Stop to interrupt."
+  ],
+  "examples": [
+    "Have a long article or essay read aloud while you do other tasks.",
+    "Check pronunciation or listen to a draft of a speech or presentation."
+  ],
+  "faq": [
+    {"q": "Is the text uploaded?", "a": "No. The Web Speech API runs entirely on your device. The text never leaves your browser."},
+    {"q": "Which voices are available?", "a": "The voices depend on your operating system and browser. Most modern browsers offer several languages and genders."},
+    {"q": "Why is there no sound?", "a": "Make sure your device volume is up and the page is allowed to play audio. Some browsers require a user gesture (the Speak click) before starting speech."}
+  ]
+}
