@@ -11,7 +11,7 @@
   var STOP = new Set('a an and are as at be but by for from has have he her his i in is it its of on or that the their them they this to was were will with you your'.split(' '));
   function count() {
     var text = (control('input') && control('input').value) || '';
-    var ignore = control('ignoreStop') && control('ignoreStop').checked;
+    var ignore = control('ignorestop') && control('ignorestop').checked;
     var words = text.toLowerCase().match(/[a-z0-9']+/g) || [];
     var freq = {};
     words.forEach(function (w) {

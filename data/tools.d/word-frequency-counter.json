@@ -1,12 +1,18 @@
 {
   "id": "word-frequency-counter",
   "title": "Word Frequency Counter",
-  "h1": "Word Frequency Counter — Find Most Common Words",
-  "seoTitle": "Word Frequency Counter — Free Online Text Analyzer",
+  "h1": "Word Frequency Counter \u2014 Find Most Common Words",
+  "seoTitle": "Word Frequency Counter \u2014 Free Online Text Analyzer",
   "description": "Count how often each word appears in any text. See the most frequent words with counts. Runs privately in your browser.",
   "intro": "Paste any text to see a ranked list of the most common words and their frequencies. Stop words can be ignored. Nothing is uploaded.",
   "blurb": "Count word frequencies in any text and see the most common words.",
-  "keywords": ["word frequency", "word count frequency", "most common words", "text analyzer", "keyword frequency"],
+  "keywords": [
+    "word frequency",
+    "word count frequency",
+    "most common words",
+    "text analyzer",
+    "keyword frequency"
+  ],
   "category": "Text",
   "added": "2026-11-04",
   "popularity": 68,
@@ -17,20 +23,28 @@
         "id": "input",
         "label": "Text",
         "rows": 10,
-        "placeholder": "Paste your text here…"
+        "placeholder": "Paste your text here\u2026"
       },
       {
         "type": "checkbox",
-        "id": "ignoreStop",
+        "id": "ignorestop",
         "label": "Ignore common stop words",
         "checked": true
       }
     ],
     "actions": [
-      { "id": "count", "label": "Count words", "primary": true }
+      {
+        "id": "count",
+        "label": "Count words",
+        "primary": true
+      }
     ],
     "outputs": [
-      { "id": "result", "type": "pre", "label": "Frequencies" }
+      {
+        "id": "result",
+        "type": "pre",
+        "label": "Frequencies"
+      }
     ]
   },
   "howItWorks": [

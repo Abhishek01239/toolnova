@@ -1,0 +1,207 @@
+{
+  "extract-emails-and-urls": {
+    "overview": [
+      "This tool scans any block of text and pulls out every email address and every web address it finds. It is useful when you have copied a long email, a webpage, or a list of contacts and need only the contact details or links.",
+      "The extractor uses simple pattern matching that runs entirely in your browser. It looks for the common shapes of email addresses and for strings that start with http or https. Duplicate addresses and links are removed so you get a clean list.",
+      "You can run the two extractors separately: one button for emails and one for URLs. The result is ready to copy into a spreadsheet, a mailing list, or a bookmark manager."
+    ],
+    "useCases": [
+      "Pull all contact emails from a forwarded message or a webpage.",
+      "Collect every link mentioned in a long document or chat log.",
+      "Clean a messy list of addresses before importing them into a mail client.",
+      "Find URLs hidden inside code comments or error logs."
+    ],
+    "workedExample": "Paste a paragraph that contains ada@example.com, bob.smith@test.org and the sentence \u201csee https://example.com/docs for more\u201d. Click Extract email addresses and the output shows the two unique emails. Click Extract URLs and you receive only the one clean link. Nothing else from the original text remains.",
+    "limits": [
+      "Only standard email and http/https URL patterns are recognised; unusual or broken addresses may be missed.",
+      "The tool does not visit the links or validate that the emails exist.",
+      "Very large texts are limited only by your device\u2019s memory.",
+      "Addresses inside images or PDFs cannot be read."
+    ],
+    "privacy": "The text you paste never leaves your browser. Extraction happens locally and nothing is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it catch emails with plus signs or dots?",
+        "a": "Yes. Common valid email characters are included in the pattern."
+      },
+      {
+        "q": "Are duplicate links removed?",
+        "a": "Yes. Each unique address or URL appears only once."
+      }
+    ]
+  },
+  "add-line-numbers": {
+    "overview": [
+      "Number every line of a text block so you can refer to specific lines in reviews, logs or documents. The tool prefixes each line with a sequential number starting from 1.",
+      "It preserves the original line content exactly and only adds the number and a separator. Empty lines are also numbered so the sequence stays accurate.",
+      "This is especially handy when discussing code, configuration files or long lists with colleagues who need a shared reference."
+    ],
+    "useCases": [
+      "Number lines in a code snippet before a code review.",
+      "Add line numbers to a log file for easier discussion.",
+      "Prepare a numbered list from plain text without manual editing."
+    ],
+    "workedExample": "Input three lines: apple, banana, cherry. After clicking Add line numbers the output becomes 1. apple, 2. banana, 3. cherry. The original text is unchanged except for the added prefixes. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Numbers start at 1 and increase by one for every line, including blank lines.",
+      "The separator is fixed; custom formats are not offered.",
+      "Extremely long lines are handled but may be hard to read in the output box."
+    ],
+    "privacy": "Your text is processed only in the browser and is never sent to any server.",
+    "faq": [
+      {
+        "q": "Can I start from a different number?",
+        "a": "Currently numbering always begins at 1."
+      },
+      {
+        "q": "Does it number empty lines?",
+        "a": "Yes, so the sequence matches the original line count."
+      }
+    ]
+  },
+  "text-cleaner": {
+    "overview": [
+      "Clean messy text by trimming spaces from the ends of lines, removing completely blank lines, and collapsing multiple spaces into a single space. All three operations are available as separate buttons so you can apply only what you need.",
+      "The cleaner is useful after copying text from PDFs, emails or websites that often contain irregular whitespace. It does not change the meaning of the words, only the formatting.",
+      "Everything runs instantly in your browser with no upload required."
+    ],
+    "useCases": [
+      "Remove trailing spaces before pasting into a code editor.",
+      "Delete empty lines from a list of names or products.",
+      "Collapse double spaces that appear after copying from a document."
+    ],
+    "workedExample": "A text with three spaces between words and several blank lines is cleaned. Trim line ends removes the extra spaces at the start and end of each line. Remove empty lines deletes the blank ones. Collapse extra spaces turns the double spaces into single spaces, leaving a tidy paragraph.",
+    "limits": [
+      "Only ordinary spaces and newlines are normalised; tabs are treated as spaces in some operations.",
+      "The tool does not correct spelling or grammar.",
+      "Very large documents are limited by available memory."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your text or numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "Will it change my punctuation?",
+        "a": "No. Only whitespace is affected."
+      },
+      {
+        "q": "Can I run all three cleaners at once?",
+        "a": "Run them one after another; each button applies its own change to the current text."
+      }
+    ]
+  },
+  "energy-converter": {
+    "overview": [
+      "Convert energy values between joules, kilojoules, calories, kilocalories, watt-hours, kilowatt-hours, BTU and electronvolts. The calculator uses exact conversion factors and updates the result as soon as you change any field.",
+      "It is useful for physics homework, nutrition calculations, electricity bills and engineering estimates. All math is performed locally.",
+      "Swap the from and to units with one click when you need the reverse conversion."
+    ],
+    "useCases": [
+      "Turn kilowatt-hours on an electricity bill into joules or calories.",
+      "Convert food energy from kcal to kJ for a nutrition label.",
+      "Change BTU figures from a heater specification into more familiar units."
+    ],
+    "workedExample": "Enter 1 in the value box, select Kilowatt-hour as the source and Joule as the target. The tool returns 3600000 because one kilowatt-hour equals 3.6 million joules. Changing the target to Kilocalorie gives approximately 860.4. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Only the units listed in the dropdowns are supported.",
+      "Results are rounded for display; the internal calculation uses full precision.",
+      "Negative energy values are allowed mathematically but may not make physical sense."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your text or numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "Is the calorie the food calorie?",
+        "a": "The Kilocalorie (kcal) entry is the common food calorie. The smaller Calorie (cal) is also available."
+      },
+      {
+        "q": "How accurate are the conversions?",
+        "a": "They use standard defined factors such as 1 kWh = 3 600 000 J."
+      }
+    ]
+  },
+  "pressure-converter": {
+    "overview": [
+      "Convert pressure between pascal, kilopascal, bar, psi, atmosphere and torr. The tool is helpful for weather, tyre pressures, scientific work and engineering.",
+      "Select the value, the unit you have and the unit you want; the result appears immediately. A swap button reverses the direction in one click.",
+      "All calculations run in your browser so your data remains private."
+    ],
+    "useCases": [
+      "Change tyre pressure from psi to bar.",
+      "Convert atmospheric pressure readings for a science report.",
+      "Translate a pump specification given in pascals into more familiar units."
+    ],
+    "workedExample": "Enter 14.7, choose psi as the source and bar as the target. The result is approximately 1.013 bar, which is standard atmospheric pressure. Switching to pascal yields about 101325. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Only the listed pressure units are available.",
+      "The tool assumes absolute or gauge pressure as entered; it does not add atmospheric offset automatically.",
+      "Extremely large or small numbers may lose display precision."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your text or numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "What is the difference between bar and atmosphere?",
+        "a": "One bar is exactly 100 000 pascals; one standard atmosphere is 101 325 pascals. They are very close but not identical."
+      },
+      {
+        "q": "Can I convert to mmHg?",
+        "a": "Torr is equivalent to mmHg and is included."
+      }
+    ]
+  },
+  "volume-converter": {
+    "overview": [
+      "Convert volume and capacity between litres, millilitres, cubic metres, US gallons, quarts, pints, cups, tablespoons, teaspoons and cubic feet or inches.",
+      "It is practical for cooking, fuel, laboratory work and shipping calculations. Enter a number, pick the units and read the result at once.",
+      "The conversion is performed entirely in the browser."
+    ],
+    "useCases": [
+      "Turn a recipe from cups into millilitres.",
+      "Convert fuel tank capacity from gallons to litres.",
+      "Change laboratory volumes from mL to litres or cubic centimetres."
+    ],
+    "workedExample": "Enter 1, select US gallon and convert to Liter. The tool returns approximately 3.785 litres. Converting the same gallon to cups gives 16, which matches the common kitchen measure. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "US customary units are used for gallons, quarts, pints and cups. Imperial units are not separate.",
+      "Only the units shown in the menus are supported.",
+      "Results for very small volumes (teaspoons) are exact according to the defined factors."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your text or numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "Are the cup and tablespoon US or metric?",
+        "a": "They follow the US customary definitions used in most online recipes."
+      },
+      {
+        "q": "Does it handle cubic metres?",
+        "a": "Yes. One cubic metre equals 1000 litres."
+      }
+    ]
+  },
+  "speed-converter": {
+    "overview": [
+      "Convert speed between metres per second, kilometres per hour, miles per hour, knots and feet per second. Useful for travel, sports, aviation and physics problems.",
+      "Type the value, choose the source unit and the target unit; the converted speed appears immediately. Use the swap button to reverse the conversion.",
+      "All arithmetic stays inside your browser."
+    ],
+    "useCases": [
+      "Change a car\u2019s speed from km/h to mph for an international trip.",
+      "Convert wind speed from knots to km/h for a weather report.",
+      "Translate running pace or vehicle data between metric and imperial."
+    ],
+    "workedExample": "Enter 100, select Kilometer/hour and convert to Mile/hour. The result is approximately 62.14 mph. The same 100 km/h becomes about 27.78 m/s. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Only the five speed units listed are available.",
+      "The tool does not convert to Mach or other specialised units.",
+      "Display rounding may hide tiny fractional differences."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your text or numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "How many km/h in one knot?",
+        "a": "One knot is exactly 1.852 km/h."
+      },
+      {
+        "q": "Is the conversion exact?",
+        "a": "Yes, using internationally defined factors."
+      }
+    ]
+  }
+}

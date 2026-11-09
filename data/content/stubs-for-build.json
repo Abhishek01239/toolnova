@@ -1,0 +1,684 @@
+{
+  "base64-image-viewer": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "bill-splitter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "chmod-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "cidr-subnet-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "compound-interest-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "cron-expression-explainer": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "css-border-radius-generator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "css-minifier": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "html-minifier": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "http-status-lookup": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "image-to-base64": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "json-diff": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "json-formatter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "json-to-typescript": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "md5-hash-generator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "mortgage-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "number-base-converter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "pomodoro-timer": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "regex-tester": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "sales-tax-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "sip-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "sleep-cycle-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "sql-formatter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "stopwatch": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "text-reverser-and-sorter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "text-to-speech": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "tip-calculator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "url-inspector": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "uuid-generator": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "word-frequency-counter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  },
+  "xml-formatter": {
+    "overview": [
+      "This free online tool runs entirely inside your web browser so your data never leaves your device. It was designed for people who need a fast, private way to perform a common calculation or text transformation without installing software or creating an account.",
+      "Simply enter the values or paste the text into the clearly labelled fields and press the action button. The result appears instantly below. You can copy it with one click and continue with your work. Because everything happens locally, the tool works even when you are offline after the page has loaded.",
+      "The formulas and logic follow widely accepted standards. Where rounding is applied it is done for readability while the internal calculation keeps full precision. You can experiment with different inputs to see how the output changes, which makes the tool useful both for everyday tasks and for learning.",
+      "No personal information is requested and no history is stored on any server. When you close the tab the data disappears. This approach keeps the site lightweight, fast and respectful of your privacy."
+    ],
+    "useCases": [
+      "Perform the calculation or conversion quickly while working on another task.",
+      "Double-check figures that came from a spreadsheet or another website.",
+      "Learn the relationship between the inputs and the output by trying different values.",
+      "Use the tool on a phone or tablet when you do not have a desktop application available."
+    ],
+    "workedExample": "Consider a realistic everyday situation. You have a set of numbers or a paragraph of text that needs processing. You type or paste the input exactly as you have it. After clicking the primary button the tool applies its transformation or formula and shows the complete result together with any intermediate values that help you understand the answer. You can then adjust one input and watch the output update, confirming that the logic matches what you expect. The whole process takes only a few seconds and requires no extra software.",
+    "limits": [
+      "The tool implements the most common version of the formula; specialised edge cases may need a different approach.",
+      "Extremely large or tiny numbers can lose precision in the displayed result.",
+      "The page does not remember previous calculations after you refresh or close the tab.",
+      "Only the units or options shown in the interface are supported."
+    ],
+    "privacy": "Every number and every character you type stays inside your browser. Nothing is uploaded, logged or stored on ToolNova servers."
+  }
+}
