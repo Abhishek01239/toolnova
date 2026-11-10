@@ -19,7 +19,7 @@
           "id": "input",
           "label": "Your text",
           "rows": 10,
-          "placeholder": "Type or paste your text here\u2026"
+          "placeholder": "Type or paste your text here…"
         }
       ],
       "actions": [
@@ -34,11 +34,11 @@
         },
         {
           "id": "sort-lines",
-          "label": "Sort lines A \u2192 Z"
+          "label": "Sort lines A → Z"
         },
         {
           "id": "sort-lines-reverse",
-          "label": "Sort lines Z \u2192 A"
+          "label": "Sort lines Z → A"
         }
       ],
       "outputs": [
@@ -51,14 +51,14 @@
       ]
     },
     "howItWorks": [
-      "Type or paste your text into the input box \u2014 there is no practical length limit.",
-      "Click one of the operation buttons (Reverse characters, Reverse line order, Sort lines A \u2192 Z, Sort lines Z \u2192 A) to transform the text instantly.",
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Reverse characters, Reverse line order, Sort lines A → Z, Sort lines Z → A) to transform the text instantly.",
       "The result appears in the output box; use the Copy button to copy it to your clipboard.",
-      "All processing happens locally in your browser \u2014 your text is never uploaded anywhere."
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
     ],
     "examples": [
-      "Input \"stressed desserts\" \u2192 click \"Reverse characters\" \u2192 output \"stressed desserts\" reversed.",
-      "Input lines of fruit names \u2192 click \"Sort lines A \u2192 Z\" \u2192 alphabetically sorted list."
+      "Input \"stressed desserts\" → click \"Reverse characters\" → output \"stressed desserts\" reversed.",
+      "Input lines of fruit names → click \"Sort lines A → Z\" → alphabetically sorted list."
     ],
     "faq": [
       {
@@ -70,7 +70,7 @@
         "a": "Yes, limited only by your device's memory."
       }
     ],
-    "seoTitle": "Text Reverser & Sorter \u2014 Free Online | ToolNova",
+    "seoTitle": "Text Reverser & Sorter — Free Online | ToolNova",
     "description": "Reverse characters or lines and sort text lines alphabetically. Free browser tool, nothing uploaded.",
     "added": "2026-11-09"
   },
@@ -78,7 +78,7 @@
     "id": "extract-emails-and-urls",
     "title": "Extract Emails & URLs",
     "h1": "Extract Email Addresses and Links from Text",
-    "intro": "Pull every email address and URL out of a block of text in one click. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
+    "intro": "Pull every email address and URL out of a block of text in one click. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
     "blurb": "Pull every email address and URL out of a block of text in one click.",
     "ui": {
       "controls": [
@@ -87,7 +87,7 @@
           "id": "input",
           "label": "Your text",
           "rows": 10,
-          "placeholder": "Type or paste your text here\u2026"
+          "placeholder": "Type or paste your text here…"
         }
       ],
       "actions": [
@@ -112,14 +112,14 @@
       ]
     },
     "howItWorks": [
-      "Type or paste your text into the input box \u2014 there is no practical length limit.",
+      "Type or paste your text into the input box — there is no practical length limit.",
       "Click one of the operation buttons (Extract email addresses, Extract URLs) to transform the text instantly.",
       "The result appears in the output box; use the Copy button to copy it to your clipboard.",
-      "All processing happens locally in your browser \u2014 your text is never uploaded anywhere."
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
     ],
     "examples": [
-      "Input \"Reach ada@example.com or bob.smith@test.org; ada@example.com again.\" \u2192 click \"Extract email addresses\" \u2192 output \"ada@example.com \u23ce bob.smith@test.org\".",
-      "Input \"See https://example.com and http://test.org/docs?page=2. https://example.com rocks.\" \u2192 click \"Extract URLs\" \u2192 output \"https://example.com \u23ce http://test.org/docs?page=2.\"."
+      "Input \"Reach ada@example.com or bob.smith@test.org; ada@example.com again.\" → click \"Extract email addresses\" → output \"ada@example.com ⏎ bob.smith@test.org\".",
+      "Input \"See https://example.com and http://test.org/docs?page=2. https://example.com rocks.\" → click \"Extract URLs\" → output \"https://example.com ⏎ http://test.org/docs?page=2.\"."
     ],
     "faq": [
       {
@@ -128,7 +128,7 @@
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Extract Emails & URLs runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Extract Emails & URLs runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -136,11 +136,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Pull every email address and URL out of a block of text in one click. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "seoTitle": "Extract Emails & URLs \u2014 Free Online Tool | ToolNova",
+    "description": "Pull every email address and URL out of a block of text in one click. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Extract Emails & URLs — Free Online Tool | ToolNova",
     "category": "Text",
     "added": "2026-11-09",
     "popularity": 82,
@@ -155,8 +155,8 @@
     "id": "add-line-numbers",
     "title": "Add Line Numbers",
     "h1": "Number the Lines of Any Text Online",
-    "intro": "Prefix every line of text with a sequential number \u2014 useful for code reviews and logs. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "blurb": "Prefix every line of text with a sequential number \u2014 useful for code reviews and logs.",
+    "intro": "Prefix every line of text with a sequential number — useful for code reviews and logs. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Prefix every line of text with a sequential number — useful for code reviews and logs.",
     "ui": {
       "controls": [
         {
@@ -164,7 +164,7 @@
           "id": "input",
           "label": "Your text",
           "rows": 10,
-          "placeholder": "Type or paste your text here\u2026"
+          "placeholder": "Type or paste your text here…"
         }
       ],
       "actions": [
@@ -184,23 +184,23 @@
       ]
     },
     "howItWorks": [
-      "Type or paste your text into the input box \u2014 there is no practical length limit.",
+      "Type or paste your text into the input box — there is no practical length limit.",
       "Click one of the operation buttons (Add line numbers) to transform the text instantly.",
       "The result appears in the output box; use the Copy button to copy it to your clipboard.",
-      "All processing happens locally in your browser \u2014 your text is never uploaded anywhere."
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
     ],
     "examples": [
-      "Input \"alpha \u23ce beta \u23ce gamma\" \u2192 click \"Add line numbers\" \u2192 output \"1. alpha \u23ce 2. beta \u23ce 3. gamma\".",
-      "Paste as much text as you like \u2014 long lists and whole documents work, not just short samples."
+      "Input \"alpha ⏎ beta ⏎ gamma\" → click \"Add line numbers\" → output \"1. alpha ⏎ 2. beta ⏎ 3. gamma\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
     ],
     "faq": [
       {
         "q": "What does the Add Line Numbers do?",
-        "a": "Prefix every line of text with a sequential number \u2014 useful for code reviews and logs."
+        "a": "Prefix every line of text with a sequential number — useful for code reviews and logs."
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Add Line Numbers runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Add Line Numbers runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -208,11 +208,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Prefix every line of text with a sequential number \u2014 useful for code reviews and logs. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-u\u2026",
-    "seoTitle": "Add Line Numbers \u2014 Free Online Tool | ToolNova",
+    "description": "Prefix every line of text with a sequential number — useful for code reviews and logs. Free, fast and private — runs entirely in your browser with no uploads or sign-u…",
+    "seoTitle": "Add Line Numbers — Free Online Tool | ToolNova",
     "category": "Text",
     "added": "2026-11-09",
     "popularity": 70,
@@ -226,7 +226,7 @@
     "id": "text-cleaner",
     "title": "Text Cleaner",
     "h1": "Clean and Normalize Text Online",
-    "intro": "Trim whitespace, remove blank lines and collapse extra spaces in one place. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
+    "intro": "Trim whitespace, remove blank lines and collapse extra spaces in one place. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
     "blurb": "Trim whitespace, remove blank lines and collapse extra spaces in one place.",
     "ui": {
       "controls": [
@@ -235,7 +235,7 @@
           "id": "input",
           "label": "Your text",
           "rows": 10,
-          "placeholder": "Type or paste your text here\u2026"
+          "placeholder": "Type or paste your text here…"
         }
       ],
       "actions": [
@@ -265,15 +265,15 @@
       ]
     },
     "howItWorks": [
-      "Type or paste your text into the input box \u2014 there is no practical length limit.",
+      "Type or paste your text into the input box — there is no practical length limit.",
       "Click one of the operation buttons (Trim line ends, Remove empty lines, Collapse extra spaces) to transform the text instantly.",
       "The result appears in the output box; use the Copy button to copy it to your clipboard.",
-      "All processing happens locally in your browser \u2014 your text is never uploaded anywhere."
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
     ],
     "examples": [
-      "Input \"   padded left and right    \u23ce \talso padded\t\" \u2192 click \"Trim line ends\" \u2192 output \"padded left and right \u23ce also padded\".",
-      "Input \"one \u23ce  \u23ce  \u23ce  \u23ce two \u23ce     \u23ce three\" \u2192 click \"Remove empty lines\" \u2192 output \"one \u23ce two \u23ce three\".",
-      "Input \"too     many      spaces    in   here\" \u2192 click \"Collapse extra spaces\" \u2192 output \"too many spaces in here\"."
+      "Input \"   padded left and right    ⏎ \talso padded\t\" → click \"Trim line ends\" → output \"padded left and right ⏎ also padded\".",
+      "Input \"one ⏎  ⏎  ⏎  ⏎ two ⏎     ⏎ three\" → click \"Remove empty lines\" → output \"one ⏎ two ⏎ three\".",
+      "Input \"too     many      spaces    in   here\" → click \"Collapse extra spaces\" → output \"too many spaces in here\"."
     ],
     "faq": [
       {
@@ -282,7 +282,7 @@
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Text Cleaner runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Text Cleaner runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -290,11 +290,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Trim whitespace, remove blank lines and collapse extra spaces in one place. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "seoTitle": "Text Cleaner \u2014 Free Online Tool | ToolNova",
+    "description": "Trim whitespace, remove blank lines and collapse extra spaces in one place. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Text Cleaner — Free Online Tool | ToolNova",
     "category": "Text",
     "added": "2026-11-09",
     "popularity": 78,
@@ -309,7 +309,7 @@
     "id": "energy-converter",
     "title": "Energy Converter",
     "h1": "Convert Energy Units Online",
-    "intro": "Convert between joules, calories, kilowatt-hours, BTU and more. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
+    "intro": "Convert between joules, calories, kilowatt-hours, BTU and more. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
     "blurb": "Convert between joules, calories, kilowatt-hours, BTU and more.",
     "ui": {
       "controls": [
@@ -413,7 +413,7 @@
       "actions": [
         {
           "id": "swap",
-          "label": "\u21c4 Swap units"
+          "label": "⇄ Swap units"
         }
       ],
       "outputs": [
@@ -429,21 +429,21 @@
       "Pick the unit you are converting from and the unit you want.",
       "The result updates instantly as you type, together with the exact conversion factor.",
       "Conversions go through the joule as the exact reference unit, so precision is preserved.",
-      "Everything happens in your browser \u2014 no data is sent to any server."
+      "Everything happens in your browser — no data is sent to any server."
     ],
     "examples": [
       "1 Joule (J) = 0.001 Kilojoule (kJ).",
       "Quick reference: 1 J = 0.001 kJ.",
-      "Type a new value or swap the dropdowns \u2014 the result recalculates instantly."
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
     ],
     "faq": [
       {
         "q": "How do I convert J to kJ?",
-        "a": "Enter your value, select Joule (J) in the \u201cFrom\u201d box and Kilojoule (kJ) in the \u201cTo\u201d box. For reference, 1 J = 0.001 kJ."
+        "a": "Enter your value, select Joule (J) in the “From” box and Kilojoule (kJ) in the “To” box. For reference, 1 J = 0.001 kJ."
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Energy Converter runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Energy Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -451,11 +451,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Convert between joules, calories, kilowatt-hours, BTU and more. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "seoTitle": "Energy Converter \u2014 Free Online Tool | ToolNova",
+    "description": "Convert between joules, calories, kilowatt-hours, BTU and more. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Energy Converter — Free Online Tool | ToolNova",
     "category": "Converters",
     "added": "2026-11-09",
     "popularity": 68,
@@ -470,7 +470,7 @@
     "id": "pressure-converter",
     "title": "Pressure Converter",
     "h1": "Convert Pressure Units Online",
-    "intro": "Convert pressure between pascal, bar, psi, atmosphere and torr. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
+    "intro": "Convert pressure between pascal, bar, psi, atmosphere and torr. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
     "blurb": "Convert pressure between pascal, bar, psi, atmosphere and torr.",
     "ui": {
       "controls": [
@@ -566,7 +566,7 @@
       "actions": [
         {
           "id": "swap",
-          "label": "\u21c4 Swap units"
+          "label": "⇄ Swap units"
         }
       ],
       "outputs": [
@@ -582,21 +582,21 @@
       "Pick the unit you are converting from and the unit you want.",
       "The result updates instantly as you type, together with the exact conversion factor.",
       "Conversions go through the pascal as the exact reference unit, so precision is preserved.",
-      "Everything happens in your browser \u2014 no data is sent to any server."
+      "Everything happens in your browser — no data is sent to any server."
     ],
     "examples": [
       "1 Pascal (Pa) = 0.001 Kilopascal (kPa).",
       "Quick reference: 1 Pa = 0.001 kPa.",
-      "Type a new value or swap the dropdowns \u2014 the result recalculates instantly."
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
     ],
     "faq": [
       {
         "q": "How do I convert Pa to kPa?",
-        "a": "Enter your value, select Pascal (Pa) in the \u201cFrom\u201d box and Kilopascal (kPa) in the \u201cTo\u201d box. For reference, 1 Pa = 0.001 kPa."
+        "a": "Enter your value, select Pascal (Pa) in the “From” box and Kilopascal (kPa) in the “To” box. For reference, 1 Pa = 0.001 kPa."
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Pressure Converter runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Pressure Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -604,11 +604,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Convert pressure between pascal, bar, psi, atmosphere and torr. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "seoTitle": "Pressure Converter \u2014 Free Online Tool | ToolNova",
+    "description": "Convert pressure between pascal, bar, psi, atmosphere and torr. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Pressure Converter — Free Online Tool | ToolNova",
     "category": "Converters",
     "added": "2026-11-09",
     "popularity": 65,
@@ -623,7 +623,7 @@
     "id": "volume-converter",
     "title": "Volume Converter",
     "h1": "Convert Volume and Capacity Units Online",
-    "intro": "Convert liters, gallons, cups, tablespoons and other volume units. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
+    "intro": "Convert liters, gallons, cups, tablespoons and other volume units. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
     "blurb": "Convert liters, gallons, cups, tablespoons and other volume units.",
     "ui": {
       "controls": [
@@ -649,12 +649,12 @@
               "label": "Milliliter (mL)"
             },
             {
-              "value": "Cubic meter (m\u00b3)",
-              "label": "Cubic meter (m\u00b3)"
+              "value": "Cubic meter (m³)",
+              "label": "Cubic meter (m³)"
             },
             {
-              "value": "Cubic centimeter (cm\u00b3)",
-              "label": "Cubic centimeter (cm\u00b3)"
+              "value": "Cubic centimeter (cm³)",
+              "label": "Cubic centimeter (cm³)"
             },
             {
               "value": "US gallon (gal)",
@@ -685,12 +685,12 @@
               "label": "Teaspoon (tsp)"
             },
             {
-              "value": "Cubic foot (ft\u00b3)",
-              "label": "Cubic foot (ft\u00b3)"
+              "value": "Cubic foot (ft³)",
+              "label": "Cubic foot (ft³)"
             },
             {
-              "value": "Cubic inch (in\u00b3)",
-              "label": "Cubic inch (in\u00b3)"
+              "value": "Cubic inch (in³)",
+              "label": "Cubic inch (in³)"
             }
           ],
           "value": "Liter (L)"
@@ -709,12 +709,12 @@
               "label": "Milliliter (mL)"
             },
             {
-              "value": "Cubic meter (m\u00b3)",
-              "label": "Cubic meter (m\u00b3)"
+              "value": "Cubic meter (m³)",
+              "label": "Cubic meter (m³)"
             },
             {
-              "value": "Cubic centimeter (cm\u00b3)",
-              "label": "Cubic centimeter (cm\u00b3)"
+              "value": "Cubic centimeter (cm³)",
+              "label": "Cubic centimeter (cm³)"
             },
             {
               "value": "US gallon (gal)",
@@ -745,12 +745,12 @@
               "label": "Teaspoon (tsp)"
             },
             {
-              "value": "Cubic foot (ft\u00b3)",
-              "label": "Cubic foot (ft\u00b3)"
+              "value": "Cubic foot (ft³)",
+              "label": "Cubic foot (ft³)"
             },
             {
-              "value": "Cubic inch (in\u00b3)",
-              "label": "Cubic inch (in\u00b3)"
+              "value": "Cubic inch (in³)",
+              "label": "Cubic inch (in³)"
             }
           ],
           "value": "Milliliter (mL)"
@@ -759,7 +759,7 @@
       "actions": [
         {
           "id": "swap",
-          "label": "\u21c4 Swap units"
+          "label": "⇄ Swap units"
         }
       ],
       "outputs": [
@@ -775,21 +775,21 @@
       "Pick the unit you are converting from and the unit you want.",
       "The result updates instantly as you type, together with the exact conversion factor.",
       "Conversions go through the liter as the exact reference unit, so precision is preserved.",
-      "Everything happens in your browser \u2014 no data is sent to any server."
+      "Everything happens in your browser — no data is sent to any server."
     ],
     "examples": [
       "1 Liter (L) = 1000 Milliliter (mL).",
       "Quick reference: 1 L = 1000 mL.",
-      "Type a new value or swap the dropdowns \u2014 the result recalculates instantly."
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
     ],
     "faq": [
       {
         "q": "How do I convert L to mL?",
-        "a": "Enter your value, select Liter (L) in the \u201cFrom\u201d box and Milliliter (mL) in the \u201cTo\u201d box. For reference, 1 L = 1000 mL."
+        "a": "Enter your value, select Liter (L) in the “From” box and Milliliter (mL) in the “To” box. For reference, 1 L = 1000 mL."
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Volume Converter runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Volume Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -797,11 +797,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Convert liters, gallons, cups, tablespoons and other volume units. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "seoTitle": "Volume Converter \u2014 Free Online Tool | ToolNova",
+    "description": "Convert liters, gallons, cups, tablespoons and other volume units. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Volume Converter — Free Online Tool | ToolNova",
     "category": "Converters",
     "added": "2026-11-09",
     "popularity": 72,
@@ -816,7 +816,7 @@
     "id": "speed-converter",
     "title": "Speed Converter",
     "h1": "Convert Speed Units Online",
-    "intro": "Convert between km/h, mph, knots, m/s and feet per second. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
+    "intro": "Convert between km/h, mph, knots, m/s and feet per second. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
     "blurb": "Convert between km/h, mph, knots, m/s and feet per second.",
     "ui": {
       "controls": [
@@ -888,7 +888,7 @@
       "actions": [
         {
           "id": "swap",
-          "label": "\u21c4 Swap units"
+          "label": "⇄ Swap units"
         }
       ],
       "outputs": [
@@ -904,21 +904,21 @@
       "Pick the unit you are converting from and the unit you want.",
       "The result updates instantly as you type, together with the exact conversion factor.",
       "Conversions go through the meter per second as the exact reference unit, so precision is preserved.",
-      "Everything happens in your browser \u2014 no data is sent to any server."
+      "Everything happens in your browser — no data is sent to any server."
     ],
     "examples": [
       "1 Meter/second (m/s) = 3.6 Kilometer/hour (km/h).",
       "Quick reference: 1 m/s = 3.6 km/h.",
-      "Type a new value or swap the dropdowns \u2014 the result recalculates instantly."
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
     ],
     "faq": [
       {
         "q": "How do I convert m/s to km/h?",
-        "a": "Enter your value, select Meter/second (m/s) in the \u201cFrom\u201d box and Kilometer/hour (km/h) in the \u201cTo\u201d box. For reference, 1 m/s = 3.6 km/h."
+        "a": "Enter your value, select Meter/second (m/s) in the “From” box and Kilometer/hour (km/h) in the “To” box. For reference, 1 m/s = 3.6 km/h."
       },
       {
         "q": "Is my text or data uploaded to a server?",
-        "a": "No. The Speed Converter runs entirely in your browser using JavaScript \u2014 nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+        "a": "No. The Speed Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
       },
       {
         "q": "Is this tool free to use?",
@@ -926,11 +926,11 @@
       },
       {
         "q": "Does it work on phones and tablets?",
-        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer \u2014 even offline once the page has loaded."
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
       }
     ],
-    "description": "Convert between km/h, mph, knots, m/s and feet per second. Free, fast and private \u2014 runs entirely in your browser with no uploads or sign-up.",
-    "seoTitle": "Speed Converter \u2014 Free Online Tool | ToolNova",
+    "description": "Convert between km/h, mph, knots, m/s and feet per second. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Speed Converter — Free Online Tool | ToolNova",
     "category": "Converters",
     "added": "2026-11-09",
     "popularity": 74,
@@ -939,6 +939,566 @@
       "kmh to mph",
       "knots to mph",
       "m/s to km/h"
+    ]
+  },
+  {
+    "id": "area-converter",
+    "title": "Area Converter",
+    "h1": "Convert Area Units Online",
+    "intro": "Convert between square meters, acres, hectares, square feet and other area units. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert between square meters, acres, hectares, square feet and other area units.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 1,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Square meter (m²)",
+              "label": "Square meter (m²)"
+            },
+            {
+              "value": "Square kilometer (km²)",
+              "label": "Square kilometer (km²)"
+            },
+            {
+              "value": "Hectare (ha)",
+              "label": "Hectare (ha)"
+            },
+            {
+              "value": "Acre (ac)",
+              "label": "Acre (ac)"
+            },
+            {
+              "value": "Square foot (ft²)",
+              "label": "Square foot (ft²)"
+            },
+            {
+              "value": "Square yard (yd²)",
+              "label": "Square yard (yd²)"
+            },
+            {
+              "value": "Square mile (mi²)",
+              "label": "Square mile (mi²)"
+            },
+            {
+              "value": "Square inch (in²)",
+              "label": "Square inch (in²)"
+            }
+          ],
+          "value": "Square meter (m²)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Square meter (m²)",
+              "label": "Square meter (m²)"
+            },
+            {
+              "value": "Square kilometer (km²)",
+              "label": "Square kilometer (km²)"
+            },
+            {
+              "value": "Hectare (ha)",
+              "label": "Hectare (ha)"
+            },
+            {
+              "value": "Acre (ac)",
+              "label": "Acre (ac)"
+            },
+            {
+              "value": "Square foot (ft²)",
+              "label": "Square foot (ft²)"
+            },
+            {
+              "value": "Square yard (yd²)",
+              "label": "Square yard (yd²)"
+            },
+            {
+              "value": "Square mile (mi²)",
+              "label": "Square mile (mi²)"
+            },
+            {
+              "value": "Square inch (in²)",
+              "label": "Square inch (in²)"
+            }
+          ],
+          "value": "Square kilometer (km²)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the square meter as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "1 Square meter (m²) = 0.000001 Square kilometer (km²).",
+      "Quick reference: 1 m² = 0.000001 km².",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert m² to km²?",
+        "a": "Enter your value, select Square meter (m²) in the “From” box and Square kilometer (km²) in the “To” box. For reference, 1 m² = 0.000001 km²."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Area Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Area Converter is part of a collection of free tools where new tools are added after review."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert between square meters, acres, hectares, square feet and other area units. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Area Converter — Free Online Tool | ToolNova",
+    "category": "Converters",
+    "added": "2026-11-10",
+    "popularity": 76,
+    "keywords": [
+      "area converter",
+      "square meters to acres",
+      "hectares to square feet",
+      "m2 to ft2"
+    ]
+  },
+  {
+    "id": "time-unit-converter",
+    "title": "Time Unit Converter",
+    "h1": "Convert Time Units Online",
+    "intro": "Convert between seconds, minutes, hours, days, weeks and years. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Convert between seconds, minutes, hours, days, weeks and years.",
+    "ui": {
+      "controls": [
+        {
+          "type": "number",
+          "id": "value",
+          "label": "Value",
+          "value": 1,
+          "step": "any",
+          "inputmode": "decimal"
+        },
+        {
+          "type": "select",
+          "id": "from",
+          "label": "From",
+          "options": [
+            {
+              "value": "Second (s)",
+              "label": "Second (s)"
+            },
+            {
+              "value": "Millisecond (ms)",
+              "label": "Millisecond (ms)"
+            },
+            {
+              "value": "Minute (min)",
+              "label": "Minute (min)"
+            },
+            {
+              "value": "Hour (h)",
+              "label": "Hour (h)"
+            },
+            {
+              "value": "Day (d)",
+              "label": "Day (d)"
+            },
+            {
+              "value": "Week (wk)",
+              "label": "Week (wk)"
+            },
+            {
+              "value": "Month (average)",
+              "label": "Month (average)"
+            },
+            {
+              "value": "Year (average)",
+              "label": "Year (average)"
+            }
+          ],
+          "value": "Second (s)"
+        },
+        {
+          "type": "select",
+          "id": "to",
+          "label": "To",
+          "options": [
+            {
+              "value": "Second (s)",
+              "label": "Second (s)"
+            },
+            {
+              "value": "Millisecond (ms)",
+              "label": "Millisecond (ms)"
+            },
+            {
+              "value": "Minute (min)",
+              "label": "Minute (min)"
+            },
+            {
+              "value": "Hour (h)",
+              "label": "Hour (h)"
+            },
+            {
+              "value": "Day (d)",
+              "label": "Day (d)"
+            },
+            {
+              "value": "Week (wk)",
+              "label": "Week (wk)"
+            },
+            {
+              "value": "Month (average)",
+              "label": "Month (average)"
+            },
+            {
+              "value": "Year (average)",
+              "label": "Year (average)"
+            }
+          ],
+          "value": "Millisecond (ms)"
+        }
+      ],
+      "actions": [
+        {
+          "id": "swap",
+          "label": "⇄ Swap units"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Converted result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Enter the value you want to convert.",
+      "Pick the unit you are converting from and the unit you want.",
+      "The result updates instantly as you type, together with the exact conversion factor.",
+      "Conversions go through the second as the exact reference unit, so precision is preserved.",
+      "Everything happens in your browser — no data is sent to any server."
+    ],
+    "examples": [
+      "1 Second (s) = 1000 Millisecond (ms).",
+      "Quick reference: 1 s = 1000 ms.",
+      "Type a new value or swap the dropdowns — the result recalculates instantly."
+    ],
+    "faq": [
+      {
+        "q": "How do I convert s to ms?",
+        "a": "Enter your value, select Second (s) in the “From” box and Millisecond (ms) in the “To” box. For reference, 1 s = 1000 ms."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Time Unit Converter runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Time Unit Converter is part of a collection of free tools where new tools are added after review."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Convert between seconds, minutes, hours, days, weeks and years. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Time Unit Converter — Free Online Tool | ToolNova",
+    "category": "Converters",
+    "added": "2026-11-10",
+    "popularity": 80,
+    "keywords": [
+      "time converter",
+      "seconds to minutes",
+      "days to hours",
+      "time unit calculator"
+    ]
+  },
+  {
+    "id": "hex-encoder-decoder",
+    "title": "Hex Encoder & Decoder",
+    "h1": "Convert Text to Hexadecimal and Back",
+    "intro": "Encode text to hexadecimal or decode hex back to plain text. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Encode text to hexadecimal or decode hex back to plain text.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Input",
+          "rows": 9,
+          "placeholder": "Type or paste here — encoding and decoding both work on this box."
+        }
+      ],
+      "actions": [
+        {
+          "id": "encode",
+          "label": "Encode to hexadecimal",
+          "primary": true
+        },
+        {
+          "id": "decode",
+          "label": "Decode from hexadecimal"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Output",
+          "rows": 9
+        }
+      ]
+    },
+    "howItWorks": [
+      "Paste or type your text into the input box.",
+      "Choose \"Encode to hexadecimal\" or \"Decode from hexadecimal\" — the result appears instantly in the output box.",
+      "Copy the result with one click. Unicode and emoji are fully supported.",
+      "Everything runs locally in your browser, so even sensitive strings never leave your device."
+    ],
+    "examples": [
+      "Encoding \"Hi there!\" produces \"486920746865726521\".",
+      "Decoding \"486920746865726521\" returns the original \"Hi there!\".",
+      "Errors are caught and explained — paste a broken value and the tool tells you what is wrong with it."
+    ],
+    "faq": [
+      {
+        "q": "What is hexadecimal encoding?",
+        "a": "Hexadecimal encoding represents each byte of (UTF-8) text as two hex digits, 0–9 and a–f — the format used everywhere from color codes to cryptographic hashes."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Hex Encoder & Decoder runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Hex Encoder & Decoder is part of a collection of free tools where new tools are added after review."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Encode text to hexadecimal or decode hex back to plain text. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Hex Encoder & Decoder — Free Online Tool | ToolNova",
+    "category": "Encoding",
+    "added": "2026-11-10",
+    "popularity": 74,
+    "keywords": [
+      "hex encoder",
+      "hex decoder",
+      "text to hex",
+      "hexadecimal converter"
+    ]
+  },
+  {
+    "id": "dice-roller",
+    "title": "Dice Roller",
+    "h1": "Roll Dice Online — Free and Instant",
+    "intro": "Roll one or more dice of any standard size (d4, d6, d8, d10, d12, d20). Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Roll one or more dice of any standard size (d4, d6, d8, d10, d12, d20).",
+    "ui": {
+      "controls": [
+        {
+          "type": "select",
+          "id": "sides",
+          "label": "Die type",
+          "value": "6",
+          "options": [
+            {
+              "value": "4",
+              "label": "d4 (4 sides)"
+            },
+            {
+              "value": "6",
+              "label": "d6 (6 sides)"
+            },
+            {
+              "value": "8",
+              "label": "d8 (8 sides)"
+            },
+            {
+              "value": "10",
+              "label": "d10 (10 sides)"
+            },
+            {
+              "value": "12",
+              "label": "d12 (12 sides)"
+            },
+            {
+              "value": "20",
+              "label": "d20 (20 sides)"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "count",
+          "label": "How many dice?",
+          "value": 2,
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ],
+      "actions": [
+        {
+          "id": "generate",
+          "label": "Roll the dice",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "pre",
+          "id": "result",
+          "label": "Result"
+        }
+      ]
+    },
+    "howItWorks": [
+      "Adjust the options, then press the button — each press produces a fresh random result.",
+      "Results come from your browser’s built-in random number generator; nothing is stored or transmitted.",
+      "Press the button as many times as you like — every click is a new, independent draw.",
+      "The tool runs entirely on your device and keeps working offline once loaded."
+    ],
+    "examples": [
+      "Choose a d20 and count 1 for tabletop critical rolls, or roll 5d6 for character stats.",
+      "Every button press produces fresh, independent results — nothing is stored between clicks."
+    ],
+    "faq": [
+      {
+        "q": "What does the Dice Roller do?",
+        "a": "Roll one or more dice of any standard size (d4, d6, d8, d10, d12, d20)."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Dice Roller runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Dice Roller is part of a collection of free tools where new tools are added after review."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Roll one or more dice of any standard size (d4, d6, d8, d10, d12, d20). Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Dice Roller — Free Online Tool | ToolNova",
+    "category": "Generators",
+    "added": "2026-11-10",
+    "popularity": 85,
+    "keywords": [
+      "dice roller",
+      "roll dice",
+      "d20",
+      "random dice"
+    ]
+  },
+  {
+    "id": "remove-duplicate-words",
+    "title": "Remove Duplicate Words",
+    "h1": "Remove Repeated Words from Text",
+    "intro": "Remove repeated words from text while keeping the first occurrence of each. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "blurb": "Remove repeated words from text while keeping the first occurrence of each.",
+    "ui": {
+      "controls": [
+        {
+          "type": "textarea",
+          "id": "input",
+          "label": "Your text",
+          "rows": 10,
+          "placeholder": "Type or paste your text here…"
+        }
+      ],
+      "actions": [
+        {
+          "id": "remove-duplicate-words",
+          "label": "Remove duplicate words",
+          "primary": true
+        }
+      ],
+      "outputs": [
+        {
+          "type": "textarea",
+          "id": "output",
+          "label": "Result",
+          "rows": 10
+        }
+      ]
+    },
+    "howItWorks": [
+      "Type or paste your text into the input box — there is no practical length limit.",
+      "Click one of the operation buttons (Remove duplicate words) to transform the text instantly.",
+      "The result appears in the output box; use the Copy button to copy it to your clipboard.",
+      "All processing happens locally in your browser — your text is never uploaded anywhere."
+    ],
+    "examples": [
+      "Input \"the the quick brown fox fox jumps\" → click \"Remove duplicate words\" → output \"the quick brown fox jumps\".",
+      "Paste as much text as you like — long lists and whole documents work, not just short samples."
+    ],
+    "faq": [
+      {
+        "q": "What does the Remove Duplicate Words do?",
+        "a": "Remove repeated words from text while keeping the first occurrence of each."
+      },
+      {
+        "q": "Is my text or data uploaded to a server?",
+        "a": "No. The Remove Duplicate Words runs entirely in your browser using JavaScript — nothing you type or paste is sent anywhere, and everything disappears when you close the tab."
+      },
+      {
+        "q": "Is this tool free to use?",
+        "a": "Yes, completely free with no sign-up, no watermarks and no usage limits. Remove Duplicate Words is part of a collection of free tools where new tools are added after review."
+      },
+      {
+        "q": "Does it work on phones and tablets?",
+        "a": "Yes. The layout is fully responsive and all processing is done on your device, so it works on any modern phone, tablet or computer — even offline once the page has loaded."
+      }
+    ],
+    "description": "Remove repeated words from text while keeping the first occurrence of each. Free, fast and private — runs entirely in your browser with no uploads or sign-up.",
+    "seoTitle": "Remove Duplicate Words — Free Online Tool | ToolNova",
+    "category": "Text",
+    "added": "2026-11-10",
+    "popularity": 72,
+    "keywords": [
+      "remove duplicate words",
+      "dedupe words",
+      "unique words",
+      "clean repeated words"
     ]
   }
 ]

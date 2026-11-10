@@ -132,5 +132,97 @@
       "kind": "speed"
     },
     "popularity": 74
+  },
+  {
+    "id": "area-converter",
+    "factory": "unit-converter",
+    "category": "Converters",
+    "keywords": [
+      "area converter",
+      "square meters to acres",
+      "hectares to square feet",
+      "m2 to ft2"
+    ],
+    "blurb": "Convert between square meters, acres, hectares, square feet and other area units.",
+    "params": {
+      "title": "Area Converter",
+      "h1": "Convert Area Units Online",
+      "kind": "area"
+    },
+    "popularity": 76
+  },
+  {
+    "id": "time-unit-converter",
+    "factory": "unit-converter",
+    "category": "Converters",
+    "keywords": [
+      "time converter",
+      "seconds to minutes",
+      "days to hours",
+      "time unit calculator"
+    ],
+    "blurb": "Convert between seconds, minutes, hours, days, weeks and years.",
+    "params": {
+      "title": "Time Unit Converter",
+      "h1": "Convert Time Units Online",
+      "kind": "time"
+    },
+    "popularity": 80
+  },
+  {
+    "id": "hex-encoder-decoder",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": [
+      "hex encoder",
+      "hex decoder",
+      "text to hex",
+      "hexadecimal converter"
+    ],
+    "blurb": "Encode text to hexadecimal or decode hex back to plain text.",
+    "params": {
+      "title": "Hex Encoder & Decoder",
+      "h1": "Convert Text to Hexadecimal and Back",
+      "codec": "hex"
+    },
+    "popularity": 74
+  },
+  {
+    "id": "dice-roller",
+    "factory": "random-generator",
+    "category": "Generators",
+    "keywords": [
+      "dice roller",
+      "roll dice",
+      "d20",
+      "random dice"
+    ],
+    "blurb": "Roll one or more dice of any standard size (d4, d6, d8, d10, d12, d20).",
+    "params": {
+      "title": "Dice Roller",
+      "h1": "Roll Dice Online \u2014 Free and Instant",
+      "generator": "dice"
+    },
+    "popularity": 85
+  },
+  {
+    "id": "remove-duplicate-words",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": [
+      "remove duplicate words",
+      "dedupe words",
+      "unique words",
+      "clean repeated words"
+    ],
+    "blurb": "Remove repeated words from text while keeping the first occurrence of each.",
+    "params": {
+      "title": "Remove Duplicate Words",
+      "h1": "Remove Repeated Words from Text",
+      "transforms": [
+        "remove-duplicate-words"
+      ]
+    },
+    "popularity": 72
   }
 ]

@@ -1,0 +1,152 @@
+{
+  "area-converter": {
+    "overview": [
+      "Convert area measurements between square meters, square kilometers, hectares, acres, square feet, square yards, square miles and square inches. The calculator uses exact conversion factors and updates the result as soon as you change any field.",
+      "It is useful for real estate, land measurement, construction estimates and geography. All math is performed locally in your browser.",
+      "Swap the from and to units with one click when you need the reverse conversion."
+    ],
+    "useCases": [
+      "Convert a property listing from acres to square meters.",
+      "Change construction area figures from square feet to square meters.",
+      "Translate map or land survey data between metric and imperial units.",
+      "Calculate the size of a field or garden in familiar units."
+    ],
+    "workedExample": "Enter 1 in the value box, select Square meter (m²) as the source and Acre (ac) as the target. The tool returns approximately 0.000247 acres because one acre equals about 4047 square meters. Changing the target to Square foot (ft²) gives about 10.764. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Only the units listed in the dropdowns are supported.",
+      "Results are rounded for display; the internal calculation uses full precision.",
+      "Very large or very small areas may be shown in scientific notation."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "How many square meters in one acre?",
+        "a": "One acre is exactly 4046.8564224 square meters."
+      },
+      {
+        "q": "Does it include hectares?",
+        "a": "Yes. One hectare equals 10 000 square meters."
+      }
+    ]
+  },
+  "time-unit-converter": {
+    "overview": [
+      "Convert time durations between seconds, milliseconds, minutes, hours, days, weeks, average months and average years. Useful for project planning, scientific calculations and everyday conversions.",
+      "Select the value, the unit you have and the unit you want; the result appears immediately. A swap button reverses the direction in one click.",
+      "All calculations run in your browser so your data remains private."
+    ],
+    "useCases": [
+      "Turn a project deadline from days into hours.",
+      "Convert a video length from minutes to seconds.",
+      "Change a scientific measurement from milliseconds to seconds.",
+      "Calculate how many weeks are in a number of days."
+    ],
+    "workedExample": "Enter 1, choose Day (d) as the source and Hour (h) as the target. The result is 24 hours. Switching to Minute (min) yields 1440. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Months and years use average lengths (30.436875 days and 365.25 days).",
+      "Only the listed time units are available.",
+      "The tool does not handle calendar dates, only pure durations."
+    ],
+    "privacy": "All processing happens entirely inside your web browser. Your numbers are never uploaded to any server and are not stored after you leave the page.",
+    "faq": [
+      {
+        "q": "Why are months and years approximate?",
+        "a": "Calendar months and years vary in length, so the tool uses standard average values for pure duration conversion."
+      },
+      {
+        "q": "Can I convert to milliseconds?",
+        "a": "Yes. Millisecond is included in the list of units."
+      }
+    ]
+  },
+  "hex-encoder-decoder": {
+    "overview": [
+      "Encode any text into hexadecimal or decode a hex string back into readable text. Each character is turned into its UTF-8 byte representation shown as two hex digits.",
+      "Useful for developers inspecting binary data, debugging, or embedding text in contexts that only allow hex. Everything runs instantly in your browser.",
+      "The tool handles both encoding and decoding with separate actions."
+    ],
+    "useCases": [
+      "Turn a short string into hex for a configuration file or test data.",
+      "Decode a hex dump from a log or network capture back into text.",
+      "Inspect how special characters are represented in hex.",
+      "Prepare data for systems that expect hexadecimal input."
+    ],
+    "workedExample": "Enter the text Hello. Click Encode and the output becomes 48656c6c6f. Click Decode on that hex string and it returns Hello again. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Input for decoding must be valid hexadecimal (even number of digits, only 0-9a-f).",
+      "Very long texts are limited only by browser memory.",
+      "Non-UTF-8 binary data may not round-trip perfectly if it contains invalid sequences."
+    ],
+    "privacy": "Your text is processed only in the browser and is never sent to any server.",
+    "faq": [
+      {
+        "q": "Does it support Unicode?",
+        "a": "Yes. Text is encoded as UTF-8 before being turned into hex."
+      },
+      {
+        "q": "What happens with invalid hex?",
+        "a": "Decoding shows an error if the input is not valid hexadecimal."
+      }
+    ]
+  },
+  "dice-roller": {
+    "overview": [
+      "Roll one or more dice of standard sizes: d4, d6, d8, d10, d12 or d20. Choose how many dice to roll and get the individual results plus the total.",
+      "Perfect for tabletop games, random decisions or quick probability checks. The random numbers are generated entirely in your browser.",
+      "Results update instantly when you click the roll button."
+    ],
+    "useCases": [
+      "Roll a d20 for a role-playing game.",
+      "Generate random numbers with dice for a board game.",
+      "Make a quick random choice by rolling a d6.",
+      "Simulate multiple dice rolls for probability practice."
+    ],
+    "workedExample": "Select d6 and set How many dice? to 2. Click Roll the dice. The output might show 3 and 5 (total 8). Each roll is independent and truly random within the browser. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Only the six standard die sizes are available.",
+      "Maximum 20 dice per roll.",
+      "Results are pseudo-random using the browser’s Math.random."
+    ],
+    "privacy": "All random generation happens inside your browser. Nothing is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Is the roll fair?",
+        "a": "Yes. It uses the standard JavaScript Math.random which is suitable for games and casual use."
+      },
+      {
+        "q": "Can I roll more than 20 dice?",
+        "a": "The limit is 20 to keep the result readable. Run the tool multiple times if you need more."
+      }
+    ]
+  },
+  "remove-duplicate-words": {
+    "overview": [
+      "Scan a block of text and remove repeated words while keeping the first occurrence of each word. Punctuation and line breaks are preserved as much as possible.",
+      "Useful for cleaning lists, notes or generated text that contains accidental duplicates. Processing is instant and local.",
+      "The tool treats words case-insensitively for uniqueness but keeps the original casing of the first occurrence."
+    ],
+    "useCases": [
+      "Clean a list of keywords that was pasted with duplicates.",
+      "Remove repeated words from meeting notes or brainstorming text.",
+      "Tidy up a sentence that has accidental double words.",
+      "Prepare unique word lists for further analysis."
+    ],
+    "workedExample": "Paste the text the the quick brown fox fox jumps over the lazy dog. Click Remove duplicate words. The output becomes the quick brown fox jumps over the lazy dog. Repeated instances of the and fox are removed while the first ones stay. This demonstrates the main behaviour of the tool so you can confirm it matches your needs before using the result in a real document or calculation. The output is ready to copy and paste elsewhere.",
+    "limits": [
+      "Words are split on whitespace and punctuation boundaries.",
+      "Very long documents are limited only by available memory.",
+      "The tool does not correct spelling or grammar, only duplicates."
+    ],
+    "privacy": "Your text is processed only in the browser and is never sent to any server.",
+    "faq": [
+      {
+        "q": "Does it keep the first or the last occurrence?",
+        "a": "It keeps the first occurrence of each word and removes later duplicates."
+      },
+      {
+        "q": "Is it case-sensitive?",
+        "a": "Uniqueness is checked case-insensitively, but the original casing of the kept word is preserved."
+      }
+    ]
+  }
+}
