@@ -1,1 +1,41 @@
-PLACEHOLDER_FULL
+[
+  {
+    "id": "extract-emails-and-urls",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": [
+      "extract emails",
+      "extract urls",
+      "find emails in text",
+      "link extractor"
+    ],
+    "blurb": "Pull every email address and URL out of a block of text in one click.",
+    "params": {
+      "title": "Extract Emails & URLs",
+      "h1": "Extract Email Addresses and Links from Text",
+      "transforms": [
+        "extract-emails",
+        "extract-urls"
+      ]
+    },
+    "popularity": 82
+  },
+  {
+    "id": "binary-encoder-decoder",
+    "factory": "encoder-decoder",
+    "category": "Encoding",
+    "keywords": [
+      "binary encoder",
+      "binary decoder",
+      "text to binary",
+      "binary converter"
+    ],
+    "blurb": "Convert any text to binary (0s and 1s) or decode binary back to readable text.",
+    "params": {
+      "title": "Binary Encoder & Decoder",
+      "h1": "Convert Text to Binary and Back",
+      "codec": "binary"
+    },
+    "popularity": 76
+  }
+]
