@@ -1,1 +1,23 @@
-PLACEHOLDER
+[
+  {
+    "id": "extract-emails-and-urls",
+    "factory": "text-transform",
+    "category": "Text",
+    "keywords": [
+      "extract emails",
+      "extract urls",
+      "find emails in text",
+      "link extractor"
+    ],
+    "blurb": "Pull every email address and URL out of a block of text in one click.",
+    "params": {
+      "title": "Extract Emails & URLs",
+      "h1": "Extract Email Addresses and Links from Text",
+      "transforms": [
+        "extract-emails",
+        "extract-urls"
+      ]
+    },
+    "popularity": 82
+  }
+]
