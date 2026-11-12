@@ -1,0 +1,66 @@
+{
+  "json-formatter": {
+    "overview": [
+      "The JSON formatter validates JSON syntax, pretty-prints it with two-space indentation, or minifies it by removing all unnecessary whitespace. It is useful when an API response arrives as a single long line or when a configuration file needs to be checked before it is committed.",
+      "JSON is strict. A trailing comma, a missing quote, or a comment will cause a parse error. The tool reports the browser’s native error message so you can locate the problem quickly instead of guessing which line is wrong.",
+      "Everything runs in your browser. Large documents are limited only by available memory, and no data leaves the page."
+    ],
+    "useCases": [
+      "Pretty-print a minified API response to read nested objects.",
+      "Minify a JSON configuration before embedding it in a URL or compact storage.",
+      "Validate a payload before sending it to an endpoint or saving it to a file.",
+      "Check that a hand-written JSON object is syntactically correct.",
+      "Prepare sample data for a test fixture or documentation example."
+    ],
+    "workedExample": "Paste the compact string {\"name\":\"Ada\",\"scores\":[98,91]}. Click Format. The output becomes a multi-line object with two-space indentation and the array on its own line. Click Minify to return to a single line with no extra spaces. If you remove the closing brace and click Validate, the tool shows an invalid JSON error instead of producing output.",
+    "limits": [
+      "Only strict JSON is accepted. Comments, trailing commas and single quotes are rejected.",
+      "Very large documents may be slow to parse or may exceed the browser’s string size limits.",
+      "The error message comes from the browser’s JSON.parse implementation and may not include a line number in every browser.",
+      "Formatting uses two spaces; other indentation styles are not offered."
+    ],
+    "privacy": "JSON is parsed and formatted entirely inside your browser. No document is uploaded, logged or stored.",
+    "faq": [
+      {
+        "q": "Why does a trailing comma fail?",
+        "a": "JSON does not allow trailing commas. The standard requires every value to be separated by a comma and the last item to have no trailing comma."
+      },
+      {
+        "q": "Can I format JSON that contains comments?",
+        "a": "No. Comments are not part of JSON. Remove them before validating or use a JSONC-aware tool if you need comment support."
+      }
+    ]
+  },
+  "uuid-generator": {
+    "overview": [
+      "The UUID generator creates version-4 UUIDs using the browser’s cryptographically secure random source when it is available. Version 4 identifiers are randomly generated and are the usual choice for database primary keys, correlation IDs and test data.",
+      "You can request from one to fifty values at a time. Each UUID is written on its own line so the list is easy to copy into a spreadsheet, a SQL insert or a JSON array.",
+      "The generator does not store the values it produces. Copy them before you leave the page if you need to keep them."
+    ],
+    "useCases": [
+      "Create a primary key for a new database row.",
+      "Generate correlation IDs for distributed tracing or log aggregation.",
+      "Produce a batch of unique identifiers for test users or fixtures.",
+      "Obtain a quick unique token for a local prototype.",
+      "Fill a list of resource IDs for an API documentation example."
+    ],
+    "workedExample": "Set the count to 3 and click Generate. The output might look like 3f2504e0-4f89-11d3-9a0c-0305e82c3301 on the first line, followed by two more distinct values. Each string is 36 characters long, contains hyphens in the standard positions, and has the version digit 4 in the third group. Running the tool again produces an entirely new set.",
+    "limits": [
+      "At most fifty UUIDs are generated in one click to keep the result readable.",
+      "Older browsers that lack the Web Crypto API fall back to Math.random, which is not suitable for security-sensitive tokens.",
+      "The tool does not check whether a generated UUID already exists in your database; uniqueness is probabilistic.",
+      "Version 1, 3, 5 and 7 UUIDs are not produced; only version 4 is available."
+    ],
+    "privacy": "Generation uses the browser’s random APIs and never sends the results anywhere. Nothing is stored after you close the page.",
+    "faq": [
+      {
+        "q": "What does version 4 mean?",
+        "a": "Version 4 UUIDs are generated from random numbers. The version field is set to 4 and the variant bits follow the RFC 4122 layout."
+      },
+      {
+        "q": "Are these safe for security tokens?",
+        "a": "They are suitable for ordinary application identifiers. For long-lived secrets or cryptographic keys, use a dedicated secret generator and a password manager."
+      }
+    ]
+  }
+}
