@@ -1,0 +1,63 @@
+{
+  "id": "uuid-generator",
+  "title": "UUID Generator",
+  "h1": "UUID Generator — Create Version 4 UUIDs",
+  "seoTitle": "Free UUID Generator Online | ToolNova",
+  "description": "Generate one or more cryptographically random UUID v4 identifiers. Copy them for databases, APIs, or test data. Everything stays in your browser.",
+  "intro": "Create unique version-4 UUIDs instantly. Choose how many you need and copy the list.",
+  "blurb": "Generate random UUID v4 identifiers in your browser.",
+  "keywords": ["uuid generator", "uuid v4", "generate uuid", "guid generator", "unique id"],
+  "category": "UUID",
+  "added": "2026-11-12",
+  "popularity": 84,
+  "ui": {
+    "controls": [
+      {
+        "id": "count",
+        "type": "number",
+        "label": "How many UUIDs?",
+        "value": "1",
+        "min": 1,
+        "max": 50
+      }
+    ],
+    "actions": [
+      {
+        "id": "generate",
+        "label": "Generate",
+        "primary": true
+      }
+    ],
+    "outputs": [
+      {
+        "id": "output",
+        "type": "textarea",
+        "label": "UUIDs"
+      }
+    ]
+  },
+  "howItWorks": [
+    "Set the number of UUIDs you want (1 to 50).",
+    "Click Generate. Each value is a standard version-4 UUID using the browser’s secure random source.",
+    "Copy the results. They are suitable for primary keys, correlation IDs, and test fixtures."
+  ],
+  "examples": [
+    "Generate a single UUID for a new database record.",
+    "Create ten UUIDs for a batch of test users.",
+    "Produce identifiers for an API response fixture."
+  ],
+  "faq": [
+    {
+      "q": "Are these UUIDs version 4?",
+      "a": "Yes. They are randomly generated version-4 UUIDs, which is the most common type for new identifiers."
+    },
+    {
+      "q": "Is the randomness secure?",
+      "a": "The generator uses the Web Crypto API (crypto.randomUUID or getRandomValues) when available, which is suitable for ordinary application IDs."
+    },
+    {
+      "q": "Can the same UUID appear twice?",
+      "a": "The probability is vanishingly small for practical purposes. Version-4 UUIDs have 122 random bits."
+    }
+  ]
+}
