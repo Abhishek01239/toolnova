@@ -1,0 +1,37 @@
+{
+  "id": "whitespace-normalizer",
+  "title": "Whitespace Normalizer",
+  "h1": "Whitespace Normalizer — Clean Extra Spaces and Lines",
+  "seoTitle": "Free Whitespace Cleaner — Remove Extra Spaces Online",
+  "description": "Normalize whitespace in text by collapsing multiple spaces, trimming lines, and removing empty lines. Private browser-based tool.",
+  "intro": "Clean up messy pasted text by normalizing spaces and line breaks. Everything happens locally.",
+  "blurb": "Collapse extra spaces and tidy line breaks in any text.",
+  "keywords": ["whitespace normalizer", "remove extra spaces", "clean whitespace", "trim lines", "normalize spaces"],
+  "category": "Text",
+  "added": "2026-11-15",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Text to clean", "rows": 8}
+    ],
+    "actions": [
+      {"id": "normalize", "label": "Normalize whitespace", "primary": true}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Cleaned text"}
+    ]
+  },
+  "howItWorks": [
+    "Paste text that has irregular spacing.",
+    "Click Normalize to collapse multiple spaces into one and trim each line.",
+    "Review the cleaned output and copy it."
+  ],
+  "examples": [
+    "Multiple spaces between words become single spaces.",
+    "Leading and trailing spaces on lines are removed."
+  ],
+  "faq": [
+    {"q": "What does normalize do exactly?", "a": "It replaces sequences of whitespace with a single space, trims each line, and removes completely empty lines."},
+    {"q": "Does it change punctuation or letters?", "a": "No. Only whitespace is adjusted; all other characters stay the same."}
+  ]
+}

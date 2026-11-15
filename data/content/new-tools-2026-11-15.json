@@ -1,0 +1,114 @@
+{
+  "text-reverser": {
+    "overview": [
+      "The Text Reverser takes any string and returns it with the character order completely flipped. It is a simple but surprisingly useful utility for generating reversed versions of names, testing string-handling code, creating simple ciphers, or just satisfying curiosity.",
+      "Because the operation is a pure character-level reverse, spaces, punctuation, numbers, and emoji all stay in their relative places but appear from the other end. The tool makes no attempt to reverse word order or preserve reading direction beyond the raw characters.",
+      "All processing happens inside the browser. Large blocks of text are limited only by the memory available to the page, and nothing is ever sent to a server."
+    ],
+    "useCases": [
+      "Create a quick reversed version of a name or phrase for a puzzle or social media post.",
+      "Test how a program handles reversed strings during development.",
+      "Generate a simple visual effect or anagram-like string without changing letters.",
+      "Verify the correctness of a reverse-string algorithm by comparing results.",
+      "Turn a short message into an unreadable form for informal hiding."
+    ],
+    "workedExample": "Enter the phrase Hello ToolNova. Click Reverse. The output becomes avoNlooT olleH. Every character, including the space, has moved to the opposite position. Running the tool a second time on the result restores the original text, confirming the operation is its own inverse.",
+    "limits": [
+      "The reverse is strictly character-based; it does not reverse the order of words while keeping characters inside words intact.",
+      "Very large inputs may make the page sluggish because the whole string is held in memory.",
+      "Surrogate pairs used by some emoji are reversed as individual code units, which can occasionally produce unexpected visual results.",
+      "There is no option to reverse only a selected portion of the text."
+    ],
+    "privacy": "The text never leaves your browser. The reverse operation is performed with ordinary JavaScript string methods and produces no network requests.",
+    "faq": [
+      {
+        "q": "Can I reverse just the words and not the characters?",
+        "a": "This tool reverses every character. To reverse word order while leaving each word intact you would need a different utility."
+      }
+    ]
+  },
+  "whitespace-normalizer": {
+    "overview": [
+      "The Whitespace Normalizer cleans up text that has accumulated irregular spacing from copy-and-paste, HTML conversion, or multiple edits. It collapses runs of spaces and tabs into single spaces, trims the start and end of every line, and drops lines that become empty after trimming.",
+      "The result is a more readable block that is easier to paste into documents, code comments, or data fields. The tool does not alter any non-whitespace characters, so punctuation, numbers, and letters remain exactly as they were.",
+      "Processing is instantaneous for typical document sizes and occurs entirely on the client side."
+    ],
+    "useCases": [
+      "Clean text copied from a PDF or web page that contains extra spaces.",
+      "Prepare a list of items that has inconsistent indentation before pasting into a spreadsheet.",
+      "Remove accidental double spaces from a paragraph you are about to publish.",
+      "Normalize log lines or configuration snippets that have trailing whitespace.",
+      "Tidy up a block of user-generated content before further processing."
+    ],
+    "workedExample": "Paste the lines   Hello    world  followed by a blank line and then   ToolNova   . After clicking Normalize the output becomes Hello world on the first line and ToolNova on the second. Leading spaces, multiple internal spaces, and the empty line have all been removed while the words themselves are unchanged.",
+    "limits": [
+      "Only horizontal whitespace is collapsed; vertical spacing beyond empty lines is not further adjusted.",
+      "Tabs are treated the same as spaces and are replaced by a single space.",
+      "The tool does not attempt to reflow paragraphs or join lines that were intentionally separate.",
+      "Unicode whitespace characters other than the common ASCII ones may be left untouched."
+    ],
+    "privacy": "Your text is processed only in the browser. No cleaned or original content is uploaded or stored by ToolNova.",
+    "faq": [
+      {
+        "q": "Will it join separate paragraphs into one?",
+        "a": "No. Lines that contain text after trimming stay on their own lines. Only completely empty lines are dropped."
+      }
+    ]
+  },
+  "number-extractor": {
+    "overview": [
+      "The Number Extractor scans a block of text and pulls out every sequence that looks like a number. It recognizes whole numbers, decimal numbers, and numbers with a leading minus sign, then lists them one per line so they are easy to copy into a spreadsheet or further calculation.",
+      "This is helpful when you receive unstructured text such as invoices, log messages, or product descriptions and need the numeric values isolated. The tool does not try to interpret currency symbols or thousands separators; it simply matches digit sequences with an optional decimal point and optional sign.",
+      "Extraction is performed with a regular expression inside the browser, so the original text never leaves the page."
+    ],
+    "useCases": [
+      "Pull prices and quantities from a pasted product description.",
+      "Extract timestamps or IDs that appear as numbers inside log lines.",
+      "Collect scores or measurements from a block of prose.",
+      "Prepare a list of numeric values for quick summation or averaging elsewhere.",
+      "Clean a mixed text field before importing it into a data tool."
+    ],
+    "workedExample": "Paste the sentence The order contains 3 items priced at 12.50 each with a -5 discount. Click Extract. The output shows 3 on the first line, 12.50 on the second, and -5 on the third. All non-numeric characters have been discarded and each number appears alone.",
+    "limits": [
+      "Thousands separators such as commas are not recognized; 1,000 is treated as the number 1 followed by the text ,000.",
+      "Scientific notation is not specially parsed; 1.2e3 will yield 1.2 and 3 as separate numbers.",
+      "Numbers embedded inside words or version strings may be partially matched depending on surrounding characters.",
+      "The tool does not convert the extracted strings into actual numeric types; they remain text."
+    ],
+    "privacy": "The source text and the extracted numbers stay inside your browser. Nothing is transmitted to any server.",
+    "faq": [
+      {
+        "q": "Does it understand currency symbols?",
+        "a": "No. A dollar sign or other symbol is ignored; only the numeric characters and an optional decimal point or leading minus are captured."
+      }
+    ]
+  },
+  "sha1-hash-generator": {
+    "overview": [
+      "The SHA-1 Hash Generator computes the SHA-1 digest of any text you supply, using the browser’s built-in Web Crypto API. The result is a 40-character hexadecimal string that is deterministic: the same input always produces the same hash.",
+      "Although SHA-1 is no longer recommended for cryptographic security, it remains common in older systems, file checksums, and certain legacy protocols. This tool lets you generate those values without installing software or sending the text to a remote service.",
+      "The computation happens asynchronously in the browser and displays both the digest and a short summary of byte length."
+    ],
+    "useCases": [
+      "Generate a SHA-1 checksum for a short string or configuration value.",
+      "Reproduce a hash that an older system expects for compatibility testing.",
+      "Verify that a piece of text has not changed by comparing hashes.",
+      "Create a fixed-length identifier from variable-length input for non-security purposes.",
+      "Demonstrate the difference between SHA-1 and stronger modern hashes such as SHA-256."
+    ],
+    "workedExample": "Enter the word hello and click Generate SHA-1. The digest field fills with a 40-character hexadecimal value beginning with aaf4c61d and the summary shows the algorithm, the UTF-8 byte count of 5, and the hex length of 40. Changing a single letter produces an entirely different digest, illustrating the avalanche effect.",
+    "limits": [
+      "SHA-1 is cryptographically weak and must not be used for passwords, digital signatures, or any security-sensitive purpose.",
+      "Only text input is supported; binary files cannot be hashed directly in this interface.",
+      "Browsers without the Web Crypto API cannot compute the digest.",
+      "The tool does not offer HMAC or keyed variants."
+    ],
+    "privacy": "The text is encoded and hashed entirely inside the browser using the Web Crypto API. The resulting digest is never uploaded.",
+    "faq": [
+      {
+        "q": "Why does the page warn about SHA-1 security?",
+        "a": "Collision attacks against SHA-1 have been demonstrated. The tool is provided for compatibility and educational use only; prefer SHA-256 or stronger algorithms for any security-related work."
+      }
+    ]
+  }
+}

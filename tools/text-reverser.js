@@ -3,8 +3,9 @@
   var root = document.getElementById('tool-app');
   if (!root) return;
   function control(id) { return root.querySelector('[data-control="' + id + '"]'); }
+  function outputEl(id) { return root.querySelector('[data-output="' + id + '"]'); }
   function setOutput(id, value) {
-    var el = root.querySelector('[data-output="' + id + '"]');
+    var el = outputEl(id);
     if (!el) return;
     if ('value' in el) { el.value = value; } else { el.textContent = value; }
   }
@@ -12,30 +13,17 @@
     var btn = root.querySelector('[data-action="' + id + '"]');
     if (btn) btn.addEventListener('click', function () { fn(btn); });
   }
-
-  function reverse() {
-    var text = control('input') ? control('input').value : '';
-    var mode = control('mode') ? control('mode').value : 'chars';
-    var result = '';
-    if (mode === 'chars') {
-      result = text.split('').reverse().join('');
-    } else if (mode === 'words') {
-      result = text.split(/\s+/).filter(Boolean).reverse().join(' ');
-    } else if (mode === 'lines') {
-      result = text.split(/\r?\n/).reverse().join('\n');
-    }
-    setOutput('output', result);
+  function status(msg, kind) {
+    var el = root.querySelector('[data-status]');
+    if (!el) return;
+    el.textContent = msg || '';
+    el.className = 'status' + (kind ? ' ' + kind : '');
   }
 
-  function clear() {
-    if (control('input')) control('input').value = '';
-    setOutput('output', '');
-  }
-
-  var input = control('input');
-  var mode = control('mode');
-  if (input) input.addEventListener('input', reverse);
-  if (mode) mode.addEventListener('change', reverse);
-  onAction('clear', clear);
-  reverse();
+  onAction('reverse', function () {
+    var text = control('input').value || '';
+    var reversed = text.split('').reverse().join('');
+    setOutput('output', reversed);
+    status('Text reversed.', 'ok');
+  });
 })();

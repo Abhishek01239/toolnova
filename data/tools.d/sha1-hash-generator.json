@@ -1,0 +1,38 @@
+{
+  "id": "sha1-hash-generator",
+  "title": "SHA-1 Hash Generator",
+  "h1": "SHA-1 Hash Generator — Create SHA1 Digests",
+  "seoTitle": "Free SHA-1 Hash Generator Online",
+  "description": "Generate SHA-1 hashes of any text using the browser's Web Crypto API. Private, instant, and free with no uploads.",
+  "intro": "Enter text to compute its SHA-1 digest locally. Ideal for checksums or legacy systems that still use SHA-1.",
+  "blurb": "Compute SHA-1 hashes of text entirely in your browser.",
+  "keywords": ["sha1", "sha-1 hash", "sha1 generator", "hash generator", "checksum"],
+  "category": "Security",
+  "added": "2026-11-15",
+  "popularity": 64,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Text to hash", "rows": 6}
+    ],
+    "actions": [
+      {"id": "hash", "label": "Generate SHA-1", "primary": true}
+    ],
+    "outputs": [
+      {"id": "digest", "type": "text", "label": "SHA-1 digest"},
+      {"id": "summary", "type": "stats", "label": "Details"}
+    ]
+  },
+  "howItWorks": [
+    "Type or paste the text you want to hash.",
+    "Click Generate to compute the SHA-1 digest using Web Crypto.",
+    "Copy the hexadecimal hash from the output."
+  ],
+  "examples": [
+    "The string 'hello' produces a fixed 40-character hexadecimal SHA-1 value.",
+    "Useful when a legacy system expects a SHA-1 checksum."
+  ],
+  "faq": [
+    {"q": "Is SHA-1 still secure?", "a": "SHA-1 is considered cryptographically broken for security purposes. Use it only for non-security checksums or compatibility with older systems. Prefer SHA-256 for new work."},
+    {"q": "Does the hash leave the browser?", "a": "No. The digest is calculated locally with the Web Crypto API and never transmitted."}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "number-extractor",
+  "title": "Number Extractor",
+  "h1": "Number Extractor — Pull Numbers from Text",
+  "seoTitle": "Free Number Extractor — Extract Digits from Text",
+  "description": "Extract all numbers from a block of text. Useful for cleaning data or finding numeric values. Runs entirely in the browser.",
+  "intro": "Paste text containing numbers and extract them as a clean list. No data leaves your browser.",
+  "blurb": "Find and list every number appearing in a piece of text.",
+  "keywords": ["number extractor", "extract numbers", "find numbers in text", "pull digits", "number finder"],
+  "category": "Text",
+  "added": "2026-11-15",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Text containing numbers", "rows": 8}
+    ],
+    "actions": [
+      {"id": "extract", "label": "Extract numbers", "primary": true}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Extracted numbers"}
+    ]
+  },
+  "howItWorks": [
+    "Paste or type text that includes numbers.",
+    "Click Extract to find all integer and decimal numbers.",
+    "Numbers appear one per line in the output."
+  ],
+  "examples": [
+    "The text 'Order 42 items at $19.99 each' yields 42 and 19.99.",
+    "Useful for extracting prices, quantities, or IDs from unstructured text."
+  ],
+  "faq": [
+    {"q": "Does it extract decimal numbers?", "a": "Yes. Both whole numbers and numbers with a decimal point are captured."},
+    {"q": "Are negative numbers included?", "a": "Yes. A leading minus sign is kept with the number."}
+  ]
+}

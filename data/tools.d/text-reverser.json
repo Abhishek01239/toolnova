@@ -1,0 +1,37 @@
+{
+  "id": "text-reverser",
+  "title": "Text Reverser",
+  "h1": "Text Reverser — Reverse Characters in Any String",
+  "seoTitle": "Free Text Reverser — Reverse Text Online Instantly",
+  "description": "Reverse the character order of any text or string. Perfect for puzzles, testing, or curiosity. Runs privately in your browser with no uploads.",
+  "intro": "Paste text and reverse every character in one click. The entire process stays on your device.",
+  "blurb": "Flip the order of characters in any text instantly and privately.",
+  "keywords": ["text reverser", "reverse string", "reverse text", "character reverse", "string reverser"],
+  "category": "Text",
+  "added": "2026-11-15",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Text to reverse", "rows": 8, "placeholder": "Type or paste text here"}
+    ],
+    "actions": [
+      {"id": "reverse", "label": "Reverse text", "primary": true}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Reversed result"}
+    ]
+  },
+  "howItWorks": [
+    "Enter or paste the text you want to reverse.",
+    "Click the Reverse button to flip the character sequence.",
+    "Copy the reversed text from the output area."
+  ],
+  "examples": [
+    "The word 'hello' becomes 'olleh'.",
+    "A sentence with spaces and punctuation is fully reversed character by character."
+  ],
+  "faq": [
+    {"q": "Does it reverse word order or individual characters?", "a": "It reverses the entire string character by character, so spaces and punctuation move with the characters."},
+    {"q": "Is any data sent to a server?", "a": "No. Reversal is performed entirely inside your browser using simple JavaScript."}
+  ]
+}
