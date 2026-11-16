@@ -1,0 +1,41 @@
+{
+  "id": "shuffle-lines",
+  "title": "Shuffle Lines",
+  "h1": "Shuffle Lines of Text Online — Randomize Order Free",
+  "seoTitle": "Shuffle Lines — Randomize Text Lines Free Online",
+  "description": "Randomize the order of every line in a block of text. Ideal for mixing quiz questions, randomizing lists or creating varied test data. Runs completely in your browser.",
+  "intro": "Paste a list and shuffle its lines into a new random order in one click. Useful for games, sampling or breaking predictable sequences without any server involvement.",
+  "blurb": "Randomize the order of lines in any text block — free, private, instant.",
+  "keywords": ["shuffle lines", "randomize lines", "mix lines", "random order text", "line shuffler"],
+  "category": "Text",
+  "added": "2026-11-16",
+  "popularity": 65,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Input text", "rows": 12, "placeholder": "One item per line..."}
+    ],
+    "actions": [
+      {"id": "run", "label": "Shuffle", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Shuffled result"}
+    ]
+  },
+  "howItWorks": [
+    "Paste text with one item or sentence per line.",
+    "Press Shuffle to rearrange the lines into a new random order.",
+    "Copy the result. Empty lines are preserved in the mix.",
+    "The shuffle uses a standard Fisher-Yates algorithm and stays local."
+  ],
+  "examples": [
+    "Randomize a list of student names for a fair drawing.",
+    "Mix the order of flash-card questions before a study session.",
+    "Create varied sample data from a fixed set of lines."
+  ],
+  "faq": [
+    {"q": "Does it keep empty lines?", "a": "Yes. Empty lines stay in the list and are shuffled along with the others."},
+    {"q": "Is the shuffle truly random?", "a": "It uses JavaScript’s Math.random() with a Fisher-Yates shuffle, which is suitable for everyday non-cryptographic use."},
+    {"q": "Can I undo the shuffle?", "a": "The original text remains in the input box, so you can shuffle again or clear and start over at any time."}
+  ]
+}
