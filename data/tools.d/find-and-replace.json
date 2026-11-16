@@ -1,0 +1,45 @@
+{
+  "id": "find-and-replace",
+  "title": "Find and Replace",
+  "h1": "Find and Replace Text Online — Free Browser Tool",
+  "seoTitle": "Find and Replace — Search and Replace Text Free",
+  "description": "Search for plain text or a regular expression and replace matches in any block of text. Supports global replace and case options. Everything runs in your browser.",
+  "intro": "Paste text, enter a search term or pattern, and replace every match instantly. Use it for cleaning data, fixing repeated typos or transforming lists without leaving the page.",
+  "blurb": "Find and replace text or regex patterns in any block of text — free and private.",
+  "keywords": ["find and replace", "search replace", "regex replace", "text replace", "bulk replace"],
+  "category": "Text",
+  "added": "2026-11-16",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Input text", "rows": 10, "placeholder": "Paste the text you want to edit..."},
+      {"id": "find", "type": "text", "label": "Find", "placeholder": "text or pattern"},
+      {"id": "replace", "type": "text", "label": "Replace with", "placeholder": "replacement"},
+      {"id": "regex", "type": "checkbox", "label": "Use regular expression"},
+      {"id": "ignorecase", "type": "checkbox", "label": "Ignore case"}
+    ],
+    "actions": [
+      {"id": "run", "label": "Replace", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Result"}
+    ]
+  },
+  "howItWorks": [
+    "Paste or type the text you want to modify into the input area.",
+    "Enter the text or regular expression to find, and the replacement string.",
+    "Optionally enable regular expression mode or case-insensitive matching, then press Replace.",
+    "Copy the result from the output box. All processing stays in your browser."
+  ],
+  "examples": [
+    "Replace every occurrence of \"color\" with \"colour\" in a draft.",
+    "Use a regex to turn every date in YYYY-MM-DD format into DD/MM/YYYY.",
+    "Strip a common prefix from every line of a pasted list."
+  ],
+  "faq": [
+    {"q": "Does the replacement support capture groups?", "a": "Yes. When regular expression mode is on, you can use $1, $2 and so on in the replacement to insert captured groups."},
+    {"q": "Is my text uploaded anywhere?", "a": "No. The find-and-replace operation runs entirely inside your browser using ordinary JavaScript. Nothing is sent to a server."},
+    {"q": "What happens with an invalid regular expression?", "a": "The tool shows a clear error message and leaves the original text unchanged so you can fix the pattern."}
+  ]
+}
