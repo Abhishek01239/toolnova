@@ -1,0 +1,43 @@
+{
+  "id": "prefix-lines",
+  "title": "Prefix Lines",
+  "h1": "Add Prefix and Suffix to Every Line — Free Online",
+  "seoTitle": "Prefix Lines — Add Text to Start of Each Line",
+  "description": "Add a custom prefix and optional suffix to every line of text. Perfect for turning lists into bullets, numbered items, comments or quoted lines. Browser-only and private.",
+  "intro": "Paste a list and instantly add the same text to the beginning or end of every line. Great for formatting, commenting code or preparing data.",
+  "blurb": "Add a prefix and optional suffix to every line of text — free and private.",
+  "keywords": ["prefix lines", "add prefix", "suffix lines", "bullet list", "comment lines"],
+  "category": "Text",
+  "added": "2026-11-16",
+  "popularity": 70,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Input text", "rows": 10, "placeholder": "One item per line..."},
+      {"id": "prefix", "type": "text", "label": "Prefix", "placeholder": "- ", "value": "- "},
+      {"id": "suffix", "type": "text", "label": "Suffix (optional)", "placeholder": ""}
+    ],
+    "actions": [
+      {"id": "run", "label": "Apply", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Result"}
+    ]
+  },
+  "howItWorks": [
+    "Paste the lines you want to modify.",
+    "Enter the text that should appear at the start of each line (prefix) and, if wanted, at the end (suffix).",
+    "Press Apply. Empty lines receive the prefix and suffix as well.",
+    "Copy the formatted result. All work happens in your browser."
+  ],
+  "examples": [
+    "Turn a plain list into a Markdown bullet list by prefixing each line with \"- \".",
+    "Add \"// \" to the start of every line to comment out a block of code.",
+    "Wrap each line in quotes by using a prefix of '\"' and a suffix of '\"'."
+  ],
+  "faq": [
+    {"q": "What if I leave the prefix blank?", "a": "Lines will only receive the suffix. You can use either field independently."},
+    {"q": "Does it affect the last line if it has no trailing newline?", "a": "Yes. Every line, including the final one, receives the prefix and suffix."},
+    {"q": "Can I use it for numbering?", "a": "This tool adds a fixed string. For automatic numbering use a different utility or combine it with other text tools."}
+  ]
+}
