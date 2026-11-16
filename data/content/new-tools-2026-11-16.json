@@ -1,0 +1,106 @@
+{
+  "find-and-replace": {
+    "overview": [
+      "The Find and Replace tool searches a block of text for a plain string or a regular expression and substitutes every match with a replacement of your choice. It is designed for quick, local editing tasks such as fixing repeated phrases, standardizing terminology or transforming structured data without opening a full editor.",
+      "When regular-expression mode is enabled the tool supports capture groups, so you can rearrange parts of a match. Case-insensitive matching is optional. All work happens inside the browser, so sensitive drafts never leave your device."
+    ],
+    "useCases": [
+      "Correct a repeated misspelling across a pasted article or email.",
+      "Convert date formats or phone-number patterns with a single regex.",
+      "Strip or rewrite a common prefix from every line of a list.",
+      "Prepare data for import by normalizing separators or units."
+    ],
+    "workedExample": "A product description containing the word \"colour\" ten times is pasted into the input. The find field is set to colour, the replace field to color, and regular-expression mode is left off. After pressing Replace the output shows color in every location and the status line reports that ten occurrences were changed. The original text remains available in the input box for further edits.",
+    "limits": [
+      "Very large documents may slow the page because the entire string is held in memory.",
+      "Replacement is performed on the whole text at once; there is no interactive highlight-and-replace workflow.",
+      "Multiline mode and advanced look-around assertions work only to the extent the browser’s RegExp engine supports them.",
+      "The tool does not preserve formatting beyond plain text."
+    ],
+    "privacy": "Every search and replacement is performed with ordinary JavaScript inside your browser. No text is uploaded or stored by ToolNova.",
+    "faq": [
+      {
+        "q": "Can I replace only the first match?",
+        "a": "The current implementation always replaces all matches. To change only the first occurrence you can temporarily disable global behaviour by editing the pattern or run the tool on a smaller selection."
+      }
+    ]
+  },
+  "shuffle-lines": {
+    "overview": [
+      "Shuffle Lines takes any text that is organized one item per line and rearranges those lines into a new random order. The operation is useful whenever a predictable sequence needs to be broken—quiz questions, name draws, sample data or playlist order—without installing software or sending the list anywhere.",
+      "The algorithm is a classic Fisher-Yates shuffle driven by the browser’s Math.random. Empty lines are treated as ordinary lines and travel with the rest of the list. The original input stays untouched so you can reshuffle as many times as you like."
+    ],
+    "useCases": [
+      "Randomize the order of flash-card questions before a study session.",
+      "Create a fair drawing order from a list of names.",
+      "Generate varied test data from a fixed set of sample lines.",
+      "Mix the sequence of presentation slides or talking points."
+    ],
+    "workedExample": "Three lines reading Alpha, Beta and Gamma are pasted into the tool. After pressing Shuffle the output might show Gamma on the first line, Alpha on the second and Beta on the third. Pressing Shuffle again produces a different permutation. The status message confirms that three lines were rearranged. Because the input box is left unchanged, the original order can be restored simply by copying it back.",
+    "limits": [
+      "The randomness is suitable for everyday use but is not cryptographically secure.",
+      "Extremely long lists may make the page briefly unresponsive while the array is shuffled.",
+      "Lines are split only on newline characters; wrapped paragraphs are not treated as separate lines.",
+      "There is no option to keep the first or last line fixed."
+    ],
+    "privacy": "The list never leaves your browser. The shuffle is a pure in-memory operation with no network requests.",
+    "faq": [
+      {
+        "q": "Can I shuffle only some of the lines?",
+        "a": "The tool shuffles every line in the input. To shuffle a subset, copy just those lines into the box."
+      }
+    ]
+  },
+  "prefix-lines": {
+    "overview": [
+      "Prefix Lines adds the same fixed text to the beginning of every line and, optionally, a second fixed text to the end of every line. It turns a plain list into a bullet list, a block of comments, a set of quoted strings or any other uniformly decorated format in a single click.",
+      "Because the transformation is purely textual and local, it is safe for confidential notes, source-code fragments or customer data. Empty lines receive the prefix and suffix as well, which keeps the visual structure of the original block intact."
+    ],
+    "useCases": [
+      "Convert a shopping list into Markdown bullets by prefixing each line with “- ”.",
+      "Comment out a block of configuration by adding “# ” or “// ” at the start of each line.",
+      "Wrap every line in quotation marks for inclusion in a CSV or JSON array.",
+      "Add a consistent label or timestamp prefix to log lines."
+    ],
+    "workedExample": "The three lines apple, banana and cherry are entered. The prefix field is set to “- ” and the suffix field is left blank. After pressing Apply the output becomes “- apple”, “- banana” and “- cherry”. Changing the suffix to “.” produces “- apple.”, “- banana.” and “- cherry.”. The status line reports that the prefix and suffix were applied to three lines.",
+    "limits": [
+      "The prefix and suffix are literal strings; there is no automatic numbering or variable substitution.",
+      "Very long prefixes combined with very long input can produce large result strings.",
+      "The tool does not trim existing whitespace; any spaces already present on a line remain.",
+      "It operates on whole lines only and does not modify text inside a line."
+    ],
+    "privacy": "All prefixing and suffixing happens inside your browser. The original text and the result stay on your device.",
+    "faq": [
+      {
+        "q": "What if my list already has bullets?",
+        "a": "The new prefix is simply added in front of whatever is already there. You can first clean the lines with another tool if needed."
+      }
+    ]
+  },
+  "unique-lines": {
+    "overview": [
+      "Unique Lines scans a block of text and returns only the distinct lines, discarding later duplicates. By default it preserves the order in which each line first appeared; an optional checkbox sorts the unique lines alphabetically. The tool is ideal for cleaning merged lists, tag clouds or log excerpts.",
+      "Comparison is exact and case-sensitive, so “Apple” and “apple” remain separate. Empty lines are deduplicated like any other line. Everything runs locally, making the utility safe for personal or sensitive data."
+    ],
+    "useCases": [
+      "Remove duplicate email addresses collected from several spreadsheets.",
+      "Produce a clean list of unique keywords or tags.",
+      "Deduplicate a set of product codes before import.",
+      "Create a sorted inventory of distinct error messages from a log."
+    ],
+    "workedExample": "The input contains the lines red, blue, red, green, blue. With sorting turned off the tool returns red, blue, green—the order of first appearance. With the sort checkbox enabled the same input yields blue, green, red. The status message states that three unique lines were found out of five original lines. The input box remains unchanged so further experiments are easy.",
+    "limits": [
+      "Only exact line matches are removed; similar but non-identical lines are kept.",
+      "Leading or trailing spaces make two lines different; trim first if you need whitespace-insensitive comparison.",
+      "The tool does not collapse multiple consecutive empty lines beyond keeping a single empty line.",
+      "Extremely large inputs are limited only by browser memory."
+    ],
+    "privacy": "Deduplication is performed entirely in the browser. No lines are uploaded or logged.",
+    "faq": [
+      {
+        "q": "Does it ignore case?",
+        "a": "No. Lines must match exactly, including capitalization, to be considered duplicates."
+      }
+    ]
+  }
+}
