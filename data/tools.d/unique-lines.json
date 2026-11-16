@@ -1,0 +1,42 @@
+{
+  "id": "unique-lines",
+  "title": "Unique Lines",
+  "h1": "Extract Unique Lines from Text — Remove Duplicates Free",
+  "seoTitle": "Unique Lines — Remove Duplicate Lines Online",
+  "description": "Extract only the unique lines from a block of text, removing duplicates while keeping original or sorted order. Ideal for cleaning lists and data. Runs in your browser.",
+  "intro": "Paste text with repeated lines and instantly get a deduplicated version. Choose to preserve the first-seen order or sort the unique lines alphabetically.",
+  "blurb": "Remove duplicate lines and keep only unique ones — free, private, instant.",
+  "keywords": ["unique lines", "remove duplicate lines", "dedupe lines", "distinct lines", "unique text"],
+  "category": "Text",
+  "added": "2026-11-16",
+  "popularity": 75,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Input text", "rows": 12, "placeholder": "Paste text with possible duplicates..."},
+      {"id": "sort", "type": "checkbox", "label": "Sort unique lines alphabetically"}
+    ],
+    "actions": [
+      {"id": "run", "label": "Extract unique", "primary": true},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "output", "type": "textarea", "label": "Unique lines"}
+    ]
+  },
+  "howItWorks": [
+    "Paste the text that may contain repeated lines.",
+    "Optionally check the box to sort the unique lines alphabetically.",
+    "Press Extract unique. The tool keeps the first occurrence of each line.",
+    "Copy the cleaned result. Processing is entirely local."
+  ],
+  "examples": [
+    "Clean a list of email addresses that was pasted from several sources.",
+    "Remove repeated tags or keywords from a block of text.",
+    "Produce a sorted unique list of product SKUs."
+  ],
+  "faq": [
+    {"q": "Does it treat lines as case-sensitive?", "a": "Yes. \"Apple\" and \"apple\" are considered different lines."},
+    {"q": "What happens to empty lines?", "a": "Empty lines are treated like any other line; only one empty line is kept if duplicates exist."},
+    {"q": "Does the original order stay when sorting is off?", "a": "Yes. Unique lines appear in the order of their first occurrence."}
+  ]
+}
