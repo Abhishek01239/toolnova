@@ -1,1 +1,41 @@
-PLACEHOLDER1
+{
+  "id": "csv-to-markdown",
+  "title": "CSV to Markdown Table",
+  "h1": "CSV to Markdown Table Converter",
+  "seoTitle": "CSV to Markdown Table — Free Online Converter",
+  "description": "Convert CSV data into a clean Markdown table ready to paste into GitHub, Notion or any Markdown document. Runs privately in your browser.",
+  "intro": "Paste comma-separated values and get a properly formatted Markdown table with headers. No upload, no account, instant result.",
+  "blurb": "Turn CSV into a Markdown table in one click — free and private.",
+  "keywords": ["csv to markdown", "markdown table", "csv converter", "table generator", "github markdown"],
+  "category": "Text",
+  "added": "2026-11-17",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "CSV data", "rows": 10, "placeholder": "name,age,city\nAda,36,London\nLin,29,Paris"},
+      {"id": "delimiter", "type": "select", "label": "Delimiter", "value": ",", "options": [{"value": ",", "label": "Comma"}, {"value": "\t", "label": "Tab"}, {"value": ";", "label": "Semicolon"}, {"value": "|", "label": "Pipe"}]}
+    ],
+    "actions": [
+      {"id": "convert", "label": "Convert to Markdown", "primary": true},
+      {"id": "copy", "label": "Copy result"},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "result", "type": "textarea", "label": "Markdown table"}
+    ]
+  },
+  "howItWorks": [
+    "Paste your CSV into the input box. The first row is treated as column headers.",
+    "Choose the delimiter if it is not a comma, then press Convert to Markdown.",
+    "Copy the resulting table and paste it into a Markdown file, README or wiki."
+  ],
+  "examples": [
+    "Input: name,score\\nAlice,95\\nBob,87 → Output: | name | score |\\n| --- | --- |\\n| Alice | 95 |\\n| Bob | 87 |",
+    "Use tab-separated data exported from a spreadsheet by selecting the Tab delimiter."
+  ],
+  "faq": [
+    {"q": "Does the first row become the header?", "a": "Yes. The first non-empty row is always used as the Markdown table header row."},
+    {"q": "What if my data contains commas?", "a": "Quoted fields are handled correctly, so a value like \"Smith, John\" stays in one cell."},
+    {"q": "Is my data uploaded?", "a": "No. Conversion happens entirely inside your browser. Nothing is sent to a server."}
+  ]
+}

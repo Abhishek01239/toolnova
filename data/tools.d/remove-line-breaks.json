@@ -1,1 +1,40 @@
-PLACEHOLDER2
+{
+  "id": "remove-line-breaks",
+  "title": "Remove Line Breaks",
+  "h1": "Remove Line Breaks from Text",
+  "seoTitle": "Remove Line Breaks — Join Lines Online Free",
+  "description": "Remove all line breaks from a block of text and join everything into a single line or replace breaks with spaces. Private browser tool.",
+  "intro": "Paste multi-line text and collapse it into one continuous line. Useful for cleaning copied paragraphs or preparing single-line data.",
+  "blurb": "Join multi-line text into a single line by removing line breaks.",
+  "keywords": ["remove line breaks", "join lines", "single line text", "remove newlines", "text cleaner"],
+  "category": "Text",
+  "added": "2026-11-17",
+  "popularity": 72,
+  "ui": {
+    "controls": [
+      {"id": "input", "type": "textarea", "label": "Text with line breaks", "rows": 10},
+      {"id": "replace", "type": "select", "label": "Replace breaks with", "value": " ", "options": [{"value": " ", "label": "Space"}, {"value": "", "label": "Nothing (join tightly)"}, {"value": ", ", "label": "Comma and space"}]}
+    ],
+    "actions": [
+      {"id": "convert", "label": "Remove line breaks", "primary": true},
+      {"id": "copy", "label": "Copy"},
+      {"id": "clear", "label": "Clear"}
+    ],
+    "outputs": [
+      {"id": "result", "type": "textarea", "label": "Result"}
+    ]
+  },
+  "howItWorks": [
+    "Paste or type text that contains line breaks.",
+    "Choose whether to replace each break with a space, nothing, or a comma.",
+    "Press the button and copy the single-line result."
+  ],
+  "examples": [
+    "Three lines of a sentence become one paragraph when spaces are used.",
+    "A list of tags joined with commas for a form field."
+  ],
+  "faq": [
+    {"q": "Does it remove only newlines or also spaces?", "a": "It removes line break characters (\\n and \\r) and optionally inserts the replacement you choose. Existing spaces inside lines are kept."},
+    {"q": "Is this private?", "a": "Yes. The text never leaves your browser."}
+  ]
+}

@@ -1,1 +1,54 @@
-PLACEHOLDER5
+{
+  "csv-to-markdown": {
+    "overview": [
+      "The CSV to Markdown Table tool converts comma-separated (or other delimited) data into a ready-to-paste Markdown table. It is useful when you need to move spreadsheet data into a README, GitHub issue, Notion page or any Markdown document without manual formatting.",
+      "The first row is treated as the header. Subsequent rows become table body rows. Quoted fields and common delimiters are supported so that real-world CSV exports work correctly. Everything runs in the browser."
+    ],
+    "useCases": [
+      "Turn a spreadsheet export into a Markdown table for a project README.",
+      "Format survey results or feature comparison data for a documentation page.",
+      "Quickly share a small data set in a chat or issue tracker that supports Markdown.",
+      "Prepare tables for static site generators that expect Markdown source."
+    ],
+    "workedExample": "Paste the following CSV: name,role,score followed by Ada,Engineer,98 and Lin,Designer,91. After pressing Convert the output is a three-column Markdown table with a header separator row. The table can be copied and pasted directly into a Markdown file where it renders as a proper table.",
+    "limits": [
+      "Very large CSV files may make the page slow because the entire text is processed in memory.",
+      "Only simple quoted fields are supported; complex nested quotes or custom escape rules are not handled.",
+      "The tool produces a basic Markdown table and does not add alignment colons or other advanced table syntax.",
+      "Empty trailing columns are trimmed only if they are completely empty in every row."
+    ],
+    "privacy": "All parsing and conversion happens inside your browser. Your CSV data never leaves your device.",
+    "faq": [
+      {
+        "q": "Can I use tabs from a spreadsheet?",
+        "a": "Yes. Select the Tab delimiter before converting. Data copied from Excel or Google Sheets is often tab-separated."
+      }
+    ]
+  },
+  "remove-line-breaks": {
+    "overview": [
+      "Remove Line Breaks collapses multi-line text into a single line by stripping newline characters. You can replace each break with a space, nothing at all, or a comma-space combination depending on the intended use.",
+      "The tool is helpful when text has been hard-wrapped by an email client, a PDF export or a chat app and you need a continuous paragraph or a compact list."
+    ],
+    "useCases": [
+      "Clean a paragraph copied from a PDF that inserted line breaks in the middle of sentences.",
+      "Join a vertical list of keywords into a single comma-separated string for a search field.",
+      "Prepare a block of text for a system that rejects multi-line input.",
+      "Remove accidental line breaks from a pasted code snippet or configuration value."
+    ],
+    "workedExample": "Three lines reading “The quick brown fox”, “jumps over the”, and “lazy dog.” are pasted. With the space replacement selected the output becomes “The quick brown fox jumps over the lazy dog.” With the empty replacement the words run together. The original input box is left unchanged so you can try different replacements.",
+    "limits": [
+      "Only line-break characters are removed; other whitespace is preserved.",
+      "Very long single lines that result may be hard to read in the output box, but the text is still correct.",
+      "The tool does not intelligently re-join hyphenated words that were split across lines.",
+      "Paragraph breaks and single line breaks are treated the same."
+    ],
+    "privacy": "Every character of the input text is processed locally inside your browser. No line breaks, replacement choices or resulting single-line text are ever uploaded or stored by ToolNova.",
+    "faq": [
+      {
+        "q": "Will it keep my original spacing?",
+        "a": "Yes. Spaces and tabs that are not part of a line break remain exactly as they were."
+      }
+    ]
+  }
+}
