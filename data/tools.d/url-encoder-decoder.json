@@ -1,60 +1,52 @@
 {
   "id": "url-encoder-decoder",
-  "title": "URL Encoder/Decoder",
-  "h1": "URL Encoder & Decoder \u2014 Percent-Encode Text Free",
-  "seoTitle": "URL Encoder Decoder \u2014 Free Percent-Encoding Tool",
-  "description": "Encode text for safe use in URLs or decode percent-encoded strings back to readable form. Runs entirely in your browser with correct handling of special characters.",
-  "intro": "Turn any text into a URL-safe percent-encoded string, or reverse the process to see the original characters. Useful for query strings, redirects and debugging links \u2014 all done locally.",
-  "blurb": "Percent-encode text for URLs or decode percent-encoded strings \u2014 free and private.",
-  "keywords": ["url encoder", "url decoder", "percent encode", "url encode", "url decode", "encode uri component"],
+  "title": "URL Encoder & Decoder",
+  "h1": "URL Encoder & Decoder — Encode and Decode URLs",
+  "seoTitle": "URL Encoder Decoder — Free Online Percent Encoder",
+  "description": "Encode or decode URLs and query strings with percent-encoding. Handles spaces, special characters and full URLs. Runs privately in your browser.",
+  "intro": "Paste a URL or text and encode it for safe use in a link, or decode a percent-encoded string back to readable text. Everything stays on your device.",
+  "blurb": "Percent-encode or decode URLs and query values instantly — free and private.",
+  "keywords": ["url encoder", "url decoder", "percent encoding", "encode uri", "decode uri"],
   "category": "Encoding",
-  "added": "2026-10-16",
-  "popularity": 82,
+  "added": "2026-11-18",
+  "popularity": 79,
   "ui": {
     "controls": [
       {
         "id": "input",
         "type": "textarea",
-        "label": "Text or encoded string",
+        "label": "Text or URL",
         "rows": 8,
-        "placeholder": "Paste text to encode or a percent-encoded string to decode"
+        "placeholder": "https://example.com/path with spaces?q=hello world"
       }
     ],
     "actions": [
-      { "id": "encode", "label": "Encode for URL", "primary": true },
-      { "id": "decode", "label": "Decode URL text" }
+      {"id": "encode", "label": "Encode", "primary": true},
+      {"id": "decode", "label": "Decode"},
+      {"id": "clear", "label": "Clear"}
     ],
     "outputs": [
-      {
-        "id": "output",
-        "type": "textarea",
-        "label": "Result",
-        "rows": 8
-      }
+      {"id": "output", "type": "textarea", "label": "Result"}
     ]
   },
   "howItWorks": [
-    "Paste plain text and press Encode for URL to turn spaces and special characters into percent escapes.",
-    "Paste a percent-encoded string and press Decode URL text to restore the original characters.",
-    "The tool uses the browser\u2019s encodeURIComponent and decodeURIComponent, so the result matches what web browsers expect."
+    "Paste a URL, query string or plain text.",
+    "Click Encode to apply percent-encoding or Decode to reverse it.",
+    "The result appears immediately. Processing is local."
   ],
   "examples": [
-    "Encode a search query that contains spaces or punctuation before putting it in a link.",
-    "Decode a long query string from a browser address bar to read the parameters clearly.",
-    "Prepare a string that must survive inside a URL path or fragment."
+    "Encode a search term that contains spaces or punctuation.",
+    "Decode a long tracking URL to read its parameters.",
+    "Prepare a redirect URL that must be safely embedded."
   ],
   "faq": [
     {
-      "q": "What is percent-encoding?",
-      "a": "Percent-encoding replaces characters that are not allowed in a URL with a percent sign followed by two hexadecimal digits, so the string can travel safely in addresses and query parameters."
+      "q": "Is the whole URL encoded or just the query?",
+      "a": "The tool encodes the entire input. For a full URL you usually want encodeURIComponent on individual parameter values."
     },
     {
-      "q": "Is anything sent to a server?",
-      "a": "No. Both encoding and decoding happen entirely in your browser. The text you enter stays on your device."
-    },
-    {
-      "q": "Why does decoding sometimes fail?",
-      "a": "If a percent escape is incomplete or contains invalid hex digits the browser cannot decode it. The tool reports the problem instead of showing broken text."
+      "q": "Does it handle Unicode?",
+      "a": "Yes. Non-ASCII characters are correctly percent-encoded using UTF-8."
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "id": "json-formatter",
   "title": "JSON Formatter",
-  "h1": "JSON Formatter — Validate, Prettify and Minify JSON",
-  "seoTitle": "Free JSON Formatter & Validator Online | ToolNova",
-  "description": "Paste JSON to validate it, pretty-print with indentation, or minify it. Instant error messages for invalid input. Runs entirely in your browser.",
-  "intro": "Validate JSON, format it with readable indentation, or strip whitespace for a compact version. Errors show the exact problem.",
-  "blurb": "Validate, pretty-print and minify JSON instantly in your browser.",
-  "keywords": ["json formatter", "json validator", "pretty print json", "minify json", "json beautifier"],
-  "category": "JSON",
-  "added": "2026-11-12",
+  "h1": "JSON Formatter — Pretty Print and Validate JSON",
+  "seoTitle": "JSON Formatter — Free Online JSON Beautifier",
+  "description": "Format, validate and minify JSON instantly in your browser. Pretty-print with indentation or compress to a single line. Private and free.",
+  "intro": "Paste any JSON and format it with proper indentation, or minify it. The tool checks for syntax errors and shows them clearly. Everything runs locally.",
+  "blurb": "Pretty-print or minify JSON and catch syntax errors — free, private, no upload.",
+  "keywords": ["json formatter", "json beautifier", "json pretty print", "json validator", "json minifier"],
+  "category": "Developer",
+  "added": "2026-11-18",
   "popularity": 88,
   "ui": {
     "controls": [
@@ -16,54 +16,49 @@
         "id": "input",
         "type": "textarea",
         "label": "JSON input",
-        "rows": 12
+        "rows": 12,
+        "placeholder": "Paste JSON here"
+      },
+      {
+        "id": "indent",
+        "type": "select",
+        "label": "Indentation",
+        "value": "2",
+        "options": [
+          {"value": "2", "label": "2 spaces"},
+          {"value": "4", "label": "4 spaces"},
+          {"value": "tab", "label": "Tab"}
+        ]
       }
     ],
     "actions": [
-      {
-        "id": "format",
-        "label": "Format",
-        "primary": true
-      },
-      {
-        "id": "minify",
-        "label": "Minify"
-      },
-      {
-        "id": "validate",
-        "label": "Validate"
-      }
+      {"id": "format", "label": "Format", "primary": true},
+      {"id": "minify", "label": "Minify"},
+      {"id": "clear", "label": "Clear"}
     ],
     "outputs": [
-      {
-        "id": "output",
-        "type": "textarea",
-        "label": "Result"
-      }
+      {"id": "output", "type": "textarea", "label": "Formatted JSON"},
+      {"id": "summary", "type": "stats", "label": "Summary"}
     ]
   },
   "howItWorks": [
     "Paste or type JSON into the input box.",
-    "Click Format to pretty-print with two-space indentation, Minify to remove all unnecessary whitespace, or Validate to check syntax only.",
-    "Invalid JSON shows a clear error message with the approximate location of the problem."
+    "Choose indentation and click Format or Minify.",
+    "Valid JSON appears in the output. Errors are reported in the status area."
   ],
   "examples": [
-    "Format a minified API response so it is easy to read.",
-    "Minify a configuration file before embedding it in a URL or compact storage.",
-    "Validate a JSON payload before sending it to an endpoint."
+    "Format a minified API response to make it readable.",
+    "Validate a configuration file before committing it.",
+    "Minify JSON to reduce size for embedding or transmission."
   ],
   "faq": [
     {
-      "q": "Does it support comments or trailing commas?",
-      "a": "No. It follows the strict JSON standard, so comments and trailing commas are rejected as invalid."
+      "q": "Is my JSON uploaded?",
+      "a": "No. Parsing and formatting happen entirely in your browser. Nothing is sent to a server."
     },
     {
-      "q": "Is my JSON uploaded anywhere?",
-      "a": "No. Parsing and formatting happen entirely inside your browser. Nothing is sent to a server."
-    },
-    {
-      "q": "What indentation does Format use?",
-      "a": "Two spaces. This is a common readable default for JSON."
+      "q": "What happens with invalid JSON?",
+      "a": "The tool shows a clear error message with the approximate location of the problem."
     }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "json-formatter": {
+    "overview": [
+      "The JSON Formatter takes raw JSON text and turns it into a clean, indented document that is easy to read and review. It also validates the input and reports syntax problems so you can fix them before using the data elsewhere.",
+      "You can choose two-space, four-space or tab indentation, or minify the JSON to a single compact line. The formatter preserves the original data exactly; it only changes whitespace and does not alter numbers, strings or structure."
+    ],
+    "useCases": [
+      "Make a minified API response readable while debugging.",
+      "Validate a configuration file or fixture before committing it.",
+      "Produce a consistently indented JSON file for documentation.",
+      "Compress JSON for embedding in a URL or a single-line field."
+    ],
+    "workedExample": "Paste {\"name\":\"Ada\",\"scores\":[98,91],\"active\":true} and choose two-space indentation. After Format the output becomes a multi-line object with each key on its own line and the array expanded. The summary shows Valid JSON, the character count and the top-level type Object. Clicking Minify returns a single line again.",
+    "limits": [
+      "Very large documents may be slow because the entire text is parsed in memory.",
+      "Comments and trailing commas are not allowed; the tool follows strict JSON rules.",
+      "The formatter does not sort keys or apply custom style preferences beyond indentation.",
+      "Binary or non-UTF-8 content is not supported."
+    ],
+    "privacy": "All parsing and formatting happens inside your browser. Your JSON never leaves your device.",
+    "faq": [
+      {
+        "q": "Does it change the data?",
+        "a": "No. Only whitespace is adjusted. Numbers, strings, booleans and structure stay exactly the same."
+      }
+    ]
+  },
+  "url-encoder-decoder": {
+    "overview": [
+      "The URL Encoder & Decoder applies or reverses percent-encoding so that spaces, punctuation and non-ASCII characters can safely travel inside a URL. It is useful when building query strings, reading tracking links or preparing values for an API.",
+      "Encoding turns reserved characters into %HH sequences. Decoding restores the original characters. The tool uses the standard encodeURIComponent and decodeURIComponent functions so the results match what browsers and servers expect."
+    ],
+    "useCases": [
+      "Encode a search term that contains spaces or special characters.",
+      "Decode a long affiliate or tracking URL to inspect its parameters.",
+      "Prepare a redirect target that must be safely embedded in another URL.",
+      "Convert text containing Unicode into a form that can be placed in a query string."
+    ],
+    "workedExample": "Enter hello world?name=Ada and click Encode. The output becomes hello%20world%3Fname%3DAda. Clicking Decode on that result restores the original text with spaces and the question mark. The same process works for full URLs and for multi-byte characters such as caf\u00e9.",
+    "limits": [
+      "The tool encodes the entire input. For a full URL you normally encode only the parameter values.",
+      "Malformed percent sequences cause a decode error rather than a partial result.",
+      "It does not parse or validate that the input is a well-formed URL.",
+      "Very long strings are limited only by browser memory."
+    ],
+    "privacy": "Encoding and decoding run entirely in your browser. No text is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Should I encode the whole URL?",
+        "a": "Usually no. Encode individual parameter values with encodeURIComponent and leave the scheme, host and path structure intact."
+      }
+    ]
+  },
+  "unix-timestamp-converter": {
+    "overview": [
+      "The Unix Timestamp Converter translates between the integer epoch time used by most programming languages and human-readable dates. It supports both the traditional seconds-since-1970 form and the millisecond form used by JavaScript.",
+      "You can paste a number and see the corresponding UTC date, or paste a date string and obtain the matching timestamp. A convenience button fills the current time so you can quickly check the present epoch value."
+    ],
+    "useCases": [
+      "Convert a timestamp found in a log file or database into a readable date.",
+      "Generate a Unix timestamp for an API request that expects epoch time.",
+      "Check whether a large number is seconds or milliseconds by its magnitude.",
+      "Verify the date that corresponds to a well-known epoch value."
+    ],
+    "workedExample": "Enter 1735689600 and leave the unit on Seconds, then click To date. The output shows 2025-01-01T00:00:00.000Z and the corresponding UTC string. Switching the unit to Milliseconds and entering 1735689600000 produces the same date. Clicking Use now fills the input with the current timestamp in the selected unit.",
+    "limits": [
+      "Date parsing depends on the browser's Date constructor and may interpret ambiguous strings differently.",
+      "Timestamps far outside the safe integer range may lose precision.",
+      "The tool displays UTC for numeric conversions and does not offer arbitrary time-zone conversion.",
+      "Local time-zone offsets are applied only when the browser parses a date string."
+    ],
+    "privacy": "All conversion happens inside your browser. Timestamps and dates are never uploaded.",
+    "faq": [
+      {
+        "q": "Why do some timestamps have 13 digits?",
+        "a": "Thirteen digits usually mean milliseconds. Ten digits are the classic seconds form. The unit selector lets you choose which interpretation to use."
+      }
+    ]
+  }
+}
