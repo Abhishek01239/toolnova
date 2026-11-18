@@ -19,7 +19,7 @@
     el.className = 'status' + (kind ? ' ' + kind : '');
   }
 
-  onAction('toDate', function () {
+  onAction('to-date', function () {
     var raw = control('input').value.trim();
     if (!raw) { status('Enter a value.', 'error'); return; }
     var unit = control('unit').value;
@@ -32,7 +32,7 @@
     status('Converted to date.', 'ok');
   });
 
-  onAction('toTimestamp', function () {
+  onAction('to-timestamp', function () {
     var raw = control('input').value.trim();
     if (!raw) { status('Enter a value.', 'error'); return; }
     var unit = control('unit').value;
