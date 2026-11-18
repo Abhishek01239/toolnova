@@ -30,8 +30,8 @@
       }
     ],
     "actions": [
-      {"id": "toDate", "label": "To date", "primary": true},
-      {"id": "toTimestamp", "label": "To timestamp"},
+      {"id": "to-date", "label": "To date", "primary": true},
+      {"id": "to-timestamp", "label": "To timestamp"},
       {"id": "now", "label": "Use now"}
     ],
     "outputs": [
