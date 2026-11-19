@@ -1,0 +1,80 @@
+{
+  "query-string-parser": {
+    "overview": [
+      "The Query String Parser extracts every key-value pair from a URL or a bare query string and presents them as a clean list. It also rebuilds a correctly percent-encoded query string that you can copy back into a link.",
+      "The parser uses the browser\u2019s native URL and URLSearchParams objects, so the results match what modern web platforms expect. All processing stays inside your browser."
+    ],
+    "useCases": [
+      "Inspect the tracking parameters on a long affiliate or marketing link.",
+      "Extract form values that were submitted as a query string.",
+      "Rebuild a clean query string after manually editing parameter values.",
+      "Debug an API request URL that contains many encoded parameters."
+    ],
+    "workedExample": "Paste the address https://example.com/search?q=hello%20world&page=2&sort=date. The tool lists three lines: q = hello world, page = 2 and sort = date. The rebuilt query string is ?q=hello+world&page=2&sort=date. Repeated keys appear on separate lines and empty values are preserved.",
+    "limits": [
+      "Only the query portion is examined; fragments after a hash are ignored.",
+      "Extremely long query strings are limited only by browser memory.",
+      "The tool does not validate that parameter names follow any particular naming convention.",
+      "Non-UTF-8 encodings are not supported."
+    ],
+    "privacy": "URLs and query strings are parsed entirely in your browser. Nothing is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it decode percent-encoded values?",
+        "a": "Yes. Encoded characters are shown decoded in the parameter list and re-encoded when the query string is rebuilt."
+      }
+    ]
+  },
+  "hsl-to-hex-converter": {
+    "overview": [
+      "The HSL to Hex Converter translates between the hue-saturation-lightness model and hexadecimal color codes. A live preview helps you confirm the visual result of either direction of conversion.",
+      "HSL is convenient for adjusting lightness or saturation while keeping the same hue; hex is the format most CSS and design tools expect. The converter bridges the two without requiring an external color picker."
+    ],
+    "useCases": [
+      "Turn a designer\u2019s HSL value into a hex code for a stylesheet.",
+      "Convert a brand hex color into HSL so you can create lighter and darker variants.",
+      "Verify the HSL equivalent of a color sampled from a screenshot.",
+      "Generate matching hex codes for a set of HSL-based theme tokens."
+    ],
+    "workedExample": "Set hue to 210, saturation to 70 and lightness to 50, then convert. The result is approximately #3B82F6. Switching to hex mode and entering #FF0000 produces hsl(0, 100%, 50%). Values outside the valid ranges are clamped so the conversion always succeeds.",
+    "limits": [
+      "Alpha transparency is not supported. Eight-digit hex codes and hsla() values must be handled separately.",
+      "Rounding of the intermediate RGB values can occasionally change the last hex digit by one.",
+      "Named CSS colors and other notations such as rgb() must be converted to hex or HSL first.",
+      "The preview is a simple swatch and does not account for surrounding color contrast."
+    ],
+    "privacy": "Color values are converted locally in your browser. No color data is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why does the hex sometimes differ by one digit?",
+        "a": "The conversion goes through 8-bit RGB values, so rounding can produce a one-unit difference in rare edge cases."
+      }
+    ]
+  },
+  "text-scrambler": {
+    "overview": [
+      "The Text Scrambler randomly reorders the middle letters of each word while leaving the first and last letters in place. The resulting text remains surprisingly easy to read and is useful for puzzles, language exercises and demonstrations of human reading ability.",
+      "Only words longer than three letters are affected. Punctuation and short words stay exactly as they were. Each click produces a fresh random arrangement."
+    ],
+    "useCases": [
+      "Create a quick reading-puzzle for a classroom or social post.",
+      "Demonstrate that readers can still recognise words with mixed middle letters.",
+      "Generate scrambled text for a game or escape-room clue.",
+      "Practise spelling by trying to restore the original words."
+    ],
+    "workedExample": "Paste the sentence The quick brown fox jumps over the lazy dog. After scrambling, a typical result looks like The qiuck borwn fox jupms oevr the lzay dog. Short words such as The and the remain unchanged, while longer words have their interior letters shuffled. Clicking Scramble again yields a different ordering.",
+    "limits": [
+      "Only alphabetic words are scrambled; numbers, punctuation and symbols are left alone.",
+      "Words of three letters or fewer are never modified.",
+      "The scramble is purely random and does not attempt to produce a specific difficulty level.",
+      "Very long documents are processed in memory and may feel slow on older devices."
+    ],
+    "privacy": "Your text is scrambled entirely inside the browser. No content is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why are short words left alone?",
+        "a": "Words of three letters or fewer have no middle letters to shuffle, so they stay unchanged."
+      }
+    ]
+  }
+}
