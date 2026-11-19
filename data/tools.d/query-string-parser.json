@@ -1,0 +1,53 @@
+{
+  "id": "query-string-parser",
+  "title": "Query String Parser",
+  "h1": "Query String Parser \u2014 Parse and Build URL Parameters",
+  "seoTitle": "Query String Parser \u2014 Free Online URL Parameter Tool",
+  "description": "Parse a URL or query string into key-value pairs, edit them, and rebuild a clean query string. Everything runs privately in your browser.",
+  "intro": "Paste a URL or query string. See every parameter, edit values, and copy a rebuilt query string.",
+  "blurb": "Parse, inspect and rebuild URL query strings locally.",
+  "keywords": ["query string parser", "url parameter parser", "query string builder", "url params", "parse query string"],
+  "category": "Developer",
+  "added": "2026-11-19",
+  "popularity": 76,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "URL or query string",
+        "placeholder": "https://example.com/path?name=Ada&score=98",
+        "rows": 4
+      }
+    ],
+    "actions": [
+      { "id": "parse", "label": "Parse", "primary": true },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "params", "type": "textarea", "label": "Parameters (one per line)", "rows": 6 },
+      { "id": "rebuilt", "type": "text", "label": "Rebuilt query string" },
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Paste a full URL or a bare query string.",
+    "Click Parse to extract every key and value.",
+    "Copy the parameters or the rebuilt query string."
+  ],
+  "examples": [
+    "https://example.com?a=1&b=hello becomes two parameter lines.",
+    "Empty values and repeated keys are preserved.",
+    "The rebuilt string is percent-encoded correctly."
+  ],
+  "faq": [
+    {
+      "q": "Does it handle full URLs?",
+      "a": "Yes. It extracts the query portion automatically and ignores the scheme, host and path."
+    },
+    {
+      "q": "Are values decoded?",
+      "a": "Yes. Percent-encoded characters are decoded for display and re-encoded when rebuilding."
+    }
+  ]
+}

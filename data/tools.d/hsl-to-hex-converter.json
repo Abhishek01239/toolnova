@@ -1,0 +1,86 @@
+{
+  "id": "hsl-to-hex-converter",
+  "title": "HSL to Hex Converter",
+  "h1": "HSL to Hex Converter \u2014 Convert Colors Both Ways",
+  "seoTitle": "HSL to Hex Converter \u2014 Free Online Color Tool",
+  "description": "Convert HSL colors to hexadecimal and hex colors to HSL. Live preview and precise values. Runs entirely in your browser.",
+  "intro": "Enter HSL or hex. Convert in either direction and see a live color swatch.",
+  "blurb": "Convert between HSL and hexadecimal color formats privately.",
+  "keywords": ["hsl to hex", "hex to hsl", "color converter", "hsl converter", "hex color to hsl"],
+  "category": "Design",
+  "added": "2026-11-19",
+  "popularity": 79,
+  "ui": {
+    "controls": [
+      {
+        "id": "mode",
+        "type": "select",
+        "label": "Convert from",
+        "value": "hsl",
+        "options": [
+          { "value": "hsl", "label": "HSL \u2192 Hex" },
+          { "value": "hex", "label": "Hex \u2192 HSL" }
+        ]
+      },
+      {
+        "id": "h",
+        "type": "number",
+        "label": "Hue (0\u2013360)",
+        "value": "210",
+        "min": 0,
+        "max": 360
+      },
+      {
+        "id": "s",
+        "type": "number",
+        "label": "Saturation (%)",
+        "value": "70",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "id": "l",
+        "type": "number",
+        "label": "Lightness (%)",
+        "value": "50",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "id": "hex",
+        "type": "text",
+        "label": "Hex color",
+        "placeholder": "#3B82F6",
+        "value": "#3B82F6"
+      }
+    ],
+    "actions": [
+      { "id": "convert", "label": "Convert", "primary": true },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "result", "type": "text", "label": "Result" },
+      { "id": "preview", "type": "stats", "label": "Preview" }
+    ]
+  },
+  "howItWorks": [
+    "Choose the conversion direction.",
+    "Enter HSL values or a hex code.",
+    "Click Convert to see the opposite format and a color preview."
+  ],
+  "examples": [
+    "HSL 210, 70, 50 becomes approximately #3B82F6.",
+    "Hex #FF0000 becomes hsl(0, 100%, 50%).",
+    "Values are clamped to valid ranges."
+  ],
+  "faq": [
+    {
+      "q": "Does it support alpha?",
+      "a": "No. Only opaque colors are converted. Eight-digit hex and hsla() are not handled."
+    },
+    {
+      "q": "Why might the hex differ slightly?",
+      "a": "Rounding of the intermediate RGB values can produce a one-digit difference in rare cases."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "text-scrambler",
+  "title": "Text Scrambler",
+  "h1": "Text Scrambler \u2014 Shuffle Letters Inside Words",
+  "seoTitle": "Text Scrambler \u2014 Free Online Word Letter Mixer",
+  "description": "Scramble the letters inside each word while keeping the first and last letters in place. Fun for puzzles and reading exercises. Private and instant.",
+  "intro": "Paste any text. The tool shuffles the middle letters of each word so the text remains surprisingly readable.",
+  "blurb": "Scramble middle letters of words for puzzles and reading practice.",
+  "keywords": ["text scrambler", "scramble words", "letter mixer", "word scrambler", "puzzle text"],
+  "category": "Text",
+  "added": "2026-11-19",
+  "popularity": 68,
+  "ui": {
+    "controls": [
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text to scramble",
+        "placeholder": "The quick brown fox jumps over the lazy dog.",
+        "rows": 6
+      }
+    ],
+    "actions": [
+      { "id": "scramble", "label": "Scramble", "primary": true },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "result", "type": "textarea", "label": "Scrambled text", "rows": 6 },
+      { "id": "stats", "type": "stats", "label": "Stats" }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type any paragraph.",
+    "Click Scramble.",
+    "Each word longer than three letters has its middle letters randomly reordered."
+  ],
+  "examples": [
+    "\u201cThe quick brown fox\u201d becomes something like \u201cThe qiuck borwn fox\u201d.",
+    "Short words stay unchanged.",
+    "Punctuation attached to words is preserved."
+  ],
+  "faq": [
+    {
+      "q": "Why keep the first and last letters?",
+      "a": "Research shows that words remain readable when only the middle letters are mixed. This makes the result fun rather than unreadable."
+    },
+    {
+      "q": "Is the scramble the same every time?",
+      "a": "No. Each click produces a new random ordering of the middle letters."
+    }
+  ]
+}
