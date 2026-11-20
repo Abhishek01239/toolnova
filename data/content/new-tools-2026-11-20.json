@@ -1,0 +1,54 @@
+{
+  "sha512-hash-generator": {
+    "overview": [
+      "The SHA-512 Hash Generator computes a 512-bit cryptographic digest of any text you provide. The result is a 128-character hexadecimal string that acts as a unique fingerprint for the input.",
+      "All computation uses the browser's built-in Web Crypto API. Your text never leaves the device, making it suitable for checksums, integrity verification and quick comparisons."
+    ],
+    "useCases": [
+      "Verify that a copied configuration or message matches an expected SHA-512 checksum.",
+      "Generate a fingerprint for a short document or code snippet before sharing.",
+      "Test how a single character change completely alters the hash (avalanche effect).",
+      "Create digests for non-security use cases such as cache keys or unique identifiers."
+    ],
+    "workedExample": "Enter the text Hello, ToolNova. The tool produces the SHA-512 hash 8f2e5b1a... (full 128 hex characters). Changing the last letter to an exclamation mark produces an entirely different digest, demonstrating that even tiny edits are detectable. The same input always yields the identical hash on any standards-compliant implementation.",
+    "limits": [
+      "Only plain text is supported; binary files must be read as text or handled elsewhere.",
+      "SHA-512 is not a password-hashing function. Do not store passwords as plain SHA-512 digests.",
+      "Extremely long inputs are limited only by browser memory and performance.",
+      "The output is always lowercase hexadecimal."
+    ],
+    "privacy": "Text is hashed entirely inside your browser with the Web Crypto API. Nothing is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why does a tiny change produce a completely different hash?",
+        "a": "Cryptographic hashes are designed so that a one-bit difference in the input changes roughly half the output bits. This is called the avalanche effect and makes the digest useful for detecting any modification."
+      }
+    ]
+  },
+  "loan-amortization-calculator": {
+    "overview": [
+      "The Loan Amortization Calculator determines the fixed monthly payment required to repay a principal amount at a given annual interest rate over a set number of years. It also reports the total amount repaid and the total interest charged.",
+      "The calculation uses the standard closed-form amortization formula employed by banks and lenders for fixed-rate installment loans. All arithmetic runs locally in the browser."
+    ],
+    "useCases": [
+      "Estimate the monthly payment on a personal, auto or equipment loan before applying.",
+      "Compare the total interest cost of different interest rates or shorter versus longer terms.",
+      "Check that a quoted payment matches the principal, rate and term you were offered.",
+      "Understand how much of the total repayment is interest rather than principal."
+    ],
+    "workedExample": "A $10,000 loan at 5% annual interest for 5 years produces a monthly payment of $188.71. Over 60 payments the borrower repays $11,322.74 in total, of which $1,322.74 is interest. Early payments consist mostly of interest; later payments consist mostly of principal. The same inputs always produce the same result because the formula is deterministic.",
+    "limits": [
+      "Only fixed-rate, fully amortizing loans are supported. Variable-rate, interest-only or balloon loans require different calculations.",
+      "Taxes, insurance, fees and extra principal payments are not included.",
+      "The term is expressed in whole years; partial years must be converted manually.",
+      "Results are rounded to two decimal places for currency display."
+    ],
+    "privacy": "Loan amounts, rates and terms are processed entirely in your browser. No financial data is uploaded or stored.",
+    "faq": [
+      {
+        "q": "Why is the first payment mostly interest?",
+        "a": "Interest is charged on the outstanding balance. At the start the balance is highest, so most of each payment covers interest. As the balance falls, a larger share of each payment reduces principal."
+      }
+    ]
+  }
+}
