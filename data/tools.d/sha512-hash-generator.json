@@ -1,0 +1,55 @@
+{
+  "id": "sha512-hash-generator",
+  "title": "SHA-512 Hash Generator",
+  "h1": "SHA-512 Hash Generator \u2014 Free Online, Private",
+  "seoTitle": "SHA-512 Hash Generator \u2014 Free Online | ToolNova",
+  "description": "Generate a SHA-512 cryptographic hash of any text instantly in your browser. Nothing is uploaded. Useful for checksums and integrity checks.",
+  "intro": "Paste any text and get its SHA-512 hash. Computation happens entirely on your device using the Web Crypto API.",
+  "blurb": "Generate SHA-512 hashes of text privately in the browser.",
+  "keywords": ["sha-512", "sha512 hash", "hash generator", "sha512 online", "cryptographic hash", "checksum"],
+  "category": "Developer",
+  "added": "2026-11-20",
+  "popularity": 78,
+  "ui": {
+    "controls": [
+      {
+        "id": "input",
+        "type": "textarea",
+        "label": "Text to hash",
+        "rows": 6,
+        "placeholder": "Paste text here\u2026"
+      }
+    ],
+    "actions": [
+      { "id": "generate", "label": "Generate SHA-512", "primary": true },
+      { "id": "clear", "label": "Clear" }
+    ],
+    "outputs": [
+      { "id": "hash", "type": "textarea", "label": "SHA-512 Hash (hex)", "rows": 3 }
+    ]
+  },
+  "howItWorks": [
+    "Paste or type the text you want to hash.",
+    "Click Generate SHA-512. The browser computes the digest using crypto.subtle.",
+    "Copy the 128-character hexadecimal hash for checksums or verification."
+  ],
+  "examples": [
+    "Hash a short message to compare against a known SHA-512 digest.",
+    "Create a checksum for a configuration snippet before sharing.",
+    "Verify that a copied string matches an expected hash."
+  ],
+  "faq": [
+    {
+      "q": "Is the text uploaded?",
+      "a": "No. Hashing uses the browser's Web Crypto API and stays on your device."
+    },
+    {
+      "q": "Is SHA-512 secure for passwords?",
+      "a": "Plain SHA-512 is not suitable for password storage. Use bcrypt, Argon2 or scrypt for passwords."
+    },
+    {
+      "q": "What encoding is used?",
+      "a": "Text is encoded as UTF-8 before hashing, matching most modern tools."
+    }
+  ]
+}
