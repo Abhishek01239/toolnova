@@ -1,0 +1,51 @@
+{
+  "id": "loan-amortization-calculator",
+  "title": "Loan Amortization Calculator",
+  "h1": "Loan Amortization Calculator \u2014 Monthly Payment & Schedule",
+  "seoTitle": "Loan Amortization Calculator \u2014 Free Online | ToolNova",
+  "description": "Calculate the monthly payment, total interest and a summary amortization schedule for any fixed-rate loan. All math stays in your browser.",
+  "intro": "Enter the loan amount, annual interest rate and term in years. See the fixed monthly payment, total interest paid and how the balance decreases.",
+  "blurb": "Calculate loan payments and amortization summary privately in the browser.",
+  "keywords": ["loan calculator", "amortization calculator", "loan payment calculator", "monthly payment", "interest calculator", "loan schedule"],
+  "category": "Finance",
+  "added": "2026-11-20",
+  "popularity": 85,
+  "ui": {
+    "controls": [
+      { "id": "amount", "type": "number", "label": "Loan amount", "value": "10000", "min": "1", "step": "1" },
+      { "id": "rate", "type": "number", "label": "Annual interest rate (%)", "value": "5", "min": "0", "step": "0.01" },
+      { "id": "years", "type": "number", "label": "Term (years)", "value": "5", "min": "1", "max": "50", "step": "1" }
+    ],
+    "actions": [
+      { "id": "calculate", "label": "Calculate", "primary": true }
+    ],
+    "outputs": [
+      { "id": "payment", "type": "text", "label": "Monthly payment" },
+      { "id": "summary", "type": "stats", "label": "Summary" }
+    ]
+  },
+  "howItWorks": [
+    "Enter the principal amount you plan to borrow.",
+    "Enter the annual interest rate and the repayment term in years.",
+    "Click Calculate to see the fixed monthly payment and total interest."
+  ],
+  "examples": [
+    "A $10,000 loan at 5% for 5 years has a monthly payment of about $188.71.",
+    "Use it to compare different rates or terms before applying for a personal or auto loan.",
+    "See how much of the total repayment is interest versus principal."
+  ],
+  "faq": [
+    {
+      "q": "Does this include taxes or insurance?",
+      "a": "No. It calculates principal and interest only for a fixed-rate loan."
+    },
+    {
+      "q": "Can I add extra payments?",
+      "a": "This version shows the standard schedule. Extra principal payments would reduce total interest and shorten the term."
+    },
+    {
+      "q": "Is the formula accurate?",
+      "a": "It uses the standard amortization formula used by most lenders for fixed-rate installment loans."
+    }
+  ]
+}
