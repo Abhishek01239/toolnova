@@ -1,0 +1,106 @@
+{
+  "extract-emails-and-urls": {
+    "overview": [
+      "The Extract Emails & URLs tool scans any block of text and pulls out every email address and every web address it finds. It recognises standard email patterns and common URL forms including http, https and www.",
+      "Everything runs inside your browser. Paste a message, a log file or a document, press the buttons and the addresses appear instantly in a clean list. No data leaves your device."
+    ],
+    "useCases": [
+      "Collect contact emails from a long message or newsletter without copying each one by hand.",
+      "Pull all links from a research note or meeting transcript for later review.",
+      "Clean a support ticket or error log by extracting the URLs mentioned in it.",
+      "Prepare a list of addresses for a bulk action or a spreadsheet import."
+    ],
+    "workedExample": "Paste the text 'Contact ada@example.com or visit https://example.com/docs. Bob is at bob.smith@test.org and the backup site is http://backup.example.org.' The tool returns the emails ada@example.com and bob.smith@test.org plus the two URLs. Duplicate addresses are removed automatically so the list stays clean and ready to copy.",
+    "limits": [
+      "Only plain text is scanned; formatted documents or images must be copied as text first.",
+      "Very unusual email formats or non-standard URL schemes may be missed.",
+      "The tool does not verify that an address actually exists or that a link is safe to visit.",
+      "Extremely large pastes are limited only by browser memory."
+    ],
+    "privacy": "Text is processed entirely in your browser. No emails, links or original content are uploaded or stored.",
+    "faq": [
+      {
+        "q": "Does it catch emails with plus signs or dots?",
+        "a": "Yes. Standard patterns including plus-addressing and multi-dot domains are recognised."
+      }
+    ]
+  },
+  "binary-encoder-decoder": {
+    "overview": [
+      "The Binary Encoder & Decoder turns ordinary text into a string of 0s and 1s and converts binary back into readable characters. It is useful for learning, debugging or simple encoding tasks.",
+      "Conversion uses standard 8-bit ASCII encoding. Each character becomes eight bits, and the reverse process groups bits back into characters. The whole operation stays inside your browser."
+    ],
+    "useCases": [
+      "See how a short message looks when stored as binary.",
+      "Decode a binary string copied from a textbook or exercise.",
+      "Demonstrate character encoding to students or colleagues.",
+      "Quickly check a small binary payload without opening a hex editor."
+    ],
+    "workedExample": "Type the word Hello. The encoder produces the binary string 01001000 01100101 01101100 01101100 01101111. Pasting that same string back into the decoder returns Hello. Spaces between bytes are optional; the tool ignores them when decoding so the result stays accurate even if the binary is formatted for readability.",
+    "limits": [
+      "Only standard ASCII characters are supported; Unicode characters outside that range may not round-trip cleanly.",
+      "Very long inputs produce very long binary strings that can be awkward to copy.",
+      "The tool does not add error-correcting codes or compression.",
+      "Binary that is not a multiple of eight bits is truncated or padded according to simple rules."
+    ],
+    "privacy": "Text and binary are converted entirely in your browser. Nothing is sent to a server or stored.",
+    "faq": [
+      {
+        "q": "Why are there spaces in the binary output?",
+        "a": "Spaces are added between each byte so the result is easier to read. They are ignored when you decode."
+      }
+    ]
+  },
+  "energy-converter": {
+    "overview": [
+      "The Energy Converter translates values between common energy units such as joules, calories, kilowatt-hours and British thermal units. It is handy for science, cooking, electricity bills and engineering estimates.",
+      "All calculations use fixed conversion factors and run locally. Enter a number, choose the source unit and the target unit, and the result appears at once together with the conversion factor."
+    ],
+    "useCases": [
+      "Convert a food-label calorie value into joules for a physics calculation.",
+      "Turn a battery capacity given in watt-hours into joules.",
+      "Compare heating values expressed in BTU with metric units.",
+      "Quickly check an energy figure copied from a specification sheet."
+    ],
+    "workedExample": "Enter 1 in the value field, select Kilojoule as the source and Kilocalorie as the target. The tool reports approximately 0.239 kilocalories and shows the exact factor used. Switching the units and entering 1000 joules produces the matching calorie value. The same pair of units always gives the identical result because the factors are constant.",
+    "limits": [
+      "Only the units listed in the dropdowns are supported; specialised units must be converted in two steps.",
+      "Very large or very small numbers may show rounding in the displayed result.",
+      "The tool does not account for temperature-dependent or context-specific energy definitions.",
+      "It performs pure unit conversion and does not calculate power, work or other derived quantities."
+    ],
+    "privacy": "Values and unit choices stay in your browser. No energy data is uploaded or recorded.",
+    "faq": [
+      {
+        "q": "Are the conversion factors exact?",
+        "a": "They follow standard international definitions and are precise enough for everyday and most technical use."
+      }
+    ]
+  },
+  "pressure-converter": {
+    "overview": [
+      "The Pressure Converter changes values between pascals, bar, pounds per square inch, atmospheres and other common pressure units. It helps with weather, tyres, hydraulics and scientific work.",
+      "Conversion is instant and happens entirely on your device. Pick the units, type the number and read the result plus the conversion factor."
+    ],
+    "useCases": [
+      "Convert a tyre pressure given in psi into bar for a European manual.",
+      "Turn a weather report in hectopascals into inches of mercury.",
+      "Check a laboratory reading expressed in atmospheres against pascals.",
+      "Compare specifications that use different pressure units."
+    ],
+    "workedExample": "Enter 1, choose Bar as the source unit and PSI as the target. The converter shows roughly 14.5 psi and displays the exact factor. Entering 101325 pascals and selecting Atmosphere returns 1 atmosphere. Results stay consistent for the same inputs because the underlying factors never change.",
+    "limits": [
+      "Only the listed units are available; gauge versus absolute distinctions must be handled by the user.",
+      "Extreme values may be limited by ordinary floating-point precision.",
+      "The tool does not convert between pressure and force or area.",
+      "It provides unit conversion only and does not include altitude or temperature corrections."
+    ],
+    "privacy": "Pressure values are processed locally in your browser. Nothing is sent to any server.",
+    "faq": [
+      {
+        "q": "Does it handle both absolute and gauge pressure?",
+        "a": "It converts the numeric value you enter. You must decide whether the number is absolute or gauge before converting."
+      }
+    ]
+  }
+}
